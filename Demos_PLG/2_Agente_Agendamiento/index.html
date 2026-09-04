@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acme Logistics | Demo de Agente B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .pulse-tooltip {
+            animation: bounce-pulse 2s infinite;
+        }
+        
+        @keyframes bounce-pulse {
+            0%, 100% { transform: translateX(0); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            50% { transform: translateX(-5px); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        }
+
+        .chat-slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex flex-col relative overflow-hidden">
+
+    <!-- Navbar Fake -->
+    <nav class="bg-white p-4 shadow-sm flex justify-between items-center border-b border-slate-200">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-bold">A</div>
+            <span class="font-bold text-xl tracking-tight text-blue-900">ACME LOGISTICS</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-500">
+            <a href="#" class="hover:text-blue-600">Servicios</a>
+            <a href="#" class="hover:text-blue-600">Cobertura</a>
+            <a href="#" class="hover:text-blue-600">Casos de Éxito</a>
+            <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded">Cotizar Envío</a>
+        </div>
+    </nav>
+
+    <!-- Hero Fake -->
+    <div class="flex-1 bg-cover bg-center flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="absolute inset-0 bg-blue-900/80"></div>
+        <div class="relative z-10 text-center text-white p-6 max-w-2xl">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">B2B Enterprise Demo</span>
+            <h1 class="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">Logística Global, Sin Fricción.</h1>
+            <p class="text-lg md:text-xl text-blue-100 mb-8">Demo: Imagina que un CTO entra a esta página. En lugar de llenar un formulario aburrido, nuestro Agente IA lo atiende instantáneamente.</p>
+        </div>
+    </div>
+
+    <!-- Widget del Agente IA -->
+    <div class="absolute bottom-6 right-6 z-50">
+        
+        <!-- Tooltip Onboarding -->
+        <div id="onboarding-tooltip" class="absolute bottom-4 right-20 bg-emerald-600 text-white px-4 py-3 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip w-64 flex items-start space-x-3">
+            <div>
+                <span class="block mb-1">¡Prueba el Copiloto IA! 👉</span>
+                <span class="text-xs font-normal text-emerald-100">Haz clic en la burbuja para simular cómo agendamos una cita B2B sin formularios.</span>
+            </div>
+            <button onclick="closeTooltip()" class="text-emerald-200 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            <div class="absolute top-1/2 -right-2 transform -translate-y-1/2 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-emerald-600 border-b-[8px] border-b-transparent"></div>
+        </div>
+
+        <!-- Burbuja del Chat -->
+        <button id="chat-bubble" onclick="toggleChat()" class="w-16 h-16 bg-blue-600 rounded-full shadow-2xl flex items-center justify-center text-white text-2xl hover:bg-blue-700 transition transform hover:scale-105">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <!-- Ventana del Chat -->
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden chat-slide-up" style="height: 500px;">
+            <!-- Header Chat -->
+            <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">Agente IA BluePixel</h3>
+                        <p class="text-xs text-blue-200">En línea (Responde al instante)</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white/70 hover:text-white"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+
+            <!-- Área de Mensajes -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 flex flex-col space-y-4">
+                <!-- Los mensajes se inyectan aquí vía JS -->
+            </div>
+
+            <!-- Opciones Interactivas (Botones) -->
+            <div id="chat-options" class="p-4 bg-white border-t border-slate-100 flex flex-wrap gap-2">
+                <!-- Los botones se inyectan aquí vía JS -->
+            </div>
+            
+            <!-- Footer Chat -->
+            <div class="bg-slate-100 p-2 text-center border-t border-slate-200">
+                <span class="text-[10px] text-slate-400 font-medium">⚡ Desarrollado con tecnología Blue Pixel</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>
