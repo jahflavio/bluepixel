@@ -313,6 +313,9 @@ Evolucionar de tareas operativas manuales a un equipo impulsado por cÃ³digo pu
 ### 2. Engineering as Marketing (Demos Interactivos PLG)
 Los CTOs y directivos no compran por discursos, compran cuando **prueban la tecnologÃ­a**. En lugar de regalar PDFs (Lead Magnets tradicionales), desarrollaremos "Mini-SaaS" (Demos) internos que resuelvan problemas reales de las empresas. El cliente los usa gratis, y a cambio, nosotros obtenemos sus datos (Lead) y demostramos nuestra superioridad tÃ©cnica.
 
+**ðŸ”¹ UX Clave: "Onboarding Guiado" (Pop-ups y Tooltips)**
+Para garantizar que cualquier usuario (incluso los menos tÃ©cnicos) entienda el valor del Demo al instante, integraremos un flujo de "Onboarding Interactivo". La primera vez que abran la herramienta, verÃ¡n pequeÃ±os *Pop-ups* (letreritos) guiÃ¡ndolos paso a paso: *"Paso 1: Sube tu Excel aquÃ­" -> "Paso 2: Haz clic para que la IA califique tus prospectos"*. Esto elimina la fricciÃ³n y asegura que el cliente viva el "momento AjÃ¡!" sin necesidad de tutoriales.
+
 **Ejemplos de Demos de Alto Impacto:**
 1.  **Lead Scoring Mini-App (Demo para Ventas B2B):**
     *   *El Problema:* Las empresas B2B pierden tiempo con prospectos basura porque no tienen cÃ³mo filtrarlos fÃ¡cilmente.
