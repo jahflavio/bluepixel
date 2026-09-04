@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Serverless | Demo Financiero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        
+        .pulse-tooltip {
+            animation: bounce-pulse 2s infinite;
+        }
+        
+        @keyframes bounce-pulse {
+            0%, 100% { transform: translateY(0); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+            50% { transform: translateY(-5px); box-shadow: 0 0 0 10px rgba(236, 72, 153, 0); }
+        }
+
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none; 
+            width: 100%;
+            background: transparent; 
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            margin-top: -10px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 2px;
+        }
+        
+        .number-transition {
+            transition: all 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-6 relative overflow-hidden">
+    
+    <!-- Background glow -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- Left Side: Inputs -->
+        <div>
+            <div class="mb-2 inline-block px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-bold rounded border border-blue-800/50 uppercase tracking-widest">
+                Optimizador Cloud
+            </div>
+            <h1 class="text-4xl font-bold mb-4">Descubre tu fuga<br>de capital en AWS.</h1>
+            <p class="text-slate-400 mb-8">Calcula instantáneamente cuánto dinero estás quemando en servidores monolíticos o mal aprovisionados frente a una Arquitectura Serverless nativa.</p>
+
+            <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl relative">
+                
+                <!-- Tooltip Onboarding -->
+                <div id="onboarding-tooltip" class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-center space-x-2 w-max">
+                    <span>Desliza para calcular tu ahorro 👇</span>
+                    <button onclick="closeTooltip()" class="ml-2 hover:text-pink-200"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-t-[8px] border-t-pink-600 border-r-[8px] border-r-transparent"></div>
+                </div>
+
+                <label class="block text-slate-300 font-medium mb-2">Gasto Mensual Actual (USD)</label>
+                <div class="flex justify-between text-2xl font-bold text-white mb-4">
+                    <span>$1,000</span>
+                    <span id="slider-val" class="text-blue-400">$25,000</span>
+                    <span>$100,000</span>
+                </div>
+                <input type="range" id="spend-slider" min="1000" max="100000" step="500" value="25000" class="w-full mb-6" oninput="updateCalculator()">
+                
+                <div class="flex justify-between items-center text-sm text-slate-400">
+                    <span>Infraestructura Actual:</span>
+                    <span class="bg-slate-700 px-3 py-1 rounded-full text-slate-300">EC2 Monolítico (70% Ocio)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Results -->
+        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 p-8 rounded-3xl shadow-2xl relative">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <i class="fa-brands fa-aws text-8xl"></i>
+            </div>
+            
+            <h3 class="text-xl font-medium text-slate-300 mb-6">Proyección Blue Pixel (Serverless)</h3>
+            
+            <div class="space-y-6">
+                <!-- Nuevo Costo Mensual -->
+                <div>
+                    <p class="text-sm text-slate-400 mb-1">Costo Mensual Optimizado</p>
+                    <div class="flex items-end">
+                        <span class="text-4xl font-bold text-emerald-400 number-transition" id="new-cost">$12,500</span>
+                        <span class="text-slate-500 ml-2 mb-1">/ mes</span>
+                    </div>
+                </div>
+
+                <div class="h-px bg-slate-700/50 w-full"></div>
+
+                <!-- Ahorro Anual -->
+                <div>
+                    <p class="text-sm text-slate-400 mb-1">Capital Recuperado (ROI Anual)</p>
+                    <div class="text-5xl font-extrabold text-white number-transition" id="annual-savings">
+                        $150,000
+                    </div>
+                    <p class="text-emerald-400 text-sm font-medium mt-2 flex items-center">
+                        <i class="fa-solid fa-arrow-trend-down mr-1"></i> -50% Reducción de costos de infraestructura
+                    </p>
+                </div>
+            </div>
+
+            <button class="w-full mt-8 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1 flex justify-center items-center">
+                <span>Agendar Auditoría Gratuita</span>
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        
+    </div>
+
+    <script src="calc.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Onboarding Cero-Touch | Demo B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
+        .pulse-tooltip {
+            animation: bounce-pulse 2s infinite;
+        }
+        
+        @keyframes bounce-pulse {
+            0%, 100% { transform: translateY(0); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            50% { transform: translateY(-5px); box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+        }
+
+        .node-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .line-flow {
+            position: absolute;
+            background: #cbd5e1;
+            z-index: 0;
+            transition: background 0.5s ease;
+        }
+        
+        .line-flow.active {
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+    </style>
+</head>
+<body class="text-slate-800 h-screen flex flex-col">
+
+    <nav class="bg-white p-4 shadow-sm border-b border-slate-200">
+        <div class="max-w-5xl mx-auto flex items-center space-x-2">
+            <i class="fa-solid fa-users-gear text-purple-600 text-xl"></i>
+            <span class="font-bold text-lg text-slate-700">Enterprise HR Hub</span>
+            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded ml-2">Powered by Blue Pixel API</span>
+        </div>
+    </nav>
+
+    <div class="flex-1 max-w-5xl mx-auto w-full p-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-start mt-8">
+        
+        <!-- Formulario (Izquierda) -->
+        <div class="md:col-span-4 bg-white p-6 rounded-xl shadow-sm border border-slate-200 relative">
+            
+            <!-- Tooltip Onboarding -->
+            <div id="onboarding-tooltip" class="absolute -top-14 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-center space-x-2 w-max">
+                <span>Da clic en Contratar 👇</span>
+                <button onclick="closeTooltip()" class="ml-2 hover:text-purple-200"><i class="fa-solid fa-xmark"></i></button>
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-t-[8px] border-t-purple-600 border-r-[8px] border-r-transparent"></div>
+            </div>
+
+            <h2 class="text-xl font-bold mb-4">Alta de Empleado</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Nombre Completo</label>
+                    <input type="text" value="Carlos Mendoza" class="w-full bg-slate-50 border border-slate-200 rounded px-3 py-2 text-sm text-slate-700 font-medium" disabled>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Rol</label>
+                    <input type="text" value="Ingeniero Backend" class="w-full bg-slate-50 border border-slate-200 rounded px-3 py-2 text-sm text-slate-700 font-medium" disabled>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">Departamento</label>
+                    <input type="text" value="Tecnología" class="w-full bg-slate-50 border border-slate-200 rounded px-3 py-2 text-sm text-slate-700 font-medium" disabled>
+                </div>
+                
+                <button onclick="triggerOnboarding()" id="btn-hire" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4 transition flex items-center justify-center">
+                    <i class="fa-solid fa-rocket mr-2"></i> Procesar Alta (Cero-Touch)
+                </button>
+            </div>
+        </div>
+
+        <!-- Flujo Visual (Derecha) -->
+        <div class="md:col-span-8 bg-slate-900 rounded-xl shadow-inner p-8 h-full min-h-[400px] relative overflow-hidden flex items-center justify-center">
+            
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+            
+            <div class="relative z-10 w-full max-w-lg">
+                <!-- Trigger Node -->
+                <div class="text-center mb-12">
+                    <div id="node-start" class="w-16 h-16 bg-slate-800 border-2 border-slate-600 rounded-full mx-auto flex items-center justify-center text-slate-400 text-2xl z-10 relative transition-colors duration-300">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 font-mono uppercase tracking-wider">Webhook Trigger</p>
+                </div>
+
+                <!-- Integration Nodes -->
+                <div class="grid grid-cols-3 gap-8 relative">
+                    
+                    <!-- Lines connecting start to nodes -->
+                    <div id="line-1" class="line-flow w-0.5 h-12 left-1/6 top-[-3rem] transform rotate-[-45deg] origin-top"></div>
+                    <div id="line-2" class="line-flow w-0.5 h-12 left-1/2 top-[-3rem]"></div>
+                    <div id="line-3" class="line-flow w-0.5 h-12 right-1/6 top-[-3rem] transform rotate-[45deg] origin-top"></div>
+
+                    <!-- GWorkspace -->
+                    <div class="text-center">
+                        <div id="node-gws" class="w-16 h-16 bg-slate-800 border-2 border-slate-600 rounded-2xl mx-auto flex items-center justify-center text-slate-400 text-3xl z-10 relative transition-colors duration-300">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 font-mono" id="text-gws">Pendiente</p>
+                    </div>
+
+                    <!-- Slack -->
+                    <div class="text-center">
+                        <div id="node-slack" class="w-16 h-16 bg-slate-800 border-2 border-slate-600 rounded-2xl mx-auto flex items-center justify-center text-slate-400 text-3xl z-10 relative transition-colors duration-300">
+                            <i class="fa-brands fa-slack"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 font-mono" id="text-slack">Pendiente</p>
+                    </div>
+
+                    <!-- Jira -->
+                    <div class="text-center">
+                        <div id="node-jira" class="w-16 h-16 bg-slate-800 border-2 border-slate-600 rounded-2xl mx-auto flex items-center justify-center text-slate-400 text-3xl z-10 relative transition-colors duration-300">
+                            <i class="fa-brands fa-jira"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 font-mono" id="text-jira">Pendiente</p>
+                    </div>
+
+                </div>
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden mt-12 bg-emerald-900/40 border border-emerald-500/50 p-4 rounded text-center">
+                    <p class="text-emerald-400 font-bold"><i class="fa-solid fa-check-circle mr-1"></i> Empleado Provisionado en 2.4s</p>
+                    <p class="text-xs text-emerald-200 mt-1">4 Horas de trabajo manual de TI ahorradas.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="onboard.js"></script>
+</body>
+</html>
