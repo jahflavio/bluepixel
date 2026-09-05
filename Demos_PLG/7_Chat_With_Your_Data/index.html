@@ -40,10 +40,108 @@
 <body class="text-slate-800 h-screen flex flex-col">
 
     <!-- Navbar -->
-    <nav class="bg-slate-900 text-white p-4 shadow-sm flex items-center space-x-3">
-        <i class="fa-solid fa-chart-line text-sky-500 text-xl"></i>
-        <span class="font-bold text-lg">Data Intel <span class="font-light">| Executive Dashboard</span></span>
+    <nav class="bg-slate-900 text-white p-4 shadow-sm flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-chart-line text-sky-500 text-xl"></i>
+            <span class="font-bold text-lg">Data Intel <span class="font-light">| Executive Dashboard</span></span>
+        </div>
+        
+        <!-- Integration & Upload Buttons -->
+        <div class="flex items-center space-x-3">
+            
+            <button onclick="openIntegrations()" class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-sm font-medium py-2 px-4 rounded border border-slate-700 transition flex items-center space-x-2">
+                <i class="fa-solid fa-link text-emerald-400"></i>
+                <span>Conectar APIs</span>
+            </button>
+
+            <div class="relative">
+                <input type="file" id="file-upload" class="hidden" accept=".csv, .xlsx" onchange="simulateUpload()">
+                <label for="file-upload" id="upload-btn" class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-sm font-medium py-2 px-4 rounded border border-slate-700 transition flex items-center space-x-2 m-0">
+                    <i class="fa-solid fa-cloud-arrow-up text-sky-400"></i>
+                    <span>Subir CSV</span>
+                </label>
+            </div>
+        </div>
     </nav>
+
+    <!-- Integrations Modal Overlay -->
+    <div id="integrations-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center fade-in">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-200 flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800">Fuentes de Datos</h3>
+                    <p class="text-sm text-slate-500">Sincroniza tus herramientas de marketing en tiempo real.</p>
+                </div>
+                <button onclick="closeIntegrations()" class="text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-6 space-y-4">
+                <!-- Platform 1 -->
+                <div class="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded bg-orange-100 text-orange-600 flex items-center justify-center text-xl"><i class="fa-brands fa-google"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Google Analytics 4</p>
+                            <p class="text-xs text-slate-500">Tráfico y conversiones</p>
+                        </div>
+                    </div>
+                    <button id="btn-ga4" onclick="connectAPI('btn-ga4')" class="text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition">Conectar</button>
+                </div>
+
+                <!-- Platform 2 -->
+                <div class="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded bg-blue-100 text-blue-600 flex items-center justify-center text-xl"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Google Search Console</p>
+                            <p class="text-xs text-slate-500">Rendimiento SEO</p>
+                        </div>
+                    </div>
+                    <button id="btn-gsc" onclick="connectAPI('btn-gsc')" class="text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition">Conectar</button>
+                </div>
+
+                <!-- Platform 3 -->
+                <div class="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded bg-rose-100 text-rose-600 flex items-center justify-center text-xl"><i class="fa-solid fa-fire"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Hotjar / Clarity</p>
+                            <p class="text-xs text-slate-500">Heatmaps y UX</p>
+                        </div>
+                    </div>
+                    <button id="btn-hj" onclick="connectAPI('btn-hj')" class="text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition">Conectar</button>
+                </div>
+
+                <!-- Platform 4 -->
+                <div class="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded bg-orange-100 text-orange-500 flex items-center justify-center text-xl"><i class="fa-solid fa-users-gear"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">HubSpot / Salesforce</p>
+                            <p class="text-xs text-slate-500">CRM y Prospectos</p>
+                        </div>
+                    </div>
+                    <button id="btn-crm" onclick="connectAPI('btn-crm')" class="text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition">Conectar</button>
+                </div>
+
+                <!-- Platform 5 -->
+                <div class="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl"><i class="fa-brands fa-stripe-s"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Stripe / Pagos</p>
+                            <p class="text-xs text-slate-500">Facturación y MRR real</p>
+                        </div>
+                    </div>
+                    <button id="btn-stripe" onclick="connectAPI('btn-stripe')" class="text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition">Conectar</button>
+                </div>
+            </div>
+            
+            <div class="bg-slate-50 p-4 border-t border-slate-200 text-center">
+                <button onclick="closeIntegrations()" class="text-sky-600 hover:text-sky-700 text-sm font-bold w-full">Finalizar Sincronización</button>
+            </div>
+        </div>
+    </div>
 
     <div class="flex-1 flex flex-col md:flex-row w-full max-w-7xl mx-auto p-4 gap-4 h-[calc(100vh-64px)]">
         
@@ -76,21 +174,21 @@
                 <div class="flex-1 flex items-end justify-between space-x-2 px-4 pb-8 border-b border-slate-200 relative">
                     <!-- Q1 -->
                     <div class="w-1/3 flex flex-col items-center group">
-                        <div class="w-full bg-blue-200 hover:bg-blue-300 rounded-t-sm h-[60%] transition-colors relative">
+                        <div class="w-full bg-blue-200 hover:bg-blue-300 rounded-t-sm h-40 transition-colors relative">
                             <span class="absolute -top-6 w-full text-center text-xs font-bold text-slate-500 opacity-0 group-hover:opacity-100">$120k</span>
                         </div>
                         <span class="mt-2 text-xs font-bold text-slate-500">Q1</span>
                     </div>
                     <!-- Q2 -->
                     <div class="w-1/3 flex flex-col items-center group">
-                        <div class="w-full bg-blue-400 hover:bg-blue-500 rounded-t-sm h-[80%] transition-colors relative">
+                        <div class="w-full bg-blue-400 hover:bg-blue-500 rounded-t-sm h-56 transition-colors relative">
                             <span class="absolute -top-6 w-full text-center text-xs font-bold text-slate-500 opacity-0 group-hover:opacity-100">$165k</span>
                         </div>
                         <span class="mt-2 text-xs font-bold text-slate-500">Q2</span>
                     </div>
                     <!-- Q3 -->
                     <div class="w-1/3 flex flex-col items-center group">
-                        <div class="w-full bg-rose-400 hover:bg-rose-500 rounded-t-sm h-[45%] transition-colors relative">
+                        <div class="w-full bg-rose-400 hover:bg-rose-500 rounded-t-sm h-24 transition-colors relative">
                             <span class="absolute -top-6 w-full text-center text-xs font-bold text-rose-500 opacity-0 group-hover:opacity-100">$85k</span>
                         </div>
                         <span class="mt-2 text-xs font-bold text-rose-500">Q3</span>
@@ -108,9 +206,9 @@
             </div>
 
             <!-- Tooltip Onboarding -->
-            <div id="onboarding-tooltip" class="absolute top-20 left-1/2 transform -translate-x-1/2 bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-center space-x-2 w-max">
-                <span>Hazle una pregunta sobre los datos 👇</span>
-                <button onclick="closeTooltip()" class="ml-2 hover:text-sky-200"><i class="fa-solid fa-xmark"></i></button>
+            <div id="onboarding-tooltip" class="absolute top-20 left-4 right-4 bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-start justify-between space-x-2">
+                <span class="block leading-snug">Hazle una pregunta sobre los datos 👇</span>
+                <button onclick="closeTooltip()" class="ml-2 hover:text-sky-200 flex-shrink-0"><i class="fa-solid fa-xmark"></i></button>
                 <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-t-[8px] border-t-sky-600 border-r-[8px] border-r-transparent"></div>
             </div>
 
@@ -145,5 +243,71 @@
     </div>
 
     <script src="chatdata.js"></script>
+    <script>
+        function openIntegrations() {
+            document.getElementById('integrations-modal').classList.remove('hidden');
+        }
+
+        function closeIntegrations() {
+            document.getElementById('integrations-modal').classList.add('hidden');
+        }
+
+        function connectAPI(btnId) {
+            const btn = document.getElementById(btnId);
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-slate-500"></i>';
+            btn.classList.replace('bg-slate-100', 'bg-slate-200');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Conectado';
+                btn.classList.replace('bg-slate-200', 'bg-emerald-100');
+                btn.classList.replace('text-slate-600', 'text-emerald-700');
+                
+                const history = document.getElementById('chat-history');
+                history.innerHTML += `
+                    <div class="flex items-start space-x-2 mt-4 fade-in">
+                        <div class="w-8 h-8 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-slate-200 text-sm text-slate-700 shadow-sm">
+                            ¡Nueva integración detectada! Se han indexado 12,504 nuevas filas de datos. El pipeline de ETL automatizado ya mapeó las métricas clave. ¿Qué consultamos ahora?
+                        </div>
+                    </div>
+                `;
+                history.scrollTop = history.scrollHeight;
+            }, 1500);
+        }
+
+        function simulateUpload() {
+            const btn = document.getElementById('upload-btn');
+            const fileInput = document.getElementById('file-upload');
+            
+            if(fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-sky-400"></i>';
+                btn.classList.add('pointer-events-none');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i><span class="text-emerald-400">Listo</span>';
+                    btn.classList.replace('bg-slate-800', 'bg-emerald-900/30');
+                    btn.classList.replace('border-slate-700', 'border-emerald-800');
+                    
+                    // Add message to chat history
+                    const history = document.getElementById('chat-history');
+                    history.innerHTML += `
+                        <div class="flex items-start space-x-2 mt-4 fade-in">
+                            <div class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-file-csv text-xs"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-sm text-slate-700 shadow-sm">
+                                Archivo procesado. He fusionado estos datos crudos con el Pipeline principal. Listo para el análisis.
+                            </div>
+                        </div>
+                    `;
+                    history.scrollTop = history.scrollHeight;
+                }, 2000);
+            }
+        }
+    </script>
 </body>
 </html>
