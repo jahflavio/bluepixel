@@ -275,6 +275,16 @@ En B2B tÃ©cnico, la autoridad lo es todo. Haremos que nuestro talento tÃ©cni
 
 ---
 
+
+### 3. Estrategia Puente (Bridge Strategy) para Q1: Landing Pages Desacopladas
+Mientras se aprueba o ejecuta el rediseño completo del sitio web principal, desplegaremos una arquitectura de captación paralela para no frenar la tracción comercial.
+
+*   **Arquitectura Headless (Subdominio):** Alojaremos campañas en `go.bluepixel.mx` usando constructores ágiles (Framer / Unbounce) para dar autonomía total al equipo de Marketing sin depender de TI.
+*   **Ingeniería como Marketing:** Las landings no serán estáticas; incrustarán los Demos Interactivos (como la Calculadora de ROI o el Agente IA) para que los CTOs experimenten nuestra capacidad técnica en tiempo real.
+*   **Hiper-Segmentación (ABM):** Crearemos landings clonadas por vertical (Fintech, Retail) para que el mensaje resuene perfectamente con los anuncios de LinkedIn Ads.
+*   **Recolección de Datos (CRO):** Conectaremos Mixpanel y Clarity a estas landings para hacer pruebas A/B. Los datos de conversión dictarán cómo se construirá el rediseño definitivo del sitio corporativo.
+
+
 ## CAPÃTULO VII: FINANZAS, MÃ‰TRICAS Y TECH STACK
 
 ### 1. KPIs Core (MÃ©tricas de Ã‰xito)
@@ -386,6 +396,14 @@ Para ejecutar esta estrategia sin inflar la nÃ³mina corporativa, operaremos ba
 > "Tienes toda la razÃ³n, el pipeline no puede esperar. Para el Q1, captaremos Demanda Activa con Google Ads (Bottom of Funnel) apuntando a directivos que ya tienen presupuesto y estÃ¡n buscando agencias hoy mismo. En paralelo, activaremos el Agente IA en la web para exprimir el trÃ¡fico que ya tenemos y convertirlo en reuniones esta misma semana, mientras el modelo Outbound madura."
 
 ---
+
+
+#### 12. Pregunta de Operaciones (Escalabilidad)
+"Si logro generar 15 leads altamente calificados (SQLs) al mes, ¿el equipo de ventas actual tiene el conocimiento técnico para atender a CTOs, o necesitamos entrenarlos en este nuevo perfil?"
+
+#### 13. Pregunta de Expectativas (KPIs del Q1)
+"Para considerar que mi estrategia fue un éxito rotundo en estos primeros 90 días, ¿cuál es el KPI exacto que esperas ver en tu dashboard comercial?"
+
 
 ## CAPÃTULO IX: DISCURSO DE CIERRE (ELEVATOR PITCH)
 *Resumen ejecutivo para leer o memorizar al cierre de la presentaciÃ³n.*
