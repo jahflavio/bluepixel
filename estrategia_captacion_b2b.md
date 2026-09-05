@@ -327,6 +327,13 @@ Para garantizar que cualquier usuario (incluso los menos técnicos) entienda el 
     *   *El Problema:* Corporativos con almacenes sufren para sincronizar inventarios en tiempo real desde dispositivos móviles.
     *   *El Demo:* Una plantilla interactiva ligera (React + Supabase) que pueden abrir en 2 celulares a la vez. Al actualizar el inventario en un celular, se refleja en milisegundos en el otro. Demuestra nuestra capacidad para construir arquitecturas robustas en tiempo real.
 
+### 3. Arquitectura RevOps y Sincronización Total (Pilotaje Automático)
+No basta con visualizar datos en un Dashboard. El objetivo es conectar silos (Marketing, Ventas, Finanzas) para que la empresa opere en piloto automático mediante 4 capas tecnológicas:
+*   **Centralización (El Cerebro):** Extracción automática de datos de HubSpot (CRM), Stripe (Pagos) y Google Analytics vía **ETL** (Airbyte/Fivetran). Todo converge en un **Data Warehouse** (BigQuery), logrando una única "verdad absoluta" financiera.
+*   **Toma de Decisiones (Capa IA):** Modelos predictivos leen el Data Warehouse para detectar patrones invisibles. Ej: *"Los usuarios de LinkedIn que usan iOS tienen 40% menos Churn Rate"*.
+*   **Ejecución Automática (Reverse ETL):** Devolvemos las decisiones del cerebro a las herramientas operativas. Si la IA detecta que un prospecto clave puede cancelar (Churn), dispara un webhook a HubSpot creando un ticket urgente para Customer Success, y a Meta Ads para excluirlo de campañas de retargeting de adquisición.
+*   **Personalización UX en Tiempo Real:** Conectar Clarity/Hotjar a un CDP (Segment). Si se detecta fricción al pagar, la web muta dinámicamente ocultando campos del formulario para reducir la caída, sin intervención humana.
+
 ---
 
 ### Preguntas de Cierre (Tu turno de preguntar)

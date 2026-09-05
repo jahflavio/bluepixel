@@ -1,4 +1,4 @@
-﻿# Estrategia Integral de CaptaciÃƒÂ³n y Crecimiento B2B (Business-to-Business / Empresa a Empresa)
+# Estrategia Integral de CaptaciÃƒÂ³n y Crecimiento B2B (Business-to-Business / Empresa a Empresa)
 *Arquitectura de AdquisiciÃƒÂ³n, AutomatizaciÃƒÂ³n y Land & Expand para BluePixel.*
 
 **Autor:** FabiÃƒÂ¡n Flores | MKT, Growth & Tech
@@ -324,8 +324,15 @@ Para garantizar que cualquier usuario (incluso los menos tÃ©cnicos) entienda e
     *   *El Problema:* Los formularios web tradicionales tienen alta tasa de abandono.
     *   *El Demo:* Un widget conversacional que las empresas pueden probar con su propia URL. La IA lee el sitio del cliente y genera un "recepcionista virtual" capaz de agendar citas en tiempo real. Demuestra adopciÃ³n de IA para conversiÃ³n.
 3.  **Tablero de Inventario Colaborativo (Demo para Operaciones):**
-    *   *El Problema:* Corporativos con almacenes sufren para sincronizar inventarios en tiempo real desde dispositivos mÃ³viles.
+    *   *El Problema:* Corporativos con almacenes sufren para sincronizar inventarios en tiempo real desde dispositivos móviles.
     *   *El Demo:* Una plantilla interactiva ligera (React + Supabase) que pueden abrir en 2 celulares a la vez. Al actualizar el inventario en un celular, se refleja en milisegundos en el otro. Demuestra nuestra capacidad para construir arquitecturas robustas en tiempo real.
+
+### 3. Arquitectura RevOps y Sincronización Total (Pilotaje Automático)
+No basta con visualizar datos en un Dashboard. El objetivo es conectar silos (Marketing, Ventas, Finanzas) para que la empresa opere en piloto automático mediante 4 capas tecnológicas:
+*   **Centralización (El Cerebro):** Extracción automática de datos de HubSpot (CRM), Stripe (Pagos) y Google Analytics vía **ETL** (Airbyte/Fivetran). Todo converge en un **Data Warehouse** (BigQuery), logrando una única "verdad absoluta" financiera.
+*   **Toma de Decisiones (Capa IA):** Modelos predictivos leen el Data Warehouse para detectar patrones invisibles. Ej: *"Los usuarios de LinkedIn que usan iOS tienen 40% menos Churn Rate"*.
+*   **Ejecución Automática (Reverse ETL):** Devolvemos las decisiones del cerebro a las herramientas operativas. Si la IA detecta que un prospecto clave puede cancelar (Churn), dispara un webhook a HubSpot creando un ticket urgente para Customer Success, y a Meta Ads para excluirlo de campañas de retargeting de adquisición.
+*   **Personalización UX en Tiempo Real:** Conectar Clarity/Hotjar a un CDP (Segment). Si se detecta fricción al pagar, la web muta dinámicamente ocultando campos del formulario para reducir la caída, sin intervención humana.
 
 ---
 
