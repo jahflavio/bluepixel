@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjambre IA B2B - Blue Pixel Workspace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .terminal { font-family: 'JetBrains Mono', monospace; }
+        .terminal-glow { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+        .log-line { opacity: 0; animation: fadeIn 0.3s forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        
+        /* Tooltips */
+        .tooltip-btn { position: relative; }
+        .tooltip-btn .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 50;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            width: 250px;
+            border: 1px solid #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            pointer-events: none;
+        }
+        .tooltip-btn:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .pulse-icon { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); color: #60a5fa; }
+            100% { transform: scale(1); }
+        }
+        
+        .typing-indicator::after {
+            content: '█';
+            animation: blink 1s step-start infinite;
+            color: #3b82f6;
+            margin-left: 5px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden">
+    <!-- Navbar -->
+    <header class="bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center z-10">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white font-bold">BP</div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">Enjambre IA <span class="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-0.5 rounded-full ml-2">Internal Workspace</span></h1>
+                <p class="text-xs text-slate-400">Dogfooding: Automatización RevOps B2B</p>
+            </div>
+        </div>
+        <div class="flex gap-4">
+            <button class="tooltip-btn text-slate-400 hover:text-white transition">
+                <i class="fa-solid fa-circle-info text-xl pulse-icon"></i>
+                <div class="tooltip-content">
+                    <strong>Dogfooding en acción:</strong> Este simulador muestra cómo el Agente IA de Marketing procesa leads en tiempo real conectándose a APIs (Apollo/Clearbit) y enviando alertas a Slack.
+                </div>
+            </button>
+            <a href="../index.html" class="text-slate-400 hover:text-white transition flex items-center gap-2">
+                <i class="fa-solid fa-house"></i> <span class="text-sm font-semibold hidden md:inline">Volver al Hub</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col md:flex-row h-full overflow-hidden">
+        
+        <!-- Sidebar Controls -->
+        <aside class="w-full md:w-1/3 lg:w-1/4 bg-slate-800 p-6 flex flex-col border-r border-slate-700">
+            <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-microchip text-blue-500"></i> Módulo SDR Automático
+            </h2>
+            <p class="text-sm text-slate-400 mb-6">
+                Ingresa el correo corporativo de un prospecto. El Agente extraerá su información corporativa y lo calificará en milisegundos.
+            </p>
+
+            <form id="agentForm" class="space-y-4">
+                <div class="tooltip-btn w-full">
+                    <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Email del Prospecto</label>
+                    <input type="email" id="emailInput" class="w-full bg-slate-900 border border-slate-600 rounded p-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" placeholder="ej. juan.perez@kavak.com" value="juan.perez@kavak.com" required>
+                    <div class="tooltip-content" style="top:auto; bottom:120%;">
+                        <strong>Simulación API:</strong> Al ingresar un email, el sistema simulará una llamada a <em>Apollo.io</em> para enriquecer el perfil sin fricción para el usuario.
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="runBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded shadow-lg shadow-blue-500/20 transition flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-play"></i> Ejecutar Agente MCP
+                    </button>
+                </div>
+            </form>
+
+            <!-- Metrics Widget (Hidden initially) -->
+            <div id="metricsWidget" class="mt-8 bg-slate-900 rounded-lg p-4 border border-slate-700 opacity-0 transition-opacity duration-500">
+                <h3 class="text-xs font-bold text-slate-400 uppercase mb-3 border-b border-slate-700 pb-2">Impacto Operativo</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-slate-500">Tiempo SDR Humano</p>
+                        <p class="text-lg font-bold text-red-400 line-through">15 min</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500">Tiempo IA</p>
+                        <p class="text-lg font-bold text-emerald-400">4.2 seg</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="text-xs text-slate-500">Costo Operativo</p>
+                        <p class="text-lg font-bold text-emerald-400">-$0.02 USD / lead</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Terminal View -->
+        <section class="flex-1 bg-black p-4 relative overflow-hidden flex flex-col">
+            <div class="absolute top-0 left-0 w-full h-8 bg-slate-800 flex items-center px-4 gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="text-xs text-slate-400 ml-2 font-mono">root@bluepixel-agent:~# ./run_enrichment.py</span>
+            </div>
+            
+            <div id="terminalOutput" class="terminal mt-10 text-sm md:text-base flex-1 overflow-y-auto px-4 py-2 space-y-2">
+                <div class="text-slate-500">Esperando ejecución del script...</div>
+            </div>
+            
+            <!-- Matrix Rain effect purely cosmetic overlay -->
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"></div>
+        </section>
+
+    </main>
+
+    <script>
+        const form = document.getElementById('agentForm');
+        const emailInput = document.getElementById('emailInput');
+        const terminal = document.getElementById('terminalOutput');
+        const runBtn = document.getElementById('runBtn');
+        const metricsWidget = document.getElementById('metricsWidget');
+
+        // Dynamic domain mapping for simulation
+        const domainData = {
+            'kavak.com': { company: 'Kavak', industry: 'Automotive / Fintech', size: '+5,000 empleados', revenue: '$1B+ USD', score: 98, role: 'C-Level / VP' },
+            'nubank.com': { company: 'Nubank', industry: 'Fintech', size: '+8,000 empleados', revenue: '$2B+ USD', score: 99, role: 'Director' },
+            'bluepixel.mx': { company: 'Blue Pixel', industry: 'Technology / UX', size: '50-100 empleados', revenue: '$1M - $5M USD', score: 75, role: 'Manager' }
+        };
+
+        const defaultData = { company: 'Enterprise Corp', industry: 'Software / B2B', size: '+500 empleados', revenue: '$50M+ USD', score: 85, role: 'Gerente IT' };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if(!email) return;
+
+            // Extract domain
+            const domain = email.split('@')[1];
+            const data = domainData[domain.toLowerCase()] || defaultData;
+            
+            runSimulation(email, data);
+        });
+
+        async function runSimulation(email, data) {
+            // Reset state
+            runBtn.disabled = true;
+            runBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Ejecutando...';
+            metricsWidget.style.opacity = '0';
+            terminal.innerHTML = '';
+            
+            const logs = [
+                { text: `> Iniciando Agente MCP de Enriquecimiento (v.2.4.1)...`, delay: 500, class: 'text-slate-300' },
+                { text: `> Input recibido: ${email}`, delay: 800, class: 'text-blue-400' },
+                { text: `> [API_CALL] Conectando a Apollo.io y Clearbit Reveal...`, delay: 1500, class: 'text-yellow-400' },
+                { text: `> [DATA_FOUND] Desanonimización de IP exitosa.`, delay: 600, class: 'text-emerald-400' },
+                { text: `  ├─ Empresa: <span class="text-white font-bold">${data.company}</span>`, delay: 300, class: 'text-slate-300' },
+                { text: `  ├─ Industria: <span class="text-white">${data.industry}</span>`, delay: 300, class: 'text-slate-300' },
+                { text: `  ├─ Tamaño: <span class="text-white">${data.size}</span>`, delay: 300, class: 'text-slate-300' },
+                { text: `  └─ Facturación est.: <span class="text-white">${data.revenue}</span>`, delay: 300, class: 'text-slate-300' },
+                { text: `> [SCORING_ENGINE] Ejecutando Matriz Predictiva B2B (100 pts)...`, delay: 1200, class: 'text-purple-400' },
+                { text: `> Evaluando Firmográfico y Cargo (${data.role})...`, delay: 800, class: 'text-slate-400' },
+                { text: `> [RESULTADO] Puntuación: <span class="text-xl font-bold ${data.score >= 90 ? 'text-emerald-400 terminal-glow' : 'text-yellow-400'}">${data.score}/100</span> ${data.score >= 90 ? '(Lead Enterprise)' : '(Lead Nurturing)'}`, delay: 800, class: 'text-white' }
+            ];
+
+            if(data.score >= 90) {
+                logs.push({ text: `> [WEBHOOK] Puntuación alta detectada. Inyectando datos en HubSpot CRM...`, delay: 1000, class: 'text-blue-400' });
+                logs.push({ text: `> [SLACK_API] Enviando alerta urgente a <span class="text-white">#ventas-enterprise</span> notificando al Director Comercial...`, delay: 800, class: 'text-pink-400' });
+            } else {
+                logs.push({ text: `> [WEBHOOK] Puntuación media/baja. Añadiendo a flujo de Nurturing Automático (Mailing)...`, delay: 1000, class: 'text-yellow-400' });
+            }
+
+            logs.push({ text: `> Tarea finalizada exitosamente en 4.2 segundos.`, delay: 600, class: 'text-emerald-500 font-bold' });
+
+            // Display logs sequentially
+            for (let i = 0; i < logs.length; i++) {
+                await sleep(logs[i].delay);
+                appendLog(logs[i].text, logs[i].class);
+            }
+            
+            // Add typing indicator at the end
+            const typing = document.createElement('div');
+            typing.className = 'typing-indicator pt-4';
+            terminal.appendChild(typing);
+            terminal.scrollTop = terminal.scrollHeight;
+
+            // Finish
+            runBtn.disabled = false;
+            runBtn.innerHTML = '<i class="fa-solid fa-play"></i> Ejecutar de nuevo';
+            metricsWidget.style.opacity = '1';
+        }
+
+        function appendLog(html, className) {
+            const div = document.createElement('div');
+            div.className = `log-line ${className}`;
+            div.innerHTML = html;
+            terminal.appendChild(div);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>

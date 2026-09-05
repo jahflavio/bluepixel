@@ -620,6 +620,30 @@
                 <strong>El Demo:</strong> Una plantilla interactiva ligera (React + Supabase) para probar en 2 celulares. Al actualizar stock en uno, se refleja en milisegundos en el otro.<br>
                 <em>(Demuestra capacidad técnica robusta y arquitectura en tiempo real).</em></p>
             </div>
+
+            <!-- NEW SECTION: REVOPS -->
+            <h3 style="color: var(--primary); margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">3. Arquitectura RevOps y Sincronización Total</h3>
+            <p>No basta con visualizar datos. El objetivo es conectar silos (Marketing, Ventas, Finanzas) para que la empresa opere en piloto automático mediante 4 capas tecnológicas:</p>
+            
+            <div class="qa-card" style="border-left-color: #6366f1;">
+                <h4>1. Centralización (El Cerebro)</h4>
+                <p style="font-style: normal; font-size: 0.95rem;">Extracción automática de datos de HubSpot (CRM), Stripe (Pagos) y Google Analytics vía <strong>ETL</strong> (Airbyte/Fivetran). Todo converge en un <strong>Data Warehouse</strong> (BigQuery), logrando una única "verdad absoluta" financiera.</p>
+            </div>
+
+            <div class="qa-card" style="border-left-color: #ec4899;">
+                <h4>2. Toma de Decisiones (Capa IA)</h4>
+                <p style="font-style: normal; font-size: 0.95rem;">Modelos predictivos leen el Data Warehouse para detectar patrones invisibles. Ej: <em>"Los usuarios de LinkedIn que usan iOS tienen 40% menos Churn Rate"</em>.</p>
+            </div>
+
+            <div class="qa-card" style="border-left-color: #f59e0b;">
+                <h4>3. Ejecución Automática (Reverse ETL)</h4>
+                <p style="font-style: normal; font-size: 0.95rem;">Devolvemos las decisiones del cerebro a las herramientas operativas. Si la IA detecta que un prospecto clave puede cancelar (Churn), dispara un webhook a HubSpot creando un ticket urgente para Customer Success, y a Meta Ads para excluirlo de campañas de retargeting de adquisición.</p>
+            </div>
+
+            <div class="qa-card" style="border-left-color: #10b981;">
+                <h4>4. Personalización UX en Tiempo Real</h4>
+                <p style="font-style: normal; font-size: 0.95rem;">Conectar Clarity/Hotjar a un CDP (Segment). Si se detecta fricción al pagar, la web muta dinámicamente ocultando campos del formulario para reducir la caída, sin intervención humana.</p>
+            </div>
         </section>
 
         <!-- CAPÍTULO VIII -->
