@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "http://127.0.0.1:8000/webhook/nuevo_lead"
+url = "http://127.0.0.1:8080/webhook/nuevo_lead"
 
 # 1. Lead Enterprise
 lead_1 = {
