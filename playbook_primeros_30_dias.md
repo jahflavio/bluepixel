@@ -93,6 +93,12 @@ El formulario nativo de Webflow guarda los leads en su propia base de datos, ais
 5. Mapea los campos: El 'Email' de Webflow al 'Email' de HubSpot, etc.
 6. (Opcional): Agrega un paso final en Zapier: Si el presupuesto/tamaño es alto, manda un mensaje a **Slack/WhatsApp** notificando a Ventas. Activa el Zap.
 
+### 🗂️ Quick Win 4: Setup de Campos en CRM (Previo al Webhook)
+Antes de aventar los datos, necesitamos donde recibirlos.
+1. Entra a HubSpot (o el CRM actual).
+2. Ve a Configuración > Propiedades de Contacto.
+3. Crea: `Lead Score B2B`, `Tamaño de Empresa`, `UTM Source`, `UTM Campaign`.
+
 ### 💼 Quick Win 3: Inyectar el LinkedIn Insight Tag
 Indispensable para hacer retargeting a perfiles C-Level (CTOs).
 1. Entra a **LinkedIn Campaign Manager**.
