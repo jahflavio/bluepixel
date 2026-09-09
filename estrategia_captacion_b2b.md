@@ -250,12 +250,12 @@ En B2B tÃ©cnico, la autoridad lo es todo. Haremos que nuestro talento tÃ©cni
 ### 2. Roadmap Comercial de Ejecución y Transición (12 Meses)
 
 #### Q1 (Mes 1-3): Co-Ejecución & Dogfooding
-* **Qué:** Agente IA Copiloto en la web y Landings Webflow.
+* **Qué:** Agente IA Copiloto, Landings Webflow e Inyección de LinkedIn Insight Tag.
 * **Agencia Externa:** Brazo táctico. Yo entrego la arquitectura de conversión (JSON-LD/CRO) y audito su ROI con Mixpanel. Ellos pautan.
 * **Por qué:** No frenar generación de leads y tapar fugas de conversión desde el día 1.
 
 #### Q2 (Mes 4-6): Transferencia de Conocimiento & SEO
-* **Qué:** Google Ads y Clusters de Contenido.
+* **Qué:** Google Ads, Clusters de Contenido y Vinculación de sitemap.xml a Google Search Console.
 * **Agencia Externa:** Sistematizamos sus campañas exitosas e iniciamos transferencia de conocimiento para operar pujas In-House.
 * **Por qué:** Capturar la demanda activa bajando gradualmente el costo por Lead.
 

@@ -385,10 +385,15 @@
             <div class="mermaid-wrapper">
                 <div class="mermaid">
                     sequenceDiagram
+                        participant Webflow as Webflow Forms
+                        participant Zap as Zapier/Make
                         participant HubSpot as CRM (HubSpot)
                         participant MCP as Agente MCP (Python)
                         participant WA as Ventas (WhatsApp/Telegram)
                         participant Dev as Desarrollo (Jira/Drive)
+                        Note over Webflow: Lead llena #email-form
+                        Webflow->>Zap: Envía payload
+                        Zap->>HubSpot: Sincroniza Contacto
                         Note over HubSpot: Director Comercial marca<br/>trato como "Closed/Won"
                         HubSpot->>MCP: Dispara Webhook
                         MCP->>WA: Crea grupo/alerta de WhatsApp
@@ -422,6 +427,7 @@
                 <li><strong>QBRs Conductuales:</strong> Reportes trimestrales de Customer Success usando Analítica Conductual para vender iteraciones UX o nuevas features basándose en fricciones reales del usuario.</li>
                 <li style="list-style: none;">
                     <ul style="margin-top: 10px;">
+                        <li><strong>Corrección Urgente en Mixpanel:</strong> Modificaremos el código actual para trackear <code>Form Submitted</code> (conversiones reales) en lugar de solo <code>Contact Form Started</code> (intención).</li>
                         <li><strong>Plataformas a integrar:</strong> <span class="highlight">Mixpanel</span> o <span class="highlight">Amplitude</span> (eventos y embudos) y <span class="highlight">Microsoft Clarity</span> o <span class="highlight">Hotjar</span> (mapas de calor visuales).</li>
                         <li><strong>Presupuesto Requerido:</strong> $0 USD inicialmente (Clarity es 100% gratuito y Mixpanel tiene capa gratuita). En nivel Enterprise, costará de <strong>$150 a $300 USD mensuales</strong> (costo que se absorbe dentro de la iguala mensual del cliente).</li>
                     </ul>
@@ -444,13 +450,13 @@
             <div class="roadmap-grid">
                 <div class="roadmap-item">
                     <h4><span class="highlight">Q1 (Mes 1-3)</span> Co-Ejecución & Dogfooding</h4>
-                    <p><strong>Qué:</strong> Agente IA Copiloto y Landings Webflow.</p>
+                    <p><strong>Qué:</strong> Agente IA Copiloto, Landings Webflow y <strong>LinkedIn Insight Tag</strong> (Retargeting).</p>
                     <p><strong>Agencia Externa:</strong> Brazo táctico. Yo entrego la arquitectura de conversión (JSON-LD/CRO) y audito su ROI con Mixpanel. Ellos pautan.</p>
                     <p><strong>Por qué:</strong> No frenar generación de leads y tapar fugas de conversión.</p>
                 </div>
                 <div class="roadmap-item">
                     <h4><span class="highlight">Q2 (Mes 4-6)</span> Transferencia & SEO</h4>
-                    <p><strong>Qué:</strong> Google Ads y Clusters de Contenido.</p>
+                    <p><strong>Qué:</strong> Google Ads, Clusters de Contenido y vinculación de <strong>sitemap.xml a GSC</strong>.</p>
                     <p><strong>Agencia Externa:</strong> Sistematizamos sus campañas exitosas. Iniciamos transferencia de conocimiento para operar pujas In-House.</p>
                     <p><strong>Por qué:</strong> Capturar la demanda activa bajando el costo por Lead.</p>
                 </div>
