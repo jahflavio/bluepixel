@@ -57,3 +57,47 @@
 - [ ] **Quick Win 1 (Clarity):** Instala Microsoft Clarity (o Hotjar) silenciosamente en Webflow. A los pocos días, muéstrale a tu jefe un video real de cómo los usuarios se pierden en la web. (Impacto visual masivo).
 - [ ] **Quick Win 2 (Speed-to-lead):** Configura la primera alerta webhooks -> WhatsApp/Telegram para el equipo de ventas. Cuando un vendedor reciba el lead en su celular en 5 segundos, te amará.
 - [ ] **Quick Win 3 (Estrategia Puente):** Lanza tu primera Landing Page optimizada dentro de Webflow para una campaña específica de la agencia externa. Mide la diferencia de conversión contra la web anterior.
+
+---
+
+## 🛠️ FASE 5: CÓMO EJECUTAR LOS QUICK WINS (Paso a Paso Técnico)
+
+### 🚀 Quick Win 1: Arreglar el Tracking de Mixpanel (Form Submitted)
+Actualmente miden la intención, pero no la conversión real.
+1. Entra al **Webflow Designer**.
+2. Ve a los ajustes (Settings) de la página o al Custom Code global (Project Settings > Custom Code).
+3. Busca el script donde inicializan Mixpanel. Justo debajo, agrega este código jQuery que detecta cuando Webflow valida y envía el formulario exitosamente:
+```javascript
+<script>
+  // Detecta el envío exitoso del formulario nativo de Webflow
+  $(document).ajaxComplete(function(event, xhr, settings) {
+    if (settings.url.includes("https://webflow.com/api/v1/form/")) {
+      if (xhr.status === 200) {
+        mixpanel.track("Form Submitted", {
+          form_name: "email-form",
+          url: window.location.href
+        });
+      }
+    }
+  });
+</script>
+```
+4. Publica el sitio. Ahora sí verás conversiones reales en Mixpanel.
+
+### 🔌 Quick Win 2: Puente Webflow -> CRM (HubSpot)
+El formulario nativo de Webflow guarda los leads en su propia base de datos, aislándolos de Ventas.
+1. Abre **Zapier** o **Make.com**.
+2. Crea un nuevo flujo (Zap/Scenario).
+3. **Trigger (Disparador):** Selecciona *Webflow* -> Evento: *Form Submission*. Conecta tu cuenta y selecciona tu sitio y el formulario `email-form`.
+4. **Action (Acción):** Selecciona *HubSpot* -> Evento: *Create or Update Contact*.
+5. Mapea los campos: El 'Email' de Webflow al 'Email' de HubSpot, etc.
+6. (Opcional): Agrega un paso final en Zapier: Si el presupuesto/tamaño es alto, manda un mensaje a **Slack/WhatsApp** notificando a Ventas. Activa el Zap.
+
+### 💼 Quick Win 3: Inyectar el LinkedIn Insight Tag
+Indispensable para hacer retargeting a perfiles C-Level (CTOs).
+1. Entra a **LinkedIn Campaign Manager**.
+2. Ve a *Analyze* -> *Insight Tag* y copia el código JavaScript.
+3. Entra a **Webflow** -> *Project Settings* (Ajustes del proyecto) -> *Custom Code* (Código personalizado).
+4. Pega el código de LinkedIn en la sección **"Footer Code"** (o en el Head, según indique LinkedIn).
+5. Guarda y publica el sitio.
+6. Regresa a LinkedIn y verifica que el tag esté "Activo" (puede tardar un par de horas en recibir señal).
