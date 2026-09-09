@@ -159,7 +159,7 @@
             <div class="qa-card">
                 <h4>2. Cultura de Datos (Mixpanel + GTM)</h4>
                 <p><strong>El hallazgo:</strong> Tienen un script de Mixpanel que graba el 100% de las sesiones. <br><strong>El Insight:</strong> Practican el <em>Dogfooding</em> (venden analítica y la consumen). Nuestra propuesta de Land & Expand usando analítica resonará profundamente.</p>
-                <p><strong>🎯 Mejora Estratégica:</strong> Conectaremos Mixpanel con HubSpot vía MCP. Si un lead Enterprise (CTO) revisita un Caso de Éxito, detonaremos una alerta en Slack al cerrador para un seguimiento en el momento de mayor interés.</p>
+                <p><strong>🎯 Mejora Estratégica:</strong> Conectaremos Mixpanel con HubSpot vía MCP. Si un lead Enterprise (CTO) revisita un Caso de Éxito, detonaremos una alerta en WhatsApp/Telegram al cerrador para un seguimiento en el momento de mayor interés.</p>
             </div>
 
             <div class="qa-card">
@@ -360,7 +360,7 @@
                 <h4>2. Mailing de Onboarding Operativo (Clientes Nuevos)</h4>
                 <ul>
                     <li><strong>Objetivo:</strong> Reducir la ansiedad post-compra y educar sobre metodología ágil.</li>
-                    <li><strong>Contenido:</strong> Video de bienvenida y credenciales automáticas a Jira y Slack.</li>
+                    <li><strong>Contenido:</strong> Video de bienvenida y credenciales automáticas a Jira y WhatsApp.</li>
                     <li><strong>Trigger:</strong> Trato Ganado en HubSpot.</li>
                     <li><strong>Resultado:</strong> Fricción Cero en el Día 1.</li>
                 </ul>
@@ -387,14 +387,14 @@
                     sequenceDiagram
                         participant HubSpot as CRM (HubSpot)
                         participant MCP as Agente MCP (Python)
-                        participant Slack as Ventas (Slack)
+                        participant WA as Ventas (WhatsApp/Telegram)
                         participant Dev as Desarrollo (Jira/Drive)
                         Note over HubSpot: Director Comercial marca<br/>trato como "Closed/Won"
                         HubSpot->>MCP: Dispara Webhook
-                        MCP->>Slack: Crea canal #cliente-proyecto
+                        MCP->>WA: Crea grupo/alerta de WhatsApp
                         MCP->>Dev: Clona jerarquía en Google Drive
                         MCP->>Dev: Genera tablero inicial en Jira
-                        Note over Slack,Dev: Transición Cero Fricción.
+                        Note over WA,Dev: Transición Cero Fricción.
                 </div>
             </div>
             <ul>
@@ -443,35 +443,35 @@
             <h3>2. Roadmap Comercial de Ejecución</h3>
             <div class="roadmap-grid">
                 <div class="roadmap-item">
-                    <h4><span class="highlight">Q1</span> Fundamentos & Dogfooding</h4>
-                    <p><strong>Qué:</strong> Agente IA Copiloto en la web.</p>
-                    <p><strong>Por qué:</strong> Demostrar nuestra tecnología (IA) desde el primer contacto y tapar fugas de conversión (CRO).</p>
-                    <p><strong>Cómo:</strong> LLM entrenado con Casos de Éxito para pre-calificar y agendar citas.</p>
+                    <h4><span class="highlight">Q1 (Mes 1-3)</span> Co-Ejecución & Dogfooding</h4>
+                    <p><strong>Qué:</strong> Agente IA Copiloto y Landings Webflow.</p>
+                    <p><strong>Agencia Externa:</strong> Brazo táctico. Yo entrego la arquitectura de conversión (JSON-LD/CRO) y audito su ROI con Mixpanel. Ellos pautan.</p>
+                    <p><strong>Por qué:</strong> No frenar generación de leads y tapar fugas de conversión.</p>
                 </div>
                 <div class="roadmap-item">
-                    <h4><span class="highlight">Q2</span> Captura de Demanda & SEO</h4>
+                    <h4><span class="highlight">Q2 (Mes 4-6)</span> Transferencia & SEO</h4>
                     <p><strong>Qué:</strong> Google Ads y Clusters de Contenido.</p>
-                    <p><strong>Por qué:</strong> Capturar a quienes ya tienen presupuesto activo buscando servicios B2B.</p>
-                    <p><strong>Cómo:</strong> Concordancia exacta en Google Ads; Guías maestras en SEO.</p>
+                    <p><strong>Agencia Externa:</strong> Sistematizamos sus campañas exitosas. Iniciamos transferencia de conocimiento para operar pujas In-House.</p>
+                    <p><strong>Por qué:</strong> Capturar la demanda activa bajando el costo por Lead.</p>
                 </div>
                 <div class="roadmap-item">
-                    <h4><span class="highlight">Q3</span> Generación de Demanda & ABM</h4>
-                    <p><strong>Qué:</strong> LinkedIn Ads Outbound.</p>
-                    <p><strong>Por qué:</strong> Llegar a grandes corporativos que aún no saben que necesitan modernizarse.</p>
-                    <p><strong>Cómo:</strong> Campañas hiper-segmentadas por Rol (CTO (Chief Technology Officer / Director de Tecnología)) y Tamaño (+100 empleados).</p>
+                    <h4><span class="highlight">Q3 (Mes 7-9)</span> Insourcing Parcial & ABM</h4>
+                    <p><strong>Qué:</strong> LinkedIn Ads Outbound hiper-segmentado.</p>
+                    <p><strong>Agencia Externa:</strong> La IA asume el Outbound. La agencia se relega a campañas residuales (se renegocia o recorta su fee).</p>
+                    <p><strong>Por qué:</strong> Llegar directo al CTO de corporativos grandes automáticamente.</p>
                 </div>
                 <div class="roadmap-item">
-                    <h4><span class="highlight">Q4</span> Agentización Total</h4>
-                    <p><strong>Qué:</strong> Lead Scoring Predictivo.</p>
-                    <p><strong>Por qué:</strong> Evitar saturar a Ventas con leads basura ante el alto volumen.</p>
-                    <p><strong>Cómo:</strong> Webhooks + LLM evaluando la facturación contra el Perfil Ideal (ICP (Ideal Customer Profile / Perfil de Cliente Ideal)).</p>
+                    <h4><span class="highlight">Q4 (Mes 10-12)</span> Independencia & Agentización</h4>
+                    <p><strong>Qué:</strong> Lead Scoring Predictivo al 100%.</p>
+                    <p><strong>Agencia Externa:</strong> Operación 100% In-House. Ahorro total del Fee de agencia externa para Blue Pixel.</p>
+                    <p><strong>Por qué:</strong> Consolidar el Growth interno con embudos end-to-end.</p>
                 </div>
             </div>
         
             <h3 style="margin-top: 40px; color: var(--secondary); border-bottom: 2px solid var(--border); padding-bottom:10px;">3. Estrategia Puente (Bridge Strategy) para Q1: Landing Pages Desacopladas</h3>
             <p>Mientras se aprueba o ejecuta el rediseño completo del sitio web principal, desplegaremos una arquitectura de captación paralela para no frenar la tracción comercial.</p>
             <ul>
-                <li><strong>Arquitectura Headless (Subdominio):</strong> Alojaremos campañas en <code>go.bluepixel.mx</code> usando constructores ágiles (Framer / Unbounce) para dar autonomía total al equipo de Marketing sin depender de TI.</li>
+                <li><strong>Arquitectura Ágil en Webflow:</strong> Alojaremos campañas en un entorno aislado dentro del propio Webflow para dar autonomía total al equipo de Marketing sin costos extra ni depender de TI.</li>
                 <li><strong>Ingeniería como Marketing:</strong> Las landings no serán estáticas; incrustarán los Demos Interactivos (como la Calculadora de ROI o el Agente IA) para que los CTOs experimenten nuestra capacidad técnica en tiempo real.</li>
                 <li><strong>Hiper-Segmentación (ABM):</strong> Crearemos landings clonadas por vertical (Fintech, Retail) para que el mensaje resuene perfectamente con los anuncios de LinkedIn Ads.</li>
                 <li><strong>Recolección de Datos (CRO):</strong> Conectaremos Mixpanel y Clarity a estas landings para hacer pruebas A/B. Los datos de conversión dictarán cómo se construirá el rediseño definitivo del sitio corporativo.</li>
@@ -660,7 +660,7 @@
 
             <div class="qa-card">
                 <h4>10. Velocidad: "Implementar todo esto tomará meses. Necesitamos leads la próxima semana."</h4>
-                <p>"Desplegaré mi 'Estrategia Puente' inmediatamente. Montaremos Landing Pages Desacopladas en un subdominio (go.bluepixel.mx) usando constructores ágiles. Esto le da autonomía a marketing para lanzar campañas la próxima semana sin depender de TI. La data que recolecten dictará el rediseño final."</p>
+                <p>"Desplegaré mi 'Estrategia Puente' inmediatamente. Clonaremos entornos seguros dentro de nuestra infraestructura nativa de Webflow. Esto le da autonomía a marketing para lanzar campañas la próxima semana sin costos de licencias extra ni depender de TI. La data que recolecten dictará el rediseño final."</p>
             </div>
 
 <p>Cuando te pregunten si tienes dudas, utiliza estas 3 preguntas para darle la vuelta a la entrevista:</p>
@@ -702,7 +702,13 @@
                 </div>
             </div>
         
-            <div class="qa-card" style="border-left-color: var(--secondary);">
+            
+            <div class="qa-card">
+                <h4>11. Agencia Externa: "Ya trabajamos con una agencia de campañas. ¿Cómo vas a interactuar con ellos?"</h4>
+                <p>"Seré su director de orquesta. De inicio, les daré la nueva arquitectura (Landings en Webflow, Lead Scoring y JSON-LD) para que sus anuncios conviertan mejor y auditaré su ROI con Mixpanel. Una vez que la maquinaria interna esté estable, haremos una transición suave para traer todo 'In-House' y ahorrar ese fee mensual."</p>
+            </div>
+
+        <div class="qa-card" style="border-left-color: var(--secondary);">
                 <h4>12. Pregunta de Operaciones (Escalabilidad)</h4>
                 <p>"Si logro generar 15 leads altamente calificados (SQLs) al mes, ¿el equipo de ventas actual tiene el conocimiento técnico para atender a CTOs, o necesitamos entrenarlos en este nuevo perfil?"</p>
             </div>
@@ -726,7 +732,7 @@
 
             <p><strong>Segundo, Aprovechamiento Tecnológico y Nuevas Mejoras:</strong><br>
             No vengo a tirar a la basura lo que ya tienen; vengo a hackearlo. Tienen una gran base técnica: Webflow, Mixpanel y un SEO estructurado. Lo que haré será inyectar <strong>Agentes IA (MCPs en Python)</strong> directamente en esa infraestructura. <br><br>
-            Vamos a automatizar el <em>Speed-to-Lead</em> para responder en menos de 5 minutos, conectaremos el CRM con Jira y Slack para que el traspaso de proyectos sea automático, y enriqueceremos su código (JSON-LD) no solo para Google, sino para dominar el <strong>GEO (Generative Engine Optimization)</strong>. Cuando un directivo busque agencias en Perplexity o ChatGPT, la IA nos va a recomendar a nosotros como la máxima autoridad técnica.</p>
+            Vamos a automatizar el <em>Speed-to-Lead</em> para responder en menos de 5 minutos, conectaremos el CRM con Jira y WhatsApp para que el traspaso de proyectos sea automático, y enriqueceremos su código (JSON-LD) no solo para Google, sino para dominar el <strong>GEO (Generative Engine Optimization)</strong>. Cuando un directivo busque agencias en Perplexity o ChatGPT, la IA nos va a recomendar a nosotros como la máxima autoridad técnica.</p>
 
             <p><strong>Tercero, Los Logros a Obtener:</strong></p>
             <ul>

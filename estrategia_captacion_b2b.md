@@ -211,14 +211,14 @@ En B2B Enterprise, rara vez la venta ocurre en el primer contacto. El correo ele
 sequenceDiagram
     participant HubSpot as CRM (HubSpot)
     participant MCP as Agente MCP (Python)
-    participant Slack as Ventas (Slack)
+    participant WA as Ventas (WhatsApp/Telegram)
     participant Dev as Desarrollo (Jira/Drive)
     Note over HubSpot: Director Comercial marca<br/>trato como "Closed/Won"
     HubSpot->>MCP: Dispara Webhook
-    MCP->>Slack: Crea canal #cliente-proyecto
+    MCP->>WA: Crea grupo/alerta de WhatsApp
     MCP->>Dev: Clona jerarquÃ­a en Google Drive
     MCP->>Dev: Genera tablero inicial en Jira
-    Note over Slack,Dev: TransiciÃ³n Cero FricciÃ³n.
+    Note over WA,Dev: TransiciÃ³n Cero FricciÃ³n.
 ```
 El proyecto inicia con claridad absoluta.
 
@@ -247,39 +247,33 @@ En B2B tÃ©cnico, la autoridad lo es todo. Haremos que nuestro talento tÃ©cni
 *   **Captura y OrquestaciÃ³n:** Fireflies transcribe reuniones tÃ©cnicas internas. Un Agente de IA extrae el problema, la soluciÃ³n arquitectÃ³nica y el impacto de negocio.
 *   **DistribuciÃ³n AutomÃ¡tica:** Se autoredactan posts tÃ©cnicos en LinkedIn no solo para los Fundadores, sino para los Tech Leads y UX Leads de BluePixel. Demostramos que somos un *pool* de talento Ã©lite, escalando la confianza del prospecto antes de la primera llamada.
 
-### 2. Roadmap Comercial de EjecuciÃ³n (Q1 - Q4)
+### 2. Roadmap Comercial de Ejecución y Transición (12 Meses)
 
-*   **Q1 (Enero - Marzo): Fundamentos, CRO y Dogfooding con IA**
-    *   **QuÃ©:** RefactorizaciÃ³n del embudo de conversiÃ³n e implementaciÃ³n de un "Agente IA Copiloto" (actualmente el sitio carece de un canal conversacional en tiempo real).
-    *   **Por quÃ©:** Antes de inyectar presupuesto publicitario, necesitamos tapar las fugas (mejorar el CRO). Si BluePixel vende IA, debemos demostrar su valor (*Dogfooding*) desde el primer contacto para elevar radicalmente la tasa de conversiÃ³n de 'Visitante' a 'ReuniÃ³n Agendada'.
-    *   **CÃ³mo:** Entrenaremos un LLM con los casos de Ã©xito y *playbooks* de servicios de BluePixel. Este Agente se integrarÃ¡ a la web para hacer preguntas clave de calificaciÃ³n y, si el prospecto califica, le mostrarÃ¡ el calendario del vendedor.
-    *   **DÃ³nde:** En las *landing pages* principales y de servicios (bluepixel.mx).
+#### Q1 (Mes 1-3): Co-Ejecución & Dogfooding
+* **Qué:** Agente IA Copiloto en la web y Landings Webflow.
+* **Agencia Externa:** Brazo táctico. Yo entrego la arquitectura de conversión (JSON-LD/CRO) y audito su ROI con Mixpanel. Ellos pautan.
+* **Por qué:** No frenar generación de leads y tapar fugas de conversión desde el día 1.
 
-*   **Q2 (Abril - Junio): Captura de Demanda Activa y SEO B2B**
-    *   **QuÃ©:** Lanzamiento de Google Ads transaccionales y creaciÃ³n de "Clusters de Contenido" (*Hub & Spoke*).
-    *   **Por quÃ©:** Con el embudo optimizado, ahora pagamos para capturar a quienes ya buscan servicios especÃ­ficos. A la par, el SEO B2B tarda meses en madurar, asÃ­ que la infraestructura de autoridad debe sembrarse ahora.
-    *   **CÃ³mo:** En Google Ads, usaremos concordancia exacta en tÃ©rminos *Bottom of Funnel*. En SEO, construiremos guÃ­as maestras que enlacen a artÃ­culos tÃ©cnicos especÃ­ficos, dominando las SERPs.
-    *   **DÃ³nde:** Google Search Network (Ads) y el Hub de Recursos/Blog.
+#### Q2 (Mes 4-6): Transferencia de Conocimiento & SEO
+* **Qué:** Google Ads y Clusters de Contenido.
+* **Agencia Externa:** Sistematizamos sus campañas exitosas e iniciamos transferencia de conocimiento para operar pujas In-House.
+* **Por qué:** Capturar la demanda activa bajando gradualmente el costo por Lead.
 
-*   **Q3 (Julio - Septiembre): GeneraciÃ³n de Demanda y ABM**
-    *   **QuÃ©:** PromociÃ³n *Outbound* de Lead Magnets hiper-especÃ­ficos dirigidos a cuentas Enterprise.
-    *   **Por quÃ©:** Para llegar a grandes corporativos que aÃºn no saben que necesitan modernizarse, debemos irrumpir con contenido que evidencie financieramente sus dolores.
-    *   **CÃ³mo:** CampaÃ±as hiper-segmentadas en LinkedIn Ads. Filtraremos milimÃ©tricamente por Rol (CTO (Chief Technology Officer / Director de TecnologÃ­a), VP of Engineering) y TamaÃ±o de Empresa (+100 empleados).
-    *   **DÃ³nde:** LinkedIn Ads como punta de lanza, respaldado por flujos de nutriciÃ³n en HubSpot.
+#### Q3 (Mes 7-9): Insourcing Parcial & ABM
+* **Qué:** LinkedIn Ads Outbound hiper-segmentado (CTOs).
+* **Agencia Externa:** Nuestro Enjambre IA asume la prospección Outbound. La agencia se relega a campañas residuales (se recorta su fee mensual).
+* **Por qué:** Llegar directo al CTO de grandes corporativos automatizando el esfuerzo internamente.
 
-*   **Q4 (Octubre - Diciembre): AgentizaciÃ³n Total del Scoring**
-    *   **QuÃ©:** AutomatizaciÃ³n total del *Lead Scoring* predictivo y flujos de enrutamiento comercial.
-    *   **Por quÃ©:** Con el volumen de prospectos en su pico, el equipo comercial corre riesgo de saturarse. Necesitamos que la infraestructura tÃ©cnica decida quiÃ©n amerita el tiempo de un cerrador.
-    *   **CÃ³mo:** IntegraciÃ³n de Webhooks (Agentes MCP) hacia APIs de enriquecimiento (Apollo.io/Clearbit). Un LLM analizarÃ¡ a la empresa y la emparejarÃ¡ con el ICP (Ideal Customer Profile / Perfil de Cliente Ideal) de BluePixel.
-    *   **DÃ³nde:** OperarÃ¡ invisiblemente en el *backend* (HubSpot, MCP, Slack).
-
----
+#### Q4 (Mes 10-12): Independencia Total & Agentización
+* **Qué:** Lead Scoring Predictivo operando al 100%.
+* **Agencia Externa:** Operación 100% In-House. Ahorro total del fee de la agencia externa para Blue Pixel.
+* **Por qué:** Consolidar el área de Growth & Tech interna, orquestando el embudo completo con IA.
 
 
 ### 3. Estrategia Puente (Bridge Strategy) para Q1: Landing Pages Desacopladas
 Mientras se aprueba o ejecuta el rediseño completo del sitio web principal, desplegaremos una arquitectura de captación paralela para no frenar la tracción comercial.
 
-*   **Arquitectura Headless (Subdominio):** Alojaremos campañas en `go.bluepixel.mx` usando constructores ágiles (Framer / Unbounce) para dar autonomía total al equipo de Marketing sin depender de TI.
+*   **Arquitectura Ágil en Webflow:** Alojaremos campañas en un entorno aislado dentro del propio Webflow para dar autonomía total al equipo de Marketing sin costos extra ni depender de TI.
 *   **Ingeniería como Marketing:** Las landings no serán estáticas; incrustarán los Demos Interactivos (como la Calculadora de ROI o el Agente IA) para que los CTOs experimenten nuestra capacidad técnica en tiempo real.
 *   **Hiper-Segmentación (ABM):** Crearemos landings clonadas por vertical (Fintech, Retail) para que el mensaje resuene perfectamente con los anuncios de LinkedIn Ads.
 *   **Recolección de Datos (CRO):** Conectaremos Mixpanel y Clarity a estas landings para hacer pruebas A/B. Los datos de conversión dictarán cómo se construirá el rediseño definitivo del sitio corporativo.
@@ -398,6 +392,10 @@ Para ejecutar esta estrategia sin inflar la nÃ³mina corporativa, operaremos ba
 ---
 
 
+
+#### 11. Agencia Externa: "Ya trabajamos con una agencia de campañas. ¿Cómo vas a interactuar con ellos?"
+"Seré su director de orquesta. De inicio, les daré la nueva arquitectura (Landings en Webflow, Lead Scoring y JSON-LD) para que sus anuncios conviertan mejor y auditaré su ROI con Mixpanel. Una vez que la maquinaria interna esté estable, haremos una transición suave para traer todo 'In-House' y ahorrar ese fee mensual."
+
 #### 12. Pregunta de Operaciones (Escalabilidad)
 "Si logro generar 15 leads altamente calificados (SQLs) al mes, ¿el equipo de ventas actual tiene el conocimiento técnico para atender a CTOs, o necesitamos entrenarlos en este nuevo perfil?"
 
@@ -416,7 +414,7 @@ Vamos a dejar de pescar con red para empezar a cazar con arpÃ³n. Mi estrategia
 **Segundo, Aprovechamiento TecnolÃ³gico y Nuevas Mejoras:**
 No vengo a tirar a la basura lo que ya tienen; vengo a hackearlo. Tienen una gran base tÃ©cnica: Webflow, Mixpanel y un SEO estructurado. Lo que harÃ© serÃ¡ inyectar **Agentes IA (MCPs en Python)** directamente en esa infraestructura. 
 
-Vamos a automatizar el *Speed-to-Lead* para responder en menos de 5 minutos, conectaremos el CRM con Jira y Slack para que el traspaso de proyectos sea automÃ¡tico, y enriqueceremos su cÃ³digo (JSON-LD) no solo para Google, sino para dominar el **GEO (Generative Engine Optimization)**. Cuando un directivo busque agencias en Perplexity o ChatGPT, la IA nos va a recomendar a nosotros como la mÃ¡xima autoridad tÃ©cnica, porque nuestro cÃ³digo estarÃ¡ diseÃ±ado para que las IAs lo lean perfectamente.
+Vamos a automatizar el *Speed-to-Lead* para responder en menos de 5 minutos, conectaremos el CRM con Jira y WhatsApp para que el traspaso de proyectos sea automÃ¡tico, y enriqueceremos su cÃ³digo (JSON-LD) no solo para Google, sino para dominar el **GEO (Generative Engine Optimization)**. Cuando un directivo busque agencias en Perplexity o ChatGPT, la IA nos va a recomendar a nosotros como la mÃ¡xima autoridad tÃ©cnica, porque nuestro cÃ³digo estarÃ¡ diseÃ±ado para que las IAs lo lean perfectamente.
 
 **Tercero, Los Logros a Obtener:**
 1. **Volumen Predecible:** Flujo constante de 10 a 15 SQLs (Leads Calificados por Ventas) al mes, enfocados 100% en Mid-Market y Enterprise.
