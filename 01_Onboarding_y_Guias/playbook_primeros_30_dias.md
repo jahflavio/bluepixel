@@ -6,37 +6,41 @@
 ## 🔑 FASE 1: DÍA 1 AL 3 (Auditoría de Accesos y Ecosistema)
 *No puedes optimizar lo que no puedes ver. Tu prioridad es conseguir las llaves del reino.*
 
-**Lo que necesitas pedir (Levanta un ticket a TI o a tu Jefe):**
-- [ ] **CMS:** Acceso Administrador (o Editor Avanzado) a **Webflow**.
-- [ ] **CRM:** Acceso a **HubSpot** (o el CRM que usen) con permisos para ver Pipelines de Ventas y crear Workflows.
-- [ ] **Analítica:** Acceso Administrador a **Google Analytics 4** y **Google Search Console**.
-- [ ] **Pauta (Ads):** Acceso de Lectura a **Google Ads**, **LinkedIn Ads** y Meta Ads (para ver qué hace la agencia externa).
-- [ ] **Comunicación:** Acceso a los canales de Slack/Teams relevantes (Marketing, Ventas, General).
-- [ ] **Dominios:** Pregunta quién tiene el control del DNS (GoDaddy, Cloudflare, etc.) por si necesitas crear el subdominio `go.bluepixel.mx` o verificar dominios.
+**Lo que necesitas asegurar con Leo y TI:**
+- [x] **Analítica & Pauta:** GA4, GTM, Clarity, Meta, TikTok, LinkedIn Ads (Lectura), Looker Studio. *(¡Completado el Día 1!)*
+- [ ] **CMS:** Acceso Administrador (o Editor Avanzado) a **Webflow** (`bluepixel.mx` y `cotiza.bluepixel.mx`).
+- [ ] **Search:** Acceso a **Google Search Console (GSC)** para auditar indexación y palabras clave orgánicas.
+- [ ] **Aliado Interno:** Sincronización y presentación con **Juan Cano** (colaboración estrecha en BluePixel).
+- [ ] **CRM:** Definir e iniciar despliegue (HubSpot / Brevo / Airtable) para cerrar la brecha con ventas y la agencia.
+- [ ] **Licencias de Software:** Confirmar cuentas activas de **Claude (Anthropic)**, ChatGPT Plus/Team o OpenAI API.
+- [ ] **Gestor de Proyectos:** Confirmar si usan **Jira o Trello** para proyectos de desarrollo de clientes.
+- [ ] **Dominios & DNS:** Preguntar quién controla el DNS (GoDaddy / Cloudflare) para subdominios (`api.bluepixel.mx`) y SPF/DMARC de Mandrill.
 
 ---
 
 ## 🗣️ FASE 2: DÍA 4 AL 7 (Mapeo de Aliados y Entrevistas Internas)
 *No impongas la tecnología todavía; primero entiende los dolores de la gente.*
 
-### 1. Entrevista con tu Jefe (Directora / CEO)
-- *"Para asegurarme de que estamos alineados: ¿Cuál es el KPI exacto que dictará si mi primer trimestre (Q1) fue un éxito?"* (Ej. MQLs, SQLs, Costo de Adquisición).
-- *"¿Cuál es el presupuesto mensual exacto (Ad Spend) que tiene la agencia externa actualmente?"*
-- *"¿Existe alguna línea roja que no deba cruzar?"* (Ej. No cambiar el logo, no molestar a los grandes corporativos con spam).
+### 1. Entrevista con María (CEO / Directora) y Leo (Líder de Marketing & Ventas)
+- *"Para asegurarme de que estamos alineados: ¿Cuál es el KPI exacto que dictará si mi primer trimestre (Q1) fue un éxito?"* (Ej. SQLs, Contratos Build, Retainers Evolve).
+- *"¿Cuál es el presupuesto mensual exacto (Ad Spend) asignado a la agencia Rocketing?"*
+- *"En cuanto al contenido institucional con María y Leo: ¿Qué disponibilidad semanal tienen para grabar cápsulas de 'Pixel contra el mundo'?"*
 
-### 2. Entrevista con Ventas (Tus clientes internos)
-- *"¿Cuál es la queja número #1 que tienen de los leads que les llegan de la web?"*
-- *"De los campos que el cliente llena en el formulario, ¿cuál es el que realmente les dice a ustedes si el cliente tiene dinero o no?"* (Esto será la base de tu Lead Scoring).
-- *"Actualmente, ¿cuánto tiempo tardan en contactar a un lead desde que llena el formulario?"* (Aquí mides el Speed-to-lead actual).
+### 2. Sincronización con Juan Cano (Operaciones & Tecnología Interna)
+- *"Juan, ¿cuáles son los procesos o herramientas actuales que más fricción te generan en la operación técnica?"*
+- *"¿Qué automatizaciones internas tienen ya activas y en qué plataformas residen (Make, Zapier, scripts propios)?"*
 
-### 3. Entrevista con la Agencia Externa
-- Preséntate como un aliado estratégico, no como una amenaza.
-- *"Hola equipo, mi rol es ayudarles a que sus campañas conviertan mejor optimizando la web. ¿Me pueden compartir su último reporte de rendimiento y cuál es el CPA (Costo por Adquisición) que están manejando?"*
-- Pídeles la lista de las **Keywords** (Palabras clave) exactas que están comprando en Google Ads.
+### 3. Coordinación con la Agencia Externa (Rocketing)
+- **Lydia Marisela Calderón Garza ("Marily"):** Canal de gestión de todos los pendientes operativos y entregables diarios.
+- **Diana Cardoso (Paid Media):** Solicitar el listado de *Search Terms* reales y palabras clave negativas en Google Ads.
+- **Daniel Arias (SEO):** Revisar reportes de Semrush y Ubersuggest y auditar canibalización de keywords entre `bluepixel.mx` y `cotiza.bluepixel.mx`.
+- **Jessica Blanco & Sergio Blanco (Contenidos & Video):** Revisar escaleta de *"Pixel contra el mundo"* y coordinar edición de los clips del taller de agentización.
+- **René (Diseño Gráfico):** Estandarizar formatos visuales y plantillas para anuncios y carruseles.
+- **Roberto Carro Maciel (Dirección Rocketing):** Relación institucional de alto nivel con Leo y María.
 
-### 4. Entrevista con TI / Desarrollo
-- *"¿Cómo manejan los pases a producción en la web principal?"*
-- *"¿Tienen algún problema con que yo inyecte scripts de tracking (Google Tag Manager / Clarity) en el Head de Webflow?"*
+### 4. Taller con Cliente Real (Viernes 11:00 AM - 2:00 PM)
+- Grabar toda la sesión con Sergio y Jessica.
+- Transcribir la Voz del Cliente (*Voice of Customer*) para alimentar copys, anuncios de Google y el Agente MCP.
 
 ---
 

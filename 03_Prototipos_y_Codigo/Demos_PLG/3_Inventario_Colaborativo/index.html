@@ -37,8 +37,12 @@
             100% { background-color: transparent; color: inherit; transform: scale(1); }
         }
     </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="flex items-center justify-center min-h-screen relative bg-slate-100">
+
+    <!-- Return to Hub button -->
+    <a href="../index.html" class="fixed top-4 left-4 z-50 bg-slate-900/90 hover:bg-slate-800 text-white text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-700 shadow-md flex items-center gap-2 transition">
+        <i class="fa-solid fa-house"></i> <span>Volver al Hub</span>
+    </a>
 
     <!-- Mobile Container -->
     <div class="bg-white w-full max-w-md h-[800px] max-h-screen shadow-2xl overflow-hidden relative md:rounded-3xl border-8 border-slate-800 flex flex-col">

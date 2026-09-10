@@ -18,18 +18,25 @@
 
 ## 👥 2. EL EQUIPO: QUÉ HABLAR Y CON QUIÉN
 
-### 🤝 Con Mario (Recursos Humanos)
-*   **Tu objetivo:** Onboarding administrativo sin fricciones.
-*   **La petición clave:** *"Mario, necesito que mi equipo tenga **Permisos de Administrador Local**. Usaré entornos de Python y APIs; si TI me bloquea la máquina, me retrasarán diario."*
-*   **Dudas a resolver:** Horarios, días presenciales/híbridos, esquema de comunicación oficial (Slack/Teams).
+### 👑 Con María (Directora General / CEO)
+*   **Tu objetivo:** Conectar con su visión de negocio de alto nivel.
+*   **Contexto clave:** Ya tiene canales digitales propios; será la voz de autoridad en los nuevos formatos de video (*"Pixel contra el mundo"*).
 
-### 🧠 Con Leonardo (Marketing y Ventas - Tu Entrevistador/Jefe)
-*   **Tu objetivo:** Posicionarte como el "Director de Orquesta" técnico, no como un mercadólogo tradicional.
-*   **Las peticiones clave:**
-    1.  **Las Llaves:** Accesos a HubSpot, Webflow, GA4, GSC, LinkedIn Ads.
-    2.  **El Shadowing:** *"Leo, quiero entrar de oyente (silenciado) a 2 o 3 llamadas de ventas esta semana para escuchar cómo hablan los CTOs y mejorar nuestros anuncios."*
-    3.  **Los KPIs (Metas):** *"Para que en diciembre me digas que la rompí, ¿qué métrica exacta quieres ver? (¿Costo por lead, MQLs, SQLs?)"*
-*   **Agencia Externa:** Pide que te presenten con ellos. Tú vas a orquestar el SEO/Conversión, y ellos van a ejecutar las campañas de pago (Ads).
+### 🧠 Con Leonardo "Leo" (Líder de Marketing y Ventas - Tu Jefe Directo)
+*   **Tu objetivo:** Resolver sus dos grandes dolores de negocio: **Adquisición** y **Conversión**.
+*   **Su visión clave:** Quiere convertir a BluePixel en un **partner a largo plazo** para los clientes (*modelo Evolve / Retainers*), agentizar la web con una experiencia interactiva estilo `vstorm.co` impulsada por un **MCP BluePixel**, y redefinir el formulario de contacto.
+*   **Descubrimiento clave:** BluePixel **no tiene un CRM formal** hoy en día. Tu prioridad técnica es estructurar este pipeline para alimentar a ventas y darle retroalimentación a la agencia.
+
+### 🤝 Con Mario (Recursos Humanos)
+*   **Tu objetivo:** Onboarding administrativo sin fricciones y permisos de Administrador Local en tu máquina.
+
+### 🚀 Con la Agencia Externa (Rocketing - Jessica Blanco y equipo)
+*   **Tu objetivo:** Orquestar y auditar su trabajo sin fricción política, para absorber (*insource*) sus funciones a mediano y largo plazo.
+*   **Jessica Blanco (Contenidos):** Propuesta de formatos *"Pixel contra el mundo"* y *"Pixel News"* (videos largos + YouTube Shorts / TikTok). Participará en pantalla con un tono más cómico y relajado para balancear la parte técnica de Leo y María.
+*   **Pauta actual:** Manejan Google Ads (solo Search en 9 landings de `cotiza.bluepixel.mx`), Meta (remarketing micro-budget) y pausaron LinkedIn Ads.
+*   **Ritual clave:** Los lunes a las 4:00 PM se revisa el Looker Studio actualizado.
+
+> 📄 **Documento Maestro Completo:** Consulta [ESTRATEGIA_MAESTRA_BLUEPIXEL_2026.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/ESTRATEGIA_MAESTRA_BLUEPIXEL_2026.md) para ver la arquitectura viva del proyecto.
 
 ---
 

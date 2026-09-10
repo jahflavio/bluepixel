@@ -76,18 +76,23 @@
             </div>
         </div>
         
-        <div class="relative">
-            <!-- Tooltip Onboarding -->
-            <div id="onboarding-tooltip" class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-center space-x-2 w-max">
-                <span>Haz clic para Refactorizar 👇</span>
-                <button onclick="closeTooltip(event)" class="ml-2 hover:text-emerald-200"><i class="fa-solid fa-xmark"></i></button>
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-t-[8px] border-t-emerald-600 border-r-[8px] border-r-transparent"></div>
-            </div>
+        <div class="flex items-center gap-3">
+            <div class="relative">
+                <!-- Tooltip Onboarding -->
+                <div id="onboarding-tooltip" class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg pulse-tooltip z-20 flex items-center space-x-2 w-max">
+                    <span>Haz clic para Refactorizar 👇</span>
+                    <button onclick="closeTooltip(event)" class="ml-2 hover:text-emerald-200"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-t-[8px] border-t-emerald-600 border-r-[8px] border-r-transparent"></div>
+                </div>
 
-            <button id="btn-refactor" onclick="refactorCode()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded font-bold shadow-lg shadow-emerald-600/20 transition flex items-center space-x-2">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Optimizar Deuda Técnica</span>
-            </button>
+                <button id="btn-refactor" onclick="refactorCode()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded font-bold shadow-lg shadow-emerald-600/20 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Optimizar Deuda Técnica</span>
+                </button>
+            </div>
+            <a href="../index.html" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 text-xs bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded border border-slate-700">
+                <i class="fa-solid fa-house"></i> <span>Volver al Hub</span>
+            </a>
         </div>
     </header>
 

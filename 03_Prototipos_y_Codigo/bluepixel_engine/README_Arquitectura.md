@@ -29,6 +29,18 @@ A continuación se detalla para qué sirve cada archivo y cómo lo puedes explic
 *   **Para qué sirve:** Para demostrar que tu servidor funciona sin necesidad de tener Webflow todavía.
 *   **Qué hace:** Es un script que le dispara al `main.py` dos leads falsos: Uno Enterprise (CTO de Kavak) y uno Basura (Estudiante de Mi Tiendita), para ver cómo reacciona el sistema y demostrarle a TI que el algoritmo no se equivoca.
 
+### 🚀 Cómo Ejecutar el Motor Localmente:
+```bash
+# 1. Instalar dependencias
+pip install -r requirements.txt
+
+# 2. Iniciar el servidor FastAPI (puerto 8080)
+uvicorn main:app --port 8080 --reload
+
+# 3. En otra terminal, disparar los leads de prueba
+python test_webhook.py
+```
+
 ---
 
 ## 2. Herramientas de Auditoría Técnica

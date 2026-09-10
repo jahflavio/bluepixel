@@ -19,13 +19,19 @@ lead_2 = {
     "intent_action": "Descargar PDF"
 }
 
-print(f"Probando Lead 1 (Enterprise): {lead_1['email']}")
-r1 = requests.post(url, json=lead_1)
-print(json.dumps(r1.json(), indent=2))
+try:
+    print(f"Probando Lead 1 (Enterprise): {lead_1['email']}")
+    r1 = requests.post(url, json=lead_1, timeout=5)
+    print(json.dumps(r1.json(), indent=2))
 
-print("\n--------------------------\n")
+    print("\n--------------------------\n")
 
-print(f"Probando Lead 2 (Basura): {lead_2['email']}")
-r2 = requests.post(url, json=lead_2)
-print(json.dumps(r2.json(), indent=2))
+    print(f"Probando Lead 2 (Basura): {lead_2['email']}")
+    r2 = requests.post(url, json=lead_2, timeout=5)
+    print(json.dumps(r2.json(), indent=2))
+except requests.exceptions.ConnectionError:
+    print(f"\n[ERROR] No se pudo conectar con el servidor en {url}.")
+    print("Asegúrate de iniciar el motor primero con:")
+    print("  uvicorn main:app --port 8080 --reload\n")
+
 

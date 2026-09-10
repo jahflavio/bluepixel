@@ -50,9 +50,14 @@
 <body class="flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
     
     <!-- Navbar -->
-    <nav class="absolute top-0 w-full p-6 flex justify-between items-center">
+    <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-20">
         <div class="font-bold text-xl tracking-tighter">BP_AUDITOR</div>
-        <div class="text-xs font-medium text-slate-400 border border-slate-200 px-3 py-1 rounded-full">Herramienta B2B Exclusiva</div>
+        <div class="flex items-center gap-3">
+            <div class="text-xs font-medium text-slate-400 border border-slate-200 px-3 py-1 rounded-full hidden sm:inline">Herramienta B2B Exclusiva</div>
+            <a href="../index.html" class="text-xs font-medium text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-400 px-3 py-1 rounded-full transition flex items-center gap-1.5 bg-white/80">
+                <i class="fa-solid fa-house"></i> <span>Volver al Hub</span>
+            </a>
+        </div>
     </nav>
 
     <!-- Buscador Inicial -->
