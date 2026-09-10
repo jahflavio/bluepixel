@@ -5,7 +5,6 @@
 **Organización:** BluePixel (`bluepixel.mx` | `cotiza.bluepixel.mx`)  
 **Fecha de Consolidación:** Septiembre, 2026 (Operación Día 1)  
 **Repositorio GitHub:** [`jahflavio/bluepixel`](https://github.com/jahflavio/bluepixel.git) | Rama `main`  
-**Visor Gráfico Interactivo:** [Abrir VISOR_GRAFICO_ESTRATEGIA_2026.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/VISOR_GRAFICO_ESTRATEGIA_2026.html)
 
 ---
 
@@ -41,7 +40,31 @@ A partir de las reuniones de inducción con Dirección y la agencia externa (**R
 
 ---
 
-### 1.3 Matriz Gráfica de Comunicación y Gobernanza con Rocketing
+### 1.3 Matriz de Comunicación y Gobernanza: BluePixel ⇄ Rocketing
+
+```mermaid
+graph TD
+    Fabian["Fabián Flores - Head of Growth"] <-->|"Coordinación Diaria"| Marily["Lydia Marisela Calderón (Marily)"]
+    
+    Marily -->|"Pauta Pagada"| Diana["Diana Cardoso - Ads"]
+    Marily -->|"SEO & Keywords"| Daniel["Daniel Arias - SEO"]
+    Marily -->|"Creatividad & Guiones"| Jessica["Jessica Blanco - Contenidos"]
+    Marily -->|"Diseño Visual"| Rene["René - Diseño Gráfico"]
+    
+    Jessica -->|"Grabación & Edición"| Sergio["Sergio Blanco - Video"]
+    
+    Fabian -.->|"Estrategia & Fee"| Roberto["Roberto Carro Maciel - Dir. Rocketing"]
+    Leo["Leonardo Flores - BluePixel"] <--> Roberto
+    Maria["María - CEO BluePixel"] <--> Roberto
+
+    classDef bp fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef rock fill:#1f2937,stroke:#9ca3af,stroke-width:2px,color:#ffffff;
+    classDef lead fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+
+    class Fabian,Leo,Maria bp;
+    class Diana,Daniel,Jessica,Rene,Sergio,Roberto rock;
+    class Marily lead;
+```
 
 ![Matriz de Gobernanza Rocketing](diagramas/matriz_rocketing.svg)
 
@@ -129,7 +152,29 @@ Leo (Líder de Tech/Ventas) identificó acertadamente que el formulario tradicio
 
 ---
 
-### 3.2 Arquitectura Gráfica del Agente MCP BluePixel
+### 3.2 Arquitectura del Asistente MCP BluePixel
+
+```mermaid
+graph TD
+    User["Visitante Ejecutivo (CTO / CEO)"] -->|"Ingresa reto de software"| Widget["Widget Webflow (cotiza.bluepixel.mx)"]
+    Widget -->|"Consulta Restringida"| MCP["Servidor MCP BluePixel"]
+    
+    subgraph Servidor_MCP["Servidor MCP BluePixel (Base de Conocimiento)"]
+        KB1["1. Catálogo Oficial (Build vs Evolve)"]
+        KB2["2. Filtro Presupuestal (+300k MXN)"]
+        KB3["3. Casos STAR-ROI (Avianca, Bimbo, RadioShack)"]
+        KB4["4. Stack Tecnológico (React, Node, Python, LLMs)"]
+    end
+    
+    MCP --> KB1
+    MCP --> KB2
+    MCP --> KB3
+    MCP --> KB4
+    
+    MCP -->|"Diagnóstico Técnico Consultivo"| Widget
+    Widget -->|"Lead Calificado (Score >= 90)"| Slack["Alerta Inmediata Slack Ventas (menos de 5 min)"]
+    Widget -->|"Agendamiento Directo"| LeoCal["Calendario de Leonardo Flores / María"]
+```
 
 ![Arquitectura del Asistente MCP BluePixel](diagramas/arquitectura_mcp.svg)
 
@@ -166,9 +211,68 @@ En ciclos de venta Enterprise de 3 a 6 meses, el modelo de "último clic" es obs
 
 ## ⚡ CAPÍTULO 4: EL EMBUDO B2B Y MOTOR REVOPS (FULL-FUNNEL)
 
+```mermaid
+graph TD
+    subgraph Top_of_Funnel_Adquisicion["Top of Funnel: Adquisición"]
+        A["Tráfico Pauta: Google Search + LinkedIn ABM"] --> B["Visitantes Anónimos en Landings"]
+        B -->|"Clearbit Reveal API"| C["Visitantes Perfilados por Industria"]
+    end
+
+    subgraph Middle_of_Funnel_Captura["Middle of Funnel: Scoring & Calificación"]
+        C -->|"Demos PLG o Asistente MCP"| D["Captura de Lead"]
+        D -->|"Apollo API + Motor Python"| E["Enriquecimiento Automático"]
+        E -->|"HubSpot CRM"| F["Lead Scoring Predictivo (100 pts)"]
+        F -->|"Score menor a 90"| Nurture["Nurturing Automático por Correo"]
+    end
+
+    subgraph Bottom_of_Funnel_Conversion["Bottom of Funnel: Conversión"]
+        F -->|"Score mayor o igual a 90"| I["Slack Alert Ventas (menos de 5 min)"]
+        I --> J["Reunión Técnica Discovery con Leo"]
+        J --> K["Propuesta STAR-ROI & Cierre BUILD"]
+        Nurture -.-> I
+    end
+
+    subgraph Post_Venta_Retencion["Post Venta: Handoff & Modelo Evolve"]
+        K -->|"Trato Closed/Won en CRM"| M["Handoff Automatizado (Drive + Jira + Slack)"]
+        M -->|"Desarrollo Inicia sin Fricción"| N["Onboarding Operativo Cero Touch"]
+        N -->|"QBRs Conductuales (Mixpanel & Clarity)"| O["Retainers Evolve Recurrentes"]
+    end
+
+    classDef tofu fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef mofu fill:#581c87,stroke:#a855f7,stroke-width:2px,color:#ffffff;
+    classDef bofu fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef close fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    class A,B,C tofu;
+    class D,E,F,Nurture mofu;
+    class I,J,K bofu;
+    class M,N,O close;
+```
+
 ![El Embudo B2B y Motor RevOps](diagramas/embudo_revops.svg)
 
-### 4.1 Inventario de Inyección Interactiva en las 9 Landings (`cotiza.bluepixel.mx`)
+---
+
+### 4.1 Flujo de Handoff Técnico y Cero Fricción
+
+```mermaid
+sequenceDiagram
+    participant CRM as CRM (HubSpot / Sheets)
+    participant Engine as Motor RevOps (Python)
+    participant Sales as Ventas (Slack / WhatsApp)
+    participant Dev as Ingeniería (Jira & Drive)
+    
+    Note over CRM: Trato marcado como 'Closed/Won'
+    CRM->>Engine: Dispara Webhook de Cierre
+    Engine->>Sales: Notifica confirmación y kickoff en canal #ventas
+    Engine->>Dev: Clona jerarquía estándar en Google Drive
+    Engine->>Dev: Genera tablero y backlog inicial en Jira
+    Note over Sales,Dev: Transición completada en 30 segundos sin fricción
+```
+
+---
+
+### 4.2 Inventario de Inyección Interactiva en las 9 Landings (`cotiza.bluepixel.mx`)
 
 | Landing Page Activa | Servicio Core | Problema Actual | Inyección Interactiva (Demo PLG) |
 | :--- | :--- | :--- | :--- |
@@ -184,7 +288,7 @@ En ciclos de venta Enterprise de 3 a 6 meses, el modelo de "último clic" es obs
 
 ---
 
-### 4.2 Arquitectura de Nurturing Automatizado (3 Flujos de Mailing)
+### 4.3 Arquitectura de Nurturing Automatizado (3 Flujos de Mailing)
 1. **Flujo 1: Leads No Calificados o Fríos (Score < 90):**
    * *Objetivo:* Mantener a BluePixel en el Top of Mind sin gastar el tiempo del cerrador.
    * *Contenido:* Casos técnicos de arquitectura STAR-ROI (Avianca, Bimbo), whitepapers sobre arquitecturas Serverless y guías Headless.
@@ -218,6 +322,27 @@ La propuesta de Jessica Blanco de producir *"Pixel contra el mundo"* y *"Pixel N
 
 ## 📈 CAPÍTULO 6: ROADMAP DE ABSORCIÓN GRADUAL DE ROCKETING (12 MESES)
 
+```mermaid
+gantt
+    title Cronograma de Absorcion e Insourcing Rocketing 2026-2027
+    dateFormat YYYY-MM-DD
+    section Q1 Co-Ejecucion y CRM
+    Setup CRM y Webhook RevOps         :active, 2026-09-15, 30d
+    Auditoria Looker Studio y Keywords :2026-09-15, 20d
+    Taller VOC y Contenido Inicial     :2026-09-11, 15d
+    section Q2 Insourcing Search y CRO
+    Optimizacion 9 Landings con Demos  :2026-10-15, 45d
+    Insourcing Google Ads Search       :2026-11-01, 45d
+    Primer recorte de Fee a Rocketing  :2026-12-01, 15d
+    section Q3 ABM y Autoridad
+    Lanzamiento LinkedIn Ads ABM       :2027-01-01, 45d
+    Produccion In-House Pixel News     :2027-01-15, 60d
+    Despliegue Agente MCP Produccion   :2027-02-01, 45d
+    section Q4 Independencia Total
+    Transicion 100 por ciento In-House :2027-04-01, 45d
+    Ahorro total del Fee de Agencia    :2027-05-15, 30d
+```
+
 ![Roadmap de Absorción Gradual de Rocketing](diagramas/roadmap_gantt.svg)
 
 Para cumplir la meta directiva de absorber las funciones de Rocketing protegiendo la generación de ingresos, se ejecuta la transición por fases:
@@ -243,7 +368,18 @@ Para cumplir la meta directiva de absorber las funciones de Rocketing protegiend
 
 ## 💰 CAPÍTULO 7: FINANZAS, OPEX TECNOLÓGICO Y PRESUPUESTOS
 
-### 7.1 Costos Mensuales de Software (OPEX de RevOps)
+### 7.1 Distribución Estratégica del Presupuesto Pauta (ABM)
+
+```mermaid
+pie title Distribución Estratégica del Presupuesto B2B
+    "LinkedIn Ads (ABM Outbound a CTOs)" : 50
+    "Google Ads (Search Demand Capture)" : 35
+    "Infraestructura IA, Servidor MCP y APIs" : 15
+```
+
+---
+
+### 7.2 Costos Mensuales de Software (OPEX de RevOps)
 Para operar la maquinaria con código propio en lugar de costosas plataformas empresariales de caja cerrada:
 *   **Apollo.io API (Enriquecimiento B2B):** ~$149 USD/mes (Tier Organization con acceso API para que el motor en Python perfile leads en milisegundos).
 *   **Clearbit Reveal (Desanonimización de IPs):** ~$150 - $250 USD/mes (Personalización dinámica de landings según la empresa visitante).
@@ -253,7 +389,7 @@ Para operar la maquinaria con código propio en lugar de costosas plataformas em
 
 ---
 
-### 7.2 Escenarios de Inversión Mensual (Pauta + Software)
+### 7.3 Escenarios de Inversión Mensual (Pauta + Software)
 
 1. **Escenario Mínimo ($1,500 - $3,000 USD/mes) - "Validación y Eficiencia":**
    * *Alcance:* Herramientas base + pauta quirúrgica en Google Search.
