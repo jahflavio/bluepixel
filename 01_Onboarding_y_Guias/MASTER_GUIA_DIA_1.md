@@ -50,6 +50,12 @@ Ambas sirven para obtener datos de empresas a partir de un correo electrónico, 
 *   **Apollo.io (Outbound):** La usaremos para cazar. Si Ventas necesita contactar a 500 CTOs en Monterrey, Apollo nos da sus teléfonos y correos para lanzarles campañas en frío.
 *   **La Estrategia de Presupuesto (Dile esto a Leo):** *"No necesitamos comprar licencias premium hoy. Ya creé cuentas de Desarrollador gratuitas (Freemium) en Apollo y Clearbit, las conecté a mi código en Python y nos dan créditos de sobra para hacer nuestro Piloto / Prototipo."*
 
+### Notion vs. HubSpot (Nuestra Postura Oficial de CRM)
+Si en el equipo surge la idea de usar **Notion como CRM**, tu postura técnica es clara:
+*   **Notion:** Excelente para documentación interna, minutas, wikis de equipo y manuales de producto.
+*   **HubSpot (Free/Starter):** Obligatorio para CRM. Notion no se conecta con Google Ads, no hace Lead Scoring automático, no registra correos con Gmail ni envía alertas en menos de 5 minutos.
+*   **Argumento para Leo:** *"Arrancamos con HubSpot Free a costo cero ($0 MXN). Nos da pipeline visual, integración con Webflow y retroalimentación para Rocketing sin gastar presupuesto."*
+
 ---
 
 ## 🔥 4. EL "FLEX" TÉCNICO (Tus Ases bajo la manga)
