@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Gráfico - Estrategia Maestra BluePixel 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-body: #0a0f1d;
+            --bg-card: rgba(18, 26, 47, 0.85);
+            --bg-card-hover: rgba(28, 38, 68, 0.95);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(59, 130, 246, 0.35);
+            --primary: #3b82f6;
+            --primary-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+            --accent: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.12) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 30px 40px;
+            background: rgba(10, 15, 29, 0.7);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 40%, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #34d399;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.8; }
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .tab-btn.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.18);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--border-glow);
+        }
+
+        .card-header {
+            margin-bottom: 24px;
+        }
+
+        .card-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .diagram-container {
+            background: rgba(10, 15, 29, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            margin: 6px 0;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .pill-blue { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+        .pill-emerald { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+        .pill-amber { background: rgba(245, 158, 11, 0.2); color: #fde68a; }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            margin-top: 14px;
+        }
+
+        table.data-table th, table.data-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        table.data-table th {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+        }
+
+        table.data-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .chart-box {
+            position: relative;
+            height: 320px;
+            width: 100%;
+        }
+
+        /* Mermaid styling override */
+        .mermaid {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .alert-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                    <h1>BLUEPIXEL • VISOR GRÁFICO 2026</h1>
+                    <span class="badge-live"><span class="pulse-dot"></span> Sincronizado en GitHub</span>
+                </div>
+                <p>Estrategia Maestra de Crecimiento B2B, Agentización MCP, Orquestación de Rocketing y Retención Continua</p>
+            </div>
+            <div class="nav-actions">
+                <a href="../03_Prototipos_y_Codigo/Demos_PLG/index.html" class="btn btn-secondary">← Hub Demos PLG</a>
+                <a href="ESTRATEGIA_MAESTRA_BLUEPIXEL_2026.md" class="btn btn-secondary">Ver Markdown Original</a>
+                <button onclick="window.print()" class="btn btn-primary">Imprimir / PDF</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <div class="alert-box">
+            💡 <strong>Modo Visor Gráfico Activo:</strong> Todos los diagramas de flujo, arquitecturas de software, organigramas de agencia y cronogramas Gantt se renderizan dinámicamente con gráficos vectoriales (SVG). También puedes abrir la vista previa nativa en tu editor con <code>Ctrl + Shift + V</code>.
+        </div>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab('tab-org')">👥 1. Organigrama & Rocketing</button>
+            <button class="tab-btn" onclick="switchTab('tab-mcp')">🤖 2. Arquitectura Agente MCP</button>
+            <button class="tab-btn" onclick="switchTab('tab-funnel')">⚡ 3. Embudo Full-Funnel RevOps</button>
+            <button class="tab-btn" onclick="switchTab('tab-gantt')">📅 4. Roadmap Absorción (12 Meses)</button>
+            <button class="tab-btn" onclick="switchTab('tab-kpis')">📊 5. Métricas & Presupuesto</button>
+        </nav>
+
+        <!-- TAB 1: ORGANIGRAMA -->
+        <div id="tab-org" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Matriz de Escalación y Comunicación BluePixel ⇄ Rocketing</h2>
+                    <p>Canales oficiales de gobernanza diaria para asegurar que la agencia ejecute según la visión de Leo y María.</p>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
+graph TD
+    Fabian["Fabián Flores<br/><b>Head of Growth & RevOps</b>"] <-->|"Coordinación Diaria y Pendientes"| Marily["Lydia Marisela Calderón (Marily)<br/><b>Líder de Cuenta Rocketing</b>"]
+    
+    Marily -->|"Pauta Pagada (Search & FB)"| Diana["Diana Cardoso<br/><b>Paid Media Specialist</b>"]
+    Marily -->|"SEO & Keywords Técnicas"| Daniel["Daniel Arias<br/><b>Especialista SEO</b>"]
+    Marily -->|"Creatividad & Guiones"| Jessica["Jessica Blanco<br/><b>Creativa & Contenidos</b>"]
+    Marily -->|"Diseño Visual & Banners"| Rene["René<br/><b>Diseñador Gráfico</b>"]
+    
+    Jessica -->|"Grabación & Edición de Video"| Sergio["Sergio Blanco<br/><b>Cámara & Postproducción</b>"]
+    
+    Fabian -.->|"Estrategia & Desempeño de Fee"| Roberto["Roberto Carro Maciel<br/><b>Director General Rocketing</b>"]
+    Leo["Leonardo Flores<br/><b>MKT, Ventas & Producto</b>"] <--> Roberto
+    Maria["María<br/><b>Directora General / CEO</b>"] <--> Roberto
+
+    classDef bp fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef rock fill:#1f2937,stroke:#9ca3af,stroke-width:2px,color:#ffffff;
+    classDef lead fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+
+    class Fabian,Leo,Maria bp;
+    class Diana,Daniel,Jessica,Rene,Sergio,Roberto rock;
+    class Marily lead;
+                    </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Directorio Operativo de Rocketing</h2>
+                    <p>Roles identificados en el Día 1 y vías de interacción</p>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Especialista</th>
+                            <th>Rol</th>
+                            <th>Entregable Clave</th>
+                            <th>Canal de Contacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lydia Marisela Calderón ("Marily")</strong></td>
+                            <td><span class="pill pill-emerald">Líder de Cuenta</span></td>
+                            <td>Reportes de lunes 4:00 PM, asignación de tareas, seguimiento de minutas</td>
+                            <td>Contacto primario diario</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diana Cardoso</strong></td>
+                            <td><span class="pill pill-blue">Pauta Pagada (Ads)</span></td>
+                            <td>Campañas Google Search, Facebook/Meta Ads, optimización de CPA</td>
+                            <td>Vía Marily / Juntas de desempeño</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daniel Arias</strong></td>
+                            <td><span class="pill pill-blue">Especialista SEO</span></td>
+                            <td>Search Console, Core Web Vitals, auditoría de keywords B2B</td>
+                            <td>Vía Marily / Auditorías técnicas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jessica Blanco</strong></td>
+                            <td><span class="pill pill-amber">Creatividad y Contenidos</span></td>
+                            <td>Guiones de video, estrategia de contenidos, copywriting</td>
+                            <td>Vía Marily / Grabaciones presenciales</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sergio Blanco</strong></td>
+                            <td><span class="pill pill-amber">Video y Fotografía</span></td>
+                            <td>Grabación presencial, edición y clips para YouTube/TikTok/LinkedIn</td>
+                            <td>Vía Jessica y Marily</td>
+                        </tr>
+                        <tr>
+                            <td><strong>René</strong></td>
+                            <td><span class="pill pill-blue">Diseño Gráfico</span></td>
+                            <td>Banners publicitarios, infografías y assets para landings</td>
+                            <td>Vía Marily (tickets)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Roberto Carro Maciel</strong></td>
+                            <td><span class="pill pill-emerald">Director General Rocketing</span></td>
+                            <td>Alineación estratégica general, revisión de contrato y fee</td>
+                            <td>Canal directo de María y Leo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 2: AGENTE MCP -->
+        <div id="tab-mcp" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Arquitectura del Asistente Interactivo Web (Inspirado en vstorm.co)</h2>
+                    <p>Blindado contra alucinaciones mediante un servidor MCP (Model Context Protocol) local de BluePixel.</p>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
+graph TD
+    User["Visitante Ejecutivo<br/>(CTO / CEO / Product Manager)"] -->|"Ingresa reto de software / IA"| Widget["Widget Interactivo en Webflow<br/><b>cotiza.bluepixel.mx</b>"]
+    Widget -->|"Consulta Restringida"| MCP["Servidor MCP BluePixel<br/><b>(Solo Datos Oficiales de BluePixel)</b>"]
+    
+    subgraph Base_de_Conocimiento_Oficial["Base de Conocimiento Blindada"]
+        KB1["Servicios Oficiales: Build vs Evolve"]
+        KB2["Filtro Presupuestal: Ticket Mínimo +$300k MXN"]
+        KB3["Casos de Éxito STAR-ROI: Avianca, Bimbo, RadioShack"]
+        KB4["Stack Tecnológico: React, Node, Python, Cloud, LLMs"]
+    end
+    
+    MCP --> KB1
+    MCP --> KB2
+    MCP --> KB3
+    MCP --> KB4
+    
+    MCP -->|"Diagnóstico Técnico Consultivo en Segundos"| Widget
+    Widget -->|"Lead Calificado (Score >= 90)"| Slack["Alerta Inmediata a Slack Ventas<br/>(Respuesta en menos de 5 minutos)"]
+    Widget -->|"Agendamiento Directo de Discovery"| LeoCal["Calendario de Leonardo Flores / María"]
+
+    classDef user fill:#374151,stroke:#9ca3af,color:#fff;
+    classDef widget fill:#1e40af,stroke:#60a5fa,color:#fff;
+    classDef mcp fill:#065f46,stroke:#34d399,color:#fff;
+    classDef alert fill:#991b1b,stroke:#f87171,color:#fff;
+
+    class User user;
+    class Widget widget;
+    class MCP mcp;
+    class Slack,LeoCal alert;
+                    </pre>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>El Modelo BUILD vs EVOLVE</h2>
+                        <p>Cómo transformar clientes de proyectos aislados a retainers continuos</p>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Dimensión</th>
+                                <th>Build (Proyecto Inicial)</th>
+                                <th>Evolve (Partner Continuo)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Objetivo</strong></td>
+                                <td>Lanzamiento de MVP / Plataforma nueva</td>
+                                <td>Optimización, IA, features y soporte mensual</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Facturación</strong></td>
+                                <td>Hito cerrado ($300k - $900k MXN)</td>
+                                <td>Retainer mensual recurrente ($60k - $150k/mes)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Margen</strong></td>
+                                <td>30% - 40%</td>
+                                <td><strong>65% - 75%</strong> (Alta retención)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gobernanza</strong></td>
+                                <td>Sprints cerrados</td>
+                                <td>Squad dedicado + QBRs trimestrales</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Simulador de Calificación en Tiempo Real</h2>
+                        <p>Lógica del Lead Scoring de <code>bluepixel_engine</code></p>
+                    </div>
+                    <div class="stat-card" style="margin-bottom: 14px;">
+                        <span class="stat-label">Criterio 1: Presupuesto Declarado</span>
+                        <div class="stat-val">+40 Pts</div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Si selecciona +$300k MXN o equivalente corporativo</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Criterio 2: Cargo Ejecutivo (Apollo API)</span>
+                        <div class="stat-val">+35 Pts</div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">CTO, VP of Engineering, Head of Digital, CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: EMBUDO REVOPS -->
+        <div id="tab-funnel" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Arquitectura Integral del Embudo B2B (Full-Funnel)</h2>
+                    <p>Desde el primer clic en Google/LinkedIn hasta el onboarding sin fricción en Jira y Slack.</p>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
+graph TD
+    subgraph TOFU["Top of Funnel: Adquisición"]
+        Ads["Tráfico Pauta:<br/>Google Search + LinkedIn ABM"] --> Landings["9 Landing Pages Especializadas<br/>(cotiza.bluepixel.mx)"]
+        Landings --> Demos["10 Demos Interactivas PLG<br/>(Calculadoras, Agente, Scoring)"]
+    end
+
+    subgraph MOFU["Middle of Funnel: Calificación & Scoring"]
+        Demos --> Engine["Motor RevOps Python<br/>(bluepixel_engine)"]
+        Engine --> Apollo["Enriquecimiento Apollo API<br/>(Cargo, Tamaño, Industria)"]
+        Apollo --> Scoring["Lead Scoring Algorítmico<br/>(0 a 100 Puntos)"]
+    end
+
+    subgraph BOFU["Bottom of Funnel: Conversión & Handoff"]
+        Scoring -->|"Score >= 90 (Lead VIP)"| SlackRev["Alerta Inmediata Slack Sales<br/>Llamada en menos de 5 min"]
+        Scoring -->|"Score < 90"| Nurture["Secuencia Nurturing Automatizada<br/>Casos de Estudio STAR"]
+        SlackRev --> Discovery["Sesión de Discovery Técnico<br/>con Leonardo Flores"]
+        Discovery --> Won["Cierre de Trato Closed/Won"]
+        Won --> Handoff["Handoff Automatizado:<br/>Crea Jira + Carpeta Drive + Canal Slack"]
+    end
+
+    classDef tofu fill:#1e3a8a,stroke:#3b82f6,color:#fff;
+    classDef mofu fill:#701a75,stroke:#d946ef,color:#fff;
+    classDef bofu fill:#065f46,stroke:#10b981,color:#fff;
+
+    class Ads,Landings,Demos tofu;
+    class Engine,Apollo,Scoring mofu;
+    class SlackRev,Discovery,Won,Handoff bofu;
+                    </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Flujo de Handoff Técnico y Cero Fricción</h2>
+                    <p>Eliminación del desfase histórico entre Ventas y Desarrollo</p>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
+sequenceDiagram
+    participant CRM as CRM (HubSpot / Sheets)
+    participant Engine as Motor RevOps (Python)
+    participant Sales as WhatsApp / Slack Ventas
+    participant Tech as Squad Técnico (Jira & Drive)
+    
+    Note over CRM: Trato marcado como 'Closed/Won'
+    CRM->>Engine: Dispara Webhook de Cierre
+    Engine->>Sales: Notifica confirmación de pago y kickoff
+    Engine->>Tech: Clona estructura estándar en Google Drive
+    Engine->>Tech: Crea proyecto inicial y backlog en Jira
+    Note over Sales,Tech: Onboarding completado en 30 segundos sin llamadas manuales
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ROADMAP GANTT -->
+        <div id="tab-gantt" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Cronograma de Absorción e Insourcing Rocketing (12 Meses)</h2>
+                    <p>Estrategia por etapas para asumir pauta, contenidos y SEO sin arriesgar leads ni ingresos.</p>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
+gantt
+    title Cronograma de Absorcion e Insourcing Rocketing 2026-2027
+    dateFormat YYYY-MM-DD
+    section Q1 Co-Ejecucion y CRM
+    Setup CRM y Webhook RevOps         :active, 2026-09-15, 30d
+    Auditoria Looker Studio y Keywords :2026-09-15, 20d
+    Taller VOC y Contenido Inicial     :2026-09-11, 15d
+    section Q2 Insourcing Search y CRO
+    Optimizacion 9 Landings con Demos  :2026-10-15, 45d
+    Insourcing Google Ads Search       :2026-11-01, 45d
+    Primer recorte de Fee a Rocketing  :2026-12-01, 15d
+    section Q3 ABM y Autoridad
+    Lanzamiento LinkedIn Ads ABM       :2027-01-01, 45d
+    Produccion In-House Pixel News     :2027-01-15, 60d
+    Despliegue Agente MCP Produccion   :2027-02-01, 45d
+    section Q4 Independencia Total
+    Transicion 100 por ciento In-House :2027-04-01, 45d
+    Ahorro total del Fee de Agencia    :2027-05-15, 30d
+                    </pre>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Fase 1: Co-Ejecución (Mes 1 a 3)</h2>
+                        <p>No romper lo que funciona, ganar visibilidad de datos</p>
+                    </div>
+                    <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        <li>Rocketing mantiene la operación de Search, Meta y redes.</li>
+                        <li>Implementamos el webhook de Lead Scoring y CRM para saber qué canales generan citas reales.</li>
+                        <li>Auditoría de Search Console para eliminar keywords de estudiantes y búsqueda de empleo.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Fase 2: Absorción y Ahorro (Mes 4 a 12)</h2>
+                        <p>Migración paulatina hacia adquisición propietaria</p>
+                    </div>
+                    <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+                        <li>Insourcing de Google Search y CRO en las 9 landings de BluePixel.</li>
+                        <li>Primer recorte del 35% del fee de la agencia.</li>
+                        <li>Absorción del 100% de contenidos y canal de video corporativo. Ahorro total del fee.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: MÉTRICAS & PRESUPUESTO -->
+        <div id="tab-kpis" class="tab-content">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Distribución Estratégica del Presupuesto Pauta</h2>
+                        <p>Enfoque Account-Based Marketing de Alto Ticket</p>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Diagnóstico de Conversión de Campañas</h2>
+                        <p>Looker Studio Actual vs Meta con Demos PLG</p>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="conversionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Métricas Clave de Rendimiento (North Star Metrics)</h2>
+                    <p>KPIs que se presentan todos los lunes a las 4:00 PM</p>
+                </div>
+                <div class="grid-3">
+                    <div class="stat-card">
+                        <span class="stat-label">Tasa de Conversión Landing</span>
+                        <div class="stat-val">3.5% - 5%</div>
+                        <p style="font-size: 0.85rem; color: #34d399;">▲ Subiendo desde 0.8% actual</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Tiempo de Respuesta a Lead VIP</span>
+                        <div class="stat-val">&lt; 5 min</div>
+                        <p style="font-size: 0.85rem; color: #60a5fa;">Automatizado vía Webhook Slack</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Pipeline Calificado Mensual</span>
+                        <div class="stat-val">+$1.2M MXN</div>
+                        <p style="font-size: 0.85rem; color: #a78bfa;">Oportunidades con ticket &gt; $300k</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                darkMode: true,
+                background: '#0a0f1d',
+                primaryColor: '#1e3a8a',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#3b82f6',
+                lineColor: '#60a5fa',
+                secondaryColor: '#1f2937',
+                tertiaryColor: '#111827'
+            }
+        });
+
+        // Tab Switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+
+            // Force redraw of mermaid if needed
+            window.dispatchEvent(new Event('resize'));
+        }
+
+        // Initialize Charts
+        window.addEventListener('load', () => {
+            // Budget Chart
+            const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+            new Chart(ctxBudget, {
+                type: 'doughnut',
+                data: {
+                    labels: ['LinkedIn Ads (ABM Outbound)', 'Google Ads (Search Demand)', 'Infraestructura IA, MCP y APIs'],
+                    datasets: [{
+                        data: [50, 35, 15],
+                        backgroundColor: ['#2563eb', '#10b981', '#8b5cf6'],
+                        borderColor: '#0a0f1d',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#94a3b8', font: { family: 'Inter', size: 12 } }
+                        }
+                    }
+                }
+            });
+
+            // Conversion Comparison Chart
+            const ctxConv = document.getElementById('conversionChart').getContext('2d');
+            new Chart(ctxConv, {
+                type: 'bar',
+                data: {
+                    labels: ['Landing Estática (Actual)', 'Landing con Asistente MCP', 'Landing con Demos PLG'],
+                    datasets: [{
+                        label: 'Tasa de Conversión Estimada (%)',
+                        data: [0.8, 3.2, 4.8],
+                        backgroundColor: ['#ef4444', '#3b82f6', '#10b981'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#94a3b8', callback: value => value + '%' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

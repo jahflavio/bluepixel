@@ -45,18 +45,18 @@ A partir de las reuniones del Día 1 con Dirección y con la agencia externa (**
 
 ```mermaid
 graph TD
-    Fabian[Fabián Flores - Head of Growth] <-->|Coordinación Diaria y Pendientes| Marily[Lydia Marisela Calderón 'Marily']
+    Fabian["Fabián Flores - Head of Growth"] <-->|"Coordinación Diaria"| Marily["Lydia Marisela Calderón (Marily)"]
     
-    Marily -->|Pauta Pagada| Diana[Diana Cardoso - Ads]
-    Marily -->|SEO & Keywords| Daniel[Daniel Arias - SEO]
-    Marily -->|Creatividad & Guiones| Jessica[Jessica Blanco - Contenidos]
-    Marily -->|Diseño Visual| Rene[René - Diseño Gráfico]
+    Marily -->|"Pauta Pagada"| Diana["Diana Cardoso - Ads"]
+    Marily -->|"SEO & Keywords"| Daniel["Daniel Arias - SEO"]
+    Marily -->|"Creatividad & Guiones"| Jessica["Jessica Blanco - Contenidos"]
+    Marily -->|"Diseño Visual"| Rene["René - Diseño Gráfico"]
     
-    Jessica -->|Grabación & Edición| Sergio[Sergio Blanco - Video]
+    Jessica -->|"Grabación & Edición"| Sergio["Sergio Blanco - Video"]
     
-    Fabian -.->|Estrategia & Fee| Roberto[Roberto Carro Maciel - Dir. Rocketing]
-    Leo[Leonardo Flores - BluePixel] <--> Roberto
-    Maria[María - CEO BluePixel] <--> Roberto
+    Fabian -.->|"Estrategia & Fee"| Roberto["Roberto Carro Maciel - Dir. Rocketing"]
+    Leo["Leonardo Flores - BluePixel"] <--> Roberto
+    Maria["María - CEO BluePixel"] <--> Roberto
 ```
 
 ---
@@ -127,14 +127,14 @@ El objetivo es que el agente esté blindado contra alucinaciones y **únicamente
 
 ```mermaid
 graph TD
-    User[Visitante CTO / CEO] -->|Escribe reto de software / IA| Widget[Widget Interactivo en Webflow]
-    Widget -->|Consulta| MCP[Servidor MCP BluePixel]
+    User["Visitante CTO / CEO"] -->|"Escribe reto de software o IA"| Widget["Widget Interactivo en Webflow"]
+    Widget -->|"Consulta"| MCP["Servidor MCP BluePixel"]
     
-    subgraph Servidor_MCP_BluePixel
-        KB1[Servicios: Build vs Evolve]
-        KB2[Filtro Económico: +$300,000 MXN]
-        KB3[Casos STAR-ROI: Avianca, Bimbo, RadioShack]
-        KB4[Stack: React, Node, Python, Serverless, LLMs]
+    subgraph Servidor_MCP_BluePixel["Servidor MCP BluePixel (Base de Conocimiento)"]
+        KB1["Servicios: Build vs Evolve"]
+        KB2["Filtro Económico: +$300,000 MXN"]
+        KB3["Casos STAR-ROI: Avianca, Bimbo, RadioShack"]
+        KB4["Stack: React, Node, Python, Serverless, LLMs"]
     end
     
     MCP --> KB1
@@ -142,9 +142,9 @@ graph TD
     MCP --> KB3
     MCP --> KB4
     
-    MCP -->|Diagnóstico Técnico + Propuesta de Enfoque| Widget
-    Widget -->|Lead Calificado Score >= 90| Slack[Alerta Slack Ventas < 5 min]
-    Widget -->|Agendamiento Directo| Leo[Calendario de Leo / Directora]
+    MCP -->|"Diagnóstico Técnico + Propuesta de Enfoque"| Widget
+    Widget -->|"Lead Calificado (Score >= 90)"| Slack["Alerta Slack Ventas (Respuesta en menos de 5 min)"]
+    Widget -->|"Agendamiento Directo"| LeoCal["Calendario de Leo / Directora"]
 ```
 
 ### 3.3 Experiencia de Usuario en el Formulario Agentizado
@@ -228,22 +228,22 @@ Para responder al mandato de Dirección de absorber las funciones de Rocketing h
 
 ```mermaid
 gantt
-    title Cronograma de Absorción e Insourcing Rocketing 2026-2027
-    dateFormat  YYYY-MM-DD
-    section Q1: Co-Ejecución & CRM
-    Setup CRM & Webhook RevOps         :active, 2026-09-15, 30d
-    Auditoría Looker Studio & Keywords :2026-09-15, 20d
-    Taller VOC & Contenido Inicial     :2026-09-11, 15d
-    section Q2: Insourcing Search & CRO
-    Optimización 9 Landings con Demos  :2026-10-15, 45d
-    Insourcing Google Ads (Search)     :2026-11-01, 45d
+    title Cronograma de Absorcion e Insourcing Rocketing 2026-2027
+    dateFormat YYYY-MM-DD
+    section Q1 Co-Ejecucion y CRM
+    Setup CRM y Webhook RevOps         :active, 2026-09-15, 30d
+    Auditoria Looker Studio y Keywords :2026-09-15, 20d
+    Taller VOC y Contenido Inicial     :2026-09-11, 15d
+    section Q2 Insourcing Search y CRO
+    Optimizacion 9 Landings con Demos  :2026-10-15, 45d
+    Insourcing Google Ads Search       :2026-11-01, 45d
     Primer recorte de Fee a Rocketing  :2026-12-01, 15d
-    section Q3: ABM & Autoridad
-    Lanzamiento LinkedIn Ads (ABM)     :2027-01-01, 45d
-    Producción In-House Pixel News     :2027-01-15, 60d
-    Despliegue Agente MCP en Producción:2027-02-01, 45d
-    section Q4: Independencia Total
-    Transición 100% In-House           :2027-04-01, 45d
+    section Q3 ABM y Autoridad
+    Lanzamiento LinkedIn Ads ABM       :2027-01-01, 45d
+    Produccion In-House Pixel News     :2027-01-15, 60d
+    Despliegue Agente MCP Produccion   :2027-02-01, 45d
+    section Q4 Independencia Total
+    Transicion 100 por ciento In-House :2027-04-01, 45d
     Ahorro total del Fee de Agencia    :2027-05-15, 30d
 ```
 

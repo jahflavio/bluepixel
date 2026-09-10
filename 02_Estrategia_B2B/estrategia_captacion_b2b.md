@@ -148,8 +148,8 @@ graph TD
 
     class A,B,C tofu;
     class D,E,F,Nurture mofu;
-    class G,H,I,Neg bofu;
-    class J,K,L close;
+    class I,Neg bofu;
+    class J,K,L,M,N,O close;
 ```
 
 ### 1. La Ciencia de los Formularios y ABM (Account-Based Marketing / Marketing Basado en Cuentas) por Industria
