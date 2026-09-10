@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#080d1a"/>
+    </linearGradient>
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="widgetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="540" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="460" y="38" font-family="sans-serif" font-size="19" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">ARQUITECTURA DEL ASISTENTE MCP INTERACTIVO (BLUEPIXEL 2026)</text>
+  <text x="460" y="58" font-family="sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Experiencia consultiva inspirada en vstorm.co • Blindaje contra alucinaciones con servidor MCP local</text>
+
+  <!-- Step 1: User Input (Left) -->
+  <g filter="url(#glow)">
+    <rect x="40" y="100" width="200" height="130" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="40" y="100" width="200" height="28" rx="10" fill="#0284c7"/>
+    <text x="140" y="119" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">PASO 1: ENTRADA CLIENTE</text>
+    
+    <text x="55" y="148" font-family="sans-serif" font-size="12" font-weight="700" fill="#e0f2fe">Visitante Ejecutivo</text>
+    <text x="55" y="165" font-family="sans-serif" font-size="10" fill="#94a3b8">CTO, VP Eng, CEO o Product</text>
+    <rect x="52" y="180" width="176" height="36" rx="6" fill="#0f172a" stroke="#334155"/>
+    <text x="60" y="196" font-family="sans-serif" font-size="9" fill="#38bdf8">"Tengo e-commerce en Shopify y</text>
+    <text x="60" y="209" font-family="sans-serif" font-size="9" fill="#38bdf8">quiero integrar recomendador IA"</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 240 165 L 305 165" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+  <polygon points="310,165 300,160 300,170" fill="#38bdf8"/>
+
+  <!-- Step 2: Webflow Widget (Center Left) -->
+  <g filter="url(#glow)">
+    <rect x="315" y="100" width="200" height="130" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="315" y="100" width="200" height="28" rx="10" fill="url(#widgetGrad)"/>
+    <text x="415" y="119" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">WIDGET EN WEBFLOW</text>
+    
+    <text x="330" y="148" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#93c5fd">cotiza.bluepixel.mx</text>
+    <text x="330" y="166" font-family="sans-serif" font-size="10" fill="#94a3b8">Inyectado vía script ligero</text>
+    <text x="330" y="183" font-family="sans-serif" font-size="9.5" fill="#cbd5e1">✓ Captura contexto técnico</text>
+    <text x="330" y="198" font-family="sans-serif" font-size="9.5" fill="#cbd5e1">✓ Detecta intención &amp; stack</text>
+    <text x="330" y="213" font-family="sans-serif" font-size="9.5" fill="#cbd5e1">✓ Cero fricción de inicio</text>
+  </g>
+
+  <!-- Arrow 2 <-> 3 (Vertical to MCP) -->
+  <path d="M 415 230 L 415 285" stroke="#10b981" stroke-width="3" stroke-dasharray="4,4" fill="none"/>
+  <polygon points="415,290 410,280 420,280" fill="#10b981"/>
+  <polygon points="415,230 410,240 420,240" fill="#10b981"/>
+
+  <!-- Step 3: MCP Local Server (Bottom Center) -->
+  <g filter="url(#glow)">
+    <rect x="180" y="295" width="470" height="195" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <rect x="180" y="295" width="470" height="30" rx="12" fill="url(#mcpGrad)"/>
+    <text x="415" y="316" font-family="sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">SERVIDOR MCP BLUEPIXEL (MODEL CONTEXT PROTOCOL)</text>
+
+    <!-- Sub modules inside MCP -->
+    <rect x="200" y="340" width="205" height="60" rx="6" fill="#022c22" stroke="#059669"/>
+    <text x="210" y="360" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#a7f3d0">1. Catálogo Oficial</text>
+    <text x="210" y="376" font-family="sans-serif" font-size="9.5" fill="#d1fae5">• Build (Lanzamiento MVP)</text>
+    <text x="210" y="390" font-family="sans-serif" font-size="9.5" fill="#d1fae5">• Evolve (Retainer Mensual)</text>
+
+    <rect x="425" y="340" width="205" height="60" rx="6" fill="#022c22" stroke="#059669"/>
+    <text x="435" y="360" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#a7f3d0">2. Filtro Económico</text>
+    <text x="435" y="376" font-family="sans-serif" font-size="9.5" fill="#d1fae5">• Mínimo: +$300,000 MXN</text>
+    <text x="435" y="390" font-family="sans-serif" font-size="9.5" fill="#d1fae5">• Rango: $300k a $5M+ MXN</text>
+
+    <rect x="200" y="415" width="205" height="60" rx="6" fill="#022c22" stroke="#059669"/>
+    <text x="210" y="435" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#a7f3d0">3. Casos STAR-ROI Reales</text>
+    <text x="210" y="450" font-family="sans-serif" font-size="9" fill="#d1fae5">• Avianca: +22% retención móvil</text>
+    <text x="210" y="464" font-family="sans-serif" font-size="9" fill="#d1fae5">• RadioShack: +32% conversión</text>
+
+    <rect x="425" y="415" width="205" height="60" rx="6" fill="#022c22" stroke="#059669"/>
+    <text x="435" y="435" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#a7f3d0">4. Stack Tecnológico</text>
+    <text x="435" y="450" font-family="sans-serif" font-size="9" fill="#d1fae5">• React, Node, Python, Cloud</text>
+    <text x="435" y="464" font-family="sans-serif" font-size="9" fill="#d1fae5">• Modelos LLM, Serverless, AWS</text>
+  </g>
+
+  <!-- Arrow 2 -> Outcomes (Right) -->
+  <path d="M 515 145 C 570 145, 590 120, 655 120" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+  <polygon points="660,120 650,115 650,125" fill="#f59e0b"/>
+
+  <path d="M 515 185 C 570 185, 590 220, 655 220" stroke="#10b981" stroke-width="2.5" fill="none"/>
+  <polygon points="660,220 650,215 650,225" fill="#10b981"/>
+
+  <!-- Step 4A: Slack Alert < 5 min -->
+  <g filter="url(#glow)">
+    <rect x="665" y="85" width="220" height="75" rx="8" fill="#450a0a" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="680" y="110" font-family="sans-serif" font-size="11" font-weight="800" fill="#fca5a5">ALERTA SLACK VENTAS (&lt; 5 MIN)</text>
+    <text x="680" y="128" font-family="sans-serif" font-size="10" fill="#fecaca">Lead Calificado (Score &gt;= 90)</text>
+    <text x="680" y="145" font-family="sans-serif" font-size="9" fill="#fca5a5">Contacto telefónico ultra-rápido</text>
+  </g>
+
+  <!-- Step 4B: Calendar Booking Direct -->
+  <g filter="url(#glow)">
+    <rect x="665" y="185" width="220" height="75" rx="8" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+    <text x="680" y="210" font-family="sans-serif" font-size="11" font-weight="800" fill="#6ee7b7">AGENDAMIENTO DIRECTO</text>
+    <text x="680" y="228" font-family="sans-serif" font-size="10" fill="#a7f3d0">Calendario de Leo / María</text>
+    <text x="680" y="245" font-family="sans-serif" font-size="9" fill="#6ee7b7">Discovery Call técnica agendada</text>
+  </g>
+</svg>

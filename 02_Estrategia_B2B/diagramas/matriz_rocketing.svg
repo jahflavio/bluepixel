@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#070a13"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="450" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">MATRIZ DE COMUNICACIÓN Y GOBERNANZA: BLUEPIXEL ⇄ ROCKETING</text>
+  <text x="450" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Canales de alineación diaria, escalación ejecutiva y asignación de especialistas</text>
+
+  <!-- BluePixel Leadership Block (Left) -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="110" width="260" height="230" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="110" width="260" height="34" rx="12" fill="url(#blueGrad)"/>
+    <text x="180" y="132" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">EQUIPO INTERNO BLUEPIXEL</text>
+    
+    <!-- Maria -->
+    <rect x="65" y="155" width="230" height="42" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="78" y="174" font-family="sans-serif" font-size="12" font-weight="700" fill="#93c5fd">María</text>
+    <text x="78" y="189" font-family="sans-serif" font-size="10" fill="#94a3b8">CEO / Visión Corporativa y Video</text>
+
+    <!-- Leo -->
+    <rect x="65" y="207" width="230" height="42" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="78" y="226" font-family="sans-serif" font-size="12" font-weight="700" fill="#93c5fd">Leonardo "Leo" Flores</text>
+    <text x="78" y="241" font-family="sans-serif" font-size="10" fill="#94a3b8">MKT, Ventas &amp; Producto (Jefe Directo)</text>
+
+    <!-- Fabian -->
+    <rect x="65" y="260" width="230" height="64" rx="8" fill="#172554" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="78" y="280" font-family="sans-serif" font-size="13" font-weight="800" fill="#67e8f9">Fabián Flores (TÚ)</text>
+    <text x="78" y="295" font-family="sans-serif" font-size="11" font-weight="600" fill="#ffffff">Head of Growth &amp; RevOps</text>
+    <text x="78" y="311" font-family="sans-serif" font-size="9.5" fill="#93c5fd">Operación, Enlace Agencia &amp; MCP</text>
+  </g>
+
+  <!-- Arrow: Fabian <-> Marily -->
+  <path d="M 295 292 L 400 292" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+  <polygon points="405,292 395,287 395,297" fill="#38bdf8"/>
+  <polygon points="290,292 300,287 300,297" fill="#38bdf8"/>
+  <rect x="305" y="268" width="85" height="18" rx="4" fill="#0369a1"/>
+  <text x="347" y="281" font-family="sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">CONTACTO DIARIO</text>
+
+  <!-- Marily (Center Hub) -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="245" width="210" height="95" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <rect x="410" y="245" width="210" height="28" rx="12" fill="url(#greenGrad)"/>
+    <text x="515" y="264" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">LÍDER DE CUENTA ROCKETING</text>
+    <text x="515" y="293" font-family="sans-serif" font-size="14" font-weight="800" fill="#a7f3d0" text-anchor="middle">Lydia Marisela "Marily"</text>
+    <text x="515" y="311" font-family="sans-serif" font-size="10.5" fill="#d1fae5" text-anchor="middle">Reuniones Lunes 4:00 PM</text>
+    <text x="515" y="327" font-family="sans-serif" font-size="9.5" fill="#6ee7b7" text-anchor="middle">Seguimiento de Minutas y Reportes</text>
+  </g>
+
+  <!-- Roberto (Rocketing Boss - Top Right) -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="110" width="190" height="75" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="765" y="135" font-family="sans-serif" font-size="12" font-weight="700" fill="#c7d2fe" text-anchor="middle">Roberto Carro Maciel</text>
+    <text x="765" y="152" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#e0e7ff" text-anchor="middle">Director General Rocketing</text>
+    <text x="765" y="169" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">Alineación Comercial &amp; Fee</text>
+  </g>
+
+  <!-- Connectors: Maria & Leo to Roberto -->
+  <path d="M 295 176 C 480 176, 480 147, 670 147" stroke="#64748b" stroke-width="1.5" fill="none"/>
+  <text x="480" y="157" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Acuerdos de Dirección</text>
+
+  <!-- Rocketing Specialists (Right Column) -->
+  <!-- Diana -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="210" width="190" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="682" y="230" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f8fafc">Diana Cardoso</text>
+    <text x="682" y="246" font-family="sans-serif" font-size="9.5" fill="#38bdf8">Pauta Pagada: Google &amp; Meta Ads</text>
+  </g>
+
+  <!-- Daniel -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="272" width="190" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="682" y="292" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f8fafc">Daniel Arias</text>
+    <text x="682" y="308" font-family="sans-serif" font-size="9.5" fill="#34d399">SEO Técnico, Keywords &amp; GSC</text>
+  </g>
+
+  <!-- Jessica -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="334" width="190" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="682" y="354" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f8fafc">Jessica Blanco</text>
+    <text x="682" y="370" font-family="sans-serif" font-size="9.5" fill="#f59e0b">Creativa, Contenidos &amp; Guiones</text>
+  </g>
+
+  <!-- Sergio -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="396" width="190" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="682" y="416" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f8fafc">Sergio Blanco</text>
+    <text x="682" y="432" font-family="sans-serif" font-size="9.5" fill="#fb923c">Grabación, Video &amp; Fotografía</text>
+  </g>
+
+  <!-- Rene -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="458" width="190" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+    <text x="682" y="478" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#f8fafc">René</text>
+    <text x="682" y="494" font-family="sans-serif" font-size="9.5" fill="#a78bfa">Diseño Gráfico, Banners &amp; Assets</text>
+  </g>
+
+  <!-- Dispatch arrows from Marily to Specialists -->
+  <path d="M 620 280 C 645 280, 645 236, 670 236" stroke="#10b981" stroke-width="1.8" fill="none"/>
+  <path d="M 620 292 L 670 298" stroke="#10b981" stroke-width="1.8" fill="none"/>
+  <path d="M 620 305 C 645 305, 645 360, 670 360" stroke="#10b981" stroke-width="1.8" fill="none"/>
+  <path d="M 620 315 C 640 315, 645 422, 670 422" stroke="#10b981" stroke-width="1.8" fill="none"/>
+  <path d="M 620 325 C 635 325, 640 484, 670 484" stroke="#10b981" stroke-width="1.8" fill="none"/>
+
+  <!-- Footer Banner -->
+  <rect x="50" y="535" width="810" height="55" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="70" y="558" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">💡 REGLA DE ORO DE GOBERNANZA:</text>
+  <text x="70" y="575" font-family="sans-serif" font-size="10.5" fill="#94a3b8">Toda solicitud a los especialistas técnicos (Diana, Daniel, Jessica, Sergio, René) se canaliza centralizadamente vía Marily para control de tiempos y minutas.</text>
+</svg>

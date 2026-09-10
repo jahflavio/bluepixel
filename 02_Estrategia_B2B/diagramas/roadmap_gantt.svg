@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#070a13"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="920" height="480" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <text x="460" y="38" font-family="sans-serif" font-size="19" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">ROADMAP DE ABSORCIÓN GRADUAL E INSOURCING DE ROCKETING (12 MESES)</text>
+  <text x="460" y="58" font-family="sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Transición por trimestres para proteger los leads y absorber el 100% del fee de la agencia</text>
+
+  <!-- Timeline Header (Months) -->
+  <rect x="230" y="85" width="650" height="30" rx="6" fill="#1e293b"/>
+  <text x="310" y="105" font-family="sans-serif" font-size="11" font-weight="700" fill="#93c5fd" text-anchor="middle">Q1 (Sep - Nov 2026)</text>
+  <text x="475" y="105" font-family="sans-serif" font-size="11" font-weight="700" fill="#a7f3d0" text-anchor="middle">Q2 (Dic 2026 - Feb 2027)</text>
+  <text x="640" y="105" font-family="sans-serif" font-size="11" font-weight="700" fill="#fde68a" text-anchor="middle">Q3 (Mar - May 2027)</text>
+  <text x="800" y="105" font-family="sans-serif" font-size="11" font-weight="700" fill="#fca5a5" text-anchor="middle">Q4 (Jun - Ago 2027)</text>
+
+  <!-- Vertical grid lines -->
+  <line x1="390" y1="85" x2="390" y2="440" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="555" y1="85" x2="555" y2="440" stroke="#334155" stroke-dasharray="3,3"/>
+  <line x1="720" y1="85" x2="720" y2="440" stroke="#334155" stroke-dasharray="3,3"/>
+
+  <!-- Row 1: Q1 Co-Ejecucion y CRM -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="130" width="180" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6"/>
+    <text x="50" y="152" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">FASE 1: CO-EJECUCIÓN</text>
+    <text x="50" y="168" font-family="sans-serif" font-size="9.5" fill="#bfdbfe">• Setup CRM &amp; Scoring</text>
+    <text x="50" y="182" font-family="sans-serif" font-size="9.5" fill="#bfdbfe">• Rocketing opera pauta</text>
+
+    <!-- Bar 1 -->
+    <rect x="235" y="135" width="150" height="24" rx="6" fill="#3b82f6"/>
+    <text x="310" y="151" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">CRM &amp; Webhook RevOps</text>
+
+    <rect x="235" y="163" width="120" height="22" rx="6" fill="#1d4ed8"/>
+    <text x="295" y="178" font-family="sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle">Auditoría Looker &amp; Negativas</text>
+  </g>
+
+  <!-- Row 2: Q2 Insourcing Search y CRO -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="210" width="180" height="60" rx="8" fill="#064e3b" stroke="#10b981"/>
+    <text x="50" y="232" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">FASE 2: CRO &amp; SEARCH</text>
+    <text x="50" y="248" font-family="sans-serif" font-size="9.5" fill="#a7f3d0">• Demos PLG en Landings</text>
+    <text x="50" y="262" font-family="sans-serif" font-size="9.5" fill="#a7f3d0">• Recorte de Fee -35%</text>
+
+    <!-- Bar 2 -->
+    <rect x="370" y="215" width="170" height="24" rx="6" fill="#10b981"/>
+    <text x="455" y="231" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">9 Landings con Demos PLG</text>
+
+    <rect x="400" y="243" width="150" height="22" rx="6" fill="#059669"/>
+    <text x="475" y="258" font-family="sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle">Insourcing Google Search</text>
+  </g>
+
+  <!-- Row 3: Q3 ABM & Autoridad -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="290" width="180" height="60" rx="8" fill="#78350f" stroke="#f59e0b"/>
+    <text x="50" y="312" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">FASE 3: ABM &amp; MCP</text>
+    <text x="50" y="328" font-family="sans-serif" font-size="9.5" fill="#fde68a">• LinkedIn Ads Outbound</text>
+    <text x="50" y="342" font-family="sans-serif" font-size="9.5" fill="#fde68a">• Despliegue Agente MCP</text>
+
+    <!-- Bar 3 -->
+    <rect x="540" y="295" width="170" height="24" rx="6" fill="#f59e0b"/>
+    <text x="625" y="311" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Lanzamiento LinkedIn ABM</text>
+
+    <rect x="560" y="323" width="150" height="22" rx="6" fill="#d97706"/>
+    <text x="635" y="338" font-family="sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle">Agente MCP en Producción</text>
+  </g>
+
+  <!-- Row 4: Q4 Independencia Total -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="370" width="180" height="60" rx="8" fill="#4c0519" stroke="#f43f5e"/>
+    <text x="50" y="392" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">FASE 4: INSOURCING</text>
+    <text x="50" y="408" font-family="sans-serif" font-size="9.5" fill="#fecdd3">• 100% In-House BluePixel</text>
+    <text x="50" y="422" font-family="sans-serif" font-size="9.5" fill="#fecdd3">• Ahorro Total del Fee</text>
+
+    <!-- Bar 4 -->
+    <rect x="710" y="375" width="165" height="48" rx="6" fill="#e11d48"/>
+    <text x="792" y="398" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">INDEPENDENCIA TOTAL</text>
+    <text x="792" y="414" font-family="sans-serif" font-size="9.5" fill="#ffe4e6" text-anchor="middle">Ahorro 100% Fee de Agencia</text>
+  </g>
+</svg>
