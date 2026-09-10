@@ -5,7 +5,7 @@ from urllib.parse import urljoin, urlparse
 import time
 
 def scrape_seo_data(start_url):
-    print(f"🕷️ Iniciando el Web Scraper de SEO en: {start_url}")
+    print(f"[START] Iniciando el Web Scraper de SEO en: {start_url}")
     
     # Configuramos los headers para que no nos bloqueen
     headers = {
@@ -43,11 +43,11 @@ def scrape_seo_data(start_url):
             soup = BeautifulSoup(response.text, 'lxml')
             
             # Extraer Título
-            title = soup.title.string.strip() if soup.title and soup.title.string else "SIN TÍTULO"
+            title = soup.title.string.strip() if soup.title and soup.title.string else "SIN TITULO"
             
             # Extraer Meta Description
             meta_desc = soup.find('meta', attrs={'name': 'description'})
-            description = meta_desc['content'].strip() if meta_desc and meta_desc.get('content') else "SIN DESCRIPCIÓN"
+            description = meta_desc['content'].strip() if meta_desc and meta_desc.get('content') else "SIN DESCRIPCION"
             
             # Extraer H1 (solo tomamos el primero si hay varios)
             h1_tag = soup.find('h1')
@@ -72,7 +72,7 @@ def scrape_seo_data(start_url):
             time.sleep(0.5) # Respetar el servidor
             
         except Exception as e:
-            print(f"❌ Error escaneando {url}: {e}")
+            print(f"[ERROR] Error escaneando {url}: {e}")
             results.append({
                 'URL': url,
                 'Status': 'ERROR',
@@ -89,8 +89,8 @@ def scrape_seo_data(start_url):
         for row in results:
             writer.writerow(row)
             
-    print(f"\n✅ ¡Scraping terminado! Se escanearon {len(results)} páginas.")
-    print(f"💾 Reporte guardado en: {csv_file}")
+    print(f"\n[OK] Scraping terminado! Se escanearon {len(results)} paginas.")
+    print(f"[SAVE] Reporte guardado en: {csv_file}")
 
 if __name__ == "__main__":
     scrape_seo_data("https://bluepixel.mx")
