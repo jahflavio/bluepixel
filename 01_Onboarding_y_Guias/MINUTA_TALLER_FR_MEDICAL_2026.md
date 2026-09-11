@@ -106,16 +106,32 @@ graph TD
     5. Dispara una **llamada telefónica y notificación push de alta prioridad** al celular del mensajero de guardia para despachar el material de inmediato.
 *   **Impacto de Negocio:** Cero llamadas perdidas en la noche, rescate de ventas de $50k - $150k MXN que antes se iban a la competencia por no contestar el teléfono.
 
+### Módulo 6: Calendarizador Inteligente de Guardias y Turnos 24/7
+*   **Asignación de Roles sin Confusión:** Matriz dinámica que calendariza turnos de ejecutivos comerciales y mensajeros de guardia para noches, fines de semana y días festivos.
+*   **Re-enrutamiento Automático:** El conmutador telefónico y el bot de WhatsApp saben en cada segundo quién es el mensajero y el administrativo activo en turno, transfiriéndoles alertas prioritarias sin intermediarios humanos.
+
+### Módulo 7: SOPs Digitales y Compliance de Privacidad Médica (Motor Zero-Assumption)
+*   **Eliminación de Suposiciones y Vacíos:** La plataforma fuerza un Procedimiento Operativo Estandarizado (SOP) digital en 4 pasos obligatorios antes de liberar cualquier cotización formal (Hospital, Cirujano, Lateralidad/Patología, Clave de Instrumental).
+*   **Privacidad por Diseño (COFEPRIS y LFPDPPP):**
+    *   Arquitectura aislada en servidor MCP seguro: los datos de pacientes están disociados de la cotización comercial.
+    *   Los mensajeros solo ven en su app la dirección de entrega hospitalaria y el contacto de recepción, sin acceso a diagnósticos ni datos clínicos confidenciales.
+    *   Inclusión automática de sellos de Registro Sanitario COFEPRIS y fichas técnicas descargables en cada PDF.
+
+### Módulo 8: OCR Móvil para Conciliación Express de Viáticos y Gastos
+*   **Cero Tickets Perdidos:** Los mensajeros y representantes toman una fotografía de sus tickets de gasolina, casetas o estacionamientos directamente en el chat de WhatsApp interno.
+*   **Extracción Contable Inteligente:** Un modelo de visión extrae automáticamente el monto, fecha, estación de servicio y RFC del emisor, insertándolos en la hoja de conciliación de la contadora y alertando sobre gastos duplicados o fuera de política.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
 
-*   **Fase Build (Desarrollo e Implementación en 8 a 10 semanas):**
+*   **Fase Build (Desarrollo e Implementación Integral en 8 a 10 semanas):**
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
-    *   **Agente de Guardia 24/7 Multicanal (Voz IA + WhatsApp)** para atención nocturna y fines de semana.
-    *   Módulo de Enrutamiento Inteligente, Horarios y Dashboard GPS de Mensajería.
-    *   Motor de Reglas de Anticipo 24/7 y generación de PDF formal con COFEPRIS.
-    *   Portal visual de KPIs de ventas y cálculo de comisiones.
+    *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias y cotizaciones nocturnas.
+    *   **Optimizador de Rutas, Horarios y Despacho Logístico** con Dashboard y GPS para mensajeros propios.
+    *   **Motor de Reglas de Crédito y Anticipo 24/7** con compliance COFEPRIS.
+    *   **Portal Visual de Ventas y Cálculo Automático de Comisiones** (eliminando calculadoras).
+    *   **SOPs Digitales Zero-Assumption** y Módulo OCR de Viáticos por WhatsApp.
     *   **Inversión Estimada:** $450,000 – $650,000 MXN.
 *   **Fase Evolve (Acompañamiento y Retainer Mensual):**
     *   Mantenimiento de infraestructura, soporte a mensajería, ajuste de rutas, actualización de catálogos y entrenamiento continuo de modelos.
