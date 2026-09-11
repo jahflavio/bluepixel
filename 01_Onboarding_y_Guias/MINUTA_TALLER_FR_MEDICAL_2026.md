@@ -57,6 +57,14 @@ La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas d
     2. *Dato Sepultado sin Automatización:* Al ser una simple nota de texto libre, el sistema no la reconoce como variable algorítmica: no detona alertas push, no enruta al mensajero más cercano ni reorganiza la fila de pedidos.
     3. *Riesgo Quirúrgico Severo:* Una fractura costal múltiple con paciente en quirófano anestesiado puede quedar formada detrás de una reposición rutinaria de stock, solo porque el administrativo no abrió la orden para leer el campo de notas.
 
+### 2.9 La "Brecha Negra" de 12:00 AM a 7:00 AM y el Cuello de Botella de la Revisión Manual:
+*   **7 Horas sin Personal Operativo:** Todos los días, entre las 12:00 de la noche y las 7:00 de la mañana, FR Medical carece de personal activo en oficina. Paradójicamente, es la ventana horaria donde ocurren los peores traumas por accidentes automovilísticos y emergencias de quirófano en hospitales privados.
+*   **El Estrangulamiento de la Revisión Humana Post-Venta:** Después de que un vendedor o médico ingresa una orden de venta, **el proceso exige que una persona la revise manualmente** (para cotejar claves de producto, validar precios de convenio, confirmar existencia de stock y autorizar el despacho).
+*   **El Impacto Paralizante:** Si un cirujano del Hospital Ángeles Pedregal o del ABC solicita material a la 1:30 AM:
+    *   O el pedido queda **congelado 5 horas y media** en espera de que el personal llegue a las 7:00 AM a "revisar la orden".
+    *   O tienen que **despertar a un administrativo a medianoche** para que encienda su computadora personal en su casa solo para dar un clic de visto bueno.
+    *   Cualquiera de los dos escenarios genera fricción crítica, estrés para el equipo y riesgo de que el hospital cancele y compre a la competencia.
+
 ---
 
 ## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
@@ -140,13 +148,23 @@ graph TD
     *   Salta automáticamente a la **posición #1 de la fila de despacho**, reordenando las entregas ordinarias.
     *   Detona alerta push con sonido de emergencia al mensajero propio mejor ubicado geográficamente.
 
+### Módulo 10: Auditor Algorítmico Autónomo de Pedidos (Validation Sentinel)
+*   **Eliminación del Revisor Humano de Madrugada (Fin a la Brecha 12 AM – 7 AM):** En lugar de congelar el pedido hasta las 7:00 AM o despertar a un administrativo a las 2:00 AM, el **Validation Sentinel de BluePixel** audita la orden en **0.8 segundos**:
+    1. **Auditoría de SKUs y Compatibilidad:** Verifica que las placas Stracos seleccionadas coincidan con el calibre de tornillos y set de instrumental.
+    2. **Auditoría de Precios de Convenio:** Coteja que los precios coincidan exactamente con la lista pactada con ese hospital.
+    3. **Auditoría de Stock Físico:** Confirma disponibilidad en almacén central CDMX o en gaveta de consignación hospitalaria.
+    4. **Auditoría de Crédito Institucional:** Confirma convenio vigente y folio de quirófano.
+*   **Auto-Aprobación Inmediata ("Green Flag"):** Si la orden pasa los 4 filtros con 100% de precisión, la IA emite el visto bueno en automático, genera la hoja de surtido de almacén y timbra al celular del mensajero de guardia para salir a quirófano en menos de 15 minutos.
+*   **Manejo de Excepciones:** Si existe una discrepancia grave (ej. un hospital sin crédito solicitando $300k sin anticipo), la IA retiene la orden y genera una llamada de escalamiento al directivo responsable.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
 
 *   **Fase Build (Desarrollo e Implementación Integral en 8 a 10 semanas):**
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
-    *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias y cotizaciones nocturnas.
+    *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias nocturnas.
+    *   **Auditor Algorítmico Autónomo de Pedidos (Validation Sentinel)** para eliminar el cuello de botella nocturno (12 AM - 7 AM).
     *   **Motor de Triage Quirúrgico con NLP** y priorización visual objetiva de urgencias.
     *   **Optimizador de Rutas, Horarios y Despacho Logístico** con Dashboard y GPS para mensajeros propios.
     *   **Motor de Reglas de Crédito y Anticipo 24/7** con compliance COFEPRIS.
