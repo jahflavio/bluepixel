@@ -73,6 +73,11 @@ La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas d
     2. *Vulnerabilidad ante Bajas de Personal:* Si un empleado veterano se enferma o renuncia, la empresa queda secuestrada porque nadie más conoce el procedimiento exacto.
     3. *Riesgo Regulatorio y de Auditoría:* Ante una revisión de COFEPRIS o un requerimiento de comités de compras de hospitales corporativos (Ángeles, ABC), carecen de evidencia documental de trazabilidad quirúrgica.
 
+### 2.11 ERP Rígido, Desactualizado y Desconectado (La Pesadilla de la Doble Captura):
+*   **Doble Digitación Manual Agotadora:** El ERP actual opera aislado de la realidad diaria. Un vendedor cierra un pedido por WhatsApp o correo, y luego un administrativo tiene que sentarse a **teclear a mano los datos en el ERP**.
+*   **Desfase Peligroso de Inventario:** Como la descarga de almacén no es en tiempo real, ocurre el error más grave en distribución médica: **vender o prometer un set quirúrgico a un hospital cuando la última pieza ya fue enviada a otra cirugía** y nadie la había descargado en el sistema.
+*   **El Reto Financiero:** Cambiar de ERP a una solución médica gigante costaría más de $1.5 millones de pesos y 12 a 18 meses de parálisis; necesitan **automatizar y modernizar su ERP actual** sin romper su estabilidad contable.
+
 ---
 
 ## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
@@ -173,12 +178,20 @@ graph TD
     *   El bot responde en **3 segundos** citando la política oficial, los formatos a llenar y el checklist de esterilización.
 *   **Acreditación COFEPRIS y Hospitales:** Generación automática de diagramas de flujo y manuales de procedimientos actualizados para auditorías de calidad hospitalaria.
 
+### Módulo 12: Conector Universal MCP para Modernización y Automatización de ERP (ERP Sync Bridge)
+*   **Cero Migraciones Traumáticas de $1.5M:** No se necesita tirar a la basura el ERP actual ni paralizar la empresa durante año y medio. BluePixel construye un **puente inteligente (Middleware MCP con Webhooks/APIs)** sobre su sistema actual.
+*   **Sincronización Bidireccional en Tiempo Real (Fin a la Doble Captura):**
+    1. **Inyección Automática de Órdenes:** Cuando el cotizador web o el bot de WhatsApp cierra una orden, la remisión y el pedido de venta se generan en el ERP en **0.5 segundos sin teclear a mano**.
+    2. **Inventario Vivo Garantizado:** El agente consulta en milisegundos las existencias reales en el ERP antes de cotizar; si una placa de Stracos se reservó para el Hospital Ángeles, el sistema la bloquea en el acto para evitar vender piezas inexistentes.
+    3. **Descarga y Facturación en Quirófano:** Al momento en que el mensajero captura la firma digital en quirófano, el inventario se descuenta en el ERP y la orden pasa a estatus *"Lista para Facturar CFDI 4.0"* para la contadora.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
 
 *   **Fase Build (Desarrollo e Implementación Integral en 8 a 10 semanas):**
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
+    *   **Conector Universal MCP para Automatización y Modernización de ERP (ERP Sync Bridge)**.
     *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias nocturnas.
     *   **Auditor Algorítmico Autónomo de Pedidos (Validation Sentinel)** para eliminar el cuello de botella nocturno (12 AM - 7 AM).
     *   **Fábrica de Procesos Vivos y Copiloto Interno (Living SOP & Wiki Engine)** para estandarizar la operación.
