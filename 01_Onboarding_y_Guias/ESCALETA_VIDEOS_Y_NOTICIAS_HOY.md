@@ -1,146 +1,161 @@
-# 🎬 ESCALETA OFICIAL DE PRODUCCIÓN: VIDEOS, NOTICIAS Y CARRUSELES DE AUDIO
-*Documento maestro para la sesión de grabación de hoy viernes por la tarde con Leonardo ("Leo"), María, Sergio y Jessica Blanco (Rocketing).*
+# 🎬 ESCALETA OFICIAL DE PRODUCCIÓN: TALLER, ENTREVISTAS Y NOTICIAS TECH
+*Documento maestro para la jornada de filmación de hoy viernes: Levantamiento en vivo durante el taller con FR Medical + Sesión de entrevistas y "Pixel News" con Leonardo ("Leo"), María, Sergio y Jessica Blanco (Rocketing).*
 
 ---
 
-## 🎯 OBJETIVO DE LA SESIÓN
-Producir contenido de alto impacto y retención que posicione a **Leo y María como las máximas autoridades de ingeniería de software, diseño de producto e Inteligencia Artificial en México**, alimentando los formatos:
-1. **"Pixel contra el mundo":** Entrevistas de debate profundo y carruseles con notas de voz para LinkedIn.
-2. **"Pixel News":** Cápsulas verticales ágiles (60-90s) sobre noticias de tecnología de frontera para YouTube Shorts, TikTok y LinkedIn.
+## 🎯 OBJETIVO DE LA JORNADA
+Convertir el día de hoy en una fábrica de contenido de alta autoridad que demuestre que **BluePixel no es una fábrica de software tradicional, sino un socio consultivo y estratégico que acompaña a los directivos a tomar mejores decisiones de negocio e Inteligencia Artificial**.
 
 ---
 
-## 🎙️ BLOQUE 1: CARRUSEL CON NOTAS DE VOZ & VIDEO (TEMA 1)
-* **Tema:** *"Lo que se vivía en el mundo tech recién egresado vs la actualidad de la IA"*
+## 🎥 PARTE 1: LEVANTAMIENTO DURANTE EL TALLER CON FR MEDICAL (11:00 AM – 2:00 PM)
+*Protocolo de observación y filmación activa en sala con Jessica y Sergio.*
+
+> *"No solamente vamos a grabar lo que suceda. Vamos a escuchar para descubrir qué vale la pena contar."*
+
+### Las 3 Fuentes de Contenido en Vivo:
+1. **La Voz del Cliente (VOC):**
+   * Palabras textuales que usa FR Medical para hablar de sus problemas (ej. *"tardamos horas en cotizar"*, *"el cirujano nos urge el implante en quirófano"*, *"perdemos el rastro de la consignación"*).
+2. **La Mirada de BluePixel:**
+   * Las intervenciones de Leo, María y Fabián que demuestran criterio, preguntas poderosas y visión de arquitectura sin tecnicismos vacíos.
+3. **La Transformación (El Momento Ajá):**
+   * El instante exacto donde la conversación o la **Demo del Cotizador en Vivo en 1.8s** hace que el cliente abra los ojos y vea su problema resuelto desde otra perspectiva.
+
+### Material a Capturar en Sala (Checklist para Sergio y Jessica):
+* [ ] **B-Roll Natural:** Conversación alrededor de la mesa, escucha activa de Leo/María, notas en libretas, gesticulaciones, pantallas con código y diagramas.
+* [ ] **Plano Cerrado en la Reacción:** La cámara lista sobre los directivos de FR Medical cuando se ejecute la demo en vivo.
+* [ ] **Frases / Pixel Insights:** Citas breves con alto valor estratégico para carruseles de LinkedIn.
+* [ ] **Estructura Storytelling:** *Qué creía el cliente que necesitaba ➔ Qué detectó BluePixel ➔ Cómo se abordó la solución real.*
+
+---
+
+## 🎙️ PARTE 2: ENTREVISTAS DE FONDO Y CARRUSELES CON NOTAS DE VOZ (3:00 PM – 4:15 PM)
+
+---
+
+### TEMA 1: "Lo que se vivía en el mundo tech recién egresado vs la actualidad de la IA"
 * **Personaje principal:** Leo o María
-* **Formato:** Entrevista dinámica / Carrusel de LinkedIn con clips de audio de 15 segundos por diapositiva.
+* **Formato:** Video largo para YouTube / Carrusel de LinkedIn con notas de voz de 15 segundos por diapositiva.
 * **Hook explosivo de apertura (0 a 3 seg):**
-  > *"El 80% de los directores de tecnología corporativos hoy viven con el mismo terror que sentíamos cuando éramos recién egresados: el pánico de tocar un sistema que factura millones y que nadie se atreve a mover por miedo a que se caiga."*
+  > *"El 80% de los directores de tecnología corporativos hoy viven con el mismo terror que sentíamos cuando salimos de la universidad: el pánico de tocar un sistema que factura millones por miedo a que todo se caiga."*
+
+#### Guión y Puntos de Oro:
+1. **¿Cómo era el mundo tech vs ahora?**
+   * *Talking Point:* De cuartos fríos con servidores de metal y despliegues por FTP rezando para no romper la base de datos, a la era actual de Cloud Serverless y agentes de IA que auditan código en milisegundos. La velocidad se multiplicó por cien; el miedo al error sigue intacto.
+2. **¿Cuál fue tu primer trabajo al salir de la universidad?**
+   * *Talking Point:* El choque de realidad. En los libros la arquitectura es perfecta; en el primer trabajo corporativo entras a apagar incendios con código legado que nadie documentó.
+3. **¿Cómo te sentiste al pisar por primera vez ese trabajo formal?**
+   * *Talking Point:* Síndrome del impostor puro. El peso de darte cuenta de que cada línea de código mal puesta le cuesta dinero real a la empresa.
+4. **¿Qué proyecto fue el primero que lideraste?**
+   * *Talking Point:* La primera vez que tuviste que tomar decisiones arquitectónicas sin nadie arriba a quien pedirle permiso.
+5. **¿Qué aprendizajes obtuviste y qué retos enfrentaste?**
+   * *Talking Point:* El mayor reto nunca fue el código, fue de traducción: hacer que los requerimientos abstractos de los directivos se convirtieran en software que la gente realmente quisiera usar.
+6. **Ahora que existe BluePixel, ¿cómo lo resolverías?**
+   * *Talking Point:* No empezamos programando a ciegas. Implementamos la metodología **Build** (MVP funcional y seguro en semanas) y **Evolve** (evolución continua basada en analítica conductual y ROI).
+7. **¿Sigues enfrentando retos similares actualmente?**
+   * *Talking Point:* Todos los días. Las empresas llegan queriendo implementar IA, pero aterrorizadas de romper sus sistemas de hace 15 años.
+8. **¿Esa visión cómo acompaña a los clientes para que se sientan seguros?**
+   * *Talking Point:* En BluePixel no vendemos código; vendemos blindaje operativo y certidumbre. El cliente sabe que nunca camina solo en su transición digital.
+9. **Consejo o moraleja:**
+   * *Frase de cierre:* *"No te enamores del lenguaje de moda; enamórate de resolver el dolor del usuario con la arquitectura más simple y elegante posible."*
 
 ---
 
-### Preguntas y Puntos de Oro (Talking Points para responder con autoridad):
-
-#### 1. ¿Cómo era el mundo tech vs ahora?
-* **Respuesta clave:** *"Antes el software era pesado y físico. Tenías cuartos fríos con servidores de metal, desplegabas por FTP rezando para que no se rompiera la base de datos, y los ciclos de actualización tomaban seis meses. Hoy operamos en la nube con microservicios, Serverless y agentes de Inteligencia Artificial que escriben y auditan código en milisegundos. La velocidad se multiplicó por cien, pero el miedo a equivocarse sigue siendo el mismo."*
-
-#### 2. ¿Cuál fue el primer trabajo que tuviste al salir de la universidad?
-* **Respuesta clave:** Contar la anécdota real en 30 segundos: la primera empresa donde se enfrentaron al mundo real. El contraste entre la teoría académica limpia de los libros y la realidad caótica del código en producción con clientes exigiendo entregas.
-
-#### 3. ¿Cómo te sentiste al pisar por primera vez ese trabajo formal?
-* **Respuesta clave:** *"Sentías el síndrome del impostor al máximo. Te dabas cuenta de que en la universidad te enseñan a construir castillos en el aire, pero en la industria corporativa te pagan por apagar incendios reales donde cada error le cuesta dinero a la empresa."*
-
-#### 4. ¿Qué proyecto fue el primero que lideraste?
-* **Respuesta clave:** Mencionar el primer gran proyecto donde tuvieron que dar la cara ante un cliente o directivo. La responsabilidad de tomar decisiones arquitectónicas cuando no hay nadie arriba de ti a quien preguntarle.
-
-#### 5. ¿Qué aprendizajes obtuviste de esa experiencia y qué retos enfrentaste?
-* **Respuesta clave:** *"Aprendí que la tecnología más moderna no sirve de nada si no entiende la psicología del usuario ni el modelo de negocio. El mayor reto no fue técnico, fue de comunicación: traducir requerimientos abstractos de directivos en sistemas estables que realmente se usaran."*
-
-#### 6. Ahora que existe BluePixel, ¿cómo lo resolverías?
-* **Respuesta clave:** *"Hoy no empezaríamos programando a ciegas. En BluePixel aplicamos nuestra metodología de dos fases: **Build** (crear un MVP funcional y validado en semanas, no en años) y **Evolve** (evolución continua basada en analítica conductual real). No arriesgamos el capital del cliente en suposiciones."*
-
-#### 7. ¿Sigues enfrentando retos similares actualmente?
-* **Respuesta clave:** *"Todos los días. Las grandes empresas nos buscan porque están atrapadas en sistemas 'legados' de hace quince años. Quieren meter Inteligencia Artificial, pero tienen terror de romper su operación diaria. Nuestro reto sigue siendo darles certidumbre técnica."*
-
-#### 8. ¿Esa visión cómo la llevas a través de BluePixel para que los clientes se sientan seguros?
-* **Respuesta clave:** *"En BluePixel no vendemos código; vendemos blindaje operativo. Cuando una empresa como Bimbo o Avianca confía en nosotros, saben que diseñamos arquitecturas desacopladas y seguras. Los acompañamos paso a paso para que la transición digital sea transparente y sin sobresaltos para su negocio."*
-
-#### 9. Consejo o moraleja final:
-* **Frase de cierre:**
-  > *"No te enamores del lenguaje de programación ni de la herramienta de moda. Enamórate de resolver el problema del negocio con la arquitectura más simple y elegante posible. Eso es lo que construye empresas que perduran."*
-
----
-
-### 📱 Estructura para el Carrusel de LinkedIn (Jessica y René):
-* **Slide 1 (Portada):** *"Lo que aprendí en 10 años en la industria tech (que la universidad nunca me enseñó)"* + Gráfico retro vs moderno.
-* **Slide 2 (Audio 15s):** El choque de realidad: de servidores físicos al caos de producción.
-* **Slide 3 (Audio 15s):** El verdadero reto: por qué el 90% de las fallas no son de código, sino de comunicación.
-* **Slide 4 (Audio 15s):** El dilema corporativo actual: la trampa de la deuda técnica de 15 años.
-* **Slide 5 (Audio 15s):** La solución moderna: metodologías ágiles y arquitecturas sin miedo.
-* **Slide 6 (Cierre y CTA):** *"En BluePixel transformamos sistemas complejos en ventajas competitivas. ¿Cuál es el sistema de tu empresa que hoy nadie se atreve a tocar?"*
-
----
-
-## 🎨 BLOQUE 2: EL ADN DE BLUEPIXEL (TEMA 2)
-* **Tema:** *"Creativo y programador no se llevan: El mito que rompió BluePixel"*
+### TEMA 2: "Creativo y programador no se llevan: El mito que rompió BluePixel"
 * **Personaje principal:** Leo
-* **Formato:** Entrevista directa a cámara / Video vertical con cortes dinámicos.
+* **Formato:** Entrevista directa a cámara / Video vertical dinámico.
 * **Hook explosivo de apertura (0 a 3 seg):**
-  > *"El software más robusto y avanzado del mundo es 100% inútil si está tan feo, confuso y mal diseñado que tus usuarios lo abandonan a los diez segundos."*
+  > *"El software más robusto del mundo es 100% inútil si está tan feo y confuso que tus usuarios lo abandonan a los diez segundos."*
+
+#### Guión y Puntos de Oro:
+1. **¿Alguna vez te dijeron que el arte no va de la mano con la programación?**
+   * *Talking Point:* El falso mito de que los ingenieros son robots matemáticos y los diseñadores son artistas caóticos. La programación de alto nivel es un arte: requiere elegancia, ritmo y belleza estructural.
+2. **¿Por qué crees que en la cultura popular se ve así?**
+   * *Talking Point:* El cliché del hacker antisocial en un sótano oscuro contra el diseñador eligiendo paletas de color. En los negocios reales, si el ingeniero no tiene empatía y el diseñador no entiende de bases de datos, el producto muere.
+3. **¿Cómo usas ese diferenciador en BluePixel?**
+   * *Talking Point:* BluePixel nació para romper ese abismo. Las casas de software tradicionales entregan sistemas grises que parecen hojas de cálculo de 1995; las agencias creativas entregan maquetas en Figma que ningún programador puede construir. Nosotros entregamos **Diseño UX de clase mundial montado sobre Arquitectura Cloud e IA de grado militar**.
+4. **¿Crees que no ser creativo pueda truncar una carrera en este medio?**
+   * *Talking Point:* Más que nunca. La IA ya escribe código de memoria; lo que no tiene es juicio estético, sensibilidad humana ni pensamiento lateral. La creatividad es el seguro de vida del tecnólogo moderno.
+5. **¿Es algo que los clientes buscan al llegar a BluePixel?**
+   * *Talking Point:* Llegan frustrados de consultoras donde nadie los entendía o agencias de marketing donde la web se caía los viernes. Con nosotros encuentran un interlocutor que habla de diseño y de infraestructura en la misma frase.
+6. **¿Cómo les ha beneficiado? (Casos Reales con Cifras):**
+   * *Caso Avianca (LifeMiles):* Rediseño conductual (UX) que aumentó la retención móvil en **+22%**.
+   * *Caso RadioShack:* Optimización de pasarelas y arquitectura de checkout que incrementó la conversión e-commerce en **+32%**.
+7. **¿Es la gran ventaja competitiva de BluePixel?**
+   * *Talking Point:* Es lo que nos permite sentar en la misma mesa al Director de Marketing y al Director de Sistemas y ponerlos de acuerdo.
+8. **Consejo o moraleja:**
+   * *Frase de cierre:* *"La tecnología sin empatía es basura inútil; el diseño sin ingeniería es solo humo. El verdadero poder digital está donde el arte y el código se dan la mano."*
 
 ---
 
-### Preguntas y Puntos de Oro (Talking Points para Leo):
-
-#### 1. ¿Alguna vez te dijeron que el arte no va de la mano con la programación y la tecnología?
-* **Respuesta clave:** *"Constantemente. En la escuela te dicen que los ingenieros son de cerebro izquierdo (cuadrados, lógicos, matemáticos) y los diseñadores de cerebro derecho (artistas, caóticos, emocionales). Es una falacia absurda. Los mejores programadores del mundo son artistas que escriben código limpio y elegante."*
-
-#### 2. ¿Por qué crees que en la cultura popular se ve así?
-* **Respuesta clave:** *"Porque nos vendieron el cliché de Hollywood: el hacker antisocial encerrado en un sótano oscuro tecleando letras verdes, y por otro lado el diseñador 'hippie' con bufanda eligiendo colores. Pero en el mundo corporativo real, si el ingeniero no entiende de empatía humana y el diseñador no entiende de bases de datos, el producto fracasa."*
-
-#### 3. ¿Cómo usas ese diferenciador en BluePixel y en tu trabajo?
-* **Respuesta clave:** *"BluePixel nació literalmente para cerrar ese abismo. Las consultoras tradicionales de software te entregan sistemas grises y horribles que parecen hojas de cálculo de los años 90. Las agencias creativas te diseñan maquetas hermosas en Figma que ningún ingeniero puede programar en la vida real. Nosotros hacemos ambas cosas con excelencia: diseño UX/UI de clase mundial montado sobre arquitecturas Cloud e IA de grado militar."*
-
-#### 4. ¿Crees que no ser creativo pueda truncar una carrera en este medio?
-* **Respuesta clave:** *"Absolutamente. Y más hoy con la Inteligencia Artificial. La IA ya sabe escribir código de memoria. Lo que la IA no tiene es juicio estético, pensamiento crítico y sensibilidad para saber cómo hacer que una persona se sienta cómoda usando una aplicación. La creatividad es el único seguro de vida del programador moderno."*
-
-#### 5. ¿Es algo que los clientes buscan o se sienten atraídos al buscar a BluePixel?
-* **Respuesta clave:** *"Llegan con nosotros hartos de dos experiencias previas: o contrataron a una casa de software tradicional y sus empleados odian el sistema porque no se entiende, o contrataron a una agencia de marketing que les cobró millones por una web que se cae cada viernes. Cuando ven que en BluePixel hablamos el idioma del diseño y de la ingeniería al mismo tiempo, sienten un alivio inmediato."*
-
-#### 6. ¿Cómo les ha beneficiado? (Casos Reales con Datos):
-* **Respuesta clave:**
-  * **Caso Avianca:** *"En LifeMiles rediseñamos la experiencia conductual móvil (UX/UI) y logramos aumentar la retención de usuarios en un **+22%**."*
-  * **Caso RadioShack:** *"Reestructuramos la arquitectura y pasarelas de pago haciéndolas totalmente intuitivas y la tasa de conversión en e-commerce subió un **+32%**."*
-  * *"Esos números no se logran solo con código ni solo con dibujitos; se logran uniendo ambos mundos."*
-
-#### 7. ¿Consideras que esa creatividad se ha convertido en la ventaja competitiva de BluePixel?
-* **Respuesta clave:** *"Es nuestra mayor ventaja competitiva. Nos permite hablar con el Director de Marketing y con el Director de Tecnología en la misma junta, ponerlos de acuerdo y entregar una plataforma que enamora a los usuarios y le da paz mental al equipo de servidores."*
-
-#### 8. Consejo o moraleja final:
-* **Frase de cierre:**
-  > *"La tecnología sin empatía es basura inútil; el diseño sin ingeniería es solo una ilusión bonita. El verdadero poder de los negocios digitales está en el punto exacto donde el arte y el código se dan la mano."*
+## ⚡ PARTE 3: "PIXEL NEWS" — LAS NOTICIAS REALES DE TECNOLOGÍA (4:15 PM – 5:15 PM)
+*Cápsulas ágiles de 60 a 90 segundos con Leo y María conectando las noticias del momento con la tesis de BluePixel.*
 
 ---
 
-## ⚡ BLOQUE 3: SECCIÓN DE NOTICIAS TECH ("PIXEL NEWS" - EDICIÓN HOY)
-* **Formato:** Cápsulas de 60 a 90 segundos con Leo o María a cámara, con cortes rápidos y capturas en pantalla preparadas por Sergio.
+### SECCIÓN A: DE NICHO (B2B, CTOs e Infraestructura)
+
+#### 1. Wall Street Journal: "La IA transforma el software empresarial, pero no lo está reemplazando tan rápido" (8 Sept)
+* **Fuente:** [Wall Street Journal](https://www.wsj.com/tech/ai/ai-is-disrupting-software-companiesbut-not-as-fast-as-many-feared-a380443a)
+* **Hook (0-3s):** *"¿La Inteligencia Artificial va a destruir a Salesforce y a las empresas de software? Wall Street acaba de demostrar exactamente lo contrario."*
+* **La noticia:** Gigantes como Salesforce, ServiceNow y Snowflake están resistiendo el embate de la IA mucho mejor de lo esperado. La razón: para los modelos de IA es fácil escribir código aislado, pero integrar y mantener sistemas empresariales complejos sigue siendo una tarea humana crítica.
+* **La Perspectiva BluePixel:** *"Esta es exactamente nuestra tesis: la IA commoditiza la programación básica, pero la verdadera ingeniería está en integrar la IA con los datos y la operación de las empresas. Por eso las consultoras estratégicas como BluePixel tienen más valor que nunca."*
+* **CTA:** *"¿En tu empresa ya intentaron conectar IA con sus sistemas o siguen batallando con código roto? Te leo en los comentarios."*
+
+#### 2. OpenAI presenta GPT-6 Astra (3 Sept)
+* **Fuente:** [Reuters — GPT-6 Astra](https://www.reuters.com/legal/litigation/openai-launches-new-astra-model-amid-growing-scrutiny-over-agents-safety-2026-09-03/)
+* **Hook (0-3s):** *"OpenAI acaba de lanzar Astra, su modelo autónomo, y confirma una cosa: los chatbots tradicionales quedaron oficialmente en el pasado."*
+* **La noticia:** OpenAI presentó GPT-6 Astra, diseñado para ejecutar tareas complejas de forma autónoma directamente dentro de entornos de software reales (no solo chatear, sino operar herramientas).
+* **La Perspectiva BluePixel:** *"En BluePixel ya lo venimos implementando: el futuro no son las cajas de texto donde preguntas cosas, son los agentes autónomos con protocolos MCP que mueven inventarios, calculan precios y cotizan en milisegundos."*
+
+#### 3. NVIDIA anuncia la compra de Hugging Face por $13,000 Millones de Dólares (3 Sept)
+* **Fuente:** [AP News — NVIDIA Hugging Face](https://apnews.com/article/nvidia-hugging-face-ai-d96d50e037a2ade479dcdf81cdf2afcf)
+* **Hook (0-3s):** *"Trece mil millones de dólares. Ese fue el cheque que Jensen Huang de NVIDIA firmó para quedarse con el corazón del software open source."*
+* **La noticia:** La adquisición consolida el control de NVIDIA sobre el mayor repositorio de modelos y herramientas abiertas del mundo, garantizando que el desarrollo de IA corra sobre su ecosistema de chips.
+* **La Perspectiva BluePixel:** *"El mensaje para los directores de tecnología es claro: no dependas de un solo proveedor propietario. Las empresas que ganarán son las que desplieguen arquitecturas híbridas y modelos locales optimizados."*
+
+#### 4. Investigador de Anthropic renuncia por preocupación sobre seguridad de IA (9 Sept)
+* **Fuente:** [AP News — Anthropic AI Safety](https://apnews.com/article/anthropic-ai-safety-jacob-coxon-2ed549e07f2f941600a135070487d83d)
+* **Hook (0-3s):** *"Cuando el investigador sénior de seguridad de Anthropic renuncia diciendo que la carrera de IA va demasiado rápido... vale la pena escuchar por qué."*
+* **La noticia:** Jacob Coxon dejó Anthropic señalando que la competencia feroz entre laboratorios está dejando atrás los mecanismos de seguridad y contención de los agentes.
+* **La Perspectiva BluePixel:** *"En el mundo corporativo, la seguridad no es opcional. No puedes conectar agentes a tus bases de datos sin capas estrictas de permisos y aislamiento. En BluePixel diseñamos con gobernanza y blindaje desde el día cero."*
+
+#### 5. "RAMageddon": La IA está provocando una escasez mundial de memoria
+* **Fuente:** [Financial Times — RAMageddon](https://www.ft.com/content/ea9a9dcc-b1df-49b0-b80c-f320161b9efa?utm_source=chatgpt.com)
+* **Hook (0-3s):** *"La fiebre de la Inteligencia Artificial se está tragando toda la memoria RAM del planeta. Y el problema durará hasta 2028."*
+* **La noticia:** La demanda de memoria HBM y DRAM para centros de datos de IA está asfixiando la cadena de suministro, encareciendo los servidores y limitando la producción para dispositivos de consumo.
+* **La Perspectiva BluePixel:** *"Cuando el hardware se vuelve escaso y costoso, la eficiencia del software es obligatoria. Se acabó la era de programar código inflado; hoy optimizar la memoria y migrar a arquitecturas Serverless es una necesidad financiera."*
+
+#### 6. Startup Kepler Computing promete una nueva forma de fabricar HBM
+* **Fuente:** [Wired — Kepler Computing HBM Bottleneck](https://www.wired.com/story/a-new-dollar400-million-startup-wants-to-fix-the-ai-memory-bottleneck/)
+* **Hook (0-3s):** *"Una startup de 400 millones de dólares promete salvar a la industria de la crisis de memoria con arquitectura 3D."*
+* **La noticia:** Kepler Computing presentó una tecnología de fabricación 3D para memoria HBM y SRAM que busca romper el cuello de botella de los centros de datos con producción en Estados Unidos hacia 2028.
+* **La Perspectiva BluePixel:** *"La infraestructura física está cambiando a pasos agigantados. Las empresas deben construir software desacoplado para que, cuando el nuevo hardware llegue, sus sistemas puedan aprovecharlo sin tener que reescribir todo."*
 
 ---
 
-### Noticia 1: La explosión del estándar MCP (Model Context Protocol)
-* **Hook:** *"Si tu empresa sigue usando chatbots que solo responden texto, estás tirando tu dinero: bienvenido a la era del MCP."*
-* **La noticia:** La industria tecnológica global acaba de dar el salto hacia el **Model Context Protocol (MCP)** impulsado por Anthropic. La IA ya no es un asistente pasivo que te platica cosas; ahora es un agente con "manos" capaz de conectarse a bases de datos, APIs bancarias y sistemas ERP de forma segura.
-* **El Flex de BluePixel:** *"En BluePixel ya no implementamos formularios convencionales. Hoy nuestras plataformas operan sobre servidores MCP propios que procesan solicitudes de clientes y las enrutan a bases de datos en tiempo real."*
+### SECCIÓN B: PÚBLICO GENERAL (Viral, TikTok, Reels y Shorts)
+
+#### 7. La crisis de la RAM provocará la mayor caída en envíos de smartphones en una década
+* **Fuente:** [Infobae Tecno — Escasez de Memoria RAM](https://www.infobae.com/tecno/2026/02/27/la-escasez-de-memoria-ram-podria-provocar-la-mayor-caida-en-los-envios-de-smartphones-en-mas-de-una-decada/)
+* **Hook (0-3s):** *"¿Pensabas cambiar de celular este año? Malas noticias: tu próximo teléfono va a ser más caro y más escaso por culpa de la IA."*
+* **El Hecho:** Las fábricas de memoria están prefiriendo venderle componentes con márgenes gigantescos a los servidores de IA que a los fabricantes de smartphones, anticipando una caída histórica en la producción de teléfonos.
+* **La Reflexión rápida:** *"El apetito de la IA por recursos computacionales ya no es una noticia abstracta; va a impactar directamente en el precio del teléfono que tienes en el bolsillo."*
+
+#### 8. La nueva Siri con IA en iPhone... pero con letra pequeña
+* **Fuente:** [Applesfera — Nueva Siri en iOS](https://www.applesfera.com/ios/nueva-siri-apple-fin-promete-ser-realmente-inteligente-espana-tendremos-que-seguir-esperando)
+* **Hook (0-3s):** *"Apple promete que la nueva Siri por fin será inteligente, pero hay un gran truco que nadie te está contando."*
+* **El Hecho:** La nueva versión promete interactuar con las apps como nunca antes, pero las funciones avanzadas tienen limitaciones geográficas, retrasos por idiomas y consumos de batería significativos.
+* **La Reflexión rápida:** *"Meter agentes de IA a correr en dispositivos locales es el reto más complejo de la década. Si a Apple le cuesta trabajo, imagínate el reto para las aplicaciones de tu empresa."*
 
 ---
 
-### Noticia 2: Claude Code y la muerte de programar línea por línea
-* **Hook:** *"El rol del programador como lo conocemos murió esta semana. Llegó Claude Code a la terminal."*
-* **La noticia:** Anthropic liberó su CLI agentic directo en la consola. Los desarrolladores senior ya no pasan ocho horas tecleando sintaxis repetitiva; ahora definen arquitecturas, objetivos de negocio y supervisan a agentes de IA que programan, prueban y corrigen código en segundos.
-* **La lección:** *"El desarrollador que se niegue a usar agentes quedará obsoleto; el desarrollador que aprenda a orquestar agentes multiplicará su productividad por diez."*
+## 🎬 RESUMEN DE TIEMPOS DE PRODUCCIÓN PARA HOY
 
----
-
-### Noticia 3: Modelos de Razonamiento (OpenAI o1 / Strawberry vs IAs tradicionales)
-* **Hook:** *"Por fin la Inteligencia Artificial aprendió a pensar antes de abrir la boca."*
-* **La noticia:** Los nuevos modelos de razonamiento (como o1 de OpenAI) dejaron atrás el método de adivinar la siguiente palabra estadísticamente. Ahora utilizan 'Chain of Thought' (cadenas de pensamiento) internas, lo que les permite resolver problemas matemáticos complejos, auditorías de seguridad en código y diagnósticos médicos sin alucinar.
-* **Aplicación B2B:** Es la tecnología que permite crear asistentes quirúrgicos y financieros donde el margen de error debe ser cero.
-
----
-
-### Noticia 4: Soberanía de Datos y Privacidad en la IA Corporativa
-* **Hook:** *"Si tus empleados están metiendo información confidencial de tu empresa a ChatGPT público, tienes una bomba de tiempo legal."*
-* **La noticia:** Las leyes de protección de datos y regulaciones sanitarias (como COFEPRIS en México o HIPAA a nivel internacional) están penalizando a empresas que alimentan IAs públicas con datos sensibles de clientes.
-* **La solución BluePixel:** La tendencia 2026 son los **microservicios privados y serverless** donde los datos nunca salen de la infraestructura del cliente ni se usan para re-entrenar modelos ajenos.
-
----
-
-## 🎬 GUÍA DE DIRECCIÓN PARA SERGIO Y JESSICA (ROCKETING)
-
-1. **Iluminación y Encuadre:**
-   * Plano medio corto para las respuestas reflexivas.
-   * **Plano cerrado con corte a cámara B** cada vez que Leo o María suelten una frase contundente o una cifra (+22%, +32%, o los hooks de inicio).
-2. **Edición y Dinamismo:**
-   * Cero silencios muertos: edición ágil cortando pausas largas (*jump cuts* limpios).
-   * Subtítulos dinámicos con palabras clave resaltadas en amarillo/cyan.
-   * Insertar capturas en pantalla cuando se hable de MCP, Claude Code o de las métricas de Avianca y RadioShack.
+| Horario | Actividad | Responsables | Formato de Salida |
+| :--- | :--- | :--- | :--- |
+| **11:00 - 02:00 PM** | Taller en vivo con FR Medical | María, Leo, Fabián, Sergio, Jessica | B-Roll, Reacciones (Momento Ajá) y VOC |
+| **02:00 - 03:00 PM** | Comida y debriefing de insights | Todos | Conversación estratégica |
+| **03:00 - 03:45 PM** | Grabación Tema 1: Recién egresado vs IA | Leo / María + Sergio | Video YouTube + Carrusel Audio LinkedIn |
+| **03:45 - 04:30 PM** | Grabación Tema 2: Creativo vs Programador | Leo + Sergio | Video Vertical LinkedIn / Reels |
+| **04:30 - 05:15 PM** | Grabación Pixel News (8 Noticias) | Leo, María + Jessica | 8 Shorts / TikToks / Clips B2B |

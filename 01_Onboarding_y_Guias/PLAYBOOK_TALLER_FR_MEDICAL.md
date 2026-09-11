@@ -85,15 +85,24 @@ Aprovecha los momentos de diálogo para hacer estas 4 preguntas que dejarán a L
 
 ---
 
-## 🎥 5. PROTOCOLO DE FILMACIÓN CON JESSICA Y SERGIO (ROCKETING)
+## 🎥 5. LEVANTAMIENTO DE CONTENIDO — ACOMPAÑAMIENTO A CLIENTE (ROCKETING)
 
-El taller es la fuente de verdad de donde extraeremos los primeros videos para *"Pixel contra el mundo"*:
+El taller con FR Medical no solo se documentará como evento; funcionará como **sesión real de acompañamiento para mostrar cómo BluePixel piensa, escucha, analiza y acompaña a sus clientes** más allá de la entrega de un producto tecnológico.
 
-*   **Identificar el "Momento Ajá":** Sergio debe tener la cámara lista en plano cerrado cuando Leo o tú abran en la laptop el **[Demo Cotizador Quirúrgico IA](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)** y le muestren a FR Medical cómo la IA responde una solicitud quirúrgica en **1.8 segundos**. La cara de asombro y revelación de los directivos de FR Medical al ver su propio catálogo (*Stracos, Redax, Boston*) cotizado en vivo es el gancho de oro para LinkedIn y YouTube.
-*   **Cortes de 45 segundos para redes sociales:**
-    *   *Clip 1:* "Por qué la industria médica mexicana sigue cotizando implantes por correo manual".
-    *   *Clip 2:* "Cómo la IA ayuda a un cirujano torácico a elegir el implante correcto en quirófano".
-    *   *Clip 3:* "Agentizando una distribuidora de salud: de horas a segundos".
+> *"No solamente vamos a grabar lo que suceda. Vamos a escuchar para descubrir qué vale la pena contar."*
+
+### Las 3 Fuentes Principales de Contenido en Vivo:
+1. **La Voz del Cliente:** Detectar problemas, necesidades, inquietudes y palabras que el cliente utiliza naturalmente para hablar de su negocio (ej. cómo describe la urgencia de quirófano o el descontrol de la consignación).
+2. **La Mirada de BluePixel:** Capturar intervenciones de Leo, María y Fabián que demuestren criterio, experiencia, preguntas clave, análisis y acompañamiento estratégico.
+3. **La Transformación (El Momento Ajá):** Identificar momentos donde una conversación, pregunta o la **[Demo del Cotizador en 1.8s](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)** permita al cliente ver su problema resuelto desde otra perspectiva.
+
+### Material Potencial a Extraer (Checklist para Sergio y Jessica):
+* **Reels / Shorts:** Insights de Leo, problemas expresados por FR Medical, preguntas poderosas y momentos de *"esto es lo que realmente estaba pasando"*.
+* **Carruseles LinkedIn:** Problema ➔ Análisis ➔ Perspectiva BluePixel ➔ Aprendizaje.
+* **Frases / Pixel Insights:** Ideas breves con alto valor estratégico para redes.
+* **Caso / Storytelling:** Qué necesitaba el cliente, qué detectó BluePixel y cómo se abordó.
+* **B-roll Dinámico:** Acompañamiento, conversación, escucha activa, pizarrones, pantallas con código y diagramas de arquitectura.
+* **Contenido de Autoridad y Posicionamiento:** Fragmentos donde se vea el criterio técnico del equipo en acción demostrando que BluePixel funciona como un aliado que acompaña, cuestiona y ayuda a tomar mejores decisiones.
 
 ---
 
