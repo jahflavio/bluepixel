@@ -44,6 +44,11 @@ La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas d
 ### 2.6 Proceso de Captación de Leads Indiscriminado:
 *   **Tratamiento Plano sin Priorización:** Los formularios de contacto web no filtran por línea de producto ni por nivel de urgencia. Un jefe de compras corporativo recibe el mismo trato que un paciente que busca orientación general.
 
+### 2.7 Llamadas Perdidas Fuera de Horario Laboral y Fuga de Ventas Nocturnas:
+*   **El Teléfono que Nadie Contesta a las 2:00 AM:** Fuera del horario laboral (noches, madrugadas y fines de semana), entran llamadas de urgencia de hospitales o cirujanos y **no se alcanzan a contestar por falta de personal de guardia suficiente**.
+*   **Pérdida Inmediata de Ventas High-Ticket:** Cuando un cirujano torácico o traumatólogo necesita un set de placas Stracos o un drenaje Redax para una cirugía nocturna en el Hospital Ángeles o Médica Sur y nadie responde, llama a otro distribuidor de la competencia. **FR Medical pierde en un minuto una venta de $50,000 a $150,000 MXN**.
+*   **Requerimiento Vital:** Un **Bot Asistente de IA activo 24 horas** capaz de atender la llamada telefónica en lenguaje natural o recibir el mensaje por WhatsApp, cotizar en el acto y despachar el PDF formal sin depender de que un humano esté despierto al lado del conmutador.
+
 ---
 
 ## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
@@ -91,12 +96,23 @@ graph TD
 *   **Liquidación Automática de Comisiones:** Cada orden facturada calcula la comisión exacta del representante según su cuota y meta mensual. Se elimina el uso de calculadoras físicas.
 *   **Comprobación Rápida de Viáticos:** Los mensajeros y ejecutivos en campo suben fotografía de tickets de gasolina y casetas por WhatsApp; el sistema extrae montos mediante OCR y concilia automáticamente con la contabilidad.
 
+### Módulo 5: Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)
+*   **Atención Inmediata al Primer Timbrazo:** Si entra una llamada a las 2:00 AM y el conmutador o personal de guardia no responde en 3 timbrazos, el **Agente de Voz IA de BluePixel** atiende en lenguaje natural cálido y médico.
+*   **Flujo Conversacional de Urgencia:**
+    1. Pregunta: *"Buenas noches, está en la línea de urgencias de FR Medical. ¿De qué hospital nos llama y qué procedimiento o material requiere?"*
+    2. Identifica hospital (ej. Ángeles Pedregal), cirujano y patología (ej. kit Stracos para tórax inestable).
+    3. Valida en la base de datos si el hospital tiene convenio de crédito activo.
+    4. **Genera la cotización formal en PDF en menos de 60 segundos y la envía al WhatsApp del médico.**
+    5. Dispara una **llamada telefónica y notificación push de alta prioridad** al celular del mensajero de guardia para despachar el material de inmediato.
+*   **Impacto de Negocio:** Cero llamadas perdidas en la noche, rescate de ventas de $50k - $150k MXN que antes se iban a la competencia por no contestar el teléfono.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
 
 *   **Fase Build (Desarrollo e Implementación en 8 a 10 semanas):**
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
+    *   **Agente de Guardia 24/7 Multicanal (Voz IA + WhatsApp)** para atención nocturna y fines de semana.
     *   Módulo de Enrutamiento Inteligente, Horarios y Dashboard GPS de Mensajería.
     *   Motor de Reglas de Anticipo 24/7 y generación de PDF formal con COFEPRIS.
     *   Portal visual de KPIs de ventas y cálculo de comisiones.
