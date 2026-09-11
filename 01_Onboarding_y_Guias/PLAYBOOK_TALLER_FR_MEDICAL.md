@@ -89,8 +89,21 @@ Aprovecha los momentos de diálogo para hacer estas 4 preguntas que dejarán a L
 
 El taller es la fuente de verdad de donde extraeremos los primeros videos para *"Pixel contra el mundo"*:
 
-*   **Identificar el "Momento Ajá":** Sergio debe tener la cámara lista cuando Leo o tú le muestren a FR Medical una demo en vivo de cómo la IA responde una duda quirúrgica en 2 segundos. La cara de asombro de los directivos de FR Medical es el gancho de oro para LinkedIn y YouTube.
+*   **Identificar el "Momento Ajá":** Sergio debe tener la cámara lista en plano cerrado cuando Leo o tú abran en la laptop el **[Demo Cotizador Quirúrgico IA](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)** y le muestren a FR Medical cómo la IA responde una solicitud quirúrgica en **1.8 segundos**. La cara de asombro y revelación de los directivos de FR Medical al ver su propio catálogo (*Stracos, Redax, Boston*) cotizado en vivo es el gancho de oro para LinkedIn y YouTube.
 *   **Cortes de 45 segundos para redes sociales:**
     *   *Clip 1:* "Por qué la industria médica mexicana sigue cotizando implantes por correo manual".
     *   *Clip 2:* "Cómo la IA ayuda a un cirujano torácico a elegir el implante correcto en quirófano".
     *   *Clip 3:* "Agentizando una distribuidora de salud: de horas a segundos".
+
+---
+
+## ⚡ 6. PROTOTIPO FUNCIONAL PREPARADO PARA LA DEMO EN VIVO
+
+Para el taller de mañana, tienes listo y funcionando el prototipo interactivo específico para su marca:
+*   🔗 **Acceso directo al cotizador:** [11_Cotizador_IA_FR_Medical/index.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)
+*   **Guión de demostración rápida (1-Click):**
+    1. Abre el archivo en Google Chrome o Microsoft Edge.
+    2. Haz clic en el botón superior: *"Fractura Costal Múltiple (Stracos MedXpert)"*.
+    3. La consola mostrará el proceso de inferencia en tiempo real (`[0.4s] Mapeando patología...`, `[0.9s] Consultando inventario ABC...`, `[1.8s] Cotización generada`).
+    4. En 1.8 segundos se despliega la orden formal #FRM-2026 con los precios de convenio, desglose de IVA, claves de producto y disponibilidad de stock en quirófano.
+    5. Muestra los botones de acción: *"Descargar PDF"* y *"Reservar en Quirófano por WhatsApp"*.
