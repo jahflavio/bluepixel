@@ -11,8 +11,9 @@
     *   **Página Web:** Webflow (Ágil, fácil de inyectar código).
     *   **Analítica:** Mixpanel (Tienen cultura de datos) + GTM.
     *   **Correos:** Google Workspace (Gmail).
-    *   **Mailing Masivo:** Mandrill.
+    *   **Mailing:** Inexistente actualmente (Mandrill en DNS es un rezago sin uso; resolveremos con HubSpot Free).
     *   **SEO:** Google Search Console ya está verificado.
+*   **🔥 Evento Crítico de Mañana (Viernes 11:00 AM - 2:00 PM):** Taller de Agentización con el cliente real **FR Medical** (`frmedical.com.mx` - tecnología cardiotorácica y vía aérea). Lee tu [PLAYBOOK_TALLER_FR_MEDICAL.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/PLAYBOOK_TALLER_FR_MEDICAL.md) para dominar sus marcas (Stracos, Redax, Boston) y hacer las 4 preguntas de oro.
 
 ---
 

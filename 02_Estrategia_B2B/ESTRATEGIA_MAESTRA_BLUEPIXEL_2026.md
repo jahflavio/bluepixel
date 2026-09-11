@@ -75,7 +75,7 @@ graph TD
 
 ### 1.4 Rituales Operativos y Fechas Críticas
 *   **Lunes 4:00 PM:** Entrega y revisión del reporte de rendimiento semanal en Looker Studio ([Dashboard de Campañas](https://datastudio.google.com/u/0/reporting/b825c361-9afe-4db0-a656-8a93d6106392/page/p_bg1t74vpzd)) con Marily, Diana y el equipo.
-*   **Viernes 11:00 AM - 2:00 PM (Taller de Agentización):** Sesión presencial/remota de 3 horas con un cliente real para agentizar procesos, definir KPIs y extraer la voz del cliente (*Voice of Customer*). Grabación íntegra con Sergio y Jessica para extracción de micro-contenidos.
+*   **Viernes 11:00 AM - 2:00 PM (Taller de Agentización con FR Medical):** Sesión de 3 horas con el cliente real **FR Medical** ([`frmedical.com.mx`](https://frmedical.com.mx/) - tecnología cardiotorácica y vía aérea). Objetivo: estructurar la agentización de sus cotizaciones quirúrgicas y gestión médica con IA. Grabación con Sergio y Jessica para extraer VOC y cápsulas de video. Ver guía detallada: [PLAYBOOK_TALLER_FR_MEDICAL.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/PLAYBOOK_TALLER_FR_MEDICAL.md).
 
 ---
 
@@ -457,9 +457,10 @@ Para operar la maquinaria con código propio en lugar de costosas plataformas em
 
 ## ⚡ CAPÍTULO 8: GUÍA TÁCTICA PARA LA PRIMERA SEMANA (DÍAS 2 A 5)
 
-### Día 2 (Viernes): El Taller de Agentización (11:00 AM - 2:00 PM)
-- [ ] Llevar documento abierto para transcribir textualmente los dolores, dudas de privacidad y quejas del cliente (*Voice of Customer*).
-- [ ] Coordinar con Sergio y Jessica la grabación asegurando planos estables de Leo y María explicando soluciones arquitectónicas.
+### Día 2 (Viernes): El Taller de Agentización con FR Medical (11:00 AM - 2:00 PM)
+- [ ] Consultar el [PLAYBOOK_TALLER_FR_MEDICAL.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/PLAYBOOK_TALLER_FR_MEDICAL.md) con la radiografía de implantes quirúrgicos (MedXpert, Redax, Boston) y las 4 preguntas de consultor preparadas.
+- [ ] Llevar documento abierto para transcribir textualmente los dolores, tiempos de cotización y quejas operativas de FR Medical (*Voice of Customer*).
+- [ ] Coordinar con Sergio y Jessica la grabación asegurando planos estables de Leo y María explicando soluciones arquitectónicas (capturar el *"Momento Ajá"*).
 
 ### Días 3 y 4 (Fin de Semana / Lunes Mañana): Análisis de Datos de Campañas
 - [ ] Inspeccionar el dashboard de Looker Studio previo a la sesión de las 4:00 PM.
