@@ -165,7 +165,21 @@ A menudo surge la tentación de utilizar **Notion** como CRM por su facilidad de
 
 ---
 
-### 2.4 Auditoría de Canales de Rocketing
+### 2.4 La Segunda Gran Fuga: Inexistencia de Mailing y Nurturing B2B
+
+*   **El Hallazgo Crítico:** BluePixel actualmente **no cuenta con ninguna herramienta ni operación de email marketing o mailing activo**.
+    *   El registro de Mandrill detectado en los registros DNS es un rezago técnico legado sin uso operativo actual.
+    *   No existen listas segmentadas, newsletters técnicas, ni secuencias de seguimiento post-formulario.
+*   **El Impacto Directo en la Adquisición y Conversión:**
+    *   En consultoría de software y proyectos B2B de +$300,000 MXN, el **95% de los prospectos no compran en su primer contacto**. Tienen que evaluar presupuestos, consultar con sus socios o esperar la liberación de capital del siguiente trimestre.
+    *   Al no existir mailing, **el 100% de los leads que genera Rocketing con Google Ads y que no cierran de inmediato se pierden para siempre**. Cada peso invertido en ese clic se evapora porque nadie vuelve a tocar a ese prospecto.
+*   **La Solución Inmediata (Sin Comprar Herramientas Adicionales):**
+    *   **No se necesita contratar Mailchimp, Sendgrid ni ActiveCampaign:** Al adoptar **HubSpot Free CRM**, se desbloquea de manera nativa y gratuita su herramienta de **Email Marketing B2B** (hasta 2,000 correos mensuales incluidos, con editor visual y analítica de aperturas/clics).
+    *   **Correos 1 a 1 vía Google Workspace (Gmail):** Se conecta directo a la cuenta corporativa de Leo o Ventas. Los correos de seguimiento no parecerán newsletters comerciales de spam, sino mensajes directos y profesionales de un consultor de ingeniería, logrando tasas de apertura superiores al 45%.
+
+---
+
+### 2.5 Auditoría de Canales de Rocketing
 
 | Canal | Estado Actual | Diagnóstico de Growth | Acción Inmediata |
 | :--- | :--- | :--- | :--- |
@@ -323,16 +337,19 @@ sequenceDiagram
 
 ---
 
-### 4.3 Arquitectura de Nurturing Automatizado (3 Flujos de Mailing)
-1. **Flujo 1: Leads No Calificados o Fríos (Score < 90):**
-   * *Objetivo:* Mantener a BluePixel en el Top of Mind sin gastar el tiempo del cerrador.
-   * *Contenido:* Casos técnicos de arquitectura STAR-ROI (Avianca, Bimbo), whitepapers sobre arquitecturas Serverless y guías Headless.
+### 4.3 Implementación de Nurturing desde Cero (Activación con HubSpot Free + Gmail)
+
+Dado que BluePixel actualmente **carece de plataforma y operación de mailing activa**, activaremos esta capacidad crítica desde cero sin costo adicional utilizando el motor de email marketing nativo de HubSpot Free conectado a Google Workspace (Gmail):
+
+1. **Flujo 1: Leads Fríos o No Calificados Inmediatamente (Score < 90):**
+   * *Problema resuelto:* Evita que los prospectos que hoy no tienen presupuesto se olviden de BluePixel.
+   * *Mecánica:* Secuencia de 4 correos espaciados (cada 12 días) enviando casos técnicos puros bajo framework STAR-ROI (Avianca, Bimbo, RadioShack). Cero insistencia comercial, 100% autoridad técnica.
 2. **Flujo 2: Onboarding Operativo Cero Fricción (Closed/Won):**
-   * *Objetivo:* Reducir la ansiedad post-compra del cliente (*Buyer's Remorse*).
-   * *Contenido:* Bienvenida en video de María y Leo, y entrega automática de accesos a tableros de Jira y canales de Slack mediante webhook.
+   * *Problema resuelto:* Reduce la ansiedad post-compra del cliente (*Buyer's Remorse*).
+   * *Mecánica:* Bienvenida en video de María y Leo, y entrega automática de accesos a tableros de Jira y canales de Slack mediante webhook de Python.
 3. **Flujo 3: Retención Consultiva y Modelo Evolve (Clientes Activos):**
-   * *Objetivo:* Generar upselling y retención mensual recurrente ($60k - $150k MXN/mes).
-   * *Contenido:* Convocatorias a QBRs (Quarterly Business Reviews) trimestrales mostrando mapas de calor de Clarity/Mixpanel y justificación técnica de nuevas features.
+   * *Problema resuelto:* Convierte proyectos cerrados de desarrollo en ingresos recurrentes mensuales ($60k - $150k MXN/mes).
+   * *Mecánica:* Convocatorias a QBRs (Quarterly Business Reviews) trimestrales mostrando mapas de calor de Clarity/Mixpanel y justificación técnica de nuevas features.
 
 ---
 

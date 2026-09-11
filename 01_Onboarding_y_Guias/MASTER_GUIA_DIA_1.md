@@ -25,7 +25,8 @@
 ### 🧠 Con Leonardo "Leo" (Líder de Marketing y Ventas - Tu Jefe Directo)
 *   **Tu objetivo:** Resolver sus dos grandes dolores de negocio: **Adquisición** y **Conversión**.
 *   **Su visión clave:** Quiere convertir a BluePixel en un **partner a largo plazo** para los clientes (*modelo Evolve / Retainers*), agentizar la web con una experiencia interactiva estilo `vstorm.co` impulsada por un **MCP BluePixel**, y redefinir el formulario de contacto.
-*   **Descubrimiento clave:** BluePixel **no tiene un CRM formal** hoy en día. Tu prioridad técnica es estructurar este pipeline para alimentar a ventas y darle retroalimentación a la agencia.
+*   **Descubrimiento clave 1:** BluePixel **no tiene un CRM formal** hoy en día. Tu prioridad técnica es estructurar este pipeline para alimentar a ventas y darle retroalimentación a la agencia.
+*   **Descubrimiento clave 2:** Tampoco existe **herramienta ni operación de mailing activo**. El 100% de los prospectos que no compran en su primera visita se pierden. Tu propuesta: activar **HubSpot Free** que resuelve el CRM y el Email Marketing a costo cero ($0 MXN).
 
 ### 🤝 Con Mario (Recursos Humanos)
 *   **Tu objetivo:** Onboarding administrativo sin fricciones y permisos de Administrador Local en tu máquina.
