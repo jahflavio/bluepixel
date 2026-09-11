@@ -88,6 +88,26 @@ Convertir el día de hoy en una fábrica de contenido de alta autoridad que demu
 
 ---
 
+### TEMA 3 (Cápsula de Autoridad B2B): "El Espejismo de la IA: Por qué el 'Hágalo usted mismo' termina en Código Spaghetti y Fugas de Datos"
+* **Personaje principal:** Leo Flores
+* **Formato:** Video vertical dinámico para LinkedIn, YouTube Shorts y TikTok.
+* **Hook explosivo de apertura (0 a 3 seg):**
+  > *"Creer que un becario con ChatGPT va a programar el software de tu empresa es como creer que tener un bisturí te convierte en cirujano cardiotorácico."*
+
+#### Guión y Argumentos Demoledores:
+1. **La ilusión de la velocidad inicial:**
+   * *Talking Point:* Hoy cualquier persona con Cursor o ChatGPT puede armar una pantalla en 10 minutos. Parece magia. El problema empieza en la semana 3, cuando quieres conectar una base de datos real, procesar pagos o atender a 500 usuarios simultáneos y todo el sistema colapsa.
+2. **El peligro del 'Código Spaghetti':**
+   * *Talking Point:* La IA escupe líneas parche sobre parche. No tiene visión de arquitectura. Genera miles de líneas de código desordenado que ningún ingeniero humano puede auditar, mantener o reparar. A los 6 meses, la empresa tiene que tirar todo a la basura y empezar de cero.
+3. **La bomba de tiempo de la Seguridad y Privacidad de Datos:**
+   * *Talking Point:* Conectar APIs de IA sin gobernanza es una negligencia corporativa. Mandar datos de clientes, contratos o expedientes médicos en prompts públicos viola la ley y expone los secretos más íntimos de la empresa.
+4. **El riesgo del 'Becario Orquesta' (One-Man Army):**
+   * *Talking Point:* Poner a una sola persona inexperta a hacer arquitectura, base de datos, seguridad y diseño es una receta para el desastre. Si esa persona renuncia, la empresa queda secuestrada por un sistema que nadie entiende.
+5. **El valor real de BluePixel:**
+   * *Frase de cierre:* *"La IA no reemplaza a los ingenieros; reemplaza a quienes no saben de arquitectura. En BluePixel no te vendemos código que tecleamos a mano; te entregamos certidumbre, blindaje de datos y una experiencia que tus clientes van a amar."*
+
+---
+
 ## ⚡ PARTE 3: "PIXEL NEWS" — LAS NOTICIAS REALES DE TECNOLOGÍA (4:15 PM – 5:15 PM)
 *Cápsulas ágiles de 60 a 90 segundos con Leo y María conectando las noticias del momento con la tesis de BluePixel. Aplicamos la **Regla 80/20**: se graban primero las 3 noticias estrella obligatorias; si sobra energía, se graban las secundarias.*
 

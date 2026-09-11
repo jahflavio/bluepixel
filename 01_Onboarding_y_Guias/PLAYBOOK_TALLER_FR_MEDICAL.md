@@ -68,6 +68,12 @@ Durante las 3 horas del taller, cuando Leo y María le pregunten a FR Medical so
 *   **El Problema del Cliente:** Coordinar stock crítico entre sucursales y consignaciones en hospitales.
 *   **La Solución BluePixel:** Implementar la arquitectura de nuestro [Demo Inventario Colaborativo](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/3_Inventario_Colaborativo/index.html) con alertas automáticas cuando un implante de alta rotación (ej. Drentech Unico) baje del stock de seguridad.
 
+### 🛡️ 3.4 El Argumento de Blindaje Clínico: Por qué la IA Médica NO es un "DIY con ChatGPT"
+> [!CAUTION]
+> En distribución de implantes torácicos y trauma, un error cuesta vidas y demandas millonarias. Si el cliente o su equipo de TI sugieren *"eso lo podemos armar con un script de ChatGPT o un programador interno"*, suelta este argumento:
+> 
+> *"Doctor, Licenciado: En comercio electrónico de ropa un error de IA no pasa a mayores. Pero en trauma quirúrgico, cuando un cirujano torácico del Hospital Ángeles pide un set de placas Stracos para una fractura de costillas a las 2:00 AM, un modelo público de IA puede 'alucinar' una medida incompatible o fugar datos sensibles del paciente (violando la NOM de expediente clínico y COFEPRIS). La arquitectura MCP de BluePixel no es un chatbot suelto: es una tubería aislada con reglas determinísticas que garantiza cero alucinaciones y estricto cumplimiento normativo."*
+
 ---
 
 ## 🎯 4. TUS PREGUNTAS CLAVE PARA EL TALLER (Para lucirte como Head of RevOps)
