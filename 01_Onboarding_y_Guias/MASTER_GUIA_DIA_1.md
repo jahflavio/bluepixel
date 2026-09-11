@@ -24,10 +24,10 @@
 *   **Contexto clave:** Ya tiene canales digitales propios; será la voz de autoridad en los nuevos formatos de video (*"Pixel contra el mundo"*).
 
 ### 🧠 Con Leonardo "Leo" (Líder de Marketing y Ventas - Tu Jefe Directo)
-*   **Tu objetivo:** Resolver sus dos grandes dolores de negocio: **Adquisición** y **Conversión**.
+*   **Tu objetivo:** Resolver sus dos grandes dolores de negocio: **Adquisición** y **Conversión**, sumándote a su visión técnica sin generar fricción de ego.
 *   **Su visión clave:** Quiere convertir a BluePixel en un **partner a largo plazo** para los clientes (*modelo Evolve / Retainers*), agentizar la web con una experiencia interactiva estilo `vstorm.co` impulsada por un **MCP BluePixel**, y redefinir el formulario de contacto.
-*   **Descubrimiento clave 1:** BluePixel **no tiene un CRM formal** hoy en día. Tu prioridad técnica es estructurar este pipeline para alimentar a ventas y darle retroalimentación a la agencia.
-*   **Descubrimiento clave 2:** Tampoco existe **herramienta ni operación de mailing activo**. El 100% de los prospectos que no compran en su primera visita se pierden. Tu propuesta: activar **HubSpot Free** que resuelve el CRM y el Email Marketing a costo cero ($0 MXN).
+*   **Descubrimiento clave 1 (¡Su desarrollo con Claude Code!):** Leo **ya automatizó la ingesta de la web hacia Notion usando Claude Code y un servidor MCP**. Esto es una victoria técnica enorme: demuestra que Leo programa con agentes y practica el *dogfooding*. **Jamás le digas que tire Notion a la basura**. Tu postura: *"Tu servidor MCP es una genialidad. Vamos a convertirlo en el enrutador maestro para que siga alimentando Notion, pero además le devuelva a Google Ads las conversiones ganadas para callar el reclamo de Rocketing."*
+*   **Descubrimiento clave 2:** Tampoco existe **herramienta ni operación de mailing activo**. El 80% de los prospectos que no compran en su primera visita (ciclos B2B de 90 días) se pierden sepultados en Notion. Tu propuesta: usar el MCP de Leo para enviar a esos leads fríos a **HubSpot Free ($0 MXN)** para nutrirlos con casos STAR-ROI (Avianca, Bimbo, RadioShack).
 
 ### 🤝 Con Mario (Recursos Humanos)
 *   **Tu objetivo:** Onboarding administrativo sin fricciones y permisos de Administrador Local en tu máquina.
@@ -52,11 +52,14 @@ Ambas sirven para obtener datos de empresas a partir de un correo electrónico, 
 *   **Apollo.io (Outbound):** La usaremos para cazar. Si Ventas necesita contactar a 500 CTOs en Monterrey, Apollo nos da sus teléfonos y correos para lanzarles campañas en frío.
 *   **La Estrategia de Presupuesto (Dile esto a Leo):** *"No necesitamos comprar licencias premium hoy. Ya creé cuentas de Desarrollador gratuitas (Freemium) en Apollo y Clearbit, las conecté a mi código en Python y nos dan créditos de sobra para hacer nuestro Piloto / Prototipo."*
 
-### Notion vs. HubSpot (Nuestra Postura Oficial de CRM)
-Si en el equipo surge la idea de usar **Notion como CRM**, tu postura técnica es clara:
-*   **Notion:** Excelente para documentación interna, minutas, wikis de equipo y manuales de producto.
-*   **HubSpot (Free/Starter):** Obligatorio para CRM. Notion no se conecta con Google Ads, no hace Lead Scoring automático, no registra correos con Gmail ni envía alertas en menos de 5 minutos.
-*   **Argumento para Leo:** *"Arrancamos con HubSpot Free a costo cero ($0 MXN). Nos da pipeline visual, integración con Webflow y retroalimentación para Rocketing sin gastar presupuesto."*
+### Notion vs. HubSpot (Nuestra Postura Oficial de Sinergia)
+Si surge la conversación sobre el CRM y la automatización actual de Notion:
+*   **Notion (Se queda):** Mantiene los tableros Kanban operativos de Leo y el equipo de ventas, las wikis y minutas técnicas.
+*   **El Servidor MCP de Leo (El Cerebro):** Es el orquestador que conecta Webflow con Notion.
+*   **HubSpot Free ($0 MXN):** Se conecta como un satélite del MCP de Leo exclusivamente para:
+    1. Enviar las conversiones cerradas (`GCLID`) de vuelta a Google Ads (eliminando la ceguera de Rocketing).
+    2. Ejecutar las secuencias de goteo de correos automáticos (nurturing) a prospectos que no compran de inmediato.
+*   **Frase de Oro para Leo:** *"Leo, mantengamos tu Notion al 100% para que el equipo no cambie de herramienta. Solo conectemos una salida de tu MCP a HubSpot Free para resolver la atribución de Google Ads y el mailing sin gastar un solo peso."*
 
 ---
 
