@@ -851,6 +851,26 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
+        // FUNCIÓN AUXILIAR PARA LIMPIAR EMOJIS Y CARACTERES NO SOPORTADOS POR HELVETICA EN jsPDF
+        function cleanPdfText(str) {
+            if (!str) return '';
+            return str
+                .replace(/[\u{1F300}-\u{1F9FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}|\u{1F1E6}-\u{1F1FF}|\u{1F900}-\u{1F9FF}|\u{1FA70}-\u{1FAFF}]/gu, '')
+                .replace(/[^\x20-\x7EáéíóúÁÉÍÓÚñÑüÜ()<>:.,\/\-—$%#@]/g, '')
+                .trim();
+        }
+
+        function isCanvasBlank(cnv) {
+            try {
+                const blank = document.createElement('canvas');
+                blank.width = cnv.width;
+                blank.height = cnv.height;
+                return cnv.toDataURL() === blank.toDataURL();
+            } catch (e) {
+                return true;
+            }
+        }
+
         // DESCARGA DE PDF FORMAL CON COFEPRIS USANDO jsPDF
         function descargarPDFOficial() {
             if (!window.jspdf) {
@@ -859,41 +879,98 @@
             }
 
             const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const hosp = document.getElementById('hospitalSelect').value;
-            const folio = currentActiveData.folio;
+            const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+            
+            const rawHosp = document.getElementById('hospitalSelect').value;
+            const hosp = cleanPdfText(rawHosp.split('(')[0].trim());
+            const folio = cleanPdfText(currentActiveData.folio);
             const fecha = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+            const triageClean = cleanPdfText(currentActiveData.urgencia);
+            const choferClean = cleanPdfText(currentActiveData.chofer);
 
-            // Cabecera Oficial
+            // 1. BANNER DE CABECERA OFICIAL (DARK NAVY #0b1329)
             doc.setFillColor(11, 19, 41);
-            doc.rect(0, 0, 210, 40, 'F');
+            doc.rect(0, 0, 210, 38, 'F');
 
+            // Línea de acento cian
+            doc.setFillColor(6, 182, 212);
+            doc.rect(0, 37.5, 210, 1.5, 'F');
+
+            // Título de la Empresa
             doc.setTextColor(255, 255, 255);
-            doc.setFontSize(18);
+            doc.setFontSize(17);
             doc.setFont('helvetica', 'bold');
-            doc.text('FR MEDICAL S.A. de C.V.', 14, 18);
+            doc.text('FR MEDICAL S.A. DE C.V.', 14, 15);
 
-            doc.setFontSize(9);
+            doc.setFontSize(8.5);
             doc.setFont('helvetica', 'normal');
             doc.setTextColor(56, 189, 248);
-            doc.text('ALTA ESPECIALIDAD CARDIOTORÁCICA, TRAUMA Y VÍA AÉREA', 14, 25);
+            doc.text('SISTEMA OPERATIVO QUIRURGICO • ALTA ESPECIALIDAD CARDIOTORACICA Y VIA AEREA', 14, 21.5);
+            
             doc.setTextColor(148, 163, 184);
-            doc.text('RFC: FRM120918XX9 • Av. Insurgentes Sur CDMX • Tels: 55 5374 1133', 14, 31);
+            doc.setFontSize(7.5);
+            doc.text('RFC: FRM120918XX9 • Av. Insurgentes Sur 1602, Benito Juarez, CDMX • Tel: 55 5374 1133 • contacto@frmedical.com.mx', 14, 27.5);
+            doc.text('DISTRIBUIDOR AUTORIZADO: MedXpert (Alemania) | Redax (Italia) | Boston Medical (USA) | Novatech (Francia)', 14, 32.5);
 
-            // Datos de la Cotización
-            doc.setTextColor(30, 41, 59);
-            doc.setFontSize(11);
+            // Badge Superior Derecho
+            doc.setFillColor(15, 23, 42);
+            doc.roundedRect(142, 10, 54, 18, 2, 2, 'F');
+            doc.setTextColor(56, 189, 248);
+            doc.setFontSize(7.5);
             doc.setFont('helvetica', 'bold');
-            doc.text(`FOLIO DE QUIRÓFANO: ${folio}`, 14, 50);
-            doc.setFont('helvetica', 'normal');
-            doc.setFontSize(9.5);
-            doc.text(`HOSPITAL / DESTINO: ${hosp}`, 14, 57);
-            doc.text(`TRIAGE: ${currentActiveData.urgencia}`, 14, 63);
-            doc.text(`FECHA Y HORA: ${fecha}`, 130, 50);
-            doc.text(`AUTO-APROBADO: Validation Sentinel (0.8s)`, 130, 57);
-            doc.text(`CHOFER / RUTA GPS: ${currentActiveData.chofer}`, 130, 63);
+            doc.text('ORDEN QUIRURGICA OFICIAL', 169, 16, { align: 'center' });
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(10);
+            doc.text(folio, 169, 23, { align: 'center' });
 
-            // Tabla de Productos
+            // 2. CAJA DE METADATOS Y TRIAGE QUIRÚRGICO (x: 14 to 196 mm)
+            doc.setFillColor(248, 250, 252);
+            doc.setDrawColor(203, 213, 225);
+            doc.setLineWidth(0.4);
+            doc.roundedRect(14, 43, 182, 28, 2, 2, 'FD');
+
+            // Columna Izquierda de Metadatos
+            doc.setTextColor(15, 23, 42);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(8.5);
+            doc.text('HOSPITAL DESTINO:', 18, 50);
+            doc.setFont('helvetica', 'normal');
+            doc.text(hosp.substring(0, 48), 53, 50);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text('TRIAGE CLINICO:', 18, 56.5);
+            doc.setTextColor(185, 28, 28);
+            doc.text(triageClean, 53, 56.5);
+
+            doc.setTextColor(15, 23, 42);
+            doc.setFont('helvetica', 'bold');
+            doc.text('CREDITO / CONVENIO:', 18, 63);
+            doc.setTextColor(4, 120, 87);
+            doc.text(rawHosp.includes("Particular") ? "Anticipo Express Requerido" : "Convenio Activo - Despacho sin Anticipo", 53, 63);
+
+            // Columna Derecha de Metadatos
+            doc.setTextColor(15, 23, 42);
+            doc.setFont('helvetica', 'bold');
+            doc.text('EMISION:', 122, 50);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(71, 85, 105);
+            doc.text(fecha, 142, 50);
+
+            doc.setTextColor(15, 23, 42);
+            doc.setFont('helvetica', 'bold');
+            doc.text('AUDITORIA:', 122, 56.5);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(4, 120, 87);
+            doc.text('Auto-Aprobado Sentinel (0.8s)', 142, 56.5);
+
+            doc.setTextColor(15, 23, 42);
+            doc.setFont('helvetica', 'bold');
+            doc.text('RUTA / GPS:', 122, 63);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(71, 85, 105);
+            doc.text(choferClean.substring(0, 26), 142, 63);
+
+            // 3. TABLA DE PRODUCTOS (AUTOTABLE)
             const rows = [];
             const incluirAntiVueltas = document.getElementById('checkKitAntiVueltas').checked;
             let items = [...currentActiveData.itemsBase];
@@ -903,49 +980,144 @@
             items.forEach(it => {
                 const tot = it.cant * it.unit;
                 subtotal += tot;
-                rows.push([it.sku, it.desc, it.reg, it.cant, `$${it.unit.toLocaleString('es-MX')}`, `$${tot.toLocaleString('es-MX')}`]);
+                rows.push([
+                    cleanPdfText(it.sku),
+                    cleanPdfText(it.desc),
+                    cleanPdfText(it.reg),
+                    it.cant.toString(),
+                    `$${it.unit.toLocaleString('es-MX', { minimumFractionDigits: 2 })}`,
+                    `$${tot.toLocaleString('es-MX', { minimumFractionDigits: 2 })}`
+                ]);
             });
 
             doc.autoTable({
-                startY: 70,
-                head: [['SKU', 'Descripción Técnica', 'Reg. COFEPRIS', 'Cant.', 'P. Unit', 'Subtotal']],
+                startY: 75,
+                margin: { left: 14, right: 14 },
+                head: [['SKU / CLAVE', 'DESCRIPCION TECNICA QUIRURGICA', 'REG. COFEPRIS', 'CANT.', 'P. UNITARIO', 'SUBTOTAL']],
                 body: rows,
                 theme: 'striped',
-                headStyles: { fillColor: [15, 23, 42], textColor: [255, 255, 255], fontSize: 8 },
-                bodyStyles: { fontSize: 7.5 },
+                headStyles: {
+                    fillColor: [11, 19, 41],
+                    textColor: [255, 255, 255],
+                    fontSize: 7.5,
+                    fontStyle: 'bold',
+                    halign: 'left',
+                    cellPadding: 2.5
+                },
+                bodyStyles: {
+                    fontSize: 7.5,
+                    textColor: [30, 41, 59],
+                    cellPadding: 2.2
+                },
+                alternateRowStyles: {
+                    fillColor: [248, 250, 252]
+                },
                 columnStyles: {
-                    0: { cellWidth: 26, fontStyle: 'bold' },
-                    1: { cellWidth: 72 },
-                    2: { cellWidth: 30, textColor: [180, 83, 9] },
-                    3: { cellWidth: 14, halign: 'center' },
-                    4: { cellWidth: 24, halign: 'right' },
-                    5: { cellWidth: 24, halign: 'right', fontStyle: 'bold' }
+                    0: { cellWidth: 26, fontStyle: 'bold', textColor: [2, 132, 199] },
+                    1: { cellWidth: 70 },
+                    2: { cellWidth: 32, halign: 'center', textColor: [180, 83, 9] },
+                    3: { cellWidth: 14, halign: 'center', fontStyle: 'bold' },
+                    4: { cellWidth: 20, halign: 'right' },
+                    5: { cellWidth: 20, halign: 'right', fontStyle: 'bold', textColor: [15, 23, 42] }
                 }
             });
 
-            const finalY = doc.lastAutoTable.finalY + 10;
+            let finalY = doc.lastAutoTable.finalY + 8;
+
+            // Salto de página preventivo si la tabla empuja el final
+            if (finalY > 215) {
+                doc.addPage();
+                finalY = 25;
+            }
+
             const iva = subtotal * 0.16;
             const total = subtotal + iva;
 
-            doc.setFontSize(9);
-            doc.text(`SUBTOTAL:`, 140, finalY);
-            doc.text(`$${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`, 175, finalY, { align: 'right' });
-            doc.text(`I.V.A. (16%):`, 140, finalY + 6);
-            doc.text(`$${iva.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`, 175, finalY + 6, { align: 'right' });
-            doc.setFont('helvetica', 'bold');
-            doc.setFontSize(11);
-            doc.setTextColor(2, 132, 199);
-            doc.text(`TOTAL QUIRÓFANO:`, 140, finalY + 14);
-            doc.text(`$${total.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`, 175, finalY + 14, { align: 'right' });
+            // 4. BLOQUE INFERIOR: COFEPRIS SEAL (IZQ) Y TOTALES (DER)
+            
+            // Caja COFEPRIS (Izquierda x: 14 a 122)
+            doc.setFillColor(240, 253, 244);
+            doc.setDrawColor(134, 239, 172);
+            doc.setLineWidth(0.4);
+            doc.roundedRect(14, finalY, 110, 30, 2, 2, 'FD');
 
-            // Leyenda Normativa COFEPRIS
+            doc.setTextColor(21, 128, 61);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(8);
+            doc.text('SELLO DE CUMPLIMIENTO SANITARIO COFEPRIS:', 18, finalY + 6);
+
             doc.setFont('helvetica', 'normal');
-            doc.setFontSize(7.5);
-            doc.setTextColor(100, 116, 139);
-            doc.text('DECLARACIÓN NORMATIVA Y DE CALIDAD COFEPRIS:', 14, finalY + 25);
-            doc.text('Los dispositivos médicos cotizados en el presente documento cuentan con Registro Sanitario vigente otorgado por la', 14, finalY + 30);
-            doc.text('Comisión Federal para la Protección contra Riesgos Sanitarios (COFEPRIS), en estricto cumplimiento con la NOM-241-SSA1 y el Art. 262 de la LGS.', 14, finalY + 34);
-            doc.text('Documento expedido autónomamente por el sistema FR Medical Surgical OS (BluePixel Engine). Listo para remisión y CFDI 4.0.', 14, finalY + 38);
+            doc.setFontSize(6.8);
+            doc.setTextColor(71, 85, 105);
+            doc.text('Los dispositivos medicos, implantes de osteosintesis y sistemas de drenaje cotizados', 18, finalY + 11.5);
+            doc.text('cuentan con Registro Sanitario vigente expedido por la Comision Federal para la Proteccion', 18, finalY + 15.5);
+            doc.text('contra Riesgos Sanitarios (COFEPRIS), en estricto apego con la NOM-241-SSA1 y Art. 262 LGS.', 18, finalY + 19.5);
+            doc.text('Material grado medico biocompatible, esterilizado de fabrica y 100% trazable por lote.', 18, finalY + 23.5);
+
+            // Desglose de Totales (Derecha x: 130 a 196)
+            doc.setTextColor(71, 85, 105);
+            doc.setFontSize(8.5);
+            doc.setFont('helvetica', 'normal');
+            doc.text('SUBTOTAL:', 134, finalY + 6);
+            doc.text(`$${subtotal.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`, 196, finalY + 6, { align: 'right' });
+
+            doc.text('I.V.A. (16%):', 134, finalY + 13);
+            doc.text(`$${iva.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`, 196, finalY + 13, { align: 'right' });
+
+            doc.setDrawColor(203, 213, 225);
+            doc.setLineWidth(0.3);
+            doc.line(134, finalY + 17, 196, finalY + 17);
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10.5);
+            doc.setTextColor(2, 132, 199);
+            doc.text('TOTAL QUIRURGICO:', 134, finalY + 24);
+            doc.text(`$${total.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`, 196, finalY + 24, { align: 'right' });
+
+            // 5. BLOQUE DE FIRMAS DIGITALES
+            const sigY = finalY + 44;
+            if (sigY <= 265) {
+                // Firma Chofer FR Medical
+                doc.setDrawColor(148, 163, 184);
+                doc.setLineWidth(0.3);
+                doc.line(18, sigY, 90, sigY);
+                doc.setFontSize(7.5);
+                doc.setFont('helvetica', 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text('DESPACHO Y CUSTODIA FR MEDICAL', 54, sigY + 4, { align: 'center' });
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(6.8);
+                doc.setTextColor(100, 116, 139);
+                doc.text(`${choferClean} • Almacen Central CDMX`, 54, sigY + 7.5, { align: 'center' });
+
+                // Firma / Recepción Quirófano
+                doc.line(124, sigY, 196, sigY);
+                doc.setFontSize(7.5);
+                doc.setFont('helvetica', 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text('RECEPCION Y ACEPTACION EN QUIROFANO', 160, sigY + 4, { align: 'center' });
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(6.8);
+                doc.setTextColor(100, 116, 139);
+                doc.text('Firma Digital / Medico o Instrumentista Responsable', 160, sigY + 7.5, { align: 'center' });
+
+                // Si el usuario dibujó una firma en el canvas, incrustarla directamente sobre la línea
+                const cnv = document.getElementById('firmaCanvas');
+                if (cnv && !isCanvasBlank(cnv)) {
+                    try {
+                        const firmaImgData = cnv.toDataURL('image/png');
+                        doc.addImage(firmaImgData, 'PNG', 135, sigY - 14, 50, 13);
+                    } catch (e) {
+                        console.warn("Firma canvas no incrustada:", e);
+                    }
+                }
+            }
+
+            // Pie de página legal
+            doc.setFontSize(6.5);
+            doc.setFont('helvetica', 'italic');
+            doc.setTextColor(148, 163, 184);
+            doc.text('Documento oficial emitido por el sistema autonomo FR Medical Surgical OS (BluePixel Engine). Listo para remision de quirofano y CFDI 4.0.', 105, 287, { align: 'center' });
 
             doc.save(`Cotizacion_Oficial_FR_Medical_${folio}.pdf`);
         }
