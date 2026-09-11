@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#04060d"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1050" height="720" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title Header -->
+  <text x="525" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">ARQUITECTURA INTEGRAL: FR MEDICAL SURGICAL OS</text>
+  <text x="525" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Sistema Operativo Quirúrgico, Logístico y Financiero con Servidores MCP de BluePixel</text>
+
+  <!-- 3 MAIN HORIZONTAL LANES / COLUMNS -->
+
+  <!-- COLUMN 1: CANALES DE ENTRADA 24/7 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="85" width="260" height="600" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="40" y="85" width="260" height="34" rx="14" fill="url(#blueGrad)"/>
+    <text x="170" y="107" font-family="sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">1. CANALES DE ENTRADA 24/7</text>
+
+    <!-- Card 1: Telefonía Conmutador -->
+    <rect x="55" y="140" width="230" height="95" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+    <text x="70" y="165" font-family="sans-serif" font-size="13" font-weight="700" fill="#93c5fd">📞 Telefonía &amp; Conmutador</text>
+    <text x="70" y="184" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Atención al 3er timbrazo</text>
+    <text x="70" y="200" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Guardia nocturna activa (12 AM - 7 AM)</text>
+    <text x="70" y="216" font-family="sans-serif" font-size="9.5" fill="#38bdf8">Cero llamadas perdidas de cirujanos</text>
+
+    <!-- Card 2: WhatsApp Urgencias -->
+    <rect x="55" y="255" width="230" height="95" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+    <text x="70" y="280" font-family="sans-serif" font-size="13" font-weight="700" fill="#6ee7b7">💬 WhatsApp de Urgencias</text>
+    <text x="70" y="299" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Pedidos de texto y notas de voz</text>
+    <text x="70" y="315" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Envío de recetas y fotos de patología</text>
+    <text x="70" y="331" font-family="sans-serif" font-size="9.5" fill="#34d399">Cotización PDF oficial en &lt; 60 seg</text>
+
+    <!-- Card 3: Portal Web -->
+    <rect x="55" y="370" width="230" height="95" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+    <text x="70" y="395" font-family="sans-serif" font-size="13" font-weight="700" fill="#67e8f9">💻 Portal Web Quirúrgico</text>
+    <text x="70" y="414" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Catálogo Stracos, Redax, Boston</text>
+    <text x="70" y="430" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Cotizador 1-Click con clave SKU</text>
+    <text x="70" y="446" font-family="sans-serif" font-size="9.5" fill="#22d3ee">Filtro B2B Hospitales vs Pacientes</text>
+
+    <!-- Card 4: Fuerza de Ventas -->
+    <rect x="55" y="485" width="230" height="95" rx="10" fill="#1e293b" stroke="#eab308" stroke-width="1.2"/>
+    <text x="70" y="510" font-family="sans-serif" font-size="13" font-weight="700" fill="#fde047">👔 Ejecutivos de Cuenta</text>
+    <text x="70" y="529" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Levantamiento directo en hospital</text>
+    <text x="70" y="545" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Registro guiado por SOP digital</text>
+    <text x="70" y="561" font-family="sans-serif" font-size="9.5" fill="#facc15">Cero errores de captura</text>
+  </g>
+
+  <!-- COLUMN 2: CEREBRO MCP BLUEPIXEL (CENTRO) -->
+  <g filter="url(#shadow)">
+    <rect x="340" y="85" width="370" height="600" rx="14" fill="#09101d" stroke="#6366f1" stroke-width="2"/>
+    <rect x="340" y="85" width="370" height="34" rx="14" fill="url(#purpleGrad)"/>
+    <text x="525" y="107" font-family="sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">2. FR MEDICAL SURGICAL OS (CEREBRO MCP)</text>
+
+    <!-- Module A: Agente de Voz IA 24/7 -->
+    <rect x="355" y="135" width="340" height="78" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.2"/>
+    <text x="370" y="157" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#c7d2fe">🎙️ Agente de Voz IA 24/7 (Guardia Nocturna)</text>
+    <text x="370" y="174" font-family="sans-serif" font-size="10" fill="#e0e7ff">• Conversación médica natural en español de México</text>
+    <text x="370" y="189" font-family="sans-serif" font-size="10" fill="#e0e7ff">• Identifica cirujano, hospital, procedimiento y urgencia</text>
+    <text x="370" y="203" font-family="sans-serif" font-size="9" fill="#a5b4fc">Despierta al mensajero de guardia solo si es Código Rojo</text>
+
+    <!-- Module B: Triage Quirurgico NLP -->
+    <rect x="355" y="222" width="340" height="78" rx="8" fill="#3f1118" stroke="#f43f5e" stroke-width="1.2"/>
+    <text x="370" y="244" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#fecdd3">🚨 Motor de Triage con NLP (Fin a Notas Libres)</text>
+    <text x="370" y="261" font-family="sans-serif" font-size="10" fill="#ffe4e6">• Clasificación objetiva: Rojo (&lt; 2h), Amarillo (&lt; 6h), Verde</text>
+    <text x="370" y="276" font-family="sans-serif" font-size="10" fill="#ffe4e6">• Detecta palabras críticas: "paciente en quirófano", "tórax inestable"</text>
+    <text x="370" y="290" font-family="sans-serif" font-size="9" fill="#fda4af">Prioriza la orden al puesto #1 con borde rojo pulsante</text>
+
+    <!-- Module C: Recomendador de Kits Anti-Vueltas -->
+    <rect x="355" y="310" width="340" height="78" rx="8" fill="#14312e" stroke="#14b8a6" stroke-width="1.2"/>
+    <text x="370" y="332" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#99f6e4">📦 Recomendador de Kits (Anti-Vueltas de Mensajeros)</text>
+    <text x="370" y="349" font-family="sans-serif" font-size="10" fill="#ccfbf1">• Inferencia quirúrgica: placas Stracos + tornillos + instrumental</text>
+    <text x="370" y="364" font-family="sans-serif" font-size="10" fill="#ccfbf1">• Añade kit de respaldo en consignación con QR de retorno</text>
+    <text x="370" y="378" font-family="sans-serif" font-size="9" fill="#5eead4">El mensajero hace 1 solo viaje a quirófano en vez de 3</text>
+
+    <!-- Module D: Validation Sentinel (Fin al Revisor Manual) -->
+    <rect x="355" y="398" width="340" height="78" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="370" y="420" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#bae6fd">🛡️ Validation Sentinel (Auditoría en 0.8s)</text>
+    <text x="370" y="437" font-family="sans-serif" font-size="10" fill="#e0f2fe">• Elimina el revisor humano manual en la madrugada</text>
+    <text x="370" y="452" font-family="sans-serif" font-size="10" fill="#e0f2fe">• Valida SKUs, precios de convenio, inventario físico y crédito</text>
+    <text x="370" y="466" font-family="sans-serif" font-size="9" fill="#7dd3fc">Auto-aprobación verde inmediata sin despertar administrativos</text>
+
+    <!-- Module E: Optimizador de Rutas y Horarios -->
+    <rect x="355" y="486" width="340" height="78" rx="8" fill="#2d1a04" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="370" y="508" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#fde68a">🚚 Despachador de Rutas y Horarios con GPS</text>
+    <text x="370" y="525" font-family="sans-serif" font-size="10" fill="#fef3c7">• Asignación de mensajero más cercano según tráfico CDMX</text>
+    <text x="370" y="540" font-family="sans-serif" font-size="10" fill="#fef3c7">• Agrupación horaria de cirugías programadas (ahorro gasolina)</text>
+    <text x="370" y="554" font-family="sans-serif" font-size="9" fill="#fcd34d">Link con tiempo de vuelo / llegada exacto al quirófano</text>
+
+    <!-- Module F: Living SOPs & Copiloto Interno -->
+    <rect x="355" y="574" width="340" height="92" rx="8" fill="#18181b" stroke="#71717a" stroke-width="1.2"/>
+    <text x="370" y="595" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#e4e4e7">📚 Living SOPs &amp; Wiki Bot de Procesos</text>
+    <text x="370" y="612" font-family="sans-serif" font-size="10" fill="#d4d4d8">• El software guía el proceso paso a paso (cero Word empolvado)</text>
+    <text x="370" y="627" font-family="sans-serif" font-size="10" fill="#d4d4d8">• Wiki bot interno por WhatsApp: responde dudas a empleados en 3s</text>
+    <text x="370" y="642" font-family="sans-serif" font-size="10" fill="#d4d4d8">• Sellos oficiales de Registro Sanitario COFEPRIS en PDF</text>
+    <text x="370" y="656" font-family="sans-serif" font-size="9" fill="#a1a1aa">Elimina la dependencia del conocimiento tribal de veteranos</text>
+  </g>
+
+  <!-- COLUMN 3: EJECUCIÓN EN TIEMPO REAL -->
+  <g filter="url(#shadow)">
+    <rect x="750" y="85" width="260" height="600" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="750" y="85" width="260" height="34" rx="14" fill="url(#emeraldGrad)"/>
+    <text x="880" y="107" font-family="sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3. EJECUCIÓN EN TIEMPO REAL</text>
+
+    <!-- Target 1: Hospital y Quirófano -->
+    <rect x="765" y="140" width="230" height="110" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+    <text x="780" y="165" font-family="sans-serif" font-size="13" font-weight="700" fill="#6ee7b7">🏥 Hospital &amp; Quirófano</text>
+    <text x="780" y="184" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Recepción de set completo en 1 viaje</text>
+    <text x="780" y="200" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Seguimiento GPS del mensajero</text>
+    <text x="780" y="216" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Firma digital de entrega en pantalla</text>
+    <text x="780" y="233" font-family="sans-serif" font-size="9.5" fill="#34d399">Ángeles, ABC, Médica Sur, INER</text>
+
+    <!-- Target 2: Mensajería Propia -->
+    <rect x="765" y="270" width="230" height="110" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+    <text x="780" y="295" font-family="sans-serif" font-size="13" font-weight="700" fill="#67e8f9">🛵 Mensajeros Propios (PWA)</text>
+    <text x="780" y="314" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Ruta verde optimizada en su móvil</text>
+    <text x="780" y="330" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Alerta sonora en Código Rojo</text>
+    <text x="780" y="346" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Check-in en puerta de quirófano</text>
+    <text x="780" y="363" font-family="sans-serif" font-size="9.5" fill="#22d3ee">Cero vueltas dobles y menos gasolina</text>
+
+    <!-- Target 3: ERP Bridge -->
+    <rect x="765" y="400" width="230" height="115" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="780" y="425" font-family="sans-serif" font-size="13" font-weight="700" fill="#c4b5fd">🔄 ERP Sync Bridge</text>
+    <text x="780" y="444" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Inyección de pedidos sin capturista</text>
+    <text x="780" y="460" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Descarga de inventario en tiempo real</text>
+    <text x="780" y="476" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Bloqueo de stock comprometido</text>
+    <text x="780" y="493" font-family="sans-serif" font-size="9.5" fill="#a78bfa">Listo para Facturar CFDI 4.0</text>
+
+    <!-- Target 4: Contabilidad y Viáticos -->
+    <rect x="765" y="535" width="230" height="120" rx="10" fill="#1e293b" stroke="#eab308" stroke-width="1.2"/>
+    <text x="780" y="560" font-family="sans-serif" font-size="13" font-weight="700" fill="#fde047">📊 Contabilidad &amp; Finanzas</text>
+    <text x="780" y="579" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Comisiones automáticas por vendedor</text>
+    <text x="780" y="595" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• OCR de gasolina/casetas por WhatsApp</text>
+    <text x="780" y="611" font-family="sans-serif" font-size="10.5" fill="#e2e8f0">• Conciliación bancaria en 1 clic</text>
+    <text x="780" y="628" font-family="sans-serif" font-size="9.5" fill="#facc15">Paz mental para la contadora</text>
+  </g>
+
+  <!-- Clean directional connector arrows -->
+  <!-- Left to Center -->
+  <path d="M 300 187 L 350 174" stroke="#60a5fa" stroke-width="2" fill="none"/>
+  <polygon points="353,174 344,170 346,180" fill="#60a5fa"/>
+
+  <path d="M 300 302 L 350 261" stroke="#34d399" stroke-width="2" fill="none"/>
+  <polygon points="353,261 344,257 346,267" fill="#34d399"/>
+
+  <path d="M 300 417 L 350 349" stroke="#22d3ee" stroke-width="2" fill="none"/>
+  <polygon points="353,349 344,345 346,355" fill="#22d3ee"/>
+
+  <!-- Center to Right -->
+  <path d="M 700 261 L 760 195" stroke="#f43f5e" stroke-width="2" fill="none"/>
+  <polygon points="763,195 754,198 758,207" fill="#f43f5e"/>
+
+  <path d="M 700 349 L 760 325" stroke="#14b8a6" stroke-width="2" fill="none"/>
+  <polygon points="763,325 754,321 756,331" fill="#14b8a6"/>
+
+  <path d="M 700 437 L 760 457" stroke="#38bdf8" stroke-width="2" fill="none"/>
+  <polygon points="763,457 754,453 756,463" fill="#38bdf8"/>
+
+  <path d="M 700 525 L 760 595" stroke="#f59e0b" stroke-width="2" fill="none"/>
+  <polygon points="763,595 754,588 757,598" fill="#f59e0b"/>
+</svg>

@@ -10,32 +10,54 @@
 FR Medical no necesita parchar su operación con 10 herramientas aisladas, ni necesita gastarse $1.5 millones de pesos en cambiar de ERP.  
 Lo que FR Medical necesita es un **Sistema Operativo Quirúrgico Unificado (FR Medical Surgical OS)** montado sobre la arquitectura de **Servidores MCP de BluePixel**, que actúa como un cerebro inteligente por encima de su ERP actual, de su almacén, de sus mensajeros y de sus canales de atención.
 
+### 🗺️ Mapa de Arquitectura de Alto Nivel
+![Arquitectura FR Medical Surgical OS](../02_Estrategia_B2B/diagramas/arquitectura_fr_medical_os.svg)
+
 ```mermaid
-graph TD
-    subgraph Canales_Entrada["1. Canales de Entrada 24/7"]
-        Tel["Llamadas Telefónicas (Conmutador)"]
-        WA["WhatsApp de Urgencias"]
-        Web["Portal Web Quirúrgico"]
+flowchart TB
+    subgraph S1["1. Canales de Entrada 24/7"]
+        Tel["📞 Llamadas Conmutador"]
+        WA["💬 WhatsApp Urgencias"]
+        Web["💻 Portal Quirúrgico"]
     end
 
-    subgraph Cerebro_MCP["2. FR Medical Surgical OS (Cerebro MCP BluePixel)"]
-        VoiceAgent["Agente de Voz IA 24/7"]
-        NLP_Triage["Motor de Triage Quirúrgico (Rojo/Amarillo/Verde)"]
-        KitEngine["Recomendador Inteligente de Kits (Anti-Vueltas)"]
-        Sentinel["Validation Sentinel (Auditoría en 0.8s)"]
-        CreditRules["Semáforo de Crédito y Anticipo 24/7"]
-        RouterGPS["Optimizador Logístico de Rutas y Horarios"]
+    RouterMCP{"🔀 Router MCP BluePixel"}
+
+    subgraph S2["2. Cerebro FR Medical Surgical OS"]
+        direction TB
+        VoiceAgent["🎙️ Agente de Voz IA 24/7"]
+        NLP_Triage["🚨 Triage Clínico (Rojo / Amarillo / Verde)"]
+        KitEngine["📦 Kits Anti-Vueltas (Respaldo)"]
+        Sentinel["🛡️ Validation Sentinel (Auditoría 0.8s)"]
+        CreditRules["💳 Semáforo Crédito / Anticipo"]
+        RouterGPS["🗺️ Optimizador Rutas y GPS"]
     end
 
-    subgraph Operacion_Salida["3. Ejecución en Tiempo Real"]
-        Quirofano["Entrega Prioritaria en Quirófano con GPS"]
-        MensajerosApp["App / WhatsApp de Mensajeros Propios"]
-        ERPSync["Conector ERP (Inventario Vivo & CFDI)"]
-        Comisiones["Portal Contable: Comisiones & OCR Viáticos"]
+    subgraph S3["3. Ejecución en Tiempo Real"]
+        direction TB
+        Quirofano["🏥 Entrega en Quirófano con GPS"]
+        MensajerosApp["🛵 App Móvil de Mensajería"]
+        ERPSync["🔄 Sincronización ERP en Vivo"]
+        Comisiones["📊 Portal Comisiones & Viáticos OCR"]
     end
 
-    Canales_Entrada --> Cerebro_MCP
-    Cerebro_MCP --> Operacion_Salida
+    Tel --> RouterMCP
+    WA --> RouterMCP
+    Web --> RouterMCP
+
+    RouterMCP --> VoiceAgent
+    RouterMCP --> NLP_Triage
+    RouterMCP --> Sentinel
+
+    VoiceAgent --> NLP_Triage
+    NLP_Triage --> KitEngine
+    KitEngine --> CreditRules
+    CreditRules --> RouterGPS
+
+    RouterGPS --> Quirofano
+    RouterGPS --> MensajerosApp
+    Sentinel --> ERPSync
+    Sentinel --> Comisiones
 ```
 
 ---
