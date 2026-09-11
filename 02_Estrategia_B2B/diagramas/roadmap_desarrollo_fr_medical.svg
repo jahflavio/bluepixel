@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgRoadmap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="phase1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="phase2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="phase3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="evolveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="shadowRoadmap" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1020" height="540" rx="16" fill="url(#bgRoadmap)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title Badge & Header -->
+  <rect x="340" y="22" width="340" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="510" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="1.5">METODOLOGÍA ÁGIL BLUEPIXEL • SIN PARAR OPERACIONES</text>
+  <text x="510" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#f8fafc" text-anchor="middle">Roadmap de Desarrollo: FR Medical Surgical OS</text>
+  <text x="510" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Implementación Modular en 8 a 10 Semanas (Build) + Acompañamiento Continuo (Evolve)</text>
+
+  <!-- 4 COLUMNS / PHASES -->
+
+  <!-- PHASE 1 -->
+  <g filter="url(#shadowRoadmap)">
+    <rect x="35" y="130" width="220" height="350" rx="14" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="35" y="130" width="220" height="42" rx="14" fill="url(#phase1Grad)"/>
+    <text x="145" y="152" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">FASE 1 • SEMANAS 1 - 3</text>
+    <text x="145" y="166" font-family="sans-serif" font-size="9" font-weight="700" fill="#e0f2fe" text-anchor="middle">QUICK WINS &amp; CIMIENTOS</text>
+
+    <!-- Content -->
+    <rect x="47" y="185" width="196" height="26" rx="6" fill="#1e293b"/>
+    <text x="145" y="202" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">⚡ Valor en &lt; 20 días</text>
+
+    <text x="50" y="235" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">1. Conector ERP Ligero</text>
+    <text x="50" y="252" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Lectura de stock y precios de</text>
+    <text x="50" y="266" font-family="sans-serif" font-size="9.5" fill="#94a3b8">convenio sin migrar de sistema.</text>
+
+    <text x="50" y="295" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">2. Cotizador WhatsApp</text>
+    <text x="50" y="312" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Generación de PDF oficial con</text>
+    <text x="50" y="326" font-family="sans-serif" font-size="9.5" fill="#facc15">registros COFEPRIS en 30 seg.</text>
+
+    <text x="50" y="355" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">3. Catálogo Inteligente</text>
+    <text x="50" y="372" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Stracos, Redax, Boston Medical.</text>
+
+    <!-- Bottom KPI -->
+    <rect x="47" y="415" width="196" height="50" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+    <text x="145" y="435" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8" text-anchor="middle">Impacto Inmediato:</text>
+    <text x="145" y="452" font-family="sans-serif" font-size="10" font-weight="800" fill="#f8fafc" text-anchor="middle">Cotizaciones 90% más rápidas</text>
+  </g>
+
+  <!-- PHASE 2 -->
+  <g filter="url(#shadowRoadmap)">
+    <rect x="275" y="130" width="225" height="350" rx="14" fill="#0f172a" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect x="275" y="130" width="225" height="42" rx="14" fill="url(#phase2Grad)"/>
+    <text x="387" y="152" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">FASE 2 • SEMANAS 4 - 6</text>
+    <text x="387" y="166" font-family="sans-serif" font-size="9" font-weight="700" fill="#ede9fe" text-anchor="middle">EL CEREBRO 24/7 &amp; AUDITORÍA</text>
+
+    <!-- Content -->
+    <rect x="287" y="185" width="201" height="26" rx="6" fill="#1e293b"/>
+    <text x="387" y="202" font-family="sans-serif" font-size="11" font-weight="700" fill="#a78bfa" text-anchor="middle">🛡️ Blindaje de Medianoche</text>
+
+    <text x="290" y="235" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">1. Agente de Voz 24/7</text>
+    <text x="290" y="252" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Atención de conmutador en la</text>
+    <text x="290" y="266" font-family="sans-serif" font-size="9.5" fill="#38bdf8">brecha 12 AM - 7 AM al 2do timbre.</text>
+
+    <text x="290" y="295" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">2. Validation Sentinel</text>
+    <text x="290" y="312" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Auto-aprobación en 0.8s.</text>
+    <text x="290" y="326" font-family="sans-serif" font-size="9.5" fill="#34d399">Fin a la espera de las 7:00 AM.</text>
+
+    <text x="290" y="355" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">3. Kits Anti-Vueltas</text>
+    <text x="290" y="372" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Añade instrumental de respaldo.</text>
+
+    <!-- Bottom KPI -->
+    <rect x="287" y="415" width="201" height="50" rx="8" fill="#1e293b" stroke="#7c3aed" stroke-width="1"/>
+    <text x="387" y="435" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#a78bfa" text-anchor="middle">Impacto Inmediato:</text>
+    <text x="387" y="452" font-family="sans-serif" font-size="10" font-weight="800" fill="#f8fafc" text-anchor="middle">Cero ventas nocturnas perdidas</text>
+  </g>
+
+  <!-- PHASE 3 -->
+  <g filter="url(#shadowRoadmap)">
+    <rect x="520" y="130" width="230" height="350" rx="14" fill="#0f172a" stroke="#059669" stroke-width="1.5"/>
+    <rect x="520" y="130" width="230" height="42" rx="14" fill="url(#phase3Grad)"/>
+    <text x="635" y="152" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">FASE 3 • SEMANAS 7 - 10</text>
+    <text x="635" y="166" font-family="sans-serif" font-size="9" font-weight="700" fill="#d1fae5" text-anchor="middle">LOGÍSTICA GPS &amp; FINANZAS</text>
+
+    <!-- Content -->
+    <rect x="532" y="185" width="206" height="26" rx="6" fill="#1e293b"/>
+    <text x="635" y="202" font-family="sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">🚀 Eficiencia &amp; Paz Contable</text>
+
+    <text x="535" y="235" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">1. Ruteo GPS Quirófano</text>
+    <text x="535" y="252" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Asignación automática y link con</text>
+    <text x="535" y="266" font-family="sans-serif" font-size="9.5" fill="#38bdf8">ETA en vivo para cirujanos.</text>
+
+    <text x="535" y="295" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">2. Living SOPs Mensajería</text>
+    <text x="535" y="312" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Checklist estéril y firma digital.</text>
+
+    <text x="535" y="340" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">3. Comisiones &amp; Viáticos OCR</text>
+    <text x="535" y="357" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Cálculo de comisiones por margen.</text>
+    <text x="535" y="371" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Foto de ticket gas conciliado en WA.</text>
+
+    <!-- Bottom KPI -->
+    <rect x="532" y="415" width="206" height="50" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1"/>
+    <text x="635" y="435" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#34d399" text-anchor="middle">Impacto Inmediato:</text>
+    <text x="635" y="452" font-family="sans-serif" font-size="10" font-weight="800" fill="#f8fafc" text-anchor="middle">-40% gastos de combustible</text>
+  </g>
+
+  <!-- PHASE EVOLVE -->
+  <g filter="url(#shadowRoadmap)">
+    <rect x="770" y="130" width="215" height="350" rx="14" fill="#0f172a" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="770" y="130" width="215" height="42" rx="14" fill="url(#evolveGrad)"/>
+    <text x="877" y="152" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">EVOLVE • MES 3 EN ADELANTE</text>
+    <text x="877" y="166" font-family="sans-serif" font-size="9" font-weight="700" fill="#fef3c7" text-anchor="middle">ACOMPAÑAMIENTO Y SLAs</text>
+
+    <!-- Content -->
+    <rect x="782" y="185" width="191" height="26" rx="6" fill="#1e293b"/>
+    <text x="877" y="202" font-family="sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">🌟 Alianza Estratégica</text>
+
+    <text x="785" y="235" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">1. Soporte Continuo</text>
+    <text x="785" y="252" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Garantía de disponibilidad 99.9%</text>
+    <text x="785" y="266" font-family="sans-serif" font-size="9.5" fill="#94a3b8">en servidores MCP y bots 24/7.</text>
+
+    <text x="785" y="295" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">2. Actualización Médica</text>
+    <text x="785" y="312" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Nuevos SKUs, marcas y</text>
+    <text x="785" y="326" font-family="sans-serif" font-size="9.5" fill="#facc15">registros COFEPRIS al día.</text>
+
+    <text x="785" y="355" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">3. Mejora Continua</text>
+    <text x="785" y="372" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Reentrenamiento de IA clínica.</text>
+
+    <!-- Bottom KPI -->
+    <rect x="782" y="415" width="191" height="50" rx="8" fill="#1e293b" stroke="#d97706" stroke-width="1"/>
+    <text x="877" y="435" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#fbbf24" text-anchor="middle">Inversión Retainer:</text>
+    <text x="877" y="452" font-family="sans-serif" font-size="10" font-weight="800" fill="#f8fafc" text-anchor="middle">$85,000 MXN / mes</text>
+  </g>
+
+  <!-- Bottom Timeline Connector -->
+  <line x1="50" y1="505" x2="970" y2="505" stroke="#334155" stroke-width="2"/>
+  <circle cx="145" cy="505" r="5" fill="#0284c7"/>
+  <circle cx="387" cy="505" r="5" fill="#7c3aed"/>
+  <circle cx="635" cy="505" r="5" fill="#059669"/>
+  <circle cx="877" cy="505" r="5" fill="#d97706"/>
+</svg>

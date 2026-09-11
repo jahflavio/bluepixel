@@ -14,17 +14,7 @@
 
 Explíquenlo contando **una sola historia continua**. Esta historia une los 4 pilares de forma orgánica:
 
-```
-[ 2:15 AM: Llamada/WhatsApp ] 
-       ↓ (Pilar 1: Frente Clínico)
-[ Cotización oficial COFEPRIS en 1.8s + Semáforo Crédito ]
-       ↓ (Pilar 2: Triage Quirúrgico)
-[ Triage Código Rojo + Kit Anti-Vueltas + Ruta GPS ]
-       ↓ (Pilar 3: Sentinel & ERP)
-[ Auditoría en 0.8s + Cero Espera 7 AM + Sincronización ERP ]
-       ↓ (Pilar 4: Living SOPs & Finanzas)
-[ Entrega con Firma Digital + OCR Viáticos + Comisión Automática ]
-```
+![Flujo Caso 2:15 AM](../02_Estrategia_B2B/diagramas/flujo_caso_2am.svg)
 
 ### 📍 Paso 1: Pilar 1 (Speed-to-Quote & Captura 24/7)
 *   **La Escena:** Es viernes a las 2:15 AM. Un cirujano en el Hospital Ángeles Pedregal necesita fijación costal (Stracos) para un paciente de trauma torácico urgente.
@@ -56,22 +46,7 @@ Explíquenlo contando **una sola historia continua**. Esta historia une los 4 pi
 
 Cuando el cliente pregunte: *"¿Cómo se construye esto? ¿Va a detener mi operación actual?"*, la respuesta de BluePixel es: **NO, se construye de manera modular en 3 etapas ágiles de 8 a 10 semanas sin tocar su operación diaria:**
 
-```mermaid
-gantt
-    title Cronograma de Implementación: FR Medical Surgical OS (8-10 Semanas)
-    dateFormat  YYYY-MM-DD
-    section Fase 1: Quick Wins
-    Mapeo de Procesos y Conector ERP        :2026-10-01, 14d
-    Cotizador Inteligente WhatsApp + COFEPRIS:2026-10-08, 14d
-    section Fase 2: El Cerebro
-    Agente de Voz 24/7 (Guardia Nocturna)   :2026-10-22, 21d
-    Validation Sentinel & Triage NLP         :2026-10-29, 21d
-    Recomendador de Kits Anti-Vueltas        :2026-11-05, 14d
-    section Fase 3: Logística & Finanzas
-    Ruteo GPS & App Mensajería Quirófano     :2026-11-12, 21d
-    Comisiones Automáticas & OCR Viáticos    :2026-11-19, 14d
-    Pruebas Integrales y Salida a Producción :2026-11-26, 14d
-```
+![Roadmap de Desarrollo](../02_Estrategia_B2B/diagramas/roadmap_desarrollo_fr_medical.svg)
 
 ### 🔹 Etapa 1: Quick Wins & Cimientos (Semanas 1 a 3)
 *   **Objetivo:** Darles valor inmediato en menos de 20 días.

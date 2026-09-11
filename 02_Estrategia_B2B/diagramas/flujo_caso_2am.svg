@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2am" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+    <linearGradient id="blueCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="cyanCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e7490"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="redCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991b1b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="purpleCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="greenCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="shadowCard" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1020" height="540" rx="16" fill="url(#bg2am)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title Badge & Header -->
+  <rect x="360" y="24" width="300" height="28" rx="14" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="510" y="43" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#60a5fa" text-anchor="middle" letter-spacing="1.5">CASO REAL: CIRUGÍA DE URGENCIA A LAS 2:15 AM</text>
+  <text x="510" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#f8fafc" text-anchor="middle">El Flujo de los 4 Pilares en Tiempo Real</text>
+  <text x="510" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">De la llamada en quirófano a la entrega en almacén, sincronización ERP y conciliación contable</text>
+
+  <!-- STEP 1: ENTRADA -->
+  <g filter="url(#shadowCard)">
+    <rect x="30" y="135" width="170" height="355" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="30" y="135" width="170" height="32" rx="12" fill="url(#blueCard)"/>
+    <text x="115" y="156" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">PASO 1 • 02:15 AM</text>
+    <text x="115" y="195" font-family="sans-serif" font-size="32" text-anchor="middle">📞</text>
+    <text x="115" y="228" font-family="sans-serif" font-size="13" font-weight="800" fill="#93c5fd" text-anchor="middle">Llamada / WhatsApp</text>
+    
+    <rect x="42" y="245" width="146" height="22" rx="6" fill="#1e293b"/>
+    <text x="115" y="260" font-family="sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">Brecha 12 AM - 7 AM</text>
+
+    <text x="45" y="290" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Cirujano en Hospital</text>
+    <text x="45" y="306" font-family="sans-serif" font-size="10" fill="#e2e8f0">  Ángeles Pedregal.</text>
+    <text x="45" y="326" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Requiere fijación</text>
+    <text x="45" y="342" font-family="sans-serif" font-size="10" fill="#e2e8f0">  costal urgente (Stracos).</text>
+    <text x="45" y="366" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Agente IA atiende al</text>
+    <text x="45" y="382" font-family="sans-serif" font-size="10" fill="#34d399">  2do timbrazo con voz</text>
+    <text x="45" y="398" font-family="sans-serif" font-size="10" fill="#34d399">  médica empática.</text>
+    <text x="45" y="426" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#60a5fa">Cero llamadas perdidas</text>
+    <text x="45" y="442" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Venta rescatada: $85k</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 205 310 L 225 310" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <polygon points="225,310 217,305 217,315" fill="#3b82f6"/>
+
+  <!-- STEP 2: PILAR 1 -->
+  <g filter="url(#shadowCard)">
+    <rect x="230" y="135" width="170" height="355" rx="12" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect x="230" y="135" width="170" height="32" rx="12" fill="url(#cyanCard)"/>
+    <text x="315" y="156" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">PILAR 1 • FRENTE</text>
+    <text x="315" y="195" font-family="sans-serif" font-size="32" text-anchor="middle">⚡</text>
+    <text x="315" y="228" font-family="sans-serif" font-size="13" font-weight="800" fill="#67e8f9" text-anchor="middle">Speed-to-Quote</text>
+
+    <rect x="242" y="245" width="146" height="22" rx="6" fill="#1e293b"/>
+    <text x="315" y="260" font-family="sans-serif" font-size="10" font-weight="700" fill="#22d3ee" text-anchor="middle">Cotización en 1.8 seg</text>
+
+    <text x="245" y="290" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Generación de PDF</text>
+    <text x="245" y="306" font-family="sans-serif" font-size="10" fill="#e2e8f0">  oficial membretado.</text>
+    <text x="245" y="326" font-family="sans-serif" font-size="10" fill="#facc15">• Clave y leyenda de</text>
+    <text x="245" y="342" font-family="sans-serif" font-size="10" fill="#facc15">  registro COFEPRIS.</text>
+    <text x="245" y="366" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Semáforo de Crédito:</text>
+    <text x="245" y="382" font-family="sans-serif" font-size="10" fill="#34d399">  Convenio AAA Ángeles.</text>
+    <text x="245" y="398" font-family="sans-serif" font-size="10" fill="#34d399">  Despacho sin anticipo.</text>
+    <text x="245" y="426" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#22d3ee">Cero fricción de cobro</text>
+    <text x="245" y="442" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Validación 24/7</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <polygon points="425,310 417,305 417,315" fill="#06b6d4"/>
+
+  <!-- STEP 3: PILAR 2 -->
+  <g filter="url(#shadowCard)">
+    <rect x="430" y="135" width="170" height="355" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="430" y="135" width="170" height="32" rx="12" fill="url(#redCard)"/>
+    <text x="515" y="156" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">PILAR 2 • LOGÍSTICA</text>
+    <text x="515" y="195" font-family="sans-serif" font-size="32" text-anchor="middle">🚨</text>
+    <text x="515" y="228" font-family="sans-serif" font-size="13" font-weight="800" fill="#fca5a5" text-anchor="middle">Triage &amp; Anti-Vueltas</text>
+
+    <rect x="442" y="245" width="146" height="22" rx="6" fill="#1e293b"/>
+    <text x="515" y="260" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171" text-anchor="middle">Código Rojo (&lt; 2 hrs)</text>
+
+    <text x="445" y="290" font-family="sans-serif" font-size="10" fill="#e2e8f0">• NLP detecta palabras:</text>
+    <text x="445" y="306" font-family="sans-serif" font-size="10" fill="#f87171">  "urgente/quirófano".</text>
+    <text x="445" y="326" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Kit de Respaldo:</text>
+    <text x="445" y="342" font-family="sans-serif" font-size="10" fill="#facc15">  Añade tornillos extra</text>
+    <text x="445" y="358" font-family="sans-serif" font-size="10" fill="#facc15">  e instrumental.</text>
+    <text x="445" y="378" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Asigna mensajero y</text>
+    <text x="445" y="394" font-family="sans-serif" font-size="10" fill="#6ee7b7">  manda tracking GPS.</text>
+    <text x="445" y="426" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#ef4444">Cero vueltas dobles</text>
+    <text x="445" y="442" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Todo en un solo viaje</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <polygon points="625,310 617,305 617,315" fill="#ef4444"/>
+
+  <!-- STEP 4: PILAR 3 -->
+  <g filter="url(#shadowCard)">
+    <rect x="630" y="135" width="170" height="355" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/>
+    <rect x="630" y="135" width="170" height="32" rx="12" fill="url(#purpleCard)"/>
+    <text x="715" y="156" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">PILAR 3 • SENTINEL</text>
+    <text x="715" y="195" font-family="sans-serif" font-size="32" text-anchor="middle">🛡️</text>
+    <text x="715" y="228" font-family="sans-serif" font-size="13" font-weight="800" fill="#c4b5fd" text-anchor="middle">Auditoría &amp; ERP</text>
+
+    <rect x="642" y="245" width="146" height="22" rx="6" fill="#1e293b"/>
+    <text x="715" y="260" font-family="sans-serif" font-size="10" font-weight="700" fill="#a78bfa" text-anchor="middle">Auto-Aprueba en 0.8s</text>
+
+    <text x="645" y="290" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Valida stock de</text>
+    <text x="645" y="306" font-family="sans-serif" font-size="10" fill="#e2e8f0">  almacén y precios.</text>
+    <text x="645" y="326" font-family="sans-serif" font-size="10" fill="#34d399">• Cero espera a las 7 AM:</text>
+    <text x="645" y="342" font-family="sans-serif" font-size="10" fill="#34d399">  Despacho a las 2:18 AM.</text>
+    <text x="645" y="366" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Sincroniza ERP actual</text>
+    <text x="645" y="382" font-family="sans-serif" font-size="10" fill="#e2e8f0">  en 0.5s sin migrar.</text>
+    <text x="645" y="398" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Pre-alerta para CFDI.</text>
+    <text x="645" y="426" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#a78bfa">Cero stock fantasma</text>
+    <text x="645" y="442" font-family="sans-serif" font-size="9.5" fill="#94a3b8">ERP vivo y blindado</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <polygon points="825,310 817,305 817,315" fill="#8b5cf6"/>
+
+  <!-- STEP 5: PILAR 4 -->
+  <g filter="url(#shadowCard)">
+    <rect x="830" y="135" width="160" height="355" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="830" y="135" width="160" height="32" rx="12" fill="url(#greenCard)"/>
+    <text x="910" y="156" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">PILAR 4 • FINANZAS</text>
+    <text x="910" y="195" font-family="sans-serif" font-size="32" text-anchor="middle">🏥</text>
+    <text x="910" y="228" font-family="sans-serif" font-size="13" font-weight="800" fill="#6ee7b7" text-anchor="middle">Entrega &amp; Cierre</text>
+
+    <rect x="838" y="245" width="144" height="22" rx="6" fill="#1e293b"/>
+    <text x="910" y="260" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">Paz Contable Total</text>
+
+    <text x="842" y="290" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Entrega estéril con</text>
+    <text x="842" y="306" font-family="sans-serif" font-size="10" fill="#e2e8f0">  firma digital móvil.</text>
+    <text x="842" y="326" font-family="sans-serif" font-size="10" fill="#e2e8f0">• OCR de Viáticos:</text>
+    <text x="842" y="342" font-family="sans-serif" font-size="10" fill="#67e8f9">  Foto de ticket gas/caseta</text>
+    <text x="842" y="358" font-family="sans-serif" font-size="10" fill="#67e8f9">  conciliada en WhatsApp.</text>
+    <text x="842" y="378" font-family="sans-serif" font-size="10" fill="#e2e8f0">• Comisiones automáticas</text>
+    <text x="842" y="394" font-family="sans-serif" font-size="10" fill="#34d399">  sin calculadoras físicas.</text>
+    <text x="842" y="426" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#34d399">Cierre contable limpio</text>
+    <text x="842" y="442" font-family="sans-serif" font-size="9.5" fill="#94a3b8">Cirugía exitosa</text>
+  </g>
+
+  <!-- Bottom Timeline Bar -->
+  <rect x="40" y="505" width="940" height="22" rx="11" fill="#1e293b"/>
+  <text x="115" y="520" font-family="sans-serif" font-size="10" font-weight="700" fill="#60a5fa" text-anchor="middle">02:15 AM</text>
+  <text x="315" y="520" font-family="sans-serif" font-size="10" font-weight="700" fill="#22d3ee" text-anchor="middle">02:16 AM</text>
+  <text x="515" y="520" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171" text-anchor="middle">02:17 AM</text>
+  <text x="715" y="520" font-family="sans-serif" font-size="10" font-weight="700" fill="#a78bfa" text-anchor="middle">02:18 AM</text>
+  <text x="910" y="520" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">03:00 AM (En Quirófano)</text>
+</svg>
