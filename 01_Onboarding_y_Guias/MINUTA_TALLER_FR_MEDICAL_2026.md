@@ -49,6 +49,14 @@ La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas d
 *   **Pérdida Inmediata de Ventas High-Ticket:** Cuando un cirujano torácico o traumatólogo necesita un set de placas Stracos o un drenaje Redax para una cirugía nocturna en el Hospital Ángeles o Médica Sur y nadie responde, llama a otro distribuidor de la competencia. **FR Medical pierde en un minuto una venta de $50,000 a $150,000 MXN**.
 *   **Requerimiento Vital:** Un **Bot Asistente de IA activo 24 horas** capaz de atender la llamada telefónica en lenguaje natural o recibir el mensaje por WhatsApp, cotizar en el acto y despachar el PDF formal sin depender de que un humano esté despierto al lado del conmutador.
 
+### 2.8 El Síndrome de la "Urgencia en Texto Libre" (Ceguera y Subjetividad Operativa):
+*   **Cero Datos Claros de Urgencia:** Actualmente no existen parámetros objetivos ni campos clínicos estructurados para determinar qué constituye una emergencia médica real.
+*   **Todo Depende del Criterio del Vendedor:** La urgencia solo se marca si el vendedor decide escribir la palabra "urgente" dentro del campo de notas o *"información adicional"* durante el registro.
+*   **Las Consecuencias Críticas de este Vacío:**
+    1. *El fenómeno 'Si todo es urgente, nada es urgente':* Los vendedores tienden a etiquetar todo como urgente para que almacén procese sus pedidos primero, saturando la operación.
+    2. *Dato Sepultado sin Automatización:* Al ser una simple nota de texto libre, el sistema no la reconoce como variable algorítmica: no detona alertas push, no enruta al mensajero más cercano ni reorganiza la fila de pedidos.
+    3. *Riesgo Quirúrgico Severo:* Una fractura costal múltiple con paciente en quirófano anestesiado puede quedar formada detrás de una reposición rutinaria de stock, solo porque el administrativo no abrió la orden para leer el campo de notas.
+
 ---
 
 ## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
@@ -121,6 +129,17 @@ graph TD
 *   **Cero Tickets Perdidos:** Los mensajeros y representantes toman una fotografía de sus tickets de gasolina, casetas o estacionamientos directamente en el chat de WhatsApp interno.
 *   **Extracción Contable Inteligente:** Un modelo de visión extrae automáticamente el monto, fecha, estación de servicio y RFC del emisor, insertándolos en la hoja de conciliación de la contadora y alertando sobre gastos duplicados o fuera de política.
 
+### Módulo 9: Motor de Triage Quirúrgico y Priorización con NLP (Cero Subjetividad)
+*   **De la Nota Oculta a la Variable Algorítmica:** Se eliminan los textos libres que nadie lee. El sistema estructura la urgencia mediante 3 variables clínicas objetivas:
+    1. **Ventana de Tiempo Quirúrgico:** `Código Rojo: Cirugía en < 2 hrs` | `Código Amarillo: En < 6 hrs` | `Código Verde: Programada > 24 hrs`.
+    2. **Estatus del Paciente:** `Paciente en Quirófano Abierto` | `Hospitalizado / UCI` | `Ambulatorio`.
+    3. **Disponibilidad de Instrumental en Hospital:** `Requiere Set Completo` | `Solo Reposición de Placas/Drenaje`.
+*   **Escaneo Semántico con NLP (Procesamiento de Lenguaje Natural):** Si el médico o vendedor escribe notas en WhatsApp o formulario (*"el paciente ya está en quirófano anestesiado"*, *"tórax inestable grave"*), la IA escanea el texto, detecta la urgencia médica real y **dispara automáticamente el Código Rojo sin esperar a que un humano lo reclasifique**.
+*   **Protocolo de Despacho Rojo Inmediato:**
+    *   La orden parpadea en **Rojo Pulsante** en el dashboard de almacén y pantalla de control.
+    *   Salta automáticamente a la **posición #1 de la fila de despacho**, reordenando las entregas ordinarias.
+    *   Detona alerta push con sonido de emergencia al mensajero propio mejor ubicado geográficamente.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
@@ -128,6 +147,7 @@ graph TD
 *   **Fase Build (Desarrollo e Implementación Integral en 8 a 10 semanas):**
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
     *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias y cotizaciones nocturnas.
+    *   **Motor de Triage Quirúrgico con NLP** y priorización visual objetiva de urgencias.
     *   **Optimizador de Rutas, Horarios y Despacho Logístico** con Dashboard y GPS para mensajeros propios.
     *   **Motor de Reglas de Crédito y Anticipo 24/7** con compliance COFEPRIS.
     *   **Portal Visual de Ventas y Cálculo Automático de Comisiones** (eliminando calculadoras).
