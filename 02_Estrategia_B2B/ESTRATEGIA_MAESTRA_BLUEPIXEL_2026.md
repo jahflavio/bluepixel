@@ -230,7 +230,7 @@ Aunque el desarrollo de Leo resuelve con elegancia la ingesta inicial a costo ce
 | :--- | :--- | :--- |
 | **Ingesta de la Web** | ✅ Automatizada vía MCP / Claude Code | ✅ Automatizada vía el MCP de Leo |
 | **Visualización del Pipeline** | ✅ Base de datos y tableros en Notion | ✅ Base de datos en Notion (se conserva 100%) |
-| **Notificación a Ventas** | ⚠️ Correo tradicional (se pierde en el inbox) | 🔥 Alerta instantánea en Slack/WhatsApp (&lt; 5 min) si Score ≥ 90 |
+| **Notificación a Ventas** | ⚠️ Correo tradicional (se pierde en el inbox) | 🔥 Alerta instantánea en Discord/WhatsApp (&lt; 5 min) si Score ≥ 90 |
 | **Lead Scoring Predictivo** | ❌ Inexistente (se trata igual a un estudiante que a un VP) | 🎯 Algorítmico (100 pts) evaluado en el MCP |
 | **Conexión Bidireccional con Ads** | ❌ Nula (Rocketing pauta a ciegas) | 📈 Conversiones Offline enviadas a Google Ads API con GCLID |
 | **Nurturing de Ciclo Largo (90 días)**| ❌ Nulo (el 80% de los leads se enfría y muere) | ✉️ Secuencia automatizada de Casos STAR-ROI a $0 MXN |
@@ -250,7 +250,7 @@ graph TD
     end
     
     Routing -->|"1. Ingesta Operativa"| Notion["Notion Database (Tableros de Leo/Ventas)"]
-    Routing -->|"2. Si Score >= 90 (Inmediato)"| Slack["Alerta Slack / WhatsApp (< 5 min)"]
+    Routing -->|"2. Si Score >= 90 (Inmediato)"| Discord["Alerta Discord / WhatsApp (< 5 min)"]
     Routing -->|"3. Si Score < 90 (Nutrición)"| Nurture["Secuencia Nurturing STAR-ROI (HubSpot Free)"]
     
     Notion -.->|"Al marcar 'Ganado' en Notion"| AdsBridge["Webhook de Conversión Offline"]
@@ -260,7 +260,7 @@ graph TD
 ![Arquitectura del Servidor MCP y Sinergia RevOps](diagramas/arquitectura_mcp.svg)
 
 1. **Ruta 1 (Operación Interna en Notion):** El servidor MCP continúa escribiendo en la base de datos de Notion exactamente como lo diseñó Leo. El equipo comercial (**Pablo Gómez y José de Buen**) mantiene sus tableros Kanban, notas de Discovery y flujo de trabajo habitual sin disrupción alguna, direccionando el prospecto a la columna de **Nuevas Ventas** si es un lead nuevo de desarrollo (**Build**) o a **Cuentas** si es un cliente existente solicitando ampliación de servicios o soporte (**Evolve**).
-2. **Ruta 2 (Alerta Priorizada en Slack a Nuevas Ventas):** Si el MCP calcula que el Lead Score es **≥ 90** (empresa corporativa + decisor técnico + presupuesto estimado > $300k MXN), dispara una alerta push inmediata a Slack/WhatsApp etiquetando al equipo de **Nuevas Ventas (Pablo Gómez / José de Buen)** con el perfil de LinkedIn y teléfono verificado para llamada en menos de 5 minutos (SLA Speed-to-Lead).
+2. **Ruta 2 (Alerta Priorizada en Discord a Nuevas Ventas):** Si el MCP calcula que el Lead Score es **≥ 90** (empresa corporativa + decisor técnico + presupuesto estimado > $300k MXN), dispara una alerta push inmediata a Discord/WhatsApp etiquetando al equipo de **Nuevas Ventas (Pablo Gómez / José de Buen)** con el perfil de LinkedIn y teléfono verificado para llamada en menos de 5 minutos (SLA Speed-to-Lead).
 3. **Ruta 3 (Cierre del Bucle Publicitario - *Closed-Loop*):** Cuando Leo, Pablo o José marcan un trato como *"Calificado"* o *"Ganado"* en Notion, el MCP o un webhook ligero captura ese cambio de estado y envía el `GCLID` a la API de Conversiones Fuera de Línea de Google Ads y LinkedIn Ads. Esto elimina la ceguera de Rocketing y entrena a los algoritmos para traer clientes de +$300,000 MXN.
 4. **Ruta 4 (Nurturing Automático a $0 MXN):** Para prospectos con Score **< 90** o sin presupuesto inmediato, el MCP los envía a **HubSpot Free CRM**, detonando la secuencia de 4 correos con los casos de éxito de Avianca, Bimbo y RadioShack espaciados a lo largo de 60 días.
 
@@ -394,14 +394,14 @@ graph TD
     end
 
     subgraph Bottom_of_Funnel_Conversion["Bottom of Funnel: Conversión"]
-        F -->|"Score mayor o igual a 90"| I["Slack Alert Ventas (menos de 5 min)"]
+        F -->|"Score mayor o igual a 90"| I["Discord Alert Ventas (menos de 5 min)"]
         I --> J["Reunión Técnica Discovery con Leo"]
         J --> K["Propuesta STAR-ROI & Cierre BUILD"]
         Nurture -.-> I
     end
 
     subgraph Post_Venta_Retencion["Post Venta: Handoff & Modelo Evolve"]
-        K -->|"Trato Closed/Won en CRM"| M["Handoff Automatizado (Drive + Jira + Slack)"]
+        K -->|"Trato Closed/Won en CRM"| M["Handoff Automatizado (Drive + Jira + Discord)"]
         M -->|"Desarrollo Inicia sin Fricción"| N["Onboarding Operativo Cero Touch"]
         N -->|"QBRs Conductuales (Mixpanel & Clarity)"| O["Retainers Evolve Recurrentes"]
     end
@@ -427,7 +427,7 @@ graph TD
 sequenceDiagram
     participant CRM as CRM (HubSpot / Sheets)
     participant Engine as Motor RevOps (Python)
-    participant Sales as Ventas (Slack / WhatsApp)
+    participant Sales as Ventas (Discord / WhatsApp)
     participant Dev as Ingeniería (Jira & Drive)
     
     Note over CRM: Trato marcado como 'Closed/Won'
