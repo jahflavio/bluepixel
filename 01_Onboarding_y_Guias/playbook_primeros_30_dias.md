@@ -26,11 +26,24 @@
 - *"¿Cuál es el presupuesto mensual exacto (Ad Spend) asignado a la agencia Rocketing?"*
 - *"En cuanto al contenido institucional con María y Leo: ¿Qué disponibilidad semanal tienen para grabar cápsulas de 'Pixel contra el mundo'?"*
 
-### 2. Sincronización con Juan Cano (Operaciones & Tecnología Interna)
-- *"Juan, ¿cuáles son los procesos o herramientas actuales que más fricción te generan en la operación técnica?"*
-- *"¿Qué automatizaciones internas tienen ya activas y en qué plataformas residen (Make, Zapier, scripts propios)?"*
+### 2. Sincronización con el Equipo Comercial (Nuevas Ventas & Cuentas)
+- **Pablo Gómez (Ventas Sénior — 6 años en BluePixel):**
+  - *"Pablo, con tu experiencia de 6 años cerrando cuentas corporativas en BluePixel: ¿cuáles son las señales tempranas de que un prospecto realmente tiene presupuesto para un proyecto Build de +$300k MXN vs uno que solo pide cotizaciones para comparar?"*
+  - *"¿Cómo estructuramos hoy el traspaso de un proyecto cerrado hacia el área de Cuentas para retenerlo en un retainer Evolve de soporte y evolución?"*
+- **José de Buen (Ventas — 2 años en BluePixel):**
+  - *"José, ¿cómo vives hoy la velocidad de respuesta (Speed-to-Lead) cuando un prospecto llena el formulario en Webflow? Si te enviamos una alerta a Slack en menos de 3 minutos con el LinkedIn del decisor y Lead Score ≥ 90, ¿cuánto aceleraría tu tasa de contacto efectivo?"*
 
-### 3. Coordinación con la Agencia Externa (Rocketing)
+### 3. Sincronización con el Equipo de Producto, UX/UI & Software
+- **Juan Cubillos (UX/UI & Software — 6 años en BluePixel):**
+  - *"Juan, tienes la combinación perfecta entre desarrollo, diseño UX/UI y visión de marketing. Queremos que los prototipos interactivos PLG (como los cotizadores y auditores) tengan la máxima calidad visual y conductual posible. ¿Cómo ensamblamos juntos los flujos para que no parezcan simples herramientas, sino experiencias que enamoren al decisor técnico?"*
+- **Samantha (Diseño de Producto & UX/UI):**
+  - *"Samantha, coordinemos la integración de componentes de diseño, tipografías y estética dark-mode premium para los módulos interactivos que inyectaremos en la web y en las landings de cotización."*
+
+### 4. Sincronización con Juan Cano (Web, SEO Técnico & Automatizaciones)
+- *"Juan, ¿cuáles son los procesos o herramientas actuales que más fricción te generan en la operación técnica del sitio web?"*
+- *"¿Qué automatizaciones internas tienen ya activas (Make, Zapier, Webhooks) y cómo podemos coordinar la inyección de metadatos SEO y scripts de tracking en Webflow sin duplicar esfuerzos?"*
+
+### 5. Coordinación con la Agencia Externa (Rocketing)
 - **Lydia Marisela Calderón Garza ("Marily"):** Canal de gestión de todos los pendientes operativos y entregables diarios.
 - **Diana Cardoso (Paid Media):** Solicitar el listado de *Search Terms* reales y palabras clave negativas en Google Ads.
 - **Daniel Arias (SEO):** Revisar reportes de Semrush y Ubersuggest y auditar canibalización de keywords entre `bluepixel.mx` y `cotiza.bluepixel.mx`.
@@ -38,7 +51,7 @@
 - **René (Diseño Gráfico):** Estandarizar formatos visuales y plantillas para anuncios y carruseles.
 - **Roberto Carro Maciel (Dirección Rocketing):** Relación institucional de alto nivel con Leo y María.
 
-### 4. Taller con Cliente Real (Viernes 11:00 AM - 2:00 PM)
+### 6. Taller con Cliente Real (Viernes 11:00 AM - 2:00 PM)
 - Grabar toda la sesión con Sergio y Jessica.
 - Transcribir la Voz del Cliente (*Voice of Customer*) para alimentar copys, anuncios de Google y el Agente MCP.
 

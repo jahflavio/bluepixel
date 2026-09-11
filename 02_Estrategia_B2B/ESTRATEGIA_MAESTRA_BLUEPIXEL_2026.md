@@ -12,17 +12,90 @@
 
 A partir de las reuniones de inducción con Dirección y la agencia externa (**Rocketing**), se consolida el mapa de actores, responsabilidades y vías de comunicación:
 
-### 1.1 Equipo Interno de BluePixel
+### 1.1 Equipo Interno de BluePixel y Estructura Organizacional
+
+BluePixel cuenta con un equipo multidisciplinario senior con sólida trayectoria interna, combinando ingeniería de software, diseño de producto, revenue operations y un área comercial especializada:
+
+```mermaid
+graph TD
+    Maria["María<br/><b>Directora General / CEO</b>"] --- Leo["Leonardo 'Leo' Flores<br/><b>Líder de Marketing, Ventas & Producto</b>"]
+    
+    Leo --> Fabian["Fabián Flores<br/><b>Head of Growth & RevOps</b>"]
+    
+    Leo --> Comercial["Área Comercial"]
+    subgraph Comercial["Dirección Comercial & Clientes"]
+        NV["<b>Nuevas Ventas (Hunters)</b><br/>Prospección, Inbound, Cierre Build"]
+        CT["<b>Cuentas (Account Mgmt)</b><br/>Farming, Retención, Retainers Evolve"]
+        Pablo["<b>Pablo Gómez</b><br/>Ventas Sénior (6 años en BluePixel)"]
+        Jose["<b>José de Buen</b><br/>Ventas (2 años en BluePixel)"]
+        Pablo --- NV
+        Pablo --- CT
+        Jose --- NV
+    end
+    
+    Leo --> Producto["Producto, UX/UI & Software"]
+    subgraph Producto["Diseño de Producto & Ingeniería"]
+        Cubillos["<b>Juan Cubillos</b><br/>UX/UI & Software (6 años en BluePixel)<br/><i>Especialista UX con visión de Marketing</i>"]
+        Samantha["<b>Samantha</b><br/>Diseño de Producto & UX/UI<br/><i>Co-diseño con Juan Cubillos</i>"]
+        Cubillos --- Samantha
+    end
+    
+    Leo --> WebTech["Web, SEO & Automatizaciones"]
+    subgraph WebTech["Infraestructura Web & Growth Técnico"]
+        Cano["<b>Juan Cano</b><br/>SEO Técnico, Webflow/CMS & Automatizaciones"]
+    end
+
+    classDef exec fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef revops fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef sales fill:#854d0e,stroke:#eab308,stroke-width:2px,color:#ffffff;
+    classDef prod fill:#4c1d95,stroke:#a855f7,stroke-width:2px,color:#ffffff;
+    classDef tech fill:#0f766e,stroke:#14b8a6,stroke-width:2px,color:#ffffff;
+
+    class Maria,Leo exec;
+    class Fabian revops;
+    class Pablo,Jose,NV,CT sales;
+    class Cubillos,Samantha prod;
+    class Cano tech;
+```
+
+![Organigrama y Estructura Operativa BluePixel](diagramas/organigrama_bluepixel.svg)
+
+#### 👑 Dirección General & C-Level
 *   **María (Directora General / CEO):**
-    *   Liderazgo corporativo y visión estratégica. Cuenta con canales y presencia digital propia.
-    *   Voz de autoridad empresarial en los nuevos formatos de video (*"Pixel contra el mundo"*).
-*   **Leonardo "Leo" (Líder de Marketing, Ventas & Producto / Jefe Directo):**
-    *   Enfoque en negocio, ingeniería y arquitectura de software.
-    *   **Su visión clave:** Resolver los dos grandes cuellos de botella (**Adquisición** y **Conversión**), transformar a BluePixel en un **partner a largo plazo** para los clientes (*modelo Evolve / Retainers*), y **agentizar la web** con un UX interactivo inspirado en `vstorm.co` conectado a un servidor **MCP (Model Context Protocol)**.
-*   **Juan Cano (Operaciones & Tecnología):**
-    *   Socio operativo clave dentro de BluePixel. Responsable de infraestructura interna, soporte técnico y dinámicas de producto.
-*   **Fabián Flores (Tú - Head of Growth & RevOps):**
-    *   Líder de orquestación omnicanal, implementación del CRM, automatizaciones vía Python/MCP, Lead Scoring y supervisor de la entrega de Rocketing.
+    *   Liderazgo corporativo, relaciones institucionales y visión de negocio de alto nivel.
+    *   Presencia digital propia y figura de autoridad empresarial en formatos audiovisuales (*"Pixel contra el mundo"*).
+*   **Leonardo "Leo" Flores (Líder de Marketing, Ventas & Producto / Socio Fundador):**
+    *   Cabeza de producto, ingeniería y arquitectura tecnológica.
+    *   **Su visión clave:** Resolver los cuellos de botella de **Adquisición** y **Conversión**, posicionar a BluePixel como partner a largo plazo (*modelo Evolve / Retainers*), y liderar la vanguardia de **agentes y servidores MCP (Model Context Protocol)** implementados con herramientas como *Claude Code*.
+
+#### 📈 Revenue Operations & Growth
+*   **Fabián Flores (Head of Growth & RevOps):**
+    *   Orquestación omnicanal, implementación del CRM, automatización de flujos con Python y MCP, Lead Scoring algorítmico y gobernanza de la agencia Rocketing.
+
+#### 💼 Área Comercial (Estructura Dual: Nuevas Ventas vs. Cuentas)
+El área de ventas opera bajo una división estratégica para no mezclar la prospección de nuevos contratos con el cuidado de la cartera:
+1.  **Nuevas Ventas (New Business / Hunters):**
+    *   Atención inmediata de prospectos inbound calificados (Lead Score ≥ 90, presupuesto > $300k MXN) y prospección outbound activa.
+    *   Ejecución de Discovery Calls, diagnóstico técnico-financiero y estructuración de contratos de la **Fase Build**.
+2.  **Cuentas (Account Management / Farming):**
+    *   Acompañamiento post-venta, satisfacción del cliente, entrega continua de valor y venta cruzada/upselling.
+    *   Transición de proyectos finalizados hacia retainers recurrentes de evolución y soporte (**Fase Evolve** mensual de $60k - $90k MXN).
+*   **Pablo Gómez (Ventas Sénior — 6 años en BluePixel):**
+    *   Pilar comercial histórico con seis años de trayectoria en la empresa. Posee el entendimiento más profundo de los clientes corporativos, las curvas de negociación, el histórico de proyectos y los patrones de compra del mercado B2B. Clave tanto en el cierre de nuevas cuentas de alta envergadura como en la relación estratégica de cuentas clave.
+*   **José de Buen (Ventas — 2 años en BluePixel):**
+    *   Ejecutivo comercial enfocado en acelerar el pipeline de ventas, prospección activa, calificación ágil de prospectos y seguimiento riguroso de prospectos calificados.
+
+#### 🎨 Diseño de Producto, UX/UI & Software
+*   **Juan Cubillos (UX/UI & Software — 6 años en BluePixel):**
+    *   Perfil híbrido senior de altísimo valor: combina seis años de experiencia en diseño de interacción (UX/UI) y desarrollo de software con un **profundo conocimiento y sensibilidad de Marketing**.
+    *   Es el puente natural entre estética, usabilidad, código y conversión (CRO). Pieza clave para el co-diseño de los prototipos interactivos PLG y la nueva interfaz de la web inspirada en `vstorm.co`.
+*   **Samantha (Diseño de Producto & UX/UI):**
+    *   Diseñadora clave que colabora directamente con Juan Cubillos en la conceptualización, prototipado de alta fidelidad, flujos de usuario, diseño de componentes y entrega de experiencias visuales de clase mundial para clientes y plataformas internas.
+
+#### ⚙️ Infraestructura Web, SEO & Automatizaciones
+*   **Juan Cano (SEO Técnico, Web & Automatizaciones):**
+    *   Especialista a cargo del SEO técnico, optimización de rendimiento, estructura e implementación continua de cambios en el sitio web (Webflow y CMS).
+    *   Responsable del soporte técnico interno y de la configuración de automatizaciones operativas. Aliado directo de RevOps para inyección de scripts, webhooks y metadatos.
 
 ---
 
@@ -79,11 +152,19 @@ graph TD
 
 ---
 
-### 1.5 Checklist Estratégico de Definición con Leo
+### 1.5 Checklist Estratégico de Definición con el Equipo Interno y Leo
 
-- [ ] **Juan Cano:** Sincronización de dinámicas de trabajo conjunto y soporte en infraestructura.
+- [ ] **Pablo Gómez & José de Buen (Comercial - Nuevas Ventas & Cuentas):**
+  - Mapear el flujo actual de llamadas de prospección y acordar el **SLA de contacto inmediato (< 5 min)** para prospectos con Lead Score ≥ 90.
+  - Definir la segmentación en Notion entre proyectos nuevos (**Fase Build**) y seguimiento/expansión de cartera existente (**Fase Evolve / Cuentas**).
+- [ ] **Juan Cubillos & Samantha (Producto, UX/UI & Software):**
+  - Revisar y co-diseñar los componentes de los **11 Prototipos PLG interactivos** para elevar su estética y usabilidad al estándar de clase mundial de BluePixel.
+  - Planear la integración de la visión de marketing en la navegación del sitio web inspirada en `vstorm.co`.
+- [ ] **Juan Cano (Web, SEO & Automatizaciones):**
+  - Sincronización técnica sobre la estructura de Webflow Designer (`bluepixel.mx` y `cotiza.bluepixel.mx`) para la inyección de scripts, widgets interactivos y optimización de SEO on-page.
+  - Auditar las automatizaciones existentes (Make, Zapier, Webhooks) para articularlas con el servidor MCP.
 - [ ] **Google Search Console (GSC):** Permiso de Administrador/Propietario delegado (existen 3 registros TXT verificados en el dominio `bluepixel.mx`).
-- [ ] **Webflow Designer:** Acceso completo a los proyectos de `bluepixel.mx` y `cotiza.bluepixel.mx` para inyectar scripts, widgets interactivos y corregir etiquetas SEO.
+- [ ] **Webflow Designer:** Acceso completo a los proyectos de `bluepixel.mx` y `cotiza.bluepixel.mx` para inyectar scripts, widgets interactivos y corregir etiquetas SEO junto con Juan Cano.
 - [ ] **El CRM Oficial:** Definir la adopción de **HubSpot** (Starter/Pro) o Brevo/Airtable para centralizar el pipeline y retroalimentar a la agencia.
 - [ ] **Enriquecimiento B2B:** Activar cuenta de desarrollador en **Apollo.io API** (Organization tier) o **Clearbit Reveal** para desanonimizar IPs en Webflow.
 - [ ] **Gestión de Proyectos Operativos:** Confirmar si el equipo de ingeniería usa **Jira o Trello** para automatizar el traspaso de *Closed/Won*.
@@ -178,10 +259,11 @@ graph TD
 
 ![Arquitectura del Servidor MCP y Sinergia RevOps](diagramas/arquitectura_mcp.svg)
 
-1. **Ruta 1 (Operación Interna en Notion):** El servidor MCP continúa escribiendo en la base de datos de Notion exactamente como lo diseñó Leo. El equipo comercial mantiene sus tableros Kanban, notas de Discovery y flujo de trabajo habitual sin disrupción alguna.
-2. **Ruta 2 (Alerta Priorizada en Slack):** Si el MCP calcula que el Lead Score es **≥ 90** (empresa corporativa + decisor técnico), dispara una alerta push a Slack/WhatsApp con el perfil de LinkedIn para llamada telefónica en menos de 5 minutos.
-3. **Ruta 3 (Cierre del Bucle Publicitario - *Closed-Loop*):** Cuando Leo o el equipo comercial marcan un trato como *"Calificado"* o *"Ganado"* en Notion, el MCP o un webhook ligero captura ese cambio de estado y envía el `GCLID` a la API de Conversiones Fuera de Línea de Google Ads y LinkedIn Ads. Esto elimina la ceguera de Rocketing y entrena a los algoritmos para traer clientes de +$300,000 MXN.
+1. **Ruta 1 (Operación Interna en Notion):** El servidor MCP continúa escribiendo en la base de datos de Notion exactamente como lo diseñó Leo. El equipo comercial (**Pablo Gómez y José de Buen**) mantiene sus tableros Kanban, notas de Discovery y flujo de trabajo habitual sin disrupción alguna, direccionando el prospecto a la columna de **Nuevas Ventas** si es un lead nuevo de desarrollo (**Build**) o a **Cuentas** si es un cliente existente solicitando ampliación de servicios o soporte (**Evolve**).
+2. **Ruta 2 (Alerta Priorizada en Slack a Nuevas Ventas):** Si el MCP calcula que el Lead Score es **≥ 90** (empresa corporativa + decisor técnico + presupuesto estimado > $300k MXN), dispara una alerta push inmediata a Slack/WhatsApp etiquetando al equipo de **Nuevas Ventas (Pablo Gómez / José de Buen)** con el perfil de LinkedIn y teléfono verificado para llamada en menos de 5 minutos (SLA Speed-to-Lead).
+3. **Ruta 3 (Cierre del Bucle Publicitario - *Closed-Loop*):** Cuando Leo, Pablo o José marcan un trato como *"Calificado"* o *"Ganado"* en Notion, el MCP o un webhook ligero captura ese cambio de estado y envía el `GCLID` a la API de Conversiones Fuera de Línea de Google Ads y LinkedIn Ads. Esto elimina la ceguera de Rocketing y entrena a los algoritmos para traer clientes de +$300,000 MXN.
 4. **Ruta 4 (Nurturing Automático a $0 MXN):** Para prospectos con Score **< 90** o sin presupuesto inmediato, el MCP los envía a **HubSpot Free CRM**, detonando la secuencia de 4 correos con los casos de éxito de Avianca, Bimbo y RadioShack espaciados a lo largo de 60 días.
+
 
 #### 2.3.3 Argumentación Estratégica para Presentar a Leo:
 * *"Leo, analicé a fondo cómo integraste Claude Code con el servidor MCP para alimentar Notion y notificar a ventas. Me parece una genialidad técnica y la prueba viva de que BluePixel practica el dogfooding de agentes y MCPs antes de vendérselo a clientes como FR Medical."*

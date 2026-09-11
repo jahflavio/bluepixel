@@ -29,6 +29,21 @@
 *   **Descubrimiento clave 1 (¡Su desarrollo con Claude Code!):** Leo **ya automatizó la ingesta de la web hacia Notion usando Claude Code y un servidor MCP**. Esto es una victoria técnica enorme: demuestra que Leo programa con agentes y practica el *dogfooding*. **Jamás le digas que tire Notion a la basura**. Tu postura: *"Tu servidor MCP es una genialidad. Vamos a convertirlo en el enrutador maestro para que siga alimentando Notion, pero además le devuelva a Google Ads las conversiones ganadas para callar el reclamo de Rocketing."*
 *   **Descubrimiento clave 2:** Tampoco existe **herramienta ni operación de mailing activo**. El 80% de los prospectos que no compran en su primera visita (ciclos B2B de 90 días) se pierden sepultados en Notion. Tu propuesta: usar el MCP de Leo para enviar a esos leads fríos a **HubSpot Free ($0 MXN)** para nutrirlos con casos STAR-ROI (Avianca, Bimbo, RadioShack).
 
+### 💼 Con el Equipo Comercial (Pablo Gómez y José de Buen — Nuevas Ventas & Cuentas)
+*   **Pablo Gómez (Ventas Sénior — 6 años en BluePixel):**
+    *   **Tu objetivo:** Conectar con su memoria histórica de ventas. Es el cerrador más experimentado; conoce el perfil real de los clientes que firman proyectos de +$300k MXN y cómo se hace la transición hacia el área de **Cuentas** para los retainers mensuales (**Evolve**).
+*   **José de Buen (Ventas — 2 años en BluePixel):**
+    *   **Tu objetivo:** Ofrecerle el **Lead Scoring y Speed-to-Lead**: *"José, vamos a enviarte alertas instantáneas por Slack de prospectos calificados en menos de 3 minutos para que no compitas con tu bandeja de correo y aumentes tu tasa de cierre."*
+
+### 🎨 Con el Equipo de Producto & UX/UI (Juan Cubillos y Samantha)
+*   **Juan Cubillos (UX/UI & Software — 6 años en BluePixel):**
+    *   **Tu objetivo:** Aliado de co-diseño de experiencias interactivas. Conoce desarrollo, diseño y además tiene visión de marketing. Con él se valida la arquitectura interactiva inspirada en `vstorm.co` y el look & feel de las Demos PLG.
+*   **Samantha (Diseño de Producto & UX/UI):**
+    *   **Tu objetivo:** Colaboración directa en sistemas de diseño, componentes UI y estética visual dark-mode de clase mundial para los prototipos.
+
+### ⚙️ Con Juan Cano (SEO Técnico, Web & Automatizaciones)
+*   **Tu objetivo:** Sincronización técnica en Webflow y automatizaciones. Asegurar accesos compartidos y flujo limpio para inyectar scripts de seguimiento, webhooks y optimizaciones de SEO on-page.
+
 ### 🤝 Con Mario (Recursos Humanos)
 *   **Tu objetivo:** Onboarding administrativo sin fricciones y permisos de Administrador Local en tu máquina.
 

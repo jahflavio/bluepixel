@@ -31,6 +31,10 @@ Dedica 5 minutos a sincronizarte con los actores clave antes de que entren los d
 *Acércate con tono de complicidad profesional:*
 > *"Leo, estuve pensando en la arquitectura que armaste con Claude Code y el MCP conectando a Notion. Me parece una genialidad que ya estemos operando internamente con MCPs. Hoy con FR Medical podemos usar ese mismo argumento: 'Nosotros mismos corremos servidores MCP para nuestras operaciones'. Si sale el tema de cotizaciones lentas en su operación, tengo preparado un prototipo interactivo rápido con su catálogo de Stracos por si queremos mostrárselo en pantalla."*
 
+#### Con Pablo Gómez y José de Buen (Equipo Comercial — Ventas & Cuentas):
+*Comentario de alineación rápida:*
+> *"Pablo, José: hoy a las 11:00 AM entra FR Medical. Es una distribuidora de alta especialidad médica en trauma torácico y drenajes. Levantaremos requerimientos para estructurar un contrato de desarrollo Build (+$300k MXN). El objetivo es amarrar la fecha de presentación comercial para el próximo jueves y preparar la transición hacia el modelo Evolve de Cuentas."*
+
 #### Con Sergio y Jessica Blanco (Rocketing - Video y Contenidos):
 *Instrucción directa y sin rodeos a Sergio:*
 > *"Sergio, en cuanto Leo o yo abramos la laptop para mostrarle a los doctores de FR Medical la respuesta de la IA cotizando un implante en vivo, ten lista la cámara en plano cerrado a la cara del cliente. Ese 'Momento Ajá' (su cara de sorpresa al ver su catálogo cotizado en 2 segundos) va a ser el gancho estrella para 'Pixel contra el mundo' en LinkedIn."*
