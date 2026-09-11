@@ -68,6 +68,13 @@ Durante las 3 horas del taller, cuando Leo y María le pregunten a FR Medical so
 *   **El Problema del Cliente:** Coordinar stock crítico entre sucursales y consignaciones en hospitales.
 *   **La Solución BluePixel:** Implementar la arquitectura de nuestro [Demo Inventario Colaborativo](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/3_Inventario_Colaborativo/index.html) con alertas automáticas cuando un implante de alta rotación (ej. Drentech Unico) baje del stock de seguridad.
 
+### Oportunidad 4: "Automatizador de Rutas, Horarios y Despacho Logístico (Anti-Vueltas con GPS)"
+*   **El Problema del Cliente:** Los mensajeros propios de la empresa dan 2 o 3 vueltas al mismo hospital en el mismo día porque en quirófano piden complementos de última hora. No hay priorización de rutas, horarios ni cálculo de tiempo de traslado a hospitales de urgencia.
+*   **La Solución BluePixel:**
+    *   **Sugerencia Inteligente de Kits:** La IA previene segundas vueltas sugiriendo grapas, instrumental y drenajes complementarios desde la cotización inicial.
+    *   **Enrutamiento Algorítmico y Priorización:** Asignación de mensajeros en tiempo real separando emergencias en quirófano de cirugías programadas.
+    *   **Dashboard con GPS:** Panel visual para administradores y enlace de rastreo en vivo con ETA para el jefe de quirófano del hospital.
+
 ### 🛡️ 3.4 El Argumento de Blindaje Clínico: Por qué la IA Médica NO es un "DIY con ChatGPT"
 > [!CAUTION]
 > En distribución de implantes torácicos y trauma, un error cuesta vidas y demandas millonarias. Si el cliente o su equipo de TI sugieren *"eso lo podemos armar con un script de ChatGPT o un programador interno"*, suelta este argumento:

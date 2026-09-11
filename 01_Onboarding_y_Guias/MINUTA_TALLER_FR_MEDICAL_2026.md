@@ -1,0 +1,113 @@
+# 🏥 MINUTA TÉCNICA Y DIAGNÓSTICO OPERATIVO: TALLER CON FR MEDICAL
+*Levantamiento Forense de Procesos, Cuellos de Botella Reales y Arquitectura de Solución con IA.*  
+**Fecha:** Viernes, 11 de Septiembre de 2026 (11:00 AM – 2:00 PM)  
+**Cliente:** FR Medical S.A. de C.V. (`frmedical.com.mx`)  
+**Participantes:** Contadora y Equipo Administrativo/Comercial de FR Medical, Leonardo Flores, María, Fabián Flores, Jessica Blanco y Sergio Blanco (Rocketing).
+
+---
+
+## 🎯 1. RESUMEN EJECUTIVO DE LA SESIÓN
+
+Durante las primeras dos horas de diagnóstico profundo, el equipo directivo y contable de FR Medical expuso que, aunque cuentan con algunas herramientas y procesos semiautomatizados, su operación diaria sufre de **vacíos de información, lentitud crítica en cotizaciones, descontrol logístico en quirófano y procesos financieros manuales con calculadora**.
+
+La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas de alta especialidad (Stracos, Redax, Boston Medical), pero su infraestructura actual no distingue urgencias médicas de cotizaciones ordinarias, provocando **retrasos en cirugías, fletes dobles por mensajeros y fricción contable**.
+
+---
+
+## 🔬 2. RADIOGRAFÍA DE DOLORES OPERATIVOS (PAIN POINTS CONFESADOS)
+
+### 2.1 La Cotización Quirúrgica es Pesada y se Opera "Por Suposiciones":
+*   **Vacíos de Información:** Los ejecutivos emiten cotizaciones basadas en suposiciones porque no existe un repositorio unificado que valide compatibilidades quirúrgicas.
+*   **Fichas Técnicas y Regulación COFEPRIS:** La cotización no incluye automáticamente los números de registro sanitario de COFEPRIS ni las fichas técnicas normadas que exige el hospital.
+*   **Falta de SOPs Estandarizados:** Cada ejecutivo o administrativo cotiza con formatos distintos y criterios arbitrarios antes de emitir la orden.
+
+### 2.2 El Desastre Logístico en Quirófano y las Múltiples Vueltas de Mensajeros:
+*   **Pedidos Fragmentados:** Cuando un cirujano está en quirófano operando una fractura de costillas o una deformidad de Pectus, frecuentemente requiere **complementos de último minuto** (grapas de titanio adicionales, sondas de drenaje o instrumental especializado).
+*   **Mensajeros Propios y Fletes Duplicados:** FR Medical cuenta con su propia plantilla de mensajeros. Al no existir una validación inteligente de pedidos, **los mensajeros se ven forzados a dar 2 o 3 vueltas al mismo hospital en el mismo día**, disparando costos de gasolina, viáticos y desgaste operativo.
+*   **Falta de Mapeo de Tiempos y Ventanas de Quirófano:** No cuentan con un cálculo estimado de "tiempo de traslado/vuelo" desde que el hospital pide el material hasta que se entrega en la puerta de quirófano.
+
+### 2.3 Automatización de Rutas y Horarios para Priorizar Entregas Críticas:
+*   **Falta de Enrutamiento Inteligente:** Las entregas se asignan de forma reactiva sin optimización geográfica ni horaria en la CDMX y zona metropolitana.
+*   **Necesidad de Priorización por Criticidad Quirúrgica:** Una cirugía de urgencia (trauma por accidente en Hospital Ángeles) debe tener prioridad absoluta de ruta sobre una reposición de stock programada para el lunes.
+*   **Rastreo GPS y Dashboard Operativo:** Urge implementar un panel visual en tiempo real para rastrear la ubicación de los mensajeros, tiempos estimados de arribo (ETA) y confirmación digital de entrega en quirófano.
+
+### 2.4 El Dilema Financiero: Cirugías 24 Horas con o sin Anticipo:
+*   **Guardias 24/7 sin Reglas Claras:** El personal administrativo y de guardia recibe pedidos de madrugada sin saber si deben exigir anticipo o despachar el material de inmediato.
+*   **Riesgo de Cartera Vencida vs. Vidas Humanas:** Si exigen anticipo a las 3:00 AM, pueden entorpecer una cirugía urgente; si despachan sin validar, arriesgan facturas no cobradas si el médico o paciente no tenían convenio autorizado.
+*   **Evaluaciones Manuales de Clientes:** No hay un semáforo de riesgo crediticio que indique si el hospital tiene línea de crédito abierta o requiere pago previo.
+
+### 2.5 Contabilidad, Comisiones en Calculadora y Viáticos:
+*   **Cálculo de Comisiones a Mano:** La contadora realiza el cálculo de comisiones de los vendedores utilizando calculadora física y hojas de cálculo desvinculadas, generando reclamos y fricción a fin de mes.
+*   **Falta de Plataforma Visual para Logros Comerciales:** Los vendedores no tienen visibilidad en tiempo real de sus metas cumplidas, comisiones acumuladas ni objetivos por línea de producto (Stracos vs Redax).
+*   **Comprobación y Seguimiento de Viáticos:** El personal en campo y mensajeros generan comprobaciones de gastos manuales que sobrecargan al área contable en conciliaciones bancarias.
+
+### 2.6 Proceso de Captación de Leads Indiscriminado:
+*   **Tratamiento Plano sin Priorización:** Los formularios de contacto web no filtran por línea de producto ni por nivel de urgencia. Un jefe de compras corporativo recibe el mismo trato que un paciente que busca orientación general.
+
+---
+
+## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
+
+Para resolver de raíz estos 6 cuellos de botella, BluePixel propone un ecosistema modular de **Agentes de IA e Infraestructura Logística**:
+
+```mermaid
+graph TD
+    Cirujano["Cirujano / Hospital / Ventas (WhatsApp & Web)"] --> Gateway["Gateway Seguro BluePixel (Servidor MCP Aislado)"]
+    
+    subgraph Cerebro_IA["Cerebro de Reglas de Negocio & IA"]
+        Gateway --> Validador["1. Validador Quirúrgico & Sugerencia de Kits"]
+        Gateway --> ReglasCredito["2. Motor de Crédito 24/7 (Anticipo vs Convenio)"]
+        Gateway --> Dispatcher["3. Despachador Logístico & Optimizador de Rutas"]
+    end
+    
+    Validador -->|"Sugerencia Inteligente de Complementos"| CotizadorPDF["Cotización Formal PDF en 1.8s con COFEPRIS"]
+    
+    Dispatcher -->|"Asignación Algorítmica por Horario y Urgencia"| MensajerosGPS["App / Dashboard GPS para Mensajeros Propios"]
+    
+    ReglasCredito -->|"Aprobación Inmediata a Quirófano"| HospitalEntrega["Entrega Prioritaria en Puerta de Quirófano"]
+    
+    CotizadorPDF -->|"Cierre Ganado"| ModuloFinanciero["Módulo Contable: Comisiones Automáticas & Viáticos"]
+```
+
+### Módulo 1: Cotizador Quirúrgico con Sugerencia Automática de Kits (Anti-Vueltas)
+*   **Cómo opera:** Al cotizar un procedimiento (ej. Fractura Costal Múltiple con placas Stracos), el agente no solo agrega las placas; **sugiere de inmediato el instrumental de fijación, tornillos de titanio y drenaje pleural Redax correspondiente**.
+*   **Impacto directo:** Elimina de raíz la necesidad de que el mensajero dé una segunda vuelta al quirófano a mitad de la cirugía.
+*   **Compliance:** Inserta automáticamente los números de registro sanitario autorizados por COFEPRIS y genera el PDF formal membretado en menos de 2 segundos.
+
+### Módulo 2: Automatizador de Rutas, Horarios y Despacho Logístico (GPS Dashboard)
+*   **Priorización Inteligente por Criticidad:**
+    *   **Nivel 1 (Emergencia de Quirófano en Curso):** Despacho prioritario inmediato, asignación de mensajero más cercano y cálculo de ruta más rápida.
+    *   **Nivel 2 (Cirugía Programada en 24-48 hrs):** Consolidación en rutas horarias optimizadas para minimizar consumo de gasolina.
+    *   **Nivel 3 (Reabastecimiento de Gaveta / Consignación):** Rutas programadas en horarios valle.
+*   **Tiempo de Vuelo/Traslado Estimado:** El sistema calcula el tiempo real de entrega considerando tráfico y ubicación del hospital (Ángeles Lomas, ABC Santa Fe, Médica Sur, etc.) y envía un link de rastreo GPS al cirujano o jefe de quirófano.
+*   **Dashboard para Supervisión de Mensajería:** Panel visual para los administradores que monitorea pedidos en tránsito, paradas realizadas y confirmaciones de entrega con firma digital.
+
+### Módulo 3: Motor de Reglas Financieras 24/7 y Crédito Hospitalario
+*   **Semáforo de Autorización Nocturna:** El agente consulta la base de datos de convenios institucionales:
+    *   *Hospital con convenio AAA (Ángeles, Médica Sur):* Se autoriza la salida inmediata del implante a las 3:00 AM con folio de quirófano sin requerir anticipo bancario en ese instante.
+    *   *Médico particular / Hospital sin convenio previo:* El agente genera un link de pago digital de anticipo por WhatsApp o envía una alerta de validación urgente al directivo de guardia.
+
+### Módulo 4: Portal Visual de Comisiones y Control de Gastos/Viáticos
+*   **Liquidación Automática de Comisiones:** Cada orden facturada calcula la comisión exacta del representante según su cuota y meta mensual. Se elimina el uso de calculadoras físicas.
+*   **Comprobación Rápida de Viáticos:** Los mensajeros y ejecutivos en campo suben fotografía de tickets de gasolina y casetas por WhatsApp; el sistema extrae montos mediante OCR y concilia automáticamente con la contabilidad.
+
+---
+
+## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
+
+*   **Fase Build (Desarrollo e Implementación en 8 a 10 semanas):**
+    *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
+    *   Módulo de Enrutamiento Inteligente, Horarios y Dashboard GPS de Mensajería.
+    *   Motor de Reglas de Anticipo 24/7 y generación de PDF formal con COFEPRIS.
+    *   Portal visual de KPIs de ventas y cálculo de comisiones.
+    *   **Inversión Estimada:** $450,000 – $650,000 MXN.
+*   **Fase Evolve (Acompañamiento y Retainer Mensual):**
+    *   Mantenimiento de infraestructura, soporte a mensajería, ajuste de rutas, actualización de catálogos y entrenamiento continuo de modelos.
+    *   **Inversión Mensual:** $75,000 – $95,000 MXN/mes.
+
+---
+
+## 🤝 5. PRÓXIMOS PASOS ACORDADOS
+
+1.  **FR Medical:** Compartirá lista de precios oficial, catálogo de SKUs y plantilla actual de órdenes de servicio.
+2.  **BluePixel:** Entregará la propuesta técnica y económica formal el **próximo jueves a las 11:00 AM** en sesión de revisión ejecutiva con María y Leo.
