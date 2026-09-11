@@ -99,14 +99,14 @@ Cuando el cliente termine de explicar lo engorroso que es armar cotizaciones de 
 * **Felicitar al equipo:** *"Excelente taller. El cliente quedó enganchado cuando vio su propio catálogo procesado en tiempo real."*
 * **Sellar el siguiente paso:** *"Voy a redactar la minuta técnica con los requerimientos exactos para que Leo y tú puedan estructurar la propuesta de desarrollo (Fase Build + Retainer Evolve)."*
 
-### 2. Sincronización de Contenidos con Jessica Blanco (03:00 PM - 04:00 PM):
-* Revisa con Jessica las frases más potentes que soltó el cliente (*Voz del Cliente*).
-* Valida los 3 cortes para *"Pixel contra el mundo"*:
-  1. *"El costo oculto de cotizar implantes médicos a mano en México."*
-  2. *"Cómo la IA ayuda a un cirujano a elegir el implante correcto en 2 segundos."*
-  3. *"De 4 horas a 1.8 segundos: la transformación digital de una distribuidora de salud."*
+### 2. Grabación de Videos, Carruseles y Noticias Tech con la Agencia (03:00 PM - 04:30 PM):
+* **Guía de Producción Completa:** Consulta la [ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md) con los hooks de 3 segundos y respuestas clave.
+* **Bloque 1 (Leo o María):** Entrevista *"Recién egresado vs la era de la IA"* (carrusel con notas de voz de 15s para LinkedIn).
+* **Bloque 2 (Leo):** Entrevista *"Creativo y programador no se llevan"* (el ADN fundador de BluePixel: matrimonio entre UX/UI y arquitectura Cloud, citando casos Avianca y RadioShack).
+* **Bloque 3 (Pixel News):** Cápsulas verticales de noticias de frontera (El estándar MCP, Claude Code en terminal, modelos de razonamiento y privacidad de datos corporativos).
+* **Bloque 4 (Voz del Cliente de FR Medical):** 3 micro-cortes de 45 segundos para *"Pixel contra el mundo"* extraídos del taller de la mañana.
 
-### 3. Preparación de Fin de Semana para el Lunes (04:00 PM - 05:30 PM):
+### 3. Preparación de Fin de Semana para el Lunes (04:30 PM - 05:30 PM):
 El **Lunes a las 4:00 PM** es la junta de rendimiento con Rocketing sobre el reporte de Looker Studio:
 - [ ] Entrar al dashboard de Looker Studio: [Reporte de Campañas Rocketing](https://datastudio.google.com/u/0/reporting/b825c361-9afe-4db0-a656-8a93d6106392/page/p_bg1t74vpzd).
 - [ ] Anotar: ¿Cuánto gastaron en Google Search esta semana? ¿Cuántos formularios brutos cayeron?
