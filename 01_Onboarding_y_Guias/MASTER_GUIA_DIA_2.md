@@ -17,7 +17,9 @@
 - [ ] **Tener abiertas las pestañas maestras:**
   1. [PLAYBOOK_TALLER_FR_MEDICAL.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/PLAYBOOK_TALLER_FR_MEDICAL.md) (para consultar marcas y las 4 preguntas).
   2. [11_Cotizador_IA_FR_Medical/index.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html) (la demo viva).
-  3. Un bloc de notas limpio (o Notion) para transcribir la **Voz del Cliente (VOC)** durante la sesión.
+  3. [PROTOCOLO_GRABACION_AUDIO_Y_VOC_IA.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/PROTOCOLO_GRABACION_AUDIO_Y_VOC_IA.md) (el protocolo de grabación de audio y prompt de extracción IA).
+  4. Un bloc de notas limpio (o Notion) para transcribir notas rápidas.
+- [ ] **Configurar Grabadora de Sonido (10:55 AM):** Abrir la grabadora de Windows y dejar el celular de respaldo en modo avión al centro de la mesa.
 - [ ] **Acceso a la máquina (con Mario de RRHH):** Si aún no tienes permisos de Administrador local en Windows para instalar Python/Node, recuérdaselo de paso amablemente con un café.
 
 ---
