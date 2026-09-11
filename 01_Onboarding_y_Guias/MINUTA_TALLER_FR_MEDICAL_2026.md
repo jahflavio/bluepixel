@@ -65,6 +65,14 @@ La empresa opera 24/7 atendiendo cirugías cardiotorácicas y traumatológicas d
     *   O tienen que **despertar a un administrativo a medianoche** para que encienda su computadora personal en su casa solo para dar un clic de visto bueno.
     *   Cualquiera de los dos escenarios genera fricción crítica, estrés para el equipo y riesgo de que el hospital cancele y compre a la competencia.
 
+### 2.10 Deuda de Procesos y Cero Documentación por Crecimiento Histórico ("El Conocimiento Tribal"):
+*   **El Negocio Creció, los Métodos se Quedaron Viejos:** FR Medical creció de forma acelerada y exitosa en facturación, pero su operación sigue anclada a los hábitos informales de cuando eran una distribuidora pequeña.
+*   **El Conocimiento está Atrapado en la Mente de los Veteranos:** No existe un solo manual, diagrama de flujo ni documento oficial de **Procedimientos Operativos Estandarizados (SOPs)**. Todo se opera "de memoria" o interrumpiendo constantemente a la contadora y a los líderes veteranos.
+*   **Las Consecuencias de esta Deuda:**
+    1. *Curvas de Aprendizaje Eternas:* La incorporación de nuevos mensajeros, administrativos o vendedores tarda semanas; cometen errores costosos en quirófano por desconocer las políticas no escritas.
+    2. *Vulnerabilidad ante Bajas de Personal:* Si un empleado veterano se enferma o renuncia, la empresa queda secuestrada porque nadie más conoce el procedimiento exacto.
+    3. *Riesgo Regulatorio y de Auditoría:* Ante una revisión de COFEPRIS o un requerimiento de comités de compras de hospitales corporativos (Ángeles, ABC), carecen de evidencia documental de trazabilidad quirúrgica.
+
 ---
 
 ## 🤖 3. ARQUITECTURA DE SOLUCIÓN PROPUESTA POR BLUEPIXEL
@@ -157,6 +165,14 @@ graph TD
 *   **Auto-Aprobación Inmediata ("Green Flag"):** Si la orden pasa los 4 filtros con 100% de precisión, la IA emite el visto bueno en automático, genera la hoja de surtido de almacén y timbra al celular del mensajero de guardia para salir a quirófano en menos de 15 minutos.
 *   **Manejo de Excepciones:** Si existe una discrepancia grave (ej. un hospital sin crédito solicitando $300k sin anticipo), la IA retiene la orden y genera una llamada de escalamiento al directivo responsable.
 
+### Módulo 11: Fábrica de Procesos Vivos y Copiloto Interno (Living SOP & Wiki Engine con IA)
+*   **El Software es el Proceso (Cero Manuales Aburridos):** En lugar de carpetas de Word de 200 páginas que nadie lee, el sistema materializa los procesos dentro de la propia interfaz:
+    *   *Flujos Guiados paso a paso (Wizards):* Guía a cualquier empleado nuevo en la gestión de pedidos, canjes de implantes por garantía o recepción de material devuelto de quirófano.
+*   **Copiloto Interno de Procesos por WhatsApp (FR Medical Wiki Bot):**
+    *   Cualquier mensajero, vendedor o administrativo nuevo le pregunta al bot por WhatsApp: *"¿Cuál es la política para recibir una placa Stracos abierta en quirófano pero no implantada?"*
+    *   El bot responde en **3 segundos** citando la política oficial, los formatos a llenar y el checklist de esterilización.
+*   **Acreditación COFEPRIS y Hospitales:** Generación automática de diagramas de flujo y manuales de procedimientos actualizados para auditorías de calidad hospitalaria.
+
 ---
 
 ## 💼 4. ALCANCE Y ESTRUCTURACIÓN COMERCIAL (FASE BUILD + EVOLVE)
@@ -165,6 +181,7 @@ graph TD
     *   Desarrollo del Servidor MCP y Agente Cotizador Quirúrgico con catálogo Stracos, Redax y Boston Medical.
     *   **Agente de Guardia 24/7 Multicanal (Voz IA Telefónica + WhatsApp)** para emergencias nocturnas.
     *   **Auditor Algorítmico Autónomo de Pedidos (Validation Sentinel)** para eliminar el cuello de botella nocturno (12 AM - 7 AM).
+    *   **Fábrica de Procesos Vivos y Copiloto Interno (Living SOP & Wiki Engine)** para estandarizar la operación.
     *   **Motor de Triage Quirúrgico con NLP** y priorización visual objetiva de urgencias.
     *   **Optimizador de Rutas, Horarios y Despacho Logístico** con Dashboard y GPS para mensajeros propios.
     *   **Motor de Reglas de Crédito y Anticipo 24/7** con compliance COFEPRIS.
