@@ -89,13 +89,14 @@ Convertir el día de hoy en una fábrica de contenido de alta autoridad que demu
 ---
 
 ## ⚡ PARTE 3: "PIXEL NEWS" — LAS NOTICIAS REALES DE TECNOLOGÍA (4:15 PM – 5:15 PM)
-*Cápsulas ágiles de 60 a 90 segundos con Leo y María conectando las noticias del momento con la tesis de BluePixel.*
+*Cápsulas ágiles de 60 a 90 segundos con Leo y María conectando las noticias del momento con la tesis de BluePixel. Aplicamos la **Regla 80/20**: se graban primero las 3 noticias estrella obligatorias; si sobra energía, se graban las secundarias.*
 
 ---
 
-### SECCIÓN A: DE NICHO (B2B, CTOs e Infraestructura)
+### 🔥 PRIORIDAD 1: LAS 3 NOTICIAS ESTRELLA (OBLIGATORIAS HOY)
 
 #### 1. Wall Street Journal: "La IA transforma el software empresarial, pero no lo está reemplazando tan rápido" (8 Sept)
+* **Público:** B2B / CTOs / CEOs (LinkedIn y YouTube).
 * **Fuente:** [Wall Street Journal](https://www.wsj.com/tech/ai/ai-is-disrupting-software-companiesbut-not-as-fast-as-many-feared-a380443a)
 * **Hook (0-3s):** *"¿La Inteligencia Artificial va a destruir a Salesforce y a las empresas de software? Wall Street acaba de demostrar exactamente lo contrario."*
 * **La noticia:** Gigantes como Salesforce, ServiceNow y Snowflake están resistiendo el embate de la IA mucho mejor de lo esperado. La razón: para los modelos de IA es fácil escribir código aislado, pero integrar y mantener sistemas empresariales complejos sigue siendo una tarea humana crítica.
@@ -103,44 +104,46 @@ Convertir el día de hoy en una fábrica de contenido de alta autoridad que demu
 * **CTA:** *"¿En tu empresa ya intentaron conectar IA con sus sistemas o siguen batallando con código roto? Te leo en los comentarios."*
 
 #### 2. OpenAI presenta GPT-6 Astra (3 Sept)
+* **Público:** B2B / Desarrolladores (LinkedIn y YouTube).
 * **Fuente:** [Reuters — GPT-6 Astra](https://www.reuters.com/legal/litigation/openai-launches-new-astra-model-amid-growing-scrutiny-over-agents-safety-2026-09-03/)
 * **Hook (0-3s):** *"OpenAI acaba de lanzar Astra, su modelo autónomo, y confirma una cosa: los chatbots tradicionales quedaron oficialmente en el pasado."*
 * **La noticia:** OpenAI presentó GPT-6 Astra, diseñado para ejecutar tareas complejas de forma autónoma directamente dentro de entornos de software reales (no solo chatear, sino operar herramientas).
 * **La Perspectiva BluePixel:** *"En BluePixel ya lo venimos implementando: el futuro no son las cajas de texto donde preguntas cosas, son los agentes autónomos con protocolos MCP que mueven inventarios, calculan precios y cotizan en milisegundos."*
 
-#### 3. NVIDIA anuncia la compra de Hugging Face por $13,000 Millones de Dólares (3 Sept)
+#### 3. La crisis de la RAM provocará la mayor caída en envíos de smartphones en una década
+* **Público:** Masivo / Viral (TikTok, Reels y YouTube Shorts).
+* **Fuente:** [Infobae Tecno — Escasez de Memoria RAM](https://www.infobae.com/tecno/2026/02/27/la-escasez-de-memoria-ram-podria-provocar-la-mayor-caida-en-los-envios-de-smartphones-en-mas-de-una-decada/)
+* **Hook (0-3s):** *"¿Pensabas cambiar de celular este año? Malas noticias: tu próximo teléfono va a ser más caro y más escaso por culpa de la IA."*
+* **El Hecho:** Las fábricas de memoria están prefiriendo venderle componentes con márgenes gigantescos a los servidores de IA que a los fabricantes de smartphones, anticipando una caída histórica en la producción de teléfonos.
+* **La Reflexión rápida:** *"El apetito de la IA por recursos computacionales ya no es una noticia abstracta; va a impactar directamente en el precio del teléfono que tienes en el bolsillo."*
+
+---
+
+### ⚡ PRIORIDAD 2: NOTICIAS SECUNDARIAS DE PROFUNDIDAD (SI SOBRA ENERGÍA)
+
+#### 4. NVIDIA anuncia la compra de Hugging Face por $13,000 Millones de Dólares (3 Sept)
 * **Fuente:** [AP News — NVIDIA Hugging Face](https://apnews.com/article/nvidia-hugging-face-ai-d96d50e037a2ade479dcdf81cdf2afcf)
 * **Hook (0-3s):** *"Trece mil millones de dólares. Ese fue el cheque que Jensen Huang de NVIDIA firmó para quedarse con el corazón del software open source."*
 * **La noticia:** La adquisición consolida el control de NVIDIA sobre el mayor repositorio de modelos y herramientas abiertas del mundo, garantizando que el desarrollo de IA corra sobre su ecosistema de chips.
 * **La Perspectiva BluePixel:** *"El mensaje para los directores de tecnología es claro: no dependas de un solo proveedor propietario. Las empresas que ganarán son las que desplieguen arquitecturas híbridas y modelos locales optimizados."*
 
-#### 4. Investigador de Anthropic renuncia por preocupación sobre seguridad de IA (9 Sept)
+#### 5. Investigador de Anthropic renuncia por preocupación sobre seguridad de IA (9 Sept)
 * **Fuente:** [AP News — Anthropic AI Safety](https://apnews.com/article/anthropic-ai-safety-jacob-coxon-2ed549e07f2f941600a135070487d83d)
 * **Hook (0-3s):** *"Cuando el investigador sénior de seguridad de Anthropic renuncia diciendo que la carrera de IA va demasiado rápido... vale la pena escuchar por qué."*
 * **La noticia:** Jacob Coxon dejó Anthropic señalando que la competencia feroz entre laboratorios está dejando atrás los mecanismos de seguridad y contención de los agentes.
 * **La Perspectiva BluePixel:** *"En el mundo corporativo, la seguridad no es opcional. No puedes conectar agentes a tus bases de datos sin capas estrictas de permisos y aislamiento. En BluePixel diseñamos con gobernanza y blindaje desde el día cero."*
 
-#### 5. "RAMageddon": La IA está provocando una escasez mundial de memoria
+#### 6. "RAMageddon": La IA está provocando una escasez mundial de memoria
 * **Fuente:** [Financial Times — RAMageddon](https://www.ft.com/content/ea9a9dcc-b1df-49b0-b80c-f320161b9efa?utm_source=chatgpt.com)
 * **Hook (0-3s):** *"La fiebre de la Inteligencia Artificial se está tragando toda la memoria RAM del planeta. Y el problema durará hasta 2028."*
 * **La noticia:** La demanda de memoria HBM y DRAM para centros de datos de IA está asfixiando la cadena de suministro, encareciendo los servidores y limitando la producción para dispositivos de consumo.
 * **La Perspectiva BluePixel:** *"Cuando el hardware se vuelve escaso y costoso, la eficiencia del software es obligatoria. Se acabó la era de programar código inflado; hoy optimizar la memoria y migrar a arquitecturas Serverless es una necesidad financiera."*
 
-#### 6. Startup Kepler Computing promete una nueva forma de fabricar HBM
+#### 7. Startup Kepler Computing promete una nueva forma de fabricar HBM
 * **Fuente:** [Wired — Kepler Computing HBM Bottleneck](https://www.wired.com/story/a-new-dollar400-million-startup-wants-to-fix-the-ai-memory-bottleneck/)
 * **Hook (0-3s):** *"Una startup de 400 millones de dólares promete salvar a la industria de la crisis de memoria con arquitectura 3D."*
 * **La noticia:** Kepler Computing presentó una tecnología de fabricación 3D para memoria HBM y SRAM que busca romper el cuello de botella de los centros de datos con producción en Estados Unidos hacia 2028.
 * **La Perspectiva BluePixel:** *"La infraestructura física está cambiando a pasos agigantados. Las empresas deben construir software desacoplado para que, cuando el nuevo hardware llegue, sus sistemas puedan aprovecharlo sin tener que reescribir todo."*
-
----
-
-### SECCIÓN B: PÚBLICO GENERAL (Viral, TikTok, Reels y Shorts)
-
-#### 7. La crisis de la RAM provocará la mayor caída en envíos de smartphones en una década
-* **Fuente:** [Infobae Tecno — Escasez de Memoria RAM](https://www.infobae.com/tecno/2026/02/27/la-escasez-de-memoria-ram-podria-provocar-la-mayor-caida-en-los-envios-de-smartphones-en-mas-de-una-decada/)
-* **Hook (0-3s):** *"¿Pensabas cambiar de celular este año? Malas noticias: tu próximo teléfono va a ser más caro y más escaso por culpa de la IA."*
-* **El Hecho:** Las fábricas de memoria están prefiriendo venderle componentes con márgenes gigantescos a los servidores de IA que a los fabricantes de smartphones, anticipando una caída histórica en la producción de teléfonos.
-* **La Reflexión rápida:** *"El apetito de la IA por recursos computacionales ya no es una noticia abstracta; va a impactar directamente en el precio del teléfono que tienes en el bolsillo."*
 
 #### 8. La nueva Siri con IA en iPhone... pero con letra pequeña
 * **Fuente:** [Applesfera — Nueva Siri en iOS](https://www.applesfera.com/ios/nueva-siri-apple-fin-promete-ser-realmente-inteligente-espana-tendremos-que-seguir-esperando)

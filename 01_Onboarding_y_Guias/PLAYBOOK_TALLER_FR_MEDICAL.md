@@ -91,6 +91,10 @@ El taller con FR Medical no solo se documentará como evento; funcionará como *
 
 > *"No solamente vamos a grabar lo que suceda. Vamos a escuchar para descubrir qué vale la pena contar."*
 
+### 🎙️ Frase de Apertura para Romper la Tensión de las Cámaras (Minuto 1):
+Antes de arrancar, dilo de forma cálida y profesional para que FR Medical se relaje:
+> *"Antes de arrancar, van a ver a Sergio y Jessica aquí en la sala con cámaras y micrófonos. No se preocupen, en BluePixel tenemos un laboratorio de innovación donde documentamos la bitácora de co-diseño de nuestros clientes para no perder ningún detalle técnico ni de arquitectura. Siéntanse completamente en confianza y como en su propia casa."*
+
 ### Las 3 Fuentes Principales de Contenido en Vivo:
 1. **La Voz del Cliente:** Detectar problemas, necesidades, inquietudes y palabras que el cliente utiliza naturalmente para hablar de su negocio (ej. cómo describe la urgencia de quirófano o el descontrol de la consignación).
 2. **La Mirada de BluePixel:** Capturar intervenciones de Leo, María y Fabián que demuestren criterio, experiencia, preguntas clave, análisis y acompañamiento estratégico.
@@ -106,13 +110,26 @@ El taller con FR Medical no solo se documentará como evento; funcionará como *
 
 ---
 
-## ⚡ 6. PROTOTIPO FUNCIONAL PREPARADO PARA LA DEMO EN VIVO
+## ⚡ 6. CRONOGRAMA, DEMO EN VIVO Y CIERRE COMERCIAL
 
-Para el taller de mañana, tienes listo y funcionando el prototipo interactivo específico para su marca:
+### ⏰ Cronograma Táctico del Taller:
+* **11:00 AM – 12:30 PM (Diagnóstico Profundo):** Mapeo de dolores operativos, inventario y speed-to-quote con las 4 Preguntas de Oro.
+* **12:30 PM – 12:40 PM (Break Estratégico de Café):** 10 minutos para recargar energía, evitar fatiga y reiniciar la atención de la sala.
+* **12:45 PM – 01:15 PM (El Momento Cumbre: Demo en Vivo):** Ejecución del Cotizador IA en 1.8s y descarga de PDF oficial.
+* **01:15 PM – 01:45 PM (Arquitectura & Dudas Técnicas):** Resolución de privacidad de datos médicos, integración ERP y normativa COFEPRIS.
+* **01:45 PM – 02:00 PM (Cierre Comercial Formal):** Bloqueo de fecha para presentación de propuesta formal ($300k+ MXN Build + Evolve).
+
+### 💻 Guión de Demostración del Prototipo (12:45 PM):
+Tienes listo y funcionando el prototipo interactivo específico para su marca:
 *   🔗 **Acceso directo al cotizador:** [11_Cotizador_IA_FR_Medical/index.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)
 *   **Guión de demostración rápida (1-Click):**
     1. Abre el archivo en Google Chrome o Microsoft Edge.
     2. Haz clic en el botón superior: *"Fractura Costal Múltiple (Stracos MedXpert)"*.
     3. La consola mostrará el proceso de inferencia en tiempo real (`[0.4s] Mapeando patología...`, `[0.9s] Consultando inventario ABC...`, `[1.8s] Cotización generada`).
     4. En 1.8 segundos se despliega la orden formal #FRM-2026 con los precios de convenio, desglose de IVA, claves de producto y disponibilidad de stock en quirófano.
-    5. Muestra los botones de acción: *"Descargar PDF"* y *"Reservar en Quirófano por WhatsApp"*.
+    5. Muestra la descarga del PDF oficial y el botón de *"Reservar en Quirófano por WhatsApp"*.
+
+### 🤝 Script de Cierre Comercial (01:45 PM):
+No permitir que la sesión termine sin fecha comprometida:
+> *"Con la radiografía de requerimientos que levantamos hoy, nuestro compromiso es entregarles el próximo jueves la propuesta formal de arquitectura (Fase Build para el Agente y Fase Evolve para soporte). ¿Les parece si de una vez agendamos 45 minutos el próximo jueves a las 11:00 AM para revisarla juntos?"*
+

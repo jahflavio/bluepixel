@@ -39,27 +39,30 @@ Dedica 5 minutos a sincronizarte con los actores clave antes de que entren los d
 
 ### 🔥 11:00 AM – 02:00 PM: EL EVENTO CENTRAL (Taller de Agentización con FR Medical)
 
+#### La Frase de Apertura para Relajar al Cliente con las Cámaras (Minuto 1):
+*Antes de empezar, María o Leo deben decir con una sonrisa natural para desactivar cualquier tensión:*
+> *"Doctor, Licenciado, bienvenidos. Verán a Sergio y Jessica con cámara tomando algunas notas y tomas de apoyo porque en BluePixel documentamos nuestras mesas de trabajo como un laboratorio de innovación, para que ningún detalle de arquitectura se pierda. Siéntanse completamente en casa."*
+
 #### La Dinámica de la Sala y los Roles:
 * **María (CEO):** Dirige la visión de negocio, relación de confianza y retorno de inversión macro.
 * **Leo (Head of Tech):** Lidera la explicación de arquitectura de software y capacidades técnicas de BluePixel.
-* **Tú (Consultor de Procesos, RevOps e IA):** Escuchas activamente, mapeas el flujo operativo actual, lanzas las preguntas quirúrgicas y detonas la **Demo en Vivo**.
-* **Sergio y Jessica (Rocketing):** Capturan video, audio y expresiones faciales clave.
+* **Tú (Consultor de Procesos, RevOps e IA):** Escuchas activamente, mapeas el flujo operativo actual, lanzas las preguntas quirúrgicas y detonas la **Demo en Vivo a las 12:45 PM**.
+* **Sergio y Jessica (Rocketing):** Capturan video, audio, lenguaje natural y expresiones faciales clave.
 
 ---
 
-## 🎙️ 2. TU GUIÓN Y PREGUNTAS EN EL TALLER (Cuándo y Cómo Intervenir)
-
-No compitas con Leo ni con María; complementa con preguntas de consultoría que hagan evidente que FR Medical pierde dinero todos los días por procesos manuales:
+## 🎙️ 2. TU GUIÓN Y ESTRUCTURA DEL TALLER (Paso a Paso)
 
 ```mermaid
 graph TD
-    A["Fase 1: Diagnóstico (11:00 - 12:00)"] -->|"Escuchar dolores y mapear cuellos de botella"| B["Fase 2: Arquitectura (12:00 - 01:00)"]
-    B -->|"Leo y María explican la solución de Agentes"| C["Fase 3: El 'Momento Ajá' (01:00 - 01:30)"]
-    C -->|"Lanzas la Demo del Cotizador en 1.8s + Descarga de PDF"| D["Fase 4: Cierre y Alcance (01:30 - 02:00)"]
-    D -->|"Definir entregables del proyecto BUILD"| E["Propuesta Comercial Cerrada"]
+    A["11:00 - 12:30: Diagnóstico Profundo"] -->|"Mapeo de dolores con las 4 Preguntas de Oro"| B["12:30 - 12:40: Break Estratégico (10 min)"]
+    B -->|"Café, despeje mental y reinicio de atención"| C["12:45 - 01:15: El 'Momento Ajá' (Demo en Vivo)"]
+    C -->|"Cotizador en 1.8s + Descarga de PDF oficial"| D["01:15 - 01:45: Arquitectura & Dudas Técnicas"]
+    D -->|"Resolución de privacidad, ERP y COFEPRIS"| E["01:45 - 02:00: Cierre Comercial Formal"]
+    E -->|"Bloquear fecha de entrega de propuesta antes de pararse"| F["Reunión de Cierre Agendada (+300k MXN)"]
 ```
 
-### Las 4 Preguntas de Oro que debes soltar en la sesión:
+### Las 4 Preguntas de Oro que debes soltar (11:00 AM – 12:30 PM):
 
 1. **Sobre el Dolor de Cotización (El Gancho de la Demo):**
    > *"Doctor / Licenciado, cuando un cirujano torácico del Hospital Ángeles o del ABC les pide de urgencia material para una fractura de costillas (placas Stracos), ¿cuánto tiempo pasa desde que el médico manda el WhatsApp hasta que su equipo le entrega la cotización formal con el set de instrumental y precios de convenio?"*
@@ -76,12 +79,18 @@ graph TD
 
 ---
 
-### 💻 3. EL MOMENTO DE LA DEMO EN VIVO (El "Momento Ajá")
+### ☕ 12:30 PM – 12:40 PM: El Break Estratégico de Café (10 minutos)
+> [!IMPORTANT]
+> **No dejes correr las 3 horas continuas.** A las dos horas la gente tiene fatiga mental y pierde foco. Haz una pausa de 10 minutos para café y estirar las piernas. Esto reinicia la dopamina y atención de la sala.
 
-Cuando el cliente termine de explicar lo engorroso que es armar cotizaciones de implantes o verificar compatibilidades quirúrgicas:
+---
+
+### 💻 3. EL MOMENTO CUMBRE DE LA DEMO EN VIVO (12:45 PM – 01:15 PM)
+
+Al volver del café, con todos despiertos y enfocados:
 
 1. **Tu entrada:**
-   > *"Precisamente previendo este cuello de botella en la distribución médica, anoche en BluePixel estructuramos un prototipo funcional con su catálogo real de Stracos (MedXpert) y Redax. Permítanme mostrarles en pantalla cómo se ve este proceso cuando lo agentizamos."*
+   > *"Estuvimos analizando justo lo que nos comentaron antes del café sobre la lentitud de cotizaciones y la validación de inventario en quirófano. Previendo esto, en BluePixel estructuramos un prototipo funcional con su catálogo real de Stracos (MedXpert) y Redax. Permítanme mostrarles en pantalla cómo se resuelve esto en la práctica."*
 2. **Ejecución en tu laptop:**
    - Abre: [11_Cotizador_IA_FR_Medical/index.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/11_Cotizador_IA_FR_Medical/index.html)
    - Selecciona el hospital: *"Centro Médico ABC Observatorio"*.
@@ -93,20 +102,31 @@ Cuando el cliente termine de explicar lo engorroso que es armar cotizaciones de 
 
 ---
 
-## 🍽️ 4. TARDE (02:00 PM – 05:30 PM): DEBRIEFING Y CIERRE ESTRATÉGICO
+### 🤝 1:45 PM – 02:00 PM: EL CIERRE COMERCIAL (Fijar Fecha de Propuesta)
+> [!CAUTION]
+> Un taller sin fecha de entrega se convierte en consultoría gratis. A la 1:45 PM, María o Leo deben sellar la reunión antes de pararse de la mesa con esta frase:
+> *"Con la radiografía de requerimientos que levantamos hoy, nuestro compromiso es entregarles el próximo jueves la propuesta formal de arquitectura (Fase Build para el Agente y Fase Evolve para soporte). ¿Les parece si de una vez agendamos 45 minutos el próximo jueves a las 11:00 AM para revisarla juntos?"*
+
+---
+
+## 🍽️ 4. TARDE (02:00 PM – 05:30 PM): DEBRIEFING Y GRABACIÓN ÁGIL
 
 ### 1. Comida / Plática post-taller con Leo y María (02:00 PM - 03:00 PM):
-* **Felicitar al equipo:** *"Excelente taller. El cliente quedó enganchado cuando vio su propio catálogo procesado en tiempo real."*
-* **Sellar el siguiente paso:** *"Voy a redactar la minuta técnica con los requerimientos exactos para que Leo y tú puedan estructurar la propuesta de desarrollo (Fase Build + Retainer Evolve)."*
+* **Felicitar al equipo:** *"El cliente quedó enganchado cuando vio su propio catálogo en la demo y ya tenemos fecha bloqueada para presentarles la propuesta comercial."*
+* **Afinar la minuta técnica:** Dejar estructurado el alcance para Leo y María.
 
-### 2. Grabación de Videos, Carruseles y Noticias Tech con la Agencia (03:00 PM - 04:30 PM):
-* **Guía de Producción Completa:** Consulta la [ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md) con los hooks de 3 segundos y respuestas clave.
-* **Bloque 1 (Leo o María):** Entrevista *"Recién egresado vs la era de la IA"* (carrusel con notas de voz de 15s para LinkedIn).
-* **Bloque 2 (Leo):** Entrevista *"Creativo y programador no se llevan"* (el ADN fundador de BluePixel: matrimonio entre UX/UI y arquitectura Cloud, citando casos Avianca y RadioShack).
-* **Bloque 3 (Pixel News):** Cápsulas verticales de noticias de frontera (El estándar MCP, Claude Code en terminal, modelos de razonamiento y privacidad de datos corporativos).
-* **Bloque 4 (Voz del Cliente de FR Medical):** 3 micro-cortes de 45 segundos para *"Pixel contra el mundo"* extraídos del taller de la mañana.
+### 2. Grabación de Videos y Noticias Tech aplicando la Regla 80/20 (03:00 PM - 04:45 PM):
+Para proteger la energía de Leo y María tras 3 horas de taller, aplicamos la **Regla 80/20**:
+* **Prioridad Alta (Obligatorias):**
+  1. Entrevista Tema 1: *"Recién egresado vs la era de la IA"* (Carrusel notas de voz LinkedIn).
+  2. Entrevista Tema 2: *"Creativo y programador no se llevan"* (ADN BluePixel con Leo).
+  3. Las 3 Noticias Estrella de *Pixel News*:
+     - **Noticia 1 (WSJ):** *"La IA transforma el software empresarial, pero no lo reemplaza tan rápido"* (La gran tesis de BluePixel).
+     - **Noticia 2 (Reuters):** *"OpenAI presenta GPT-6 Astra"* (Validación de agentes y MCP).
+     - **Noticia 3 (Infobae / FT):** *"RAMageddon y la escasez mundial de memoria"* (Gancho viral masivo).
+* **Prioridad Secundaria (Si sobra energía):** Las 5 noticias restantes de la [ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/01_Onboarding_y_Guias/ESCALETA_VIDEOS_Y_NOTICIAS_HOY.md).
 
-### 3. Preparación de Fin de Semana para el Lunes (04:30 PM - 05:30 PM):
+### 3. Preparación de Fin de Semana para el Lunes (04:45 PM - 05:30 PM):
 El **Lunes a las 4:00 PM** es la junta de rendimiento con Rocketing sobre el reporte de Looker Studio:
 - [ ] Entrar al dashboard de Looker Studio: [Reporte de Campañas Rocketing](https://datastudio.google.com/u/0/reporting/b825c361-9afe-4db0-a656-8a93d6106392/page/p_bg1t74vpzd).
 - [ ] Anotar: ¿Cuánto gastaron en Google Search esta semana? ¿Cuántos formularios brutos cayeron?
