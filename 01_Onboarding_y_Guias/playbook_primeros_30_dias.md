@@ -31,7 +31,7 @@
   - *"Pablo, con tu experiencia de 6 años cerrando cuentas corporativas en BluePixel: ¿cuáles son las señales tempranas de que un prospecto realmente tiene presupuesto para un proyecto Build de +$300k MXN vs uno que solo pide cotizaciones para comparar?"*
   - *"¿Cómo estructuramos hoy el traspaso de un proyecto cerrado hacia el área de Cuentas para retenerlo en un retainer Evolve de soporte y evolución?"*
 - **José de Buen (Ventas — 2 años en BluePixel):**
-  - *"José, ¿cómo vives hoy la velocidad de respuesta (Speed-to-Lead) cuando un prospecto llena el formulario en Webflow? Si te enviamos una alerta a Slack en menos de 3 minutos con el LinkedIn del decisor y Lead Score ≥ 90, ¿cuánto aceleraría tu tasa de contacto efectivo?"*
+  - *"José, ¿cómo vives hoy la velocidad de respuesta (Speed-to-Lead) cuando un prospecto llena el formulario en Webflow? Si te enviamos una alerta a Discord/WhatsApp en menos de 3 minutos con el LinkedIn del decisor y Lead Score ≥ 90, ¿cuánto aceleraría tu tasa de contacto efectivo?"*
 
 ### 3. Sincronización con el Equipo de Producto, UX/UI & Software
 - **Juan Cubillos (UX/UI & Software — 6 años en BluePixel):**
@@ -108,7 +108,7 @@ El formulario nativo de Webflow guarda los leads en su propia base de datos, ais
 3. **Trigger (Disparador):** Selecciona *Webflow* -> Evento: *Form Submission*. Conecta tu cuenta y selecciona tu sitio y el formulario `email-form`.
 4. **Action (Acción):** Selecciona *HubSpot* -> Evento: *Create or Update Contact*.
 5. Mapea los campos: El 'Email' de Webflow al 'Email' de HubSpot, etc.
-6. (Opcional): Agrega un paso final en Zapier: Si el presupuesto/tamaño es alto, manda un mensaje a **Slack/WhatsApp** notificando a Ventas. Activa el Zap.
+6. (Opcional): Agrega un paso final en Zapier: Si el presupuesto/tamaño es alto, manda un mensaje a **Discord/WhatsApp** notificando a Ventas. Activa el Zap.
 
 ### 🗂️ Quick Win 4: Setup de Campos en CRM (Previo al Webhook)
 Antes de aventar los datos, necesitamos donde recibirlos.
@@ -163,7 +163,7 @@ Menciona estos términos de forma natural para demostrar autoridad técnica y de
 
 > [!WARNING]
 > **Objeción:** *"El traspaso de info entre Ventas y Desarrollo es un caos."*
-**Tu Respuesta:** "Handoff automatizado. Al marcar *'Ganado'* en HubSpot, el Agente IA abre el Jira, el Slack/WhatsApp y el Google Drive del cliente el Día 1."
+**Tu Respuesta:** "Handoff automatizado. Al marcar *'Ganado'* en HubSpot, el Agente IA abre el Jira, el Discord/WhatsApp y el Google Drive del cliente el Día 1."
 
 ---
 

@@ -4,6 +4,7 @@
 ---
 
 ## 🏢 1. LA EMPRESA Y EL NEGOCIO (Contexto Comercial)
+*   **Identidad y Transición de Marca:** De agencia boutique de Diseño UX/UI a potencia de **Deep Tech, Inteligencia Artificial aplicada y arquitectura FutureProof** (donde los creativos son tecnológicos y los tecnológicos son creativos). El diseño UX/UI es la armadura humana de nuestra ingeniería militar.
 *   **A quién le venden:** Principalmente a CTOs, Directores de Tecnología y CEOs de corporativos (Mid-Market / Enterprise).
 *   **Qué venden:** Desarrollo de software, Infraestructura (Build) y Retainers de optimización/analítica (Evolve).
 *   **El Filtro Económico:** Solo buscan proyectos que superen los $300,000 MXN. (Por eso tu Lead Scoring es vital).
@@ -31,9 +32,9 @@
 
 ### 💼 Con el Equipo Comercial (Pablo Gómez y José de Buen — Nuevas Ventas & Cuentas)
 *   **Pablo Gómez (Ventas Sénior — 6 años en BluePixel):**
-    *   **Tu objetivo:** Conectar con su memoria histórica de ventas. Es el cerrador más experimentado; conoce el perfil real de los clientes que firman proyectos de +$300k MXN y cómo se hace la transición hacia el área de **Cuentas** para los retainers mensuales (**Evolve**).
+*   **Tu objetivo:** Conectar con su memoria histórica de ventas. Es el cerrador más experimentado; conoce el perfil real de los clientes que firman proyectos de +$300k MXN y cómo se hace la transición hacia el área de **Cuentas** para los retainers mensuales (**Evolve**).
 *   **José de Buen (Ventas — 2 años en BluePixel):**
-    *   **Tu objetivo:** Ofrecerle el **Lead Scoring y Speed-to-Lead**: *"José, vamos a enviarte alertas instantáneas por Slack de prospectos calificados en menos de 3 minutos para que no compitas con tu bandeja de correo y aumentes tu tasa de cierre."*
+*   **Tu objetivo:** Ofrecerle el **Lead Scoring y Speed-to-Lead**: *"José, vamos a enviarte alertas instantáneas por Discord/WhatsApp de prospectos calificados en menos de 3 minutos para que no compitas con tu bandeja de correo y aumentes tu tasa de cierre."*
 
 ### 🎨 Con el Equipo de Producto & UX/UI (Juan Cubillos y Samantha)
 *   **Juan Cubillos (UX/UI & Software — 6 años en BluePixel):**

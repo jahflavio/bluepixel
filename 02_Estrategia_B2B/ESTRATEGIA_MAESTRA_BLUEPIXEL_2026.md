@@ -8,6 +8,40 @@
 
 ---
 
+## 🏛️ CAPÍTULO 0: TESIS DE IDENTIDAD Y POSICIONAMIENTO B2B: DE AGENCIA UX/UI A INGENIERÍA FUTUREPROOF
+
+### 0.1 La Metamorfosis Histórica y el "Desfase de Información"
+BluePixel nació y se consolidó en el mercado como una destacada **agencia boutique de Diseño UX/UI** (creación de interfaces limpias, wireframes, diseño visual y branding digital).  
+Sin embargo, en su evolución reciente, BluePixel integró capacidades de **Deep Tech**: arquitectura de software de misión crítica, infraestructura en la nube, microservicios, inteligencia artificial aplicada y servidores MCP (*Model Context Protocol*).
+
+**El gran dolor actual:** Existe un **desfase crítico de información** entre lo que BluePixel ES HOY y lo que comunican sus canales públicos:
+*   **La Página Web (`bluepixel.mx`), los medios y las 9 Landings de pauta (`cotiza.bluepixel.mx`):** Siguen proyectando y comunicando a la empresa como "agencia de diseño y desarrollo web".
+*   **El resultado comercial perverso:** Atrae leads de bajo ticket ($20k – $40k MXN), curiosos o coordinadores junior que buscan un "rediseño estético", mientras que los tomadores de decisión corporativos (CEOs, CTOs y Directores de Innovación con presupuestos de +$500k MXN) asumen que BluePixel es "solo un equipo de diseño" y no les confían el corazón de sus operaciones críticas.
+*   **La caída de conversión:** Este desfase es la causa raíz directa de que la tasa de cierre se haya desplomado de **1:10 a 1:50**. El tráfico que llega no corresponde al servicio que BluePixel necesita y sabe vender.
+
+### 0.2 El Manifiesto del Perfil Híbrido: "Los Creativos son Tecnológicos, los Tecnológicos son Creativos"
+En el mercado tradicional de software existen dos mundos rotos:
+1.  **Las consultoras de software corporativo (grises y frías):** Tienen ingenieros que dominan bases de datos pero carecen de sensibilidad humana; entregan sistemas inusables que parecen hojas de cálculo de 1995 y sufren rechazo masivo de usuarios.
+2.  **Las agencias de marketing y diseño:** Crean maquetas hermosas en Figma pero no saben de escalabilidad, APIs ni seguridad de datos; su software se cae los viernes.
+
+**La ventaja competitiva injusta de BluePixel:**  
+En BluePixel se rompió la frontera entre el arte y la ingeniería: **los creativos ahora son tecnológicos y los tecnológicos ahora son creativos**.  
+*   El diseño UX/UI **no es un producto aislado que se vende por kilo**: es la armadura y la experiencia humana con la que vestimos nuestra arquitectura de ingeniería pesada.
+*   Entregamos **código de grado militar con la experiencia visual y conductual más pulida del mercado**.
+
+### 0.3 La Filosofía "FutureProof"
+En la era de la Inteligencia Artificial, los directivos viven con el temor de invertir en software que quede obsoleto en seis meses con cada nuevo lanzamiento de modelos fundacionales.  
+La bandera de marca de BluePixel es la filosofía **FutureProof**:
+*   **Sistemas Preparados para el Futuro:** Arquitecturas desacopladas, modulares y estandarizadas (mediante protocolos abiertos como MCP) que permiten incorporar nuevos modelos de IA, APIs o cambios de mercado sin tener que tirar el sistema a la basura ni rehacerlo desde cero.
+*   **Acompañamiento Continuo (Build & Evolve):** No entregamos un desarrollo y desaparecemos; nos convertimos en el socio tecnológico que acompaña la evolución del negocio mes a mes con analítica conductual y soporte de SLA.
+
+### 0.4 Plan de Alineación en Tres Frentes:
+1.  **Pauta Pagada (Diana Cardoso / Rocketing):** Sustituir "context hints" e intereses genéricos por **Customer Match / Audiencias Espejo** con la base de datos de tomadores de decisión reales (CEOs, CTOs) de clientes cerrados históricos provista por Pablo Gómez.
+2.  **Conversión en Landings (`cotiza.bluepixel.mx`):** Transformar las 9 páginas estáticas de "agencia de diseño" en puntos de contacto de **Ingeniería FutureProof** inyectando Demos Interactivos PLG (*Product-Led Growth*).
+3.  **Discurso Comercial (Pablo Gómez y José de Buen):** Vender certidumbre operativa y arquitectura FutureProof en lugar de "pantallas y horas de programación".
+
+---
+
 ## 🧭 CAPÍTULO 1: CONTEXTO ORGANIZACIONAL REAL, STAKEHOLDERS Y MATRIZ DE EQUIPO
 
 A partir de las reuniones de inducción con Dirección y la agencia externa (**Rocketing**), se consolida el mapa de actores, responsabilidades y vías de comunicación:
