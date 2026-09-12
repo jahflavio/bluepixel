@@ -247,12 +247,12 @@ Título: "Empresas líderes en México y Norteamérica operan sobre ingeniería 
 *   **Logos en Marquee:** Bimbo, Avianca, BBVA, Cemex, PepsiCo, DiDi, Subaru, RadioShack, Marriott, LifeMiles, Naturgy, MoradaUno, FR Medical.
 *   **Métricas Cuantitativas (Reemplazo del Badge de DesignRush):**
 
-| Métrica Anterior | NUEVA Métrica Justificada |
-| :--- | :--- |
-| `10+ años creando plataformas` | **10+ Años de Ingeniería & Plataformas Robustas** |
-| `#1 empresa UX/UI por DesignRush` ❌ *(Eliminar)* | **99.9% Disponibilidad y Cero Deuda Técnica Garantizada** *(Resalta confiabilidad de misión crítica)* |
-| `200+ plataformas evolucionadas` | **200+ Sistemas Empresariales Desplegados** |
-| `60+ profesionales en producto y tech` | **60+ Especialistas en Arquitectura Cloud, Agentes IA y UX Conductual** |
+| Métrica Anterior | NUEVA Métrica Justificada (La Armadura de Adopción) | Razón Estratégica |
+| :--- | :--- | :--- |
+| `10+ años creando plataformas` | **10+ Años de Ingeniería & Plataformas Robustas** | Comunica longevidad y solidez institucional. |
+| `#1 empresa UX/UI por DesignRush` *(Suelto)* | **Firma #1 de Experiencia & UX en México (DesignRush)**<br/>*Garantía de Adopción Humana: >95% vs 30% promedio de la industria.* | **El Giro Estratégico:** No se elimina el logro; se transforma en la razón por la que nuestra ingeniería triunfa donde las demás fallan. El UX se posiciona como el seguro de vida de la inversión del cliente. |
+| `200+ plataformas evolucionadas` | **200+ Plataformas & Sistemas en Producción** | Cambiar "evolucionadas" por "en producción" transmite misión crítica. |
+| `60+ profesionales en producto y tech` | **60+ Especialistas en Arquitectura Cloud, Agentes IA y UX Conductual** | Especifica la profundidad técnica del equipo. |
 
 ---
 
