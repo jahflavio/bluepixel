@@ -339,36 +339,110 @@ graph LR
 
 ---
 
-### 5.4. Sección Capabilities Rediseñada (Los 4 Pilares de Solución)
+### 5.4. Las 6 Capabilities Elevadas: Cómo Integrar el Trabajo de Leo sin Descartarlo
 
-En lugar de las 6 tarjetas dispersas del prototipo actual, proponemos agrupar las capacidades en **4 pilares de ingeniería y adopción** de alto impacto:
+En la propuesta inicial consideramos sintetizar las capacidades a 4 pilares. Sin embargo, al auditar la captura de pantalla del prototipo de Leo (donde ya tiene estructuradas las 6 tarjetas blancas de capabilities: UX/UI, Software, Agentes, Data, Seguridad y Consultoría), la decisión estratégica correcta es: **conservar las 6 capabilities de Leo, pero elevar su lenguaje visual y su narrativa técnica**.
+
+#### 🔍 Crítica Honesta de la Versión Actual de Leo (Captura 4):
+1.  **La Ruptura Visual (Light Mode en caja gris):** El Hero de Leo arranca con un Dark Mode sofisticado, pero al llegar a las Capabilities pasa abruptamente a tarjetas blancas sobre fondo gris claro (`#F0F2F5`). Esto rompe la inmersión de "empresa Deep Tech" y hace que se vea como una plantilla estándar de agencia digital.
+2.  **Sensación de "Servicios Sueltos":** Al poner 6 tarjetas idénticas en una cuadrícula 2×3, el visitante siente que son servicios aislados (como si pudiera contratar solo un diseño de logo o solo un script).
+3.  **La Solución de Elevación:**
+    *   Integrar las 6 capabilities al **Design System Dark Mode (`#0A0F1D` / `#0F1628`)** con acentos cromáticos individuales.
+    *   Presentar las 6 capabilities como un **Ecosistema Circular Interconectado**:
+        `UX Conductual ➔ Software Escalable ➔ Capa Agentica ➔ Analítica & Métricas ➔ Seguridad OWASP ➔ Consultoría de Negocio`.
+    *   Mantener los badges `AI-Driven` de Leo y sus excelentes outcomes inferiores, pero agregando métricas de impacto económico directo.
 
 ```mermaid
-graph TD
-    subgraph PILARES DE CAPACIDADES BLUEPIXEL
-        C1["🤖 1. Agentes IA Autónomos & Automatización Operativa<br/>Back-office, logística, cotizaciones y atención 24/7 sin alucinaciones."]
-        C2["☁️ 2. Arquitectura Cloud & Protocolos MCP<br/>Infraestructura serverless, APIs elásticas y conectividad nativa a ERPs."]
-        C3["🎨 3. Human Experience & Adopción UX/UI<br/>La armadura visual: interfaces intuitivas que garantizan uso interno real."]
-        C4["🔒 4. Seguridad, Gobernanza & Riesgo Financiero<br/>Aislamiento estricto de datos confidenciales, OWASP y cumplimiento legal."]
-    end
+graph LR
+    C1["1. UX/UI & Product<br/>(Adopción Humana)"] --> C2["2. Software Engineering<br/>(Arquitectura Cloud)"]
+    C2 --> C3["3. Agentes IA & Auto<br/>(Operación Autónoma)"]
+    C3 --> C4["4. Data & Analytics<br/>(Métricas en Tiempo Real)"]
+    C4 --> C5["5. Security & Reliability<br/>(Riesgo Cuantificado)"]
+    C5 --> C6["6. Business AI Consulting<br/>(Roadmap & ROI)"]
+    C6 --> C1
 ```
-
-1.  **Agentes IA Autónomos & Automatización Operativa:**
-    *   *Promesa:* Operación continua, reducción drástica de tiempos de ciclo y eliminación de errores manuales.
-    *   *Entregables:* Agentes de cotización instantánea, agentes de reconciliación administrativa, agentes de atención transaccional conectados a WhatsApp y CRM.
-2.  **Arquitectura Cloud & Protocolos Abiertos (MCP):**
-    *   *Promesa:* Sistemas sin deuda técnica preparados para no quedar obsoletos con los próximos modelos de IA.
-    *   *Entregables:* Microservicios en AWS, pipelines de datos en tiempo real, integración desacoplada con SAP, Salesforce, Oracle y sistemas legados.
-3.  **Human Experience (UX/UI) & Adopción Conductual:**
-    *   *Promesa:* Tecnología compleja que cualquier persona en tu empresa puede operar desde el primer día sin manuales de 100 páginas.
-    *   *Entregables:* Design systems empresariales, gemelos digitales de usuarios (IMPATH™), flujos de trabajo sin fricción cognitiva.
-4.  **Seguridad, Gobernanza & Blindaje de Riesgo:**
-    *   *Promesa:* Tu información confidencial nunca entrena modelos públicos ni sale de tu perímetro seguro.
-    *   *Entregables:* Aislamiento de tenants, auditorías OWASP, cumplimiento de la LFPDPPP, trazabilidad total de decisiones de los agentes.
 
 ---
 
-### 5.5. Sección de Preguntas Frecuentes (FAQ): El Antídoto a las Objeciones
+### 5.5. Sección de Casos de Éxito Auditados (Case Studies con Métricas Financieras)
+
+En el sitio web actual (`bluepixel.mx`) los casos de estudio están redactados en inglés y enfocados en pantallas. Debemos reformularlos bajo el lente de **ingeniería, horas liberadas y balance financiero**:
+
+1.  **Grupo Bimbo (Consumo Masivo / Operación Global):**
+    *   *Desafío:* Estandarizar la toma de decisiones y el consumo de analítica de datos en múltiples unidades de negocio multinacionales.
+    *   *Solución:* Plataforma unificada de Business Intelligence e interfaces operativas de adopción masiva.
+    *   *Métrica Clave:* **+40% de productividad** en toma de decisiones ejecutivas en campo.
+2.  **RadioShack (Retail & E-commerce):**
+    *   *Desafío:* Fricción en checkout móvil y carritos abandonados por procesos de compra confusos.
+    *   *Solución:* Reingeniería transaccional, diseño UX conductual y optimización de arquitectura cloud.
+    *   *Métrica Clave:* **-60% de fricción en checkout** e incremento medible en tasa de conversión.
+3.  **LifeMiles / Avianca (Loyalty & Travel LATAM):**
+    *   *Desafío:* Abandono de usuarios en flujos de redención de millas y consulta de beneficios.
+    *   *Solución:* Rediseño centrado en psicología de lealtad y aceleración de tiempos de carga en apps nativas.
+    *   *Métrica Clave:* **+28% de retención digital** para millones de usuarios en LATAM.
+4.  **FR Medical Diagnostics (HealthTech & Logística Quirúrgica):**
+    *   *Desafío:* Cotización manual de insumos médicos que demoraba hasta 48 horas en hojas de Excel con riesgo de error humano.
+    *   *Solución:* Enjambre de agentes IA autónomos conectados a servidores MCP con inventario hospitalario 24/7.
+    *   *Métrica Clave:* **Reducción del tiempo de cotización de 48 horas a 3 minutos** con 0% de error de cálculo.
+
+---
+
+### 5.6. Arquitectura del Formulario Progresivo en 3 Etapas (Benchmark Vstorm)
+
+Analizando las capturas del formulario de Vstorm compartidas por el usuario:
+*   **El Gran Error de los Formularios B2B Tradicionales:** Poner 8 campos juntos en una sola pantalla (Nombre, Apellido, Correo, Teléfono, Empresa, Cargo, Presupuesto, Mensaje). Esto genera fatiga cognitiva inmediata ("wall of inputs"), asusta al tomador de decisión y dispara la tasa de abandono al 70%.
+*   **La Psicología del Progressive Disclosure (Divulgación Progresiva):** Al dividir el formulario en 3 micro-pasos lógicos con una barra de progreso superior, el usuario siente que el esfuerzo es mínimo y avanza por inercia de compromiso:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                              FORMULARIO EN 3 PASOS BLUEPIXEL                           │
+│                                                                                        │
+│  [======== 33% ========] ---------------------- ----------------------                 │
+│  01. TÚ                 02. TU EMPRESA          03. TU PROCESO                         │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Paso 1: `TÚ (Your Details)` — Fricción Mínima (5 Segundos)
+*   *Campos:* Nombre Completo + Correo Corporativo (`@tuempresa.com`).
+*   *Psicología:* Datos que cualquier persona teclea en 5 segundos sin pensar. Una vez que el usuario hace clic en `Continuar ↗`, ya invirtió esfuerzo y tiene un 85% de probabilidad de completar los siguientes pasos.
+*   *Botón:* `[ Continuar ↗ ]` (Botón píldora prominente).
+
+#### Paso 2: `TU EMPRESA (Your Company)` — Calificación del Lead
+*   *Campos:* Empresa + Puesto / Cargo + Teléfono o WhatsApp (Marcado explícitamente como *Opcional* para no bloquear la conversión).
+*   *Psicología:* Nos permite calificar si es un lead Enterprise/Mid-Market sin que se sienta como una entrevista fiscal.
+*   *Botones:* `[ Atrás ]` (secundario) | `[ Continuar ↗ ]` (primario).
+
+#### Paso 3: `TU PROCESO & CONSENTIMIENTO (Workflow & Consent)` — El Core Operativo
+*   *Campo Clave:* **"¿Qué proceso o flujo de trabajo buscas automatizar o agentizar?"** *(Textarea generosa con placeholder inspirador)*.
+*   *Checkboxes Legales:* Consentimiento LFPDPPP / Aviso de Privacidad + Suscripción opcional a insights técnicos.
+*   *Botón Final:* `[ Enviar Solicitud Técnica ↗ ]` (Con estado de carga dinámico `Enviando... ↗`).
+
+---
+
+### 5.7. Los Call to Actions (CTAs) y el Storytelling que Genera un Gran UX para BluePixel
+
+#### ¿Qué CTAs usar a lo largo del sitio?
+Los CTAs genéricos como *"Hablemos"*, *"Contacto"* o *"Enviar"* son invisibles y no prometen ningún valor a cambio. Para una empresa de ingeniería Deep Tech como BluePixel, los CTAs deben prometer **un diagnóstico o entregable tangible**:
+
+| Ubicación en la Web | CTA Débil (Evitar) | NUEVO CTA de Alta Conversión | Razón Psicológica |
+| :--- | :--- | :--- | :--- |
+| **Navbar Sticky** | *Contacto* | `[ Diagnóstico Operativo → ]` | Promete una evaluación técnica, no una llamada de ventas. |
+| **Hero Principal** | *Hablemos* | `[ Solicitar Diagnóstico Operativo (Sin Costo) → ]` | Elimina el riesgo económico y ofrece un entregable concreto. |
+| **Hero Secundario** | *Conoce cómo trabajamos* | `[ Conoce las 3 Formas de Trabajar ↓ ]` | Despierta curiosidad hacia los modelos de engagement. |
+| **Hero Prompt Bar** | *Buscar / Enviar* | `[ Ver Solución Técnica ↗ ]` | Invita a explorar arquitectura interactiva de producto. |
+| **Tarjetas 01, 02, 03** | *Ver más* | `[ Solicitar Diagnóstico 01 ↗ ]` / `[ Agendar Sesión 01+02 ↗ ]` | Especifica exactamente a qué paquete te estás postulando. |
+| **Botón Final de Formulario** | *Submit / Enviar* | `[ Enviar Solicitud Técnica ↗ ]` | Refuerza que la información será evaluada por ingenieros, no vendedores agresivos. |
+
+#### El Storytelling del "Gran UX" para BluePixel:
+¿Por qué el UX es el corazón del storytelling de BluePixel?
+1.  **UX no es cosmética, es Desfricción Cognitiva:** En software empresarial, un mal diseño cuesta millones. Si un sistema es difícil de usar, los empleados lo sabotean y vuelven a hojas de Excel desactualizadas. El storytelling de BluePixel le dice al director de operaciones: *"Nosotros no te dejamos un software que tu equipo va a odiar; te entregamos una herramienta que tus empleados van a amar usar desde el primer día"*.
+2.  **Transparencia Radical desde el Hero:** Al poner la barra de prompt interactiva en el Hero, BluePixel demuestra su filosofía UX en acción: **"Show, don't tell"**. Le permites al cliente experimentar la solución antes de pedirle sus datos.
+3.  **El Formulario como Conversación Respetuosa:** El formulario en 3 pasos no es una trampa de captura de correos; es una experiencia fluida donde le demostramos al cliente que valoramos su tiempo.
+
+---
+
+### 5.8. Sección de Preguntas Frecuentes (FAQ): El Antídoto a las Objeciones
+
 
 Reemplazar las preguntas genéricas por el **Battlecard Comercial de Pablo y José**:
 
