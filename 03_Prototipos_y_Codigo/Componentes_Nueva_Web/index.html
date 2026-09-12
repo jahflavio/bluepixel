@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BluePixel: Mockup Interactivo para Leo | Hero Prompt Bar & 3 Formas de Trabajar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              950: '#040711',
+              900: '#060A14',
+              850: '#0A0E1A',
+              800: '#0F1628',
+              750: '#131D35',
+              700: '#1A2540',
+              600: '#253456',
+            },
+            agentic: {
+              blue: '#2563EB',
+              cyan: '#06B6D4',
+              purple: '#8B5CF6',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    body { margin: 0; background: #060A14; color: #F8FAFC; overflow-x: hidden; }
+
+    /* Technical grid background */
+    .tech-grid {
+      background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 32px 32px, 64px 64px, 64px 64px;
+    }
+
+    /* Glow effects */
+    .glow-blue {
+      box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.35);
+    }
+    .glow-agentic {
+      box-shadow: 0 0 50px -15px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Subtle pulse animation for status badges */
+    @keyframes livePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.6; }
+    }
+    .live-dot {
+      animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #060A14; }
+    ::-webkit-scrollbar-thumb { background: #1A2540; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+  </style>
+</head>
+<body class="tech-grid min-h-screen">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // Presets de Casos Operativos Típicos para el Prompt Bar
+    const PRESETS = [
+      {
+        id: 'cotizaciones',
+        label: 'Cotizaciones lentas en Excel',
+        prompt: 'Nuestros ingenieros comerciales tardan hasta 48 horas en cotizar productos complejos en hojas de cálculo y se pierden ventas.',
+        categoria: 'AUTOMATIZACIÓN COMERCIAL & PRICING',
+        impacto: 'Pérdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
+        arquitectura: [
+          { paso: '01. Ingesta', desc: 'Agente Extractor captura requerimientos desde WhatsApp / Correo / Formulario.' },
+          { paso: '02. MCP Grounding', desc: 'Servidor MCP consulta reglas de inventario, márgenes y tarifas en ERP (SAP/Salesforce).' },
+          { paso: '03. Generación', desc: 'Agente cotizador genera PDF validado con firma digital en 90 segundos.' },
+          { paso: '04. Human-in-the-loop', desc: 'Si el margen es < 18%, escala automáticamente a Director Comercial para visto bueno.' }
+        ],
+        casoAnalogo: 'Caso FR Medical / Bimbo: Reducción del tiempo de cotización de 48 hrs a 3 minutos con 0% de error de cálculo.',
+        roiEstimado: 'Ahorro de $680,000 MXN anuales + incremento de 22% en win-rate comercial.',
+        tiempoImplementacion: '4 a 6 semanas (Fase BUILD)'
+      },
+      {
+        id: 'conciliacion',
+        label: 'Conciliación contable & ERP',
+        prompt: 'El equipo contable concilia manualmente miles de facturas y transferencias bancarias contra el ERP a fin de mes.',
+        categoria: 'BACK-OFFICE FINANCIERO & COMPLIANCE',
+        impacto: 'Demoras de 10 días en cierre mensual y multas por discrepancias fiscales ante el SAT.',
+        arquitectura: [
+          { paso: '01. Conexión Bancaria', desc: 'Agente Financiero conecta vía API a bancos y descarga estados de cuenta y XMLs del SAT.' },
+          { paso: '02. Cruce Determinístico', desc: 'Lógica matemática estricta coteja RFC, montos y órdenes de compra en el ERP.' },
+          { paso: '03. Reconciliación', desc: 'Asiento contable automático para el 94% de transacciones coincidentes.' },
+          { paso: '04. Bandeja de Anomalías', desc: 'Solo el 6% de transacciones con discrepancia llega a revisión del contador jefe.' }
+        ],
+        casoAnalogo: 'Caso RadioShack / Retail: Cierre contable acelerado de 12 días a 18 horas continuas.',
+        roiEstimado: 'Liberación de 160 hrs hombre mensuales de contadores senior.',
+        tiempoImplementacion: '6 semanas'
+      },
+      {
+        id: 'checkout',
+        label: 'Fuga en checkout (IMPATH)',
+        prompt: 'Nuestra plataforma digital tiene una tasa de abandono del 68% en el paso 3 del flujo de pago.',
+        categoria: 'UX INTEL & CONVERSIÓN TRANSACCIONAL',
+        impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricción cognitiva y errores de validación.',
+        arquitectura: [
+          { paso: '01. Detección IMPATH', desc: 'Gemelos digitales simulan la navegación y señalan fricción en formulario de dirección y token.' },
+          { paso: '02. Rediseño UX', desc: 'Simplificación a checkout de 1 solo paso con guardado seguro de credenciales.' },
+          { paso: '03. Agente de Rescate', desc: 'Agente de retención detecta abandono en tiempo real y activa recordatorio contextual vía WhatsApp.' },
+          { paso: '04. Mixpanel Score', desc: 'Monitoreo de UX Health Score continuo para evitar regresiones de usabilidad.' }
+        ],
+        casoAnalogo: 'Caso LifeMiles / Loyalty LATAM: Aumento del 28% en tasa de conversión en pasarelas móviles.',
+        roiEstimado: 'Recuperación de $3.8M MXN en facturación retenida el primer año.',
+        tiempoImplementacion: '3 a 5 semanas'
+      },
+      {
+        id: 'soporte',
+        label: 'Atención 24/7 sin alucinaciones',
+        prompt: 'Queremos automatizar el soporte y atención al cliente en WhatsApp sin que la IA invente datos falsos ni dañe la marca.',
+        categoria: 'CUSTOMER EXPERIENCE & RAG BLINDADO',
+        impacto: 'Pérdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
+        arquitectura: [
+          { paso: '01. RAG Seguro', desc: 'El agente responde estrictamente basado en la base de conocimiento oficial de la empresa.' },
+          { paso: '02. Protocolo MCP', desc: 'El agente consulta el estado real de pedidos en base de datos sin inventar números.' },
+          { paso: '03. Aislamiento', desc: 'Los datos de clientes nunca entrenan modelos públicos de terceros.' },
+          { paso: '04. Traspaso Fluido', desc: 'Detección de sentimiento: si el cliente está molesto, transfiere al ejecutivo con resumen previo.' }
+        ],
+        casoAnalogo: 'Caso Avianca / DiDi: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
+        roiEstimado: 'Reducción del 55% en costo operativo de atención a clientes.',
+        tiempoImplementacion: '4 semanas'
+      }
+    ];
+
+    // Navbar Component
+    const Navbar = ({ onOpenContact }) => (
+      <nav className="border-b border-white/[0.08] bg-navy-900/80 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
+              BP
+            </div>
+            <div className="flex flex-col">
+              <span className="text-white font-extrabold tracking-tight text-lg leading-none">BluePixel</span>
+              <span className="text-[10px] text-slate-400 font-mono tracking-wider">ENGINEERING & AI</span>
+            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
+            <a href="#prompt-hero" className="hover:text-blue-400 transition-colors">Diagnóstico en Vivo</a>
+            <a href="#three-ways" className="hover:text-blue-400 transition-colors">3 Formas de Trabajar</a>
+            <a href="#capabilities" className="hover:text-blue-400 transition-colors">Capacidades</a>
+            <a href="#futureproof" className="hover:text-blue-400 transition-colors">Garantía FutureProof</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={onOpenContact}
+              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm px-5 py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/25 flex items-center gap-2">
+              <span>Diagnóstico Operativo</span>
+              <span className="text-xs">→</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    );
+
+    // Hero Section with Interactive Prompt Bar (Vstorm Benchmark Inspired)
+    const HeroWithPrompt = ({ onSelectSolution }) => {
+      const [inputVal, setInputVal] = useState('');
+      const [activePreset, setActivePreset] = useState(PRESETS[0]);
+      const [isTyping, setIsTyping] = useState(false);
+
+      const handleSelectPreset = (preset) => {
+        setActivePreset(preset);
+        setInputVal(preset.prompt);
+        onSelectSolution(preset);
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        // Si escribió algo personalizado o seleccionó
+        const customSolution = {
+          ...activePreset,
+          prompt: inputVal || activePreset.prompt
+        };
+        onSelectSolution(customSolution);
+      };
+
+      return (
+        <section id="prompt-hero" className="relative pt-16 pb-24 px-6 md:px-12 overflow-hidden">
+          {/* Subtle ambient light */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] pointer-events-none rounded-full" />
+          <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-purple-600/10 blur-[140px] pointer-events-none rounded-full" />
+
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            {/* Category Kicker */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 mb-8">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 live-dot"></span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-300 font-semibold">
+                INGENIERÍA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-black text-white tracking-tight leading-[1.08] mb-6">
+              Construimos agentes de Inteligencia Artificial que <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción.</span>
+            </h1>
+
+            {/* Subheadline with the new thesis */}
+            <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+              BluePixel es la consultora de ingeniería agentica para empresas líderes en México y LATAM. Conectamos agentes autónomos a tus datos y sistemas reales (SAP, Salesforce, ERPs), blindados con <strong className="text-slate-200 font-semibold">diseño UX de clase mundial</strong> para garantizar adopción humana inmediata.
+            </p>
+
+            {/* THE HERO PROMPT BAR (Product-Led Growth Component) */}
+            <div className="max-w-3xl mx-auto mb-6">
+              <div className="bg-navy-850/90 border border-white/[0.12] rounded-2xl p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15 glow-blue">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <div className="flex items-center gap-3 flex-1 px-3">
+                    <span className="text-blue-400 text-lg">✦</span>
+                    <input
+                      type="text"
+                      value={inputVal}
+                      onChange={(e) => setInputVal(e.target.value)}
+                      placeholder="Describe un cuello de botella de tu empresa (o selecciona un ejemplo)..."
+                      className="w-full bg-transparent text-white placeholder-slate-500 text-sm md:text-base focus:outline-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0 shadow-md">
+                    <span>Ver Solución Técnica</span>
+                    <span className="text-base font-bold">↗</span>
+                  </button>
+                </form>
+
+                {/* Preset Chips */}
+                <div className="mt-3 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 px-2 text-left">
+                  <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">Casos Típicos:</span>
+                  {PRESETS.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => handleSelectPreset(p)}
+                      className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-150 flex items-center gap-1.5 ${
+                        activePreset.id === p.id && inputVal === p.prompt
+                          ? 'bg-blue-600/30 text-blue-300 border border-blue-500/50'
+                          : 'bg-navy-750/70 text-slate-400 hover:text-white border border-white/[0.05] hover:bg-navy-700'
+                      }`}>
+                      <span>◈</span>
+                      <span>{p.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mt-3 font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span>Explorador interactivo de arquitectura técnica · Basado en casos reales de BluePixel</span>
+              </div>
+            </div>
+
+            {/* Trust Metrics Bar */}
+            <div className="pt-10 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
+              <div className="flex flex-col">
+                <span className="text-2xl md:text-3xl font-black text-white font-mono">200+</span>
+                <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Sistemas en Producción</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl md:text-3xl font-black text-emerald-400 font-mono">99.9%</span>
+                <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Disponibilidad SLA</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl md:text-3xl font-black text-blue-400 font-mono">30+</span>
+                <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Agentes Desplegados</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl md:text-3xl font-black text-purple-400 font-mono">Nativo</span>
+                <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Protocolo Abierto MCP</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // Modal / Drawer de Solución Técnica para el Prompt Bar
+    const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
+      if (!solution) return null;
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn">
+          <div className="bg-navy-900 border border-blue-500/30 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl glow-agentic relative">
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-navy-800 text-slate-400 hover:text-white flex items-center justify-center border border-white/10 text-sm">
+              ✕
+            </button>
+
+            {/* Header */}
+            <div className="mb-6">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/25 uppercase tracking-widest font-semibold">
+                {solution.categoria}
+              </span>
+              <h3 className="text-xl md:text-2xl font-black text-white mt-3 leading-snug">
+                Arquitectura de Solución para tu Operación
+              </h3>
+              <p className="text-slate-300 text-sm mt-1.5 italic bg-navy-850 p-3 rounded-xl border border-white/[0.06]">
+                "{solution.prompt}"
+              </p>
+            </div>
+
+            {/* Impacto Negativo Actual */}
+            <div className="mb-6 bg-red-500/10 border border-red-500/25 rounded-xl p-4">
+              <div className="flex items-center gap-2 text-red-400 text-xs font-mono font-bold uppercase tracking-wider mb-1">
+                <span>⚠ Fricción Operativa & Costo de Inacción</span>
+              </div>
+              <p className="text-white text-sm font-medium">{solution.impacto}</p>
+            </div>
+
+            {/* Arquitectura de Agentes Propuesta */}
+            <div className="mb-6">
+              <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                <span>◈ Flujo de Trabajo Agentizado (Blueprint de Ingeniería)</span>
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {solution.arquitectura.map((p, idx) => (
+                  <div key={idx} className="bg-navy-850 border border-white/[0.08] rounded-xl p-3.5">
+                    <span className="text-blue-400 font-mono text-xs font-bold block mb-1">{p.paso}</span>
+                    <p className="text-slate-300 text-xs leading-relaxed">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Caso Análogo y ROI */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-4">
+                <span className="text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-wider block mb-1">
+                  ✦ Caso Real Análogo en Producción
+                </span>
+                <p className="text-white text-xs font-medium leading-relaxed">{solution.casoAnalogo}</p>
+              </div>
+              <div className="bg-purple-500/10 border border-purple-500/25 rounded-xl p-4">
+                <span className="text-purple-300 font-mono text-[10px] uppercase font-bold tracking-wider block mb-1">
+                  ✦ Retorno Financiero Estimado
+                </span>
+                <p className="text-white text-xs font-medium leading-relaxed">{solution.roiEstimado}</p>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/[0.08]">
+              <div className="text-xs font-mono text-slate-400">
+                Tiempo de implementación estimado: <strong className="text-white font-semibold">{solution.tiempoImplementacion}</strong>
+              </div>
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <button
+                  onClick={onClose}
+                  className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-colors">
+                  Cerrar
+                </button>
+                <button
+                  onClick={() => { onClose(); onOpenContact(); }}
+                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-6 py-2.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+                  <span>Solicitar Diagnóstico para este Caso</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      );
+    };
+
+    // Three Ways to Work With Us (Vstorm Benchmark Integration)
+    const ThreeWaysToWork = ({ onSelectPackage }) => {
+      return (
+        <section id="three-ways" className="py-24 px-6 md:px-12 bg-navy-950 border-t border-b border-white/[0.06]">
+          <div className="max-w-7xl mx-auto">
+            
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                CÓMO TRABAJAR CON NOSOTROS
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+                Tres formas de colaborar con BluePixel.
+              </h2>
+              <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
+              </p>
+            </div>
+
+            {/* The 3 Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+              {/* CARD 01: Transformation Advisory / Diagnóstico */}
+              <div className="bg-navy-900 border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
+                      ENTRY PACKAGE
+                    </span>
+                    <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
+                  </p>
+
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      'Mapeo de procesos y diagnóstico de operaciones',
+                      'Detección de fricción con gemelos digitales (IMPATH™)',
+                      'Matriz de priorización de agentes IA y cálculo de ROI',
+                      'Blueprint de arquitectura técnica y gobernanza de datos',
+                      'Reporte ejecutivo con costo de inacción cuantificado en pesos'
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                        <span className="text-blue-400 mt-0.5">◈</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
+                  <button 
+                    onClick={() => onSelectPackage('Diagnóstico & Auditoría (01)')}
+                    className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
+                    <span>Solicitar Diagnóstico</span>
+                    <span>↗</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* CARD 02: Agentic Engineering */}
+              <div className="bg-navy-900 border border-white/[0.08] hover:border-indigo-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
+                      ENTRY PACKAGE
+                    </span>
+                    <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+                  </p>
+
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      'Diseño de arquitectura agentica con protocolos MCP',
+                      'Flujos de trabajo autónomos sobre datos reales con RAG',
+                      'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
+                      'Ingeniería, pruebas de estrés y despliegue cloud en producción',
+                      'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                        <span className="text-indigo-400 mt-0.5">◈</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
+                  <button 
+                    onClick={() => onSelectPackage('Ingeniería de Agentes (02)')}
+                    className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
+                    <span>Explorar Ingeniería</span>
+                    <span>↗</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* CARD 03 (01+02): Full Transformation (Destacado) */}
+              <div className="bg-gradient-to-b from-navy-800 to-navy-900 border-2 border-blue-500/60 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 glow-blue relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+                
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full bg-blue-500 text-white font-bold flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                      FULL TRANSFORMATION
+                    </span>
+                    <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                    De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
+                  </p>
+
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
+                      'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                      'Construcción completa de plataforma en 90 días (BUILD)',
+                      'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
+                      'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
+                        <span className="text-emerald-400 font-bold mt-0.5">✓</span>
+                        <span className="font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
+                  <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
+                  <button 
+                    onClick={() => onSelectPackage('Transformación Integral (01+02)')}
+                    className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
+                    <span>Agendar Sesión</span>
+                    <span>→</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // 4 Capabilities Rediseñadas
+    const CapabilitiesSection = () => {
+      const caps = [
+        {
+          id: 'agentes',
+          tag: 'OPERACIÓN AUTÓNOMA',
+          color: '#8B5CF6',
+          title: 'Agentes IA Autónomos & Automatización Operativa',
+          desc: 'Agentes que ejecutan procesos de negocio de principio a fin sobre datos de producción: cotizaciones, facturación, reconciliación y atención 24/7 sin alucinaciones.',
+          kpi: 'Reducción del 75% en tiempos de ciclo manual.'
+        },
+        {
+          id: 'cloud-mcp',
+          tag: 'INFRAESTRUCTURA DE FRONTERA',
+          color: '#2563EB',
+          title: 'Arquitectura Cloud & Protocolos MCP',
+          desc: 'Infraestructura modular sin código spaghetti. Conectores abiertos MCP para enlazar modelos de frontera directamente con tu ERP (SAP, Salesforce, Oracle) con latencia mínima.',
+          kpi: 'Preparado para modelos futuros sin obsolescencia.'
+        },
+        {
+          id: 'ux-adopcion',
+          tag: 'LA VENTAJA COMPETITIVA',
+          color: '#10B981',
+          title: 'Human Experience (UX/UI) & Adopción Conductual',
+          desc: 'El antídoto contra el software feo que nadie usa. Diseñamos con 6 años de maestría en psicología del usuario (IMPATH™) para garantizar adopción inmediata sin manuales.',
+          kpi: '95%+ de adopción de empleados desde la semana 1.'
+        },
+        {
+          id: 'seguridad',
+          tag: 'GOBERNANZA FINANCIERA',
+          color: '#F59E0B',
+          title: 'Seguridad, Privacidad & Riesgo de Plataforma',
+          desc: 'Tu información confidencial jamás sale de tu perímetro ni entrena modelos públicos. Auditoría continua OWASP, cumplimiento de la LFPDPPP y riesgo medido en pesos.',
+          kpi: 'Cero exposición de datos y cumplimiento regulatorio.'
+        }
+      ];
+
+      return (
+        <section id="capabilities" className="py-24 px-6 md:px-12 bg-navy-900/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                CAPACIDADES DE INGENIERÍA
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+                El matrimonio entre Deep Tech y Experiencia Humana.
+              </h2>
+              <p className="text-slate-400 text-base md:text-lg">
+                No hacemos "pantallas sueltas" ni "scripts de juguete". Construimos sistemas completos diseñados para resolver problemas de negocio y durar 5+ años.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {caps.map((c) => (
+                <div key={c.id} className="bg-navy-850 border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                  <div>
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded" style={{ background: `${c.color}15`, color: c.color, border: `1px solid ${c.color}30` }}>
+                      {c.tag}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mt-4 mb-3">{c.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-6">{c.desc}</p>
+                  </div>
+                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                    <span className="text-xs font-mono text-slate-300 font-medium">✦ {c.kpi}</span>
+                    <span className="text-xs font-bold" style={{ color: c.color }}>Conoce la Capability →</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Modal de Contacto / Diagnóstico
+    const ContactModal = ({ isOpen, onClose, preselectedPackage }) => {
+      const [submitted, setSubmitted] = useState(false);
+
+      if (!isOpen) return null;
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+          <div className="bg-navy-900 border border-blue-500/30 rounded-2xl w-full max-w-lg p-6 md:p-8 shadow-2xl relative">
+            <button
+              onClick={onClose}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-navy-800 text-slate-400 hover:text-white flex items-center justify-center border border-white/10 text-sm">
+              ✕
+            </button>
+
+            {!submitted ? (
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                  DIAGNÓSTICO TÉCNICO INICIAL
+                </span>
+                <h3 className="text-2xl font-black text-white mt-2 mb-2">Hablemos de tu Operación</h3>
+                <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6">
+                  Un estratega de ingeniería de BluePixel revisará tu caso y te confirmará la viabilidad de automatización en menos de 24 horas.
+                </p>
+
+                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Nombre y Cargo</label>
+                    <input required type="text" placeholder="Ej. Carlos Mendoza — Director de Operaciones" className="w-full bg-navy-850 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Empresa y Correo Corporativo</label>
+                    <input required type="email" placeholder="carlos@empresa.com" className="w-full bg-navy-850 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Interés Principal</label>
+                    <select className="w-full bg-navy-850 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500">
+                      <option>{preselectedPackage || '01. Diagnóstico & Auditoría FutureProof'}</option>
+                      <option>02. Ingeniería de Agentes & Protocolos MCP</option>
+                      <option>01+02. Transformación Integral: BUILD + EVOLVE</option>
+                      <option>Cotizaciones lentas o conciliación manual en Excel</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Cuello de Botella que Buscas Resolver</label>
+                    <textarea rows="3" placeholder="Describe brevemente el proceso manual o fricción que más cuesta a tu empresa..." className="w-full bg-navy-850 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500"></textarea>
+                  </div>
+                  <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm">
+                    Solicitar Diagnóstico Sin Costo →
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl mx-auto mb-4">
+                  ✓
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">Solicitud Recibida</h4>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Un líder técnico de BluePixel revisará tus sistemas y te contactará en menos de 24 horas hábiles con el análisis preliminar.
+                </p>
+                <button onClick={onClose} className="bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold px-6 py-2.5 rounded-xl border border-white/10">
+                  Volver al Sitio
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
+    // App Root
+    const App = () => {
+      const [selectedSolution, setSelectedSolution] = useState(null);
+      const [contactOpen, setContactOpen] = useState(false);
+      const [selectedPkg, setSelectedPkg] = useState(null);
+
+      const handleOpenContactWithPkg = (pkgName) => {
+        setSelectedPkg(pkgName);
+        setContactOpen(true);
+      };
+
+      return (
+        <div className="min-h-screen">
+          <Navbar onOpenContact={() => setContactOpen(true)} />
+          <HeroWithPrompt onSelectSolution={(sol) => setSelectedSolution(sol)} />
+          <ThreeWaysToWork onSelectPackage={handleOpenContactWithPkg} />
+          <CapabilitiesSection />
+          
+          {/* Solution Modal */}
+          <SolutionDrawer 
+            solution={selectedSolution} 
+            onClose={() => setSelectedSolution(null)} 
+            onOpenContact={() => setContactOpen(true)}
+          />
+
+          {/* Contact Modal */}
+          <ContactModal
+            isOpen={contactOpen}
+            onClose={() => setContactOpen(false)}
+            preselectedPackage={selectedPkg}
+          />
+
+          {/* Footer minimalista */}
+          <footer className="py-12 px-6 border-t border-white/[0.08] text-center text-slate-500 text-xs font-mono">
+            <p>© 2026 BluePixel Technologies · Deep Tech & Agentic Engineering · Ciudad de México & Austin, TX</p>
+            <p className="mt-2 text-slate-600">Mockup Interactivo de Arquitectura B2B para Revisión Estratégica con Leo</p>
+          </footer>
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
