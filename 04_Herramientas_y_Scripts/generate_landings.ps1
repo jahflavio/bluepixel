@@ -60,7 +60,7 @@ $products = @(
         filename = "rfp_analyst.html"
         title = "RFP & Tender Analyst Agent"
         tag = "Arquitectura Operativa Lista para Producci&oacute;n"
-        hero_headline = "falta de tiempo."
+        hero_headline = "Deja de perder licitaciones por falta de tiempo."
         hero_sub = "Instala nuestro <strong>RFP & Tender Analyst Agent</strong>. Un flujo aut&oacute;nomo que lee licitaciones de 200 p&aacute;ginas, genera la matriz de cumplimiento y pre-redacta tu propuesta t&eacute;cnica en 4 horas."
         p2_title = "Arquitectura del Agente Licitador"
         p2_sub = "No es `"ChatGPT`". Es un Pipeline RAG seguro conectado a tu historial corporativo."
@@ -170,45 +170,31 @@ $products = @(
     }
 )
 
-$navbarReplace = '<div className="flex items-center"><a href="../index.html#capabilities" className="hidden md:flex text-slate-400 hover:text-white font-mono text-xs items-center gap-2 mr-6 transition-colors">&larr; Ver Directorio</a><button onClick={() => document.getElementById(''contact-form'').scrollIntoView()} className="bg-white text-navy-950 hover:bg-slate-200 font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-lg">Diagnóstico de Viabilidad</button></div>'
-
 foreach ($product in $products) {
     $html = $template
     
-    # 1. Update Navbar link
-    $html = $html -replace '<button onClick=\{\(\) => document.getElementById\(''contact-form''\).scrollIntoView\(\)\} className="bg-white text-navy-950 hover:bg-slate-200 font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-lg">\s*Diagnóstico de Viabilidad\s*</button>', $navbarReplace
+    # Reemplazo robusto basado en variables {{VARIABLE}}
+    $html = $html -replace '\{\{TITLE\}\}', $product.title
+    $html = $html -replace '\{\{HERO_TAG\}\}', $product.tag
+    $html = $html -replace '\{\{HERO_HEADLINE\}\}', $product.hero_headline
+    $html = $html -replace '\{\{HERO_SUB\}\}', $product.hero_sub
     
-    # 2. Update Title
-    $html = $html -replace '<title>BluePixel \| RFP & Tender Analyst Agent</title>', "<title>BluePixel | $($product.title)</title>"
+    $html = $html -replace '\{\{P2_TITLE\}\}', $product.p2_title
+    $html = $html -replace '\{\{P2_SUB\}\}', $product.p2_sub
     
-    # 3. Update Hero Tag
-    $html = $html -replace 'Arquitectura Operativa Lista para Producción', $product.tag
+    $html = $html -replace '\{\{STEP1_TITLE\}\}', $product.step1_title
+    $html = $html -replace '\{\{STEP1_DESC\}\}', $product.step1_desc
     
-    # 4. Update Hero Headline
-    $html = $html -replace 'falta de tiempo\.', "$($product.hero_headline)"
+    $html = $html -replace '\{\{STEP2_TITLE\}\}', $product.step2_title
+    $html = $html -replace '\{\{STEP2_DESC\}\}', $product.step2_desc
     
-    # 5. Update Hero Sub
-    $html = $html -replace 'Instala nuestro <strong>RFP & Tender Analyst Agent</strong>. Un flujo autónomo que lee licitaciones de 200 páginas, genera la matriz de cumplimiento y pre-redacta tu propuesta técnica en 4 horas\.', $product.hero_sub
+    $html = $html -replace '\{\{STEP3_TITLE\}\}', $product.step3_title
+    $html = $html -replace '\{\{STEP3_DESC\}\}', $product.step3_desc
     
-    # 6. Update P2 Title and Sub
-    $html = $html -replace 'Arquitectura del Agente Licitador', $product.p2_title
-    $html = $html -replace 'No es "ChatGPT". Es un Pipeline RAG seguro conectado a tu historial corporativo\.', $product.p2_sub
-    
-    # 7. Update Steps
-    $html = $html -replace 'Ingesta Masiva', $product.step1_title
-    $html = $html -replace 'Sube el PDF de la licitación del gobierno o corporativo. El agente lee las 200 páginas en segundos usando OCR avanzado\.', $product.step1_desc
-    
-    $html = $html -replace 'Cruce Histórico \(RAG\)', $product.step2_title
-    $html = $html -replace 'Busca en tu historial de propuestas ganadoras y extrae los textos técnicos, certificaciones y CVs necesarios para cumplir\.', $product.step2_desc
-    
-    $html = $html -replace 'Redacción y Matriz', $product.step3_title
-    $html = $html -replace 'Emite un documento Word con la propuesta pre-llenada al 80% y un Excel con la matriz de cumplimiento exacta\.', $product.step3_desc
-    
-    # 8. Update ROI Question
-    $html = $html -replace '¿Cuántas licitaciones complejas respondes al mes\?', $product.roi_q
+    $html = $html -replace '\{\{ROI_Q\}\}', $product.roi_q
     
     $outPath = Join-Path $outputDir $product.filename
     Set-Content -Path $outPath -Value $html -Encoding UTF8
 }
 
-Write-Output "Generadas $($products.Count) landing pages en $outputDir con HTML entities."
+Write-Output "Generadas $($products.Count) landing pages en $outputDir usando Template Variables (UX Refactor)."
