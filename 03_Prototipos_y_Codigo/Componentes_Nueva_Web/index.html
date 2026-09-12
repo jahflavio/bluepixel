@@ -384,6 +384,284 @@
       );
     };
 
+    // Workflow Teardown: Antes (Legacy Manual) vs. Después (Agentic BluePixel)
+    const WorkflowTeardown = () => {
+      const [activeTab, setActiveTab] = useState('agentic');
+
+      return (
+        <section className="py-20 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
+                DIAGNÓSTICO OPERATIVO FORENSE
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mt-2 mb-4">
+                El abismo entre un proceso manual y una capa agentizada.
+              </h2>
+              <p className="text-slate-400 text-sm md:text-base">
+                La mayoría de las empresas pierden hasta 40% de productividad no por falta de personal, sino por traspasos manuales entre correos, hojas de cálculo y sistemas desconectados.
+              </p>
+            </div>
+
+            {/* Selector de Pestaña */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-navy-850 p-1.5 rounded-2xl border border-white/[0.08] inline-flex">
+                <button
+                  onClick={() => setActiveTab('legacy')}
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    activeTab === 'legacy' ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'text-slate-400 hover:text-white'
+                  }`}>
+                  ✕ Proceso Manual Tradicional (Legacy)
+                </button>
+                <button
+                  onClick={() => setActiveTab('agentic')}
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    activeTab === 'agentic' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-400 hover:text-white'
+                  }`}>
+                  ✓ Capa Agentica BluePixel (MCP)
+                </button>
+              </div>
+            </div>
+
+            {/* Visual Teardown Container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Legacy Column */}
+              <div className={`bg-navy-900/90 border rounded-2xl p-6 md:p-8 transition-all duration-300 ${
+                activeTab === 'legacy' ? 'border-red-500/40 ring-2 ring-red-500/20' : 'border-white/[0.06] opacity-60 md:opacity-100'
+              }`}>
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+                  <span className="text-xs font-mono font-bold uppercase text-red-400 flex items-center gap-1.5">
+                    <span>⚠️</span>
+                    <span>Proceso Manual / Código Spaghetti</span>
+                  </span>
+                  <span className="text-xs font-mono text-slate-500">48 hrs ciclo</span>
+                </div>
+
+                <div className="space-y-4 text-xs text-slate-300">
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-white/[0.04]">
+                    <span className="font-mono text-red-400 font-bold block mb-1">01. Solicitud Dispersa</span>
+                    <p className="text-slate-400">Petición recibida por correo, WhatsApp personal o teléfono sin estandarización.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-white/[0.04]">
+                    <span className="font-mono text-red-400 font-bold block mb-1">02. Captura en Excel</span>
+                    <p className="text-slate-400">El ejecutivo teclea datos a mano; fórmulas desactualizadas causan errores de margen.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-white/[0.04]">
+                    <span className="font-mono text-red-400 font-bold block mb-1">03. Validación Telefónica</span>
+                    <p className="text-slate-400">Llamadas internas a almacén o finanzas para verificar inventario y cartera vencida.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-white/[0.04]">
+                    <span className="font-mono text-red-400 font-bold block mb-1">04. Retraso & Pérdida de Venta</span>
+                    <p className="text-slate-400">3 días hábiles para responder; el cliente ya contrató al competidor que respondió rápido.</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/[0.06] bg-red-500/5 p-3 rounded-xl">
+                  <p className="text-red-400 text-xs font-semibold">Tasa de error: 12-18% · Pérdida estimada: $850K MXN/año</p>
+                </div>
+              </div>
+
+              {/* Agentic Column */}
+              <div className={`bg-navy-900 border rounded-2xl p-6 md:p-8 transition-all duration-300 ${
+                activeTab === 'agentic' ? 'border-blue-500/50 ring-2 ring-blue-500/20 shadow-2xl glow-blue' : 'border-white/[0.06] opacity-60 md:opacity-100'
+              }`}>
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+                  <span className="text-xs font-mono font-bold uppercase text-emerald-400 flex items-center gap-1.5">
+                    <span>⚡</span>
+                    <span>Operación Agentizada BluePixel</span>
+                  </span>
+                  <span className="text-xs font-mono text-emerald-400 font-bold">90 segundos</span>
+                </div>
+
+                <div className="space-y-4 text-xs text-slate-200">
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-blue-500/20">
+                    <span className="font-mono text-blue-400 font-bold block mb-1">01. Ingesta Multi-Canal & Extracción</span>
+                    <p className="text-slate-300">Agente estructurador procesa documentos, PDFs o mensajes con precisión del 99.8%.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-blue-500/20">
+                    <span className="font-mono text-blue-400 font-bold block mb-1">02. Consulta Determinística MCP</span>
+                    <p className="text-slate-300">El servidor MCP consulta stock real y reglas de crédito en el ERP (SAP/Salesforce) sin alucinaciones.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-blue-500/20">
+                    <span className="font-mono text-blue-400 font-bold block mb-1">03. Generación & Validación Instantánea</span>
+                    <p className="text-slate-300">Cotización formal en PDF enviada al cliente en 90 segundos con link de aprobación.</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-navy-850 border border-blue-500/20">
+                    <span className="font-mono text-blue-400 font-bold block mb-1">04. Human-In-The-Loop Excepcional</span>
+                    <p className="text-slate-300">El equipo humano solo interviene cuando las reglas de negocio detectan una excepción crítica.</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/[0.06] bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20">
+                  <p className="text-emerald-400 text-xs font-semibold">Tasa de error: 0% · Win-rate comercial: +22% · 120 hrs/mes liberadas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Calculadora Interactiva de ROI de Automatización
+    const ROICalculator = ({ onOpenContact }) => {
+      const [teamSize, setTeamSize] = useState(6);
+      const [weeklyHours, setWeeklyHours] = useState(14);
+      const [hourlyRate, setHourlyRate] = useState(380); // MXN/hr
+
+      // Cálculos matemáticos
+      const annualWeeks = 48;
+      const totalManualHoursYear = teamSize * weeklyHours * annualWeeks;
+      const totalManualCostYear = totalManualHoursYear * hourlyRate;
+      const efficiencyGain = 0.82; // 82% promedio de tareas repetitivas reducidas
+      const hoursLiberatedYear = Math.round(totalManualHoursYear * efficiencyGain);
+      const savingsYearMXN = Math.round(totalManualCostYear * efficiencyGain);
+      const savingsYearUSD = Math.round(savingsYearMXN / 19.5);
+
+      return (
+        <section id="roi-calculator" className="py-20 px-6 md:px-12 bg-navy-900/90 border-t border-white/[0.06] relative overflow-hidden">
+          {/* Subtle background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold flex items-center justify-center gap-2">
+                <span>✦</span>
+                <span>SIMULADOR DE IMPACTO FINANCIERO</span>
+                <span>✦</span>
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+                ¿Cuánto dinero pierde tu empresa en tareas manuales?
+              </h2>
+              <p className="text-slate-400 text-sm md:text-base">
+                Calcula el retorno de inversión y las horas de alta fricción que un enjambre de agentes y automatización eliminan en tu organización.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Controles / Sliders */}
+              <div className="lg:col-span-6 bg-navy-850 border border-white/[0.08] rounded-2xl p-6 md:p-8 space-y-6">
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Personas en tareas repetitivas / back-office
+                    </label>
+                    <span className="text-lg font-black text-blue-400 font-mono">{teamSize} colaboradores</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="1"
+                    max="40"
+                    value={teamSize}
+                    onChange={(e) => setTeamSize(Number(e.target.value))}
+                    className="w-full accent-blue-500 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>1 persona</span>
+                    <span>20 personas</span>
+                    <span>40 personas</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Horas semanales dedicadas a hojas de cálculo por persona
+                    </label>
+                    <span className="text-lg font-black text-indigo-400 font-mono">{weeklyHours} hrs / sem</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="4"
+                    max="35"
+                    value={weeklyHours}
+                    onChange={(e) => setWeeklyHours(Number(e.target.value))}
+                    className="w-full accent-indigo-500 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>4 hrs (básico)</span>
+                    <span>18 hrs (medio)</span>
+                    <span>35 hrs (crítico)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Costo promedio por hora hombre (nómina con cargas)
+                    </label>
+                    <span className="text-lg font-black text-slate-200 font-mono">${hourlyRate} MXN/hr</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="180"
+                    max="900"
+                    step="20"
+                    value={hourlyRate}
+                    onChange={(e) => setHourlyRate(Number(e.target.value))}
+                    className="w-full accent-slate-400 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>$180 MXN (Junior)</span>
+                    <span>$500 MXN (Senior)</span>
+                    <span>$900 MXN (Especialista)</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-navy-950 border border-white/[0.04] text-xs text-slate-400 leading-relaxed">
+                  <span className="text-blue-400 font-semibold">✦ Benchmark Real BluePixel:</span> En empresas con procesos de cotización, reconciliación contable o validación de documentos, el 82% de las tareas son completamente operables mediante agentes con servidores MCP y validación humana por excepción.
+                </div>
+              </div>
+
+              {/* Tarjetas de Resultados */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="bg-gradient-to-br from-navy-850 to-navy-900 border border-emerald-500/30 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 px-4 py-1.5 bg-emerald-500/10 border-b border-l border-emerald-500/30 rounded-bl-xl text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">
+                    82% Eficiencia Recuperable
+                  </div>
+
+                  <span className="text-xs font-mono uppercase text-slate-400 font-bold block mb-1">
+                    Ahorro Financiero Anual Proyectado
+                  </span>
+                  <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight mb-1 font-mono">
+                    ${savingsYearMXN.toLocaleString()} <span className="text-sm font-semibold text-emerald-300/80">MXN / año</span>
+                  </div>
+                  <div className="text-xs font-mono text-slate-400 mb-6">
+                    ≈ ${savingsYearUSD.toLocaleString()} USD anuales en ineficiencia de back-office eliminada.
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.08]">
+                    <div>
+                      <span className="text-[11px] font-mono text-slate-400 block mb-1">Horas Hombre Liberadas</span>
+                      <div className="text-2xl font-black text-white font-mono">
+                        {hoursLiberatedYear.toLocaleString()} <span className="text-xs font-normal text-slate-400">hrs/año</span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 mt-1">Reorientadas a estrategia comercial y ventas.</p>
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-mono text-slate-400 block mb-1">Tiempo de Payback</span>
+                      <div className="text-2xl font-black text-blue-400 font-mono">
+                        ~60 a 90 <span className="text-xs font-normal text-slate-400">días</span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 mt-1">Retorno total de la fase BUILD en el primer trimestre.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/[0.08]">
+                    <button
+                      onClick={() => onOpenContact && onOpenContact(`Calculadora ROI: ${teamSize} colaboradores, ${weeklyHours} hrs/sem, ahorro estimado $${savingsYearMXN.toLocaleString()} MXN/año`)}
+                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-black text-sm py-4 px-6 rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                      <span>Desbloquear este Retorno: Solicitar Auditoría Operativa</span>
+                      <span className="font-bold text-base">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
     // Three Ways to Work With Us
     const ThreeWaysToWork = ({ onSelectPackage }) => (
       <section id="three-ways" className="py-24 px-6 md:px-12 bg-navy-900/60">
@@ -669,6 +947,97 @@
       );
     };
 
+    // Soberanía Técnica, Seguridad y Cero Vendor Lock-in
+    const EnterpriseTrustAndSovereignty = () => {
+      const pillars = [
+        {
+          badge: 'PROPIEDAD INTELECTUAL',
+          icon: '🛡️',
+          title: 'Cláusula de Soberanía Absoluta',
+          desc: 'Cero dependencias forzadas. Todo el código fuente, la infraestructura de agentes y las reglas determinísticas son 100% propiedad intelectual de tu empresa desde el día 1.'
+        },
+        {
+          badge: 'DESPLIEGUE SEGURO',
+          icon: '☁️',
+          title: 'Despliegue en tu Nube Privada (VPC)',
+          desc: 'Nada corre en cajas negras externas. Los agentes y servidores MCP se orquestan en tus cuentas de AWS, Microsoft Azure o Google Cloud bajo tus propias políticas de red y firewall.'
+        },
+        {
+          badge: 'GOBERNANZA DE DATOS',
+          icon: '🔒',
+          title: 'Zero Data Retention & Privacidad',
+          desc: 'Tus bases de datos, transacciones y clientes jamás son usados para reentrenar modelos de terceros. Cumplimiento con LFPDPPP, GDPR y arquitectura lista para auditoría SOC-2.'
+        },
+        {
+          badge: 'ARQUITECTURA ESTÁNDAR',
+          icon: '🔌',
+          title: 'Protocolo Abierto MCP Nativo',
+          desc: 'Basado en Model Context Protocol. Si mañana quieres cambiar el motor de inferencia (de Claude a OpenAI, Gemini o Llama local), tu sistema sigue funcionando sin reescribir una sola línea.'
+        }
+      ];
+
+      return (
+        <section id="sovereignty" className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06] relative">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                ESTÁNDARES DE GOBERNANZA CORPORATIVA
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+                Por qué los CTOs eligen BluePixel: Soberanía Técnica Real.
+              </h2>
+              <p className="text-slate-400 text-base md:text-lg">
+                Eliminamos el mayor riesgo de contratar consultoría tecnológica: quedar atado de por vida a un proveedor que oculta cómo funciona su software.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {pillars.map((p, idx) => (
+                <div key={idx} className="bg-navy-900 border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl">{p.icon}</span>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold bg-navy-850 px-2 py-1 rounded-md border border-white/[0.06]">
+                        {p.badge}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+                    <p className="text-slate-400 text-xs leading-relaxed">{p.desc}</p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-white/[0.06]">
+                    <span className="text-[11px] font-mono text-emerald-400 font-semibold flex items-center gap-1">
+                      <span>✓</span>
+                      <span>Garantizado por Contrato</span>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Quote de Certidumbre */}
+            <div className="mt-12 p-6 md:p-8 rounded-2xl bg-navy-900/60 border border-blue-500/20 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-1">
+                <span className="text-xs font-mono text-blue-400 uppercase font-bold tracking-wider">Compromiso BluePixel</span>
+                <p className="text-white text-sm md:text-base font-medium">
+                  "Todo proyecto concluye con tu equipo interno operando y dominando el sistema con autonomía absoluta."
+                </p>
+              </div>
+              <div className="flex items-center gap-4 flex-shrink-0 text-xs font-mono text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  Repositorios Privados
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                  Documentación OpenAPI & MCP
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
     // Casos de Éxito con Métricas Financieras (Case Studies)
     const CaseStudiesSection = ({ onOpenCase }) => {
       const cases = [
@@ -752,6 +1121,60 @@
                       <span>→</span>
                     </button>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Línea de Tiempo de Transparencia B2B (¿Qué pasa después de contactar?)
+    const PostContactSLA = ({ onOpenContact }) => {
+      const steps = [
+        {
+          time: 'Minuto 0',
+          title: 'NDA Bilateral Inmediato',
+          desc: 'Recibes acuse automático con nuestro Acuerdo de Confidencialidad firmado digitalmente para proteger tus datos y procesos de negocio.'
+        },
+        {
+          time: '24 Horas',
+          title: 'Auditoría Forense de Viabilidad',
+          desc: 'Un Lead Architect (no un vendedor novato) analiza tu flujo operativo y evalúa la viabilidad técnica contra nuestros casos previos.'
+        },
+        {
+          time: '48 Horas',
+          title: 'Sesión Técnica de 30 min & Blueprint',
+          desc: 'Te entregamos una hipótesis de arquitectura preliminar, cálculo estimado de ROI y el alcance exacto del Diagnóstico Operativo.'
+        }
+      ];
+
+      return (
+        <section className="py-20 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
+                COMPROMISO DE SERVICIO & TRANSPARENCIA
+              </span>
+              <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight mt-2 mb-3">
+                ¿Qué sucede exactamente cuando nos contactas?
+              </h2>
+              <p className="text-slate-400 text-xs md:text-sm">
+                Cero ventas agresivas. Cero llamadas con personas que no entienden de ingeniería.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {steps.map((s, idx) => (
+                <div key={idx} className="bg-navy-900 border border-white/[0.08] rounded-2xl p-6 relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                      {s.time}
+                    </span>
+                    <span className="text-slate-600 font-mono text-sm">0{idx + 1}</span>
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -1137,9 +1560,13 @@
             onOpenContact={() => scrollToForm()}
           />
           <SocialProofSection />
+          <WorkflowTeardown />
+          <ROICalculator onOpenContact={(data) => scrollToForm(data)} />
           <ThreeWaysToWork onSelectPackage={(pkg) => scrollToForm(pkg)} />
           <CapabilitiesElevated onSelectCapability={(cap) => scrollToForm(cap)} />
+          <EnterpriseTrustAndSovereignty />
           <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
+          <PostContactSLA onOpenContact={() => scrollToForm()} />
           <MultiStepContact />
           
           <SolutionDrawer 
