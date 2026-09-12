@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BluePixel | ERP Bridge</title>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   
@@ -37,6 +46,10 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="bg-navy-950 text-slate-200 font-sans antialiased selection:bg-blue-500/30">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   
   <div id="root"></div>
 
@@ -204,7 +217,7 @@
             
             <h3 className="text-xl font-bold text-white mb-6">Solicitar Arquitectura en Private Cloud</h3>
             
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Lead capturado en Webhook/MCP'); }}>
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.dataLayer && window.dataLayer.push({'event': 'lead_form_submitted'}); alert('Lead capturado en Webhook/MCP'); }}>
               <div>
                 <label className="block text-xs font-mono text-slate-400 mb-1.5 uppercase">Correo Corporativo</label>
                 <input type="email" required placeholder="cto@empresa.com" className="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" />
