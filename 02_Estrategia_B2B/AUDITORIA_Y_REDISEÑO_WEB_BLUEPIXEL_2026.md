@@ -675,3 +675,32 @@ Para asegurar que todo el equipo (Fabián, Leo, Pablo, ingenieros y comerciales)
 3.  **Siguiente Acción:** Presentar este plan estratégico en la sesión de alineación con Leo y Pablo Gómez.
 
 
+
+## 11. DECISIÓN ARQUITECTÓNICA: LANDING PAGES DE SERVICIOS (6 CAPACIDADES)
+
+Ante la propuesta de crear 6 "Landing Pages" aisladas para cada una de las capacidades (Soporte, Facturación, Integración, etc.), la auditoría arroja la siguiente **postura oficial y directriz de implementación**:
+
+### 11.1. El Problema de las 6 Landing Pages Aisladas (El "Menú de Restaurante")
+Para una empresa B2B Enterprise como BluePixel 2026, fragmentar los servicios en 6 URLs separadas es peligroso porque:
+1. **Diluye el valor B2B:** Los CTOs no compran "Soporte al Cliente" como un commodity. Compran **"Soberanía Operativa Integral"**. Si los envías a una landing aislada de "Facturación", se pierde la narrativa de que BluePixel construye una red de agentes interconectados (El Ecosistema).
+2. **Fricción Cognitiva:** Obliga al usuario a saltar entre pestañas en lugar de consumir la historia técnica de forma continua y guiada.
+3. **Mantenimiento Técnico:** Multiplica por 6 el esfuerzo de mantener calculadoras de ROI, casos de éxito y copys técnicos.
+
+### 11.2. La Solución B2B: "Hub & Spoke" en una Single Page Application (SPA)
+**Opinión de la Auditoría:** No debemos crear 6 landing pages de WordPress estándar. Debemos mantener la narrativa monolítica en la Home, pero crear **experiencias profundas e inmersivas (Drawers/Modals) o Secciones Dinámicas** dentro de la misma interfaz.
+
+**¿Cómo lo hemos solucionado en el Demo (index.html)?**
+En lugar de mandar al usuario a otra página, implementamos el **SolutionDrawer**. Cuando el usuario elige un problema en el Hero o hace clic en una "Capacidad", se despliega un panel flotante de alta inmersión que contiene:
+- El problema específico.
+- La arquitectura técnica (Blueprint).
+- El caso análogo en producción (Social Proof).
+- El tiempo y costo de implementación.
+
+### 11.3. Los 5 Pilares si se REQUIEREN Landing Pages (para SEM / Google Ads)
+Si el equipo comercial (Leo) necesita *estrictamente* URLs separadas para campañas específicas de SEM (Ej. comprar la palabra clave "Automatización de Facturas SAP"), esas landings **NO DEBEN** ser folletos informativos. Deben seguir esta anatomía estricta (Los 5 Pilares de Conversión Técnica):
+
+1. **El Pilar de la Fricción (Hero):** No hablar de IA, hablar del dolor. Ej: *"¿Tus ejecutivos pasan 30 hrs a la semana conciliando facturas con errores manuales?"*.
+2. **El Pilar del Workflow Teardown (Antes vs. Después):** Un diagrama interactivo (como el que ya tenemos) que compare su proceso legacy versus la arquitectura agentizada de BluePixel.
+3. **El Pilar Financiero (ROI Calculator Dedicada):** Una mini-calculadora que pida el salario promedio de sus ejecutivos y horas perdidas para arrojar el ahorro en $ USD.
+4. **El Pilar del Trust (Soberanía y Liderazgo):** Demostrar cómo se conectan los agentes sin comprometer sus datos. Mostrar las caras de los Lead Architects asignados a esa vertical.
+5. **El Call-To-Action (La Puerta de Entrada):** Nunca un "Contáctanos". Siempre empujar hacia el **"Diagnóstico Operativo de 4 semanas"** enfocado en esa vertical.
