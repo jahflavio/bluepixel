@@ -625,3 +625,19 @@ Para operar la maquinaria con código propio en lugar de costosas plataformas em
 
 ---
 *Este documento consolida la estrategia canónica de BluePixel 2026 y servirá como la brújula técnica y comercial de la compañía.*
+
+---
+
+## 🏗️ CAPÍTULO 5: LA TRANSICIÓN A "PRODUCTIZED SERVICES" (APP STORE AGENTICO)
+
+### 5.1 El Fin de "Vender Horas"
+El mercado B2B corporativo ha madurado. Ya no compran "bolsas de horas de desarrollo" con alcances inciertos. La estrategia de BluePixel 2026 exige empaquetar nuestro conocimiento en **Soluciones Pre-Construidas (Productized Services)**. Vender una arquitectura con precio y SLA fijos reduce la fricción de entrada y acelera el ciclo de ventas.
+
+### 5.2 El Directorio de Productos (Blueprint Library)
+La web no listará "servicios genéricos". Existirá una **Blueprint Library** (Librería de Arquitecturas) donde los tomadores de decisión explorarán nuestros Módulos Agenticos.
+*   **AOC (Agentic Operations Center):** El reemplazo absoluto del NOC tradicional.
+*   **APA (Agentic Process Automation):** El "Asesino de RPA", usando visión computacional y modelos de lenguaje para procesos resilientes.
+*   **Finance Matcher:** Agente conciliador contable vía MCP.
+*   **ERP Bridge:** Conector universal seguro.
+
+**Directriz Comercial:** Las campañas de SEM (Google Ads) apuntarán directamente a estas soluciones empaquetadas, no al home genérico. Cada clic debe aterrizar en el dolor específico que resuelve la Arquitectura.

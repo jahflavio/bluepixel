@@ -136,3 +136,17 @@ Aprovechando la sesión de grabación de la tarde con Leo, María, Sergio y Jess
 2.  **Uso de los Prototipos PLG en Vivo:** En lugar de enviar un PDF con cotización abstracta, abrir en la llamada la [Demo Interactiva](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Demos_PLG/index.html) para que el cliente sienta el producto funcionando en tiempo real.
 3.  **Calidez en los Correos y Mensajes:** Abandonar el lenguaje hiper-corporativo frío. Usar tono consultivo, amigable y directo al grano, firmado por humanos.
 4.  **Campaña de Reactivación de Cuentas Pasadas:** Escribir a los clientes históricos que compraron por UX/UI para invitarlos a un diagnóstico gratuito de madurez de IA y arquitectura.
+
+---
+
+## 🚀 8. EL ARMA COMERCIAL LETAL: "PRODUCTIZED SERVICES"
+
+**El Nuevo Modelo de Ventas:** Dejar de vender el proceso (horas de consultoría, discovery infinito) y empezar a vender **El Fin (El Producto Empaquetado)**.
+
+**¿Por qué usar Productized Services?**
+*   **Venta Impulsiva B2B:** Un CFO no quiere "Desarrollo de IA". Quiere un "Conciliador Automático de Facturas SAP".
+*   **Certeza Presupuestal:** Ticket fijo, SLA fijo, y tiempo de entrega (3 semanas).
+*   **Ataque Quirúrgico SEM:** Si un competidor busca "Automatizar cobranza corporativa", aterriza directamente en el Blueprint del *Agentic Operations Center* o el *Finance Matcher*, no en un "Menú de Servicios".
+
+**El Rol del Equipo Comercial:** 
+Tu trabajo es escuchar el dolor del cliente y, en lugar de decirle *"Claro, podemos desarrollar eso a medida"*, debes decirle: *"Ese es el dolor número uno de esta industria. Por eso tenemos el módulo pre-construido [Nombre del Blueprint], que ya hace eso con un SLA del 99.9%. Podemos implementarlo en tu empresa el próximo mes."*

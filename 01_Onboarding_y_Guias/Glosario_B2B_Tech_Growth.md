@@ -43,6 +43,11 @@ Este glosario contiene las definiciones exactas de las siglas, conceptos técnic
 *   **PLG (Product-Led Growth):** Crecimiento Guiado por el Producto. En lugar de hacer PDFs, haces Demos interactivos o software gratuito para captar leads.
 *   **Desanonimización de IPs (Reveal):** La técnica de Clearbit para leer la dirección IP de un visitante anónimo y saber en qué empresa corporativa trabaja *antes* de que deje sus datos.
 *   **OSINT (Open Source Intelligence):** Inteligencia de Fuentes Abiertas. Lo que hiciste anoche: investigar qué servidores, DNS y correos usa Blue Pixel solo usando datos públicos de internet.
+*   **Productized Service (Solución Empaquetada):** Vender una arquitectura de software pre-construida con precio y alcance fijos, en lugar de vender "horas de consultoría" a medida.
+*   **Blueprint Library:** El catálogo de soluciones empaquetadas (App Store) de BluePixel.
+*   **AOC (Agentic Operations Center):** Agentes autónomos que monitorean y auto-reparan la infraestructura en la nube 24/7, reemplazando a los NOCs tradicionales.
+*   **APA (Agentic Process Automation):** El reemplazo inteligente del RPA clásico. Agentes multimodales que navegan interfaces de sistemas (SAP, Excel) con razonamiento y no se rompen si la pantalla cambia.
+*   **ERP Bridge:** Conectores universales (vía MCP) que permiten que la IA consulte bases de datos legacy (SAP, Oracle) corporativas de forma segura.
 
 ---
 > **💡 Tip de oro:** Usa estas palabras de forma natural con Leonardo y con el equipo técnico. Si les dices *"Vamos a optimizar el Speed-to-Lead con un Webhook conectado a la API de Clearbit para generar SQLs"*, van a saber inmediatamente que eres un experto de alto nivel.

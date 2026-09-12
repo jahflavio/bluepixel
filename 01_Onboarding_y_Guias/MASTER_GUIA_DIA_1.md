@@ -6,8 +6,8 @@
 ## 🏢 1. LA EMPRESA Y EL NEGOCIO (Contexto Comercial)
 *   **Identidad y Transición de Marca:** De agencia boutique de Diseño UX/UI a potencia de **Deep Tech, Inteligencia Artificial aplicada y arquitectura FutureProof** (donde los creativos son tecnológicos y los tecnológicos son creativos). El diseño UX/UI es la armadura humana de nuestra ingeniería militar.
 *   **A quién le venden:** Principalmente a CTOs, Directores de Tecnología y CEOs de corporativos (Mid-Market / Enterprise).
-*   **Qué venden:** Desarrollo de software, Infraestructura (Build) y Retainers de optimización/analítica (Evolve).
-*   **El Filtro Económico:** Solo buscan proyectos que superen los $300,000 MXN. (Por eso tu Lead Scoring es vital).
+*   **Qué venden:** Transicionando de vender "horas de desarrollo y consultoría" a **Productized Services (Soluciones Empaquetadas)** como el AOC (Agentic Operations Center) y APA (Agentic Process Automation) a través de nuestra nueva **Blueprint Library**.
+*   **El Filtro Económico:** Solo buscan proyectos que superen los $300,000 MXN. Las soluciones empaquetadas ayudan a vender rápido y por ticket fijo. (Por eso tu Lead Scoring es vital).
 *   **Infraestructura Pública Actual (Tu OSINT):**
     *   **Página Web:** Webflow (Ágil, fácil de inyectar código).
     *   **Analítica:** Mixpanel (Tienen cultura de datos) + GTM.
