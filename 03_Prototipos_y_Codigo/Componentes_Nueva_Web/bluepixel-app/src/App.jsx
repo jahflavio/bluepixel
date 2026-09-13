@@ -1796,5 +1796,5 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
       );
     };
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    export default App;
   
