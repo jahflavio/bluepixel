@@ -110,7 +110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'cotizaciones',
     label: 'Cotizaciones lentas en Excel',
-    prompt: 'Nuestros ejecutivos tardan hasta 48 horas en cotizar productos complejos en hojas de cálculo y se pierden ventas.',
+    prompt: 'Cotizaciones complejas en Excel que tardan horas y nos hacen perder ventas.',
     categoria: 'AUTOMATIZACIÓN COMERCIAL & PRICING',
     impacto: 'Pérdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
     arquitectura: [
@@ -126,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'conciliacion',
     label: 'Conciliación contable & ERP',
-    prompt: 'El equipo contable concilia manualmente miles de facturas y transferencias bancarias contra el ERP a fin de mes.',
+    prompt: 'Conciliación manual de miles de facturas y pagos contra el ERP a fin de mes.',
     categoria: 'BACK-OFFICE FINANCIERO & COMPLIANCE',
     impacto: 'Demoras de 10 días en cierre mensual y multas por discrepancias fiscales ante el SAT.',
     arquitectura: [
@@ -142,7 +142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'checkout',
     label: 'Fuga en checkout (IMPATH)',
-    prompt: 'Nuestra plataforma digital tiene una tasa de abandono del 68% en el paso 3 del flujo de pago.',
+    prompt: 'Alta tasa de abandono (68%) en el flujo de pago de la plataforma digital.',
     categoria: 'UX INTEL & CONVERSIÓN TRANSACCIONAL',
     impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricción cognitiva y errores de validación.',
     arquitectura: [
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'soporte',
     label: 'Atención 24/7 sin alucinaciones',
-    prompt: 'Queremos automatizar el soporte y atención al cliente en WhatsApp sin que la IA invente datos falsos ni dañe la marca.',
+    prompt: 'Automatizar atención en WhatsApp sin que la IA invente datos falsos (alucinaciones).',
     categoria: 'CUSTOMER EXPERIENCE & RAG BLINDADO',
     impacto: 'Pérdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
     arquitectura: [
@@ -226,68 +226,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Hero with Prompt Engine
     const HeroPromptEngine = ({ onSelectSolution }) => {
   const [inputVal, setInputVal] = useState('');
-  const [activePreset, setActivePreset] = useState(PRESETS[0]);
+  
+  // Typewriter Effect State
+  const [placeholderText, setPlaceholderText] = useState('');
+  const [presetIndex, setPresetIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const handleSelectPreset = (preset) => {
-    setActivePreset(preset);
-    setInputVal(preset.prompt);
-    if (onSelectSolution) onSelectSolution(preset);
-  };
+  (React.useEffect || useEffect)(() => {
+    let timer;
+    if (isPaused) {
+      timer = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 2500); 
+      return () => clearTimeout(timer);
+    }
+
+    const currentPrompt = PRESETS[presetIndex].prompt;
+    
+    if (isDeleting) {
+      if (placeholderText.length === 0) {
+        setIsDeleting(false);
+        setPresetIndex((prev) => (prev + 1) % PRESETS.length);
+      } else {
+        timer = setTimeout(() => {
+          setPlaceholderText(currentPrompt.substring(0, placeholderText.length - 2));
+        }, 15);
+      }
+    } else {
+      if (placeholderText.length === currentPrompt.length) {
+        setIsPaused(true);
+      } else {
+        timer = setTimeout(() => {
+          setPlaceholderText(currentPrompt.substring(0, placeholderText.length + 1));
+        }, 40);
+      }
+    }
+    return () => clearTimeout(timer);
+  }, [placeholderText, isDeleting, isPaused, presetIndex]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const solution = {
-      ...activePreset,
-      prompt: inputVal || activePreset.prompt
+      ...PRESETS[presetIndex],
+      prompt: inputVal || PRESETS[presetIndex].prompt
     };
     if (onSelectSolution) onSelectSolution(solution);
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
-      <div className="bg-[#0A0E1A]/95 border border-white/[0.12] rounded-2xl p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15">
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <div className="flex items-center gap-3 flex-1 px-3">
-            <span className="text-blue-400 text-lg">✦</span>
-            <input
-              type="text"
-              value={inputVal}
-              onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Describe un cuello de botella de tu empresa (o selecciona un ejemplo)..."
-              className="w-full bg-transparent text-white placeholder-slate-500 text-sm md:text-base focus:outline-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0 shadow-lg shadow-blue-600/30">
-            <span>Ver Solución Técnica</span>
-            <span className="text-base font-bold">↗</span>
-          </button>
-        </form>
+    <div className="w-full max-w-2xl mx-auto relative group mt-8">
+      <form 
+        onSubmit={handleSubmit} 
+        className="flex items-center gap-3 bg-[#0A0E1A]/40 border border-white/[0.15] hover:border-white/30 rounded-full px-5 py-3 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 focus-within:border-blue-500/50 focus-within:shadow-[0_0_30px_-5px_rgba(37,99,235,0.3)] focus-within:bg-[#0A0E1A]/80"
+      >
+        <svg className="w-5 h-5 text-blue-400 opacity-70 group-focus-within:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        
+        <input
+          type="text"
+          value={inputVal}
+          onChange={(e) => setInputVal(e.target.value)}
+          placeholder={placeholderText || "Escribe un proceso para optimizar..."}
+          className="flex-1 bg-transparent text-white placeholder-slate-400 text-sm focus:outline-none w-full tracking-wide"
+        />
 
-        {/* Preset Chips */}
-        <div className="mt-3 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 px-2 text-left">
-          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">Casos Típicos:</span>
-          {PRESETS.map((p) => (
-            <button
-              key={p.id}
-              type="button"
-              onClick={() => handleSelectPreset(p)}
-              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-150 flex items-center gap-1.5 ${
-                activePreset.id === p.id && inputVal === p.prompt
-                  ? 'bg-blue-600/30 text-blue-300 border border-blue-500/50'
-                  : 'bg-[#131D35]/70 text-slate-400 hover:text-white border border-white/[0.05] hover:bg-[#1A2540]'
-              }`}>
-              <span>◈</span>
-              <span>{p.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mt-3 font-mono">
-        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-        <span>Motor de diagnóstico en vivo · Basado en casos reales de BluePixel</span>
+        <button
+          type="submit"
+          className="flex items-center justify-center bg-white/5 hover:bg-blue-600/20 text-slate-400 hover:text-blue-400 rounded-full p-2.5 transition-all duration-200"
+          title="Solucionar"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </form>
+      
+      <div className="flex justify-center mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+         <span className="text-[10px] text-slate-500 font-mono tracking-widest uppercase">Presiona Enter para analizar</span>
       </div>
     </div>
   );
@@ -330,18 +348,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 onClick={onOpenContact}
                 className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
                 <span>Solicitar Diagnóstico Operativo (Sin Costo)</span>
-                <span>â†’</span>
+                <span>→</span>
               </button>
               <a 
                 href="#three-ways"
-                className="bg-navy-800 hover:bg-navy-700 text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
-                Conoce las 3 Formas de Trabajar â†“
+                className="bg-[#0A0F1D] hover:bg-[#131D35] text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
+                Conoce las 3 Formas de Trabajar ↓
               </a>
             </div>
           </div>
         </section>
       );
     };
+
+    // Social Proof & Client Marquee Section
     const SocialProofSection = () => {
       const doubledLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
@@ -507,22 +527,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {/* Left Column: Timeline */}
               <div className="lg:col-span-4 relative pl-4 md:pl-0">
                 <div className="space-y-12 relative z-10">
+                  {/* Single continuous timeline line */}
+                  <div className="absolute left-[11px] top-[16px] bottom-[16px] w-[2px] bg-white/[0.05] z-0">
+                    <div className={`w-full bg-red-500 transition-all duration-1000 ease-in-out`} style={{height: ((activeStep / Math.max(steps.length - 1, 1)) * 100) + '%'}}></div>
+                  </div>
                   {steps.map((step, idx) => {
                     const isActive = idx === activeStep;
                     const isPast = idx < activeStep;
                     
                     return (
                       <div key={idx} className="flex gap-6 relative">
-                        {/* Individual Line Segment */}
-                        {idx !== steps.length - 1 && (
-                          <div className="absolute left-[11px] top-7 bottom-[-48px] w-[2px] bg-white/[0.05] z-0">
-                            <div className={`w-full bg-red-500 transition-all duration-1000 ease-in-out ${activeStep > idx ? 'h-full' : 'h-0'}`}></div>
-                          </div>
-                        )}
+                        
                         
                         {/* Timeline Node */}
-                        <div className="relative mt-1 shrink-0 z-10 bg-navy-950">
-                          <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 transition-colors duration-500 ${isActive ? 'border-red-500 bg-navy-950' : isPast ? 'border-red-500 bg-red-500' : 'border-white/[0.2] bg-navy-950'}`}>
+                        <div className="relative mt-1 shrink-0 z-10">
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 transition-colors duration-500 shadow-[0_0_0_4px_rgb(10,14,28)] ${isActive ? 'border-red-500 bg-[#0A0E1C]' : isPast ? 'border-red-500 bg-red-500' : 'border-white/[0.2] bg-[#0A0E1C]'}`}>
                             {isActive && (
                               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
                             )}
@@ -1268,7 +1287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
-                CASOS DE ÉXITO AUDITADOS
+                CASOS DE íXITO AUDITADOS
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
                 Ingeniería que transforma balances financieros.
@@ -1352,7 +1371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             
             <div className="flex-1 bg-navy-950 p-8 rounded-3xl border border-blue-500/20 shadow-2xl relative">
-              <div className="absolute -top-4 -left-4 text-4xl">💬</div>
+              <div className="absolute -top-4 -left-4 text-4xl">ð¬</div>
               <p className="text-white text-lg font-medium italic leading-relaxed mb-6">
                 "Nuestra promesa a los CTOs es simple: Si al mes 2 el agente no ha liberado horas de tu equipo, fallamos. Por eso no vendemos código a granel; diagnosticamos y operamos."
               </p>
@@ -1806,7 +1825,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <div className="relative z-10 max-w-3xl mx-auto">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-6 block">
-                  AGENDA UNA CONVERSACIÓN TÉCNICA
+                  AGENDA UNA CONVERSACIÓN TíCNICA
                 </span>
                 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
@@ -1831,7 +1850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     className="w-full sm:w-auto bg-transparent hover:bg-white/[0.05] text-white font-semibold text-sm px-8 py-3.5 rounded-full border border-white/[0.15] transition-all flex items-center justify-center gap-2"
                   >
                     <span>Ver Casos de Éxito</span>
-                    <span>↗</span>
+              <span>↗</span>
                   </a>
                 </div>
               </div>
