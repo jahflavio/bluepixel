@@ -1,9 +1,9 @@
-�<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BluePixel  Ingenier�a de Agentes IA & Plataformas FutureProof</title>
+  <title>BluePixel — Ingeniería de Agentes IA & Plataformas FutureProof</title>
   
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -110,65 +110,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'cotizaciones',
     label: 'Cotizaciones lentas en Excel',
-    prompt: 'Nuestros ejecutivos tardan hasta 48 horas en cotizar productos complejos en hojas de c�lculo y se pierden ventas.',
-    categoria: 'AUTOMATIZACI�N COMERCIAL & PRICING',
-    impacto: 'P�rdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
+    prompt: 'Nuestros ejecutivos tardan hasta 48 horas en cotizar productos complejos en hojas de cálculo y se pierden ventas.',
+    categoria: 'AUTOMATIZACIÓN COMERCIAL & PRICING',
+    impacto: 'Pérdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
     arquitectura: [
       { paso: '01. Ingesta', desc: 'Agente Extractor captura requerimientos desde WhatsApp / Correo / Formulario.' },
-      { paso: '02. MCP Grounding', desc: 'Servidor MCP consulta reglas de inventario, m�rgenes y tarifas en ERP (SAP/Salesforce).' },
-      { paso: '03. Generaci�n', desc: 'Agente cotizador genera PDF validado con firma digital en 90 segundos.' },
-      { paso: '04. Human-in-the-loop', desc: 'Si el margen es < 18%, escala autom�ticamente a Director Comercial para visto bueno.' }
+      { paso: '02. MCP Grounding', desc: 'Servidor MCP consulta reglas de inventario, márgenes y tarifas en ERP (SAP/Salesforce).' },
+      { paso: '03. Generación', desc: 'Agente cotizador genera PDF validado con firma digital en 90 segundos.' },
+      { paso: '04. Human-in-the-loop', desc: 'Si el margen es < 18%, escala automáticamente a Director Comercial para visto bueno.' }
     ],
-    casoAnalogo: 'Caso FR Medical / Bimbo: Reducci�n del tiempo de cotizaci�n de 48 hrs a 3 minutos con 0% de error de c�lculo.',
+    casoAnalogo: 'Caso FR Medical / Bimbo: Reducción del tiempo de cotización de 48 hrs a 3 minutos con 0% de error de cálculo.',
     roiEstimado: 'Ahorro de $680,000 MXN anuales + incremento de 22% en win-rate comercial.',
     tiempoImplementacion: '4 a 6 semanas (Fase BUILD)'
   },
   {
     id: 'conciliacion',
-    label: 'Conciliaci�n contable & ERP',
+    label: 'Conciliación contable & ERP',
     prompt: 'El equipo contable concilia manualmente miles de facturas y transferencias bancarias contra el ERP a fin de mes.',
     categoria: 'BACK-OFFICE FINANCIERO & COMPLIANCE',
-    impacto: 'Demoras de 10 d�as en cierre mensual y multas por discrepancias fiscales ante el SAT.',
+    impacto: 'Demoras de 10 días en cierre mensual y multas por discrepancias fiscales ante el SAT.',
     arquitectura: [
-      { paso: '01. Conexi�n Bancaria', desc: 'Agente Financiero conecta v�a API a bancos y descarga estados de cuenta y XMLs del SAT.' },
-      { paso: '02. Cruce Determin�stico', desc: 'L�gica matem�tica estricta coteja RFC, montos y �rdenes de compra en el ERP.' },
-      { paso: '03. Reconciliaci�n', desc: 'Asiento contable autom�tico para el 94% de transacciones coincidentes.' },
-      { paso: '04. Bandeja de Anomal�as', desc: 'Solo el 6% de transacciones con discrepancia llega a revisi�n del contador jefe.' }
+      { paso: '01. Conexión Bancaria', desc: 'Agente Financiero conecta vía API a bancos y descarga estados de cuenta y XMLs del SAT.' },
+      { paso: '02. Cruce Determinístico', desc: 'Lógica matemática estricta coteja RFC, montos y órdenes de compra en el ERP.' },
+      { paso: '03. Reconciliación', desc: 'Asiento contable automático para el 94% de transacciones coincidentes.' },
+      { paso: '04. Bandeja de Anomalías', desc: 'Solo el 6% de transacciones con discrepancia llega a revisión del contador jefe.' }
     ],
-    casoAnalogo: 'Caso RadioShack / Retail: Cierre contable acelerado de 12 d�as a 18 horas continuas.',
-    roiEstimado: 'Liberaci�n de 160 hrs hombre mensuales de contadores senior.',
+    casoAnalogo: 'Caso RadioShack / Retail: Cierre contable acelerado de 12 días a 18 horas continuas.',
+    roiEstimado: 'Liberación de 160 hrs hombre mensuales de contadores senior.',
     tiempoImplementacion: '6 semanas'
   },
   {
     id: 'checkout',
     label: 'Fuga en checkout (IMPATH)',
     prompt: 'Nuestra plataforma digital tiene una tasa de abandono del 68% en el paso 3 del flujo de pago.',
-    categoria: 'UX INTEL & CONVERSI�N TRANSACCIONAL',
-    impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricci�n cognitiva y errores de validaci�n.',
+    categoria: 'UX INTEL & CONVERSIÓN TRANSACCIONAL',
+    impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricción cognitiva y errores de validación.',
     arquitectura: [
-      { paso: '01. Detecci�n IMPATH', desc: 'Gemelos digitales simulan la navegaci�n y se�alan fricci�n en formulario de direcci�n y token.' },
-      { paso: '02. Redise�o UX', desc: 'Simplificaci�n a checkout de 1 solo paso con guardado seguro de credenciales.' },
-      { paso: '03. Agente de Rescate', desc: 'Agente de retenci�n detecta abandono en tiempo real y activa recordatorio contextual v�a WhatsApp.' },
+      { paso: '01. Detección IMPATH', desc: 'Gemelos digitales simulan la navegación y señalan fricción en formulario de dirección y token.' },
+      { paso: '02. Rediseño UX', desc: 'Simplificación a checkout de 1 solo paso con guardado seguro de credenciales.' },
+      { paso: '03. Agente de Rescate', desc: 'Agente de retención detecta abandono en tiempo real y activa recordatorio contextual vía WhatsApp.' },
       { paso: '04. Mixpanel Score', desc: 'Monitoreo de UX Health Score continuo para evitar regresiones de usabilidad.' }
     ],
-    casoAnalogo: 'Caso LifeMiles / Loyalty LATAM: Aumento del 28% en tasa de conversi�n en pasarelas m�viles.',
-    roiEstimado: 'Recuperaci�n de $3.8M MXN en facturaci�n retenida el primer a�o.',
+    casoAnalogo: 'Caso LifeMiles / Loyalty LATAM: Aumento del 28% en tasa de conversión en pasarelas móviles.',
+    roiEstimado: 'Recuperación de $3.8M MXN en facturación retenida el primer año.',
     tiempoImplementacion: '3 a 5 semanas'
   },
   {
     id: 'soporte',
-    label: 'Atenci�n 24/7 sin alucinaciones',
-    prompt: 'Queremos automatizar el soporte y atenci�n al cliente en WhatsApp sin que la IA invente datos falsos ni da�e la marca.',
+    label: 'Atención 24/7 sin alucinaciones',
+    prompt: 'Queremos automatizar el soporte y atención al cliente en WhatsApp sin que la IA invente datos falsos ni dañe la marca.',
     categoria: 'CUSTOMER EXPERIENCE & RAG BLINDADO',
-    impacto: 'P�rdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
+    impacto: 'Pérdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
     arquitectura: [
       { paso: '01. RAG Seguro', desc: 'El agente responde estrictamente basado en la base de conocimiento oficial de la empresa.' },
-      { paso: '02. Protocolo MCP', desc: 'El agente consulta el estado real de pedidos en base de datos sin inventar n�meros.' },
-      { paso: '03. Aislamiento', desc: 'Los datos de clientes nunca entrenan modelos p�blicos de terceros.' },
-      { paso: '04. Traspaso Fluido', desc: 'Detecci�n de sentimiento: si el cliente est� molesto, transfiere al ejecutivo con resumen previo.' }
+      { paso: '02. Protocolo MCP', desc: 'El agente consulta el estado real de pedidos en base de datos sin inventar números.' },
+      { paso: '03. Aislamiento', desc: 'Los datos de clientes nunca entrenan modelos públicos de terceros.' },
+      { paso: '04. Traspaso Fluido', desc: 'Detección de sentimiento: si el cliente está molesto, transfiere al ejecutivo con resumen previo.' }
     ],
-    casoAnalogo: 'Caso Avianca / DiDi: 78% de consultas de primer nivel resueltas de forma aut�noma con 4.8/5 en CSAT.',
-    roiEstimado: 'Reducci�n del 55% en costo operativo de atenci�n a clientes.',
+    casoAnalogo: 'Caso Avianca / DiDi: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
+    roiEstimado: 'Reducción del 55% en costo operativo de atención a clientes.',
     tiempoImplementacion: '4 semanas'
   }
 ];
@@ -205,18 +205,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
-            <a href="#prompt-hero" className="hover:text-blue-400 transition-colors">Diagn�stico en Vivo</a>
+            <a href="#prompt-hero" className="hover:text-blue-400 transition-colors">Diagnóstico en Vivo</a>
             <a href="#three-ways" className="hover:text-blue-400 transition-colors">3 Formas de Trabajar</a>
-            <a href="landings/index.html" onClick={() => window.dataLayer && window.dataLayer.push({'event': 'view_blueprint_directory'})} className="hover:text-blue-400 transition-colors flex items-center gap-1.5"><span className="text-emerald-400">�</span> Blueprint Library</a>
-            <a href="#case-studies" className="hover:text-blue-400 transition-colors">Casos de �xito</a>
+            <a href="landings/index.html" onClick={() => window.dataLayer && window.dataLayer.push({'event': 'view_blueprint_directory'})} className="hover:text-blue-400 transition-colors flex items-center gap-1.5"><span className="text-emerald-400">⚡</span> Blueprint Library</a>
+            <a href="#case-studies" className="hover:text-blue-400 transition-colors">Casos de Éxito</a>
           </div>
 
           <div className="flex items-center gap-3">
             <button 
               onClick={onOpenContact}
               className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm px-5 py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/25 flex items-center gap-2">
-              <span>Diagn�stico Operativo</span>
-              <span className="text-xs">�</span>
+              <span>Diagnóstico Operativo</span>
+              <span className="text-xs">→</span>
             </button>
           </div>
         </div>
@@ -248,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div className="bg-[#0A0E1A]/95 border border-white/[0.12] rounded-2xl p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15">
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="flex items-center gap-3 flex-1 px-3">
-            <span className="text-blue-400 text-lg">&</span>
+            <span className="text-blue-400 text-lg">✦</span>
             <input
               type="text"
               value={inputVal}
@@ -260,14 +260,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <button
             type="submit"
             className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0 shadow-lg shadow-blue-600/30">
-            <span>Ver Soluci�n T�cnica</span>
-            <span className="text-base font-bold">�</span>
+            <span>Ver Solución Técnica</span>
+            <span className="text-base font-bold">↗</span>
           </button>
         </form>
 
         {/* Preset Chips */}
         <div className="mt-3 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 px-2 text-left">
-          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">Casos T�picos:</span>
+          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">Casos Típicos:</span>
           {PRESETS.map((p) => (
             <button
               key={p.id}
@@ -278,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   ? 'bg-blue-600/30 text-blue-300 border border-blue-500/50'
                   : 'bg-[#131D35]/70 text-slate-400 hover:text-white border border-white/[0.05] hover:bg-[#1A2540]'
               }`}>
-              <span>�</span>
+              <span>◈</span>
               <span>{p.label}</span>
             </button>
           ))}
@@ -287,7 +287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mt-3 font-mono">
         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-        <span>Motor de diagn�stico en vivo � Basado en casos reales de BluePixel</span>
+        <span>Motor de diagnóstico en vivo · Basado en casos reales de BluePixel</span>
       </div>
     </div>
   );
@@ -330,12 +330,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 onClick={onOpenContact}
                 className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
                 <span>Solicitar Diagnóstico Operativo (Sin Costo)</span>
-                <span>� </span>
+                <span>â†’</span>
               </button>
               <a 
                 href="#three-ways"
                 className="bg-navy-800 hover:bg-navy-700 text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
-                Conoce las 3 Formas de Trabajar � 
+                Conoce las 3 Formas de Trabajar â†“
               </a>
             </div>
           </div>
@@ -349,7 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
-              Empresas l�deres en M�xico y Norteam�rica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span>
+              Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span>
             </h2>
           </div>
 
@@ -371,20 +371,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-5xl mx-auto px-6 mt-12 pt-10 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl md:text-4xl font-black text-white font-mono">10+</div>
-              <p className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">A�os de Ingenier�a</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Años de Ingeniería</p>
             </div>
             <div className="relative">
               <div className="text-3xl md:text-4xl font-black text-blue-400 font-mono">#1</div>
-              <p className="text-xs text-slate-200 font-bold uppercase tracking-wider font-mono mt-1">Firma UX en M�xico</p>
+              <p className="text-xs text-slate-200 font-bold uppercase tracking-wider font-mono mt-1">Firma UX en México</p>
               <div className="flex items-center justify-center gap-1 mt-0.5">
                 <span className="text-[10px] font-mono text-blue-400 font-semibold">DesignRush</span>
-                <span className="text-slate-600 text-[10px]">�</span>
-                <span className="text-[10px] font-mono text-emerald-400 font-bold">&gt;95% Adopci�n</span>
+                <span className="text-slate-600 text-[10px]">·</span>
+                <span className="text-[10px] font-mono text-emerald-400 font-bold">&gt;95% Adopción</span>
               </div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-black text-emerald-400 font-mono">200+</div>
-              <p className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Sistemas en Producci�n</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Sistemas en Producción</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-black text-purple-400 font-mono">99.9%</div>
@@ -395,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           {/* Micro-callout: The UX Moat explained to CTOs */}
           <div className="max-w-3xl mx-auto mt-8 px-4 text-center">
             <p className="text-xs font-mono text-slate-400 bg-navy-850/80 py-2 px-4 rounded-full border border-white/[0.06] inline-flex items-center gap-2">
-              <span className="text-blue-400 font-bold">& El Secreto de Adopci�n:</span>
+              <span className="text-blue-400 font-bold">✦ El Secreto de Adopción:</span>
               <span>El 70% del software corporativo fracasa por rechazo del personal. Nosotros fusionamos Deep Tech con UX #1 para garantizar uso real.</span>
             </p>
           </div>
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {
           id: '01',
           title: 'Ingesta Multicanal',
-          desc: 'La solicitud de cotizaci�n llega por correo con contexto disperso y PDFs adjuntos.',
+          desc: 'La solicitud de cotización llega por correo con contexto disperso y PDFs adjuntos.',
           logs: [
             '[00:00] task received - quote_request_#992',
             '[00:01] parse - extract text from attached PDF',
@@ -433,7 +433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {
           id: '03',
           title: 'Verify',
-          desc: 'Se cruzan los datos generados contra las reglas de negocio y m�rgenes operativos.',
+          desc: 'Se cruzan los datos generados contra las reglas de negocio y márgenes operativos.',
           logs: [
             '[00:11] verify - cross-check pricing against min_margin_policy',
             '[00:14] verify - policy passed (margin at 22%)',
@@ -443,7 +443,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {
           id: '04',
           title: 'Gate & Output',
-          desc: 'Se genera el PDF formal. Si hay excepciones, se rutea a un humano para aprobaci�n.',
+          desc: 'Se genera el PDF formal. Si hay excepciones, se rutea a un humano para aprobación.',
           logs: [
             '[00:17] tool_call - generate_pdf (quote_#992)',
             '[00:20] routing - standard parameters met -> dispatch to client',
@@ -495,10 +495,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 UNDER THE HOOD
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
-                Lo que hace un agente en producci�n<span className="text-red-500">.</span>
+                Lo que hace un agente en producción<span className="text-red-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
-                Extrae, verifica, ejecuta herramientas y enruta casos l�mite a un humano cuando las pol�ticas lo requieren. Cada paso queda registrado en la bit�cora de auditor�a.
+                Extrae, verifica, ejecuta herramientas y enruta casos límite a un humano cuando las políticas lo requieren. Cada paso queda registrado en la bitácora de auditoría.
               </p>
             </div>
 
@@ -558,7 +558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
                     </div>
                     <div className="text-[10px] font-mono text-slate-500 flex items-center gap-4">
-                      <span>agent � quote-generator</span>
+                      <span>agent · quote-generator</span>
                       <div className="flex items-center gap-1.5 border border-white/[0.05] bg-white/[0.02] px-2 py-0.5 rounded-full">
                         <span>PRODUCTION SHAPE</span>
                         <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
@@ -595,7 +595,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 {/* Metrics Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-navy-900 border border-white/[0.06] rounded-xl p-5 flex flex-col gap-2">
-                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">TIEMPO DE RESOLUCI�N</span>
+                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">TIEMPO DE RESOLUCIÓN</span>
                     <span className="text-2xl font-black text-white">21s</span>
                   </div>
                   <div className="bg-navy-900 border border-white/[0.06] rounded-xl p-5 flex flex-col gap-2">
@@ -609,7 +609,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <p className="text-[11px] text-slate-500 mt-2 px-2">
-                  Walkthrough ilustrativo de un agente cotizador  el registro de bit�cora est� basado en telemetr�a real (anonimizada) de un sistema de cotizaci�n B2B integrado con SAP y Salesforce.
+                  Walkthrough ilustrativo de un agente cotizador — el registro de bitácora está basado en telemetría real (anonimizada) de un sistema de cotización B2B integrado con SAP y Salesforce.
                 </p>
               </div>
 
@@ -619,20 +619,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       );
     };
 
-    // Workflow Teardown: Antes (Legacy Manual) vs. Despu�s (Agentic BluePixel)
+    // Workflow Teardown: Antes (Legacy Manual) vs. Después (Agentic BluePixel)
     const WorkflowTeardown = () => {
       return (
         <section className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06] relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-red-400 font-bold">
-                DIAGN�STICO OPERATIVO FORENSE
+                DIAGNÓSTICO OPERATIVO FORENSE
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mt-4 mb-5">
                 El abismo entre un proceso manual y una capa agentizada<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
-                La mayor�a de las empresas pierden hasta 40% de productividad no por falta de personal, sino por traspasos manuales entre correos, hojas de c�lculo y sistemas desconectados.
+                La mayoría de las empresas pierden hasta 40% de productividad no por falta de personal, sino por traspasos manuales entre correos, hojas de cálculo y sistemas desconectados.
               </p>
             </div>
 
@@ -656,15 +656,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div className="space-y-4 text-xs text-slate-300">
                   <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
                     <span className="font-mono text-red-400/80 font-bold block mb-1.5">01. Solicitud Dispersa</span>
-                    <p className="text-slate-400 text-sm">Petici�n recibida por correo, WhatsApp personal o tel�fono sin estandarizaci�n.</p>
+                    <p className="text-slate-400 text-sm">Petición recibida por correo, WhatsApp personal o teléfono sin estandarización.</p>
                   </div>
                   <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
                     <span className="font-mono text-red-400/80 font-bold block mb-1.5">02. Captura en Excel</span>
-                    <p className="text-slate-400 text-sm">El ejecutivo teclea datos a mano; f�rmulas desactualizadas causan errores de margen.</p>
+                    <p className="text-slate-400 text-sm">El ejecutivo teclea datos a mano; fórmulas desactualizadas causan errores de margen.</p>
                   </div>
                   <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
-                    <span className="font-mono text-red-400/80 font-bold block mb-1.5">03. Validaci�n Telef�nica</span>
-                    <p className="text-slate-400 text-sm">Llamadas internas a almac�n o finanzas para verificar inventario y cartera vencida.</p>
+                    <span className="font-mono text-red-400/80 font-bold block mb-1.5">03. Validación Telefónica</span>
+                    <p className="text-slate-400 text-sm">Llamadas internas a almacén o finanzas para verificar inventario y cartera vencida.</p>
                   </div>
                 </div>
 
@@ -674,7 +674,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span className="text-lg font-bold text-slate-300">12-18%</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-1">P�rdida Anual Est.</span>
+                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-1">Pérdida Anual Est.</span>
                     <span className="text-lg font-bold text-red-400">$1.2M MXN</span>
                   </div>
                 </div>
@@ -687,29 +687,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.08] relative z-10">
                   <span className="text-xs font-mono font-bold uppercase text-emerald-400 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
-                    <span>Operaci�n Agentizada BluePixel</span>
+                    <span>Operación Agentizada BluePixel</span>
                   </span>
                   <span className="text-xs font-mono text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 font-bold">90 segundos</span>
                 </div>
 
                 <div className="space-y-4 text-xs text-slate-200 relative z-10">
                   <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
-                    <span className="font-mono text-blue-400 font-bold block mb-1.5">01. Ingesta Multi-Canal & Extracci�n</span>
-                    <p className="text-slate-300 text-sm">Agente estructurador procesa documentos, PDFs o mensajes con precisi�n del 99.8%.</p>
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">01. Ingesta Multi-Canal & Extracción</span>
+                    <p className="text-slate-300 text-sm">Agente estructurador procesa documentos, PDFs o mensajes con precisión del 99.8%.</p>
                   </div>
                   <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
-                    <span className="font-mono text-blue-400 font-bold block mb-1.5">02. Consulta Determin�stica MCP</span>
-                    <p className="text-slate-300 text-sm">El servidor MCP consulta stock real y reglas de cr�dito en el ERP (SAP/Salesforce).</p>
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">02. Consulta Determinística MCP</span>
+                    <p className="text-slate-300 text-sm">El servidor MCP consulta stock real y reglas de crédito en el ERP (SAP/Salesforce).</p>
                   </div>
                   <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
-                    <span className="font-mono text-blue-400 font-bold block mb-1.5">03. Generaci�n & Validaci�n Instant�nea</span>
-                    <p className="text-slate-300 text-sm">Cotizaci�n formal en PDF enviada al cliente con validaci�n Human-In-The-Loop.</p>
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">03. Generación & Validación Instantánea</span>
+                    <p className="text-slate-300 text-sm">Cotización formal en PDF enviada al cliente con validación Human-In-The-Loop.</p>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-blue-500/10 flex items-center justify-between relative z-10">
                   <div>
-                    <span className="text-[10px] font-mono text-blue-400/70 uppercase tracking-widest block mb-1">Precisi�n Operativa</span>
+                    <span className="text-[10px] font-mono text-blue-400/70 uppercase tracking-widest block mb-1">Precisión Operativa</span>
                     <span className="text-lg font-bold text-white">99.9%</span>
                   </div>
                   <div className="text-right">
@@ -731,10 +731,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
-                Nuestro ecosistema tecnol�gico<span className="text-blue-500">.</span>
+                Nuestro ecosistema tecnológico<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
-                Cuatro pilares de ingenier�a para equipos que mueven agentes de lenguajes (LLM) de pruebas piloto a entornos de producci�n corporativa.
+                Cuatro pilares de ingeniería para equipos que mueven agentes de lenguajes (LLM) de pruebas piloto a entornos de producción corporativa.
               </p>
             </div>
 
@@ -752,7 +752,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </div>
                   <h3 className="text-3xl font-black text-white mb-4 leading-tight">Model Context Protocol (MCP)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                    El est�ndar abierto que conecta de forma determin�stica los LLMs con tus or�genes de datos locales, ERPs y APIs corporativas. Sin integraciones fr�giles.
+                    El estándar abierto que conecta de forma determinística los LLMs con tus orígenes de datos locales, ERPs y APIs corporativas. Sin integraciones frágiles.
                   </p>
                   
                   <div className="mt-auto flex flex-wrap gap-2">
@@ -771,9 +771,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">FRAMEWORKS AGENTICOS</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3">Orquestaci�n de Enjambres</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Orquestación de Enjambres</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    Sistemas multi-agente construidos con rigor de ingenier�a de software. Tipado estricto y flujos dirigidos.
+                    Sistemas multi-agente construidos con rigor de ingeniería de software. Tipado estricto y flujos dirigidos.
                   </p>
                   <div className="flex items-center gap-4 mt-6 text-slate-500">
                     <span className="text-sm font-semibold text-slate-300">Pydantic AI</span>
@@ -793,7 +793,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-white mb-3">RAG & Bases Vectoriales</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    Pipelines de recuperaci�n avanzada que evitan alucinaciones anclando las respuestas a tu data.
+                    Pipelines de recuperación avanzada que evitan alucinaciones anclando las respuestas a tu data.
                   </p>
                   <div className="flex items-center gap-4 mt-6">
                     <span className="text-xs font-mono text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Pinecone</span>
@@ -814,7 +814,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">LLMOps & Serverless Architecture</h3>
                   <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
-                    Agentes que corren en producci�n exigen infraestructura de grado empresarial. Monitoreo de latencia, tracking de costos por token, despliegues CI/CD y contenedores escalables sin fricci�n.
+                    Agentes que corren en producción exigen infraestructura de grado empresarial. Monitoreo de latencia, tracking de costos por token, despliegues CI/CD y contenedores escalables sin fricción.
                   </p>
                 </div>
               </div>
@@ -843,10 +843,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
               <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
-                El stack detr�s de la ingenier�a<span className="text-blue-500">.</span>
+                El stack detrás de la ingeniería<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
-                Arquitectura de grado empresarial impulsada por los proveedores l�deres de IA, bases de datos vectoriales y cloud computing.
+                Arquitectura de grado empresarial impulsada por los proveedores líderes de IA, bases de datos vectoriales y cloud computing.
               </p>
             </div>
 
@@ -855,7 +855,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {/* Left Dark Card */}
               <div className="lg:col-span-5 bg-navy-900 border border-white/[0.06] rounded-3xl p-10 flex flex-col justify-between min-h-[300px]">
                 <p className="text-white font-semibold text-lg leading-relaxed max-w-sm">
-                  Desplegamos infraestructura sobre ecosistemas probados en producci�n.
+                  Desplegamos infraestructura sobre ecosistemas probados en producción.
                 </p>
                 
                 <div className="mt-12 flex items-center gap-4">
@@ -864,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white">Ecosistema Certificado</p>
-                    <p className="text-xs text-slate-400">Integraci�n nativa v�a MCP</p>
+                    <p className="text-xs text-slate-400">Integración nativa vía MCP</p>
                   </div>
                 </div>
               </div>
@@ -903,13 +903,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       );
     };
 
-    // Calculadora Interactiva de ROI de Automatizaci�n
+    // Calculadora Interactiva de ROI de Automatización
     const ROICalculator = ({ onOpenContact }) => {
       const [teamSize, setTeamSize] = useState(6);
       const [weeklyHours, setWeeklyHours] = useState(14);
       const [hourlyRate, setHourlyRate] = useState(380); // MXN/hr
 
-      // C�lculos matem�ticos
+      // Cálculos matemáticos
       const annualWeeks = 48;
       const totalManualHoursYear = teamSize * weeklyHours * annualWeeks;
       const totalManualCostYear = totalManualHoursYear * hourlyRate;
@@ -926,15 +926,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold flex items-center justify-center gap-2">
-                <span>&</span>
+                <span>✦</span>
                 <span>SIMULADOR DE IMPACTO FINANCIERO</span>
-                <span>&</span>
+                <span>✦</span>
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
-                �Cu�nto dinero pierde tu empresa en tareas manuales?
+                ¿Cuánto dinero pierde tu empresa en tareas manuales?
               </h2>
               <p className="text-slate-400 text-sm md:text-base">
-                Calcula el retorno de inversi�n y las horas de alta fricci�n que un enjambre de agentes y automatizaci�n eliminan en tu organizaci�n.
+                Calcula el retorno de inversión y las horas de alta fricción que un enjambre de agentes y automatización eliminan en tu organización.
               </p>
             </div>
 
@@ -966,7 +966,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
-                      Horas semanales dedicadas a hojas de c�lculo por persona
+                      Horas semanales dedicadas a hojas de cálculo por persona
                     </label>
                     <span className="text-lg font-black text-indigo-400 font-mono">{weeklyHours} hrs / sem</span>
                   </div>
@@ -979,16 +979,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     className="w-full accent-indigo-500 cursor-pointer h-2 bg-navy-950 rounded-lg"
                   />
                   <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
-                    <span>4 hrs (b�sico)</span>
+                    <span>4 hrs (básico)</span>
                     <span>18 hrs (medio)</span>
-                    <span>35 hrs (cr�tico)</span>
+                    <span>35 hrs (crítico)</span>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
-                      Costo promedio por hora hombre (n�mina con cargas)
+                      Costo promedio por hora hombre (nómina con cargas)
                     </label>
                     <span className="text-lg font-black text-slate-200 font-mono">${hourlyRate} MXN/hr</span>
                   </div>
@@ -1009,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div className="p-4 rounded-xl bg-navy-950 border border-white/[0.04] text-xs text-slate-400 leading-relaxed">
-                  <span className="text-blue-400 font-semibold">& Benchmark Real BluePixel:</span> En empresas con procesos de cotizaci�n, reconciliaci�n contable o validaci�n de documentos, el 82% de las tareas son completamente operables mediante agentes con servidores MCP y validaci�n humana por excepci�n.
+                  <span className="text-blue-400 font-semibold">✦ Benchmark Real BluePixel:</span> En empresas con procesos de cotización, reconciliación contable o validación de documentos, el 82% de las tareas son completamente operables mediante agentes con servidores MCP y validación humana por excepción.
                 </div>
               </div>
 
@@ -1024,24 +1024,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     Ahorro Financiero Anual Proyectado
                   </span>
                   <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight mb-1 font-mono">
-                    ${savingsYearMXN.toLocaleString()} <span className="text-sm font-semibold text-emerald-300/80">MXN / a�o</span>
+                    ${savingsYearMXN.toLocaleString()} <span className="text-sm font-semibold text-emerald-300/80">MXN / año</span>
                   </div>
                   <div className="text-xs font-mono text-slate-400 mb-6">
-                    H ${savingsYearUSD.toLocaleString()} USD anuales en ineficiencia de back-office eliminada.
+                    ≈ ${savingsYearUSD.toLocaleString()} USD anuales en ineficiencia de back-office eliminada.
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.08]">
                     <div>
                       <span className="text-[11px] font-mono text-slate-400 block mb-1">Horas Hombre Liberadas</span>
                       <div className="text-2xl font-black text-white font-mono">
-                        {hoursLiberatedYear.toLocaleString()} <span className="text-xs font-normal text-slate-400">hrs/a�o</span>
+                        {hoursLiberatedYear.toLocaleString()} <span className="text-xs font-normal text-slate-400">hrs/año</span>
                       </div>
                       <p className="text-[10px] text-slate-400 mt-1">Reorientadas a estrategia comercial y ventas.</p>
                     </div>
                     <div>
                       <span className="text-[11px] font-mono text-slate-400 block mb-1">Tiempo de Payback</span>
                       <div className="text-2xl font-black text-blue-400 font-mono">
-                        ~60 a 90 <span className="text-xs font-normal text-slate-400">d�as</span>
+                        ~60 a 90 <span className="text-xs font-normal text-slate-400">días</span>
                       </div>
                       <p className="text-[10px] text-slate-400 mt-1">Retorno total de la fase BUILD en el primer trimestre.</p>
                     </div>
@@ -1049,10 +1049,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                   <div className="mt-6 pt-6 border-t border-white/[0.08]">
                     <button
-                      onClick={() => onOpenContact && onOpenContact(`Calculadora ROI: ${teamSize} colaboradores, ${weeklyHours} hrs/sem, ahorro estimado $${savingsYearMXN.toLocaleString()} MXN/a�o`)}
+                      onClick={() => onOpenContact && onOpenContact(`Calculadora ROI: ${teamSize} colaboradores, ${weeklyHours} hrs/sem, ahorro estimado $${savingsYearMXN.toLocaleString()} MXN/año`)}
                       className="w-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-black text-sm py-4 px-6 rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
-                      <span>Desbloquear este Retorno: Solicitar Auditor�a Operativa</span>
-                      <span className="font-bold text-base">�</span>
+                      <span>Desbloquear este Retorno: Solicitar Auditoría Operativa</span>
+                      <span className="font-bold text-base">→</span>
                     </button>
                   </div>
                 </div>
@@ -1072,20 +1072,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-            C�MO TRABAJAR CON NOSOTROS
+            CÓMO TRABAJAR CON NOSOTROS
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
             Tres formas de colaborar con BluePixel.
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Dos paquetes de entrada para equipos que buscan certidumbre t�cnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producci�n.
+            Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
           </p>
         </div>
 
         {/* Grid de 3 Tarjetas */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
-          {/* CARD 01: Transformation Advisory / Diagn�stico */}
+          {/* CARD 01: Transformation Advisory / Diagnóstico */}
           <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -1095,21 +1095,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Diagn�stico & Auditor�a FutureProof</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Te mostramos exactamente el camino e identificamos qu� automatizar. Tu equipo adquiere claridad y m�sculo antes de invertir en c�digo.
+                Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  'Mapeo de procesos y diagn�stico de operaciones',
-                  'Detecci�n de fricci�n con gemelos digitales (IMPATH")',
-                  'Matriz de priorizaci�n de agentes IA y c�lculo de ROI',
-                  'Blueprint de arquitectura t�cnica y gobernanza de datos',
-                  'Reporte ejecutivo con costo de inacci�n cuantificado en pesos'
+                  'Mapeo de procesos y diagnóstico de operaciones',
+                  'Detección de fricción con gemelos digitales (IMPATH™)',
+                  'Matriz de priorización de agentes IA y cálculo de ROI',
+                  'Blueprint de arquitectura técnica y gobernanza de datos',
+                  'Reporte ejecutivo con costo de inacción cuantificado en pesos'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                    <span className="text-blue-400 mt-0.5">�</span>
+                    <span className="text-blue-400 mt-0.5">◈</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -1119,10 +1119,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
               <button 
-                onClick={() => onSelectPackage && onSelectPackage('Diagn�stico & Auditor�a (01)')}
+                onClick={() => onSelectPackage && onSelectPackage('Diagnóstico & Auditoría (01)')}
                 className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
-                <span>Solicitar Diagn�stico</span>
-                <span>�</span>
+                <span>Solicitar Diagnóstico</span>
+                <span>↗</span>
               </button>
             </div>
           </div>
@@ -1137,21 +1137,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Ingenier�a de Agentes & MCP</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Ya sabes qu� flujo necesitas construir. Nosotros dise�amos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+                Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  'Dise�o de arquitectura agentica con protocolos MCP',
-                  'Flujos de trabajo aut�nomos sobre datos reales con RAG',
-                  'Integraci�n con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Ingenier�a, pruebas de estr�s y despliegue cloud en producci�n',
+                  'Diseño de arquitectura agentica con protocolos MCP',
+                  'Flujos de trabajo autónomos sobre datos reales con RAG',
+                  'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
+                  'Ingeniería, pruebas de estrés y despliegue cloud en producción',
                   'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                    <span className="text-indigo-400 mt-0.5">�</span>
+                    <span className="text-indigo-400 mt-0.5">◈</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -1161,10 +1161,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
               <button 
-                onClick={() => onSelectPackage && onSelectPackage('Ingenier�a de Agentes (02)')}
+                onClick={() => onSelectPackage && onSelectPackage('Ingeniería de Agentes (02)')}
                 className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
-                <span>Explorar Ingenier�a</span>
-                <span>�</span>
+                <span>Explorar Ingeniería</span>
+                <span>↗</span>
               </button>
             </div>
           </div>
@@ -1182,21 +1182,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Transformaci�n: BUILD + EVOLVE</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                De cero a una capa agentizada y plataforma digital de alta disponibilidad en producci�n. Estrategia, ingenier�a y evoluci�n continua end-to-end.
+                De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
                   'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
-                  'Todo lo incluido en los paquetes 01 (Diagn�stico) y 02 (Ingenier�a)',
-                  'Construcci�n completa de plataforma en 90 d�as (BUILD)',
+                  'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                  'Construcción completa de plataforma en 90 días (BUILD)',
                   'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
-                  'Hand-off estructurado: tu equipo es due�o absoluto de lo que opera'
+                  'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
-                    <span className="text-emerald-400 font-bold mt-0.5"></span>
+                    <span className="text-emerald-400 font-bold mt-0.5">✓</span>
                     <span className="font-medium">{item}</span>
                   </li>
                 ))}
@@ -1206,10 +1206,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
               <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
               <button 
-                onClick={() => onSelectPackage && onSelectPackage('Transformaci�n Integral (01+02)')}
+                onClick={() => onSelectPackage && onSelectPackage('Transformación Integral (01+02)')}
                 className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
-                <span>Agendar Sesi�n</span>
-                <span>�</span>
+                <span>Agendar Sesión</span>
+                <span>→</span>
               </button>
             </div>
           </div>
@@ -1222,43 +1222,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 };
 
 
-    // Casos de �xito con M�tricas Financieras (Case Studies)
+    // Casos de Éxito con Métricas Financieras (Case Studies)
     const CaseStudiesSection = ({ onOpenCase }) => {
       const cases = [
         {
           id: 'bimbo',
           client: 'Grupo Bimbo',
           industry: 'Consumo Masivo / Global',
-          title: 'Estandarizaci�n anal�tica y aplicaciones operativas para miles de colaboradores',
+          title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
           kpi: '+40% Productividad',
-          desc: 'Dise�o y desarrollo de plataformas de anal�tica de datos e interfaces internas para estandarizar la toma de decisiones directivas en m�ltiples regiones.',
+          desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
           tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software']
         },
         {
           id: 'radioshack',
           client: 'RadioShack',
           industry: 'Retail & E-commerce',
-          title: 'Reinvenci�n transaccional de comercio digital y reducci�n de fricci�n de compra',
-          kpi: '-60% Fricci�n de Pago',
-          desc: 'Redise�o integral de la plataforma de ventas y arquitectura transaccional para optimizar conversi�n, reduciendo fricci�n cognitiva en carritos de compra.',
+          title: 'Reinvención transaccional de comercio digital y reducción de fricción de compra',
+          kpi: '-60% Fricción de Pago',
+          desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
           tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign']
         },
         {
           id: 'lifemiles',
           client: 'LifeMiles / Avianca',
           industry: 'Travel & Loyalty LATAM',
-          title: 'Optimizaci�n de experiencia en uno de los mayores programas de lealtad de LATAM',
-          kpi: '+28% Retenci�n Digital',
-          desc: 'Redise�o de flujos cr�ticos de usuario y pasarelas de redenci�n para reducir abandonos y maximizar retenci�n de clientes en entornos m�viles.',
+          title: 'Optimización de experiencia en uno de los mayores programas de lealtad de LATAM',
+          kpi: '+28% Retención Digital',
+          desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
           tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First']
         },
         {
           id: 'frmedical',
           client: 'FR Medical Diagnostics',
-          industry: 'HealthTech & Log�stica Quir�rgica',
-          title: 'Enjambre de agentes IA para cotizaci�n y despacho en tiempo real',
+          industry: 'HealthTech & Logística Quirúrgica',
+          title: 'Enjambre de agentes IA para cotización y despacho en tiempo real',
           kpi: 'De 48 hrs a 3 minutos',
-          desc: 'Implementaci�n de servidores MCP y agentes aut�nomos para calcular cotizaciones m�dicas complejas y validar inventario hospitalario 24/7.',
+          desc: 'Implementación de servidores MCP y agentes autónomos para calcular cotizaciones médicas complejas y validar inventario hospitalario 24/7.',
           tags: ['Agentes IA', 'MCP Protocol', 'Cloud Serverless']
         }
       ];
@@ -1268,13 +1268,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
-                CASOS DE ��XITO AUDITADOS
+                CASOS DE ÉXITO AUDITADOS
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
-                Ingenier�a que transforma balances financieros.
+                Ingeniería que transforma balances financieros.
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
-                No mostramos maquetas de dise�o; documentamos impacto cuantificado en facturaci�n, horas liberadas y adopci�n de usuarios.
+                No mostramos maquetas de diseño; documentamos impacto cuantificado en facturación, horas liberadas y adopción de usuarios.
               </p>
             </div>
 
@@ -1302,7 +1302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       onClick={() => onOpenCase(c.client)}
                       className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors">
                       <span>Ver Caso de Estudio</span>
-                      <span>�</span>
+                      <span>→</span>
                     </button>
                   </div>
                 </div>
@@ -1312,7 +1312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
       );
     };
-    // Liderazgo T�cnico (Trust B2B)
+    // Liderazgo Técnico (Trust B2B)
     const EngineeringLeadership = () => (
       <section className="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/[0.06] relative overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-blue-600/5 to-transparent pointer-events-none" />
@@ -1323,10 +1323,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 ENGINEERING LEADERSHIP
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-                No vendemos "recursos". Asignamos Arquitectos a tu operaci�n.
+                No vendemos "recursos". Asignamos Arquitectos a tu operación.
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                El 90% de las agencias de software escalan contratando juniors y cobr�ndolos a precio de senior. En BluePixel, cada proyecto es liderado de principio a fin por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. T� firmas el cheque con humanos responsables del ROI, no con "vendedores".
+                El 90% de las agencias de software escalan contratando juniors y cobrándolos a precio de senior. En BluePixel, cada proyecto es liderado de principio a fin por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. Tú firmas el cheque con humanos responsables del ROI, no con "vendedores".
               </p>
               
               <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/[0.06]">
@@ -1352,13 +1352,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             
             <div className="flex-1 bg-navy-950 p-8 rounded-3xl border border-blue-500/20 shadow-2xl relative">
-              <div className="absolute -top-4 -left-4 text-4xl">=�</div>
+              <div className="absolute -top-4 -left-4 text-4xl">💬</div>
               <p className="text-white text-lg font-medium italic leading-relaxed mb-6">
-                "Nuestra promesa a los CTOs es simple: Si al mes 2 el agente no ha liberado horas de tu equipo, fallamos. Por eso no vendemos c�digo a granel; diagnosticamos y operamos."
+                "Nuestra promesa a los CTOs es simple: Si al mes 2 el agente no ha liberado horas de tu equipo, fallamos. Por eso no vendemos código a granel; diagnosticamos y operamos."
               </p>
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold">Liderazgo T�cnico Directo</span>
+                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold">Liderazgo Técnico Directo</span>
               </div>
             </div>
           </div>
@@ -1366,23 +1366,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </section>
     );
 
-    // L�nea de Tiempo de Transparencia B2B (��Qu� pasa despu�s de contactar?)
+    // Línea de Tiempo de Transparencia B2B (¿Qué pasa después de contactar?)
     const PostContactSLA = ({ onOpenContact }) => {
       const steps = [
         {
           time: 'Minuto 0',
           title: 'NDA Bilateral Inmediato',
-          desc: 'Recibes acuse autom�tico con nuestro Acuerdo de Confidencialidad firmado digitalmente para proteger tus datos y procesos de negocio.'
+          desc: 'Recibes acuse automático con nuestro Acuerdo de Confidencialidad firmado digitalmente para proteger tus datos y procesos de negocio.'
         },
         {
           time: '24 Horas',
-          title: 'Auditor�a Forense de Viabilidad',
-          desc: 'Un Lead Architect (no un vendedor novato) analiza tu flujo operativo y eval�a la viabilidad t�cnica contra nuestros casos previos.'
+          title: 'Auditoría Forense de Viabilidad',
+          desc: 'Un Lead Architect (no un vendedor novato) analiza tu flujo operativo y evalúa la viabilidad técnica contra nuestros casos previos.'
         },
         {
           time: '48 Horas',
-          title: 'Sesi�n T�cnica de 30 min & Blueprint',
-          desc: 'T� entregamos una hip�tesis de arquitectura preliminar, c�lculo estimado de ROI y el alcance exacto del Diagn�stico Operativo.'
+          title: 'Sesión Técnica de 30 min & Blueprint',
+          desc: 'Te entregamos una hipótesis de arquitectura preliminar, cálculo estimado de ROI y el alcance exacto del Diagnóstico Operativo.'
         }
       ];
 
@@ -1394,10 +1394,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 COMPROMISO DE SERVICIO & TRANSPARENCIA
               </span>
               <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight mt-2 mb-3">
-                ��Qu� sucede exactamente cuando nos contactas?
+                ¿Qué sucede exactamente cuando nos contactas?
               </h2>
               <p className="text-slate-400 text-xs md:text-sm">
-                Cero ventas agresivas. Cero llamadas con personas que no entienden de ingenier�a.
+                Cero ventas agresivas. Cero llamadas con personas que no entienden de ingeniería.
               </p>
             </div>
 
@@ -1462,13 +1462,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {/* Header */}
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4 block">
-                DIAGN�STICO T�CNICO SIN COSTO
+                DIAGNÓSTICO TÉCNICO SIN COSTO
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
                 Completa el formulario<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                �Prefieres que revisemos tu operaci�n? Llena los 3 pasos r�pidos y un estratega t�cnico de BluePixel te entregar� un diagn�stico de viabilidad y arquitectura en menos de 24 horas.
+                ¿Prefieres que revisemos tu operación? Llena los 3 pasos rápidos y un estratega técnico de BluePixel te entregará un diagnóstico de viabilidad y arquitectura en menos de 24 horas.
               </p>
             </div>
 
@@ -1482,9 +1482,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div className="mb-12">
                   {/* Step labels */}
                   <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-4 px-2">
-                    <span className={`transition-colors duration-500 ${step >= 1 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>01. T�</span>
+                    <span className={`transition-colors duration-500 ${step >= 1 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>01. Tú</span>
                     <span className={`transition-colors duration-500 ${step >= 2 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>02. Empresa</span>
-                    <span className={`transition-colors duration-500 ${step === 3 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>03. Fricci�n</span>
+                    <span className={`transition-colors duration-500 ${step === 3 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>03. Fricción</span>
                   </div>
                   {/* Segmented visual line */}
                   <div className="flex gap-2 w-full h-1.5 rounded-full overflow-hidden">
@@ -1501,7 +1501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                         <div>
                           <h3 className="text-2xl font-black text-white mb-2">Tus datos de contacto</h3>
-                          <p className="text-slate-400 text-sm">Para saber con qui�n nos comunicamos directamente.</p>
+                          <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
                         </div>
 
                         <div className="space-y-6">
@@ -1514,7 +1514,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                               type="text"
                               value={formData.fullName}
                               onChange={(e) => handleChange('fullName', e.target.value)}
-                              placeholder="Ej. Roberto Fabi�n Flores Ram�rez"
+                              placeholder="Ej. Roberto Fabián Flores Ramírez"
                               className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
                             />
                           </div>
@@ -1539,7 +1539,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             type="submit"
                             className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
                             <span>Continuar</span>
-                            <span className="transform group-hover:translate-x-1 transition-transform">�</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                           </button>
                         </div>
                       </form>
@@ -1549,7 +1549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     {step === 2 && (
                       <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                         <div>
-                          <h3 className="text-2xl font-black text-white mb-2">Datos de tu organizaci�n</h3>
+                          <h3 className="text-2xl font-black text-white mb-2">Datos de tu organización</h3>
                           <p className="text-slate-400 text-sm">Para contextualizar la escala y sistemas de tu empresa.</p>
                         </div>
 
@@ -1584,7 +1584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div>
                               <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
-                                TEL�FONO (OPCIONAL)
+                                TELÉFONO (OPCIONAL)
                               </label>
                               <input
                                 type="tel"
@@ -1602,13 +1602,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             type="button"
                             onClick={handleBack}
                             className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
-                            Atr�s
+                            Atrás
                           </button>
                           <button
                             type="submit"
                             className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
                             <span>Continuar</span>
-                            <span className="transform group-hover:translate-x-1 transition-transform">�</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                           </button>
                         </div>
                       </form>
@@ -1618,21 +1618,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     {step === 3 && (
                       <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
                         <div>
-                          <h3 className="text-2xl font-black text-white mb-2">Cuello de botella t�cnico</h3>
-                          <p className="text-slate-400 text-sm">Describe la fricci�n que deseas resolver o el sistema que deseas construir.</p>
+                          <h3 className="text-2xl font-black text-white mb-2">Cuello de botella técnico</h3>
+                          <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver o el sistema que deseas construir.</p>
                         </div>
 
                         <div className="space-y-6">
                           <div>
                             <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
-                              �QU� FLUJO DE TRABAJO BUSCAS AGENTIZAR?
+                              ¿QUÉ FLUJO DE TRABAJO BUSCAS AGENTIZAR?
                             </label>
                             <textarea
                               required
                               rows="5"
                               value={formData.workflow}
                               onChange={(e) => handleChange('workflow', e.target.value)}
-                              placeholder="Ej. Queremos automatizar la generaci�n de cotizaciones que hoy se hacen en Excel y tardan 48 horas..."
+                              placeholder="Ej. Queremos automatizar la generación de cotizaciones que hoy se hacen en Excel y tardan 48 horas..."
                               className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl p-5 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner resize-none"
                             />
                           </div>
@@ -1646,7 +1646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                   onChange={(e) => handleChange('consentData', e.target.checked)}
                                   className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
                                 />
-                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none"></span>
+                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
                               </div>
                               <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
                                 Acepto que BluePixel almacene y procese mis datos personales para responder a esta solicitud, bajo estricto apego al <a href="#" className="underline text-blue-400 hover:text-blue-300">Aviso de Privacidad</a>.
@@ -1661,10 +1661,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                   onChange={(e) => handleChange('consentNewsletter', e.target.checked)}
                                   className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
                                 />
-                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none"></span>
+                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
                               </div>
                               <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
-                                Deseo recibir de forma espor�dica an�lisis t�cnicos y casos de estudio sobre ingenier�a de agentes IA en producci�n.
+                                Deseo recibir de forma esporádica análisis técnicos y casos de estudio sobre ingeniería de agentes IA en producción.
                               </span>
                             </label>
                           </div>
@@ -1675,13 +1675,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             type="button"
                             onClick={handleBack}
                             className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
-                            Atr�s
+                            Atrás
                           </button>
                           <button
                             type="submit"
                             className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] flex items-center justify-center gap-3 group">
-                            <span>Enviar Diagn�stico</span>
-                            <span className="transform group-hover:translate-x-1 transition-transform">�</span>
+                            <span>Enviar Diagnóstico</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                           </button>
                         </div>
                       </form>
@@ -1691,11 +1691,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   /* SUCCESS STATE */
                   <div className="text-center py-16 animate-fadeIn">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500/20 to-emerald-400/5 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto mb-6 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
-                      
+                      ✓
                     </div>
-                    <h4 className="text-3xl font-black text-white mb-4">Diagn�stico Recibido</h4>
+                    <h4 className="text-3xl font-black text-white mb-4">Diagnóstico Recibido</h4>
                     <p className="text-slate-300 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-10">
-                      Gracias <strong className="text-white">{formData.fullName || 'por escribirnos'}</strong>. Un arquitecto de software de BluePixel revisar� la viabilidad para <strong className="text-blue-300">{formData.company || 'tu empresa'}</strong> y te contactar� en menos de 24 horas h�biles.
+                      Gracias <strong className="text-white">{formData.fullName || 'por escribirnos'}</strong>. Un arquitecto de software de BluePixel revisará la viabilidad para <strong className="text-blue-300">{formData.company || 'tu empresa'}</strong> y te contactará en menos de 24 horas hábiles.
                     </p>
                     <button 
                       onClick={() => { setSubmitted(false); setStep(1); }}
@@ -1712,7 +1712,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
 
 
-    // Modal de Soluci�n T�cnica para el Prompt Bar
+    // Modal de Solución Técnica para el Prompt Bar
     const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
       if (!solution) return null;
 
@@ -1722,7 +1722,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button
               onClick={onClose}
               className="absolute top-5 right-5 w-8 h-8 rounded-full bg-navy-800 text-slate-400 hover:text-white flex items-center justify-center border border-white/10 text-sm">
-              
+              ✕
             </button>
 
             <div className="mb-6">
@@ -1730,7 +1730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 {solution.categoria}
               </span>
               <h3 className="text-xl md:text-2xl font-black text-white mt-3 leading-snug">
-                Arquitectura de Soluci�n para tu Operaci�n
+                Arquitectura de Solución para tu Operación
               </h3>
               <p className="text-slate-300 text-sm mt-1.5 italic bg-navy-850 p-3 rounded-xl border border-white/[0.06]">
                 "{solution.prompt}"
@@ -1739,14 +1739,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div className="mb-6 bg-red-500/10 border border-red-500/25 rounded-xl p-4">
               <div className="text-red-400 text-xs font-mono font-bold uppercase tracking-wider mb-1">
-                � Fricci�n Operativa & Costo de Inacci�n
+                ⚠ Fricción Operativa & Costo de Inacción
               </div>
               <p className="text-white text-sm font-medium">{solution.impacto}</p>
             </div>
 
             <div className="mb-6">
               <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">
-                � Flujo de Trabajo Agentizado (Blueprint de Ingenier�a)
+                ◈ Flujo de Trabajo Agentizado (Blueprint de Ingeniería)
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {solution.arquitectura.map((p, idx) => (
@@ -1761,13 +1761,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-4">
                 <span className="text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-wider block mb-1">
-                  & Caso Real An�logo en Producci�n
+                  ✦ Caso Real Análogo en Producción
                 </span>
                 <p className="text-white text-xs font-medium leading-relaxed">{solution.casoAnalogo}</p>
               </div>
               <div className="bg-purple-500/10 border border-purple-500/25 rounded-xl p-4">
                 <span className="text-purple-300 font-mono text-[10px] uppercase font-bold tracking-wider block mb-1">
-                  & Retorno Financiero Estimado
+                  ✦ Retorno Financiero Estimado
                 </span>
                 <p className="text-white text-xs font-medium leading-relaxed">{solution.roiEstimado}</p>
               </div>
@@ -1775,7 +1775,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/[0.08]">
               <div className="text-xs font-mono text-slate-400">
-                Implementaci�n estimada: <strong className="text-white font-semibold">{solution.tiempoImplementacion}</strong>
+                Implementación estimada: <strong className="text-white font-semibold">{solution.tiempoImplementacion}</strong>
               </div>
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <button onClick={onClose} className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-colors">
@@ -1784,8 +1784,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button
                   onClick={() => { onClose(); onOpenContact(); }}
                   className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-6 py-2.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
-                  <span>Solicitar Diagn�stico</span>
-                  <span>�</span>
+                  <span>Solicitar Diagnóstico</span>
+                  <span>→</span>
                 </button>
               </div>
             </div>
@@ -1806,15 +1806,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <div className="relative z-10 max-w-3xl mx-auto">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-6 block">
-                  AGENDA UNA CONVERSACI�N T�CNICA
+                  AGENDA UNA CONVERSACIÓN TÉCNICA
                 </span>
                 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
-                  �Listo para llevar tu visi�n de IA a producci�n<span className="text-red-500">?</span>
+                  ¿Listo para llevar tu visión de IA a producción<span className="text-red-500">?</span>
                 </h2>
                 
                 <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">
-                  Reserva 45 minutos con nuestros arquitectos de software. Revisaremos tus cuellos de botella operativos, analizaremos la viabilidad t�cnica y definiremos el primer paso realista para tu organizaci�n  incluso si la respuesta es que a�n no est�s listo para construir.
+                  Reserva 45 minutos con nuestros arquitectos de software. Revisaremos tus cuellos de botella operativos, analizaremos la viabilidad técnica y definiremos el primer paso realista para tu organización — incluso si la respuesta es que aún no estás listo para construir.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1822,16 +1822,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     onClick={onOpenContact}
                     className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-bold text-sm px-8 py-3.5 rounded-full transition-all flex items-center justify-center gap-2"
                   >
-                    <span>Solicitar Diagn�stico</span>
-                    <span>�</span>
+                    <span>Solicitar Diagnóstico</span>
+                    <span>↗</span>
                   </button>
                   
                   <a 
                     href="#case-studies"
                     className="w-full sm:w-auto bg-transparent hover:bg-white/[0.05] text-white font-semibold text-sm px-8 py-3.5 rounded-full border border-white/[0.15] transition-all flex items-center justify-center gap-2"
                   >
-                    <span>Ver Casos de �xito</span>
-                    <span>�</span>
+                    <span>Ver Casos de Éxito</span>
+                    <span>↗</span>
                   </a>
                 </div>
               </div>
@@ -1884,12 +1884,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-white">BluePixel</span>
-                <span>�</span>
+                <span>·</span>
                 <span>Deep Tech & Agentic Engineering</span>
               </div>
               <div className="flex items-center gap-4 text-slate-400">
                 <span>CDMX & Austin, TX</span>
-                <span>�</span>
+                <span>·</span>
                 <a href="mailto:hello@bluepixel.mx" className="hover:text-blue-400">hello@bluepixel.mx</a>
               </div>
             </div>
