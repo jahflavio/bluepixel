@@ -1,0 +1,313 @@
+    const MultiStepContact = ({ preselectedPackage }) => {
+      const [step, setStep] = useState(1);
+      const [formData, setFormData] = useState({
+        fullName: '',
+        workEmail: '',
+        company: '',
+        role: '',
+        phone: '',
+        workflow: '',
+        consentData: false,
+        consentNewsletter: false
+      });
+      const [submitted, setSubmitted] = useState(false);
+
+      const handleChange = (field, value) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+      };
+
+      const handleNext = (e) => {
+        e.preventDefault();
+        setStep(prev => prev + 1);
+      };
+
+      const handleBack = () => {
+        setStep(prev => prev - 1);
+      };
+
+      const handleSubmitFinal = (e) => {
+        e.preventDefault();
+        // Here you would connect to webhook/CRM
+        console.log("Submitting:", formData);
+        setSubmitted(true);
+      };
+
+      return (
+        <section id="contact-form" className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.04]">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+              
+              {/* Left Column: Copy & Social Proof */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+                <div>
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4 block">
+                    DIAGNÓSTICO TÉCNICO SIN COSTO
+                  </span>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
+                    Completa el formulario<span className="text-blue-500">.</span>
+                  </h2>
+                  <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                    ¿Prefieres que revisemos tu operación? Llena los 3 pasos rápidos y un estratega técnico de BluePixel te entregará un diagnóstico de viabilidad y arquitectura en menos de 24 horas hábiles.
+                  </p>
+                </div>
+                
+                {/* Trust badges */}
+                <div className="pt-8 border-t border-white/[0.06] space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 mt-1">✓</div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm">Cero ventas agresivas</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed mt-1">Hablarás con ingenieros, no con vendedores. Evaluamos viabilidad técnica real.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0 mt-1">✓</div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm">Privacidad garantizada</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed mt-1">Tus datos y secretos industriales están protegidos bajo estrictos acuerdos de confidencialidad.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: The Form Card */}
+              <div className="lg:col-span-7">
+                <div className="bg-navy-900 border border-white/[0.08] rounded-[2rem] p-8 sm:p-12 shadow-[0_0_80px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                  {/* Subtle background glow */}
+                  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none transition-all duration-1000 group-hover:bg-blue-500/10"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Progress Indicator */}
+                    <div className="mb-12">
+                      {/* Step labels */}
+                      <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-4 px-2">
+                        <span className={`transition-colors duration-500 ${step >= 1 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>01. Tú</span>
+                        <span className={`transition-colors duration-500 ${step >= 2 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>02. Empresa</span>
+                        <span className={`transition-colors duration-500 ${step === 3 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>03. Fricción</span>
+                      </div>
+                      {/* Segmented visual line */}
+                      <div className="flex gap-2 w-full h-1.5 rounded-full overflow-hidden">
+                        <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 1 ? 'w-1/3 bg-gradient-to-r from-blue-600 to-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                        <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 2 ? 'w-1/3 bg-gradient-to-r from-blue-400 to-indigo-400 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                        <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step === 3 ? 'w-1/3 bg-gradient-to-r from-indigo-400 to-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                      </div>
+                    </div>
+
+                    {!submitted ? (
+                      <div>
+                        {/* STEP 1: YOU */}
+                        {step === 1 && (
+                          <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
+                            <div>
+                              <h3 className="text-2xl font-black text-white mb-2">Tus datos de contacto</h3>
+                              <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
+                            </div>
+
+                            <div className="space-y-6">
+                              <div>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                  NOMBRE COMPLETO
+                                </label>
+                                <input
+                                  required
+                                  type="text"
+                                  value={formData.fullName}
+                                  onChange={(e) => handleChange('fullName', e.target.value)}
+                                  placeholder="Ej. Roberto Fabián Flores Ramírez"
+                                  className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                                />
+                              </div>
+
+                              <div>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                  CORREO CORPORATIVO
+                                </label>
+                                <input
+                                  required
+                                  type="email"
+                                  value={formData.workEmail}
+                                  onChange={(e) => handleChange('workEmail', e.target.value)}
+                                  placeholder="fabian.flores@tuempresa.com"
+                                  className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="pt-6 flex justify-end border-t border-white/[0.04]">
+                              <button
+                                type="submit"
+                                className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
+                                <span>Continuar</span>
+                                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                              </button>
+                            </div>
+                          </form>
+                        )}
+
+                        {/* STEP 2: COMPANY */}
+                        {step === 2 && (
+                          <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
+                            <div>
+                              <h3 className="text-2xl font-black text-white mb-2">Datos de tu organización</h3>
+                              <p className="text-slate-400 text-sm">Para contextualizar la escala y sistemas de tu empresa.</p>
+                            </div>
+
+                            <div className="space-y-6">
+                              <div>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                  EMPRESA
+                                </label>
+                                <input
+                                  required
+                                  type="text"
+                                  value={formData.company}
+                                  onChange={(e) => handleChange('company', e.target.value)}
+                                  placeholder="Ej. BluePixel / Grupo Industrial"
+                                  className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                                />
+                              </div>
+
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                  <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                    PUESTO / CARGO
+                                  </label>
+                                  <input
+                                    required
+                                    type="text"
+                                    value={formData.role}
+                                    onChange={(e) => handleChange('role', e.target.value)}
+                                    placeholder="Ej. CTO / Director Operativo"
+                                    className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                                  />
+                                </div>
+                                <div>
+                                  <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                    TELÉFONO (OPCIONAL)
+                                  </label>
+                                  <input
+                                    type="tel"
+                                    value={formData.phone}
+                                    onChange={(e) => handleChange('phone', e.target.value)}
+                                    placeholder="+52 55 1234 5678"
+                                    className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="pt-6 flex items-center justify-between border-t border-white/[0.04]">
+                              <button
+                                type="button"
+                                onClick={handleBack}
+                                className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                                Atrás
+                              </button>
+                              <button
+                                type="submit"
+                                className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
+                                <span>Continuar</span>
+                                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                              </button>
+                            </div>
+                          </form>
+                        )}
+
+                        {/* STEP 3: DETAILS & CONSENT */}
+                        {step === 3 && (
+                          <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
+                            <div>
+                              <h3 className="text-2xl font-black text-white mb-2">Cuello de botella técnico</h3>
+                              <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver o el sistema que deseas construir.</p>
+                            </div>
+
+                            <div className="space-y-6">
+                              <div>
+                                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                  ¿QUÉ FLUJO DE TRABAJO BUSCAS AGENTIZAR?
+                                </label>
+                                <textarea
+                                  required
+                                  rows="5"
+                                  value={formData.workflow}
+                                  onChange={(e) => handleChange('workflow', e.target.value)}
+                                  placeholder="Ej. Queremos automatizar la generación de cotizaciones que hoy se hacen en Excel y tardan 48 horas..."
+                                  className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl p-5 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner resize-none"
+                                />
+                              </div>
+
+                              <div className="space-y-4 pt-4 border-t border-white/[0.04]">
+                                <label className="flex items-start gap-4 cursor-pointer group">
+                                  <div className="relative flex items-center justify-center w-5 h-5 mt-0.5">
+                                    <input
+                                      type="checkbox"
+                                      checked={formData.consentData}
+                                      onChange={(e) => handleChange('consentData', e.target.checked)}
+                                      className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
+                                    />
+                                    <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
+                                  </div>
+                                  <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                                    Acepto que BluePixel almacene y procese mis datos personales para responder a esta solicitud, bajo estricto apego al <a href="#" className="underline text-blue-400 hover:text-blue-300">Aviso de Privacidad</a>.
+                                  </span>
+                                </label>
+
+                                <label className="flex items-start gap-4 cursor-pointer group">
+                                  <div className="relative flex items-center justify-center w-5 h-5 mt-0.5">
+                                    <input
+                                      type="checkbox"
+                                      checked={formData.consentNewsletter}
+                                      onChange={(e) => handleChange('consentNewsletter', e.target.checked)}
+                                      className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
+                                    />
+                                    <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
+                                  </div>
+                                  <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                                    Deseo recibir de forma esporádica análisis técnicos y casos de estudio sobre ingeniería de agentes IA en producción.
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div className="pt-8 flex items-center justify-between border-t border-white/[0.04]">
+                              <button
+                                type="button"
+                                onClick={handleBack}
+                                className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                                Atrás
+                              </button>
+                              <button
+                                type="submit"
+                                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] flex items-center justify-center gap-3 group">
+                                <span>Enviar Diagnóstico</span>
+                                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                              </button>
+                            </div>
+                          </form>
+                        )}
+                      </div>
+                    ) : (
+                      /* SUCCESS STATE */
+                      <div className="text-center py-16 animate-fadeIn">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500/20 to-emerald-400/5 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto mb-6 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
+                          ✓
+                        </div>
+                        <h4 className="text-3xl font-black text-white mb-4">Diagnóstico Recibido</h4>
+                        <p className="text-slate-300 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-10">
+                          Gracias <strong className="text-white">{formData.fullName || 'por escribirnos'}</strong>. Un arquitecto de software de BluePixel revisará la viabilidad para <strong className="text-blue-300">{formData.company || 'tu empresa'}</strong> y te contactará en menos de 24 horas hábiles.
+                        </p>
+                        <button 
+                          onClick={() => { setSubmitted(false); setStep(1); }}
+                          className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                          Enviar nueva consulta
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
