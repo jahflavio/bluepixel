@@ -1,0 +1,9 @@
+﻿            <div className="mb-16">
+              <div className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4">SLA DE RESPUESTA</div>
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
+                ¿Qué sucede exactamente cuando nos contactas?<span className="text-blue-500">.</span>
+              </h2>
+              <p className="text-slate-400 text-base md:text-lg max-w-2xl">
+                Cero ventas agresivas. Cero llamadas con personas que no entienden de ingeniería. Te conectamos directamente con un Lead Architect.
+              </p>
+            </div>

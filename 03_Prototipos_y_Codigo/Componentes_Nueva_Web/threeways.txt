@@ -1,0 +1,9 @@
+﻿          <div className="mb-16">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4">MODELOS DE CONTRATACIÓN</div>
+            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
+              Tres formas de colaborar con BluePixel<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-slate-400 text-base md:text-lg max-w-2xl">
+              Dos paquetes de entrada para validar certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
+            </p>
+          </div>

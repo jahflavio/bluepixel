@@ -1,0 +1,39 @@
+﻿            {/* Category Kicker */}
+            <div className="inline-flex items-center gap-2 mb-8">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                FIRMA DE INGENIERÍA AI
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black text-white tracking-tight leading-[1.08] mb-6">
+              Construimos agentes de Inteligencia Artificial que operan en producción<span className="text-blue-500">.</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+              BluePixel es la consultora de ingeniería agentica para empresas líderes en México y LATAM. Conectamos agentes autónomos a tus datos y sistemas reales, blindados con diseño UX de clase mundial para garantizar adopción humana inmediata.
+            </p>
+
+            {/* THE HERO PROMPT BAR (PLG Engine) */}
+            <div className="max-w-3xl mx-auto mb-6">
+              <div className="bg-navy-900 border border-white/[0.12] rounded-xl p-2 transition-all duration-300 focus-within:border-blue-500">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                  <div className="flex items-center gap-3 flex-1 px-3 py-2 sm:py-0">
+                    <span className="text-blue-500 text-lg font-mono">→</span>
+                    <input
+                      type="text"
+                      value={inputVal}
+                      onChange={(e) => setInputVal(e.target.value)}
+                      placeholder={placeholderText || "Describe un cuello de botella..."}
+                      className="w-full bg-transparent text-white placeholder-slate-500 text-sm md:text-base focus:outline-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0">
+                    <span>Ver Solución Técnica</span>
+                    <span className="text-base font-bold">↗</span>
+                  </button>
+                </form>

@@ -56,6 +56,370 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script type="text/babel">
     const { useState, useEffect } = React;
 
+    const useSimTimer = (totalSteps) => {
+      const [step, setStep] = useState(0);
+      useEffect(() => {
+         if (step >= totalSteps) return;
+         const timer = setTimeout(() => setStep(prev => prev + 1), 1800);
+         return () => clearTimeout(timer);
+      }, [step, totalSteps]);
+      return step;
+    };
+
+    // 1. TerminalSim (Infraestructura / Backend)
+    const TerminalSim = ({ data }) => {
+      const step = useSimTimer(data.steps.length);
+      const isFinished = step >= data.steps.length;
+      return (
+        <div className="bg-navy-900 border border-white/10 rounded-2xl p-6 shadow-2xl relative z-10 w-full flex flex-col overflow-hidden min-h-[360px]">
+          <div className="absolute top-0 left-0 w-full h-1 bg-navy-800">
+             <div className="h-full bg-blue-500 transition-all duration-1000" style={{ width: `${isFinished ? 100 : (Math.min(step, data.steps.length) / data.steps.length) * 100}%` }}></div>
+          </div>
+          <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+            <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-2">
+              <span className={`w-2 h-2 rounded-full ${isFinished ? 'bg-slate-500' : 'bg-emerald-400 animate-pulse'}`}></span>
+              {isFinished ? 'EXECUTION COMPLETED' : 'LIVE EXECUTION'}
+            </span>
+            <span className="text-[10px] font-mono text-slate-500">PORT: 3000</span>
+          </div>
+          <div className="flex-1 flex flex-col justify-center space-y-4">
+            {data.steps.map((s, index) => {
+              const isPast = index < step; const isActive = index === step; const isFuture = index > step;
+              
+              const tagMatch = s.match(/^\[(.*?)\]\s*(.*)$/);
+              let tag = null, text = s;
+              if (tagMatch) {
+                 tag = tagMatch[1];
+                 text = tagMatch[2];
+              }
+              const tagColors = {
+                 'INFO': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+                 'WARN': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+                 'CRITICAL': 'bg-red-500/10 text-red-400 border-red-500/20',
+                 'ACTION': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+                 'AGENT': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+                 'USER': 'bg-slate-500/20 text-white border-slate-500/30'
+              };
+              const tagClass = tag ? (tagColors[tag] || 'bg-slate-500/10 text-slate-400 border-slate-500/20') : '';
+
+              return (
+                <div key={index} className={`flex items-center gap-3 transition-opacity duration-300 ${isFuture ? 'opacity-30' : 'opacity-100'}`}>
+                  <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                    {isPast && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>}
+                    {isActive && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-blue-400 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>}
+                    {isFuture && <div className="w-2 h-2 rounded-full bg-slate-700"></div>}
+                  </div>
+                  <div className={`flex items-center gap-2 ${isActive ? 'text-blue-400' : isPast ? 'text-slate-300' : 'text-slate-500'}`}>
+                    {tag && <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded border ${tagClass}`}>{tag}</span>}
+                    <span className="text-sm font-mono">{text}</span>
+                  </div>
+                </div>
+              );
+            })}
+            {isFinished && (
+              <div className="mt-4 p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/20 animate-fade-in">
+                <p className="text-xs font-mono text-emerald-400 mb-2 font-bold">{data.result_title}</p>
+                <p className="text-sm text-white">{data.result_value}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
+    // 2. KanbanSim (HR)
+    const KanbanSim = ({ data }) => {
+      const step = useSimTimer(3);
+      return (
+        <div className="bg-[#f4f5f7] rounded-2xl p-6 shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col font-sans">
+           <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2"><div className="w-6 h-6 bg-blue-600 rounded"></div><span className="font-bold text-slate-800 tracking-tight">Workable ATS</span></div>
+              <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded">Agent Active</span>
+           </div>
+           <div className="flex-1 grid grid-cols-3 gap-4">
+              {['New Applied', 'Screening', 'Top 10%'].map((col, idx) => (
+                 <div key={idx} className="bg-slate-200 rounded-lg p-3 flex flex-col gap-3">
+                    <span className="text-xs font-bold text-slate-500 uppercase">{col}</span>
+                    {step === idx && (
+                       <div className="bg-white p-3 rounded shadow-sm border border-slate-200 animate-fade-in">
+                          <div className="flex items-center gap-2 mb-2">
+                             <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500"></div>
+                             <span className="text-sm font-bold text-slate-700">{data.candidate}</span>
+                          </div>
+                          <div className="text-xs text-slate-500 mb-2">{data.role}</div>
+                          {idx === 1 && <div className="text-[10px] text-blue-500 bg-blue-50 px-2 py-1 rounded inline-block animate-pulse">Auto-Interviewing via WhatsApp...</div>}
+                          {idx === 2 && <div className="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block font-bold">✓ Score: 98/100</div>}
+                       </div>
+                    )}
+                 </div>
+              ))}
+           </div>
+        </div>
+      );
+    };
+
+    // 3. WhatsAppSim (Soporte CX)
+    const WhatsAppSim = ({ data }) => {
+      const step = useSimTimer(data.messages.length);
+      return (
+        <div className="bg-[#e5ddd5] rounded-2xl shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col overflow-hidden font-sans border border-slate-300">
+           <div className="bg-[#075e54] p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#075e54] font-bold">BP</div>
+              <div>
+                 <div className="text-white font-bold text-sm">Soporte Corporativo</div>
+                 <div className="text-white/70 text-xs">bot online</div>
+              </div>
+           </div>
+           <div className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto" style={{backgroundImage: "url('https://transparenttextures.com/patterns/cubes.png')"}}>
+              {data.messages.map((msg, idx) => {
+                 if (idx > step) return null;
+                 const isBot = msg.type === 'bot';
+                 return (
+                    <div key={idx} className={`max-w-[85%] rounded-lg p-3 text-sm shadow-sm animate-fade-in ${isBot ? 'bg-white self-start rounded-tl-none text-slate-800' : 'bg-[#dcf8c6] self-end rounded-tr-none text-slate-800'}`}>
+                       {msg.text}
+                       {msg.metric && <div className="mt-2 text-xs bg-slate-100 p-2 rounded text-slate-500 font-mono">⚡ RAG Confidence: {msg.metric}</div>}
+                    </div>
+                 );
+              })}
+              {step < data.messages.length && <div className="text-xs text-slate-500 italic mt-2 animate-pulse">escribiendo...</div>}
+           </div>
+        </div>
+      );
+    };
+
+    // 4. DataGridSim (Finanzas/ERP)
+    const DataGridSim = ({ data }) => {
+      const step = useSimTimer(data.rows.length);
+      const isFinished = step >= data.rows.length;
+      return (
+        <div className="bg-white rounded-2xl shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col overflow-hidden font-sans border border-slate-200">
+           {/* Fake OS Header */}
+           <div className="bg-slate-200 px-4 py-3 border-b border-slate-300 flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-400"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              <span className="text-[10px] text-slate-500 ml-2 font-mono">erp_financial_client.exe</span>
+           </div>
+           <div className="bg-slate-50 px-4 py-2 border-b border-slate-200 flex items-center justify-between">
+              <div className="flex items-center gap-2"><div className="w-3 h-3 bg-emerald-500 rounded-sm"></div><span className="font-bold text-slate-700 text-xs uppercase tracking-wider">SAP ERP - Conciliación</span></div>
+              <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-100 px-2 py-0.5 rounded">MCP LINK ACTIVE</span>
+           </div>
+           <div className="p-0 flex-1">
+              <table className="w-full text-left text-sm">
+                 <thead className="bg-slate-100 text-slate-500 text-xs uppercase">
+                    <tr><th className="p-3">Factura ID</th><th className="p-3">Monto</th><th className="p-3">Estado</th></tr>
+                 </thead>
+                 <tbody>
+                    {data.rows.map((row, idx) => {
+                       const isMatched = idx < step;
+                       return (
+                          <tr key={idx} className={`border-b border-slate-100 transition-colors duration-500 ${isMatched ? 'bg-emerald-50/50' : ''}`}>
+                             <td className="p-3 font-mono text-slate-700">{row.id}</td>
+                             <td className="p-3 font-medium text-slate-700">{row.amount}</td>
+                             <td className="p-3">
+                                {isMatched ? <span className="text-emerald-600 bg-emerald-100 px-2 py-1 rounded text-xs font-bold">MATCHED</span> : <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded text-xs">PENDING</span>}
+                             </td>
+                          </tr>
+                       );
+                    })}
+                 </tbody>
+              </table>
+           </div>
+           {isFinished && (
+              <div className="p-4 bg-slate-800 text-white flex justify-between items-center animate-fade-in">
+                 <span className="text-sm font-bold">{data.result_title}</span>
+                 <span className="text-emerald-400 font-bold">{data.result_value}</span>
+              </div>
+           )}
+        </div>
+      );
+    };
+
+    // 5. DocumentSim (Legal/RFP)
+    const DocumentSim = ({ data }) => {
+      const step = useSimTimer(data.extracts.length);
+      const isFinished = step >= data.extracts.length;
+      return (
+        <div className="bg-slate-100 rounded-2xl shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col font-sans p-4 border border-slate-300">
+           <div className="bg-white rounded-lg shadow-sm flex-1 flex flex-col overflow-hidden relative">
+              <div className="bg-blue-600 p-3 flex justify-center text-white font-bold text-xs shadow-md z-10">
+                 {data.doc_title}
+              </div>
+              <div className="p-6 text-slate-300 font-serif text-sm leading-relaxed relative flex-1">
+                 <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] z-20 transition-all duration-1000" style={{top: `${(step / Math.max(1, data.extracts.length)) * 100}%`}}></div>
+                 <p className="mb-4">Este documento legal certifica que la empresa descrita ha cumplido con los requisitos operativos requeridos por la normativa vigente para la ejecución comercial.</p>
+                 <p className="mb-4">Registro Fiscal de Contribuyente: <span className={`transition-all duration-300 ${step > 0 ? 'bg-yellow-200 text-slate-800 px-1 rounded' : ''}`}>XAXX010101000</span>.</p>
+                 <p className="mb-4">Representante Legal designado y validado: <span className={`transition-all duration-300 ${step > 1 ? 'bg-yellow-200 text-slate-800 px-1 rounded' : ''}`}>Lic. Juan Pérez</span>.</p>
+                 <p>Por lo tanto, se emite el presente dictamen de cumplimiento para integrarse al expediente del proveedor corporativo.</p>
+              </div>
+           </div>
+           {isFinished && (
+              <div className="mt-4 bg-white p-3 rounded-lg shadow border border-slate-200 flex justify-between items-center animate-fade-in">
+                 <div className="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-blue-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span className="text-sm font-bold text-slate-700">Dictamen Generado</span>
+                 </div>
+                 <span className="text-xs font-bold text-emerald-600 bg-emerald-100 px-2 py-1 rounded">RIESGO BAJO</span>
+              </div>
+           )}
+        </div>
+      );
+    };
+
+    // 6. NodeFlowSim (Integraciones API)
+    const NodeFlowSim = ({ data }) => {
+      const step = useSimTimer(data.nodes.length + 1); // +1 para el trigger inicial
+      const isFinished = step > data.nodes.length;
+      return (
+        <div className="bg-navy-950 rounded-2xl shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col font-sans p-6 border border-white/10 overflow-hidden items-center justify-center">
+           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+           <div className="relative z-10 w-full max-w-sm">
+              <div className="text-center mb-8">
+                 <p className="text-[10px] text-slate-400 mb-3 font-mono uppercase tracking-wider">{data.trigger_label}</p>
+                 <div className={`w-14 h-14 bg-slate-800 border-2 rounded-full mx-auto flex items-center justify-center text-xl z-10 relative transition-all duration-300 ${step > 0 ? 'border-blue-500 text-blue-400' : 'border-slate-600 text-slate-400'}`}>
+                    <i data-lucide={data.trigger_icon} className="w-6 h-6"></i>
+                    {step > 0 && step <= data.nodes.length && (
+                       <div className="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping opacity-20"></div>
+                    )}
+                 </div>
+              </div>
+              
+              <div className="flex justify-between relative mt-4">
+                 {/* Líneas conectoras (SVG para mejor control) */}
+                 <svg className="absolute top-[-3rem] left-0 w-full h-12" style={{zIndex: 0}}>
+                    {data.nodes.map((_, idx) => {
+                       const startX = '50%'; const endX = idx === 0 ? '16%' : idx === 1 ? '50%' : '84%';
+                       const isActive = step > idx;
+                       return <line key={`line-${idx}`} x1={startX} y1="0" x2={endX} y2="48" stroke={isActive ? '#10b981' : '#334155'} strokeWidth="2" className="transition-all duration-500" />
+                    })}
+                 </svg>
+                 
+                 {data.nodes.map((node, idx) => {
+                    const isNodeActive = step > idx;
+                    return (
+                       <div key={idx} className="text-center w-1/3 relative z-10 mt-2">
+                          <div className={`w-12 h-12 mx-auto flex items-center justify-center text-xl rounded-xl border-2 transition-all duration-500 bg-slate-800 ${isNodeActive ? 'border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.4)]' : 'border-slate-600 text-slate-500'}`}>
+                             <i data-lucide={node.icon} className="w-5 h-5"></i>
+                          </div>
+                          <p className={`text-[10px] mt-2 font-mono transition-colors ${isNodeActive ? 'text-emerald-400' : 'text-slate-500'}`}>
+                             {isNodeActive ? node.success_label : 'Pendiente'}
+                          </p>
+                       </div>
+                    );
+                 })}
+              </div>
+              
+              <div className={`mt-10 bg-emerald-900/40 border border-emerald-500/50 p-3 rounded-lg text-center transition-all duration-700 ${isFinished ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                 <p className="text-emerald-400 font-bold text-sm flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {data.result_title}
+                 </p>
+                 <p className="text-[10px] text-emerald-200/70 mt-1">{data.result_value}</p>
+              </div>
+           </div>
+        </div>
+      );
+    };
+
+    // 7. VisionAgentSim (Computer Vision / Auto-healing)
+    const VisionAgentSim = ({ data }) => {
+      const step = useSimTimer(4); 
+      
+      return (
+        <div className="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl relative z-10 w-full flex flex-col overflow-hidden min-h-[360px] font-sans">
+          {/* Fake OS Header */}
+          <div className="bg-slate-800 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+             <div className="w-3 h-3 rounded-full bg-red-500"></div>
+             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+             <div className="w-3 h-3 rounded-full bg-green-500"></div>
+             <span className="text-[10px] text-slate-400 ml-2 font-mono">legacy_erp_client.exe</span>
+          </div>
+          
+          <div className="p-6 relative flex-1 bg-slate-100">
+             {/* Fake Form */}
+             <div className="max-w-xs space-y-4 pt-2">
+                <h3 className="text-slate-800 font-bold mb-4 font-sans text-xl">Ingreso de Factura</h3>
+                
+                <div className="space-y-1 relative">
+                   <label className="text-xs text-slate-600 font-bold uppercase tracking-wider">Monto (USD)</label>
+                   <input type="text" readOnly value={step > 1 ? "4520.00" : ""} className="w-full bg-white border border-slate-300 rounded-md p-2 text-slate-800 text-sm focus:outline-none" />
+                   
+                   {/* Bounding Box 1 */}
+                   <div className={`absolute -inset-1 border-2 border-emerald-500 bg-emerald-500/10 pointer-events-none transition-all duration-300 z-10 ${step > 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}>
+                      <span className="absolute -top-4 -left-0.5 bg-emerald-500 text-white text-[9px] font-mono px-1 rounded-sm shadow">input_amount [0.99]</span>
+                   </div>
+                </div>
+                
+                {/* Changed Button Position (Auto-healing simulation) */}
+                <div className="pt-4 relative h-16 mt-6 w-full">
+                   {/* Ghost Button (Where RPA expected it) */}
+                   <div className={`absolute top-0 left-0 border-2 border-dashed border-red-400/50 rounded-md px-5 py-2.5 w-[140px] flex items-center justify-center transition-all duration-300 ${step > 0 ? 'opacity-100' : 'opacity-0'}`}>
+                      <span className="text-red-400/50 text-[10px] font-mono">btn_submit</span>
+                   </div>
+                   {step === 1 && (
+                     <span className="absolute -bottom-6 left-0 text-red-500 text-[10px] font-mono whitespace-nowrap animate-pulse font-bold bg-red-500/10 px-2 py-0.5 rounded">404: Element Not Found</span>
+                   )}
+
+                   {/* Actual Button (Starts on left, moves to right) */}
+                   <div className={`absolute top-0 transition-all duration-700 ease-in-out ${step === 0 ? 'left-0' : 'left-[calc(100%-140px)]'}`}>
+                      <button className={`bg-blue-600 w-[140px] text-white px-5 py-2.5 rounded-md shadow-sm text-sm font-bold transition-all duration-200 ${step > 2 ? 'bg-blue-700 scale-95' : ''}`}>Guardar</button>
+                      
+                      {/* Bounding Box 2 (Agent finding it visually) */}
+                      <div className={`absolute -inset-1 border-2 border-emerald-500 bg-emerald-500/10 pointer-events-none transition-all duration-300 z-10 ${step > 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}>
+                         <span className="absolute -top-4 -left-0.5 bg-emerald-500 text-white text-[9px] font-mono px-1 rounded-sm shadow">btn_submit [0.96]</span>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             
+             {/* Virtual Cursor */}
+             <div 
+               className={`absolute w-6 h-6 z-50 transition-all duration-1000 ease-in-out drop-shadow-lg`}
+               style={{
+                 top: step === 0 ? '90%' : step === 1 ? '70%' : step === 2 ? '70%' : '70%',
+                 left: step === 0 ? '90%' : step === 1 ? '15%' : step === 2 ? '15%' : '80%',
+                 opacity: step > 0 ? 1 : 0
+               }}
+             >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="black" strokeWidth="1" className="w-full h-full"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>
+             </div>
+             
+             {/* Overlay Scan Effect */}
+             <div className={`absolute left-0 w-full h-2 bg-emerald-400/50 shadow-[0_0_20px_rgba(52,211,153,0.8)] transition-all ease-linear ${step < 2 ? 'top-0 opacity-0' : step === 2 ? 'top-full opacity-100 duration-[1500ms]' : 'top-full opacity-0'}`}></div>
+             
+             {/* Status Badge */}
+             <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-navy-950 text-white p-4 rounded-xl border border-white/10 flex flex-col gap-2 shadow-2xl">
+                   <div className="flex items-center gap-2">
+                     <div className={`w-2 h-2 rounded-full ${step > 2 ? 'bg-emerald-500' : 'bg-blue-500 animate-pulse'}`}></div>
+                     <span className="text-[10px] font-mono text-blue-400 tracking-wider">AGENT_REASONING</span>
+                   </div>
+                   <div className="text-xs font-mono text-slate-300">
+                     {step === 0 && "Ejecutando script automatizado..."}
+                     {step === 1 && "Error: UI modificada. Iniciando Auto-Healing..."}
+                     {step === 2 && "Analizando DOM visual (Computer Vision)..."}
+                     {step > 2 && "Botón localizado. Acción ejecutada."}
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Router
+    const HeroWidgetLoader = ({ type, data }) => {
+       switch(type) {
+          case 'VISION_AGENT': return <VisionAgentSim data={data} />;
+          case 'NODEFLOW': return <NodeFlowSim data={data} />;
+          case 'KANBAN': return <KanbanSim data={data} />;
+          case 'WHATSAPP': return <WhatsAppSim data={data} />;
+          case 'DATAGRID': return <DataGridSim data={data} />;
+          case 'DOCUMENT': return <DocumentSim data={data} />;
+          case 'TERMINAL': default: return <TerminalSim data={data} />;
+       }
+    };
+
     // Componente: Navbar Minimalista (Fricción Cero)
     const Navbar = () => (
       <nav className="border-b border-white/[0.08] bg-navy-950/85 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
@@ -70,7 +434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <div className="flex items-center">
-            <a href="../index.html#capabilities" className="hidden md:flex text-slate-400 hover:text-white font-mono text-xs items-center gap-2 mr-6 transition-colors">&larr; Ver Directorio</a>
+            <a href="index.html" className="hidden md:flex text-slate-400 hover:text-white font-mono text-xs items-center gap-2 mr-6 transition-colors">&larr; Ver Directorio</a>
             <button onClick={() => document.getElementById('contact-form').scrollIntoView()} className="bg-white text-navy-950 hover:bg-slate-200 font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-lg">
               Diagnóstico de Viabilidad
             </button>
@@ -85,9 +449,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-navy-950 to-navy-950"></div>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
           <div className="flex-1 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+            <div className="inline-flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-[10px] font-mono font-bold tracking-widest text-blue-400 uppercase">{{HERO_TAG}}</span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-300 font-semibold">
+                {{HERO_TAG}}</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.05] mb-6">
@@ -116,14 +481,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           <div className="flex-1 w-full relative">
             <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full"></div>
-            <div className="bg-navy-900 border border-white/10 rounded-2xl p-4 shadow-2xl relative z-10 overflow-hidden group h-64 md:h-96 flex items-center justify-center">
-                <i data-lucide="server" className="w-24 h-24 text-blue-500/20 group-hover:text-blue-500/40 transition-colors"></i>
-                <div className="absolute bottom-4 left-4 right-4 bg-navy-950/80 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-xs font-mono text-emerald-400">
-                    &gt; STATUS: ONLINE<br/>
-                    &gt; CLOUD: PRIVATE TIER<br/>
-                    &gt; LATENCY: 12ms
-                </div>
-            </div>
+            <HeroWidgetLoader type="{{WIDGET_TYPE}}" data={{{WIDGET_DATA}}} />
           </div>
         </div>
       </section>
@@ -168,13 +526,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Pilar 3: ROI Calculator Simple
     const ROICalculator = () => {
-      const [rfps, setRfps] = useState(5);
-      const hoursPerRfp = 40; // Promedio de horas humanas por RFP
-      const hourlyRate = 50; // Costo por hora USD
+      // Inyección dinámica de variables financieras B2B
+      const costPerUnit = parseFloat("{{ROI_COST_PER_UNIT}}") || 2000;
+      const timePerUnit = parseFloat("{{ROI_TIME_PER_UNIT}}") || 40;
+      const stepValue = parseInt("{{ROI_STEP}}") || 1;
       
-      const currentCost = rfps * hoursPerRfp * hourlyRate;
-      const newCost = rfps * 4 * hourlyRate; // 4 horas con agente
-      const savings = currentCost - newCost;
+      const [rfps, setRfps] = useState(stepValue * 5);
+
+      const formatNumber = (num) => new Intl.NumberFormat('en-US').format(num);
+      
+      const currentCost = rfps * costPerUnit;
+      const timeSpent = rfps * timePerUnit;
+      const savings = currentCost * 0.9;
 
       return (
         <section className="py-24 px-6">
@@ -184,22 +547,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="mb-10">
               <label className="block text-sm font-mono text-slate-400 mb-4 text-center">{{ROI_Q}}</label>
               <input 
-                type="range" min="1" max="20" value={rfps} 
+                type="range" min={stepValue} max="{{ROI_MAX}}" step="{{ROI_STEP}}" value={rfps} 
                 onChange={(e) => setRfps(parseInt(e.target.value))}
                 className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
               />
-              <div className="text-center mt-4 text-3xl font-bold text-blue-400">{rfps} Unidades</div>
+              <div className="text-center mt-4 text-3xl font-bold text-blue-400">{formatNumber(rfps)} {{ROI_UNIT}}</div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-navy-950 p-6 rounded-2xl border border-red-500/20">
                 <div className="text-sm text-slate-500 mb-1">Costo Actual (Humano)</div>
-                <div className="text-3xl font-mono text-red-400">${currentCost.toLocaleString()} USD/mes</div>
-                <div className="text-xs text-slate-500 mt-2">({rfps * hoursPerRfp} horas invertidas)</div>
+                <div className="text-3xl font-mono text-red-400">${formatNumber(Math.round(currentCost))} USD/mes</div>
+                <div className="text-xs text-slate-500 mt-2">({formatNumber(timeSpent)} horas invertidas)</div>
               </div>
               <div className="bg-navy-950 p-6 rounded-2xl border border-emerald-500/30">
                 <div className="text-sm text-emerald-500/70 mb-1 font-bold">Ahorro con Agente BluePixel</div>
-                <div className="text-4xl font-mono text-emerald-400 font-bold">+${savings.toLocaleString()} USD</div>
+                <div className="text-4xl font-mono text-emerald-400 font-bold">+${formatNumber(Math.round(savings))} USD</div>
                 <div className="text-xs text-slate-400 mt-2">ROI operativo recuperado al instante.</div>
               </div>
             </div>
