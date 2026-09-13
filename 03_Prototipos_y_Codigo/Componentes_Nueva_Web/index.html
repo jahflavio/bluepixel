@@ -235,18 +235,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="inline-flex items-center gap-2 mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-                INGENIERÃA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
+                INGENIERIA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black text-white tracking-tight leading-[1.08] mb-6">
-              Construimos agentes de Inteligencia Artificial que <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producciÃ³n.</span>
+              Construimos agentes de Inteligencia Artificial que <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en produccion.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-              BluePixel es la consultora de ingenierÃ­a agentica para empresas lÃ­deres en MÃ©xico y LATAM. Conectamos agentes autÃ³nomos a tus datos y sistemas reales (SAP, Salesforce, ERPs), blindados con <strong className="text-slate-200 font-semibold">diseÃ±o UX de clase mundial</strong> para garantizar adopciÃ³n humana inmediata.
+              BluePixel es la consultora de ingenieria agentica para empresas lideres en Mexico y LATAM. Conectamos agentes autonomos a tus datos y sistemas reales (SAP, Salesforce, ERPs), blindados con <strong className="text-slate-200 font-semibold">diseno UX de clase mundial</strong> para garantizar adopcion humana inmediata.
             </p>
 
             {/* THE HERO PROMPT BAR (PLG Engine) */}
@@ -259,13 +259,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <button 
                 onClick={onOpenContact}
                 className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
-                <span>Solicitar DiagnÃ³stico Operativo (Sin Costo)</span>
-                <span>â†’</span>
+                <span>Solicitar Diagnostico Operativo (Sin Costo)</span>
+                <span>-></span>
               </button>
               <a 
                 href="#three-ways"
                 className="bg-navy-800 hover:bg-navy-700 text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
-                Conoce las 3 Formas de Trabajar â†“
+                Conoce las 3 Formas de Trabajar
               </a>
             </div>
           </div>
@@ -995,112 +995,162 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Our Services (Vstorm Asymmetric Grid Style)
     const ThreeWaysToWork = ({ onSelectPackage }) => {
-      return (
-        <section id="three-ways" className="py-24 px-6 md:px-12 bg-navy-900/60">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
-                Servicios de desarrollo LLM<span className="text-blue-500">.</span>
-              </h2>
-              <p className="text-slate-400 text-base md:text-lg max-w-2xl">
-                Cuatro prácticas de ingeniería para equipos que mueven modelos de lenguaje desde pruebas piloto hasta producción: estrategia, memoria, frameworks de agentes y operaciones.
+  return (
+    <section id="three-ways" className="py-24 px-6 md:px-12 bg-[#040711] border-t border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+            CÓMO TRABAJAR CON NOSOTROS
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+            Tres formas de colaborar con BluePixel.
+          </h2>
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+            Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
+          </p>
+        </div>
+
+        {/* Grid de 3 Tarjetas */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+          {/* CARD 01: Transformation Advisory / Diagnóstico */}
+          <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
+                  ENTRY PACKAGE
+                </span>
+                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
               </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Mapeo de procesos y diagnóstico de operaciones',
+                  'Detección de fricción con gemelos digitales (IMPATH™)',
+                  'Matriz de priorización de agentes IA y cálculo de ROI',
+                  'Blueprint de arquitectura técnica y gobernanza de datos',
+                  'Reporte ejecutivo con costo de inacción cuantificado en pesos'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                    <span className="text-blue-400 mt-0.5">◈</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(240px,auto)]">
-              
-              {/* Card 1: Large Left (Spans 2 rows on desktop) - FULL TRANSFORMATION */}
-              <div className="md:col-span-1 md:row-span-2 bg-gradient-to-b from-navy-800 to-navy-950 border border-blue-500/30 rounded-3xl p-8 relative overflow-hidden group hover:border-blue-400/50 transition-all flex flex-col min-h-[400px] shadow-2xl shadow-blue-900/10 cursor-pointer" onClick={() => onSelectPackage('Transformación End-to-End (01)')}>
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/40 via-transparent to-transparent"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">01</span>
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-slate-300">TRANSFORMACIÓN INTEGRAL</span>
-                  </div>
-                  <h3 className="text-3xl font-black text-white mb-4 leading-tight">Agentes Multi-Rol (Enjambres)</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                    Sistemas multi-agente construidos para tu operación real. Diseñamos la arquitectura, programamos los agentes (Pydantic/LangGraph), los conectamos a tu ERP (MCP) y los operamos en producción.
-                  </p>
-                  
-                  <div className="mt-auto">
-                    <span className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
-                      <span>Explorar Desarrollo</span>
-                      <span>→</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Top Middle - STRATEGY */}
-              <div className="md:col-span-1 bg-navy-850 border border-white/[0.06] rounded-3xl p-8 flex flex-col justify-between hover:border-white/10 transition-colors group relative overflow-hidden cursor-pointer" onClick={() => onSelectPackage('Diagnóstico Forense (02)')}>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl group-hover:bg-white/[0.04] transition-colors"></div>
-                <div className="flex items-center gap-3 mb-6 relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded">02</span>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">ESTRATEGIA</span>
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3">Auditoría & Diagnóstico</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    Identificamos con precisión qué flujos automatizar. T� equipo adquiere claridad con un blueprint técnico y el costo de inacción (ROI) cuantificado antes de invertir en código.
-                  </p>
-                  <div className="mt-6">
-                    <span className="text-xs font-semibold text-slate-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
-                      <span>Solicitar Diagnóstico</span>
-                      <span>→</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3: Top Right - SINGLE AGENT */}
-              <div className="md:col-span-1 bg-navy-950 border border-white/[0.06] rounded-3xl p-8 flex flex-col justify-between hover:border-white/10 transition-colors group relative overflow-hidden cursor-pointer" onClick={() => onSelectPackage('Ingeniería Single-Agent (03)')}>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-500/20 transition-all"></div>
-                <div className="flex items-center gap-3 mb-6 relative z-10">
-                  <span className="text-[10px] font-mono font-bold text-indigo-400 bg-indigo-400/10 px-2 py-0.5 rounded">03</span>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">AGENTE ÚNICO</span>
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3">Ingeniería RAG & MCP</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    Un agente autónomo, enfocado en un solo flujo de trabajo de extremo a extremo. Pipelines de recuperación anclados a tus datos privados, sin alucinaciones.
-                  </p>
-                  <div className="mt-6">
-                    <span className="text-xs font-semibold text-slate-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
-                      <span>Explorar Desarrollo</span>
-                      <span>→</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 4: Bottom Wide (Spans 2 columns) - LLMOPS */}
-              <div className="md:col-span-2 bg-navy-850 border border-white/[0.06] rounded-3xl p-8 flex flex-col justify-center hover:border-white/10 transition-colors group relative overflow-hidden cursor-pointer" onClick={() => onSelectPackage('LLMOps (04)')}>
-                <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded">04</span>
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">OPERACIONES</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">LLMOps & Soporte Continuo</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed max-w-xl mb-6">
-                    Para sistemas agenticos que ya están en vivo: monitoreo de calidad, evaluación de métricas (evals), despliegue de nuevas versiones, control de costos por token y revisiones de regresión en tiempo real.
-                  </p>
-                  <div className="mt-auto">
-                    <span className="text-xs font-semibold text-slate-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
-                      <span>Explorar Soporte</span>
-                      <span>→</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
+            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Diagnóstico & Auditoría (01)')}
+                className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
+                <span>Solicitar Diagnóstico</span>
+                <span>↗</span>
+              </button>
             </div>
           </div>
-        </section>
-      );
-    };
+
+          {/* CARD 02: Agentic Engineering */}
+          <div className="bg-[#060A14] border border-white/[0.08] hover:border-indigo-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
+                  ENTRY PACKAGE
+                </span>
+                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Diseño de arquitectura agentica con protocolos MCP',
+                  'Flujos de trabajo autónomos sobre datos reales con RAG',
+                  'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
+                  'Ingeniería, pruebas de estrés y despliegue cloud en producción',
+                  'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                    <span className="text-indigo-400 mt-0.5">◈</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Ingeniería de Agentes (02)')}
+                className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
+                <span>Explorar Ingeniería</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </div>
+
+          {/* CARD 03 (01+02): Full Transformation (Destacado) */}
+          <div className="bg-gradient-to-b from-[#0F1628] to-[#060A14] border-2 border-blue-500/60 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden shadow-2xl shadow-blue-500/20">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full bg-blue-500 text-white font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                  FULL TRANSFORMATION
+                </span>
+                <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
+                  'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                  'Construcción completa de plataforma en 90 días (BUILD)',
+                  'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
+                  'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
+                    <span className="text-emerald-400 font-bold mt-0.5">✓</span>
+                    <span className="font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
+              <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Transformación Integral (01+02)')}
+                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
+                <span>Agendar Sesión</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
 
     // Casos de Éxito con Métricas Financieras (Case Studies)
     const CaseStudiesSection = ({ onOpenCase }) => {
