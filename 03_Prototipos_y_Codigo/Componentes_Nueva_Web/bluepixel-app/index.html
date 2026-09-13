@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
-  <body>
+  <body><script>window.addEventListener('error', function(e) { const err = document.createElement('div'); err.style.cssText = 'color:red;background:white;padding:20px;position:fixed;top:0;left:0;right:0;z-index:9999;font-size:20px;'; err.innerHTML = '<b>JS ERROR:</b> ' + e.message + '<br>' + e.filename + ':' + e.lineno; document.body.appendChild(err); });</script><script>window.addEventListener('unhandledrejection', function(e) { const err = document.createElement('div'); err.style.cssText = 'color:red;background:white;padding:20px;position:fixed;top:100px;left:0;right:0;z-index:9999;font-size:20px;'; err.innerHTML = '<b>PROMISE REJECTION:</b> ' + e.reason; document.body.appendChild(err); });</script>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.jsx"></script><script>window.addEventListener('unhandledrejection', function(e) { const err = document.createElement('div'); err.style.cssText = 'color:red;background:white;padding:20px;position:fixed;top:100px;left:0;right:0;z-index:9999;font-size:20px;'; err.innerHTML = '<b>PROMISE REJECTION:</b> ' + e.reason; document.body.appendChild(err); });</script>
   </body>
 </html>
+
+
