@@ -469,16 +469,16 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                   <div className="p-6 h-[320px] overflow-y-auto font-mono text-xs md:text-sm leading-relaxed flex flex-col">
                     {terminalLines.map((line, idx) => (
                       <div key={idx} className="mb-2 animate-fadeIn flex">
-                        <span className="text-slate-500 w-16 shrink-0">{line.text.substring(0, 7)}</span>
+                        <span className="text-slate-500 w-16 shrink-0">{line.text?.substring(0, 7)}</span>
                         <span className={
-                          line.text.includes('task received') ? 'text-white font-bold' :
-                          line.text.includes('tool_call') ? 'text-blue-400' :
-                          line.text.includes('mcp_response') ? 'text-emerald-400' :
-                          line.text.includes('verify') ? 'text-purple-400' :
-                          line.text.includes('routing') || line.text.includes('dispatch') ? 'text-amber-400' :
+                          line.text?.includes('task received') ? 'text-white font-bold' :
+                          line.text?.includes('tool_call') ? 'text-blue-400' :
+                          line.text?.includes('mcp_response') ? 'text-emerald-400' :
+                          line.text?.includes('verify') ? 'text-purple-400' :
+                          line.text?.includes('routing') || line.text?.includes('dispatch') ? 'text-amber-400' :
                           'text-slate-300'
                         }>
-                          {line.text.substring(7)}
+                          {line.text?.substring(7)}
                         </span>
                       </div>
                     ))}
