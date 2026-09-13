@@ -1,0 +1,148 @@
+const fs = require('fs');
+let txt = fs.readFileSync('../index.html', 'utf8');
+
+const startIndex = txt.indexOf('const CaseStudiesSection =');
+const endIndex = txt.indexOf('const EngineeringLeadership =');
+
+if (startIndex === -1 || endIndex === -1) {
+    console.error("Could not find bounds");
+    process.exit(1);
+}
+
+const newComponent = `const CaseStudiesSection = ({ onOpenCase }) => {
+      const cases = [
+        {
+          id: 'bimbo',
+          client: 'Grupo Bimbo',
+          industry: 'Consumo Masivo / Global',
+          title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
+          kpi: '+40%',
+          kpiLabel: 'Productividad Directiva',
+          desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
+          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
+          image: '/assets/bimbo.png'
+        },
+        {
+          id: 'radioshack',
+          client: 'RadioShack',
+          industry: 'Retail & E-commerce',
+          title: 'Reinvención transaccional de comercio digital y reducción de fricción de compra',
+          kpi: '-60%',
+          kpiLabel: 'Fricción de Pago',
+          desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
+          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
+          image: '/assets/radioshack.png'
+        },
+        {
+          id: 'lifemiles',
+          client: 'LifeMiles / Avianca',
+          industry: 'Travel & Loyalty LATAM',
+          title: 'Optimización de experiencia en uno de los mayores programas de lealtad de LATAM',
+          kpi: '+28%',
+          kpiLabel: 'Retención Digital',
+          desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
+          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
+          image: '/assets/lifemiles.png'
+        },
+        {
+          id: 'iqos',
+          client: 'IQOS / Philip Morris',
+          industry: 'Retail & Hardware',
+          title: 'Arquitectura de pagos y billetera digital in-app',
+          kpi: '+55%',
+          kpiLabel: 'Retención de Usuarios',
+          desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricción y aumentando el Life Time Value de los usuarios en la región.',
+          tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
+          image: '/assets/iqos.png'
+        }
+      ];
+
+      const [activeIndex, setActiveIndex] = useState(0);
+      const activeCase = cases[activeIndex];
+
+      return (
+        <section id="case-studies" className="py-24 px-6 md:px-12 bg-gradient-to-b from-navy-950 to-navy-900 border-t border-white/[0.08] overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
+                CASOS DE ÉXITO AUDITADOS
+              </span>
+              <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl">
+                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">escala corporativa</span>
+              </h2>
+            </div>
+
+            {/* Interactive Showcase Layout */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+              
+              {/* Left Column: Navigation Tabs */}
+              <div className="lg:w-1/3 flex flex-col gap-3">
+                {cases.map((c, idx) => (
+                  <button
+                    key={c.id}
+                    onClick={() => setActiveIndex(idx)}
+                    className={\`text-left p-6 rounded-2xl border transition-all duration-300 \${activeIndex === idx ? 'bg-navy-800 border-purple-500/30 shadow-[0_0_30px_-5px_rgba(168,85,247,0.15)]' : 'bg-transparent border-transparent hover:bg-white/[0.02] opacity-50 hover:opacity-100'}\`}
+                  >
+                    <h3 className={\`font-bold font-display text-xl mb-1 transition-colors \${activeIndex === idx ? 'text-white' : 'text-slate-400'}\`}>{c.client}</h3>
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{c.industry}</p>
+                  </button>
+                ))}
+              </div>
+
+              {/* Right Column: Deep Dive Panel */}
+              <div className="lg:w-2/3 relative h-[650px] md:h-[550px]">
+                {cases.map((c, idx) => (
+                  <div 
+                    key={c.id} 
+                    className={\`absolute inset-0 h-full bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col md:flex-row \${activeIndex === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}\`}
+                  >
+                    
+                    {/* Left side of the card: Text Content */}
+                    <div className="relative z-20 flex flex-col h-full p-8 md:p-12 md:w-3/5">
+                      {/* KPI Section */}
+                      <div className="mb-6 border-b border-white/[0.05] pb-6">
+                         <div className={\`font-black font-display text-5xl md:text-7xl tracking-tighter mb-1 transition-colors duration-700 \${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-orange-400' : idx === 2 ? 'text-red-400' : 'text-teal-400'}\`}>
+                           {c.kpi}
+                         </div>
+                         <div className="text-slate-400 text-xs md:text-sm font-mono uppercase tracking-widest">{c.kpiLabel}</div>
+                      </div>
+
+                      {/* Challenge & Solution */}
+                      <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">{c.title}</h4>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
+                        {c.desc}
+                      </p>
+
+                      {/* Footer: Tags */}
+                      <div className="mt-auto flex flex-wrap gap-2">
+                        {c.tags.map(tag => (
+                          <span key={tag} className="bg-white/[0.03] border border-white/[0.08] text-slate-300 text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider font-semibold">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right side of the card: Visual Graphic */}
+                    <div className="relative md:w-2/5 h-48 md:h-full bg-navy-950 border-t md:border-t-0 md:border-l border-white/[0.05]">
+                       <div className={\`absolute inset-0 bg-gradient-to-tr opacity-20 mix-blend-screen z-10 \${idx === 0 ? 'from-blue-600' : idx === 1 ? 'from-orange-600' : idx === 2 ? 'from-red-600' : 'from-teal-600'}\`}></div>
+                       <img src={c.image} alt={c.client} className="w-full h-full object-cover object-left opacity-60 mix-blend-lighten" />
+                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/80 to-transparent z-10"></div>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    `;
+
+const finalTxt = txt.substring(0, startIndex) + newComponent + txt.substring(endIndex);
+fs.writeFileSync('../index.html', finalTxt, 'utf8');
+console.log("Images injected into Interactive Showcase!");

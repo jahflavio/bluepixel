@@ -239,6 +239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isManualMode, setIsManualMode] = useState(false);
+  const textareaRef = React.useRef(null);
 
   (React.useEffect || useEffect)(() => {
     if (isManualMode) return; // Detener animación si el usuario interactúa
@@ -299,7 +300,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div className="absolute -inset-1 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl blur-2xl opacity-20 group-hover:opacity-50 transition duration-500"></div>
       
       {/* Glass Terminal */}
-      <div className="relative bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] hover:border-blue-500/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.3)]">
+      <div onClick={() => { if(textareaRef.current) textareaRef.current.focus(); }} className="relative bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] hover:border-blue-500/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.3)] cursor-text">
         
         {/* Terminal Header */}
         <div className="flex items-center px-4 py-3 border-b border-white/[0.05] bg-white/[0.02] cursor-default">
@@ -322,6 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <textarea
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
+                ref={textareaRef}
                 onFocus={handleFocus}
                 placeholder={isManualMode ? "Escribe aquí la peor fricción manual de tu empresa..." : placeholderText}
                 className="flex-1 bg-transparent text-white placeholder-slate-400 focus:placeholder-slate-600 text-sm focus:outline-none resize-none mt-1 min-h-[60px] cursor-text"
@@ -1365,89 +1367,131 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           client: 'Grupo Bimbo',
           industry: 'Consumo Masivo / Global',
           title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
-          kpi: '+40% Productividad',
+          kpi: '+40%',
+          kpiLabel: 'Productividad Directiva',
           desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
-          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software']
+          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
+          image: 'assets/bimbo.png'
         },
         {
           id: 'radioshack',
           client: 'RadioShack',
           industry: 'Retail & E-commerce',
           title: 'Reinvención transaccional de comercio digital y reducción de fricción de compra',
-          kpi: '-60% Fricción de Pago',
+          kpi: '-60%',
+          kpiLabel: 'Fricción de Pago',
           desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
-          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign']
+          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
+          image: 'assets/radioshack.png'
         },
         {
           id: 'lifemiles',
           client: 'LifeMiles / Avianca',
           industry: 'Travel & Loyalty LATAM',
           title: 'Optimización de experiencia en uno de los mayores programas de lealtad de LATAM',
-          kpi: '+28% Retención Digital',
+          kpi: '+28%',
+          kpiLabel: 'Retención Digital',
           desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
-          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First']
+          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
+          image: 'assets/lifemiles.png'
         },
         {
-          id: 'frmedical',
-          client: 'FR Medical Diagnostics',
-          industry: 'HealthTech & Logística Quirúrgica',
-          title: 'Enjambre de agentes IA para cotización y despacho en tiempo real',
-          kpi: 'De 48 hrs a 3 minutos',
-          desc: 'Implementación de servidores MCP y agentes autónomos para calcular cotizaciones médicas complejas y validar inventario hospitalario 24/7.',
-          tags: ['Agentes IA', 'MCP Protocol', 'Cloud Serverless']
+          id: 'iqos',
+          client: 'IQOS / Philip Morris',
+          industry: 'Retail & Hardware',
+          title: 'Arquitectura de pagos y billetera digital in-app',
+          kpi: '+55%',
+          kpiLabel: 'Retención de Usuarios',
+          desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricción y aumentando el Life Time Value de los usuarios en la región.',
+          tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
+          image: 'assets/iqos.png'
         }
       ];
 
+      const [activeIndex, setActiveIndex] = useState(0);
+      const activeCase = cases[activeIndex];
+
       return (
-        <section id="case-studies" className="py-24 px-6 md:px-12 bg-gradient-to-b from-navy-950 to-navy-900 border-t border-white/[0.08]">
+        <section id="case-studies" className="py-24 px-6 md:px-12 bg-gradient-to-b from-navy-950 to-navy-900 border-t border-white/[0.08] overflow-hidden">
           <div className="max-w-7xl mx-auto">
+            
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
-                CASOS DE íXITO AUDITADOS
+                CASOS DE ÉXITO AUDITADOS
               </span>
-              <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                Ingeniería que transforma balances financieros.
+              <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl">
+                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">escala corporativa</span>
               </h2>
-              <p className="text-slate-400 text-base md:text-lg">
-                No mostramos maquetas de diseño; documentamos impacto cuantificado en facturación, horas liberadas y adopción de usuarios.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {cases.map((c) => (
-                <div key={c.id} className="bg-navy-850 border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">{c.client}</span>
-                      <span className="text-xs font-mono text-slate-500">{c.industry}</span>
+            {/* Interactive Showcase Layout */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+              
+              {/* Left Column: Navigation Tabs */}
+              <div className="lg:w-1/3 flex flex-col gap-3">
+                {cases.map((c, idx) => (
+                  <button
+                    key={c.id}
+                    onClick={() => setActiveIndex(idx)}
+                    className={`text-left p-6 rounded-2xl border transition-all duration-300 ${activeIndex === idx ? 'bg-navy-800 border-purple-500/30 shadow-[0_0_30px_-5px_rgba(168,85,247,0.15)]' : 'bg-transparent border-transparent hover:bg-white/[0.02] opacity-50 hover:opacity-100'}`}
+                  >
+                    <h3 className={`font-bold font-display text-xl mb-1 transition-colors ${activeIndex === idx ? 'text-white' : 'text-slate-400'}`}>{c.client}</h3>
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{c.industry}</p>
+                  </button>
+                ))}
+              </div>
+
+              {/* Right Column: Deep Dive Panel */}
+              <div className="lg:w-2/3 relative h-[650px] md:h-[550px]">
+                {cases.map((c, idx) => (
+                  <div 
+                    key={c.id} 
+                    className={`absolute inset-0 h-full bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col md:flex-row ${activeIndex === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}`}
+                  >
+                    
+                    {/* Left side of the card: Text Content */}
+                    <div className="relative z-20 flex flex-col h-full p-8 md:p-12 md:w-3/5">
+                      {/* KPI Section */}
+                      <div className="mb-6 border-b border-white/[0.05] pb-6">
+                         <div className={`font-black font-display text-5xl md:text-7xl tracking-tighter mb-1 transition-colors duration-700 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-orange-400' : idx === 2 ? 'text-red-400' : 'text-teal-400'}`}>
+                           {c.kpi}
+                         </div>
+                         <div className="text-slate-400 text-xs md:text-sm font-mono uppercase tracking-widest">{c.kpiLabel}</div>
+                      </div>
+
+                      {/* Challenge & Solution */}
+                      <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">{c.title}</h4>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
+                        {c.desc}
+                      </p>
+
+                      {/* Footer: Tags */}
+                      <div className="mt-auto flex flex-wrap gap-2">
+                        {c.tags.map(tag => (
+                          <span key={tag} className="bg-white/[0.03] border border-white/[0.08] text-slate-300 text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider font-semibold">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">{c.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-6">{c.desc}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {c.tags.map((t, idx) => (
-                        <span key={idx} className="text-[10px] font-mono bg-navy-750 text-slate-300 px-2.5 py-1 rounded-md border border-white/5">
-                          {t}
-                        </span>
-                      ))}
+
+                    {/* Right side of the card: Visual Graphic */}
+                    <div className="relative md:w-2/5 h-48 md:h-full bg-navy-950 border-t md:border-t-0 md:border-l border-white/[0.05]">
+                       <div className={`absolute inset-0 bg-gradient-to-tr opacity-20 mix-blend-screen z-10 ${idx === 0 ? 'from-blue-600' : idx === 1 ? 'from-orange-600' : idx === 2 ? 'from-red-600' : 'from-teal-600'}`}></div>
+                       <img src={c.image} alt={c.client} className="w-full h-full object-cover object-left opacity-60 mix-blend-lighten" />
+                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/80 to-transparent z-10"></div>
                     </div>
+
                   </div>
-                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                    <span className="text-sm font-mono text-emerald-400 font-bold">{c.kpi}</span>
-                    <button 
-                      onClick={() => onOpenCase(c.client)}
-                      className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors">
-                      <span>Ver Caso de Estudio</span>
-                      <span>→</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
             </div>
           </div>
         </section>
       );
     };
-    // Liderazgo Técnico (Trust B2B)
+    
     const EngineeringLeadership = () => (
       <section className="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/[0.06] relative overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-blue-600/5 to-transparent pointer-events-none" />
@@ -1877,11 +1921,12 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
       return (
         <section className="py-24 px-6 md:px-12 bg-gradient-to-t from-navy-950 to-navy-900 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            {/* Header left-aligned instead of centered to match asymmetric style */}
+            <div className="max-w-3xl mb-16">
               <span className="text-[10px] font-mono tracking-widest uppercase text-blue-400 font-bold mb-4 block">
                 CERO LOCK-IN · SOBERANÍA ABSOLUTA
               </span>
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-4xl lg:text-5xl">
                 Tu infraestructura. Tus datos. Tu código fuente<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
@@ -1889,39 +1934,75 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-navy-900 border border-white/[0.06] rounded-3xl p-8 hover:border-blue-500/30 transition-colors group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors"></div>
-                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-xl">☁️</span>
+            {/* Bento Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              {/* Card 1: Wide Card (Span 2 columns) */}
+              <div className="lg:col-span-2 bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 md:p-12 hover:border-blue-500/30 transition-colors group relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] group-hover:bg-blue-500/10 transition-colors"></div>
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgzNyw5OSwyMzUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-50 [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none"></div>
+
+                <div className="relative z-10 flex-1">
+                  <div className="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-black/50">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                  </div>
+                  <h3 className="mb-4 font-bold font-display text-2xl md:text-3xl tracking-tight leading-[1.2]">Despliegue nativo en tu VPC</h3>
+                  <p className="text-slate-400 text-base leading-relaxed max-w-xl">
+                    Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad empresarial, asegurando cumplimiento total (SOC2, HIPAA).
+                  </p>
                 </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Despliegue en tu VPC</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad.
+                
+                {/* Right side Visual Graphic for VPC Card */}
+                <div className="hidden lg:flex w-full max-w-[320px] items-center justify-end relative z-10">
+                  <div className="w-full bg-[#060A14] rounded-2xl border border-white/[0.08] p-5 shadow-2xl relative overflow-hidden backdrop-blur-md">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div className="text-[10px] font-mono text-blue-400 mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                      VPC_DEPLOYMENT_STATUS
+                    </div>
+                    <div className="space-y-2">
+                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
+                         <span className="text-[11px] text-slate-300 font-mono">ec2_cluster_nodes</span>
+                         <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">ACTIVE</span>
+                       </div>
+                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
+                         <span className="text-[11px] text-slate-300 font-mono">rds_vector_db</span>
+                         <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">SYNCED</span>
+                       </div>
+                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
+                         <span className="text-[11px] text-slate-300 font-mono">iam_zero_trust</span>
+                         <span className="text-[10px] text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">ENFORCED</span>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Square */}
+              <div className="bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 hover:border-purple-500/30 transition-colors group relative overflow-hidden flex flex-col">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-colors"></div>
+                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
+                  <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                </div>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Propiedad del Código</h3>
+                <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
+                  Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos intelectuales y el código fuente. Eres completamente libre de mantenerlo in-house con tu equipo de ingeniería o contratar nuestra póliza de Mantenimiento.
                 </p>
               </div>
 
-              <div className="bg-navy-900 border border-white/[0.06] rounded-3xl p-8 hover:border-purple-500/30 transition-colors group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:bg-purple-500/10 transition-colors"></div>
-                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-xl">🔓</span>
+              {/* Card 3: Square */}
+              <div className="bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 hover:border-emerald-500/30 transition-colors group relative overflow-hidden flex flex-col">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
+                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
+                  <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Propiedad del Código</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos y el código fuente. Eres libre de mantenerlo in-house o contratar nuestra póliza de Mantenimiento.
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Modelos Blindados</h3>
+                <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
+                  Utilizamos instancias empresariales de LLMs con políticas estrictas de privacidad (Zero Data Retention). Ninguna conversación confidencial o dato de tus clientes se usará jamás para entrenar modelos públicos.
                 </p>
               </div>
 
-              <div className="bg-navy-900 border border-white/[0.06] rounded-3xl p-8 hover:border-emerald-500/30 transition-colors group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors"></div>
-                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-xl">🛡️</span>
-                </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Modelos Blindados</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Utilizamos instancias empresariales de LLMs con políticas estrictas de privacidad (Zero Data Retention). Ninguna conversación de tus clientes se usará para entrenar modelos públicos.
-                </p>
-              </div>
             </div>
           </div>
         </section>
