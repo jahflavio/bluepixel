@@ -25,6 +25,7 @@
         extend: {
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+        display: ['Instrument Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
@@ -80,7 +81,7 @@
     .marquee-track:hover { animation-play-state: paused; }
 
     .client-logo {
-      height: 38px;
+      height: 72px;
       width: auto;
       opacity: 0.6;
       filter: brightness(0) invert(1);
@@ -93,6 +94,11 @@
     ::-webkit-scrollbar-track { background: #060A14; }
     ::-webkit-scrollbar-thumb { background: #1A2540; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+  
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
   </style>
 </head>
 <body class="tech-grid min-h-screen">
@@ -110,7 +116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'cotizaciones',
     label: 'Cotizaciones lentas en Excel',
-    prompt: 'Cotizaciones complejas en Excel que tardan horas y nos hacen perder ventas.',
+    prompt: 'Mi equipo tarda horas armando cotizaciones en Excel y estamos perdiendo ventas.',
     categoria: 'AUTOMATIZACIÓN COMERCIAL & PRICING',
     impacto: 'Pérdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
     arquitectura: [
@@ -126,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'conciliacion',
     label: 'Conciliación contable & ERP',
-    prompt: 'Conciliación manual de miles de facturas y pagos contra el ERP a fin de mes.',
+    prompt: 'Tengo a 5 personas cruzando facturas a mano contra SAP cada fin de mes.',
     categoria: 'BACK-OFFICE FINANCIERO & COMPLIANCE',
     impacto: 'Demoras de 10 días en cierre mensual y multas por discrepancias fiscales ante el SAT.',
     arquitectura: [
@@ -142,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'checkout',
     label: 'Fuga en checkout (IMPATH)',
-    prompt: 'Alta tasa de abandono (68%) en el flujo de pago de la plataforma digital.',
+    prompt: 'Los clientes están abandonando el checkout a la mitad y estamos perdiendo dinero.',
     categoria: 'UX INTEL & CONVERSIÓN TRANSACCIONAL',
     impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricción cognitiva y errores de validación.',
     arquitectura: [
@@ -158,7 +164,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {
     id: 'soporte',
     label: 'Atención 24/7 sin alucinaciones',
-    prompt: 'Automatizar atención en WhatsApp sin que la IA invente datos falsos (alucinaciones).',
+    prompt: 'Necesito un bot en WhatsApp para soporte, pero que NO se invente las políticas de la empresa.',
     categoria: 'CUSTOMER EXPERIENCE & RAG BLINDADO',
     impacto: 'Pérdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
     arquitectura: [
@@ -232,14 +238,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const [presetIndex, setPresetIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isManualMode, setIsManualMode] = useState(false);
 
   (React.useEffect || useEffect)(() => {
+    if (isManualMode) return; // Detener animación si el usuario interactúa
+
     let timer;
     if (isPaused) {
-      timer = setTimeout(() => {
-        setIsPaused(false);
-        setIsDeleting(true);
-      }, 2500); 
+      timer = setTimeout(() => { setIsPaused(false); setIsDeleting(true); }, 2000); 
       return () => clearTimeout(timer);
     }
 
@@ -250,112 +256,158 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         setIsDeleting(false);
         setPresetIndex((prev) => (prev + 1) % PRESETS.length);
       } else {
-        timer = setTimeout(() => {
-          setPlaceholderText(currentPrompt.substring(0, placeholderText.length - 2));
-        }, 15);
+        timer = setTimeout(() => { setPlaceholderText(currentPrompt.substring(0, placeholderText.length - 2)); }, 10);
       }
     } else {
       if (placeholderText.length === currentPrompt.length) {
         setIsPaused(true);
       } else {
-        timer = setTimeout(() => {
-          setPlaceholderText(currentPrompt.substring(0, placeholderText.length + 1));
-        }, 40);
+        timer = setTimeout(() => { setPlaceholderText(currentPrompt.substring(0, placeholderText.length + 1)); }, 30);
       }
     }
     return () => clearTimeout(timer);
-  }, [placeholderText, isDeleting, isPaused, presetIndex]);
+  }, [placeholderText, isDeleting, isPaused, presetIndex, isManualMode]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const solution = {
       ...PRESETS[presetIndex],
-      prompt: inputVal || PRESETS[presetIndex].prompt
+      prompt: inputVal || (isManualMode ? '' : PRESETS[presetIndex].prompt)
     };
     if (onSelectSolution) onSelectSolution(solution);
   };
 
-  return (
-    <div className="w-full max-w-2xl mx-auto relative group mt-8">
-      <form 
-        onSubmit={handleSubmit} 
-        className="flex items-center gap-3 bg-[#0A0E1A]/40 border border-white/[0.15] hover:border-white/30 rounded-full px-5 py-3 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 focus-within:border-blue-500/50 focus-within:shadow-[0_0_30px_-5px_rgba(37,99,235,0.3)] focus-within:bg-[#0A0E1A]/80"
-      >
-        <svg className="w-5 h-5 text-blue-400 opacity-70 group-focus-within:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        
-        <input
-          type="text"
-          value={inputVal}
-          onChange={(e) => setInputVal(e.target.value)}
-          placeholder={placeholderText || "Escribe un proceso para optimizar..."}
-          className="flex-1 bg-transparent text-white placeholder-slate-400 text-sm focus:outline-none w-full tracking-wide"
-        />
+  const handleFocus = () => {
+    setIsManualMode(true);
+    setPlaceholderText('');
+  };
 
-        <button
-          type="submit"
-          className="flex items-center justify-center bg-white/5 hover:bg-blue-600/20 text-slate-400 hover:text-blue-400 rounded-full p-2.5 transition-all duration-200"
-          title="Solucionar"
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
-      </form>
+  return (
+    <div className="w-full max-w-xl mx-auto relative group perspective-1000 mt-10 lg:mt-0">
       
-      <div className="flex justify-center mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-         <span className="text-[10px] text-slate-500 font-mono tracking-widest uppercase">Presiona Enter para analizar</span>
+      {/* Interactive Hint - Visible before interaction */}
+      {!isManualMode && (
+        <div className="absolute -top-10 right-4 animate-bounce z-20">
+          <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center gap-2 border border-blue-400/30">
+            <span>Escribe tu problema y halla una solución</span>
+            <span className="text-white/70">↓</span>
+          </div>
+        </div>
+      )}
+
+      {/* Background Glow */}
+      <div className="absolute -inset-1 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl blur-2xl opacity-20 group-hover:opacity-50 transition duration-500"></div>
+      
+      {/* Glass Terminal */}
+      <div className="relative bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] hover:border-blue-500/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.3)]">
+        
+        {/* Terminal Header */}
+        <div className="flex items-center px-4 py-3 border-b border-white/[0.05] bg-white/[0.02] cursor-default">
+          <div className="flex gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+          </div>
+          <div className="mx-auto text-[10px] font-mono text-slate-500">agent-kernel ~ zsh</div>
+        </div>
+
+        {/* Terminal Body */}
+        <div className="p-6 font-mono text-sm">
+
+          
+          <form onSubmit={handleSubmit} className="relative">
+            <div className="flex items-start gap-3">
+              <span className="text-emerald-400 mt-1">➜</span> 
+              <span className="text-purple-400 mt-1">user</span>
+              <textarea
+                value={inputVal}
+                onChange={(e) => setInputVal(e.target.value)}
+                onFocus={handleFocus}
+                placeholder={isManualMode ? "Escribe aquí la peor fricción manual de tu empresa..." : placeholderText}
+                className="flex-1 bg-transparent text-white placeholder-slate-400 focus:placeholder-slate-600 text-sm focus:outline-none resize-none mt-1 min-h-[60px] cursor-text"
+                spellCheck="false"
+              />
+            </div>
+            {/* Suggestion Chips */}
+            <div className={`mt-4 flex flex-wrap gap-2 transition-opacity duration-500 ${isManualMode ? 'opacity-100' : 'opacity-0 pointer-events-none hidden'}`}>
+               <button type="button" onClick={() => { setInputVal(PRESETS[0].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Cotizaciones lentas</button>
+               <button type="button" onClick={() => { setInputVal(PRESETS[1].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Conciliación SAP</button>
+               <button type="button" onClick={() => { setInputVal(PRESETS[2].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Fuga en Checkout</button>
+            </div>
+            
+            <div className="mt-4 pt-4 border-t border-white/[0.05] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className={`w-2 h-2 rounded-full ${isManualMode ? 'bg-emerald-500' : 'bg-blue-500'} animate-pulse`}></span>
+                <span className="text-[10px] text-slate-500 uppercase tracking-widest">{isManualMode ? 'Awaiting Input' : 'Auto Pilot Mode'}</span>
+              </div>
+              <button
+                type="submit"
+                className={`${isManualMode ? 'bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 text-white' : 'bg-white/10 hover:bg-white/20 text-slate-300'} text-xs font-sans px-4 py-2 rounded-lg transition-all flex items-center gap-2`}
+              >
+                <span>Analizar Fricción</span>
+                <span className="text-[10px] opacity-50">⏎</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
 };
 
-
     const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
       return (
-        <section id="prompt-hero" className="relative pt-16 pb-20 px-6 md:px-12 overflow-hidden">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-blue-600/15 blur-[120px] pointer-events-none rounded-full" />
-          <div className="absolute top-1/3 right-10 w-[450px] h-[300px] bg-purple-600/10 blur-[140px] pointer-events-none rounded-full" />
+        <section id="prompt-hero" className="relative pt-24 pb-24 px-6 md:px-12 overflow-hidden min-h-[90vh] flex items-center">
+          {/* Subtle Dynamic Grids & Glows */}
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+          
+          <div className="absolute top-1/4 -left-64 w-[600px] h-[600px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
+          <div className="absolute bottom-1/4 -right-64 w-[600px] h-[600px] bg-purple-600/10 blur-[120px] pointer-events-none rounded-full" />
 
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            {/* Category Kicker */}
-            <div className="inline-flex items-center gap-2 mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-                INGENIERÍA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
-              </span>
+          <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+            
+            {/* Left Column: Copy & CTAs */}
+            <div className="text-left">
+              {/* Category Kicker */}
+              <div className="inline-flex items-center gap-2 mb-8">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold border border-blue-500/20 bg-blue-500/5 px-3 py-1 rounded-full">
+                  INGENIERÍA DE AGENTES IA
+                </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="mb-6 font-black font-display tracking-tight leading-[1.1] text-4xl lg:text-5xl xl:text-[3.5rem] text-white">
+                Construimos agentes de IA que <br className="hidden lg:block"/>
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción.</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="text-slate-400 text-base lg:text-lg max-w-xl leading-relaxed mb-10">
+                BluePixel es la consultora boutique para empresas líderes en México y LATAM. Conectamos agentes autónomos a tus datos y sistemas reales (SAP, Salesforce), blindados con <strong className="text-white font-semibold">diseño UX de clase mundial</strong> para garantizar adopción humana inmediata.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-4">
+                <button 
+                  onClick={onOpenContact}
+                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
+                  <span>Auditar mi operación</span>
+                  <span>→</span>
+                </button>
+                <a 
+                  href="#three-ways"
+                  className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors">
+                  Ver metodología ↓
+                </a>
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black text-white tracking-tight leading-[1.08] mb-6">
-              Construimos agentes de Inteligencia Artificial que <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción.</span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-              BluePixel es la consultora de ingeniería agentica para empresas líderes en México y LATAM. Conectamos agentes autónomos a tus datos y sistemas reales (SAP, Salesforce, ERPs), blindados con <strong className="text-slate-200 font-semibold">diseño UX de clase mundial</strong> para garantizar adopción humana inmediata.
-            </p>
-
-            {/* THE HERO PROMPT BAR (PLG Engine) */}
-            <div className="max-w-3xl mx-auto mb-6">
+            {/* Right Column: Agentic Terminal */}
+            <div className="w-full">
               <HeroPromptEngine onSelectSolution={onSelectSolution} />
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-              <button 
-                onClick={onOpenContact}
-                className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
-                <span>Solicitar Diagnóstico Operativo (Sin Costo)</span>
-                <span>→</span>
-              </button>
-              <a 
-                href="#three-ways"
-                className="bg-[#0A0F1D] hover:bg-[#131D35] text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
-                Conoce las 3 Formas de Trabajar ↓
-              </a>
-            </div>
           </div>
         </section>
       );
@@ -368,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return (
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+            <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
               Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span>
             </h2>
           </div>
@@ -514,7 +566,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-4 block">
                 UNDER THE HOOD
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Lo que hace un agente en producción<span className="text-red-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -710,7 +762,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span className="text-[10px] font-mono uppercase tracking-widest text-red-500 font-bold mb-4 block">
                 DIAGNÓSTICO OPERATIVO FORENSE
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 El abismo entre un proceso manual y una capa agentizada<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base leading-relaxed mb-6">
@@ -767,7 +819,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div className="text-7xl font-black text-white tracking-tighter">18<span className="text-4xl text-red-500">%</span></div>
                       </div>
                       <div className="md:w-7/12 space-y-4">
-                        <h3 className="text-xl font-bold text-white leading-tight">Cuellos de botella humanos</h3>
+                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuellos de botella humanos</h3>
                         <p className="text-slate-400 leading-relaxed text-sm">
                           El ejecutivo teclea datos a mano en hojas de cálculo con fórmulas desactualizadas. Se pierde tiempo en llamadas internas para verificar reglas de negocio, generando <strong className="text-red-400 font-semibold">$1.2M MXN en pérdidas anuales</strong> por fricción.
                         </p>
@@ -783,7 +835,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div className="text-7xl font-black text-white tracking-tighter">99<span className="text-4xl text-emerald-400">.9%</span></div>
                       </div>
                       <div className="md:w-7/12 space-y-4">
-                        <h3 className="text-xl font-bold text-white leading-tight">Ejecución determinística</h3>
+                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Ejecución determinística</h3>
                         <p className="text-slate-300 leading-relaxed text-sm">
                           El servidor MCP consulta el stock real directamente en el ERP (SAP/Salesforce). Se genera la cotización en PDF al instante, asegurando un <strong className="text-emerald-400 font-semibold">+340% de ROI proyectado</strong>.
                         </p>
@@ -797,7 +849,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               {/* 2. Secondary Static Card */}
               <div className="bg-[#0A0F1D]/40 border border-white/[0.04] rounded-[2rem] p-8 md:p-12 flex flex-col justify-center hover:bg-[#0A0F1D]/80 hover:border-white/[0.1] transition-colors">
                 <div className="text-5xl font-black text-white mb-4">340<span className="text-blue-500">%</span></div>
-                <h3 className="text-lg font-bold text-white mb-3">Retorno de inversión (ROI) documentado</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Retorno de inversión (ROI) documentado</h3>
                 <p className="text-slate-400 leading-relaxed text-sm">
                   BluePixel destila patrones arquitectónicos exitosos de despliegues en producción para el sector logístico, fintech y enterprise SaaS. No experimentamos con tu operación; replicamos lo que ya funciona y lo adaptamos a tus sistemas legacy.
                 </p>
@@ -814,7 +866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="tech-stack" className="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Nuestro ecosistema tecnológico<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -834,15 +886,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span className="text-[10px] font-mono font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded">01</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-300">PROTOCOLO CORE</span>
                   </div>
-                  <h3 className="text-3xl font-black text-white mb-4 leading-tight">Model Context Protocol (MCP)</h3>
+                  <h3 className="mb-4 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Model Context Protocol (MCP)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8">
                     El estándar abierto que conecta de forma determinística los LLMs con tus orígenes de datos locales, ERPs y APIs corporativas. Sin integraciones frágiles.
                   </p>
                   
                   <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">SAP</span>
-                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">Salesforce</span>
-                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">PostgreSQL</span>
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span>SAP</span>
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-cyan-500"></span>Salesforce</span>
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-white"></span>HubSpot</span>
                   </div>
                 </div>
               </div>
@@ -855,14 +907,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">FRAMEWORKS AGENTICOS</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3">Orquestación de Enjambres</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Orquestación de Enjambres</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Sistemas multi-agente construidos con rigor de ingeniería de software. Tipado estricto y flujos dirigidos.
                   </p>
-                  <div className="flex items-center gap-4 mt-6 text-slate-500">
-                    <span className="text-sm font-semibold text-slate-300">Pydantic AI</span>
-                    <span className="w-1 h-1 rounded-full bg-slate-600"></span>
-                    <span className="text-sm font-semibold text-slate-300">LangGraph</span>
+                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-blue-400">⚡</span>Pydantic AI</span>
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-emerald-400">🦜</span>LangGraph</span>
                   </div>
                 </div>
               </div>
@@ -875,13 +926,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">MEMORIA & CONTEXTO</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-white mb-3">RAG & Bases Vectoriales</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">RAG & Bases Vectoriales</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Pipelines de recuperación avanzada que evitan alucinaciones anclando las respuestas a tu data.
                   </p>
-                  <div className="flex items-center gap-4 mt-6">
-                    <span className="text-xs font-mono text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Pinecone</span>
-                    <span className="text-xs font-mono text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">pgvector</span>
+                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-indigo-400">Pinecone</span></span>
+                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-indigo-400">🐘</span>pgvector</span>
                   </div>
                 </div>
               </div>
@@ -896,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">04</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">DESPLIEGUE CLOUD</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">LLMOps & Serverless Architecture</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">LLMOps & Serverless Architecture</h3>
                   <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
                     Agentes que corren en producción exigen infraestructura de grado empresarial. Monitoreo de latencia, tracking de costos por token, despliegues CI/CD y contenedores escalables sin fricción.
                   </p>
@@ -926,7 +977,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
+              <h2 className="md: mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 El stack detrás de la ingeniería<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -1014,7 +1065,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span>SIMULADOR DE IMPACTO FINANCIERO</span>
                 <span>✦</span>
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+              <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 ¿Cuánto dinero pierde tu empresa en tareas manuales?
               </h2>
               <p className="text-slate-400 text-sm md:text-base">
@@ -1028,7 +1079,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
-                      Personas en tareas repetitivas / back-office
+                      Tamaño del equipo operativo
                     </label>
                     <span className="text-lg font-black text-blue-400 font-mono">{teamSize} colaboradores</span>
                   </div>
@@ -1158,7 +1209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
             CÓMO TRABAJAR CON NOSOTROS
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+          <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
             Tres formas de colaborar con BluePixel.
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -1179,7 +1230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
+              <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Diagnóstico & Auditoría FutureProof</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
               </p>
@@ -1221,7 +1272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
+              <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Ingeniería de Agentes & MCP</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
               </p>
@@ -1266,7 +1317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
+              <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Transformación: BUILD + EVOLVE</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
                 De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
               </p>
@@ -1348,13 +1399,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ];
 
       return (
-        <section id="case-studies" className="py-24 px-6 md:px-12 bg-navy-900/40 border-t border-white/[0.08]">
+        <section id="case-studies" className="py-24 px-6 md:px-12 bg-gradient-to-b from-navy-950 to-navy-900 border-t border-white/[0.08]">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
                 CASOS DE íXITO AUDITADOS
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+              <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Ingeniería que transforma balances financieros.
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
@@ -1370,7 +1421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <span className="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">{c.client}</span>
                       <span className="text-xs font-mono text-slate-500">{c.industry}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{c.title}</h3>
+                    <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">{c.title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed mb-6">{c.desc}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {c.tags.map((t, idx) => (
@@ -1406,7 +1457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
                 ENGINEERING LEADERSHIP
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
+              <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 No vendemos "recursos". Asignamos Arquitectos a tu operación.
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -1477,7 +1528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                 COMPROMISO DE SERVICIO & TRANSPARENCIA
               </span>
-              <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight mt-2 mb-3">
+              <h2 className="md: mt-2 mb-3 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 ¿Qué sucede exactamente cuando nos contactas?
               </h2>
               <p className="text-slate-400 text-xs md:text-sm">
@@ -1494,7 +1545,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </span>
                     <span className="text-slate-600 font-mono text-sm">0{idx + 1}</span>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
+                  <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">{s.title}</h3>
                   <p className="text-slate-400 text-xs leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -1547,7 +1598,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4 block">
                 DIAGNÓSTICO TÉCNICO SIN COSTO
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h2 className="md: lg: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Completa el formulario<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
@@ -1605,7 +1656,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       {step === 1 && (
                         <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="text-2xl font-black text-white mb-2">Tus datos de contacto</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Tus datos de contacto</h3>
                             <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
                           </div>
                           <div className="space-y-6">
@@ -1630,7 +1681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       {step === 2 && (
                         <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="text-2xl font-black text-white mb-2">Datos de tu empresa</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Datos de tu empresa</h3>
                             <p className="text-slate-400 text-sm">Para asignar al arquitecto ideal a tu sector operativo.</p>
                           </div>
                           <div className="space-y-6">
@@ -1656,7 +1707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       {step === 3 && (
                         <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="text-2xl font-black text-white mb-2">Cuello de botella técnico</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuello de botella técnico</h3>
                             <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver.</p>
                           </div>
                           <div className="space-y-6">
@@ -1707,7 +1758,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
               <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/25 uppercase tracking-widest font-semibold">
                 {solution.categoria}
               </span>
-              <h3 className="text-xl md:text-2xl font-black text-white mt-3 leading-snug">
+              <h3 className="md: mt-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">
                 Arquitectura de Solución para tu Operación
               </h3>
               <p className="text-slate-300 text-sm mt-1.5 italic bg-navy-850 p-3 rounded-xl border border-white/[0.06]">
@@ -1787,7 +1838,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                   AGENDA UNA CONVERSACIÓN TíCNICA
                 </span>
                 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
+                <h2 className="md: lg: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                   ¿Listo para llevar tu visión de IA a producción<span className="text-red-500">?</span>
                 </h2>
                 
@@ -1824,13 +1875,13 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
     // Soberanía Técnica y Cero Lock-in (Estrategia B2B)
     const TechnicalSovereignty = () => {
       return (
-        <section className="py-24 px-6 md:px-12 bg-[#060A14] border-t border-white/[0.04]">
+        <section className="py-24 px-6 md:px-12 bg-gradient-to-t from-navy-950 to-navy-900 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[10px] font-mono tracking-widest uppercase text-blue-400 font-bold mb-4 block">
                 CERO LOCK-IN · SOBERANÍA ABSOLUTA
               </span>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Tu infraestructura. Tus datos. Tu código fuente<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
@@ -1844,7 +1895,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
                   <span className="text-xl">☁️</span>
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3">Despliegue en tu VPC</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Despliegue en tu VPC</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad.
                 </p>
@@ -1855,7 +1906,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
                   <span className="text-xl">🔓</span>
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3">Propiedad del Código</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Propiedad del Código</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos y el código fuente. Eres libre de mantenerlo in-house o contratar nuestra póliza de Mantenimiento.
                 </p>
@@ -1866,7 +1917,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform">
                   <span className="text-xl">🛡️</span>
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3">Modelos Blindados</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Modelos Blindados</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Utilizamos instancias empresariales de LLMs con políticas estrictas de privacidad (Zero Data Retention). Ninguna conversación de tus clientes se usará para entrenar modelos públicos.
                 </p>
@@ -1879,12 +1930,12 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
 
     const App = () => {
       const [selectedSolution, setSelectedSolution] = useState(null);
+      const [isContactOpen, setIsContactOpen] = useState(false);
+      const [preselectedPkg, setPreselectedPkg] = useState(null);
 
       const scrollToForm = (pkgName) => {
-        const formEl = document.getElementById('contact-form');
-        if (formEl) {
-          formEl.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (pkgName && typeof pkgName === 'string') setPreselectedPkg(pkgName);
+        setIsContactOpen(true);
       };
 
       return (
@@ -1896,10 +1947,10 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
           />
           <SocialProofSection />
           <WorkflowTeardown />
-          <AgentTerminalDemo />
+          {/* <AgentTerminalDemo /> */}
           <AgenticTechStack />
           <TechnicalSovereignty />
-          <TechPartners />
+          {/* <TechPartners /> */}
           <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
           <ROICalculator onOpenContact={(data) => scrollToForm(data)} />
           <ThreeWaysToWork onSelectPackage={(pkg) => scrollToForm(pkg)} />
@@ -1907,12 +1958,21 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
           <PostContactSLA />
           <FinalCTA onOpenContact={() => scrollToForm()} />
           
-          <MultiStepContact />
           <SolutionDrawer 
             solution={selectedSolution} 
             onClose={() => setSelectedSolution(null)} 
             onOpenContact={() => scrollToForm()} 
           />
+          {isContactOpen && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn overflow-y-auto">
+              <div className="bg-navy-900 border border-white/[0.08] rounded-2xl w-full max-w-4xl relative overflow-hidden my-auto shadow-2xl">
+                <button onClick={() => setIsContactOpen(false)} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-navy-800 text-slate-400 hover:text-white flex items-center justify-center border border-white/10 z-50 text-sm transition-colors">✕</button>
+                <div className="max-h-[85vh] overflow-y-auto custom-scrollbar p-6">
+                  <MultiStepContact preselectedPackage={preselectedPkg} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       );
     };
