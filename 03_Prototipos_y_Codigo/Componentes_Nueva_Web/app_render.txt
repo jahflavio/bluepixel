@@ -1,4 +1,0 @@
-﻿          <AgenticFrictionPoints />
-          <ROICalculator onOpenContact={(data) => scrollToForm(data)} />
-          <ThreeWaysToWork onSelectPackage={(pkg) => scrollToForm(pkg)} />
-          <TheTriStormMethodology />
