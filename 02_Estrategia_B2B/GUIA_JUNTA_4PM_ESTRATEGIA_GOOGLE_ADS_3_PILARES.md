@@ -24,22 +24,11 @@
 
 Para maximizar el retorno de inversión y evitar la dilución del presupuesto, se implementará un modelo de **3 Capas de Campaña**:
 
-```mermaid
-graph TD
-    subgraph "CAPA 1: CAPTURA DE INTENCIÓN ACTIVA (75% del Presupuesto)"
-        C1["Campaña Search 01:<br/>Apps & Plataformas B2B"]
-        C2["Campaña Search 02:<br/>Automatización & ERPs"]
-        C3["Campaña Search 03:<br/>Agentización & IA Enterprise"]
-    end
-
-    subgraph "CAPA 2: NUTRICIÓN & REMARKETING B2B (15% del Presupuesto)"
-        R1["Demand Gen & Display Retargeting<br/>(Visitantes del Blueprint Library & Casos sin convertir)"]
-    end
-
-    subgraph "CAPA 3: BRANDED & PROTECCIÓN (10% del Presupuesto)"
-        B1["Search Branded: BluePixel<br/>(Defensa de marca y búsquedas de directores)"]
-    end
-```
+| Capa Estratégica | % Presupuesto | Campañas Asignadas | Audiencia / Objetivo |
+| :--- | :---: | :--- | :--- |
+| **Capa 1: Captura de Intención Activa** | **75%** | • **Search 01:** Apps & Plataformas B2B<br>• **Search 02:** Automatización & ERPs<br>• **Search 03:** Agentización & IA Enterprise | Decisores con dolor activo buscando soluciones en Google (CTO, COO, CFO). |
+| **Capa 2: Nutrición & Remarketing** | **15%** | • **Demand Gen & Display Retargeting** | Reimpacto a visitantes de la Blueprint Library y Casos de Éxito sin convertir. |
+| **Capa 3: Branded & Protección** | **10%** | • **Search Branded:** BluePixel | Cobertura exacta de la marca para directivos referidos y prospectos en cierre. |
 
 ### Capa 1: Campañas de Búsqueda (Google Search) — 75% del Presupuesto
 * **Tipo:** Search Tradicional B2B (Exact Match `[]` y Phrase Match `""` exclusivamente).
