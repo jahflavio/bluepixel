@@ -1,14 +1,14 @@
+import React, { useState, useEffect, useRef } from 'react';
+import './App.css';
 
-    import React, { useState, useEffect, useRef } from 'react';
-import { createRoot } from 'react-dom/client';
-import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChart, Code2, Users, Rocket, CheckCircle2, Star, Shield, Clock, Brain, Cpu, MessageSquare, ChevronDown, Workflow } from 'lucide-react';
+
 
     // Presets de Casos Operativos para el Hero Prompt Bar
     const PRESETS = [
   {
     id: 'cotizaciones',
     label: 'Cotizaciones lentas en Excel',
-    prompt: 'Mi equipo tarda horas armando cotizaciones en Excel y estamos perdiendo ventas.',
+    prompt: 'Nuestros ejecutivos tardan hasta 48 horas en cotizar productos complejos en hojas de cálculo y se pierden ventas.',
     categoria: 'AUTOMATIZACIÓN COMERCIAL & PRICING',
     impacto: 'Pérdida de 35% de leads calificados por demora en respuesta. 120 horas hombre/mes consumidas.',
     arquitectura: [
@@ -24,7 +24,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
   {
     id: 'conciliacion',
     label: 'Conciliación contable & ERP',
-    prompt: 'Tengo a 5 personas cruzando facturas a mano contra SAP cada fin de mes.',
+    prompt: 'El equipo contable concilia manualmente miles de facturas y transferencias bancarias contra el ERP a fin de mes.',
     categoria: 'BACK-OFFICE FINANCIERO & COMPLIANCE',
     impacto: 'Demoras de 10 días en cierre mensual y multas por discrepancias fiscales ante el SAT.',
     arquitectura: [
@@ -40,7 +40,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
   {
     id: 'checkout',
     label: 'Fuga en checkout (IMPATH)',
-    prompt: 'Los clientes están abandonando el checkout a la mitad y estamos perdiendo dinero.',
+    prompt: 'Nuestra plataforma digital tiene una tasa de abandono del 68% en el paso 3 del flujo de pago.',
     categoria: 'UX INTEL & CONVERSIÓN TRANSACCIONAL',
     impacto: '$1.4M MXN en ingresos perdidos cada trimestre por fricción cognitiva y errores de validación.',
     arquitectura: [
@@ -56,7 +56,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
   {
     id: 'soporte',
     label: 'Atención 24/7 sin alucinaciones',
-    prompt: 'Necesito un bot en WhatsApp para soporte, pero que NO se invente las políticas de la empresa.',
+    prompt: 'Queremos automatizar el soporte y atención al cliente en WhatsApp sin que la IA invente datos falsos ni dañe la marca.',
     categoria: 'CUSTOMER EXPERIENCE & RAG BLINDADO',
     impacto: 'Pérdida de clientes en fines de semana y costos de call-center que crecen linealmente con el negocio.',
     arquitectura: [
@@ -93,7 +93,13 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
       <nav className="border-b border-white/[0.08] bg-navy-950/85 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="bluepixel_logo.png" alt="BluePixel" className="h-8 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
+              BP
+            </div>
+            <div className="flex flex-col">
+              <span className="text-white font-black tracking-tight text-lg leading-none">BluePixel</span>
+              <span className="text-[10px] text-slate-400 font-mono tracking-wider">ENGINEERING & AI</span>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
@@ -118,223 +124,129 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
     // Hero with Prompt Engine
     const HeroPromptEngine = ({ onSelectSolution }) => {
   const [inputVal, setInputVal] = useState('');
-  
-  // Typewriter Effect State
-  const [placeholderText, setPlaceholderText] = useState('');
-  const [presetIndex, setPresetIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isManualMode, setIsManualMode] = useState(false);
-  const textareaRef = React.useRef(null);
+  const [activePreset, setActivePreset] = useState(PRESETS[0]);
 
-  (React.useEffect || useEffect)(() => {
-    if (isManualMode) return; // Detener animación si el usuario interactúa
-
-    let timer;
-    if (isPaused) {
-      timer = setTimeout(() => { setIsPaused(false); setIsDeleting(true); }, 2000); 
-      return () => clearTimeout(timer);
-    }
-
-    const currentPrompt = PRESETS[presetIndex].prompt;
-    
-    if (isDeleting) {
-      if (placeholderText.length === 0) {
-        setIsDeleting(false);
-        setPresetIndex((prev) => (prev + 1) % PRESETS.length);
-      } else {
-        timer = setTimeout(() => { setPlaceholderText(currentPrompt.substring(0, placeholderText.length - 2)); }, 10);
-      }
-    } else {
-      if (placeholderText.length === currentPrompt.length) {
-        setIsPaused(true);
-      } else {
-        timer = setTimeout(() => { setPlaceholderText(currentPrompt.substring(0, placeholderText.length + 1)); }, 30);
-      }
-    }
-    return () => clearTimeout(timer);
-  }, [placeholderText, isDeleting, isPaused, presetIndex, isManualMode]);
+  const handleSelectPreset = (preset) => {
+    setActivePreset(preset);
+    setInputVal(preset.prompt);
+    if (onSelectSolution) onSelectSolution(preset);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const solution = {
-      ...PRESETS[presetIndex],
-      prompt: inputVal || (isManualMode ? '' : PRESETS[presetIndex].prompt)
+      ...activePreset,
+      prompt: inputVal || activePreset.prompt
     };
     if (onSelectSolution) onSelectSolution(solution);
   };
 
-  const handleFocus = () => {
-    setIsManualMode(true);
-    setPlaceholderText('');
-  };
-
   return (
-    
-    <div className="w-full max-w-4xl mx-auto relative group mt-10 lg:mt-0 flex justify-center">
-      
-      {/* Background Flowchart Network for Hero */}
-      <div className="absolute inset-0 z-0 hidden lg:block opacity-60">
-        <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 1000 600">
-          <defs>
-            <filter id="glowHero" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-          </defs>
-          <path id="h1" d="M 500 300 C 200 300, 200 150, 100 150" stroke="rgba(16,185,129,0.2)" strokeWidth="2" strokeDasharray="8 8" fill="none" />
-          <path id="h2" d="M 500 300 C 800 300, 800 150, 900 150" stroke="rgba(59,130,246,0.2)" strokeWidth="2" strokeDasharray="8 8" fill="none" />
-          <path id="h3" d="M 500 300 C 500 100, 500 100, 500 50" stroke="rgba(168,85,247,0.2)" strokeWidth="2" strokeDasharray="8 8" fill="none" />
-          
-          <circle r="4" fill="#10B981" filter="url(#glowHero)"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#h1" /></animateMotion></circle>
-          <circle r="4" fill="#3B82F6" filter="url(#glowHero)"><animateMotion dur="4s" repeatCount="indefinite" begin="1s"><mpath href="#h2" /></animateMotion></circle>
-          <circle r="4" fill="#A855F7" filter="url(#glowHero)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.5s"><mpath href="#h3" /></animateMotion></circle>
-        </svg>
-        
-        {/* Floating Node Labels */}
-        <div className="absolute left-[5%] top-[23%] text-[9px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.3)]">Internal API</div>
-        <div className="absolute right-[5%] top-[23%] text-[9px] font-mono text-blue-400 bg-blue-950/80 border border-blue-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.3)]">External ERP</div>
-        <div className="absolute left-[45%] top-[5%] text-[9px] font-mono text-purple-400 bg-purple-950/80 border border-purple-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.3)]">LLM Router</div>
+    <div className="w-full max-w-3xl mx-auto">
+      <div className="bg-[#0A0E1A]/95 border border-white/[0.12] rounded-2xl p-3 shadow-2xl backdrop-blur-xl transition-all duration-300 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/15">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="flex items-center gap-3 flex-1 px-3">
+            <span className="text-blue-400 text-lg">✦</span>
+            <input
+              type="text"
+              value={inputVal}
+              onChange={(e) => setInputVal(e.target.value)}
+              placeholder="Describe un cuello de botella de tu empresa (o selecciona un ejemplo)..."
+              className="w-full bg-transparent text-white placeholder-slate-500 text-sm md:text-base focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0 shadow-lg shadow-blue-600/30">
+            <span>Ver Solución Técnica</span>
+            <span className="text-base font-bold">↗</span>
+          </button>
+        </form>
+
+        {/* Preset Chips */}
+        <div className="mt-3 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 px-2 text-left">
+          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">Casos Típicos:</span>
+          {PRESETS.map((p) => (
+            <button
+              key={p.id}
+              type="button"
+              onClick={() => handleSelectPreset(p)}
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-150 flex items-center gap-1.5 ${
+                activePreset.id === p.id && inputVal === p.prompt
+                  ? 'bg-blue-600/30 text-blue-300 border border-blue-500/50'
+                  : 'bg-[#131D35]/70 text-slate-400 hover:text-white border border-white/[0.05] hover:bg-[#1A2540]'
+              }`}>
+              <span>◈</span>
+              <span>{p.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="w-full max-w-xl mx-auto relative group perspective-1000 z-10">
-
-      
-      {/* Interactive Hint - Visible before interaction */}
-      {!isManualMode && (
-        <div className="absolute -top-10 right-4 animate-bounce z-20">
-          <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center gap-2 border border-blue-400/30">
-            <span>Escribe tu problema y halla una solución</span>
-            <span className="text-white/70">↓</span>
-          </div>
-        </div>
-      )}
-
-      {/* Background Glow */}
-      <div className="absolute -inset-1 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl blur-2xl opacity-20 group-hover:opacity-50 transition duration-500"></div>
-      
-      {/* Glass Terminal */}
-      <div onClick={() => { if(textareaRef.current) textareaRef.current.focus(); }} className="relative bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] hover:border-blue-500/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.3)] cursor-text">
-        
-        {/* Terminal Header */}
-        <div className="flex items-center px-4 py-3 border-b border-white/[0.05] bg-white/[0.02] cursor-default">
-          <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-            <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-          </div>
-          <div className="mx-auto text-[10px] font-mono text-slate-500">agent-kernel ~ zsh</div>
-        </div>
-
-        {/* Terminal Body */}
-        <div className="p-6 font-mono text-sm">
-
-          
-          <form onSubmit={handleSubmit} className="relative">
-            <div className="flex items-start gap-3">
-              <span className="text-emerald-400 mt-1">➜</span> 
-              <span className="text-purple-400 mt-1">user</span>
-              <textarea
-                value={inputVal}
-                onChange={(e) => setInputVal(e.target.value)}
-                ref={textareaRef}
-                onFocus={handleFocus}
-                placeholder={isManualMode ? "Escribe aquí la peor fricción manual de tu empresa..." : placeholderText}
-                className="flex-1 bg-transparent text-white placeholder-slate-400 focus:placeholder-slate-600 text-sm focus:outline-none resize-none mt-1 min-h-[60px] cursor-text"
-                spellCheck="false"
-              />
-            </div>
-            {/* Suggestion Chips */}
-            <div className={`mt-4 flex flex-wrap gap-2 transition-opacity duration-500 ${isManualMode ? 'opacity-100' : 'opacity-0 pointer-events-none hidden'}`}>
-               <button type="button" onClick={() => { setInputVal(PRESETS[0].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Cotizaciones lentas</button>
-               <button type="button" onClick={() => { setInputVal(PRESETS[1].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Conciliación SAP</button>
-               <button type="button" onClick={() => { setInputVal(PRESETS[2].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Fuga en Checkout</button>
-            </div>
-            
-            <div className="mt-4 pt-4 border-t border-white/[0.05] flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className={`w-2 h-2 rounded-full ${isManualMode ? 'bg-emerald-500' : 'bg-blue-500'} animate-pulse`}></span>
-                <span className="text-[10px] text-slate-500 uppercase tracking-widest">{isManualMode ? 'Awaiting Input' : 'Auto Pilot Mode'}</span>
-              </div>
-              <button
-                type="submit"
-                className={`${isManualMode ? 'bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 text-white' : 'bg-white/10 hover:bg-white/20 text-slate-300'} text-xs font-sans px-4 py-2 rounded-lg transition-all flex items-center gap-2`}
-              >
-                <span>Analizar Fricción</span>
-                <span className="text-[10px] opacity-50">⏎</span>
-              </button>
-            </div>
-          </form>
-              </div>
-      </div>
+      <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mt-3 font-mono">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+        <span>Motor de diagnóstico en vivo · Basado en casos reales de BluePixel</span>
       </div>
     </div>
   );
 };
 
+
     const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
       return (
-        <section id="prompt-hero" className="relative pt-24 pb-24 px-6 md:px-12 overflow-hidden min-h-[90vh] flex items-center">
-          {/* Subtle Dynamic Grids & Glows */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
-          
-          <div className="absolute top-1/4 -left-64 w-[600px] h-[600px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
-          <div className="absolute bottom-1/4 -right-64 w-[600px] h-[600px] bg-purple-600/10 blur-[120px] pointer-events-none rounded-full" />
+        <section id="prompt-hero" className="relative pt-16 pb-20 px-6 md:px-12 overflow-hidden">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-blue-600/15 blur-[120px] pointer-events-none rounded-full" />
+          <div className="absolute top-1/3 right-10 w-[450px] h-[300px] bg-purple-600/10 blur-[140px] pointer-events-none rounded-full" />
 
-          <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-            
-            {/* Left Column: Copy & CTAs */}
-            <div className="text-left">
-              {/* Category Kicker */}
-              <div className="inline-flex items-center gap-2 mb-8">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
-                <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold border border-blue-500/20 bg-blue-500/5 px-3 py-1 rounded-full">
-                  INGENIERÍA DE AGENTES IA
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="mb-6 font-black font-display tracking-tight leading-[1.1] text-4xl lg:text-5xl xl:text-[3.5rem] text-white">
-                Construimos agentes de IA que <br className="hidden lg:block"/>
-                <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción.</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-slate-400 text-base lg:text-lg max-w-xl leading-relaxed mb-10">
-                BluePixel es la consultora boutique para empresas líderes en México y LATAM. Conectamos agentes autónomos a tus datos y sistemas reales (SAP, Salesforce), blindados con <strong className="text-white font-semibold">diseño UX de clase mundial</strong> para garantizar adopción humana inmediata.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4">
-                <button 
-                  onClick={onOpenContact}
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
-                  <span>Auditar mi operación</span>
-                  <span>→</span>
-                </button>
-                <a 
-                  href="#three-ways"
-                  className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors">
-                  Ver metodología ↓
-                </a>
-              </div>
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            {/* Category Kicker */}
+            <div className="inline-flex items-center gap-2 mb-8">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                INGENIERÃA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
+              </span>
             </div>
 
-            {/* Right Column: Agentic Terminal */}
-            <div className="w-full">
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] font-black text-white tracking-tight leading-[1.08] mb-6">
+              Construimos agentes de Inteligencia Artificial que <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producciÃ³n.</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+              BluePixel es la consultora de ingenierÃ­a agentica para empresas lÃ­deres en MÃ©xico y LATAM. Conectamos agentes autÃ³nomos a tus datos y sistemas reales (SAP, Salesforce, ERPs), blindados con <strong className="text-slate-200 font-semibold">diseÃ±o UX de clase mundial</strong> para garantizar adopciÃ³n humana inmediata.
+            </p>
+
+            {/* THE HERO PROMPT BAR (PLG Engine) */}
+            <div className="max-w-3xl mx-auto mb-6">
               <HeroPromptEngine onSelectSolution={onSelectSolution} />
             </div>
 
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+              <button 
+                onClick={onOpenContact}
+                className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
+                <span>Solicitar DiagnÃ³stico Operativo (Sin Costo)</span>
+                <span>â†’</span>
+              </button>
+              <a 
+                href="#three-ways"
+                className="bg-navy-800 hover:bg-navy-700 text-slate-300 font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/10 transition-colors">
+                Conoce las 3 Formas de Trabajar â†“
+              </a>
+            </div>
           </div>
         </section>
       );
     };
-
-    // Social Proof & Client Marquee Section
     const SocialProofSection = () => {
       const doubledLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
       return (
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-            <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
               Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span>
             </h2>
           </div>
@@ -456,11 +368,11 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                 step: currentStep
               }]);
               currentLine++;
-              setTimeout(processNextLog, 150 + Math.random() * 200); // Random typing delay
+              setTimeout(processNextLog, 800 + Math.random() * 800); // Random typing delay
             } else {
               currentStep++;
               currentLine = 0;
-              setTimeout(processNextLog, 400); // Wait before next step
+              setTimeout(processNextLog, 1500); // Wait before next step
             }
           }
         };
@@ -480,7 +392,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
               <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-4 block">
                 UNDER THE HOOD
               </span>
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
                 Lo que hace un agente en producción<span className="text-red-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -492,33 +404,31 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
               
               {/* Left Column: Timeline */}
               <div className="lg:col-span-4 relative pl-4 md:pl-0">
-                <div className="relative z-10">
+                <div className="space-y-12 relative z-10">
                   {steps.map((step, idx) => {
                     const isActive = idx === activeStep;
                     const isPast = idx < activeStep;
                     
                     return (
                       <div key={idx} className="flex gap-6 relative">
+                        {/* Individual Line Segment */}
+                        {idx !== steps.length - 1 && (
+                          <div className="absolute left-[11px] top-7 bottom-[-48px] w-[2px] bg-white/[0.05] z-0">
+                            <div className={`w-full bg-red-500 transition-all duration-1000 ease-in-out ${activeStep > idx ? 'h-full' : 'h-0'}`}></div>
+                          </div>
+                        )}
                         
-                        {/* Timeline Node & Line Segment */}
-                        <div className="flex flex-col items-center shrink-0 w-6">
-                          {/* Node */}
-                          <div className={`w-6 h-6 shrink-0 mt-1 rounded-full flex items-center justify-center border-2 transition-colors duration-500 shadow-[0_0_0_4px_rgb(10,14,28)] z-10 relative ${isActive ? 'border-red-500 bg-[#0A0E1C]' : isPast ? 'border-red-500 bg-red-500' : 'border-white/[0.2] bg-[#0A0E1C]'}`}>
+                        {/* Timeline Node */}
+                        <div className="relative mt-1 shrink-0 z-10 bg-navy-950">
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 transition-colors duration-500 ${isActive ? 'border-red-500 bg-navy-950' : isPast ? 'border-red-500 bg-red-500' : 'border-white/[0.2] bg-navy-950'}`}>
                             {isActive && (
                               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
                             )}
                           </div>
-                          
-                          {/* Segment Line */}
-                          {idx !== steps.length - 1 && (
-                            <div className="w-[2px] flex-grow bg-white/[0.05] my-2 rounded-full overflow-hidden min-h-[48px]">
-                              <div className={`w-full bg-red-500 transition-all duration-1000 ease-in-out ${isPast ? 'h-full' : 'h-0'}`}></div>
-                            </div>
-                          )}
                         </div>
                         
                         {/* Content */}
-                        <div className={`transition-opacity duration-500 flex-1 ${idx !== steps.length - 1 ? 'pb-12' : ''} ${isActive || isPast ? 'opacity-100' : 'opacity-40'}`}>
+                        <div className={`transition-opacity duration-500 ${isActive || isPast ? 'opacity-100' : 'opacity-40'}`}>
                           <div className="flex items-center gap-3 mb-2">
                             <span className="text-[10px] font-mono text-red-400 font-bold">{step.id}</span>
                             <h4 className="text-white font-bold text-lg">{step.title}</h4>
@@ -557,21 +467,25 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                   
                   {/* Terminal Content */}
                   <div className="p-6 h-[320px] overflow-y-auto font-mono text-xs md:text-sm leading-relaxed flex flex-col">
-                    {terminalLines.map((line, idx) => (
-                      <div key={idx} className="mb-2 animate-fadeIn flex">
-                        <span className="text-slate-500 w-16 shrink-0">{line.text?.substring(0, 7)}</span>
-                        <span className={
-                          line.text?.includes('task received') ? 'text-white font-bold' :
-                          line.text?.includes('tool_call') ? 'text-blue-400' :
-                          line.text?.includes('mcp_response') ? 'text-emerald-400' :
-                          line.text?.includes('verify') ? 'text-purple-400' :
-                          line.text?.includes('routing') || line.text?.includes('dispatch') ? 'text-amber-400' :
-                          'text-slate-300'
-                        }>
-                          {line.text?.substring(7)}
-                        </span>
-                      </div>
-                    ))}
+                    {terminalLines.map((line, idx) => {
+                      const text = typeof line === 'string' ? line : (line?.text || '');
+                      if (!text) return null;
+                      return (
+                        <div key={idx} className="mb-2 animate-fadeIn flex">
+                          <span className="text-slate-500 w-16 shrink-0">{text.substring(0, 7)}</span>
+                          <span className={
+                            text.includes('task received') ? 'text-white font-bold' :
+                            text.includes('tool_call') ? 'text-blue-400' :
+                            text.includes('mcp_response') ? 'text-emerald-400' :
+                            text.includes('verify') ? 'text-purple-400' :
+                            text.includes('routing') || text.includes('dispatch') ? 'text-amber-400' :
+                            'text-slate-300'
+                          }>
+                            {text.substring(7)}
+                          </span>
+                        </div>
+                      );
+                    })}
                     {activeStep < steps.length && (
                       <div className="flex mt-2">
                         <span className="w-2 h-4 bg-slate-400 animate-pulse"></span>
@@ -609,178 +523,116 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
 
     // Workflow Teardown: Antes (Legacy Manual) vs. Después (Agentic BluePixel)
     const WorkflowTeardown = () => {
-      const [activeTab, setActiveTab] = useState('legacy');
-      const [progress, setProgress] = useState(0);
-      const [isHovered, setIsHovered] = useState(false);
-      const [isVisible, setIsVisible] = useState(false);
-      const sectionRef = React.useRef(null);
-
-      // Intersection Observer to detect when the section is on screen
-      useEffect(() => {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setIsVisible(true);
-            } else {
-              // Optional: reset if you want it to restart when scrolled out and back in
-              // setIsVisible(false); 
-              // setProgress(0);
-              // setActiveTab('legacy');
-            }
-          },
-          { threshold: 0.3 } // Trigger when 30% of it is visible
-        );
-
-        if (sectionRef.current) {
-          observer.observe(sectionRef.current);
-        }
-
-        return () => {
-          if (sectionRef.current) observer.unobserve(sectionRef.current);
-        };
-      }, []);
-
-      // Timer logic
-      useEffect(() => {
-        // Only run if it's visible on screen and not hovered
-        if (!isVisible || isHovered) return;
-        
-        const interval = setInterval(() => {
-          setProgress(prev => {
-            if (prev >= 100) {
-              if (activeTab === 'legacy') {
-                setActiveTab('bluepixel');
-                return 0;
-              } else {
-                return 100;
-              }
-            }
-            return prev + 0.85; // Approx 6 seconds per tab
-          });
-        }, 50);
-
-        return () => clearInterval(interval);
-      }, [activeTab, isHovered, isVisible]);
-
-      const handleTabClick = (tab) => {
-        setActiveTab(tab);
-        setProgress(0);
-      };
-
       return (
-        <section ref={sectionRef} className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06] relative">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-            
-            {/* Left Column: Fixed/Sticky Title and Description (Vstorm Layout) */}
-            <div className="lg:w-4/12 lg:sticky lg:top-32">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-red-500 font-bold mb-4 block">
+        <section className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.06] relative">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-red-400 font-bold">
                 DIAGNÓSTICO OPERATIVO FORENSE
               </span>
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mt-4 mb-5">
                 El abismo entre un proceso manual y una capa agentizada<span className="text-blue-500">.</span>
               </h2>
-              <p className="text-slate-400 text-base leading-relaxed mb-6">
-                La mayoría de los proyectos de IA fracasan porque se enfocan en "chatbots" en lugar de infraestructura. En BluePixel, auditamos tus cuellos de botella antes de escribir una sola línea de código.
-              </p>
-              <p className="text-slate-400 text-base leading-relaxed">
-                Nuestros agentes determinísticos (Model Context Protocol) transforman la fricción humana de días en una ejecución instantánea y auditable.
+              <p className="text-slate-400 text-base md:text-lg">
+                La mayoría de las empresas pierden hasta 40% de productividad no por falta de personal, sino por traspasos manuales entre correos, hojas de cálculo y sistemas desconectados.
               </p>
             </div>
 
-            {/* Right Column: Interactive Tab Card + Secondary Card */}
-            <div className="lg:w-8/12 flex flex-col gap-8 w-full">
-              
-              {/* 1. Main Interactive Card */}
-              <div 
-                className="bg-[#0A0F1D] border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl relative w-full"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                {/* Progress Line */}
-                <div className="h-1 w-full bg-navy-950 absolute top-0 left-0 z-20">
-                  <div 
-                    className={`h-full transition-all duration-75 ${activeTab === 'legacy' ? 'bg-red-500' : 'bg-emerald-400'}`}
-                    style={{ width: `${progress}%` }}
-                  ></div>
+            {/* Visual Teardown Container */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative">
+              {/* VS Badge */}
+              <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-navy-950 border border-white/[0.1] rounded-full z-10 items-center justify-center text-slate-400 font-black font-mono text-lg shadow-xl">
+                VS
+              </div>
+
+              {/* Legacy Column */}
+              <div className="bg-navy-900/40 border border-white/[0.05] rounded-3xl p-6 md:p-8 hover:border-red-500/20 transition-colors group">
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.06]">
+                  <span className="text-xs font-mono font-bold uppercase text-red-400 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-red-500 opacity-50"></span>
+                    <span>Proceso Manual Legacy</span>
+                  </span>
+                  <span className="text-xs font-mono text-slate-500 bg-navy-800 px-3 py-1 rounded-full border border-white/5">48 hrs ciclo</span>
                 </div>
 
-                {/* Header & Tabs */}
-                <div className="px-6 md:px-12 py-8 flex justify-center border-b border-white/[0.05]">
-                  <div className="inline-flex items-center p-1 bg-[#060A14] border border-white/[0.08] rounded-full shadow-inner w-full sm:w-auto overflow-x-auto">
-                    <button 
-                      onClick={() => handleTabClick('legacy')}
-                      className={`flex-1 sm:flex-none px-6 md:px-10 py-2.5 rounded-full text-[10px] md:text-xs font-mono font-bold uppercase tracking-widest transition-all duration-300 ${activeTab === 'legacy' ? 'bg-[#131D35] text-white shadow-lg border border-white/[0.08]' : 'text-slate-500 hover:text-slate-300'}`}
-                    >
-                      Proceso Manual
-                    </button>
-                    <button 
-                      onClick={() => handleTabClick('bluepixel')}
-                      className={`flex-1 sm:flex-none px-6 md:px-10 py-2.5 rounded-full text-[10px] md:text-xs font-mono font-bold uppercase tracking-widest transition-all duration-300 ${activeTab === 'bluepixel' ? 'bg-blue-600/10 text-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.15)] border border-emerald-500/20' : 'text-slate-500 hover:text-slate-300'}`}
-                    >
-                      Con BluePixel
-                    </button>
+                <div className="space-y-4 text-xs text-slate-300">
+                  <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
+                    <span className="font-mono text-red-400/80 font-bold block mb-1.5">01. Solicitud Dispersa</span>
+                    <p className="text-slate-400 text-sm">Petición recibida por correo, WhatsApp personal o teléfono sin estandarización.</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
+                    <span className="font-mono text-red-400/80 font-bold block mb-1.5">02. Captura en Excel</span>
+                    <p className="text-slate-400 text-sm">El ejecutivo teclea datos a mano; fórmulas desactualizadas causan errores de margen.</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-navy-850/50 border border-white/[0.02] group-hover:border-red-500/10 transition-colors">
+                    <span className="font-mono text-red-400/80 font-bold block mb-1.5">03. Validación Telefónica</span>
+                    <p className="text-slate-400 text-sm">Llamadas internas a almacén o finanzas para verificar inventario y cartera vencida.</p>
                   </div>
                 </div>
 
-                {/* Dynamic Content Area */}
-                <div className="relative min-h-[350px] overflow-hidden bg-gradient-to-b from-transparent to-navy-950/30">
-                  
-                  {/* Legacy Tab */}
-                  <div className={`absolute inset-0 p-8 md:p-12 transition-all duration-700 ease-in-out flex flex-col justify-center ${activeTab === 'legacy' ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-8 pointer-events-none z-0'}`}>
-                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
-                      <div className="md:w-5/12">
-                        <span className="text-[10px] font-mono text-red-500 uppercase tracking-widest block mb-2">Error Operativo</span>
-                        <div className="text-7xl font-black text-white tracking-tighter">18<span className="text-4xl text-red-500">%</span></div>
-                      </div>
-                      <div className="md:w-7/12 space-y-4">
-                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuellos de botella humanos</h3>
-                        <p className="text-slate-400 leading-relaxed text-sm">
-                          El ejecutivo teclea datos a mano en hojas de cálculo con fórmulas desactualizadas. Se pierde tiempo en llamadas internas para verificar reglas de negocio, generando <strong className="text-red-400 font-semibold">$1.2M MXN en pérdidas anuales</strong> por fricción.
-                        </p>
-                      </div>
-                    </div>
+                <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-1">Tasa de Error</span>
+                    <span className="text-lg font-bold text-slate-300">12-18%</span>
                   </div>
-
-                  {/* BluePixel Tab */}
-                  <div className={`absolute inset-0 p-8 md:p-12 transition-all duration-700 ease-in-out flex flex-col justify-center ${activeTab === 'bluepixel' ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 -translate-y-8 pointer-events-none z-0'}`}>
-                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
-                      <div className="md:w-5/12">
-                        <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest block mb-2">Precisión</span>
-                        <div className="text-7xl font-black text-white tracking-tighter">99<span className="text-4xl text-emerald-400">.9%</span></div>
-                      </div>
-                      <div className="md:w-7/12 space-y-4">
-                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Ejecución determinística</h3>
-                        <p className="text-slate-300 leading-relaxed text-sm">
-                          El servidor MCP consulta el stock real directamente en el ERP (SAP/Salesforce). Se genera la cotización en PDF al instante, asegurando un <strong className="text-emerald-400 font-semibold">+340% de ROI proyectado</strong>.
-                        </p>
-                      </div>
-                    </div>
+                  <div className="text-right">
+                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-1">Pérdida Anual Est.</span>
+                    <span className="text-lg font-bold text-red-400">$1.2M MXN</span>
                   </div>
-
                 </div>
               </div>
 
-              {/* 2. Secondary Static Card */}
-              <div className="bg-[#0A0F1D]/40 border border-white/[0.04] rounded-[2rem] p-8 md:p-12 flex flex-col justify-center hover:bg-[#0A0F1D]/80 hover:border-white/[0.1] transition-colors">
-                <div className="text-5xl font-black text-white mb-4">340<span className="text-blue-500">%</span></div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Retorno de inversión (ROI) documentado</h3>
-                <p className="text-slate-400 leading-relaxed text-sm">
-                  BluePixel destila patrones arquitectónicos exitosos de despliegues en producción para el sector logístico, fintech y enterprise SaaS. No experimentamos con tu operación; replicamos lo que ya funciona y lo adaptamos a tus sistemas legacy.
-                </p>
-              </div>
+              {/* Agentic Column */}
+              <div className="bg-gradient-to-b from-navy-800 to-navy-900 border border-blue-500/30 rounded-3xl p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300 shadow-2xl shadow-blue-900/20 relative overflow-hidden group glow-blue">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-blue-500/20 transition-colors" />
+                
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.08] relative z-10">
+                  <span className="text-xs font-mono font-bold uppercase text-emerald-400 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+                    <span>Operación Agentizada BluePixel</span>
+                  </span>
+                  <span className="text-xs font-mono text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 font-bold">90 segundos</span>
+                </div>
 
+                <div className="space-y-4 text-xs text-slate-200 relative z-10">
+                  <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">01. Ingesta Multi-Canal & Extracción</span>
+                    <p className="text-slate-300 text-sm">Agente estructurador procesa documentos, PDFs o mensajes con precisión del 99.8%.</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">02. Consulta Determinística MCP</span>
+                    <p className="text-slate-300 text-sm">El servidor MCP consulta stock real y reglas de crédito en el ERP (SAP/Salesforce).</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-navy-950/40 border border-blue-500/10 group-hover:border-blue-500/30 transition-colors backdrop-blur-sm">
+                    <span className="font-mono text-blue-400 font-bold block mb-1.5">03. Generación & Validación Instantánea</span>
+                    <p className="text-slate-300 text-sm">Cotización formal en PDF enviada al cliente con validación Human-In-The-Loop.</p>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-blue-500/10 flex items-center justify-between relative z-10">
+                  <div>
+                    <span className="text-[10px] font-mono text-blue-400/70 uppercase tracking-widest block mb-1">Precisión Operativa</span>
+                    <span className="text-lg font-bold text-white">99.9%</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] font-mono text-emerald-400/70 uppercase tracking-widest block mb-1">ROI Proyectado</span>
+                    <span className="text-lg font-bold text-emerald-400">+340%</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       );
     };
-// Tech Stack & Ecosystem (Vstorm Asymmetric Grid Style)
+
+    // Tech Stack & Ecosystem (Vstorm Asymmetric Grid Style)
     const AgenticTechStack = () => {
       return (
         <section id="tech-stack" className="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-6">
                 Nuestro ecosistema tecnológico<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -800,15 +652,15 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                     <span className="text-[10px] font-mono font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded">01</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-300">PROTOCOLO CORE</span>
                   </div>
-                  <h3 className="mb-4 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Model Context Protocol (MCP)</h3>
+                  <h3 className="text-3xl font-black text-white mb-4 leading-tight">Model Context Protocol (MCP)</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8">
                     El estándar abierto que conecta de forma determinística los LLMs con tus orígenes de datos locales, ERPs y APIs corporativas. Sin integraciones frágiles.
                   </p>
                   
                   <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span>SAP</span>
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-cyan-500"></span>Salesforce</span>
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-white"></span>HubSpot</span>
+                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">SAP</span>
+                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">Salesforce</span>
+                    <span className="text-xs font-mono text-slate-300 bg-navy-800 px-3 py-1.5 rounded-lg border border-white/10">PostgreSQL</span>
                   </div>
                 </div>
               </div>
@@ -821,13 +673,14 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">FRAMEWORKS AGENTICOS</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Orquestación de Enjambres</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Orquestación de Enjambres</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Sistemas multi-agente construidos con rigor de ingeniería de software. Tipado estricto y flujos dirigidos.
                   </p>
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-blue-400">⚡</span>Pydantic AI</span>
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-emerald-400">🦜</span>LangGraph</span>
+                  <div className="flex items-center gap-4 mt-6 text-slate-500">
+                    <span className="text-sm font-semibold text-slate-300">Pydantic AI</span>
+                    <span className="w-1 h-1 rounded-full bg-slate-600"></span>
+                    <span className="text-sm font-semibold text-slate-300">LangGraph</span>
                   </div>
                 </div>
               </div>
@@ -840,13 +693,13 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">MEMORIA & CONTEXTO</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">RAG & Bases Vectoriales</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">RAG & Bases Vectoriales</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Pipelines de recuperación avanzada que evitan alucinaciones anclando las respuestas a tu data.
                   </p>
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-indigo-400">Pinecone</span></span>
-                    <span className="text-xs font-mono text-white bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2"><span className="text-indigo-400">🐘</span>pgvector</span>
+                  <div className="flex items-center gap-4 mt-6">
+                    <span className="text-xs font-mono text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Pinecone</span>
+                    <span className="text-xs font-mono text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">pgvector</span>
                   </div>
                 </div>
               </div>
@@ -861,7 +714,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                     <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">04</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">DESPLIEGUE CLOUD</span>
                   </div>
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">LLMOps & Serverless Architecture</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">LLMOps & Serverless Architecture</h3>
                   <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
                     Agentes que corren en producción exigen infraestructura de grado empresarial. Monitoreo de latencia, tracking de costos por token, despliegues CI/CD y contenedores escalables sin fricción.
                   </p>
@@ -891,7 +744,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
         <section className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="md: mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
                 El stack detrás de la ingeniería<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
@@ -979,7 +832,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                 <span>SIMULADOR DE IMPACTO FINANCIERO</span>
                 <span>✦</span>
               </span>
-              <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
                 ¿Cuánto dinero pierde tu empresa en tareas manuales?
               </h2>
               <p className="text-slate-400 text-sm md:text-base">
@@ -993,7 +846,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
-                      Tamaño del equipo operativo
+                      Personas en tareas repetitivas / back-office
                     </label>
                     <span className="text-lg font-black text-blue-400 font-mono">{teamSize} colaboradores</span>
                   </div>
@@ -1113,101 +966,289 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
     };
 
     // Our Services (Vstorm Asymmetric Grid Style)
-    
-    const ThreeWaysToWork = () => {
-      return (
-        <section id="three-ways" className="py-32 px-6 md:px-12 bg-[#02040A] border-t border-b border-white/[0.05] relative overflow-hidden">
-          
-          {/* Subtle Node-Network Grid Background */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777)', backgroundSize: '40px 70px', backgroundPosition: '0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px' }}></div>
+    const ThreeWaysToWork = ({ onSelectPackage }) => {
+  return (
+    <section id="three-ways" className="py-24 px-6 md:px-12 bg-[#040711] border-t border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+            CÓMO TRABAJAR CON NOSOTROS
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
+            Tres formas de colaborar con BluePixel.
+          </h2>
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+            Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
+          </p>
+        </div>
 
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
-            
-            {/* Left Copy (Vstorm Style) */}
-            <div className="lg:w-5/12 z-10 relative">
-              <span className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-blue-400 font-bold mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-                METODOLOGÍA BLUEPIXEL
-              </span>
-              
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tight text-white mb-8 leading-[1.1]">
-                Cómo trabajamos — IA agentizada desde el <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">plan</span> hasta <br/> producción con hitos claros.
-              </h2>
-              
-              <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">
-                Tras múltiples despliegues en corporativos, codificamos lo que separa los sistemas en producción de los experimentos fallidos. Una metodología de fases con "puertas de control" claras, para guiarte a través de las trampas técnicas hacia un ROI medible.
+        {/* Grid de 3 Tarjetas */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+          {/* CARD 01: Transformation Advisory / Diagnóstico */}
+          <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
+                  ENTRY PACKAGE
+                </span>
+                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4">
-                <button className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-6 py-3 rounded-full transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
-                  Agendar Discovery ↗
-                </button>
-                <button className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 font-bold text-sm px-6 py-3 rounded-full transition-all flex items-center gap-2">
-                  Ver el proceso detallado ↗
-                </button>
-              </div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Mapeo de procesos y diagnóstico de operaciones',
+                  'Detección de fricción con gemelos digitales (IMPATH™)',
+                  'Matriz de priorización de agentes IA y cálculo de ROI',
+                  'Blueprint de arquitectura técnica y gobernanza de datos',
+                  'Reporte ejecutivo con costo de inacción cuantificado en pesos'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                    <span className="text-blue-400 mt-0.5">◈</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Right Diagonal Timeline Graph (Vstorm Style) */}
-            <div className="lg:w-7/12 w-full h-[500px] relative flex items-center justify-center">
-              
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-full max-w-[600px] max-h-[400px]">
-                {/* Connecting Diagonal Line */}
-                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                  {/* Base line */}
-                  <line x1="10%" y1="90%" x2="90%" y2="10%" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-                  {/* Active highlight segment (between POC and Production) */}
-                  <line x1="70%" y1="30%" x2="75%" y2="25%" stroke="#3B82F6" strokeWidth="2" className="drop-shadow-[0_0_5px_rgba(59,130,246,0.8)]" />
-                </svg>
+            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Diagnóstico & Auditoría (01)')}
+                className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
+                <span>Solicitar Diagnóstico</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </div>
 
-                {/* Nodes */}
-                {/* 1. Today */}
-                <div className="absolute left-[10%] top-[90%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-500 mb-2"></div>
-                  <span className="text-[10px] font-mono text-slate-500">today</span>
-                </div>
+          {/* CARD 02: Agentic Engineering */}
+          <div className="bg-[#060A14] border border-white/[0.08] hover:border-indigo-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
+                  ENTRY PACKAGE
+                </span>
+                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
+              </div>
 
-                {/* 2. Discover */}
-                <div className="absolute left-[30%] top-[70%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
-                  <span className="text-[10px] font-mono text-slate-400">discover</span>
-                </div>
-                
-                {/* Text Label on line */}
-                <span className="absolute left-[40%] top-[60%] -translate-x-1/2 -translate-y-1/2 text-[8px] font-mono text-slate-600 uppercase -rotate-45 tracking-widest">ROI MAP</span>
+              <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+              </p>
 
-                {/* 3. Prioritize */}
-                <div className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
-                  <span className="text-[10px] font-mono text-slate-400">prioritize</span>
-                </div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Diseño de arquitectura agentica con protocolos MCP',
+                  'Flujos de trabajo autónomos sobre datos reales con RAG',
+                  'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
+                  'Ingeniería, pruebas de estrés y despliegue cloud en producción',
+                  'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
+                    <span className="text-indigo-400 mt-0.5">◈</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                {/* Text Label on line */}
-                <span className="absolute left-[60%] top-[40%] -translate-x-1/2 -translate-y-1/2 text-[8px] font-mono text-slate-600 uppercase -rotate-45 tracking-widest">DE-RISK</span>
+            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Ingeniería de Agentes (02)')}
+                className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
+                <span>Explorar Ingeniería</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </div>
 
-                {/* 4. POC (Highlighted Node) */}
-                <div className="absolute left-[70%] top-[30%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-                  {/* Dashed outer ring */}
-                  <div className="absolute inset-0 -m-4 border border-dashed border-slate-600 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                  {/* The Node */}
-                  <div className="w-12 h-12 rounded-full bg-[#0A0F1D] border border-slate-400 flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                    <svg className="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+          {/* CARD 03 (01+02): Full Transformation (Destacado) */}
+          <div className="bg-gradient-to-b from-[#0F1628] to-[#060A14] border-2 border-blue-500/60 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden shadow-2xl shadow-blue-500/20">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full bg-blue-500 text-white font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                  FULL TRANSFORMATION
+                </span>
+                <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
+                  'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                  'Construcción completa de plataforma en 90 días (BUILD)',
+                  'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
+                  'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
+                    <span className="text-emerald-400 font-bold mt-0.5">✓</span>
+                    <span className="font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
+              <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
+              <button 
+                onClick={() => onSelectPackage && onSelectPackage('Transformación Integral (01+02)')}
+                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
+                <span>Agendar Sesión</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+
+    // Casos de Éxito con Métricas Financieras (Case Studies)
+    const CaseStudiesSection = ({ onOpenCase }) => {
+      const cases = [
+        {
+          id: 'bimbo',
+          client: 'Grupo Bimbo',
+          industry: 'Consumo Masivo / Global',
+          title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
+          kpi: '+40%',
+          kpiLabel: 'Productividad Directiva',
+          desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
+          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
+          image: 'assets/bimbo_v2.jpg'
+        },
+        {
+          id: 'radioshack',
+          client: 'RadioShack',
+          industry: 'Retail & E-commerce',
+          title: 'Reinvención transaccional de comercio digital y reducción de fricción de compra',
+          kpi: '-60%',
+          kpiLabel: 'Fricción de Pago',
+          desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
+          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
+          image: 'assets/radioshack_v2.jpg'
+        },
+        {
+          id: 'lifemiles',
+          client: 'LifeMiles / Avianca',
+          industry: 'Travel & Loyalty LATAM',
+          title: 'Optimización de experiencia en uno de los mayores programas de lealtad de LATAM',
+          kpi: '+28%',
+          kpiLabel: 'Retención Digital',
+          desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
+          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
+          image: 'assets/lifemiles_v2.jpg'
+        },
+        {
+          id: 'iqos',
+          client: 'IQOS / Philip Morris',
+          industry: 'Retail & Hardware',
+          title: 'Arquitectura de pagos y billetera digital in-app',
+          kpi: '+55%',
+          kpiLabel: 'Retención de Usuarios',
+          desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricción y aumentando el Life Time Value de los usuarios en la región.',
+          tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
+          image: 'assets/iqos_v2.png'
+        }
+      ];
+
+      const [active, setActive] = useState(0);
+
+      return (
+        <section id="casos" className="py-24 px-6 md:px-12 bg-[#02040A] border-t border-white/[0.08] overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+             
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                CASOS DE ÉXITO AUDITADOS
+              </span>
+              <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl text-white">
+                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">escala corporativa</span>
+              </h2>
+            </div>
+ 
+            {/* Interactive Showcase Layout */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+               
+              {/* Left Column: Navigation Tabs */}
+              <div className="lg:w-1/3 flex flex-col gap-3">
+                {cases.map((c, idx) => (
+                  <button
+                    key={c.id}
+                    onClick={() => setActive(idx)}
+                    className={`text-left p-6 rounded-2xl border transition-all duration-300 ${active === idx ? 'bg-navy-800 border-blue-500/30 shadow-[0_0_30px_-5px_rgba(59,130,246,0.15)]' : 'bg-transparent border-transparent hover:bg-white/[0.02] opacity-50 hover:opacity-100'}`}
+                  >
+                    <h3 className={`font-bold font-display text-xl mb-1 transition-colors ${active === idx ? 'text-white' : 'text-slate-400'}`}>{c.client}</h3>
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{c.industry}</p>
+                  </button>
+                ))}
+              </div>
+ 
+              {/* Right Column: Deep Dive Panel */}
+              <div className="lg:w-2/3 relative h-[650px] md:h-[550px]">
+                {cases.map((c, idx) => (
+                  <div 
+                    key={c.id} 
+                    className={`absolute inset-0 h-full bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col md:flex-row ${active === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}`}
+                  >
+                    
+                    {/* Left side of the card: Text Content */}
+                    <div className="relative z-20 flex flex-col h-full p-8 md:p-12 md:w-3/5">
+                      {/* KPI Section */}
+                      <div className="mb-6 border-b border-white/[0.05] pb-6">
+                         <div className={`font-black font-display text-5xl md:text-7xl tracking-tighter mb-1 transition-colors duration-700 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-orange-400' : idx === 2 ? 'text-red-400' : 'text-teal-400'}`}>
+                           {c.kpi}
+                         </div>
+                         <div className="text-slate-400 text-xs md:text-sm font-mono uppercase tracking-widest">{c.kpiLabel}</div>
+                      </div>
+ 
+                      {/* Challenge & Solution */}
+                      <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">{c.title}</h4>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
+                        {c.desc}
+                      </p>
+ 
+                      {/* Footer: Tags */}
+                      <div className="mt-auto flex flex-wrap gap-2">
+                        {c.tags.map(tag => (
+                          <span key={tag} className="bg-white/[0.03] border border-white/[0.08] text-slate-300 text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider font-semibold">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+ 
+                    {/* Right side of the card: Visual Graphic */}
+                    <div className="relative md:w-2/5 h-48 md:h-full border-t md:border-t-0 md:border-l border-white/[0.05] bg-black">
+                       <div className={`absolute inset-0 bg-gradient-to-tr opacity-20 mix-blend-screen z-10 ${idx === 0 ? 'from-blue-600' : idx === 1 ? 'from-orange-600' : idx === 2 ? 'from-red-600' : 'from-teal-600'}`}></div>
+                       <img src={c.image} alt={c.client} className="w-full h-full object-cover object-left opacity-60 mix-blend-lighten" />
+                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/80 to-transparent z-10"></div>
+                    </div>
                   </div>
-                  {/* Red Dot Indicator (as seen in Vstorm) but making it Blue to match brand */}
-                  <div className="absolute -bottom-2 -right-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_5px_rgba(59,130,246,0.8)]"></div>
-                  
-                  <span className="absolute top-16 text-[10px] font-mono text-slate-300">poc</span>
-                </div>
-
-                {/* 5. Production */}
-                <div className="absolute left-[90%] top-[10%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
-                  <span className="text-[10px] font-mono text-slate-500">production</span>
-                </div>
-
+                ))}
               </div>
             </div>
-
           </div>
         </section>
       );
@@ -1222,7 +1263,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
               <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
                 ENGINEERING LEADERSHIP
               </span>
-              <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
                 No vendemos "recursos". Asignamos Arquitectos a tu operación.
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -1252,7 +1293,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
             </div>
             
             <div className="flex-1 bg-navy-950 p-8 rounded-3xl border border-blue-500/20 shadow-2xl relative">
-              <div className="absolute -top-6 -left-4 text-6xl text-blue-500/20 font-serif leading-none">"</div>
+              <div className="absolute -top-4 -left-4 text-4xl">💬</div>
               <p className="text-white text-lg font-medium italic leading-relaxed mb-6">
                 "Nuestra promesa a los CTOs es simple: Si al mes 2 el agente no ha liberado horas de tu equipo, fallamos. Por eso no vendemos código a granel; diagnosticamos y operamos."
               </p>
@@ -1266,7 +1307,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
       </section>
     );
 
-    // Línea de Tiempo de Transparencia B2B (¿Qué pasa después de contactar?)
+    // Línea de Tiempo de Transparencia B2B (¿�Qu� pasa después de contactar?)
     const PostContactSLA = ({ onOpenContact }) => {
       const steps = [
         {
@@ -1282,7 +1323,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
         {
           time: '48 Horas',
           title: 'Sesión Técnica de 30 min & Blueprint',
-          desc: 'Te entregamos una hipótesis de arquitectura preliminar, cálculo estimado de ROI y el alcance exacto del Diagnóstico Operativo.'
+          desc: 'T� entregamos una hipótesis de arquitectura preliminar, cálculo estimado de ROI y el alcance exacto del Diagnóstico Operativo.'
         }
       ];
 
@@ -1293,8 +1334,8 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
               <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                 COMPROMISO DE SERVICIO & TRANSPARENCIA
               </span>
-              <h2 className="md: mt-2 mb-3 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                ¿Qué sucede exactamente cuando nos contactas?
+              <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight mt-2 mb-3">
+                ¿�Qu� sucede exactamente cuando nos contactas?
               </h2>
               <p className="text-slate-400 text-xs md:text-sm">
                 Cero ventas agresivas. Cero llamadas con personas que no entienden de ingeniería.
@@ -1310,7 +1351,7 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
                     </span>
                     <span className="text-slate-600 font-mono text-sm">0{idx + 1}</span>
                   </div>
-                  <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">{s.title}</h3>
+                  <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
                   <p className="text-slate-400 text-xs leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -1350,164 +1391,270 @@ import { ChevronRight, ArrowRight, Zap, Target, Bot, Search, BarChart3, LineChar
 
       const handleSubmitFinal = (e) => {
         e.preventDefault();
+        // Here you would connect to webhook/CRM
         console.log("Submitting:", formData);
         setSubmitted(true);
       };
 
       return (
-        <section id="contact-form" className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.08] relative">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+        <section id="contact-form" className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.08]">
+          <div className="max-w-4xl mx-auto">
             
-            {/* Left Column: Fixed Title and Value Prop */}
-            <div className="lg:w-5/12 lg:sticky lg:top-32">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4 block">
+            {/* Header */}
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-4 block">
                 DIAGNÓSTICO TÉCNICO SIN COSTO
               </span>
-              <h2 className="md: lg: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
                 Completa el formulario<span className="text-blue-500">.</span>
               </h2>
-              <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
-                ¿Prefieres que revisemos tu operación? Llena los 3 pasos rápidos y un estratega técnico de BluePixel te entregará un diagnóstico de viabilidad y arquitectura en menos de 24 horas.
+              <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                ¿Prefieres que revisemos tu operación? Llena los 3 pasos rápidos y un estratega técnico de BluePixel te entregar� un diagnóstico de viabilidad y arquitectura en menos de 24 horas.
               </p>
-
-              {/* Added trust signals (SLA) on the left side */}
-              <div className="p-6 bg-navy-900/50 border border-white/[0.05] rounded-2xl space-y-5">
-                <div className="flex gap-4 items-start">
-                  <div className="text-emerald-400 mt-1">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-sm">Garantía de Confidencialidad</h4>
-                    <p className="text-slate-500 text-xs mt-1">Tus datos y procesos internos están protegidos mediante NDA desde el primer minuto.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <div className="text-blue-400 mt-1">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-sm">Auditoría por Arquitectos</h4>
-                    <p className="text-slate-500 text-xs mt-1">Tu caso es analizado por ingenieros y Tech Leads, no por equipos de ventas tradicionales.</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Right Column: The Form */}
-            <div className="lg:w-7/12 w-full">
-              {/* The Multi-Step Card */}
-              <div className="bg-navy-900 border border-white/[0.08] rounded-[2rem] p-8 sm:p-12 shadow-[0_0_80px_rgba(0,0,0,0.5)] relative overflow-hidden group">
-                {/* Subtle background glow */}
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none transition-all duration-1000 group-hover:bg-blue-500/10"></div>
-                
-                <div className="relative z-10">
-                  {/* Progress Indicator */}
-                  <div className="mb-12">
-                    <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-4 px-2">
-                      <span className={`transition-colors duration-500 ${step >= 1 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>01. Tú</span>
-                      <span className={`transition-colors duration-500 ${step >= 2 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>02. Empresa</span>
-                      <span className={`transition-colors duration-500 ${step === 3 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>03. Fricción</span>
-                    </div>
-                    <div className="flex gap-2 w-full h-1.5 rounded-full overflow-hidden">
-                      <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 1 ? 'w-1/3 bg-gradient-to-r from-blue-600 to-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
-                      <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 2 ? 'w-1/3 bg-gradient-to-r from-blue-400 to-indigo-400 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
-                      <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step === 3 ? 'w-1/3 bg-gradient-to-r from-indigo-400 to-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
-                    </div>
+            {/* The Multi-Step Card */}
+            <div className="bg-navy-900 border border-white/[0.08] rounded-[2rem] p-8 sm:p-12 shadow-[0_0_80px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+              {/* Subtle background glow */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none transition-all duration-1000 group-hover:bg-blue-500/10"></div>
+              
+              <div className="relative z-10">
+                {/* Progress Indicator */}
+                <div className="mb-12">
+                  {/* Step labels */}
+                  <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-4 px-2">
+                    <span className={`transition-colors duration-500 ${step >= 1 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>01. Tú</span>
+                    <span className={`transition-colors duration-500 ${step >= 2 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>02. Empresa</span>
+                    <span className={`transition-colors duration-500 ${step === 3 ? 'text-blue-400 font-bold' : 'text-slate-600'}`}>03. Fricción</span>
                   </div>
-
-                  {!submitted ? (
-                    <div>
-                      {/* STEP 1 */}
-                      {step === 1 && (
-                        <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
-                          <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Tus datos de contacto</h3>
-                            <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
-                          </div>
-                          <div className="space-y-6">
-                            <div>
-                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">NOMBRE COMPLETO</label>
-                              <input required type="text" value={formData.fullName} onChange={(e) => handleChange('fullName', e.target.value)} placeholder="Ej. Roberto" className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner" />
-                            </div>
-                            <div>
-                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">CORREO CORPORATIVO</label>
-                              <input required type="email" value={formData.workEmail} onChange={(e) => handleChange('workEmail', e.target.value)} placeholder="roberto@empresa.com" className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner" />
-                            </div>
-                          </div>
-                          <div className="pt-4 border-t border-white/[0.04]">
-                            <button type="submit" className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-3 group">
-                              <span>Siguiente Paso</span><span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                            </button>
-                          </div>
-                        </form>
-                      )}
-
-                      {/* STEP 2 */}
-                      {step === 2 && (
-                        <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
-                          <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Datos de tu empresa</h3>
-                            <p className="text-slate-400 text-sm">Para asignar al arquitecto ideal a tu sector operativo.</p>
-                          </div>
-                          <div className="space-y-6">
-                            <div>
-                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">NOMBRE DE LA EMPRESA</label>
-                              <input required type="text" value={formData.company} onChange={(e) => handleChange('company', e.target.value)} placeholder="Ej. Grupo X" className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-all placeholder:text-slate-600" />
-                            </div>
-                            <div>
-                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">TU CARGO</label>
-                              <input required type="text" value={formData.role} onChange={(e) => handleChange('role', e.target.value)} placeholder="Ej. Director de Operaciones" className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-all placeholder:text-slate-600" />
-                            </div>
-                          </div>
-                          <div className="pt-8 flex items-center justify-between border-t border-white/[0.04]">
-                            <button type="button" onClick={handleBack} className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">Atrás</button>
-                            <button type="submit" className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-3 group">
-                              <span>Continuar</span><span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                            </button>
-                          </div>
-                        </form>
-                      )}
-
-                      {/* STEP 3 */}
-                      {step === 3 && (
-                        <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
-                          <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuello de botella técnico</h3>
-                            <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver.</p>
-                          </div>
-                          <div className="space-y-6">
-                            <div>
-                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">¿QUÉ FLUJO DE TRABAJO BUSCAS AGENTIZAR?</label>
-                              <textarea required rows="5" value={formData.workflow} onChange={(e) => handleChange('workflow', e.target.value)} placeholder="Ej. Queremos automatizar la cotización..." className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl p-5 text-white text-sm focus:outline-none focus:border-blue-500 transition-all placeholder:text-slate-600 resize-none" />
-                            </div>
-                          </div>
-                          <div className="pt-8 flex items-center justify-between border-t border-white/[0.04]">
-                            <button type="button" onClick={handleBack} className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">Atrás</button>
-                            <button type="submit" className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-3 group">
-                              <span>Enviar Diagnóstico</span><span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                            </button>
-                          </div>
-                        </form>
-                      )}
-                    </div>
-                  ) : (
-                    /* SUCCESS STATE */
-                    <div className="text-center py-16 animate-fadeIn">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500/20 to-emerald-400/5 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
-                      <h4 className="text-3xl font-black text-white mb-4">Diagnóstico Recibido</h4>
-                      <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed mb-10">Gracias <strong className="text-white">{formData.fullName || 'por escribirnos'}</strong>. Un arquitecto te contactará en menos de 24 horas.</p>
-                      <button onClick={() => { setSubmitted(false); setStep(1); }} className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1]">Enviar nueva consulta</button>
-                    </div>
-                  )}
+                  {/* Segmented visual line */}
+                  <div className="flex gap-2 w-full h-1.5 rounded-full overflow-hidden">
+                    <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 1 ? 'w-1/3 bg-gradient-to-r from-blue-600 to-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                    <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step >= 2 ? 'w-1/3 bg-gradient-to-r from-blue-400 to-indigo-400 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                    <div className={`h-full transition-all duration-700 ease-in-out rounded-full ${step === 3 ? 'w-1/3 bg-gradient-to-r from-indigo-400 to-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.5)]' : 'w-1/3 bg-white/[0.03]'}`} />
+                  </div>
                 </div>
+
+                {!submitted ? (
+                  <div>
+                    {/* STEP 1: YOU */}
+                    {step === 1 && (
+                      <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
+                        <div>
+                          <h3 className="text-2xl font-black text-white mb-2">Tus datos de contacto</h3>
+                          <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
+                        </div>
+
+                        <div className="space-y-6">
+                          <div>
+                            <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                              NOMBRE COMPLETO
+                            </label>
+                            <input
+                              required
+                              type="text"
+                              value={formData.fullName}
+                              onChange={(e) => handleChange('fullName', e.target.value)}
+                              placeholder="Ej. Roberto Fabián Flores Ramírez"
+                              className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                              CORREO CORPORATIVO
+                            </label>
+                            <input
+                              required
+                              type="email"
+                              value={formData.workEmail}
+                              onChange={(e) => handleChange('workEmail', e.target.value)}
+                              placeholder="fabian.flores@tuempresa.com"
+                              className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="pt-6 flex justify-end border-t border-white/[0.04]">
+                          <button
+                            type="submit"
+                            className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
+                            <span>Continuar</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                          </button>
+                        </div>
+                      </form>
+                    )}
+
+                    {/* STEP 2: COMPANY */}
+                    {step === 2 && (
+                      <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
+                        <div>
+                          <h3 className="text-2xl font-black text-white mb-2">Datos de tu organización</h3>
+                          <p className="text-slate-400 text-sm">Para contextualizar la escala y sistemas de tu empresa.</p>
+                        </div>
+
+                        <div className="space-y-6">
+                          <div>
+                            <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                              EMPRESA
+                            </label>
+                            <input
+                              required
+                              type="text"
+                              value={formData.company}
+                              onChange={(e) => handleChange('company', e.target.value)}
+                              placeholder="Ej. BluePixel / Grupo Industrial"
+                              className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                            />
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                PUESTO / CARGO
+                              </label>
+                              <input
+                                required
+                                type="text"
+                                value={formData.role}
+                                onChange={(e) => handleChange('role', e.target.value)}
+                                placeholder="Ej. CTO / Director Operativo"
+                                className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                                TELÉFONO (OPCIONAL)
+                              </label>
+                              <input
+                                type="tel"
+                                value={formData.phone}
+                                onChange={(e) => handleChange('phone', e.target.value)}
+                                placeholder="+52 55 1234 5678"
+                                className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="pt-6 flex items-center justify-between border-t border-white/[0.04]">
+                          <button
+                            type="button"
+                            onClick={handleBack}
+                            className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                            Atrás
+                          </button>
+                          <button
+                            type="submit"
+                            className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group">
+                            <span>Continuar</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                          </button>
+                        </div>
+                      </form>
+                    )}
+
+                    {/* STEP 3: DETAILS & CONSENT */}
+                    {step === 3 && (
+                      <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
+                        <div>
+                          <h3 className="text-2xl font-black text-white mb-2">Cuello de botella técnico</h3>
+                          <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver o el sistema que deseas construir.</p>
+                        </div>
+
+                        <div className="space-y-6">
+                          <div>
+                            <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-bold">
+                              ¿QUÉ FLUJO DE TRABAJO BUSCAS AGENTIZAR?
+                            </label>
+                            <textarea
+                              required
+                              rows="5"
+                              value={formData.workflow}
+                              onChange={(e) => handleChange('workflow', e.target.value)}
+                              placeholder="Ej. Queremos automatizar la generación de cotizaciones que hoy se hacen en Excel y tardan 48 horas..."
+                              className="w-full bg-navy-950/50 border border-white/[0.06] rounded-2xl p-5 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-navy-900/80 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-slate-600 shadow-inner resize-none"
+                            />
+                          </div>
+
+                          <div className="space-y-4 pt-4 border-t border-white/[0.04]">
+                            <label className="flex items-start gap-4 cursor-pointer group">
+                              <div className="relative flex items-center justify-center w-5 h-5 mt-0.5">
+                                <input
+                                  type="checkbox"
+                                  checked={formData.consentData}
+                                  onChange={(e) => handleChange('consentData', e.target.checked)}
+                                  className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
+                                />
+                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
+                              </div>
+                              <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                                Acepto que BluePixel almacene y procese mis datos personales para responder a esta solicitud, bajo estricto apego al <a href="#" className="underline text-blue-400 hover:text-blue-300">Aviso de Privacidad</a>.
+                              </span>
+                            </label>
+
+                            <label className="flex items-start gap-4 cursor-pointer group">
+                              <div className="relative flex items-center justify-center w-5 h-5 mt-0.5">
+                                <input
+                                  type="checkbox"
+                                  checked={formData.consentNewsletter}
+                                  onChange={(e) => handleChange('consentNewsletter', e.target.checked)}
+                                  className="peer appearance-none w-5 h-5 border-2 border-white/20 rounded-md bg-navy-950/50 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer"
+                                />
+                                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 pointer-events-none">✓</span>
+                              </div>
+                              <span className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                                Deseo recibir de forma esporádica análisis técnicos y casos de estudio sobre ingeniería de agentes IA en producción.
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className="pt-8 flex items-center justify-between border-t border-white/[0.04]">
+                          <button
+                            type="button"
+                            onClick={handleBack}
+                            className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-sm uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                            Atrás
+                          </button>
+                          <button
+                            type="submit"
+                            className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] flex items-center justify-center gap-3 group">
+                            <span>Enviar Diagnóstico</span>
+                            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </div>
+                ) : (
+                  /* SUCCESS STATE */
+                  <div className="text-center py-16 animate-fadeIn">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500/20 to-emerald-400/5 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto mb-6 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
+                      ✓
+                    </div>
+                    <h4 className="text-3xl font-black text-white mb-4">Diagnóstico Recibido</h4>
+                    <p className="text-slate-300 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-10">
+                      Gracias <strong className="text-white">{formData.fullName || 'por escribirnos'}</strong>. Un arquitecto de software de BluePixel revisará la viabilidad para <strong className="text-blue-300">{formData.company || 'tu empresa'}</strong> y te contactará en menos de 24 horas hábiles.
+                    </p>
+                    <button 
+                      onClick={() => { setSubmitted(false); setStep(1); }}
+                      className="bg-transparent hover:bg-white/[0.05] text-slate-300 font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-2xl border border-white/[0.1] transition-colors">
+                      Enviar nueva consulta
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
-            
           </div>
         </section>
       );
     };
-const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
+
+
+    // Modal de Solución Técnica para el Prompt Bar
+    const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
       if (!solution) return null;
 
       return (
@@ -1523,7 +1670,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
               <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/25 uppercase tracking-widest font-semibold">
                 {solution.categoria}
               </span>
-              <h3 className="md: mt-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">
+              <h3 className="text-xl md:text-2xl font-black text-white mt-3 leading-snug">
                 Arquitectura de Solución para tu Operación
               </h3>
               <p className="text-slate-300 text-sm mt-1.5 italic bg-navy-850 p-3 rounded-xl border border-white/[0.06]">
@@ -1600,10 +1747,10 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
 
               <div className="relative z-10 max-w-3xl mx-auto">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-6 block">
-                  AGENDA UNA CONVERSACIÓN TíCNICA
+                  AGENDA UNA CONVERSACIÓN TÉCNICA
                 </span>
                 
-                <h2 className="md: lg: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
                   ¿Listo para llevar tu visión de IA a producción<span className="text-red-500">?</span>
                 </h2>
                 
@@ -1625,7 +1772,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                     className="w-full sm:w-auto bg-transparent hover:bg-white/[0.05] text-white font-semibold text-sm px-8 py-3.5 rounded-full border border-white/[0.15] transition-all flex items-center justify-center gap-2"
                   >
                     <span>Ver Casos de Éxito</span>
-              <span>↗</span>
+                    <span>↗</span>
                   </a>
                 </div>
               </div>
@@ -1636,195 +1783,14 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
     };
 
     // App Component Root
-    
-    // Soberanía Técnica y Cero Lock-in (Estrategia B2B)
-    const TechnicalSovereignty = () => {
-      return (
-        <section className="py-24 px-6 md:px-12 bg-gradient-to-t from-navy-950 to-navy-900 border-t border-white/[0.04]">
-          <div className="max-w-7xl mx-auto">
-            {/* Header left-aligned instead of centered to match asymmetric style */}
-            <div className="max-w-3xl mb-16">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-blue-400 font-bold mb-4 block">
-                CERO LOCK-IN · SOBERANÍA ABSOLUTA
-              </span>
-              <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-4xl lg:text-5xl">
-                Tu infraestructura. Tus datos. Tu código fuente<span className="text-blue-500">.</span>
-              </h2>
-              <p className="text-slate-400 text-base md:text-lg">
-                Construimos agentes de IA bajo un principio fundacional innegociable: tú eres el dueño absoluto de la tecnología. No vendemos "cajas negras" ni cobramos licencias abusivas por usuario.
-              </p>
-            </div>
-
-            {/* Bento Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              
-              {/* Card 1: Wide Card (Span 2 columns) */}
-              <div className="lg:col-span-2 bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 md:p-12 hover:border-blue-500/30 transition-colors group relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] group-hover:bg-blue-500/10 transition-colors"></div>
-                {/* Background Pattern */}
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgzNyw5OSwyMzUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-50 [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none"></div>
-
-                <div className="relative z-10 flex-1">
-                  <div className="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-black/50">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
-                  </div>
-                  <h3 className="mb-4 font-bold font-display text-2xl md:text-3xl tracking-tight leading-[1.2]">Despliegue nativo en tu VPC</h3>
-                  <p className="text-slate-400 text-base leading-relaxed max-w-xl">
-                    Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad empresarial, asegurando cumplimiento total (SOC2, HIPAA).
-                  </p>
-                </div>
-                
-                {/* Right side Visual Graphic for VPC Card */}
-                <div className="hidden lg:flex w-full max-w-[320px] items-center justify-end relative z-10">
-                  <div className="w-full bg-[#060A14] rounded-2xl border border-white/[0.08] p-5 shadow-2xl relative overflow-hidden backdrop-blur-md">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                    <div className="text-[10px] font-mono text-blue-400 mb-4 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                      VPC_DEPLOYMENT_STATUS
-                    </div>
-                    <div className="space-y-2">
-                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
-                         <span className="text-[11px] text-slate-300 font-mono">ec2_cluster_nodes</span>
-                         <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">ACTIVE</span>
-                       </div>
-                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
-                         <span className="text-[11px] text-slate-300 font-mono">rds_vector_db</span>
-                         <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">SYNCED</span>
-                       </div>
-                       <div className="flex items-center justify-between bg-white/[0.03] border border-white/[0.05] p-2.5 rounded-lg">
-                         <span className="text-[11px] text-slate-300 font-mono">iam_zero_trust</span>
-                         <span className="text-[10px] text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">ENFORCED</span>
-                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Square */}
-              <div className="bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 hover:border-purple-500/30 transition-colors group relative overflow-hidden flex flex-col">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-colors"></div>
-                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
-                  <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Propiedad del Código</h3>
-                <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
-                  Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos intelectuales y el código fuente. Eres completamente libre de mantenerlo in-house con tu equipo de ingeniería o contratar nuestra póliza de Mantenimiento.
-                </p>
-              </div>
-
-              {/* Card 3: Square */}
-              <div className="bg-navy-900 border border-white/[0.06] rounded-[2rem] p-8 hover:border-emerald-500/30 transition-colors group relative overflow-hidden flex flex-col">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
-                <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
-                  <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Modelos Blindados</h3>
-                <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
-                  Utilizamos instancias empresariales de LLMs con políticas estrictas de privacidad (Zero Data Retention). Ninguna conversación confidencial o dato de tus clientes se usará jamás para entrenar modelos públicos.
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </section>
-      );
-    };
-
-    
-    const Footer = () => (
-      <footer className="bg-[#02040A] border-t border-white/[0.05] pt-24 pb-12 px-6 md:px-12 relative overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-blue-600/10 blur-[120px] pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-20">
-            
-            {/* Brand & Strategy Column (Takes 4 cols) */}
-            <div className="lg:col-span-4 pr-8">
-              <div className="flex items-center mb-8">
-                <img src="bluepixel_logo.png" alt="BluePixel" className="h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                No somos una agencia de marketing ni un equipo de "prompters". Somos una firma de <strong className="text-white">ingeniería de software corporativo</strong> especializada en Sistemas Multi-Agente, RAG y automatización determinística.
-              </p>
-              
-              <div className="bg-white/[0.02] border border-white/[0.05] rounded-xl p-5 mb-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">Enterprise Ready</span>
-                </div>
-                <p className="text-slate-500 text-[11px] leading-tight font-mono">
-                  Despliegues en VPC privadas. Cero entrenamiento de modelos con tu IP. Infraestructura escalable.
-                </p>
-              </div>
-            </div>
-
-            {/* Links Columns (Take 8 cols total) */}
-            <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
-              {/* Architecture Column */}
-              <div>
-                <h3 className="text-white font-mono text-xs font-bold uppercase tracking-widest mb-6">Arquitectura</h3>
-                <ul className="space-y-4">
-                  <li><a href="#" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> RAG Corporativo</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Swarms (Sistemas Multi-Agente)</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Servidores MCP (ERP Integration)</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Edge AI & Serverless</a></li>
-                </ul>
-              </div>
-
-              {/* Operations Column */}
-              <div>
-                <h3 className="text-white font-mono text-xs font-bold uppercase tracking-widest mb-6">Metodología</h3>
-                <ul className="space-y-4">
-                  <li><a href="#casos" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Casos de Éxito & ROI</a></li>
-                  <li><a href="#three-ways" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Fases de Implementación</a></li>
-                  <li><a href="#contact-form" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Diagnóstico de Arquitectura</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-blue-400 text-sm transition-colors flex items-center gap-2 group"><span className="text-blue-500/0 group-hover:text-blue-500 transition-colors">▹</span> Ingeniería vs Agencias</a></li>
-                </ul>
-              </div>
-
-              {/* Compliance Column */}
-              <div className="col-span-2 md:col-span-1">
-                <h3 className="text-white font-mono text-xs font-bold uppercase tracking-widest mb-6">Seguridad B2B</h3>
-                <ul className="space-y-4 mb-6">
-                  <li><a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Acuerdo de Confidencialidad (NDA)</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Políticas Zero-Data Retention</a></li>
-                  <li><a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">SLA de Soporte Crítico</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-              <p className="text-slate-500 text-xs font-mono">
-                &copy; {new Date().getFullYear()} BluePixel Engineering.
-              </p>
-              <span className="hidden md:block text-slate-700">|</span>
-              <p className="text-slate-500 text-xs font-mono">
-                Transformando corporativos en ecosistemas resilientes.
-              </p>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider">All Systems Operational</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    );
-
     const App = () => {
       const [selectedSolution, setSelectedSolution] = useState(null);
-      const [isContactOpen, setIsContactOpen] = useState(false);
-      const [preselectedPkg, setPreselectedPkg] = useState(null);
 
       const scrollToForm = (pkgName) => {
-        if (pkgName && typeof pkgName === 'string') setPreselectedPkg(pkgName);
-        setIsContactOpen(true);
+        const formEl = document.getElementById('contact-form');
+        if (formEl) {
+          formEl.scrollIntoView({ behavior: 'smooth' });
+        }
       };
 
       return (
@@ -1835,37 +1801,42 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
             onOpenContact={() => scrollToForm()}
           />
           <SocialProofSection />
+          <AgentTerminalDemo />
           <WorkflowTeardown />
-          {/* <AgentTerminalDemo /> */}
           <AgenticTechStack />
-          <TechnicalSovereignty />
-          {/* <TechPartners /> */}
-          <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
-          <FAQSection />
+          <TechPartners />
+          <ROICalculator onOpenContact={(data) => scrollToForm(data)} />
           <ThreeWaysToWork onSelectPackage={(pkg) => scrollToForm(pkg)} />
+
+          <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
           <EngineeringLeadership />
-          <PostContactSLA />
+          <PostContactSLA onOpenContact={() => scrollToForm()} />
           <FinalCTA onOpenContact={() => scrollToForm()} />
-          <Footer />
+          <MultiStepContact />
           
           <SolutionDrawer 
             solution={selectedSolution} 
             onClose={() => setSelectedSolution(null)} 
-            onOpenContact={() => scrollToForm()} 
+            onOpenContact={() => scrollToForm()}
           />
-          {isContactOpen && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn overflow-y-auto">
-              <div className="bg-navy-900 border border-white/[0.08] rounded-2xl w-full max-w-4xl relative overflow-hidden my-auto shadow-2xl">
-                <button onClick={() => setIsContactOpen(false)} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-navy-800 text-slate-400 hover:text-white flex items-center justify-center border border-white/10 z-50 text-sm transition-colors">✕</button>
-                <div className="max-h-[85vh] overflow-y-auto custom-scrollbar p-6">
-                  <MultiStepContact preselectedPackage={preselectedPkg} />
-                </div>
+
+          {/* Footer */}
+          <footer className="py-12 px-6 border-t border-white/[0.08] text-center text-slate-500 text-xs font-mono bg-navy-950">
+            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-white">BluePixel</span>
+                <span>·</span>
+                <span>Deep Tech & Agentic Engineering</span>
+              </div>
+              <div className="flex items-center gap-4 text-slate-400">
+                <span>CDMX & Austin, TX</span>
+                <span>·</span>
+                <a href="mailto:hello@bluepixel.mx" className="hover:text-blue-400">hello@bluepixel.mx</a>
               </div>
             </div>
-          )}
+          </footer>
         </div>
       );
     };
 
-    export default App;
-  
+export default App;

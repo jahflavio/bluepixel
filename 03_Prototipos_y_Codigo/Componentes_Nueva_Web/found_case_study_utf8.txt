@@ -1,0 +1,210 @@
+﻿const CaseStudiesSection = ({ onOpenCase }) => {
+-      const cases = [
+-        {
+-          id: 'bimbo',
+-          client: 'Grupo Bimbo',
+-          industry: 'Consumo Masivo / Global',
+-          title: 'Estandarizaci├│n anal├¡tica y aplicaciones operativas para miles de colaboradores',
+-          kpi: '+40%',
+-          kpiLabel: 'Productividad Directiva',
+-          desc: 'Dise├▒o y desarrollo de plataformas de anal├¡tica de datos e interfaces internas para estandarizar la toma de decisiones directivas en m├║ltiples regiones.',
+-          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
+-          image: 'assets/bimbo.png'
+-        },
+-        {
+-          id: 'radioshack',
+-          client: 'RadioShack',
+-          industry: 'Retail & E-commerce',
+-          title: 'Reinvenci├│n transaccional de comercio digital y reducci├│n de fricci├│n de compra',
+-          kpi: '-60%',
+-          kpiLabel: 'Fricci├│n de Pago',
+-          desc: 'Redise├▒o integral de la plataforma de ventas y arquitectura transaccional para optimizar conversi├│n, reduciendo fricci├│n cognitiva en carritos de compra.',
+-          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
+-          image: 'assets/radioshack.png'
+-        },
+-        {
+-          id: 'lifemiles',
+-          client: 'LifeMiles / Avianca',
+-          industry: 'Travel & Loyalty LATAM',
+-          title: 'Optimizaci├│n de experiencia en uno de los mayores programas de lealtad de LATAM',
+-          kpi: '+28%',
+-          kpiLabel: 'Retenci├│n Digital',
+-          desc: 'Redise├▒o de flujos cr├¡ticos de usuario y pasarelas de redenci├│n para reducir abandonos y maximizar retenci├│n de clientes en entornos m├│viles.',
+-          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
+-          image: 'assets/lifemiles.png'
+-        },
+-        {
+-          id: 'iqos',
+-          client: 'IQOS / Philip Morris',
+-          industry: 'Retail & Hardware',
+-          title: 'Arquitectura de pagos y billetera digital in-app',
+-          kpi: '+55%',
+-          kpiLabel: 'Retenci├│n de Usuarios',
+-          desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricci├│n y aumentando el Life Time Value de los usuarios en la regi├│n.',
+-          tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
+-          image: 'assets/iqos.png'
+-        }
+-      ];
+-
+-      const [activeIndex, setActiveIndex] = useState(0);
+-      const activeCase = cases[activeIndex];
+-
++    
++    const ThreeWaysToWork = () => {
+       return (
+-        <section id="case-studies" className="py-24 px-6 md:px-12 bg-gradient-to-b from-navy-950 to-navy-900 border-t border-white/[0.08] overflow-hidden">
+-          <div className="max-w-7xl mx-auto">
++        <section id="three-ways" className="py-32 px-6 md:px-12 bg-[#02040A] border-t border-b border-white/[0.05] relative overflow-hidden">
++          
++          {/* Subtle Node-Network Grid Background */}
++          <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777)', backgroundSize: '40px 70px', backgroundPosition: '0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px' }}></div>
++
++          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+             
+-            <div className="text-center max-w-3xl mx-auto mb-16">
+-              <span className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-bold">
+-                CASOS DE ├ëXITO AUDITADOS
++            {/* Left Copy (Vstorm Style) */}
++            <div className="lg:w-5/12 z-10 relative">
++              <span className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-blue-400 font-bold mb-6">
++                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
++                METODOLOG├ìA BLUEPIXEL
+               </span>
+-              <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl">
+-                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">escala corporativa</span>
++              
++              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tight text-white mb-8 leading-[1.1]">
++                C├│mo trabajamos ÔÇö IA agentizada desde el <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">plan</span> hasta <br/> producci├│n con hitos claros.
+               </h2>
++              
++              <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">
++                Tras m├║ltiples despliegues en corporativos, codificamos lo que separa los sistemas en producci├│n de los experimentos fallidos. Una metodolog├¡a de fases con "puertas de control" claras, para guiarte a trav├®s de las trampas t├®cnicas hacia un ROI medible.
++              </p>
++
++              <div className="flex flex-wrap items-center gap-4">
++                <button className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-6 py-3 rounded-full transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
++                  Agendar Discovery Ôåù
++                </button>
++                <button className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 font-bold text-sm px-6 py-3 rounded-full transition-all flex items-center gap-2">
++                  Ver el proceso detallado Ôåù
++                </button>
++              </div>
+             </div>
+ 
+-            {/* Interactive Showcase Layout */}
+-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
++            {/* Right Diagonal Timeline Graph (Vstorm Style) */}
++            <div className="lg:w-7/12 w-full h-[500px] relative flex items-center justify-center">
+               
+-              {/* Left Column: Navigation Tabs */}
+-              <div className="lg:w-1/3 flex flex-col gap-3">
+-                {cases.map((c, idx) => (
+-                  <button
+-                    key={c.id}
+-                    onClick={() => setActiveIndex(idx)}
+-                    className={`text-left p-6 rounded-2xl border transition-all duration-300 ${activeIndex === idx ? 'bg-navy-800 border-purple-500/30 shadow-[0_0_30px_-5px_rgba(168,85,247,0.15)]' : 'bg-transparent border-transparent hover:bg-white/[0.02] opacity-50 hover:opacity-100'}`}
+-                  >
+-                    <h3 className={`font-bold font-display text-xl mb-1 transition-colors ${activeIndex === idx ? 'text-white' : 'text-slate-400'}`}>{c.client}</h3>
+-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{c.industry}</p>
+-                  </button>
+-                ))}
+-              </div>
++              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-full max-w-[600px] max-h-[400px]">
++                {/* Connecting Diagonal Line */}
++                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
++                  {/* Base line */}
++                  <line x1="10%" y1="90%" x2="90%" y2="10%" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
++                  {/* Active highlight segment (between POC and Production) */}
++                  <line x1="70%" y1="30%" x2="75%" y2="25%" stroke="#3B82F6" strokeWidth="2" className="drop-shadow-[0_0_5px_rgba(59,130,246,0.8)]" />
++                </svg>
++
++                {/* Nodes */}
++                {/* 1. Today */}
++                <div className="absolute left-[10%] top-[90%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
++                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-500 mb-2"></div>
++                  <span className="text-[10px] font-mono text-slate-500">today</span>
++                </div>
+ 
+-              {/* Right Column: Deep Dive Panel */}
+-              <div className="lg:w-2/3 relative h-[650px] md:h-[550px]">
+-                {cases.map((c, idx) => (
+-                  <div 
+-                    key={c.id} 
+-                    className={`absolute inset-0 h-full bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col md:flex-row ${activeIndex === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}`}
+-                  >
+-                    
+-                    {/* Left side of the card: Text Content */}
+-                    <div className="relative z-20 flex flex-col h-full p-8 md:p-12 md:w-3/5">
+-                      {/* KPI Section */}
+-                      <div className="mb-6 border-b border-white/[0.05] pb-6">
+-                         <div className={`font-black font-display text-5xl md:text-7xl tracking-tighter mb-1 transition-colors duration-700 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-orange-400' : idx === 2 ? 'text-red-400' : 'text-teal-400'}`}>
+-                           {c.kpi}
+-                         </div>
+-                         <div className="text-slate-400 text-xs md:text-sm font-mono uppercase tracking-widest">{c.kpiLabel}</div>
+-                      </div>
++                {/* 2. Discover */}
++                <div className="absolute left-[30%] top-[70%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
++                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
++                  <span className="text-[10px] font-mono text-slate-400">discover</span>
++                </div>
++                
++                {/* Text Label on line */}
++                <span className="absolute left-[40%] top-[60%] -translate-x-1/2 -translate-y-1/2 text-[8px] font-mono text-slate-600 uppercase -rotate-45 tracking-widest">ROI MAP</span>
+ 
+-                      {/* Challenge & Solution */}
+-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">{c.title}</h4>
+-                      <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
+-                        {c.desc}
+-                      </p>
+-
+-                      {/* Footer: Tags */}
+-                      <div className="mt-auto flex flex-wrap gap-2">
+-                        {c.tags.map(tag => (
+-                          <span key={tag} className="bg-white/[0.03] border border-white/[0.08] text-slate-300 text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider font-semibold">
+-                            {tag}
+-                          </span>
+-                        ))}
+-                      </div>
+-                    </div>
++                {/* 3. Prioritize */}
++                <div className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
++                  <div className="w-3 h-3 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
++                  <span className="text-[10px] font-mono text-slate-400">prioritize</span>
++                </div>
+ 
+-                    {/* Right side of the card: Visual Graphic */}
+-                    <div className="relative md:w-2/5 h-48 md:h-full bg-navy-950 border-t md:border-t-0 md:border-l border-white/[0.05]">
+-                       <div className={`absolute inset-0 bg-gradient-to-tr opacity-20 mix-blend-screen z-10 ${idx === 0 ? 'from-blue-600' : idx === 1 ? 'from-orange-600' : idx === 2 ? 'from-red-600' : 'from-teal-600'}`}></div>
+-                       <img src={c.image} alt={c.client} className="w-full h-full object-cover object-left opacity-60 mix-blend-lighten" />
+-                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/80 to-transparent z-10"></div>
+-                    </div>
++                {/* Text Label on line */}
++                <span className="absolute left-[60%] top-[40%] -translate-x-1/2 -translate-y-1/2 text-[8px] font-mono text-slate-600 uppercase -rotate-45 tracking-widest">DE-RISK</span>
+ 
++                {/* 4. POC (Highlighted Node) */}
++                <div className="absolute left-[70%] top-[30%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
++                  {/* Dashed outer ring */}
++                  <div className="absolute inset-0 -m-4 border border-dashed border-slate-600 rounded-full animate-[spin_10s_linear_infinite]"></div>
++                  {/* The Node */}
++                  <div className="w-12 h-12 rounded-full bg-[#0A0F1D] border border-slate-400 flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
++                    <svg className="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+                   </div>
+-                ))}
+-              </div>
++                  {/* Red Dot Indicator (as seen in Vstorm) but making it Blue to match brand */}
++                  <div className="absolute -bottom-2 -right-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_5px_rgba(59,130,246,0.8)]"></div>
++                  
++                  <span className="absolute top-16 text-[10px] font-mono text-slate-300">poc</span>
++                </div>
++
++                {/* 5. Production */}
++                <div className="absolute left-[90%] top-[10%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
++                  <div className="w-4 h-4 rounded-full bg-[#02040A] border border-slate-400 mb-2"></div>
++                  <span className="text-[10px] font-mono text-slate-500">production</span>
++                </div>
+ 
++              </div>
+             </div>
++
+           </div>
+         </section>
