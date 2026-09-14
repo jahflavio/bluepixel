@@ -190,7 +190,20 @@ Rocketing debe cargar obligatoriamente esta lista a nivel cuenta para evitar cli
 
 ---
 
-## 🧭 5. ARGUMENTACIÓN FRENTE A LAS OBJECIONES DE LA JUNTA
+## 🌐 5. ESTRATEGIA DE REDES SOCIALES B2B (LINKEDIN & META ADS)
+
+Para cerrar el ciclo de demanda corporativa, las redes sociales **no se usarán para buscar "likes" ni tráfico masivo**, sino como una máquina de **autoridad técnica (Thought Leadership)** y **retargeting quirúrgico**:
+
+| Canal | Tipo de Pauta / Formato | Audiencia / Segmentación | Objetivo & Creatividad |
+| :--- | :--- | :--- | :--- |
+| **LinkedIn Ads** *(Pilar Primario)* | **Thought Leadership Ads**<br>*(Impulsar posts del perfil personal de Leo Flores)* | Empresas de +200 empleados en México, EE.UU. y LATAM. Cargos: CTO, CIO, VP Engineering, COO, CFO, CDO. | **Generar Autoridad Técnica:** Desmitificar la IA de moda, mostrar diagramas de arquitectura reales y casos de fracaso de software legacy. Genera 2.5x más engagement que la página corporativa. |
+| **LinkedIn Ads** *(Lead Gen)* | **Document Ads (PDF)** | Decisores de TI y Transformación Digital buscando resolver integración de ERPs o Agentes. | **Descarga de la Blueprint Library:** Descarga directa de las 10 Arquitecturas Agénticas a cambio de correo corporativo calificado. |
+| **Meta Ads (IG / FB)** *(Exclusivo Retargeting)* | **Display & Video Retargeting** *(Cero tráfico frío)* | Lista de visitantes web de los últimos 90 días + lista de decisores importada de LinkedIn. | **Prueba Social Dura:** Cápsulas de 30s con métricas reales: *"Caso Bimbo (+40% productividad)"*, *"Caso RadioShack (-60% fricción)"*, badge *"Firma UX #1 en México por DesignRush"*. |
+| **LinkedIn Orgánico** *(Content Engine)* | **Artículos Técnicos & Carruseles de Código** | Seguidores corporativos, ex-clientes y directores en proceso de decisión. | **3 Pilares de Contenido:**<br>1. *Análisis Forense:* Por qué el 70% del software corporativo fracasa.<br>2. *Deep-Dive Técnico:* Cómo funciona el Protocolo MCP en nubes privadas.<br>3. *ROI en Pesos:* Horas ahorradas con conciliación determinística. |
+
+---
+
+## 🧭 6. ARGUMENTACIÓN FRENTE A LAS OBJECIONES DE LA JUNTA
 
 ### Para Leo Flores (Preocupación: Diferenciación técnica y ticket alto)
 * **Argumento:** "No estamos vendiendo horas de desarrollo ni prompts de IA. Cada anuncio proyecta autoridad técnica: Protocolo MCP, despliegues en VPC privada y SLA 99.98%. Cada lead aterriza en el **Diagnóstico 01 (2-4 semanas)** como servicio de entrada para auditar su arquitectura y cerrar contratos de 6 cifras con certeza."
@@ -203,8 +216,9 @@ Rocketing debe cargar obligatoriamente esta lista a nivel cuenta para evitar cli
 
 ---
 
-## 🤝 6. LOS 3 ACUERDOS INMEDIATOS PARA CERRAR LA LLAMADA
+## 🤝 7. LOS 3 ACUERDOS INMEDIATOS PARA CERRAR LA LLAMADA
 
 1. **Aprobación de la Arquitectura:** Leo y Rocketing avalan la transición a los 3 Pilares y la desconexión gradual de las 10 landings aisladas.
-2. **Reconfiguración de Pauta:** Rocketing configura las **3 Campañas Search + 1 Campaña Demand Gen/Remarketing**, carga la lista de negativas y actualiza las URLs finales.
+2. **Reconfiguración de Pauta:** Rocketing configura las **3 Campañas Search + 1 Campaña Demand Gen/Remarketing**, carga la lista de negativas y activa los **Thought Leadership Ads en LinkedIn**.
 3. **Alineación Comercial:** Ventas (Pablo y José) usará el **Diagnóstico de 2 a 4 semanas** como la oferta principal en la llamada de descubrimiento para cerrar clientes con fricción mínima.
+
