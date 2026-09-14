@@ -149,4 +149,72 @@ Aprovechando la sesión de grabación de la tarde con Leo, María, Sergio y Jess
 *   **Ataque Quirúrgico SEM:** Si un competidor busca "Automatizar cobranza corporativa", aterriza directamente en el Blueprint del *Agentic Operations Center* o el *Finance Matcher*, no en un "Menú de Servicios".
 
 **El Rol del Equipo Comercial:** 
-Tu trabajo es escuchar el dolor del cliente y, en lugar de decirle *"Claro, podemos desarrollar eso a medida"*, debes decirle: *"Ese es el dolor número uno de esta industria. Por eso tenemos el módulo pre-construido [Nombre del Blueprint], que ya hace eso con un SLA del 99.9%. Podemos implementarlo en tu empresa el próximo mes."*
+Tu trabajo es escuchar el dolor del cliente y, en lugar de decirle *"Claro, podemos desarrollar eso a medida"*, debes decirle: *"Ese es el dolor número uno de esta industria. Por eso tenemos la arquitectura probada en producción y los módulos pre-construidos de nuestra Blueprint Library. Podemos implementar la solución en tu empresa con certeza total de tiempo y presupuesto."*
+
+---
+
+## 🛡️ 9. BATTLECARDS POR MÓDULO & DOLOR CORPORATIVO (SOBERANÍA PRIVATE CLOUD)
+
+Reglas de oro para los Closers (Pablo Gómez y José de Buen):
+1. **Nunca vendas la tecnología, vende el impacto en P&L:** *"El módulo reduce 40 horas operativas semanales a 0, liberando margen operativo en el Q4"*.
+2. **Mata la objeción SaaS de inmediato:** Si preguntan si esto es como ChatGPT o Salesforce, responde: *"No. Los SaaS públicos exponen tus datos a modelos de terceros. Nosotros desplegamos los agentes dentro de tu propia nube privada (AWS / Azure). Tú mantienes la Soberanía Absoluta de Datos bajo cumplimiento LFPDPPP y OWASP"*.
+
+### 🃏 Módulo A: Finance Matcher (Conciliador Autónomo SAP)
+*   **Target Ideal:** CFOs, Contralores, Directores de Finanzas.
+*   **El Dolor:** El equipo contable pierde las primeras 2 semanas de cada mes cruzando Exceles, descargando PDFs bancarios y buscando facturas XML en SAP para cerrar el mes.
+*   **Gancho:** *"Agente determinístico que lee tus estados de cuenta y hace match automático con tus XMLs de SAP en minutos, reduciendo el cierre contable de 12 días a 24 horas"*.
+*   **Objeción:** *"No quiero que una IA tenga mis claves bancarias ni datos contables"*.
+*   **Respuesta:** *"No las tiene. El despliegue es en tu nube privada, detrás de tus firewalls corporativos. El agente solo procesa los documentos que colocas en tu repositorio seguro"*.
+
+### 🃏 Módulo B: Legal Onboarding KYC
+*   **Target Ideal:** Directores de Compliance, Jurídico, Riesgo Corporativo (Fintechs, Sofipos, Corporativos).
+*   **El Dolor:** Tardar 5 días en validar un nuevo proveedor o cliente institucional porque un abogado tiene que revisar actas constitutivas de 50 páginas y cotejar SAT y listas negras.
+*   **Gancho:** *"El agente analiza el acta, consulta APIs del SAT y emite un semáforo de riesgo y matriz de poderes en 12 segundos"*.
+*   **Objeción:** *"¿Y si la IA se equivoca y aprueba a una empresa fantasma?"*.
+*   **Respuesta:** *"El agente no toma la decisión legal; aplica 'Human-in-the-Loop'. Genera el reporte de banderas rojas para que tu equipo jurídico dictamine en 5 minutos en lugar de 5 días"*.
+
+### 🃏 Módulo C: RFP & Tender Analyst (Licitaciones)
+*   **Target Ideal:** Directores Comerciales B2B, VPs de Ventas a Gobierno y Corporativos.
+*   **El Dolor:** Pliegos de licitación de 300 páginas. El equipo comercial odia leerlos para armar la matriz de cumplimiento técnico y redactar la propuesta.
+*   **Gancho:** *"Conéctalo a tu repositorio histórico de propuestas y casos de éxito. Sube las bases de la licitación y el agente RAG pre-redacta la propuesta técnica al 80% en minutos"*.
+*   **Objeción:** *"Nuestras propuestas técnicas son secreto industrial confidencial"*.
+*   **Respuesta:** *"Al ser Private Cloud, tu base vectorial queda estrictamente aislada en tu infraestructura. Cero entrenamiento de modelos públicos"*.
+
+### 🃏 Módulo D: Triage RAG-Blindado (Atención Operativa L1)
+*   **Target Ideal:** Directores de Operaciones, Customer Experience (CX).
+*   **El Dolor:** Gasto excesivo en soporte L1 respondiendo una y otra vez consultas repetitivas de clientes o proveedores.
+*   **Gancho:** *"Agente multicanal (WhatsApp/Web) con prohibición estricta de alucinar. Solo responde con base en tus manuales autorizados. Si detecta fricción, transfiere al humano con resumen estructurado"*.
+*   **Objeción:** *"Los chatbots arruinan la experiencia y contestan tonterías"*.
+*   **Respuesta:** *"Exacto, por eso usamos RAG determinístico con protocolos MCP. Si un dato no está en tu base oficial, el bot transfiere en lugar de inventar"*.
+
+---
+
+## 🧭 10. EL MAPA DE ENRUTAMIENTO HACIA LOS 3 PILARES DE CONTRATACIÓN
+
+Cuando un prospecto entra por pauta o prospección, el equipo de ventas lo califica y lo conduce hacia uno de los **3 Pilares Oficiales de BluePixel**:
+
+| Perfil del Prospecto | Pregunta de Diagnóstico | Paquete a Presentar | Entregable y Plazo |
+| :--- | :--- | :--- | :--- |
+| **"Tengo dolor operativo pero no sé por dónde empezar ni cuánto cuesta"** | *"¿Sabe cuánto dinero le cuesta hoy a su empresa la fricción de ese proceso antes de meterle código?"* | **01: Diagnóstico & Auditoría FutureProof** *(Entry Package)* | Diagnóstico IMPATH™, Matriz de priorización y ROI, Blueprint técnico y Costo de inacción cuantificado en pesos.<br/>⏳ **2 a 4 Semanas**. |
+| **"Ya sé qué flujo o agente necesito construir e integrar a mi ERP"** | *"¿Necesita un equipo senior que programe el agente, lo conecte a su stack y lo deje corriendo en producción?"* | **02: Ingeniería de Agentes & MCP** *(Entry Package)* | Arquitectura agéntica MCP, RAG sobre datos reales, integración SAP/Salesforce, pruebas cloud y blindaje OWASP.<br/>⏳ **Sprints Mensuales**. |
+| **"Necesito transformar la plataforma completa o construir la app de cero a producción"** | *"¿Busca un partner tecnológico senior que diseñe, construya y opere la plataforma completa con evolución continua?"* | **01+02: Transformación: BUILD + EVOLVE** *(Full Transformation)* | Squad dedicado (Tech Lead + AI Engineer + UX Lead), incluye 01 y 02, plataforma lista en 90 días y monitoreo trimestral de UX Health Score y ROI.<br/>⏳ **3+ Meses / Continuo**. |
+
+---
+
+## 🎯 11. MANEJO COMERCIAL DE LOS 3 CLUSTERS DE ADS DE LEO
+
+### A. Si el lead buscó "Desarrollo de Apps":
+*   **El contexto mental del lead:** Quiere una app o plataforma moderna, pero teme contratar una fábrica tradicional que entregue software feo, o una agencia que solo entregue diseños de Figma inusables.
+*   **La apertura de Pablo / José:**
+    > *"Nosotros no somos una fábrica tradicional que te cobra horas infinitas para entregarte pantallas grises de 1995, ni una agencia que te vende maquetas de Figma que no escalan. Diseñamos con la armadura UX #1 en México y construimos con arquitectura FutureProof en tu nube privada para que tu plataforma quede en producción en 90 días."*
+
+### B. Si el lead buscó "Automatización":
+*   **El contexto mental del lead:** Tiene procesos rotos, fugas de tiempo entre su ERP y hojas de cálculo, y empleados sobrecargados.
+*   **La apertura de Pablo / José:**
+    > *"No venimos a pedirte que cambies de ERP ni a tirar tu software actual. Venimos a instalar una capa de integración y automatización determinística que conecta tus sistemas actuales (SAP, Salesforce, bancos) para eliminar las horas de captura manual y los errores humanos, cuantificando el retorno de inversión desde el primer mes."*
+
+### C. Si el lead buscó "Agentización / Agentes IA":
+*   **El contexto mental del lead:** Está saturado de demos y promesas de IA que vio en redes, pero tiene miedo a las alucinaciones, la fuga de datos y el código spaghetti.
+*   **La apertura de Pablo / José:**
+    > *"La diferencia entre un demo de IA en redes y un sistema en producción es la ingeniería de grado empresarial. Nuestros agentes operan con protocolos abiertos MCP nativos y RAG determinístico dentro de tu nube privada: tienen prohibido alucinar, cumplen con la ley de protección de datos y tu empresa mantiene el control y la soberanía total de la infraestructura."*
+

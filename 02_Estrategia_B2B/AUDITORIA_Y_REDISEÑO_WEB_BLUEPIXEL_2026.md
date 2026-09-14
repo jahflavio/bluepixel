@@ -297,45 +297,56 @@ graph LR
 
 ### Paquete 01: Diagnóstico & Auditoría FutureProof (Entry Package · 2 a 4 Semanas)
 *   **Kicker:** `ENTRY PACKAGE · CERTIDUMBRE TÉCNICA`
-*   **Titular:** **Auditoría de Procesos, Fricción y Viabilidad de IA**
-*   **Subtítulo:** *"Te mostramos exactamente el camino, identificamos qué automatizar y calculamos el retorno financiero antes de que inviertas un solo peso en desarrollo."*
-*   **Qué incluye:**
-    *   Diagnóstico de operaciones y mapeo de procesos manuales costosos.
-    *   Análisis de fricción con gemelos digitales e inteligencia IMPATH™.
-    *   Matriz de viabilidad de agentes IA (dónde sí genera ROI y dónde no invertir aún).
-    *   Blueprint de arquitectura técnica y plan de gobernanza de datos.
-    *   Reporte ejecutivo con estimación de horas hombre y dinero a liberar.
-*   **Para quién es:** Directores generales, COOs y CTOs que necesitan validar la factibilidad técnica y económica antes de comprometer presupuestos grandes.
-*   **CTA:** `[ Solicitar Diagnóstico Inicial ↗ ]`
+### Paquete 01: Diagnóstico & Auditoría FutureProof (Entry Package · 2 a 4 Semanas)
+*   **Kicker:** `ENTRY PACKAGE · 01`
+*   **Titular:** **Diagnóstico & Auditoría FutureProof**
+*   **Subtítulo:** *"Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código."*
+*   **Qué incluye (Balas Oficiales):**
+    *   ✦ Mapeo de procesos y diagnóstico de operaciones
+    *   ✦ Detección de fricción con gemelos digitales (IMPATH™)
+    *   ✦ Matriz de priorización de agentes IA y cálculo de ROI
+    *   ✦ Blueprint de arquitectura técnica y gobernanza de datos
+    *   ✦ Reporte ejecutivo con costo de inacción cuantificado en pesos
+*   **Duración:** `2 a 4 Semanas`
+*   **CTA Oficial:** `[ Solicitar Diagnóstico → ]`
 
 ---
 
-### Paquete 02: Agentic Engineering & MCP (Entry Package · Sprints Mensuales)
-*   **Kicker:** `ENTRY PACKAGE · INGENIERÍA PURA`
-*   **Titular:** **Ingeniería de Agentes & Automatización sobre tu Stack**
-*   **Subtítulo:** *"Ya tienes claro qué proceso necesitas automatizar. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos dentro de tu infraestructura."*
-*   **Qué incluye:**
-    *   Diseño de flujos de trabajo autónomos y reglas de negocio determinísticas.
-    *   Integración mediante servidores MCP seguros a tu stack (Salesforce, SAP, ERPs, HubSpot, WhatsApp).
-    *   Capa RAG (Retrieval-Augmented Generation) para responder estrictamente con tus manuales y bases de datos reales.
-    *   Pruebas de estrés, seguridad OWASP y despliegue en tu nube privada (AWS / GCP / Azure).
-*   **Para quién es:** Empresas que ya cuentan con un equipo técnico interno pero carecen de la especialización de frontera para construir agentes de IA que funcionen de manera segura en producción.
-*   **CTA:** `[ Explorar Ingeniería de Agentes ↗ ]`
+### Paquete 02: Ingeniería de Agentes & MCP (Entry Package · Sprints Mensuales)
+*   **Kicker:** `ENTRY PACKAGE · 02`
+*   **Titular:** **Ingeniería de Agentes & MCP**
+*   **Subtítulo:** *"Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real."*
+*   **Qué incluye (Balas Oficiales):**
+    *   ✦ Diseño de arquitectura agéntica con protocolos MCP
+    *   ✦ Flujos de trabajo autónomos sobre datos reales con RAG
+    *   ✦ Integración con tu stack empresarial (SAP, Salesforce, ERP)
+    *   ✦ Ingeniería, pruebas de estrés y despliegue cloud en producción
+    *   ✦ Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP
+*   **Duración:** `Sprints Mensuales`
+*   **CTA Oficial:** `[ Explorar Ingeniería → ]`
 
 ---
 
-### Paquete 01 + 02: Transformación Digital Continua (Full Programme · 3+ Meses · Destacado en Dark Navy)
-*   **Kicker:** `● FULL TRANSFORMATION · SOCIO ESTRATÉGICO CONTINUO`
-*   **Titular:** **FutureProof: BUILD + EVOLVE**
-*   **Subtítulo:** *"De cero a una capa operativa de agentes inteligentes y plataforma de alta disponibilidad. Un solo equipo multidisciplinario que diseña, construye, opera y escala trimestre a trimestre."*
-*   **Qué incluye:**
-    *   **Todo lo contenido en los Paquetes 01 y 02.**
-    *   Equipo senior dedicado y embebido: Tech Lead, AI Engineer, UX/UI Lead y QA.
-    *   Desarrollo completo de la plataforma en 90 días (Fase BUILD).
-    *   Monitoreo continuo de salud técnica y UX Health Score trimestral (Fase EVOLVE).
-    *   Transferencia gradual de conocimiento y código para que tu equipo sea dueño absoluto de lo que opera.
-*   **Para quién es:** Empresas medianas y corporativos que requieren un brazo tecnológico de élite que asuma la responsabilidad total de su evolución digital.
-*   **CTA:** `[ Agendar Sesión de Transformación ↗ ]`
+### Paquete 01+02: Transformación: BUILD + EVOLVE (Full Transformation · 3+ Meses / Continuo)
+*   **Kicker:** `FULL TRANSFORMATION · 01+02`
+*   **Titular:** **Transformación: BUILD + EVOLVE**
+*   **Subtítulo:** *"De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end."*
+*   **Qué incluye (Balas Oficiales):**
+    *   ✓ Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead
+    *   ✓ Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)
+    *   ✓ Construcción completa de plataforma en 90 días (BUILD)
+    *   ✓ Monitoreo trimestral de UX Health Score y ROI (EVOLVE)
+    *   ✓ Hand-off estructurado: tu equipo es dueño absoluto de lo que opera
+*   **Duración:** `3+ Meses / Continuo`
+*   **CTA Oficial:** `[ Agendar Sesión → ]`
+
+---
+
+### 5.3.1. Alineación con los 3 Clusters de Ads de Leo (Tráfico ➔ Conversión)
+El rediseño web y las landings de campaña (`Componentes_Nueva_Web`) se articulan de forma transparente con los 3 clusters de búsqueda corporativa definidos por Leo:
+1.  **Tráfico de "Desarrollo de Apps":** Aterriza en el Hero principal y destaca la capacidad de construir plataformas de grado militar en 90 días (**Paquete 01+02 BUILD + EVOLVE**).
+2.  **Tráfico de "Automatización":** Aterriza en el Workflow Teardown y en las landings operativas (APA / ERP Bridge), canalizándose al **Paquete 01 (Diagnóstico)** para evaluar el retorno de inversión.
+3.  **Tráfico de "Agentización":** Aterriza en las landings de agentes RAG/MCP (Triage RAG / Private Cloud), canalizándose al **Paquete 02 (Ingeniería de Agentes & MCP)** para sprints técnicos inmediatos.
 
 ---
 

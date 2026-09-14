@@ -35,10 +35,22 @@ La bandera de marca de BluePixel es la filosofía **FutureProof**:
 *   **Sistemas Preparados para el Futuro:** Arquitecturas desacopladas, modulares y estandarizadas (mediante protocolos abiertos como MCP) que permiten incorporar nuevos modelos de IA, APIs o cambios de mercado sin tener que tirar el sistema a la basura ni rehacerlo desde cero.
 *   **Acompañamiento Continuo (Build & Evolve):** No entregamos un desarrollo y desaparecemos; nos convertimos en el socio tecnológico que acompaña la evolución del negocio mes a mes con analítica conductual y soporte de SLA.
 
-### 0.4 Plan de Alineación en Tres Frentes:
-1.  **Pauta Pagada (Diana Cardoso / Rocketing):** Sustituir "context hints" e intereses genéricos por **Customer Match / Audiencias Espejo** con la base de datos de tomadores de decisión reales (CEOs, CTOs) de clientes cerrados históricos provista por Pablo Gómez.
-2.  **Conversión en Landings (`cotiza.bluepixel.mx`):** Transformar las 9 páginas estáticas de "agencia de diseño" en puntos de contacto de **Ingeniería FutureProof** inyectando Demos Interactivos PLG (*Product-Led Growth*).
-3.  **Discurso Comercial (Pablo Gómez y José de Buen):** Vender certidumbre operativa y arquitectura FutureProof en lugar de "pantallas y horas de programación".
+### 0.4 Plan de Alineación Estratégica en Tres Frentes:
+1.  **Pauta Pagada y Adquisición B2B (Rocketing / Diana Cardoso):**
+    *   Sustituir micro-nichos dispersos por los **3 Clusters de Demanda Real B2B**:
+        *   **Desarrollo de Apps:** Plataformas cloud, apps web/móvil empresariales y modernización de software de misión crítica en 90 días.
+        *   **Automatización:** Procesos de negocio (BPA/RPA), flujos entre sistemas y conexión determinística con SAP, Salesforce y ERPs.
+        *   **Agentización:** Ingeniería de Agentes IA autónomos en producción con protocolos MCP y RAG privado blindado contra alucinaciones.
+    *   Cargar la lista maestra de keywords negativas (anti-PyMEs < $300k, estudiantes y búsquedas gratuitas).
+2.  **Conversión en Web y Landings (`bluepixel.mx` y Blueprint Library):**
+    *   Canalizar el tráfico hacia los **3 Pilares Oficiales de Contratación**:
+        *   **01: Diagnóstico & Auditoría FutureProof** (*Entry Package | 2 a 4 semanas | CTA: Solicitar Diagnóstico*).
+        *   **02: Ingeniería de Agentes & MCP** (*Entry Package | Sprints mensuales | CTA: Explorar Ingeniería*).
+        *   **01+02: Transformación: BUILD + EVOLVE** (*Full Transformation | 3+ meses / continuo | CTA: Agendar Sesión*).
+    *   Uso de las 10 landing pages y blueprints interactivos como **Proof of Capability** (demostración tangible de soluciones ya probadas en producción).
+3.  **Discurso Comercial y Cierre (Pablo Gómez y José de Buen):**
+    *   Vender certidumbre operativa, soberanía de datos en nube privada y arquitectura FutureProof en lugar de "pantallas decorativas u horas hombre".
+    *   Enrutar cada llamada de descubrimiento al paquete exacto de la imagen según la madurez técnica del cliente.
 
 ---
 

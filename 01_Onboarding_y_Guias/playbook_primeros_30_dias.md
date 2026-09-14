@@ -57,14 +57,21 @@
 
 ---
 
-## 📊 FASE 3: DÍA 8 AL 14 (Estableciendo el "Baseline")
+## 📊 FASE 3: DÍA 8 AL 14 (Estableciendo el "Baseline" y Telemetría RevOps)
 *Documenta cómo está la empresa el Día 1, para que puedas demostrar cuánto la mejoraste el Día 90.*
 
-**Registra estos números en un Excel privado:**
-1. Tráfico web mensual actual (GA4).
-2. Tasa de Conversión promedio de la web (Leads totales / Visitas totales).
-3. Costo por Lead actual (Lo que gasta la Agencia / Leads generados).
-4. Tasa de Cierre de Ventas (Cuántos leads se convierten en clientes de pago).
+### 🛠️ Los 4 Pilares de Infraestructura RevOps & Telemetría (Día a Día):
+1. **Pilar 1: Telemetría y Tagging (GTM, GA4 y Ads Conversion API):**
+   * Configuración de disparadores para medir interacción con el *Hero Prompt Bar*, apertura de *Solution Drawers* y completitud del formulario en 3 pasos.
+   * Envío de señales de conversión calificada de vuelta a Google Ads y LinkedIn para retroalimentar las campañas de los 3 clusters (**Desarrollo de Apps**, **Automatización**, **Agentización**).
+2. **Pilar 2: SEO B2B Semántico & Sitemaps:**
+   * Indexación técnica de la Blueprint Library y schema JSON-LD (`SoftwareApplication` / `OfferCatalog`) para posicionamiento orgánico en motores generativos (Perplexity, ChatGPT, Claude).
+3. **Pilar 3: Enrutamiento Inteligente hacia los 3 Pilares de Venta:**
+   * Calificación algorítmica para canalizar leads automáticamente al **Paquete 01** (Diagnóstico 2-4 sem), **Paquete 02** (Ingeniería de Agentes) o **Paquete 01+02** (BUILD + EVOLVE en 90 días).
+4. **Pilar 4: Integración del Servidor MCP en 3 Fases:**
+   * *Fase 1 (Conexión de Datos):* Conectar GA4, Google Ads y CRM a través de `mcp_config.json`.
+   * *Fase 2 (Skills & Análisis):* Definir la skill operativa para auditorías automáticas de fugas de presupuesto publicitario.
+   * *Fase 3 (Autonomía):* Automatizar reportes matutinos a Slack/Discord con alertas de leads de alto valor (> $300k MXN).
 
 ---
 
@@ -73,7 +80,8 @@
 
 - [ ] **Quick Win 1 (Clarity):** Instala Microsoft Clarity (o Hotjar) silenciosamente en Webflow. A los pocos días, muéstrale a tu jefe un video real de cómo los usuarios se pierden en la web. (Impacto visual masivo).
 - [ ] **Quick Win 2 (Speed-to-lead):** Configura la primera alerta webhooks -> WhatsApp/Telegram para el equipo de ventas. Cuando un vendedor reciba el lead en su celular en 5 segundos, te amará.
-- [ ] **Quick Win 3 (Estrategia Puente):** Lanza tu primera Landing Page optimizada dentro de Webflow para una campaña específica de la agencia externa. Mide la diferencia de conversión contra la web anterior.
+- [ ] **Quick Win 3 (Auditoría y Despliegue de Pauta 2026):** Entrega a Rocketing la directiva de los 3 Clusters de Ads con la lista maestra de palabras clave negativas, migrando la inversión a términos corporativos con ticket calificado.
+- [ ] **Quick Win 4 (Conexión MCP de Atribución):** Vincular la salida del servidor MCP de Leo hacia la API de conversiones offline de Google Ads.
 
 ---
 
