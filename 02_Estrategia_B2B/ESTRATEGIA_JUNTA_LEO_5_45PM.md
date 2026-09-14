@@ -191,3 +191,48 @@
 2. **Ordenar la poda inmediata de Google Ads:** Exigir a Rocketing que apague las campañas que tiran $7,350 MXN al mes y concentre el presupuesto en los 3 Pilares.
 3. **Activar LinkedIn Ads con el perfil de Leo:** Poner a trabajar los $8,000 MXN mensuales en Thought Leadership B2B y parar la producción de memes en TikTok.
 4. **Instruir a Ventas a cerrar con el Diagnóstico 01:** Prohibir cotizaciones de $50k USD a leads fríos, vender el Diagnóstico de 2-4 semanas y reactivar las 21 propuestas estancadas.
+
+---
+
+## 🗺️ 6. RADIOGRAFÍA DE CAMPAÑAS: A DÓNDE ESTÁN MANDANDO EL TRÁFICO HOY
+
+> **Dato crítico para Leo:** Ninguna de las 35 campañas activas dirige a una landing diseñada para directivos corporativos. Cada peso invertido en Ads cae en páginas genéricas sin contexto enterprise, sin casos de éxito verificables y sin CTA de Diagnóstico.
+
+### 6.1 Mapa Actual de Destinos (El Problema)
+
+| Campaña Activa | CPC Pagado | URL de Destino Actual | Por qué es un error |
+| :--- | :---: | :--- | :--- |
+| **IA Operacional Enterprise** | $22.8 MXN | `bluepixel.mx/es/inicio` (Home genérica) | La joya de la cuenta manda tráfico calificado a una home sin simuladores de IA, sin casos enterprise ni CTA de diagnóstico. Convierte al **0.5%**. |
+| **BluePixel Brand** | $11.1 MXN | `bluepixel.mx/es/inicio` (Home genérica) | Tráfico de marca cae en home. Aceptable, pero la home no está optimizada para cierre. |
+| **WebDev BP** | **$111.3 MXN** | `bluepixel.mx/es/desarrollo-web` (landing atomizada) | Página vieja sin posicionamiento enterprise. Sin logos de Bimbo/RadioShack. Sin diagnóstico. **0 conversiones.** |
+| **Competidores** | **$87.7 MXN** | `bluepixel.mx/es/inicio` (Home genérica) | El peor caso: tráfico caliente que ya buscó a la competencia aterriza en home genérica. **0 conversiones.** |
+| **App Dev BP** | **$196.1 MXN** | `bluepixel.mx/es/desarrollo-de-aplicaciones` (landing vieja) | El clic más caro de la cuenta. Landing sin simuladores de ROI, sin arquitecturas Blueprint. **Carísimo e ineficiente.** |
+
+### 6.2 El Problema Raíz: El Embudo Está Roto desde el Clic
+
+```
+CLIC CARO ($87–$196 MXN)
+        ↓
+Landing genérica / vieja (sin contexto enterprise)
+        ↓
+Sin casos de éxito verificables (Bimbo, RadioShack)
+        ↓
+Sin CTA de Diagnóstico de 2-4 semanas
+        ↓
+Sin Blueprint Library como lead magnet
+        ↓
+LEAD SE VA → $0 de retorno → ROI negativo
+```
+
+### 6.3 Nuevo Mapa de Destinos Propuesto (La Solución)
+
+| Campaña Nueva (Pilar) | Presupuesto Mensual | Landing de Destino | CTA Principal | Conversión Estimada |
+| :--- | :---: | :--- | :--- | :---: |
+| **Agentización & IA Enterprise** | $12,000 MXN | `bluepixel.mx/agentizacion` *(nueva — prioridad #1)* | *"Agenda tu Diagnóstico de IA Corporativa"* | 3–5% |
+| **Automatización Operativa & ERPs** | $8,000 MXN | `bluepixel.mx/automatizacion` *(nueva)* | *"Calcula tu ROI Operativo en 15 min"* | 2–4% |
+| **Apps & Plataformas B2B** | $6,000 MXN | `bluepixel.mx/apps-b2b` *(nueva)* | *"Solicita una Demo con tu Caso de Uso"* | 2–3% |
+| **Brand (Defensa)** | $3,500 MXN | `bluepixel.mx/es/inicio` *(optimizada)* | *"Conoce BluePixel Enterprise"* | Mantener |
+
+> **Impacto proyectado:** Conectar únicamente la campaña de IA Operacional (199 clics/mes a $22.8) a la nueva landing de Agentización llevaría la conversión de **0.5% a 3–5%**, generando de **6 a 10 MQLs corporativos calificados al mes con el mismo presupuesto actual**.
+
+---
