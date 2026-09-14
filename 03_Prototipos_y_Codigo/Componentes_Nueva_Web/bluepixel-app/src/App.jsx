@@ -293,7 +293,7 @@ import './App.css';
               {/* Headline */}
               <h1 className="mb-6 font-black font-display tracking-tight leading-[1.1] text-4xl lg:text-5xl xl:text-[3.5rem] text-white">
                 Construimos agentes de IA que <br className="hidden lg:block"/>
-                <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción.</span>
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">operan en producción</span><span className="text-blue-500">.</span>
               </h1>
 
               {/* Subheadline */}
@@ -335,7 +335,7 @@ import './App.css';
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
             <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-              Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span>
+              Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span><span className="text-blue-500">.</span>
             </h2>
           </div>
 
@@ -481,7 +481,7 @@ import './App.css';
                 UNDER THE HOOD
               </span>
               <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                Lo que hace un agente en producción<span className="text-red-500">.</span>
+                Lo que hace un agente en producción<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">
                 Extrae, verifica, ejecuta herramientas y enruta casos límite a un humano cuando las políticas lo requieren. Cada paso queda registrado en la bitácora de auditoría.
@@ -733,7 +733,7 @@ import './App.css';
                         <div className="text-7xl font-black text-white tracking-tighter">18<span className="text-4xl text-red-500">%</span></div>
                       </div>
                       <div className="md:w-7/12 space-y-4">
-                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuellos de botella humanos</h3>
+                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuellos de botella humanos<span className="text-blue-500">.</span></h3>
                         <p className="text-slate-400 leading-relaxed text-sm">
                           El ejecutivo teclea datos a mano en hojas de cálculo con fórmulas desactualizadas. Se pierde tiempo en llamadas internas para verificar reglas de negocio, generando <strong className="text-red-400 font-semibold">$1.2M MXN en pérdidas anuales</strong> por fricción.
                         </p>
@@ -749,7 +749,7 @@ import './App.css';
                         <div className="text-7xl font-black text-white tracking-tighter">99<span className="text-4xl text-emerald-400">.9%</span></div>
                       </div>
                       <div className="md:w-7/12 space-y-4">
-                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Ejecución determinística</h3>
+                        <h3 className="font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Ejecución determinística<span className="text-blue-500">.</span></h3>
                         <p className="text-slate-300 leading-relaxed text-sm">
                           El servidor MCP consulta el stock real directamente en el ERP (SAP/Salesforce). Se genera la cotización en PDF al instante, asegurando un <strong className="text-emerald-400 font-semibold">+340% de ROI proyectado</strong>.
                         </p>
@@ -763,7 +763,7 @@ import './App.css';
               {/* 2. Secondary Static Card */}
               <div className="bg-[#0A0F1D]/40 border border-white/[0.04] rounded-[2rem] p-8 md:p-12 flex flex-col justify-center hover:bg-[#0A0F1D]/80 hover:border-white/[0.1] transition-colors">
                 <div className="text-5xl font-black text-white mb-4">340<span className="text-blue-500">%</span></div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Retorno de inversión (ROI) documentado</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Retorno de inversión (ROI) documentado<span className="text-blue-500">.</span></h3>
                 <p className="text-slate-400 leading-relaxed text-sm">
                   BluePixel destila patrones arquitectónicos exitosos de despliegues en producción para el sector logístico, fintech y enterprise SaaS. No experimentamos con tu operación; replicamos lo que ya funciona y lo adaptamos a tus sistemas legacy.
                 </p>
@@ -800,7 +800,7 @@ import './App.css';
                     <span className="text-[10px] font-mono font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded">01</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-300">PROTOCOLO CORE</span>
                   </div>
-                  <h3 className="mb-4 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Model Context Protocol (MCP)</h3>
+                  <h3 className="mb-4 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Model Context Protocol (MCP)<span className="text-blue-500">.</span></h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8">
                     El estándar abierto que conecta de forma determinística los LLMs con tus orígenes de datos locales, ERPs y APIs corporativas. Sin integraciones frágiles.
                   </p>
@@ -821,7 +821,7 @@ import './App.css';
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">FRAMEWORKS AGENTICOS</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Orquestación de Enjambres</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Orquestación de Enjambres<span className="text-blue-500">.</span></h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Sistemas multi-agente construidos con rigor de ingeniería de software. Tipado estricto y flujos dirigidos.
                   </p>
@@ -840,7 +840,7 @@ import './App.css';
                   <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">MEMORIA & CONTEXTO</span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">RAG & Bases Vectoriales</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">RAG & Bases Vectoriales<span className="text-blue-500">.</span></h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Pipelines de recuperación avanzada que evitan alucinaciones anclando las respuestas a tu data.
                   </p>
@@ -861,7 +861,7 @@ import './App.css';
                     <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">04</span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">DESPLIEGUE CLOUD</span>
                   </div>
-                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">LLMOps & Serverless Architecture</h3>
+                  <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">LLMOps & Serverless Architecture<span className="text-blue-500">.</span></h3>
                   <p className="text-slate-400 text-sm leading-relaxed max-w-xl">
                     Agentes que corren en producción exigen infraestructura de grado empresarial. Monitoreo de latencia, tracking de costos por token, despliegues CI/CD y contenedores escalables sin fricción.
                   </p>
@@ -1012,7 +1012,7 @@ import './App.css';
                 CASOS DE ÉXITO AUDITADOS
               </span>
               <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl text-white">
-                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">escala corporativa</span>
+                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">escala corporativa</span><span className="text-blue-500">.</span>
               </h2>
             </div>
  
@@ -1112,7 +1112,7 @@ import './App.css';
                 Transparencia Técnica
               </span>
               <h2 className="text-3xl md:text-5xl font-black font-display tracking-tight text-white mb-6">
-                Respuestas para líderes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">tecnología.</span>
+                Respuestas para líderes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">tecnología</span><span className="text-blue-500">.</span>
               </h2>
             </div>
             
@@ -1153,20 +1153,20 @@ import './App.css';
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-                C├ôMO TRABAJAR CON NOSOTROS
+                CÓMO TRABAJAR CON NOSOTROS
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
-                Tres formas de colaborar con BluePixel.
+                Tres formas de colaborar con BluePixel<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                Dos paquetes de entrada para equipos que buscan certidumbre t├®cnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producci├│n.
+                Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
               </p>
             </div>
     
             {/* Grid de 3 Tarjetas */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
     
-              {/* CARD 01: Transformation Advisory / Diagn├│stico */}
+              {/* CARD 01: Transformation Advisory / Diagnóstico */}
               <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -1176,21 +1176,21 @@ import './App.css';
                     <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
                   </div>
     
-                  <h3 className="text-2xl font-bold text-white mb-2">Diagn├│stico & Auditor├¡a FutureProof</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico & Auditoría FutureProof</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    Te mostramos exactamente el camino e identificamos qu├® automatizar. Tu equipo adquiere claridad y m├║sculo antes de invertir en c├│digo.
+                    Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
                   </p>
     
                   <ul className="space-y-3 mb-8">
                     {[
-                      'Mapeo de procesos y diagn├│stico de operaciones',
-                      'Detecci├│n de fricci├│n con gemelos digitales (IMPATHÔäó)',
-                      'Matriz de priorizaci├│n de agentes IA y c├ílculo de ROI',
-                      'Blueprint de arquitectura t├®cnica y gobernanza de datos',
-                      'Reporte ejecutivo con costo de inacci├│n cuantificado en pesos'
+                      'Mapeo de procesos y diagnóstico de operaciones',
+                      'Detección de fricción con gemelos digitales (IMPATH™)',
+                      'Matriz de priorización de agentes IA y cálculo de ROI',
+                      'Blueprint de arquitectura técnica y gobernanza de datos',
+                      'Reporte ejecutivo con costo de inacción cuantificado en pesos'
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <span className="text-blue-400 mt-0.5">Ôùê</span>
+                        <span className="text-blue-400 mt-0.5">✦</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -1200,10 +1200,10 @@ import './App.css';
                 <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
                   <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
                   <button 
-                    onClick={() => onSelectPackage && onSelectPackage('Diagn├│stico & Auditor├¡a (01)')}
+                    onClick={() => onSelectPackage && onSelectPackage('Diagnóstico & Auditoría (01)')}
                     className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
-                    <span>Solicitar Diagn├│stico</span>
-                    <span>Ôåù</span>
+                    <span>Solicitar Diagnóstico</span>
+                    <span>→</span>
                   </button>
                 </div>
               </div>
@@ -1218,21 +1218,21 @@ import './App.css';
                     <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
                   </div>
     
-                  <h3 className="text-2xl font-bold text-white mb-2">Ingenier├¡a de Agentes & MCP</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes & MCP</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    Ya sabes qu├® flujo necesitas construir. Nosotros dise├▒amos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+                    Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
                   </p>
     
                   <ul className="space-y-3 mb-8">
                     {[
-                      'Dise├▒o de arquitectura agentica con protocolos MCP',
-                      'Flujos de trabajo aut├│nomos sobre datos reales con RAG',
-                      'Integraci├│n con tu stack empresarial (SAP, Salesforce, ERP)',
-                      'Ingenier├¡a, pruebas de estr├®s y despliegue cloud en producci├│n',
+                      'Diseño de arquitectura agéntica con protocolos MCP',
+                      'Flujos de trabajo autónomos sobre datos reales con RAG',
+                      'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
+                      'Ingeniería, pruebas de estrés y despliegue cloud en producción',
                       'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <span className="text-indigo-400 mt-0.5">Ôùê</span>
+                        <span className="text-indigo-400 mt-0.5">✦</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -1242,10 +1242,10 @@ import './App.css';
                 <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
                   <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
                   <button 
-                    onClick={() => onSelectPackage && onSelectPackage('Ingenier├¡a de Agentes (02)')}
+                    onClick={() => onSelectPackage && onSelectPackage('Ingeniería de Agentes (02)')}
                     className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
-                    <span>Explorar Ingenier├¡a</span>
-                    <span>Ôåù</span>
+                    <span>Explorar Ingeniería</span>
+                    <span>→</span>
                   </button>
                 </div>
               </div>
@@ -1263,21 +1263,21 @@ import './App.css';
                     <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
                   </div>
     
-                  <h3 className="text-2xl font-bold text-white mb-2">Transformaci├│n: BUILD + EVOLVE</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
                   <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                    De cero a una capa agentizada y plataforma digital de alta disponibilidad en producci├│n. Estrategia, ingenier├¡a y evoluci├│n continua end-to-end.
+                    De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
                   </p>
     
                   <ul className="space-y-3 mb-8">
                     {[
                       'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
-                      'Todo lo incluido en los paquetes 01 (Diagn├│stico) y 02 (Ingenier├¡a)',
-                      'Construcci├│n completa de plataforma en 90 d├¡as (BUILD)',
+                      'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                      'Construcción completa de plataforma en 90 días (BUILD)',
                       'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
-                      'Hand-off estructurado: tu equipo es due├▒o absoluto de lo que opera'
+                      'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
-                        <span className="text-emerald-400 font-bold mt-0.5">Ô£ô</span>
+                        <span className="text-emerald-400 font-bold mt-0.5">✓</span>
                         <span className="font-medium">{item}</span>
                       </li>
                     ))}
@@ -1287,10 +1287,10 @@ import './App.css';
                 <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
                   <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
                   <button 
-                    onClick={() => onSelectPackage && onSelectPackage('Transformaci├│n Integral (01+02)')}
+                    onClick={() => onSelectPackage && onSelectPackage('Transformación Integral (01+02)')}
                     className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
-                    <span>Agendar Sesi├│n</span>
-                    <span>ÔåÆ</span>
+                    <span>Agendar Sesión</span>
+                    <span>→</span>
                   </button>
                 </div>
               </div>
@@ -1312,7 +1312,7 @@ import './App.css';
                 ENGINEERING LEADERSHIP
               </span>
               <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                No vendemos "recursos". Asignamos Arquitectos a tu operación.
+                No vendemos "recursos". Asignamos Arquitectos a tu operación<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg leading-relaxed">
                 El 90% de las agencias de software escalan contratando juniors y cobrándolos a precio de senior. En BluePixel, cada proyecto es liderado de principio a fin por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. Tú firmas el cheque con humanos responsables del ROI, no con "vendedores".
@@ -1383,7 +1383,7 @@ import './App.css';
                 COMPROMISO DE SERVICIO & TRANSPARENCIA
               </span>
               <h2 className="md: mt-2 mb-3 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                ¿Qué sucede exactamente cuando nos contactas?
+                ¿Qué sucede exactamente cuando nos contactas<span className="text-blue-500">?</span>
               </h2>
               <p className="text-slate-400 text-xs md:text-sm">
                 Cero ventas agresivas. Cero llamadas con personas que no entienden de ingeniería.
@@ -1510,7 +1510,7 @@ import './App.css';
                       {step === 1 && (
                         <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Tus datos de contacto</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Tus datos de contacto<span className="text-blue-500">.</span></h3>
                             <p className="text-slate-400 text-sm">Para saber con quién nos comunicamos directamente.</p>
                           </div>
                           <div className="space-y-6">
@@ -1535,7 +1535,7 @@ import './App.css';
                       {step === 2 && (
                         <form onSubmit={handleNext} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Datos de tu empresa</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Datos de tu empresa<span className="text-blue-500">.</span></h3>
                             <p className="text-slate-400 text-sm">Para asignar al arquitecto ideal a tu sector operativo.</p>
                           </div>
                           <div className="space-y-6">
@@ -1561,7 +1561,7 @@ import './App.css';
                       {step === 3 && (
                         <form onSubmit={handleSubmitFinal} className="space-y-8 animate-fadeIn">
                           <div>
-                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuello de botella técnico</h3>
+                            <h3 className="mb-2 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">Cuello de botella técnico<span className="text-blue-500">.</span></h3>
                             <p className="text-slate-400 text-sm">Describe la fricción que deseas resolver.</p>
                           </div>
                           <div className="space-y-6">
@@ -1613,7 +1613,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 {solution.categoria}
               </span>
               <h3 className="md: mt-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">
-                Arquitectura de Solución para tu Operación
+                Arquitectura de Solución para tu Operación<span className="text-blue-500">.</span>
               </h3>
               <p className="text-slate-300 text-sm mt-1.5 italic bg-navy-850 p-3 rounded-xl border border-white/[0.06]">
                 "{solution.prompt}"
@@ -1689,11 +1689,11 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
 
               <div className="relative z-10 max-w-3xl mx-auto">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-6 block">
-                  AGENDA UNA CONVERSACIÓN TíCNICA
+                  AGENDA UNA CONVERSACIÓN TÉCNICA
                 </span>
                 
-                <h2 className="md: lg: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-                  ¿Listo para llevar tu visión de IA a producción<span className="text-red-500">?</span>
+                <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl text-white">
+                  ¿Listo para llevar tu visión de IA a producción<span className="text-blue-500">?</span>
                 </h2>
                 
                 <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">
@@ -1737,7 +1737,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 CERO LOCK-IN · SOBERANÍA ABSOLUTA
               </span>
               <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-4xl lg:text-5xl">
-                Tu infraestructura. Tus datos. Tu código fuente<span className="text-blue-500">.</span>
+                Tu infraestructura<span className="text-blue-500">.</span> Tus datos<span className="text-blue-500">.</span> Tu código fuente<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg">
                 Construimos agentes de IA bajo un principio fundacional innegociable: tú eres el dueño absoluto de la tecnología. No vendemos "cajas negras" ni cobramos licencias abusivas por usuario.
@@ -1757,7 +1757,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                   <div className="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center border border-white/10 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-black/50">
                     <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
                   </div>
-                  <h3 className="mb-4 font-bold font-display text-2xl md:text-3xl tracking-tight leading-[1.2]">Despliegue nativo en tu VPC</h3>
+                  <h3 className="mb-4 font-bold font-display text-2xl md:text-3xl tracking-tight leading-[1.2]">Despliegue nativo en tu VPC<span className="text-blue-500">.</span></h3>
                   <p className="text-slate-400 text-base leading-relaxed max-w-xl">
                     Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad empresarial, asegurando cumplimiento total (SOC2, HIPAA).
                   </p>
@@ -1795,7 +1795,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
                   <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                 </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Propiedad del Código</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Propiedad del Código<span className="text-blue-500">.</span></h3>
                 <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
                   Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos intelectuales y el código fuente. Eres completamente libre de mantenerlo in-house con tu equipo de ingeniería o contratar nuestra póliza de Mantenimiento.
                 </p>
@@ -1807,7 +1807,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
                 <div className="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10 mb-8 group-hover:scale-110 transition-transform relative z-10">
                   <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
-                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Modelos Blindados</h3>
+                <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Modelos Blindados<span className="text-blue-500">.</span></h3>
                 <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
                   Utilizamos instancias empresariales de LLMs con políticas estrictas de privacidad (Zero Data Retention). Ninguna conversación confidencial o dato de tus clientes se usará jamás para entrenar modelos públicos.
                 </p>
@@ -1925,7 +1925,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
           />
           <SocialProofSection />
           <WorkflowTeardown />
-          {/* <AgentTerminalDemo /> */}
+          <AgentTerminalDemo />
           <AgenticTechStack />
           <TechnicalSovereignty />
           {/* <TechPartners /> */}
