@@ -71,55 +71,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const step = useSimTimer(data.steps.length);
       const isFinished = step >= data.steps.length;
       return (
-        <div className="bg-navy-900 border border-white/10 rounded-2xl p-6 shadow-2xl relative z-10 w-full flex flex-col overflow-hidden min-h-[360px]">
-          <div className="absolute top-0 left-0 w-full h-1 bg-navy-800">
-             <div className="h-full bg-blue-500 transition-all duration-1000" style={{ width: `${isFinished ? 100 : (Math.min(step, data.steps.length) / data.steps.length) * 100}%` }}></div>
-          </div>
-          <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-            <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-2">
-              <span className={`w-2 h-2 rounded-full ${isFinished ? 'bg-slate-500' : 'bg-emerald-400 animate-pulse'}`}></span>
-              {isFinished ? 'EXECUTION COMPLETED' : 'LIVE EXECUTION'}
+        <div className="relative z-10 w-full flex flex-col overflow-hidden min-h-[360px] rounded-2xl border border-white/5 bg-[#03050a]/80 backdrop-blur-3xl shadow-[0_0_80px_rgba(59,130,246,0.15)] group perspective-1000">
+          
+          {/* Abstract Vstorm Grid Background */}
+          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          
+          {/* macOS Controls */}
+          <div className="relative z-10 mb-4 flex items-center justify-between border-b border-white/5 px-6 py-4 bg-white/[0.01]">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2">
+              {isFinished ? 'PROCESS: TERMINATED' : 'PROCESS: RUNNING'} 
+              <span className={`w-1.5 h-1.5 rounded-full ${isFinished ? 'bg-slate-500' : 'bg-emerald-400 animate-pulse'}`}></span>
             </span>
-            <span className="text-[10px] font-mono text-slate-500">PORT: 3000</span>
           </div>
-          <div className="flex-1 flex flex-col justify-center space-y-4">
+          
+          <div className="relative z-10 flex-1 flex flex-col justify-center space-y-5 px-8 pb-6">
             {data.steps.map((s, index) => {
               const isPast = index < step; const isActive = index === step; const isFuture = index > step;
-              
               const tagMatch = s.match(/^\[(.*?)\]\s*(.*)$/);
               let tag = null, text = s;
-              if (tagMatch) {
-                 tag = tagMatch[1];
-                 text = tagMatch[2];
-              }
+              if (tagMatch) { tag = tagMatch[1]; text = tagMatch[2]; }
+              
               const tagColors = {
-                 'INFO': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-                 'WARN': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
-                 'CRITICAL': 'bg-red-500/10 text-red-400 border-red-500/20',
-                 'ACTION': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-                 'AGENT': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-                 'USER': 'bg-slate-500/20 text-white border-slate-500/30'
+                 'INFO': 'text-blue-400',
+                 'WARN': 'text-yellow-400',
+                 'CRITICAL': 'text-red-400',
+                 'ACTION': 'text-emerald-400',
+                 'AGENT': 'text-purple-400',
+                 'USER': 'text-slate-300'
               };
-              const tagClass = tag ? (tagColors[tag] || 'bg-slate-500/10 text-slate-400 border-slate-500/20') : '';
+              const tagColor = tag ? (tagColors[tag] || 'text-slate-500') : '';
 
               return (
-                <div key={index} className={`flex items-center gap-3 transition-opacity duration-300 ${isFuture ? 'opacity-30' : 'opacity-100'}`}>
-                  <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                    {isPast && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>}
-                    {isActive && <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-blue-400 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>}
-                    {isFuture && <div className="w-2 h-2 rounded-full bg-slate-700"></div>}
+                <div key={index} className={`flex items-start gap-4 transition-all duration-500 ${isFuture ? 'opacity-20 translate-y-2' : isActive ? 'opacity-100 translate-y-0 scale-105 transform origin-left' : 'opacity-60 translate-y-0'}`}>
+                  <div className="w-5 h-5 mt-0.5 flex-shrink-0 flex items-center justify-center">
+                    {isPast && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-emerald-500"><polyline points="20 6 9 17 4 12"></polyline></svg>}
+                    {isActive && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-blue-500 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>}
+                    {isFuture && <div className="w-1.5 h-1.5 rounded-full bg-slate-700"></div>}
                   </div>
-                  <div className={`flex items-center gap-2 ${isActive ? 'text-blue-400' : isPast ? 'text-slate-300' : 'text-slate-500'}`}>
-                    {tag && <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded border ${tagClass}`}>{tag}</span>}
-                    <span className="text-sm font-mono">{text}</span>
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                       {tag && <span className={`text-[9px] font-bold font-mono uppercase tracking-wider ${tagColor}`}>{tag}</span>}
+                    </div>
+                    <span className={`text-sm font-mono leading-relaxed ${isActive ? 'text-white' : isPast ? 'text-slate-300' : 'text-slate-500'}`}>{text}</span>
                   </div>
                 </div>
               );
             })}
+            
             {isFinished && (
-              <div className="mt-4 p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/20 animate-fade-in">
-                <p className="text-xs font-mono text-emerald-400 mb-2 font-bold">{data.result_title}</p>
-                <p className="text-sm text-white">{data.result_value}</p>
+              <div className="mt-6 p-5 bg-emerald-500/[0.03] rounded-xl border border-emerald-500/10 animate-fade-in flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-emerald-400"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                   </div>
+                   <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest">{data.result_title}</p>
+                </div>
+                <p className="text-sm font-bold text-white font-mono">{data.result_value}</p>
               </div>
             )}
           </div>
@@ -268,53 +280,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // 6. NodeFlowSim (Integraciones API)
     const NodeFlowSim = ({ data }) => {
-      const step = useSimTimer(data.nodes.length + 1); // +1 para el trigger inicial
+      const step = useSimTimer(data.nodes.length + 1);
       const isFinished = step > data.nodes.length;
       return (
-        <div className="bg-navy-950 rounded-2xl shadow-2xl relative z-10 w-full min-h-[360px] flex flex-col font-sans p-6 border border-white/10 overflow-hidden items-center justify-center">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-           <div className="relative z-10 w-full max-w-sm">
-              <div className="text-center mb-8">
-                 <p className="text-[10px] text-slate-400 mb-3 font-mono uppercase tracking-wider">{data.trigger_label}</p>
-                 <div className={`w-14 h-14 bg-slate-800 border-2 rounded-full mx-auto flex items-center justify-center text-xl z-10 relative transition-all duration-300 ${step > 0 ? 'border-blue-500 text-blue-400' : 'border-slate-600 text-slate-400'}`}>
-                    <i data-lucide={data.trigger_icon} className="w-6 h-6"></i>
-                    {step > 0 && step <= data.nodes.length && (
-                       <div className="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping opacity-20"></div>
-                    )}
+        <div className="relative z-10 w-full min-h-[400px] flex flex-col font-sans border border-white/5 bg-[#03050a]/80 backdrop-blur-2xl rounded-2xl overflow-hidden items-center justify-center shadow-[0_0_80px_rgba(16,185,129,0.05)]">
+           
+           {/* Deep Glows */}
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/10 blur-[100px] pointer-events-none"></div>
+
+           <div className="relative z-10 w-full h-full p-8 flex flex-col items-center">
+              
+              <div className="text-center mb-12">
+                 <p className="text-[9px] text-slate-500 mb-4 font-mono uppercase tracking-widest">{data.trigger_label}</p>
+                 <div className={`w-12 h-12 rounded-2xl mx-auto flex items-center justify-center text-xl relative transition-all duration-700 ${step > 0 ? 'bg-blue-500/10 border border-blue-500/30 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'bg-white/5 border border-white/10 text-slate-500'}`}>
+                    <i data-lucide={data.trigger_icon} className="w-5 h-5"></i>
                  </div>
               </div>
               
-              <div className="flex justify-between relative mt-4">
-                 {/* Líneas conectoras (SVG para mejor control) */}
-                 <svg className="absolute top-[-3rem] left-0 w-full h-12" style={{zIndex: 0}}>
+              <div className="relative w-full max-w-lg h-32 flex justify-between items-center px-4">
+                 
+                 {/* Diagonal/Curved SVG Connections */}
+                 <svg className="absolute inset-0 w-full h-full overflow-visible pointer-events-none" style={{zIndex: 0}}>
                     {data.nodes.map((_, idx) => {
-                       const startX = '50%'; const endX = idx === 0 ? '16%' : idx === 1 ? '50%' : '84%';
-                       const isActive = step > idx;
-                       return <line key={`line-${idx}`} x1={startX} y1="0" x2={endX} y2="48" stroke={isActive ? '#10b981' : '#334155'} strokeWidth="2" className="transition-all duration-500" />
+                       if(idx === data.nodes.length - 1) return null;
+                       const startX = 10 + (idx * (80 / (data.nodes.length - 1))) + '%';
+                       const endX = 10 + ((idx + 1) * (80 / (data.nodes.length - 1))) + '%';
+                       const isActive = step > idx + 1;
+                       const y1 = idx % 2 === 0 ? '30%' : '70%';
+                       const y2 = (idx + 1) % 2 === 0 ? '30%' : '70%';
+                       return (
+                         <g key={`path-${idx}`}>
+                           <path id={`flow-${idx}`} d={`M ${idx === 0 ? 50 : 150} ${idx % 2 === 0 ? 40 : 80} Q 200 60 ${idx === 0 ? 150 : 250} ${(idx + 1) % 2 === 0 ? 40 : 80}`} stroke={isActive ? 'rgba(59,130,246,0.5)' : 'rgba(255,255,255,0.05)'} strokeWidth="1" strokeDasharray="4 4" fill="none" className="transition-all duration-1000" />
+                         </g>
+                       )
                     })}
+                    {/* Simplified straight line for 3 nodes */}
+                    <line x1="16%" y1="50%" x2="50%" y2="50%" stroke={step > 1 ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.05)'} strokeWidth="1.5" />
+                    <line x1="50%" y1="50%" x2="84%" y2="50%" stroke={step > 2 ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.05)'} strokeWidth="1.5" />
+                    
+                    {/* Animated Tracer */}
+                    {step > 0 && step <= data.nodes.length && (
+                      <circle r="3" fill="#60A5FA" filter="blur(1px)">
+                        <animate attributeName="cx" values="16%;50%;84%" dur="2s" repeatCount="1" fill="freeze" />
+                        <animate attributeName="cy" values="50%;50%;50%" dur="2s" repeatCount="1" fill="freeze" />
+                      </circle>
+                    )}
                  </svg>
                  
                  {data.nodes.map((node, idx) => {
                     const isNodeActive = step > idx;
                     return (
-                       <div key={idx} className="text-center w-1/3 relative z-10 mt-2">
-                          <div className={`w-12 h-12 mx-auto flex items-center justify-center text-xl rounded-xl border-2 transition-all duration-500 bg-slate-800 ${isNodeActive ? 'border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.4)]' : 'border-slate-600 text-slate-500'}`}>
-                             <i data-lucide={node.icon} className="w-5 h-5"></i>
+                       <div key={idx} className="text-center relative z-10 w-24">
+                          <div className={`w-10 h-10 mx-auto flex items-center justify-center text-lg rounded-full border transition-all duration-700 backdrop-blur-md ${isNodeActive ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]' : 'bg-[#060A14] border-white/10 text-slate-600'}`}>
+                             <i data-lucide={node.icon} className="w-4 h-4"></i>
                           </div>
-                          <p className={`text-[10px] mt-2 font-mono transition-colors ${isNodeActive ? 'text-emerald-400' : 'text-slate-500'}`}>
-                             {isNodeActive ? node.success_label : 'Pendiente'}
+                          <p className={`text-[9px] mt-3 font-mono uppercase tracking-wider transition-colors ${isNodeActive ? 'text-white' : 'text-slate-600'}`}>
+                             {isNodeActive ? node.success_label : 'Pending'}
                           </p>
                        </div>
                     );
                  })}
               </div>
               
-              <div className={`mt-10 bg-emerald-900/40 border border-emerald-500/50 p-3 rounded-lg text-center transition-all duration-700 ${isFinished ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                 <p className="text-emerald-400 font-bold text-sm flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div className={`mt-12 bg-white/[0.02] border border-white/[0.05] p-4 rounded-xl text-center transition-all duration-1000 w-full max-w-sm ${isFinished ? 'opacity-100 translate-y-0 shadow-lg' : 'opacity-0 translate-y-8'}`}>
+                 <p className="text-white font-bold text-sm flex items-center justify-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                     {data.result_title}
                  </p>
-                 <p className="text-[10px] text-emerald-200/70 mt-1">{data.result_value}</p>
+                 <p className="text-[11px] font-mono text-slate-400">{data.result_value}</p>
               </div>
            </div>
         </div>
@@ -500,21 +533,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0"></div>
             
             {/* Paso 1 */}
-            <div className="bg-navy-850 p-8 rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-blue-500/50 transition-colors">
+            <div className="bg-[#03050a]/80 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-blue-500/50 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-mono font-bold text-xl border border-blue-500/30">1</div>
               <h3 className="text-xl font-bold text-white mb-2">Ingesta Masiva</h3>
               <p className="text-sm text-slate-400 leading-relaxed">Sube el PDF de la licitaci&oacute;n del gobierno o corporativo. El agente lee las 200 p&aacute;ginas en segundos usando OCR avanzado.</p>
             </div>
 
             {/* Paso 2 */}
-            <div className="bg-navy-850 p-8 rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-indigo-500/50 transition-colors">
+            <div className="bg-[#03050a]/80 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-indigo-500/50 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 font-mono font-bold text-xl border border-indigo-500/30">2</div>
               <h3 className="text-xl font-bold text-white mb-2">Cruce Hist&oacute;rico (RAG)</h3>
               <p className="text-sm text-slate-400 leading-relaxed">Busca en tu historial de propuestas ganadoras y extrae los textos t&eacute;cnicos, certificaciones y CVs necesarios para cumplir.</p>
             </div>
 
             {/* Paso 3 */}
-            <div className="bg-navy-850 p-8 rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-emerald-500/50 transition-colors">
+            <div className="bg-[#03050a]/80 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl border border-white/10 relative z-10 shadow-2xl hover:border-emerald-500/50 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 font-mono font-bold text-xl border border-emerald-500/30">3</div>
               <h3 className="text-xl font-bold text-white mb-2">Redacci&oacute;n y Matriz</h3>
               <p className="text-sm text-slate-400 leading-relaxed">Emite un documento Word con la propuesta pre-llenada al 80% y un Excel con la matriz de cumplimiento exacta.</p>
@@ -555,12 +588,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-navy-950 p-6 rounded-2xl border border-red-500/20">
+              <div className="bg-[#03050a]/80 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl border border-red-500/20">
                 <div className="text-sm text-slate-500 mb-1">Costo Actual (Humano)</div>
                 <div className="text-3xl font-mono text-red-400">${formatNumber(Math.round(currentCost))} USD/mes</div>
                 <div className="text-xs text-slate-500 mt-2">({formatNumber(timeSpent)} horas invertidas)</div>
               </div>
-              <div className="bg-navy-950 p-6 rounded-2xl border border-emerald-500/30">
+              <div className="bg-[#03050a]/80 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-2xl border border-emerald-500/30">
                 <div className="text-sm text-emerald-500/70 mb-1 font-bold">Ahorro con Agente BluePixel</div>
                 <div className="text-4xl font-mono text-emerald-400 font-bold">+${formatNumber(Math.round(savings))} USD</div>
                 <div className="text-xs text-slate-400 mt-2">ROI operativo recuperado al instante.</div>
