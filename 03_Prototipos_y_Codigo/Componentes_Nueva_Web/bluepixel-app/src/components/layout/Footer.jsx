@@ -1,4 +1,5 @@
 import React from 'react';
+import logoSrc from '../../assets/logo.png';
 
 const Footer = () => (
       <footer className="bg-[#02040A] border-t border-white/[0.05] pt-24 pb-12 px-6 md:px-12 relative overflow-hidden">
@@ -12,7 +13,7 @@ const Footer = () => (
             {/* Brand & Strategy Column (Takes 4 cols) */}
             <div className="lg:col-span-4 pr-8">
               <div className="flex items-center mb-8">
-                <img src="/logo.png" alt="BluePixel" className="h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
+                <img src={logoSrc} alt="BluePixel" className="h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
                 No somos una agencia de marketing ni un equipo de "prompters". Somos una firma de <strong className="text-white">ingeniería de software corporativo</strong> especializada en Sistemas Multi-Agente, RAG y automatización determinística.
