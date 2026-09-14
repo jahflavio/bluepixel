@@ -1,114 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BluePixel — Ingeniería de Agentes IA & Plataformas FutureProof</title>
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-  <!-- End Google Tag Manager -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-        display: ['Instrument Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            navy: {
-              950: '#03050B',
-              900: '#060A14',
-              850: '#0A0F1D',
-              800: '#0F1628',
-              750: '#131D35',
-              700: '#1A2540',
-              600: '#253456',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
-    code, .font-mono { font-family: 'JetBrains Mono', monospace; }
-    body { margin: 0; background: #060A14; color: #F8FAFC; overflow-x: hidden; }
 
-    /* Technical grid pattern */
-    .tech-grid {
-      background-image: 
-        radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 32px 32px, 64px 64px, 64px 64px;
-    }
-
-    /* Glows */
-    .glow-blue { box-shadow: 0 0 45px -10px rgba(37, 99, 235, 0.35); }
-    .glow-agentic { box-shadow: 0 0 50px -15px rgba(139, 92, 246, 0.3); }
-
-    /* Live indicator pulse */
-    @keyframes livePulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.35); opacity: 0.6; }
-    }
-    .live-dot { animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-
-    /* Marquee animation */
-    @keyframes marqueeScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marqueeScroll 45s linear infinite;
-    }
-    .marquee-track:hover { animation-play-state: paused; }
-
-    .client-logo {
-      height: 72px;
-      width: auto;
-      opacity: 0.6;
-      filter: brightness(0) invert(1);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-    .client-logo:hover { opacity: 1; transform: scale(1.05); }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #060A14; }
-    ::-webkit-scrollbar-thumb { background: #1A2540; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
-  
-    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
-  </style>
-</head>
-<body class="tech-grid min-h-screen">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <div id="root"></div>
-
-  <script type="text/babel">
     const { useState, useEffect, useRef } = React;
 
     // Presets de Casos Operativos para el Hero Prompt Bar
@@ -1060,313 +950,167 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       );
     };
 
-    
-    const CaseStudiesSection = ({ onOpenCase }) => {
-      const cases = [
-        {
-          id: 'bimbo',
-          client: 'Grupo Bimbo',
-          industry: 'Consumo Masivo / Global',
-          title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
-          kpi: '+40%',
-          kpiLabel: 'Productividad Directiva',
-          desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas a nivel global.',
-          image: 'assets/bimbo.jpg'
-        },
-        {
-          id: 'radioshack',
-          client: 'RadioShack',
-          industry: 'Retail Electrónica',
-          title: 'Transformación total de la infraestructura de comercio electrónico',
-          kpi: '3x',
-          kpiLabel: 'Conversión Mobile',
-          desc: 'Migración a arquitectura serverless, optimización radical del flujo de checkout y rediseño de UX/UI centrado en conversión omnicanal.',
-          image: 'assets/radioshack.jpg'
-        },
-        {
-          id: 'lifemiles',
-          client: 'LifeMiles',
-          industry: 'Fidelidad / Aerolíneas',
-          title: 'Arquitectura escalable para el programa de lealtad líder en LATAM',
-          kpi: '99.9%',
-          kpiLabel: 'Uptime Transaccional',
-          desc: 'Despliegue de microservicios críticos para soportar picos transaccionales masivos durante campañas de redención de millas.',
-          image: 'assets/lifemiles.jpg'
-        },
-        {
-          id: 'iqos',
-          client: 'IQOS',
-          industry: 'Tabaco / Tecnología',
-          title: 'Experiencia digital B2C y orquestación de datos de consumidores',
-          kpi: '+65%',
-          kpiLabel: 'Retención de Usuarios',
-          desc: 'Creación de portales de usuario hiper-personalizados y backends robustos para gestión segura de datos sensibles.',
-          image: 'assets/iqos.jpg'
-        }
-      ];
+    // Calculadora Interactiva de ROI de Automatización
+    const ROICalculator = ({ onOpenContact }) => {
+      const [teamSize, setTeamSize] = useState(6);
+      const [weeklyHours, setWeeklyHours] = useState(14);
+      const [hourlyRate, setHourlyRate] = useState(380); // MXN/hr
 
-      const [activeIndex, setActiveIndex] = useState(0);
+      // Cálculos matemáticos
+      const annualWeeks = 48;
+      const totalManualHoursYear = teamSize * weeklyHours * annualWeeks;
+      const totalManualCostYear = totalManualHoursYear * hourlyRate;
+      const efficiencyGain = 0.82; // 82% promedio de tareas repetitivas reducidas
+      const hoursLiberatedYear = Math.round(totalManualHoursYear * efficiencyGain);
+      const savingsYearMXN = Math.round(totalManualCostYear * efficiencyGain);
+      const savingsYearUSD = Math.round(savingsYearMXN / 19.5);
 
       return (
-        <section id="casos" className="py-24 px-6 md:px-12 bg-[#02040A] relative border-t border-white/[0.05]">
-          <div className="max-w-7xl mx-auto">
-            
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-black tracking-widest uppercase mb-4">
-                Portafolio de Infraestructura
+        <section id="roi-calculator" className="py-20 px-6 md:px-12 bg-navy-900/90 border-t border-white/[0.06] relative overflow-hidden">
+          {/* Subtle background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold flex items-center justify-center gap-2">
+                <span>✦</span>
+                <span>SIMULADOR DE IMPACTO FINANCIERO</span>
+                <span>✦</span>
               </span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-display tracking-tight text-white mb-6">
-                Ingeniería que <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">define industrias.</span>
+              <h2 className="md: mt-3 mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+                ¿Cuánto dinero pierde tu empresa en tareas manuales?
               </h2>
+              <p className="text-slate-400 text-sm md:text-base">
+                Calcula el retorno de inversión y las horas de alta fricción que un enjambre de agentes y automatización eliminan en tu organización.
+              </p>
             </div>
 
-            {/* Highly Stylized Segmented Control (Vstorm Style) */}
-            <div className="flex justify-center mb-12 relative z-20">
-              <div className="inline-flex flex-wrap justify-center p-1.5 bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-xl">
-                {cases.map((c, idx) => (
-                  <button
-                    key={c.id}
-                    onClick={() => setActiveIndex(idx)}
-                    className={`relative px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${activeIndex === idx ? 'text-white' : 'text-slate-400 hover:text-white hover:bg-white/[0.02]'}`}
-                  >
-                    {activeIndex === idx && (
-                      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent border border-white/10 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.1)]"></div>
-                    )}
-                    <span className="relative z-10">{c.client}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Interactive Demos Container */}
-            <div className="relative">
-              {/* Deep Glow behind the active showcase */}
-              <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
-
-              <div className="relative h-[650px] md:h-[550px] perspective-1000">
-                {cases.map((c, idx) => (
-                  <div 
-                    key={c.id} 
-                    className={`absolute inset-0 h-full bg-[#060A14] backdrop-blur-2xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-700 flex flex-col md:flex-row ${activeIndex === idx ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto z-10' : 'opacity-0 translate-y-12 scale-95 pointer-events-none z-0'}`}
-                  >
-                    
-                    {/* Noise Texture Overlay for the card */}
-                    <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none z-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
-
-                    {/* Left Column: Glass Data Panel */}
-                    <div className="md:w-[45%] lg:w-[40%] p-8 lg:p-12 flex flex-col justify-center relative z-30">
-                      <div className="inline-flex items-center gap-2 mb-6">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">{c.industry}</span>
-                      </div>
-                      
-                      <h3 className="text-2xl lg:text-3xl font-display font-black text-white mb-4 leading-tight">
-                        {c.title}
-                      </h3>
-                      
-                      <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                        {c.desc}
-                      </p>
-
-                      <div className="mb-10">
-                        {/* Vstorm stylized KPI */}
-                        <div className="text-5xl lg:text-6xl font-mono font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-slate-500 mb-2 filter drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                          {c.kpi}
-                        </div>
-                        <div className="text-xs font-mono uppercase tracking-widest text-slate-500">
-                          {c.kpiLabel}
-                        </div>
-                      </div>
-
-                      <div>
-                        <button 
-                          onClick={() => onOpenCase(c.client)}
-                          className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-mono text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-max group">
-                          <span>Analizar Arquitectura</span>
-                          <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Image Presentation */}
-                    
-                    <div className="md:w-[55%] lg:w-[60%] relative bg-[#02040A] flex items-center justify-center overflow-hidden perspective-1000">
-                       
-                       {/* SVG Graph specific to each case study */}
-                       <div className="absolute inset-0 w-full h-full p-8 flex items-center justify-center">
-                          
-                          {/* BIMBO GRAPH */}
-                          {c.id === 'bimbo' && (
-                            <div className="relative w-full max-w-sm aspect-video">
-                              <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 400 250">
-                                <defs>
-                                  <filter id="glowBimbo" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-                                </defs>
-                                {/* Multiple sources merging into central DB */}
-                                <path id="b1" d="M 50 50 C 150 50, 100 125, 200 125" stroke="rgba(59,130,246,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="b2" d="M 50 125 L 200 125" stroke="rgba(59,130,246,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="b3" d="M 50 200 C 150 200, 100 125, 200 125" stroke="rgba(59,130,246,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="b4" d="M 200 125 C 280 125, 250 125, 350 125" stroke="rgba(99,102,241,0.5)" strokeWidth="2" strokeDasharray="6 6" fill="none" />
-                                
-                                {/* Moving dots */}
-                                <circle r="3" fill="#60A5FA" filter="url(#glowBimbo)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#b1" /></animateMotion></circle>
-                                <circle r="3" fill="#60A5FA" filter="url(#glowBimbo)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#b2" /></animateMotion></circle>
-                                <circle r="3" fill="#60A5FA" filter="url(#glowBimbo)"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#b3" /></animateMotion></circle>
-                                <circle r="4" fill="#818CF8" filter="url(#glowBimbo)"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#b4" /></animateMotion></circle>
-                              </svg>
-                              
-                              {/* Nodes HTML */}
-                              <div className="absolute left-[20px] top-[40px] text-[8px] font-mono text-slate-500 bg-black/50 border border-slate-700 px-2 py-1 rounded">ERP Local</div>
-                              <div className="absolute left-[20px] top-[115px] text-[8px] font-mono text-slate-500 bg-black/50 border border-slate-700 px-2 py-1 rounded">Ventas</div>
-                              <div className="absolute left-[20px] top-[190px] text-[8px] font-mono text-slate-500 bg-black/50 border border-slate-700 px-2 py-1 rounded">Logística</div>
-                              
-                              <div className="absolute left-[175px] top-[100px] w-12 h-12 rounded-xl bg-blue-900/40 border border-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                                <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
-                              </div>
-                              <div className="absolute left-[330px] top-[115px] text-[10px] font-mono text-indigo-400 bg-indigo-950/80 border border-indigo-500 px-3 py-1.5 rounded shadow-[0_0_10px_rgba(99,102,241,0.5)]">Agent Layer</div>
-                            </div>
-                          )}
-
-                          {/* RADIOSHACK GRAPH */}
-                          {c.id === 'radioshack' && (
-                            <div className="relative w-full max-w-sm aspect-video">
-                              <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 400 250">
-                                <defs>
-                                  <filter id="glowRadio" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-                                </defs>
-                                <path id="r1" d="M 50 125 C 100 125, 100 50, 150 50 L 250 50 C 300 50, 300 125, 350 125" stroke="rgba(16,185,129,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="r2" d="M 50 125 C 100 125, 100 200, 150 200 L 250 200 C 300 200, 300 125, 350 125" stroke="rgba(16,185,129,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <circle r="4" fill="#10B981" filter="url(#glowRadio)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#r1" /></animateMotion></circle>
-                                <circle r="4" fill="#10B981" filter="url(#glowRadio)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="1.2s"><mpath href="#r2" /></animateMotion></circle>
-                              </svg>
-                              <div className="absolute left-[20px] top-[115px] text-[8px] font-mono text-slate-500 bg-black/50 border border-slate-700 px-2 py-1 rounded">Usuario</div>
-                              <div className="absolute left-[130px] top-[40px] text-[8px] font-mono text-emerald-500 bg-emerald-950/50 border border-emerald-800 px-2 py-1 rounded">Serverless API</div>
-                              <div className="absolute left-[130px] top-[190px] text-[8px] font-mono text-emerald-500 bg-emerald-950/50 border border-emerald-800 px-2 py-1 rounded">Edge CDN</div>
-                              <div className="absolute left-[330px] top-[115px] text-[10px] font-mono text-emerald-400 bg-emerald-950 border border-emerald-500 px-3 py-1.5 rounded shadow-[0_0_10px_rgba(16,185,129,0.5)]">Checkout</div>
-                            </div>
-                          )}
-
-                          {/* LIFEMILES GRAPH */}
-                          {c.id === 'lifemiles' && (
-                            <div className="relative w-full max-w-sm aspect-video">
-                              <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 400 250">
-                                <defs>
-                                  <filter id="glowLife" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-                                </defs>
-                                <path id="l1" d="M 50 125 L 150 125" stroke="rgba(239,68,68,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="l2" d="M 150 125 C 200 125, 200 50, 250 50 L 350 50" stroke="rgba(239,68,68,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="l3" d="M 150 125 C 200 125, 200 125, 250 125 L 350 125" stroke="rgba(239,68,68,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <path id="l4" d="M 150 125 C 200 125, 200 200, 250 200 L 350 200" stroke="rgba(239,68,68,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <circle r="3" fill="#EF4444" filter="url(#glowLife)"><animateMotion dur="1s" repeatCount="indefinite"><mpath href="#l1" /></animateMotion></circle>
-                                <circle r="3" fill="#EF4444" filter="url(#glowLife)"><animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath href="#l2" /></animateMotion></circle>
-                                <circle r="3" fill="#EF4444" filter="url(#glowLife)"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#l3" /></animateMotion></circle>
-                                <circle r="3" fill="#EF4444" filter="url(#glowLife)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.8s"><mpath href="#l4" /></animateMotion></circle>
-                              </svg>
-                              <div className="absolute left-[130px] top-[110px] w-8 h-8 rounded bg-red-900/40 border border-red-500 flex items-center justify-center shadow-[0_0_10px_rgba(239,68,68,0.5)]">
-                                <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-                              </div>
-                              <div className="absolute left-[20px] top-[115px] text-[8px] font-mono text-slate-500 bg-black/50 border border-slate-700 px-2 py-1 rounded">API Gateway</div>
-                              <div className="absolute left-[270px] top-[40px] text-[8px] font-mono text-red-400 bg-red-950/50 border border-red-800 px-2 py-1 rounded">Microservice A</div>
-                              <div className="absolute left-[270px] top-[115px] text-[8px] font-mono text-red-400 bg-red-950/50 border border-red-800 px-2 py-1 rounded">Microservice B</div>
-                              <div className="absolute left-[270px] top-[190px] text-[8px] font-mono text-red-400 bg-red-950/50 border border-red-800 px-2 py-1 rounded">Microservice C</div>
-                            </div>
-                          )}
-
-                          {/* IQOS GRAPH (Fallback for others) */}
-                          {c.id !== 'bimbo' && c.id !== 'radioshack' && c.id !== 'lifemiles' && (
-                            <div className="relative w-full max-w-sm aspect-video">
-                              <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 400 250">
-                                <defs>
-                                  <filter id="glowPurp" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-                                </defs>
-                                <path id="p1" d="M 200 50 C 200 150, 200 150, 200 200" stroke="rgba(168,85,247,0.3)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
-                                <circle r="4" fill="#A855F7" filter="url(#glowPurp)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#p1" /></animateMotion></circle>
-                              </svg>
-                              <div className="absolute left-[170px] top-[20px] text-[10px] font-mono text-purple-400 bg-purple-950 border border-purple-500 px-3 py-1.5 rounded shadow-[0_0_10px_rgba(168,85,247,0.5)]">Data Lake</div>
-                              <div className="absolute left-[170px] top-[200px] text-[10px] font-mono text-slate-300 bg-slate-900 border border-slate-600 px-3 py-1.5 rounded">Analytics</div>
-                            </div>
-                          )}
-
-                       </div>
-
-                       {/* Sophisticated gradient overlay */}
-                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/40 to-transparent z-10 pointer-events-none"></div>
-                       <div className="absolute inset-0 border-l border-white/[0.05] z-20 pointer-events-none"></div>
-                    </div>
-
-                       <div className="absolute inset-0 border-l border-white/[0.05] z-20 pointer-events-none"></div>
-                    </div>
-
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Controles / Sliders */}
+              <div className="lg:col-span-6 bg-navy-850 border border-white/[0.08] rounded-2xl p-6 md:p-8 space-y-6">
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Tamaño del equipo operativo
+                    </label>
+                    <span className="text-lg font-black text-blue-400 font-mono">{teamSize} colaboradores</span>
                   </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </section>
-      );
-    };
-
-
-const FAQSection = () => {
-      const faqs = [
-        {
-          q: "¿Quién es dueño de la Propiedad Intelectual (código, datos y prompts)?",
-          a: "Ustedes. Al 100%. No usamos sus datos para entrenar modelos públicos ni retenemos derechos sobre la infraestructura que construimos. Todo el stack tecnológico se despliega en su nube privada (AWS, Azure o GCP) y es auditado por su equipo de seguridad antes del pase a producción."
-        },
-        {
-          q: "¿Cuánto tiempo toma llevar un agente de IA a producción real?",
-          a: "A diferencia de PoCs eternas, nuestra metodología de despliegue asegura un Agente MVP funcional en 4 a 6 semanas. Las semanas 7 a 12 se enfocan exclusivamente en hardening (seguridad, manejo de excepciones y escalabilidad) para un pase a producción libre de fricción."
-        },
-        {
-          q: "¿Qué modelos usan bajo el capó? ¿Están atados a OpenAI?",
-          a: "Somos completamente agnósticos. Diseñamos plataformas enrutables (Router-based AI). Usamos Claude 3.5 Sonnet para tareas complejas de razonamiento lógico, GPT-4o para parsing estructurado, o modelos Llama 3 on-premise si sus políticas de gobernanza de datos exigen aislamiento total."
-        },
-        {
-          q: "¿No podemos hacer esto internamente con nuestro equipo de ingeniería?",
-          a: "Construir aplicaciones SaaS tradicionales es muy distinto a orquestar agentes no-determinísticos. Su equipo domina su negocio y su código base; nosotros aportamos los patrones arquitectónicos exclusivos de IA (Graph-state, Vector DBs, Model Context Protocol) para no reinventar la rueda y evitar sobrecostos ocultos."
-        }
-      ];
-      
-      const [openIdx, setOpenIdx] = useState(null);
-
-      return (
-        <section className="py-24 px-6 md:px-12 bg-[#02040A] relative border-t border-white/[0.05]">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-black tracking-widest uppercase mb-4">
-                Transparencia Técnica
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black font-display tracking-tight text-white mb-6">
-                Respuestas para líderes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">tecnología.</span>
-              </h2>
-            </div>
-            
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="border border-white/[0.08] bg-[#060A14] rounded-2xl overflow-hidden transition-all duration-300 hover:border-white/[0.15]">
-                  <button 
-                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                    className="w-full text-left px-6 py-6 flex items-center justify-between focus:outline-none"
-                  >
-                    <span className={`text-lg font-bold pr-8 transition-colors ${openIdx === idx ? 'text-white' : 'text-slate-300'}`}>{faq.q}</span>
-                    <span className={`text-blue-400 flex-shrink-0 transform transition-transform duration-300 ${openIdx === idx ? 'rotate-180' : ''}`}>
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                    </span>
-                  </button>
-                  <div className={`px-6 overflow-hidden transition-all duration-300 ${openIdx === idx ? 'max-h-64 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <p className="text-slate-400 leading-relaxed mt-2">{faq.a}</p>
+                  <input
+                    type="range"
+                    min="1"
+                    max="40"
+                    value={teamSize}
+                    onChange={(e) => setTeamSize(Number(e.target.value))}
+                    className="w-full accent-blue-500 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>1 persona</span>
+                    <span>20 personas</span>
+                    <span>40 personas</span>
                   </div>
                 </div>
-              ))}
+
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Horas semanales dedicadas a hojas de cálculo por persona
+                    </label>
+                    <span className="text-lg font-black text-indigo-400 font-mono">{weeklyHours} hrs / sem</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="4"
+                    max="35"
+                    value={weeklyHours}
+                    onChange={(e) => setWeeklyHours(Number(e.target.value))}
+                    className="w-full accent-indigo-500 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>4 hrs (básico)</span>
+                    <span>18 hrs (medio)</span>
+                    <span>35 hrs (crítico)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-xs font-mono uppercase text-slate-300 font-semibold">
+                      Costo promedio por hora hombre (nómina con cargas)
+                    </label>
+                    <span className="text-lg font-black text-slate-200 font-mono">${hourlyRate} MXN/hr</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="180"
+                    max="900"
+                    step="20"
+                    value={hourlyRate}
+                    onChange={(e) => setHourlyRate(Number(e.target.value))}
+                    className="w-full accent-slate-400 cursor-pointer h-2 bg-navy-950 rounded-lg"
+                  />
+                  <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                    <span>$180 MXN (Junior)</span>
+                    <span>$500 MXN (Senior)</span>
+                    <span>$900 MXN (Especialista)</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-navy-950 border border-white/[0.04] text-xs text-slate-400 leading-relaxed">
+                  <span className="text-blue-400 font-semibold">✦ Benchmark Real BluePixel:</span> En empresas con procesos de cotización, reconciliación contable o validación de documentos, el 82% de las tareas son completamente operables mediante agentes con servidores MCP y validación humana por excepción.
+                </div>
+              </div>
+
+              {/* Tarjetas de Resultados */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="bg-gradient-to-br from-navy-850 to-navy-900 border border-emerald-500/30 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 px-4 py-1.5 bg-emerald-500/10 border-b border-l border-emerald-500/30 rounded-bl-xl text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">
+                    82% Eficiencia Recuperable
+                  </div>
+
+                  <span className="text-xs font-mono uppercase text-slate-400 font-bold block mb-1">
+                    Ahorro Financiero Anual Proyectado
+                  </span>
+                  <div className="text-4xl md:text-5xl font-black text-emerald-400 tracking-tight mb-1 font-mono">
+                    ${savingsYearMXN.toLocaleString()} <span className="text-sm font-semibold text-emerald-300/80">MXN / año</span>
+                  </div>
+                  <div className="text-xs font-mono text-slate-400 mb-6">
+                    ≈ ${savingsYearUSD.toLocaleString()} USD anuales en ineficiencia de back-office eliminada.
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.08]">
+                    <div>
+                      <span className="text-[11px] font-mono text-slate-400 block mb-1">Horas Hombre Liberadas</span>
+                      <div className="text-2xl font-black text-white font-mono">
+                        {hoursLiberatedYear.toLocaleString()} <span className="text-xs font-normal text-slate-400">hrs/año</span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 mt-1">Reorientadas a estrategia comercial y ventas.</p>
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-mono text-slate-400 block mb-1">Tiempo de Payback</span>
+                      <div className="text-2xl font-black text-blue-400 font-mono">
+                        ~60 a 90 <span className="text-xs font-normal text-slate-400">días</span>
+                      </div>
+                      <p className="text-[10px] text-slate-400 mt-1">Retorno total de la fase BUILD en el primer trimestre.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/[0.08]">
+                    <button
+                      onClick={() => onOpenContact && onOpenContact(`Calculadora ROI: ${teamSize} colaboradores, ${weeklyHours} hrs/sem, ahorro estimado $${savingsYearMXN.toLocaleString()} MXN/año`)}
+                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-black text-sm py-4 px-6 rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                      <span>Desbloquear este Retorno: Solicitar Auditoría Operativa</span>
+                      <span className="font-bold text-base">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       );
     };
 
-
-// Our Services (Vstorm Asymmetric Grid Style)
+    // Our Services (Vstorm Asymmetric Grid Style)
     
     const ThreeWaysToWork = () => {
       return (
@@ -2122,6 +1866,4 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
     };
 
     ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-  </script>
-</body>
-</html>
+  
