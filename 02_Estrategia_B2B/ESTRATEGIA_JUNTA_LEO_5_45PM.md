@@ -1,238 +1,300 @@
-# 🎯 BRIEFING ESTRATÉGICO: JUNTA CON LEO FLORES (5:45 PM)
-## Informe Post-Reunión Rocketing: Diagnóstico Forense, Desglose de Gastos y Plan Integral de Soluciones
-**Fecha:** 14 de Septiembre, 2026 | 5:45 PM  
-**Participantes:** Leonardo Flores (Dirección General / Producto) y Fabián Flores (Head of Growth & RevOps)  
-**Objetivo de la sesión:** Presentar a Leo la radiografía exacta basada en el PDF oficial de Rocketing. Evidenciar el sangrado de dinero en Google Ads, el desvío en redes sociales y la trampa del SEO escolar, y acordar la **ejecución inmediata del plan de soluciones a todo** para salvar la facturación de Q4.
+# 🎯 BRIEFING ESTRATÉGICO: JUNTA CON LEO FLORES — 5:45 PM
+### Diagnóstico Forense · Auditoría de Campañas · Plan Integral de Soluciones — 14 Sep 2026
+
+**Participantes:** Leonardo Flores (Dirección General / Producto) · Fabián Flores (Head of Growth & RevOps)
+**Fuente de datos:** Reporte oficial Rocketing (1–13 Sep 2026) + Datos históricos CRM BluePixel
+**Objetivo:** Presentar la radiografía exacta del sangrado de dinero en Google Ads, el desvío en redes sociales y la trampa del SEO escolar, y acordar la **ejecución inmediata del plan de soluciones** para salvar la facturación de Q4.
 
 ---
 
-## ⏱️ 1. EL PITCH DE ENTRADA CON LEO (3 Minutos)
+## ⏱️ 1. PITCH DE ENTRADA (3 Minutos)
 
-> *"Leo, revisando a detalle el reporte oficial de Rocketing, los números son contundentes:*
+> *“Leo, revisando el reporte oficial de Rocketing, los números son contundentes:*
 >
-> 1. *Solo en los primeros 13 días de septiembre, **tiramos $7,350 MXN a la basura (el 54% de la inversión de Google Ads)** en clics absurdos de **$111 a $196 pesos** en 'WebDev', 'AppDev' y 'Competidores', con **CERO conversiones**.*
-> 2. *Las keywords que realmente nos dejarían dinero corporativo (*'IA automatización operativa'*, *'diseño app móvil enterprise'*, *'IA en software'*) **están hundidas en la página 5 y 6 de Google (posiciones 41 a 61)**. En cambio, somos #1 en tareas escolares como *'¿qué es interfaz?'* y *'tipos de páginas web'*.*
-> 3. *El único lead corporativo real de todo septiembre llegó por **Gemini (IA)** buscando **'Automatizar flujo de clientes'** (Five Diamond Club), lo que confirma que la demanda real está en nuestros Pilares de Automatización y Agentes.*
-> 4. *Mientras tanto, Rocketing está haciendo **memes y sketches de comedia en TikTok e Instagram** (*'tu software y tú parecen relación tóxica'*), perdiendo cientos de seguidores al mes, mientras que en **LinkedIn ganaron solo 4 seguidores en todo el mes de junio y no han gastado un solo peso de los $8,000 presupuestados**.*
-> 5. *Entre abril y agosto entregamos **21 propuestas comerciales y cerramos CERO**, porque le soltamos al cliente cotizaciones de $50k USD que lo espantan.*
+> 1. *Solo en los primeros 13 días de septiembre, **tiramos $7,350 MXN a la basura (54% de la inversión de Ads)** en clics de **$111 a $196 pesos** en WebDev, AppDev y Competidores, con **CERO conversiones**.*
+> 2. *Las keywords de dinero corporativo (IA automatización operativa, diseño app móvil enterprise) **están hundidas en posiciones 41 a 61 de Google (página 5 y 6)**. En cambio, somos **#1 en tareas escolares** como ¿qué es interfaz? y tipos de páginas web.*
+> 3. *El único lead corporativo real de septiembre llegó por **Gemini (IA)** buscando Automatizar flujo de clientes — confirma que la demanda está en nuestros Pilares de Automatización y Agentes.*
+> 4. *Rocketing hace **memes de comedia en TikTok** y pierde cientos de seguidores al mes. En LinkedIn ganaron **4 seguidores en junio** y tienen **$8,000 MXN mensuales sin gastar**.*
+> 5. *Entre abril y agosto enviamos **21 propuestas comerciales y cerramos CERO** — porque cotizamos $50k–$200k USD en frío y espantamos al cliente.*
 >
-> *Tenemos el diagnóstico clínico completo y la **solución exacta para cada uno de estos frentes**. Aquí está el plan de acción paso a paso."*
+> *Tenemos el diagnóstico completo y la solución exacta para cada frente. Aquí está el plan.”*
 
 ---
 
-## 📊 2. LA RADIOGRAFÍA DE LOS DATOS (PDF ROCKETING)
+## 📊 2. RADIOGRAFÍA DEL NEGOCIO — DATOS CRÍTICOS 2026
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    DATOS CRÍTICOS DEL NEGOCIO (2026)                                   │
-├────────────────────────┬───────────────────────────────────────────────────────────────────────────────┤
-│ Facturación Total 2026 │ $7,820,942 MXN (proviene 100% de solo 2 ventas cerradas en Febrero y Marzo). │
-│ Últimos 5 Meses        │ CERO VENTAS (Abril, Mayo, Junio, Julio y Agosto facturaron $0 pesos).         │
-│ Ticket Promedio Real   │ $3,910,471 MXN por cliente (~$210,000 USD). BluePixel es 100% Enterprise.    │
-│ Propuestas Estancadas  │ 21 propuestas formales enviadas entre abril y agosto con 0% de cierre.        │
-│ Tasa de Contacto Sept. │ 16.67% (de 6 leads registrados, solo 1 contestó; los otros 5 datos falsos).   │
-│ Comparativa 2025       │ En 2025 se vendieron $17M MXN. Hoy vamos en $7.8M. Si Q4 no levanta, cerramos │
-│                        │ con menos del 50% de la facturación del año pasado.                           │
-└────────────────────────┴───────────────────────────────────────────────────────────────────────────────┘
-```
+| Indicador | Dato |
+| :--- | :--- |
+| **Facturación Total 2026** | $7,820,942 MXN — proviene 100% de solo 2 ventas en Febrero y Marzo |
+| **Últimos 5 Meses** | CERO VENTAS. Abril, Mayo, Junio, Julio y Agosto facturaron $0 pesos |
+| **Ticket Promedio Real** | $3,910,471 MXN por cliente (~$210,000 USD). BluePixel es 100% Enterprise |
+| **Propuestas Estancadas** | 21 propuestas formales enviadas entre abril y agosto. Tasa de cierre: 0% |
+| **Tasa de Contacto Sept.** | 16.67% — de 6 leads registrados, solo 1 contestó. Los otros 5 eran falsos |
+| **Comparativa 2025** | 2025: $17M MXN. 2026 actual: $7.8M. Sin Q4, cerramos <50% del año pasado |
+| **ROI Marketing Q1 2026** | 2,274.5% (cuando se vendió). ROI Q2 2026: -100% (0 ventas con $102k invertidos) |
 
 ---
 
-## 🛠️ 3. PLAN INTEGRAL: PROBLEMAS IDENTIFICADOS Y SOLUCIONES A TODO
+## 🔎 3. AUDITORÍA COMPLETA DE CAMPAÑAS ACTIVAS EN GOOGLE ADS
 
----
+> **Cuenta:** 35 campañas activas · 317 clics · 2,848 impresiones · 6 conversiones · Inversión: **$13,621 MXN** (13 días) · CTR: 11.13% · CPC promedio: $42.97
 
-### FRENTE 1: GOOGLE ADS & SANGRADO DE PALABRAS CLAVE
+### 3.1 Las 5 Campañas con Mayor Volumen
 
-#### 🔴 El Problema:
-* **35 campañas activas** para $1,000 MXN/día. Presupuesto pulverizado en centavos.
-* **$7,350 MXN quemados en 13 días (54% del gasto del mes)** en clics inviables:
-  * `WebDev BP`: $2,783 MXN tirados (**$111.33 el clic**) $\to$ 0 conversiones.
-  * `Competidores`: $2,017 MXN tirados (**$87.73 el clic**) $\to$ 0 conversiones.
-  * `App Dev BP`: $2,549 MXN tirados en 13 clics (**$196.10 el clic**) $\to$ 1 conversión carísima.
-* **$103,957 MXN acumulados** en la bolsa genérica `Cartera de Servicios` sin foco.
-* **La joya desaprovechada:** `IA Operacional Enterprise` capta **199 clics a $22.80 MXN (63% del tráfico)**, pero al caer en una landing vieja estática convierte al **0.5% (1 solo lead)**.
+| # | Campaña | Clics | Impresiones | CTR | CPC | Conv. | Acción |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | **IA Operacional Enterprise — RCKT** | 199 | 1,411 | 14.1% | $22.8 MXN | 1 | ✅ CONSERVAR |
+| 2 | **BluePixel Brand — RCKT — Jun26** | 45 | 119 | 37.82% | $11.1 MXN | 1 | ✅ CONSERVAR |
+| 3 | **WebDev BP — RCKT — May26 PT2** | 25 | 273 | 9.16% | $111.33 MXN | 0 | 🔴 APAGAR HOY |
+| 4 | **Competidores — RCKT — Jun26** | 23 | 821 | 2.8% | $87.73 MXN | 0 | 🔴 APAGAR HOY |
+| 5 | **App Dev BP — RCKT — May26 PT2** | 13 | 100 | 13% | $196.1 MXN | 1 | 🟡 REEVALUAR |
 
-#### 🟢 Las Soluciones Inmediatas:
-1. **Apagar inmediatamente `Competidores` y `WebDev BP`:** Detener hoy el sangrado de ~$5,000 MXN mensuales y reasignar ese dinero a los Pilares de mayor conversión.
-2. **Consolidar 35 campañas en 3 Campañas Macro (Los 3 Pilares):**
-   * *Campaña 1: Apps & Plataformas B2B* (Presupuesto: $8,000 MXN/mes).
-   * *Campaña 2: Automatización Operativa & ERPs* (Presupuesto: $10,000 MXN/mes).
-   * *Campaña 3: Agentización & IA Enterprise* (Presupuesto: $12,000 MXN/mes).
-3. **Conectar la campaña de IA a la nueva landing de Agentización HOY:**
-   * Cambiar la URL de destino de `IA Operacional Enterprise` hacia la nueva landing (`.../agentizacion`).
-   * Al recibir a los directores con los simuladores de RAG y Protocolo MCP, casos auditados y el Diagnóstico 01, la conversión subirá de 0.5% a **3-5% (6 a 10 leads corporativos calificados al mes con el mismo dinero)**.
-4. **Cargar Lista Maestra de Negativas a Nivel Cuenta:**
-   * Bloquear términos de bajo presupuesto (`gratis`, `barato`, `freelancer`, `cotizador gratis`, `fiverr`).
-   * Bloquear términos académicos (`curso`, `tutorial`, `que es`, `pdf`, `tarea`, `universidad`).
-   * Bloquear herramientas caseras No-Code (`make tutorial`, `zapier gratis`, `chatgpt login`).
+> **Sangrado calculado:** Campañas 3 y 4 quemaron **~$4,800 MXN en 13 días con 0 resultados** → proyección mensual: **~$11,000 MXN tirados al mes.**
 
----
+### 3.2 A Dónde Dirigen el Tráfico Hoy
 
-### FRENTE 2: SEO Y CONTENIDO (DE TAREAS ESCOLARES A INGENIERÍA ENTERPRISE)
-
-#### 🔴 El Problema:
-* **Las keywords de negocio real están en la página 5, 6 y 7 de Google:**
-  * `ia automatización operativa`: Posición #41.
-  * `desarrollo web mexico`: Posición #46.
-  * `outsourcing desarrollo app`: Posición #52.
-  * `diseño app móvil enterprise`: Posición #60.
-  * `ia integrada software empresarial`: Posición #61.
-* **Somos #1 en tareas escolares:** `tipos de paginas web` (#1), `tipos de interfaz` (#1), `estandares del diseño web` (#5), `que es interfaz` (#11).
-* **Google AI Overviews cita a BluePixel como glosario:** Impresiones generadas en artículos como *"¿Qué significa front-end y back-end?"* y *"10 ejemplos de interfaces"*. Cero compradores corporativos.
-* **Miedo infundado de la agencia:** Temen perder la posición #1 de URLs como `/es/diseno-ux-ui`.
-
-#### 🟢 Las Soluciones Inmediatas:
-1. **Preservar el SEO mediante Redirecciones 301 Permanentes:**
-   * Las URLs posicionadas (`/es/diseno-ux-ui`, `/es/desarrollo-de-aplicaciones`) **no se borran**.
-   * Se configuran con **redirección 301 permanente hacia el Pilar 1 (Apps & Plataformas B2B con ancla `#ux-ui` y `#mobile`)**.
-   * Se transfiere el 100% del PageRank acumulado en Google, pero ahora el tráfico cae en una página corporativa con casos de Bimbo y RadioShack y métricas de adopción >95%.
-2. **Pivote Editorial del Blog (Estrategia Blueprint Library):**
-   * Prohibir artículos teóricos para estudiantes (*"¿Qué es una interfaz?"*).
-   * Producir artículos de ingeniería de software basados en las **10 arquitecturas de la Blueprint Library**:
-     * *"Cómo integrar agentes LLM con SAP S/4HANA usando Protocolo MCP"*.
-     * *"Arquitectura RAG tolerante a fallas en VPCs privadas de AWS/Azure"*.
-     * *"Strangler Fig Pattern: Migración de sistemas legacy sin detener la operación"*.
-   * Cuando Google AI Overview cite estos artículos, los lectores serán **Directores de Tecnología y Finanzas**.
-3. **Estrategia para Nearshoring (Leads en Inglés):**
-   * Crear la versión en inglés de las 3 landings maestras para capturar demanda corporativa de EE.UU. hacia México.
-
----
-
-### FRENTE 3: REDES SOCIALES (MATAR LOS MEMES DE TIKTOK Y ACTIVAR LINKEDIN)
-
-#### 🔴 El Problema:
-* **Memes cómicos de TikTok e Instagram:** Videos como *"Tu software y tú ya parecen relación tóxica"* o *"Cuando el sitio del cliente se cae"*.
-* **Pérdida neta de seguidores en Instagram:** Enero (-669 netos), Abril (-505 netos), Mayo (-278 netos).
-* **LinkedIn Ads en CERO:** Tienen **$8,000 MXN mensuales asignados con Gasto Real = $0 MXN**.
-* **LinkedIn Orgánico:** Solo ganaron **4 seguidores en todo el mes de junio**.
-* Ningún CTO ni Director General de un corporativo contrata un proyecto de $3.9 millones viendo comedia en TikTok.
-
-#### 🟢 Las Soluciones Inmediatas:
-1. **Frenar la producción de memes y sketches de comedia:** Reasignar las horas de diseño y video a activos que generen autoridad B2B.
-2. **Activar los $8,000 MXN de LinkedIn Ads HOY:**
-   * **Formato 1: Thought Leadership Ads (Perfil personal de Leo):** Impulsar publicaciones técnicas de Leo Flores en primera persona (diagramas reales de arquitectura, desmitificación de la IA de moda, lecciones de proyectos enterprise). Tiene **2.5x más engagement** y menor CPC que la página de empresa.
-   * **Formato 2: Document Ads (Descarga en PDF):** Ofrecer la descarga de la **Blueprint Library (10 Arquitecturas Agénticas)** a cambio del correo corporativo y empresa de decisores de TI.
-3. **Reconfigurar Meta Ads exclusivamente como Retargeting B2B ($2,500 MXN):**
-   * Apagar la campaña fría `Always On`.
-   * Reimpactar únicamente a directores que ya visitaron `bluepixel.mx` o la *Blueprint Library*, mostrando pruebas sociales duras: Casos de éxito de Grupo Bimbo (+40% productividad), RadioShack (-60% fricción) y el badge de *Firma UX #1 en México por DesignRush*.
-
----
-
-### FRENTE 4: PROCESO COMERCIAL & DESTRABE DE LAS 21 PROPUESTAS
-
-#### 🔴 El Problema:
-* De abril a agosto se mandaron **21 propuestas comerciales formales y se cerraron CERO (0% de cierre)**.
-* Causa raíz: **Shock de precio**. Ventas recibe un lead frío y le cotiza de inmediato un desarrollo completo de $50,000 a $200,000 USD. El cliente se espanta y congela la decisión.
-
-#### 🟢 Las Soluciones Inmediatas:
-1. **Campaña de Rescate de las 21 Propuestas Estancadas:**
-   * Pablo y José deben contactar esta semana a las 21 empresas con una oferta de destrabe de bajo riesgo:
-     > *"Hola [Nombre], entendemos que el proyecto integral de desarrollo representaba una inversión y compromiso mayor para este trimestre. Les proponemos iniciar con la **Fase 01: Diagnóstico de Arquitectura & Fricción Operativa de 3 semanas ($5k - $8k USD)**, donde auditamos el código, diseñamos el blueprint y calculamos el ROI exacto antes de comprometer desarrollo."*
-   * Rescatar solo **2 de esas 21 propuestas** representa entre **$200k y $500k MXN de facturación inmediata**.
-2. **Nuevo Guion Oficial para Llamadas de Descubrimiento:**
-   * Prohibido presentar cotizaciones de proyectos completos en frío.
-   * Toda llamada debe enfocar la venta en el **Diagnóstico 01 (2 a 4 semanas | Entry Package)**.
-   * Una vez que el cliente paga el diagnóstico y tiene el blueprint en mano, la tasa de conversión histórica a la fase de construcción (**01+02 BUILD + EVOLVE**) supera el 70%.
-
----
-
-### FRENTE 5: REESTRUCTURACIÓN DEL PRESUPUESTO ($40,000 MXN / MES)
-
-#### 🔴 El Problema:
-* El presupuesto de $40,000 MXN mensuales se gasta de forma ineficiente: $25k en una bolsa genérica de Google, $6k defendiendo la marca, $2.5k en Instagram frío y $8k congelados en LinkedIn.
-
-#### 🟢 La Nueva Distribución Presupuestal Optimizada:
-
-| Canal | Presupuesto Asignado | Estrategia de Uso | Objetivo |
+| Campaña | CPC Pagado | URL de Destino Actual | El Problema |
 | :--- | :---: | :--- | :--- |
-| **Google Search (Pilares)** | **$26,000 MXN** | Dividido en: Apps ($8k), Automatización ($8k), Agentización ($10k). | Capturar demanda activa corporativa con keywords exactas. |
-| **Google Search (Brand)** | **$3,500 MXN** | Reducir de $6k a $3.5k (ajuste de pujas exactas para no inflar costo). | Proteger la búsqueda directa de directivos referidos. |
-| **LinkedIn Ads (B2B)** | **$8,000 MXN** | Thought Leadership de Leo + Document Ads de Blueprint Library. | Captura proactiva de CTOs, COOs y CFOs (+200 empleados). |
-| **Meta Ads (Retargeting)** | **$2,500 MXN** | 100% Retargeting con testimoniales de Bimbo y RadioShack. | Reimpactar visitantes calificados para acelerar el cierre. |
-| **TOTAL MENSUAL** | **$40,000 MXN** | **100% enfocado en captura B2B calificada.** | **Salir de la fase de aprendizaje y generar MQLs reales.** |
+| **IA Operacional Enterprise** | $22.8 MXN | bluepixel.mx/es/inicio (Home genérica) | 199 clics calificados a home sin simuladores de IA, sin casos enterprise, sin CTA de diagnóstico. Convierte al **0.5%** |
+| **BluePixel Brand** | $11.1 MXN | bluepixel.mx/es/inicio (Home genérica) | Aceptable, pero la home no está optimizada para cierre de directivos |
+| **WebDev BP** | $111.3 MXN | bluepixel.mx/es/desarrollo-web (landing atomizada) | Página vieja sin Bimbo/RadioShack, sin diagnóstico. **0 conversiones** |
+| **Competidores** | $87.7 MXN | bluepixel.mx/es/inicio (Home genérica) | Tráfico caliente de competencia cae en home genérica. **0 conversiones** |
+| **App Dev BP** | $196.1 MXN | bluepixel.mx/es/desarrollo-de-aplicaciones (landing vieja) | Clic más caro de la cuenta. Sin Blueprint Library. **Carísimo** |
 
----
-
-### FRENTE 6: GOBERNANZA, MÉTRICAS Y TELEMETRÍA CON ROCKETING
-
-#### 🔴 El Problema:
-* Rocketing reporta "Leads brutos" (en septiembre el 83% ni contesta) y se escuda en métricas de tráfico escolar que no generan ventas.
-
-#### 🟢 Las Soluciones Inmediatas:
-1. **Nuevo Tablero de Métricas Enterprise Obligatorio:**
-   * **MQLs Corporativos:** Leads con correo corporativo y empresa verificable de +50 empleados.
-   * **Costo por SQL:** Costo por cita de diagnóstico agendada y completada con Pablo/José.
-   * **Pipeline Value:** Valor total acumulado en pesos de las propuestas activas en negociación.
-   * **Conversión a Diagnóstico 01:** Número de diagnósticos vendidos en el mes.
-2. **Conexión de Conversiones Offline con el Servidor MCP de Leo:**
-   * Inyectar `gclid` y UTMs en el formulario de 3 pasos (`MultiStepContact`).
-   * Cuando ventas cierre un contrato en Notion, el servidor MCP devuelve la señal de valor en pesos a Google Ads para que el Smart Bidding aprenda a buscar **clientes que pagan millones y no curiosos**.
-
----
-
-## 📋 4. TABLA MAESTRA RESUMEN DE ACCIONES INMEDIATAS
-
-| Frente | Acción Concreta | Responsable | Plazo de Ejecución |
-| :--- | :--- | :--- | :---: |
-| **Google Ads** | Apagar `Competidores` y `WebDev`. Consolidar en 3 Campañas Macro por Pilar. | Diana Cardoso *(Rocketing)* | **24 horas** |
-| **Landing IA** | Cambiar la URL de destino de `IA Operacional` a la nueva landing de Agentización con simuladores. | Diana *(Ads)* + Tecnología | **Hoy mismo** |
-| **LinkedIn Ads** | Encender los $8,000 MXN en Thought Leadership de Leo y Document Ads de Blueprint Library. | Rocketing *(Pauta B2B)* | **48 horas** |
-| **Meta Ads** | Reconfigurar la campaña a 100% Retargeting B2B de casos de éxito. | Rocketing *(Pauta)* | **48 horas** |
-| **SEO** | Configurar redirecciones 301 de URLs viejas al Pilar 1 y reorientar el blog a ingeniería B2B. | Daniel Arias *(SEO)* | **3 días** |
-| **Comercial** | Lanzar campaña de rescate a las 21 propuestas estancadas ofreciendo el Diagnóstico de 2-4 semanas. | Pablo Gómez / José de Buen | **Esta semana** |
-| **Métricas** | Reemplazar "leads brutos" por MQLs corporativos, Costo por SQL y Pipeline Value en el reporte. | Rocketing *(Analytics)* | **Próximo reporte** |
-
----
-
-## 🤝 5. LOS 4 ACUERDOS CLAVE PARA CERRAR CON LEO A LAS 5:45 PM
-
-1. **Aprobar la transición a los 3 Pilares en la Web:** Respaldar el despliegue de las landings interactivas y autorizar el cambio de URL de la campaña de IA hoy mismo.
-2. **Ordenar la poda inmediata de Google Ads:** Exigir a Rocketing que apague las campañas que tiran $7,350 MXN al mes y concentre el presupuesto en los 3 Pilares.
-3. **Activar LinkedIn Ads con el perfil de Leo:** Poner a trabajar los $8,000 MXN mensuales en Thought Leadership B2B y parar la producción de memes en TikTok.
-4. **Instruir a Ventas a cerrar con el Diagnóstico 01:** Prohibir cotizaciones de $50k USD a leads fríos, vender el Diagnóstico de 2-4 semanas y reactivar las 21 propuestas estancadas.
-
----
-
-## 🗺️ 6. RADIOGRAFÍA DE CAMPAÑAS: A DÓNDE ESTÁN MANDANDO EL TRÁFICO HOY
-
-> **Dato crítico para Leo:** Ninguna de las 35 campañas activas dirige a una landing diseñada para directivos corporativos. Cada peso invertido en Ads cae en páginas genéricas sin contexto enterprise, sin casos de éxito verificables y sin CTA de Diagnóstico.
-
-### 6.1 Mapa Actual de Destinos (El Problema)
-
-| Campaña Activa | CPC Pagado | URL de Destino Actual | Por qué es un error |
-| :--- | :---: | :--- | :--- |
-| **IA Operacional Enterprise** | $22.8 MXN | `bluepixel.mx/es/inicio` (Home genérica) | La joya de la cuenta manda tráfico calificado a una home sin simuladores de IA, sin casos enterprise ni CTA de diagnóstico. Convierte al **0.5%**. |
-| **BluePixel Brand** | $11.1 MXN | `bluepixel.mx/es/inicio` (Home genérica) | Tráfico de marca cae en home. Aceptable, pero la home no está optimizada para cierre. |
-| **WebDev BP** | **$111.3 MXN** | `bluepixel.mx/es/desarrollo-web` (landing atomizada) | Página vieja sin posicionamiento enterprise. Sin logos de Bimbo/RadioShack. Sin diagnóstico. **0 conversiones.** |
-| **Competidores** | **$87.7 MXN** | `bluepixel.mx/es/inicio` (Home genérica) | El peor caso: tráfico caliente que ya buscó a la competencia aterriza en home genérica. **0 conversiones.** |
-| **App Dev BP** | **$196.1 MXN** | `bluepixel.mx/es/desarrollo-de-aplicaciones` (landing vieja) | El clic más caro de la cuenta. Landing sin simuladores de ROI, sin arquitecturas Blueprint. **Carísimo e ineficiente.** |
-
-### 6.2 El Problema Raíz: El Embudo Está Roto desde el Clic
+### 3.3 El Embudo Roto
 
 ```
-CLIC CARO ($87–$196 MXN)
-        ↓
-Landing genérica / vieja (sin contexto enterprise)
-        ↓
+CLIC CARO ($87 a $196 MXN por clic)
+       |
+       v
+Landing genérica o atomizada (sin contexto enterprise)
+       |
+       v
 Sin casos de éxito verificables (Bimbo, RadioShack)
-        ↓
+       |
+       v
 Sin CTA de Diagnóstico de 2-4 semanas
-        ↓
+       |
+       v
 Sin Blueprint Library como lead magnet
-        ↓
-LEAD SE VA → $0 de retorno → ROI negativo
+       |
+       v
+LEAD SE VA  =  $0 de retorno  =  ROI negativo
 ```
 
-### 6.3 Nuevo Mapa de Destinos Propuesto (La Solución)
+---
 
-| Campaña Nueva (Pilar) | Presupuesto Mensual | Landing de Destino | CTA Principal | Conversión Estimada |
+## 🏗️ 4. NUEVA ESTRUCTURA DE CAMPAÑAS: MODELO 3 CAPAS
+
+> **Principio:** En lugar de 35 campañas pulverizadas, consolidar en **3 Capas con roles definidos** para maximizar ROI y eliminar la dilución del presupuesto.
+
+### CAPA 1 — CAPTURA DE INTENCIÓN ACTIVA (75% del presupuesto Search)
+*Campañas Search de alto intento comercial, dirigidas a directores y CTOs que buscan activamente una solución.*
+
+| Campaña | Presupuesto | Landing de Destino | CTA | Conversión Objetivo |
 | :--- | :---: | :--- | :--- | :---: |
-| **Agentización & IA Enterprise** | $12,000 MXN | `bluepixel.mx/agentizacion` *(nueva — prioridad #1)* | *"Agenda tu Diagnóstico de IA Corporativa"* | 3–5% |
-| **Automatización Operativa & ERPs** | $8,000 MXN | `bluepixel.mx/automatizacion` *(nueva)* | *"Calcula tu ROI Operativo en 15 min"* | 2–4% |
-| **Apps & Plataformas B2B** | $6,000 MXN | `bluepixel.mx/apps-b2b` *(nueva)* | *"Solicita una Demo con tu Caso de Uso"* | 2–3% |
-| **Brand (Defensa)** | $3,500 MXN | `bluepixel.mx/es/inicio` *(optimizada)* | *"Conoce BluePixel Enterprise"* | Mantener |
+| **Campaña 01: Apps & Plataformas B2B** | $6,000 MXN/mes | bluepixel.mx/apps-b2b *(nueva)* | “Solicita una Demo con tu Caso de Uso” | 2–3% |
+| **Campaña 02: Automatización Operativa & ERPs** | $8,000 MXN/mes | bluepixel.mx/automatizacion *(nueva)* | “Calcula tu ROI Operativo en 15 min” | 2–4% |
+| **Campaña 03: Agentización & IA Enterprise** | $12,000 MXN/mes | bluepixel.mx/agentizacion *(PRIORIDAD #1)* | “Agenda tu Diagnóstico de IA Corporativa” | 3–5% |
 
-> **Impacto proyectado:** Conectar únicamente la campaña de IA Operacional (199 clics/mes a $22.8) a la nueva landing de Agentización llevaría la conversión de **0.5% a 3–5%**, generando de **6 a 10 MQLs corporativos calificados al mes con el mismo presupuesto actual**.
+**Keywords objetivo por pilar:**
+
+| Pilar | Keywords de Alto Intento | Negativas a Cargar |
+|---|---|---|
+| **Apps B2B** | desarrollo app empresa, plataforma b2b a medida, outsourcing desarrollo app, app móvil enterprise | gratis, template, no-code, curso app |
+| **Automatización** | automatización operativa empresa, integración ERP, automatizar procesos, RPA para empresas | zapier gratis, make tutorial, chatgpt login |
+| **IA Enterprise** | IA automatización operativa, agentes IA empresa, IA integrada software, LLM para corporativos | qué es IA, curso IA, chatgpt gratis, tarea IA |
 
 ---
+
+### CAPA 2 — NUTRICIÓN & RETARGETING B2B (Meta Ads — $2,500 MXN/mes)
+*Reimpactar a directivos que ya visitaron el sitio o descargaron la Blueprint Library. Solo prueba social dura.*
+
+- **Formato:** Videos cortos de casos de éxito + carrusel de métricas verificadas
+- **Audiencia:** Visitantes de bluepixel.mx + descargadores de Blueprint Library + lookalike de clientes
+- **Creativos:** Casos Bimbo (+40% productividad), RadioShack (-60% fricción), badge DesignRush #1 México
+- **CTA:** “Habla con un arquitecto de soluciones” → Diagnóstico 01
+- **ACCIÓN:** Apagar Always On fría ($1,239 MXN en 13 días sin resultado) y reconvertir a retargeting
+
+---
+
+### CAPA 3 — BRANDED & PROTECCIÓN DE MARCA (Google Search — $3,500 MXN/mes)
+*Defender búsquedas directas de directivos referidos. No escalar, solo proteger.*
+
+- **Campaña:** Search Branded BluePixel (defensa de marca y búsquedas de directivos)
+- **Keywords:** bluepixel, bluepixel mx, blue pixel agencia, bluepixel ia
+- **Landing:** Home optimizada con pipeline de casos enterprise y acceso directo al Diagnóstico 01
+- **ACCIÓN:** Reducir de $6,000 a $3,500 MXN/mes con ajuste de pujas exactas
+
+---
+
+### 4.1 LinkedIn Ads — Activación Inmediata (Canal Sin Explotar)
+
+> **DATO CRÍTICO:** $8,000 MXN asignados mensuales. Gasto real: **$0 MXN.** El canal B2B con mayor intención de compra está completamente apagado.
+
+| Formato | Descripción | Audiencia Target | Objetivo |
+|---|---|---|---|
+| **Thought Leadership Ads** | Publicaciones técnicas de Leo Flores en 1ª persona: diagramas de arquitectura reales, desmitificación de IA de moda, lecciones de proyectos enterprise. **2.5x más engagement** y menor CPC que página de empresa. | CTOs, COOs, CFOs · Empresas +200 empleados · México | Posicionar a Leo y BluePixel como referente en IA Enterprise |
+| **Document Ads (PDF)** | Descarga de la **Blueprint Library (10 Arquitecturas Agénticas)** a cambio de correo corporativo + empresa. | Directores de TI · +50 empleados · Retail, Finanzas, Manufactura | Generar MQLs calificados con datos verificables |
+
+---
+
+## 🛠️ 5. PLAN INTEGRAL DE SOLUCIONES POR FRENTE
+
+---
+
+### FRENTE 1: GOOGLE ADS — PODA Y CONSOLIDACIÓN
+
+#### 🔴 El Problema
+- **35 campañas** para $1,000 MXN/día → presupuesto pulverizado sin foco
+- **$7,350 MXN quemados en 13 días (54%)** en clics inviables:
+  - WebDev BP: $2,783 MXN a $111.33/clic — 0 conversiones
+  - Competidores: $2,017 MXN a $87.73/clic — 0 conversiones
+  - App Dev BP: $2,549 MXN a $196.10/clic — 1 conversión carísima
+- **La joya desaprovechada:** IA Operacional Enterprise → 199 clics a $22.8 MXN, convierte al **0.5%** por caer en landing genérica
+
+#### 🟢 Soluciones Inmediatas
+1. **APAGAR HOY Competidores y WebDev BP** → detener ~$5,000 MXN/mes de sangrado
+2. **CONSOLIDAR 35 campañas en 3 Campañas Macro** (modelo 3 Capas — Sección 4)
+3. **CAMBIAR URL de IA Operacional Enterprise** a bluepixel.mx/agentizacion HOY → conversión de 0.5% a **3–5% (6–10 MQLs/mes con el mismo presupuesto)**
+4. **CARGAR Lista Maestra de Palabras Negativas** a nivel cuenta:
+   - Precio bajo: gratis, barato, freelancer, fiverr, cotizador gratis
+   - Académicas: curso, tutorial, que es, pdf, tarea, universidad, tipos de
+   - No-Code casero: make tutorial, zapier gratis, chatgpt login, notion gratis
+
+---
+
+### FRENTE 2: SEO — DE TAREAS ESCOLARES A INGENIERÍA ENTERPRISE
+
+#### 🔴 El Problema
+- **Keywords de negocio real enterradas en página 5–7 de Google:**
+  - ia automatización operativa: Posición #41
+  - desarrollo web mexico: Posición #46
+  - outsourcing desarrollo app: Posición #52
+  - diseño app móvil enterprise: Posición #60
+  - ia integrada software empresarial: Posición #61
+- **#1 en tareas escolares:** tipos de paginas web (#1), tipos de interfaz (#1), que es interfaz (#11)
+- **Google AI Overviews cita a BluePixel como glosario** en artículos de estudiantes — cero compradores corporativos
+- **Keywords con ganancia orgánica real:** agencia ux ui para empresas (#1), agencia premium de desarrollo (#1), bluepixel ia (#1)
+
+#### 🟢 Soluciones Inmediatas
+1. **Redirecciones 301 Permanentes:**
+   - URLs posicionadas (/es/diseno-ux-ui, /es/desarrollo-de-aplicaciones) **NO se borran**
+   - Se redirigen a los 3 Pilares con anclas (#ux-ui, #mobile)
+   - Se transfiere 100% del PageRank — tráfico cae en landing enterprise con casos Bimbo/RadioShack
+2. **Pivote Editorial del Blog (Blueprint Library como eje):**
+   - PROHIBIR artículos teóricos para estudiantes
+   - PRODUCIR artículos de ingeniería enterprise:
+     - *Cómo integrar agentes LLM con SAP S/4HANA usando Protocolo MCP*
+     - *Arquitectura RAG tolerante a fallas en VPCs privadas de AWS/Azure*
+     - *Strangler Fig Pattern: Migración de legacy sin detener la operación*
+   - Cuando Google AI Overview cite estos artículos, los lectores serán CTOs y Directores de Finanzas
+3. **Nearshoring en Inglés:** Crear versión en inglés de las 3 landings maestras para capturar demanda de EE.UU.
+
+---
+
+### FRENTE 3: REDES SOCIALES — MATAR LOS MEMES Y ACTIVAR LINKEDIN
+
+#### 🔴 El Problema
+- **Memes de TikTok e Instagram:** *Tu software y tú ya parecen relación tóxica*, *Cuando el sitio del cliente se cae*
+- **Pérdida neta de seguidores en Instagram:** Enero (-669), Abril (-505), Mayo (-278)
+- **LinkedIn Ads en CERO:** $8,000 MXN asignados · Gasto real: $0 MXN
+- **LinkedIn orgánico:** 4 seguidores ganados en todo junio
+- Ningún CTO de empresa corporativa contrata un proyecto de $3.9M MXN viendo comedia en TikTok
+
+#### 🟢 Soluciones Inmediatas
+1. **FRENAR la producción de memes** — reasignar horas de diseño y video a activos B2B
+2. **ACTIVAR los $8,000 MXN de LinkedIn Ads HOY** (ver Sección 4.1)
+3. **RECONFIGURAR Meta Ads a 100% Retargeting B2B ($2,500 MXN):**
+   - Apagar la campaña fría Always On
+   - Reimpactar solo a directores que ya visitaron bluepixel.mx o descargaron la Blueprint Library
+   - Creativos: Bimbo (+40% productividad), RadioShack (-60% fricción), badge DesignRush #1 México
+
+---
+
+### FRENTE 4: PROCESO COMERCIAL — DESTRABE DE 21 PROPUESTAS
+
+#### 🔴 El Problema
+- **21 propuestas enviadas (abril–agosto) → 0% de cierre**
+- **Causa raíz: Shock de precio.** Se cotiza $50k–$200k USD en frío a un lead que no está listo.
+
+#### 🟢 Soluciones Inmediatas
+1. **Campaña de Rescate — Contactar esta semana las 21 empresas:**
+   > *“Hola [Nombre], entendemos que el proyecto integral representaba un compromiso mayor. Les proponemos iniciar con la **Fase 01: Diagnóstico de Arquitectura & Fricción Operativa de 2–4 semanas ($5k–$8k USD)**: auditamos el código, diseñamos el blueprint y calculamos el ROI exacto antes de comprometer desarrollo.”*
+   - Rescatar solo **2 de 21** = entre **$200k y $500k MXN de facturación inmediata**
+2. **Nuevo Guión para Llamadas de Descubrimiento:**
+   - PROHIBIDO presentar cotizaciones de proyectos completos en frío
+   - TODA LLAMADA debe enfocarse en vender el **Diagnóstico 01 (Entry Package: 2–4 semanas)**
+   - Una vez pagado el diagnóstico, la conversión histórica al BUILD + EVOLVE supera el **70%**
+
+**Los 3 Paquetes Comerciales Oficiales:**
+
+| Paquete | Tipo | Descripción | Precio | Duración |
+| :--- | :---: | :--- | :---: | :---: |
+| **01 — Diagnóstico & Auditoría FutureProof** | Entry Package | Mapeo de procesos, fricción con gemelos digitales (IMPATH™), blueprint técnico y reporte de ROI | $5k–$8k USD | 2–4 semanas |
+| **02 — Ingeniería de Agentes & MCP** | Entry Package | Arquitectura agéntica con MCP, flujos autónomos con RAG, integración SAP/Salesforce/ERP, despliegue cloud | A cotizar | Sprints mensuales |
+| **01+02 — Transformación: BUILD + EVOLVE** | Full Transformation | Plataforma agentizada completa en producción. Tech Lead + AI Engineer + UX Lead dedicados. BUILD en 90 días + monitoreo trimestral de ROI | $50k–$200k USD | 3+ meses / continuo |
+
+---
+
+### FRENTE 5: REESTRUCTURACIÓN PRESUPUESTAL ($40,000 MXN / MES)
+
+#### 🔴 Situación Actual
+$25k en bolsa genérica sin foco · $6k sobreprotegiendo marca · $2.5k en Instagram fría · $8k congelados en LinkedIn
+
+#### 🟢 Nueva Distribución Optimizada
+
+| Canal | Presupuesto Anterior | Presupuesto Nuevo | Estrategia | Objetivo |
+| :--- | :---: | :---: | :--- | :--- |
+| **Google Search — 3 Pilares** | $25,000 MXN (genérico) | **$26,000 MXN** | Apps ($6k) + Automatización ($8k) + Agentización ($12k) | Capturar demanda activa corporativa con keywords exactas |
+| **Google Search — Brand** | $6,000 MXN | **$3,500 MXN** | Pujas exactas, sin inflar el costo | Proteger búsqueda directa de directivos referidos |
+| **LinkedIn Ads (B2B)** | $0 MXN gastados | **$8,000 MXN** | Thought Leadership Leo + Document Ads Blueprint Library | Captura proactiva de CTOs, COOs y CFOs (+200 empleados) |
+| **Meta Ads — Retargeting** | $2,500 MXN (Always On fría) | **$2,500 MXN** | 100% Retargeting con casos Bimbo y RadioShack | Reimpactar visitantes calificados y acelerar cierre |
+| **TOTAL MENSUAL** | **$40,000 MXN** | **$40,000 MXN** | 100% enfocado en captura B2B calificada | Generar MQLs reales y salir de la fase de aprendizaje |
+
+---
+
+### FRENTE 6: GOBERNANZA Y MÉTRICAS CON ROCKETING
+
+#### 🔴 El Problema
+Rocketing reporta “leads brutos” (83% en septiembre ni contesta) y se escuda en métricas de tráfico escolar que no generan ventas.
+
+#### 🟢 Soluciones Inmediatas
+1. **Nuevo Tablero de Métricas Enterprise:**
+   - **MQLs Corporativos:** Leads con correo corporativo y empresa verificable de +50 empleados
+   - **Costo por SQL:** Costo por cita de diagnóstico agendada y completada con Pablo/José
+   - **Pipeline Value:** Valor total en pesos de propuestas activas en negociación
+   - **Conversión a Diagnóstico 01:** Número de diagnósticos vendidos en el mes
+2. **Conexión de Conversiones Offline con el Servidor MCP:**
+   - Inyectar gclid y UTMs en el formulario MultiStepContact
+   - Cuando ventas cierre en Notion, el servidor MCP devuelve la señal de valor a Google Ads para que el Smart Bidding aprenda a buscar **clientes que pagan millones, no curiosos**
+
+---
+
+## 📋 6. TABLA MAESTRA — ACCIONES INMEDIATAS
+
+| Frente | Acción Concreta | Responsable | Plazo |
+| :--- | :--- | :--- | :---: |
+| **Google Ads** | Apagar Competidores y WebDev BP. Consolidar en 3 Campañas Macro por Pilar. | Diana Cardoso (Rocketing) | **HOY — 24h** |
+| **Landing IA** | Cambiar URL de IA Operacional Enterprise a bluepixel.mx/agentizacion. | Diana (Ads) + Tecnología | **HOY** |
+| **Negativas** | Cargar lista maestra de palabras negativas (académicas + No-Code + precio bajo). | Diana Cardoso (Rocketing) | **24h** |
+| **LinkedIn Ads** | Encender $8,000 MXN en Thought Leadership de Leo + Document Ads Blueprint Library. | Rocketing (Pauta B2B) | **48h** |
+| **Meta Ads** | Apagar Always On. Activar 100% Retargeting B2B con casos Bimbo/RadioShack. | Rocketing (Pauta) | **48h** |
+| **SEO** | Configurar redirecciones 301. Reorientar blog a ingeniería B2B con Blueprint Library. | Daniel Arias (SEO) | **3 días** |
+| **Comercial** | Contactar las 21 propuestas estancadas con oferta de Diagnóstico 01. | Pablo Gómez / José de Buen | **Esta semana** |
+| **Métricas** | Reemplazar “leads brutos” por MQLs, Costo por SQL y Pipeline Value en el reporte mensual. | Rocketing (Analytics) | **Próximo reporte** |
+
+---
+
+## 🤝 7. LOS 4 ACUERDOS CLAVE PARA CERRAR CON LEO
+
+1. **✅ APROBAR la transición a los 3 Pilares en la Web** — Autorizar las 3 nuevas landings (/agentizacion, /automatizacion, /apps-b2b) y el cambio de URL de la campaña de IA hoy mismo.
+
+2. **✅ ORDENAR la poda inmediata de Google Ads** — Exigir a Rocketing que apague Competidores y WebDev BP (que queman $7,350 MXN/mes con 0 retorno) y consolide en 3 Campañas Macro por Pilar.
+
+3. **✅ ACTIVAR LinkedIn Ads con el perfil personal de Leo** — Poner a trabajar los $8,000 MXN mensuales en Thought Leadership B2B y Document Ads de Blueprint Library. Parar la producción de memes en TikTok.
+
+4. **✅ INSTRUIR a Ventas a cerrar con el Diagnóstico 01** — Prohibir cotizaciones de $50k–$200k USD a leads fríos. Vender el Diagnóstico de 2–4 semanas. Lanzar la campaña de rescate a las 21 propuestas estancadas esta semana.
+
+---
+*Documento generado el 14 de Septiembre, 2026 — Fabián Flores · Head of Growth & RevOps · BluePixel*
