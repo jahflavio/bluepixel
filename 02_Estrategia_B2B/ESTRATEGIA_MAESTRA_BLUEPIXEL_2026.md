@@ -640,16 +640,54 @@ Para operar la maquinaria con código propio en lugar de costosas plataformas em
 
 ---
 
-## 🏗️ CAPÍTULO 5: LA TRANSICIÓN A "PRODUCTIZED SERVICES" (APP STORE AGENTICO)
+## 🏗️ CAPÍTULO 5: LA TRANSICIÓN A "PRODUCTIZED SERVICES" Y LA MATRIZ DE 3 CLUSTERS × 3 PILARES
 
-### 5.1 El Fin de "Vender Horas"
-El mercado B2B corporativo ha madurado. Ya no compran "bolsas de horas de desarrollo" con alcances inciertos. La estrategia de BluePixel 2026 exige empaquetar nuestro conocimiento en **Soluciones Pre-Construidas (Productized Services)**. Vender una arquitectura con precio y SLA fijos reduce la fricción de entrada y acelera el ciclo de ventas.
+### 5.1 El Fin de "Vender Horas" y el Fin de las "10 Landings Aisladas"
+El mercado B2B corporativo ha madurado. Ya no compran "bolsas de horas de desarrollo" ni leen páginas estáticas con promesas genéricas de agencia. La estrategia BluePixel 2026 erradica dos vicios operativos:
+1.  **Venta por horas:** Se sustituye por **Soluciones Productizadas** a precio y tiempo fijo.
+2.  **Fragmentación de Pauta (10 landings aisladas):** El error histórico de Rocketing fue crear 10 URLs independientes (`cotiza.bluepixel.mx/desarrollo-web`, `/diseno-ux-ui`, etc.) con texto plano. Esto pulverizó el presupuesto de Ads, diluyó el Quality Score y derrumbó la tasa de cierre comercial de 1:10 a 1:50 al atraer tráfico descalificado.
 
-### 5.2 El Directorio de Productos (Blueprint Library)
-La web no listará "servicios genéricos". Existirá una **Blueprint Library** (Librería de Arquitecturas) donde los tomadores de decisión explorarán nuestros Módulos Agenticos.
-*   **AOC (Agentic Operations Center):** El reemplazo absoluto del NOC tradicional.
-*   **APA (Agentic Process Automation):** El "Asesino de RPA", usando visión computacional y modelos de lenguaje para procesos resilientes.
-*   **Finance Matcher:** Agente conciliador contable vía MCP.
-*   **ERP Bridge:** Conector universal seguro.
+### 5.2 La Matriz Maestra 3×3: El QUÉ (Clusters) × El CÓMO (Pilares de Colaboración)
 
-**Directriz Comercial:** Las campañas de SEM (Google Ads) apuntarán directamente a estas soluciones empaquetadas, no al home genérico. Cada clic debe aterrizar en el dolor específico que resuelve la Arquitectura.
+Para absorber el 100% de los servicios de BluePixel sin perder foco ni presupuesto, estructuramos una matriz comercial perfecta donde **El Dolor del Cliente (Cluster)** se conecta de inmediato con **La Forma de Contratar (Pilar)**:
+
+```
+                              ┌────────────────────────────────────────────────────────┐
+                              │           3 FORMAS DE COLABORAR (EL CÓMO)              │
+                              │  01 Diagnóstico & Aud. │ 02 Ingeniería & Sprints │ 01+02 BUILD + EVOLVE │
+┌─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
+│ CLUSTER 1: APPS B2B         │ Auditoría Arq. & UX    │ Squad Senior Dedicado   │ Entrega en 90 días   │
+│ (/desarrollo-apps)          │ (2-4 semanas)          │ (Sprints Mensuales)     │ + SLA continuo       │
+├─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
+│ CLUSTER 2: AUTOMATIZACIÓN   │ Mapeo Fricción Procesos│ Conectores Middleware   │ Reingeniería Total   │
+│ (/automatizacion)           │ (2-4 semanas)          │ y APAs resilientes      │ End-to-End en Nube   │
+├─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
+│ CLUSTER 3: AGENTIZACIÓN     │ Viabilidad RAG & LFPDPPP│ Agentes MCP en Prod.   │ Capa Agéntica Corp.  │
+│ (/agentizacion)             │ (2-4 semanas)          │ sobre datos reales      │ y Gobernanza Total   │
+└─────────────────────────────┴────────────────────────┴─────────────────────────┴──────────────────────┘
+```
+
+### 5.3 Mapeo del 100% de Servicios e Inventario de Rocketing
+
+Ningún servicio se elimina; se reubican como capacidades interactivas dentro de los 3 Clusters:
+
+1.  **Cluster 1: Apps & Plataformas B2B (`/desarrollo-apps`):**
+    *   *Plataformas Web & Portales B2B* (Ex `/desarrollo-web`).
+    *   *Apps Nativas e Híbridas iOS / Android* (Ex `/desarrollo-apps`).
+    *   *Diseño de Producto Digital & UX/UI* (Ex `/diseno-ux-ui` con Auditor de Fricción).
+    *   *MVPs de Alta Fidelidad en 90 días* (Ex `/desarrollo-mvp`).
+    *   *Modernización de Software Legacy* (Ex `/software-a-la-medida`).
+2.  **Cluster 2: Automatización Operativa (`/automatizacion`):**
+    *   *Integración de ERPs SAP/Oracle* (Ex `/erp-bridge`).
+    *   *Conciliación Financiera y Bancaria Autónoma* (Ex `/finance-matcher`).
+    *   *Agentic Process Automation - APA* (Ex `/apa`).
+    *   *Middleware y Conectores de Datos* (Ex `/servicios-de-automatizacion`).
+3.  **Cluster 3: Agentización & IA Corporativa (`/agentizacion`):**
+    *   *Asistentes RAG Soporte y Ventas WhatsApp* (Ex `/triage-rag`).
+    *   *Legal KYC & Licitaciones RFPs* (Ex `/legal-onboarding` y `/rfp-analyst`).
+    *   *Agentic Operations Center - AOC* (Ex `/aoc`).
+    *   *Data Privacy & Cumplimiento LFPDPPP* (Ex `/data-privacy`).
+    *   *Consultoría Estratégica de IA* (Ex `/consultoria-inteligencia-artificial`).
+
+### 5.4 La Blueprint Library (`/architectures`)
+El catálogo interactivo central donde habitan las 10 soluciones en forma de "App Store B2B". El usuario filtra por su dolor de negocio (`[Finanzas]`, `[Operaciones]`, `[CX]`, `[Infraestructura]`) y abre un *Solution Drawer* lateral interactivo sin salir de la página, detonando la solicitud de un **01 Diagnóstico**.

@@ -11,7 +11,7 @@ const CaseStudiesSection = ({ onOpenCase }) => {
           kpiLabel: 'Productividad Directiva',
           desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
           tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
-          image: '/case4.jpg'
+          image: `${import.meta.env.BASE_URL}case4.jpg`
         },
         {
           id: 'radioshack',
@@ -22,7 +22,7 @@ const CaseStudiesSection = ({ onOpenCase }) => {
           kpiLabel: 'Fricción de Pago',
           desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
           tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
-          image: '/case1.jpg'
+          image: `${import.meta.env.BASE_URL}case1.jpg`
         },
         {
           id: 'lifemiles',
@@ -33,7 +33,7 @@ const CaseStudiesSection = ({ onOpenCase }) => {
           kpiLabel: 'Retención Digital',
           desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
           tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
-          image: '/case2.jpg'
+          image: `${import.meta.env.BASE_URL}case2.jpg`
         },
         {
           id: 'iqos',
@@ -44,7 +44,7 @@ const CaseStudiesSection = ({ onOpenCase }) => {
           kpiLabel: 'Retención de Usuarios',
           desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricción y aumentando el Life Time Value de los usuarios en la región.',
           tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
-          image: '/case3.jpg'
+          image: `${import.meta.env.BASE_URL}case3.jpg`
         }
       ];
 
