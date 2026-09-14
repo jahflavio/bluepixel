@@ -38,8 +38,9 @@
   .marquee-track:hover { animation-play-state: paused; }
 
   .client-logo {
-    height: 38px;
-    width: auto;
+    height: 112px !important;
+    max-width: none !important;
+    width: auto !important;
     opacity: 0.6;
     filter: brightness(0) invert(1);
     transition: opacity 0.25s ease, transform 0.25s ease;
