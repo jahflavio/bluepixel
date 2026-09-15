@@ -91,7 +91,7 @@ const ThreeClustersOverview = ({ onNavigateCluster, onOpenContact }) => {
             ✦ MODELO DE DEMANDA 2026
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-4 mb-4 leading-[1.1]">
-            Tres clusters. Un solo socio tecnológico<span className="text-blue-500">.</span>
+            Tres clusters<span className="text-blue-500">.</span> Un solo socio tecnológico<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
             Organizamos toda nuestra capacidad técnica en 3 clusters de demanda para que tu empresa encuentre exactamente lo que necesita — sin pagar por lo que no usa.
