@@ -13,7 +13,7 @@ const EngineeringLeadership = () => (
             No vendemos "recursos"<span className="text-blue-500">.</span> Asignamos Arquitectos a tu operación<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            El 90% de las agencias de software escalan contratando juniors y cobrándolos a precio de senior. En BluePixel, cada proyecto es liderado de principio a fin por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. Tú firmas el cheque con humanos responsables del ROI, no con "vendedores".
+            El 90% de las fábricas de software escalan con juniors facturados como seniors. En BluePixel, cada proyecto está liderado por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. Tu inversión está directamente ligada a resultados medibles en producción, no a horas hombre.
           </p>
 
           <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/[0.06]">
@@ -41,7 +41,7 @@ const EngineeringLeadership = () => (
         <div className="flex-1 bg-navy-950 p-8 rounded-3xl border border-blue-500/20 shadow-2xl relative">
           <div className="absolute -top-6 -left-4 text-6xl text-blue-500/20 font-serif leading-none">"</div>
           <p className="text-white text-lg font-medium italic leading-relaxed mb-6">
-            "Nuestra promesa a los CTOs es simple: Si al mes 2 el agente no ha liberado horas de tu equipo, fallamos. Por eso no vendemos código a granel; diagnosticamos y operamos."
+            "Nuestra promesa a los directores es simple: al término del Diagnóstico, sabes exactamente cuántas horas hombre liberarás y cuánto vale eso en pesos. Si los números no justifican el proyecto, no lo construimos."
           </p>
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>

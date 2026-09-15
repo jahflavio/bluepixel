@@ -35,8 +35,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => (
       </div>
 
       <div className="hidden md:flex items-center gap-6 text-sm text-slate-300 font-medium">
+        <a href="#clusters" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">Capacidades</a>
         <a href="#three-ways" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">3 Formas de Trabajar</a>
-        <a href={`${import.meta.env.BASE_URL}landings/index.html`} className="hover:text-blue-400 transition-colors flex items-center gap-1.5"><span className="text-emerald-400">⚡</span>Blueprint Library</a>
+        <a href="#case-studies" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">Casos de Éxito</a>
       </div>
 
       <div className="flex items-center gap-3">

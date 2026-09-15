@@ -17,6 +17,10 @@ const FAQSection = () => {
         {
           q: "¿No podemos hacer esto internamente con nuestro equipo de ingeniería?",
           a: "Construir aplicaciones SaaS tradicionales es muy distinto a orquestar agentes no-determinísticos. Su equipo domina su negocio y su código base; nosotros aportamos los patrones arquitectónicos exclusivos de IA (Graph-state, Vector DBs, Model Context Protocol) para no reinventar la rueda y evitar sobrecostos ocultos."
+        },
+        {
+          q: "¿Cuál es la diferencia entre BluePixel y una consultora de IA o una fábrica de software?",
+          a: "Las consultoras de IA pura (equipos de Python y ML) construyen algoritmos potentes pero interfaces toscas que el 70% de los empleados termina abandonando para volver a Excel. Las fábricas de software entregan código que funciona técnicamente pero nadie quiere usar. BluePixel es la única firma en México que fusiona ambas disciplinas: ingeniería de agentes en producción con 6 años de maestría en psicología de adopción humana. El resultado: sistemas que operan y que la gente realmente usa."
         }
       ];
       

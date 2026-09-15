@@ -80,7 +80,7 @@ const CLUSTERS = [
 
 const ThreeClustersOverview = ({ onNavigateCluster, onOpenContact }) => {
   return (
-    <section className="py-24 px-6 bg-[#02040A] border-t border-white/[0.06] relative overflow-hidden">
+    <section id="clusters" className="py-24 px-6 bg-[#02040A] border-t border-white/[0.06] relative overflow-hidden">
       {/* Ambient gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 blur-[140px] pointer-events-none" />
 
@@ -88,15 +88,16 @@ const ThreeClustersOverview = ({ onNavigateCluster, onOpenContact }) => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-            ✦ MODELO DE DEMANDA 2026
+            ✦ CAPACIDADES TÉCNICAS
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-4 mb-4 leading-[1.1]">
-            Tres clusters<span className="text-blue-500">.</span> Un solo socio tecnológico<span className="text-blue-500">.</span>
+            Tres clusters<span className="text-blue-500">.</span> Un solo socio de ingeniería<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Organizamos toda nuestra capacidad técnica en 3 clusters de demanda para que tu empresa encuentre exactamente lo que necesita — sin pagar por lo que no usa.
+            Estructuramos todo nuestro músculo técnico en 3 áreas de demanda clara. Sin pagar por lo que no necesitas, sin intermediarios, sin código que colapsa en producción.
           </p>
         </div>
+
 
         {/* 3 Cluster Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">

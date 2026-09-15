@@ -8,7 +8,7 @@ const SocialProofSection = () => {
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
             <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
-              Empresas líderes en México y Norteamérica <span className="text-slate-400 font-normal">operan sobre arquitectura desarrollada por BluePixel</span><span className="text-blue-500">.</span>
+              Corporativos líderes en México y LATAM <span className="text-slate-400 font-normal">operan agentes de IA y sistemas críticos construídos por BluePixel</span><span className="text-blue-500">.</span>
             </h2>
           </div>
 
@@ -54,8 +54,8 @@ const SocialProofSection = () => {
           {/* Micro-callout: The UX Moat explained to CTOs */}
           <div className="max-w-3xl mx-auto mt-8 px-4 text-center">
             <p className="text-xs font-mono text-slate-400 bg-navy-850/80 py-2 px-4 rounded-full border border-white/[0.06] inline-flex items-center gap-2">
-              <span className="text-blue-400 font-bold">✦ El Secreto de Adopción:</span>
-              <span>El 70% del software corporativo fracasa por rechazo del personal. Nosotros fusionamos Deep Tech con UX #1 para garantizar uso real.</span>
+              <span className="text-emerald-400 font-bold">✦ VENTAJA INJUSTA: </span>
+              <span>Las consultoras de IA entregan interfaces toscas que los empleados rechazan. Nuestra maestría en diseño conductual garantiza +95% de adopción desde el día 1.</span>
             </p>
           </div>
         </section>
