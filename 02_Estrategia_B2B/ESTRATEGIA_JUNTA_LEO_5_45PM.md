@@ -271,7 +271,69 @@ Rocketing reporta “leads brutos” (83% en septiembre ni contesta) y se escuda
 
 ---
 
-## 📋 6. TABLA MAESTRA — ACCIONES INMEDIATAS
+### FRENTE 7: ALIMENTAR EL ALGORITMO DE GOOGLE ADS CON SEÑALES DE VALOR REAL
+
+#### 🔴 El Problema Raíz
+El algoritmo de Google Ads actualmente **no sabe lo que es un buen lead para BluePixel**. La única conversión configurada es "formulario enviado" — lo que significa que el algoritmo aprende a buscar más personas que llenen formularios, sin importar si son estudiantes o Directores de CEMEX. Está optimizando para conseguir curiosos, no directivos con ticket de $3.9M MXN.
+
+```
+Conversión actual: "Formulario enviado"
+        ↓
+Google busca más personas que llenen formularios
+        ↓
+83% de los leads no contestan o dan datos falsos
+        ↓
+El algoritmo aprende a conseguir más de lo mismo
+        ↓
+Ciclo infinito de leads basura a $42 MXN el clic promedio
+```
+
+#### 🟢 Las 3 Señales que Hay que Darle al Algoritmo
+
+**🥉 Señal 1 — Micro Conversión (Formulario calificado)**
+- Agregar campo *"¿Cuántos empleados tiene tu empresa?"* en el Step 2 del `MultiStepContact`
+- Solo disparar conversión si la empresa tiene **+50 empleados**
+- Valor asignado a Google: **$500 MXN**
+- Responsable: Tecnología BluePixel + Diana Cardoso (Rocketing)
+
+**🥈 Señal 2 — SQL (Discovery agendado con ventas)**
+- Cuando Pablo/José marcan un lead como *"SQL — Discovery agendado"* en Notion, se dispara un evento de conversión vía la **API de Conversiones de Google**
+- Valor asignado: **$5,000 MXN** — el algoritmo entiende que ese tipo de clic vale más
+- Responsable: Tecnología BluePixel (webhook Notion → Google Ads API)
+
+**🥇 Señal 3 — Conversión de Valor Real (Diagnóstico vendido / Contrato firmado)**
+Con el servidor MCP de Leo:
+```
+Cliente firma en DocuSign o paga en Stripe
+        ↓
+Evento llega al servidor MCP de Leo
+        ↓
+MCP llama a la API de Conversiones de Google con:
+  - gclid (ID del clic original de la campaña de Ads)
+  - valor real: $150,000 MXN (Diagnóstico) o $3,900,000 MXN (proyecto completo)
+        ↓
+Google Ads aprende: "los clics de CTOs de +200 empleados
+buscando 'IA automatización operativa' nos generan $3.9M MXN"
+        ↓
+Smart Bidding empieza a pujar más por esos perfiles
+y menos por estudiantes → CPC efectivo baja de $111 a ~$35 MXN
+```
+
+**Setup técnico paso a paso:**
+
+| Paso | Acción | Herramienta | Responsable | Plazo |
+|---|---|---|---|:---:|
+| 1 | Inyectar `gclid` y UTMs en el formulario MultiStepContact y guardarlos en Notion | JavaScript + Notion API | Tecnología BluePixel | **Esta semana** |
+| 2 | Configurar conversión de micro (formulario +50 empleados) con valor $500 MXN | Google Tag Manager | Diana Cardoso (Rocketing) | **48h** |
+| 3 | Crear evento de conversión SQL en la API de Conversiones con valor $5,000 MXN | Google Ads API + webhook Notion | Tecnología BluePixel | **2 semanas** |
+| 4 | Conectar el servidor MCP de Leo para enviar la señal de contrato firmado con valor real | Servidor MCP + Google Ads API | Leo / Tecnología | **2–4 semanas** |
+| 5 | Cambiar estrategia de puja a **Maximizar Valor de Conversión** en las 3 Campañas Macro | Google Ads | Diana Cardoso (Rocketing) | **Al tener Señal 3** |
+
+> **Resultado proyectado:** En 4–6 semanas el algoritmo comienza a pujar más por CTOs de empresas +200 empleados y reduce automáticamente el gasto en clics de estudiantes y freelancers — sin cambiar el presupuesto.
+
+---
+
+## 📋 7. TABLA MAESTRA — ACCIONES INMEDIATAS
 
 | Frente | Acción Concreta | Responsable | Plazo |
 | :--- | :--- | :--- | :---: |
@@ -282,11 +344,13 @@ Rocketing reporta “leads brutos” (83% en septiembre ni contesta) y se escuda
 | **Meta Ads** | Apagar Always On. Activar 100% Retargeting B2B con casos Bimbo/RadioShack. | Rocketing (Pauta) | **48h** |
 | **SEO** | Configurar redirecciones 301. Reorientar blog a ingeniería B2B con Blueprint Library. | Daniel Arias (SEO) | **3 días** |
 | **Comercial** | Contactar las 21 propuestas estancadas con oferta de Diagnóstico 01. | Pablo Gómez / José de Buen | **Esta semana** |
-| **Métricas** | Reemplazar “leads brutos” por MQLs, Costo por SQL y Pipeline Value en el reporte mensual. | Rocketing (Analytics) | **Próximo reporte** |
+| **Métricas** | Reemplazar "leads brutos" por MQLs, Costo por SQL y Pipeline Value en el reporte mensual. | Rocketing (Analytics) | **Próximo reporte** |
+| **Algoritmo Ads** | Inyectar gclid en MultiStepContact y configurar Señal 1 (formulario +50 empleados, valor $500 MXN). | Diana Cardoso + Tecnología | **48h** |
+| **MCP → Ads** | Conectar servidor MCP de Leo a la API de Conversiones de Google con valor real del contrato. | Leo / Tecnología | **2–4 semanas** |
 
 ---
 
-## 🤝 7. LOS 4 ACUERDOS CLAVE PARA CERRAR CON LEO
+## 🤝 8. LOS 4 ACUERDOS CLAVE PARA CERRAR CON LEO
 
 1. **✅ APROBAR la transición a los 3 Pilares en la Web** — Autorizar las 3 nuevas landings (/agentizacion, /automatizacion, /apps-b2b) y el cambio de URL de la campaña de IA hoy mismo.
 
