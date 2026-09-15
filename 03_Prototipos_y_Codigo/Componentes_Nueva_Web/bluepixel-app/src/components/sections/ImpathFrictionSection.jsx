@@ -11,13 +11,13 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
         {/* Main Title */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-            Descubre qué fricción le cuesta más dinero a tu plataforma con IMPATH y Mixpanel
+            Descubre qué fricción le cuesta más dinero a tu plataforma con IMPATH y Mixpanel<span className="text-blue-500">.</span>
           </h2>
         </div>
 
         {/* Content Layout: Left Sidebar + 3 Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Left Summary Column (3 cols) */}
           <div className="lg:col-span-3 flex flex-col justify-between py-2 space-y-6">
             <div className="space-y-5 text-sm text-slate-300 leading-relaxed">
@@ -114,8 +114,8 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
               </div>
 
               <div className="pt-4 border-t border-white/[0.06]">
-                <button 
-                  onClick={onOpenContact} 
+                <button
+                  onClick={onOpenContact}
                   className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                 >
                   <span>Conoce IMPATH en el Diagnóstico</span>
@@ -195,8 +195,8 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
               </div>
 
               <div className="pt-4 border-t border-white/[0.06]">
-                <button 
-                  onClick={onOpenContact} 
+                <button
+                  onClick={onOpenContact}
                   className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                 >
                   <span>Ver integración en Retainer Evolve</span>
@@ -267,8 +267,8 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
               </div>
 
               <div className="pt-4 border-t border-white/[0.06]">
-                <button 
-                  onClick={onOpenContact} 
+                <button
+                  onClick={onOpenContact}
                   className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                 >
                   <span>Auditar vulnerabilidades con Vault</span>
