@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BD Dashboard · BluePixel</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#07111E;font-family:'Inter','Segoe UI',sans-serif;color:#EFF4F9;font-size:14px}
+button{font-family:inherit;-webkit-appearance:none;appearance:none}
+.hdr{border-bottom:1px solid #1C3352;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#07111E;z-index:20}
+.hdr-sub{font-size:10px;color:#6A8BAD;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.hdr-ttl{font-size:18px;font-weight:700;color:#EFF4F9}
+.hdr-ts{font-size:11px;color:#6A8BAD}
+.main{padding:18px 16px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.tab-group,.per-group{display:flex;background:#0D1B2E;border:1px solid #1C3352;border-radius:10px;padding:4px;gap:4px}
+.tab-btn{padding:7px 22px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;color:#94AFC9 !important;line-height:1}
+.tab-btn.active{background:#2CA7D0;color:#fff !important}
+.per-group{gap:2px}
+.per-btn{padding:6px 14px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;background:transparent;color:#94AFC9 !important;line-height:1}
+.per-btn.active{background:#112238;color:#EFF4F9 !important;border-color:#1C3352}
+.slbl{font-size:11px;color:#6A8BAD;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;font-weight:600}
+.r1{display:flex;gap:14px;margin-bottom:14px}
+.r2{display:flex;gap:10px;margin-bottom:20px}
+.kc{background:#0D1B2E;border:1px solid #1C3352;border-radius:12px;padding:16px;flex:1;min-width:0}
+.kc.st{border-color:#F5A10055}
+.kh{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.kl{font-size:10px;color:#94AFC9;text-transform:uppercase;letter-spacing:.06em;line-height:1.35;flex:1}
+.r2 .kc{padding:14px 13px}
+.r2 .kl{font-size:9.5px;letter-spacing:.04em}
+.kv{font-size:22px;font-weight:700;color:#EFF4F9;margin-bottom:10px}
+.kv.sm{font-size:19px;color:#EFF4F9}
+.kd{height:1px;background:#1C3352;margin-bottom:9px}
+.kts{display:flex;flex-direction:column;gap:5px;margin-bottom:9px}
+.tl{display:flex;align-items:center;gap:4px}
+.tdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.tn{font-size:10px;color:#6A8BAD;flex:1;white-space:nowrap}
+.tv{font-size:11px;color:#94AFC9;font-weight:600;white-space:nowrap}
+.tdv{font-size:10px;font-weight:600;white-space:nowrap;margin-left:2px}
+.r2 .tn{font-size:9.5px}
+.r2 .tv{font-size:10.5px}
+.r2 .tdv{font-size:9.5px}
+.pw{margin-top:2px}
+.pt{height:4px;background:#1C3352;border-radius:2px;position:relative;overflow:visible}
+.pb{height:100%;border-radius:2px;transition:width .35s,background .25s}
+.qm{position:absolute;top:-4px;width:2px;height:12px;background:rgba(255,255,255,.4);border-radius:1px;transform:translateX(-50%);z-index:2;transition:left .35s}
+.pf{display:flex;justify-content:space-between;margin-top:4px}
+.pl{font-size:10px;color:#EFF4F9;transition:color .25s}
+.r2 .pl{font-size:9.5px}
+/* AI INSIGHT */
+.ai-card{background:#0D1B2E;border:1px solid rgba(44,167,208,.35);border-radius:12px;margin-bottom:20px;position:relative;overflow:hidden}
+.ai-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#2CA7D0,#7C6FF0,#2CA7D0)}
+.ai-hdr{display:flex;align-items:center;justify-content:space-between;padding:13px 18px 11px;border-bottom:1px solid rgba(44,167,208,.15)}
+.ai-tr{display:flex;align-items:center;gap:8px}
+.ai-sp{font-size:14px;color:#2CA7D0}
+.ai-lb{font-size:11px;font-weight:700;color:#EFF4F9;text-transform:uppercase;letter-spacing:.1em}
+.ai-bd{font-size:10px;color:#2CA7D0;background:rgba(44,167,208,.12);border:1px solid rgba(44,167,208,.25);padding:2px 8px;border-radius:20px;font-weight:600}
+.ai-rb{font-size:11px;background:transparent;border:1px solid #1C3352;border-radius:6px;padding:4px 10px;cursor:pointer;color:#6A8BAD !important}
+.ai-rb:hover{color:#94AFC9 !important}
+.ai-bw{padding:14px 18px}
+.ai-ld{display:flex;align-items:center;gap:10px;font-size:12px;color:#6A8BAD}
+.sp{width:14px;height:14px;border:2px solid #1C3352;border-top-color:#2CA7D0;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ai-gr{display:grid;grid-template-columns:1fr 1.1fr;gap:18px}
+.ai-ch{display:inline-flex;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+.ai-dl{font-size:10px;color:#6A8BAD;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:7px}
+.ai-dt{font-size:12px;color:#94AFC9;line-height:1.65}
+.ai-dt strong{color:#EFF4F9}
+.ai-rl{font-size:10px;color:#6A8BAD;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:7px}
+.ai-rs{display:flex;flex-direction:column;gap:7px}
+.ai-rc{display:flex;align-items:flex-start;gap:9px;background:rgba(44,167,208,.06);border:1px solid rgba(44,167,208,.12);border-radius:8px;padding:9px 11px}
+.ai-ra{color:#2CA7D0;font-weight:700;flex-shrink:0;font-size:12px;margin-top:1px}
+.ai-rt{font-size:11.5px;color:#EFF4F9;line-height:1.45}
+.ai-er{font-size:12px;color:#EF4444}
+/* Sales filter */
+.sf-g{display:flex;background:#0D1B2E;border:1px solid #1C3352;border-radius:8px;padding:3px;gap:2px}
+.sf-b{padding:4px 11px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:transparent;color:#94AFC9 !important;line-height:1.3}
+.sf-b.active{background:#2CA7D0;color:#fff !important}
+.cv-row{display:flex;gap:10px;margin-bottom:16px}
+.cv-chip{flex:1;background:#112238;border:1px solid #1C3352;border-radius:8px;padding:10px 12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.card{background:#0D1B2E;border:1px solid #1C3352;border-radius:12px;padding:18px}
+.ct{font-size:11px;color:#6A8BAD;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;font-weight:600}
+.fs{display:flex;align-items:center;gap:6px;padding:5px 0}
+.fsl{flex:1;height:1px;background:#1C3352}
+.fb{border-radius:6px;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+.ps{margin-bottom:11px}
+.psr{display:flex;justify-content:space-between;margin-bottom:5px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10px;color:#6A8BAD;font-weight:600;padding:0 7px 10px;text-transform:uppercase;letter-spacing:.07em}
+td{padding:9px 7px;color:#EFF4F9}
+.dr{border-top:1px solid #1C3352}
+.bg{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px}
+.sc{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px}
+.tab-c{display:none}
+.tab-c.active{display:block}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div><div class="hdr-sub">BluePixel ERP · Módulo Reportes</div><div class="hdr-ttl">Business Development</div></div>
+  <div class="hdr-ts">Actualizado hoy · 09:41 AM</div>
+</div>
+<div class="main">
+  <div class="toolbar">
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="sTab('com',this)">Comercial</button>
+      <button class="tab-btn" onclick="sTab('mkt',this)">Marketing</button>
+    </div>
+    <div class="per-group">
+      <button class="per-btn active" onclick="sPer('año',this)">Año</button>
+      <button class="per-btn" onclick="sPer('q1',this)">Q1</button>
+      <button class="per-btn" onclick="sPer('q2',this)">Q2</button>
+      <button class="per-btn" onclick="sPer('q3',this)">Q3</button>
+      <button class="per-btn" onclick="sPer('jul',this)">Jul 26</button>
+    </div>
+  </div>
+
+  <!-- ══ COMERCIAL ══ -->
+  <div id="tab-com" class="tab-c active">
+    <div class="slbl">KPIs principales</div>
+    <div class="r1">
+      <div class="kc st">
+        <div class="kh"><div class="kl">Ventas Totales</div><span style="color:#F5A100;font-size:13px">★</span></div>
+        <div class="kv" id="vt-v">$31.2M</div><div class="kd"></div>
+        <div class="kts">
+          <div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="vt-ql">Cierre Q3</span><span class="tv" id="vt-qv">$39M</span><span class="tdv" id="vt-qd" style="color:#EF4444">↓ -$7.8M</span></div>
+          <div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">$52M</span><span class="tdv" id="vt-ap" style="color:#0DB87A">60%</span></div>
+        </div>
+        <div class="pw"><div class="pt"><div class="pb" id="vt-b" style="width:60%;background:#0DB87A"></div><div class="qm" id="vt-qm" style="left:75%"></div></div>
+        <div class="pf"><span class="pl" id="vt-al" style="color:#0DB87A">Actual 60%</span><span class="pl" id="vt-ql2" style="color:#6A8BAD">Q3 75%</span></div></div>
+      </div>
+      <div class="kc st">
+        <div class="kh"><div class="kl">% Monthly Recurring Revenue</div><span style="color:#F5A100;font-size:13px">★</span></div>
+        <div class="kv" id="mrr-v">24%</div><div class="kd"></div>
+        <div class="kts">
+          <div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="mrr-ql">Cierre Q3</span><span class="tv" id="mrr-qv">30%</span><span class="tdv" id="mrr-qd" style="color:#EF4444">↓ -6 pts</span></div>
+          <div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">38.5%</span><span class="tdv" id="mrr-ap" style="color:#0DB87A">62%</span></div>
+        </div>
+        <div class="pw"><div class="pt"><div class="pb" id="mrr-b" style="width:62%;background:#0DB87A"></div><div class="qm" id="mrr-qm" style="left:78%"></div></div>
+        <div class="pf"><span class="pl" id="mrr-al" style="color:#0DB87A">Actual 62%</span><span class="pl" id="mrr-ql2" style="color:#6A8BAD">Q3 78%</span></div></div>
+      </div>
+    </div>
+    <div class="r2">
+      <div class="kc"><div class="kh"><div class="kl">Ventas Nuevos</div></div><div class="kv sm" id="vn-v">$12.8M</div><div class="kd"></div>
+        <div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="vn-ql">Cierre Q3</span><span class="tv" id="vn-qv">$18M</span><span class="tdv" id="vn-qd" style="color:#EF4444">↓ -$5.2M</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">$24M</span><span class="tdv" id="vn-ap" style="color:#F5A100">53%</span></div></div>
+        <div class="pw"><div class="pt"><div class="pb" id="vn-b" style="width:53%;background:#F5A100"></div><div class="qm" id="vn-qm" style="left:75%"></div></div><div class="pf"><span class="pl" id="vn-al" style="color:#F5A100">Actual 53%</span><span class="pl" id="vn-ql2" style="color:#6A8BAD">Q3 75%</span></div></div>
+      </div>
+      <div class="kc"><div class="kh"><div class="kl">Ventas Existentes</div></div><div class="kv sm" id="ve-v">$18.4M</div><div class="kd"></div>
+        <div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="ve-ql">Cierre Q3</span><span class="tv" id="ve-qv">$21M</span><span class="tdv" id="ve-qd" style="color:#EF4444">↓ -$2.6M</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">$28M</span><span class="tdv" id="ve-ap" style="color:#0DB87A">66%</span></div></div>
+        <div class="pw"><div class="pt"><div class="pb" id="ve-b" style="width:66%;background:#0DB87A"></div><div class="qm" id="ve-qm" style="left:75%"></div></div><div class="pf"><span class="pl" id="ve-al" style="color:#0DB87A">Actual 66%</span><span class="pl" id="ve-ql2" style="color:#6A8BAD">Q3 75%</span></div></div>
+      </div>
+      <div class="kc"><div class="kh"><div class="kl">Leads Calificados</div></div><div class="kv sm" id="lc-v">47</div><div class="kd"></div>
+        <div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="lc-ql">Cierre Q3</span><span class="tv" id="lc-qv">90</span><span class="tdv" id="lc-qd" style="color:#EF4444">↓ -43</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">120</span><span class="tdv" id="lc-ap" style="color:#EF4444">39%</span></div></div>
+        <div class="pw"><div class="pt"><div class="pb" id="lc-b" style="width:39%;background:#EF4444"></div><div class="qm" id="lc-qm" style="left:75%"></div></div><div class="pf"><span class="pl" id="lc-al" style="color:#EF4444">Actual 39%</span><span class="pl" id="lc-ql2" style="color:#6A8BAD">Q3 75%</span></div></div>
+      </div>
+      <div class="kc"><div class="kh"><div class="kl">Conv. Lead → Venta</div></div><div class="kv sm" id="tc-v">4.0%</div><div class="kd"></div>
+        <div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn" id="tc-ql">Cierre Q3</span><span class="tv" id="tc-qv">6.0%</span><span class="tdv" id="tc-qd" style="color:#EF4444">↓ -2.0 pts</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">8.0%</span><span class="tdv" id="tc-ap" style="color:#F5A100">50%</span></div></div>
+        <div class="pw"><div class="pt"><div class="pb" id="tc-b" style="width:50%;background:#F5A100"></div><div class="qm" id="tc-qm" style="left:75%"></div></div><div class="pf"><span class="pl" id="tc-al" style="color:#F5A100">Actual 50%</span><span class="pl" id="tc-ql2" style="color:#6A8BAD">Q3 75%</span></div></div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <div class="ai-hdr"><div class="ai-tr"><span class="ai-sp">✦</span><span class="ai-lb">AI Insight</span><span class="ai-bd" id="ai-bd-com">Año</span></div><button class="ai-rb" onclick="gCom()">↻ Regenerar</button></div>
+      <div class="ai-bw" id="ai-b-com"><div class="ai-ld"><div class="sp"></div><span>Analizando datos del período...</span></div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div class="ct" style="margin-bottom:0">Ventas mensuales · 2026 vs 2025</div>
+        <div class="sf-g"><button class="sf-b active" onclick="sSF('total',this)">Total</button><button class="sf-b" onclick="sSF('nuevos',this)">Nuevos</button><button class="sf-b" onclick="sSF('existentes',this)">Existentes</button></div>
+      </div>
+      <div style="display:flex;gap:28px;margin-bottom:12px">
+        <div><span style="font-size:11px;color:#6A8BAD">2026 YTD (Ene–Jul)&nbsp;</span><span style="font-size:14px;font-weight:700;color:#EFF4F9">$31.2M</span></div>
+        <div><span style="font-size:11px;color:#6A8BAD">2025 mismo período&nbsp;</span><span style="font-size:14px;font-weight:700;color:#6A8BAD">$24.9M</span></div>
+        <div><span style="font-size:11px;color:#6A8BAD">crecimiento YoY&nbsp;</span><span style="font-size:14px;font-weight:700;color:#0DB87A">+25.3%</span></div>
+      </div>
+      <div style="position:relative;height:210px"><canvas id="salesCh"></canvas></div>
+      <div style="display:flex;gap:18px;margin-top:10px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:6px" id="sl-n"><div style="width:12px;height:10px;background:#2CA7D0;border-radius:2px"></div><span style="font-size:11px;color:#6A8BAD">Nuevos 2026</span></div>
+        <div style="display:flex;align-items:center;gap:6px" id="sl-e"><div style="width:12px;height:10px;background:#0A5570;border-radius:2px"></div><span style="font-size:11px;color:#6A8BAD">Existentes 2026</span></div>
+        <div style="display:flex;align-items:center;gap:6px"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="22" y2="5" stroke="rgba(106,139,173,.7)" stroke-width="1.5" stroke-dasharray="4,3"/></svg><span style="font-size:11px;color:#6A8BAD">Total 2025</span></div>
+      </div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <div class="ct">Funnel del año</div>
+        <div class="cv-row">
+          <div class="cv-chip"><div style="font-size:10px;color:#6A8BAD;text-transform:uppercase;font-weight:600;margin-bottom:3px">Total → Calificados</div><div style="font-size:20px;font-weight:700;color:#2CA7D0;margin-bottom:2px">9.8%</div><div style="font-size:10px;color:#6A8BAD">37 de 376 leads</div></div>
+          <div class="cv-chip"><div style="font-size:10px;color:#6A8BAD;text-transform:uppercase;font-weight:600;margin-bottom:3px">Propuesta → Cerrado</div><div style="font-size:20px;font-weight:700;color:#F5A100;margin-bottom:2px">27.8%</div><div style="font-size:10px;color:#6A8BAD">5 de 18 propuestas</div></div>
+        </div>
+        <div id="fc"></div>
+      </div>
+      <div class="card">
+        <div class="ct">Pipeline activo</div>
+        <div style="font-size:26px;font-weight:700;color:#EFF4F9">$8.4M</div>
+        <div style="font-size:11px;color:#6A8BAD;margin-bottom:14px">valor total activo en pipeline</div>
+        <div style="background:rgba(44,167,208,.14);border:1px solid rgba(44,167,208,.33);border-radius:8px;padding:11px 14px;margin-bottom:16px"><div style="font-size:10px;color:#94AFC9;margin-bottom:4px">Proyección de cierre (tasa histórica 4%)</div><div style="font-size:20px;font-weight:700;color:#2CA7D0">$336K</div></div>
+        <div class="ps"><div class="psr"><span style="font-size:12px;color:#94AFC9">Brief <span style="font-size:10px;color:#6A8BAD">(18)</span></span><span style="font-size:12px;color:#EFF4F9;font-weight:600">$3.2M</span></div><div class="pt"><div class="pb" style="width:38%;background:#2CA7D0"></div></div></div>
+        <div class="ps"><div class="psr"><span style="font-size:12px;color:#94AFC9">Propuesta <span style="font-size:10px;color:#6A8BAD">(7)</span></span><span style="font-size:12px;color:#EFF4F9;font-weight:600">$2.8M</span></div><div class="pt"><div class="pb" style="width:33%;background:#2CA7D0"></div></div></div>
+        <div class="ps"><div class="psr"><span style="font-size:12px;color:#94AFC9">Negociación <span style="font-size:10px;color:#6A8BAD">(11)</span></span><span style="font-size:12px;color:#EFF4F9;font-weight:600">$2.1M</span></div><div class="pt"><div class="pb" style="width:25%;background:#2CA7D0"></div></div></div>
+        <div class="ps"><div class="psr"><span style="font-size:12px;color:#94AFC9">Elab. propuesta <span style="font-size:10px;color:#6A8BAD">(3)</span></span><span style="font-size:12px;color:#EFF4F9;font-weight:600">$300K</span></div><div class="pt"><div class="pb" style="width:4%;background:#2CA7D0"></div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Leads más calientes</div>
+      <table><thead><tr><th>Oportunidad</th><th>Etapa</th><th>Valor est.</th><th>Owner</th><th>Días</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">CEMEX — Digital Platform</td><td><span class="bg" style="background:rgba(245,161,0,.2);color:#F5A100">Negociación</span></td><td style="font-size:13px;font-weight:600">$980K</td><td style="font-size:12px;color:#94AFC9">Leo</td><td style="font-size:12px;color:#6A8BAD">8d</td><td><span class="sc" style="background:rgba(13,184,122,.2);color:#0DB87A">92</span></td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">PepsiCo — FutureProof Scale</td><td><span class="bg" style="background:rgba(44,167,208,.2);color:#2CA7D0">Propuesta</span></td><td style="font-size:13px;font-weight:600">$720K</td><td style="font-size:12px;color:#94AFC9">Pablo G.</td><td style="font-size:12px;color:#6A8BAD">5d</td><td><span class="sc" style="background:rgba(13,184,122,.2);color:#0DB87A">88</span></td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Bimbo — Agentización Ventas</td><td><span class="bg" style="background:rgba(245,161,0,.2);color:#F5A100">Negociación</span></td><td style="font-size:13px;font-weight:600">$540K</td><td style="font-size:12px;color:#94AFC9">Leo</td><td style="font-size:12px;color:#F5A100">12d</td><td><span class="sc" style="background:rgba(13,184,122,.2);color:#0DB87A">81</span></td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">FMF — App Renovación 2026</td><td><span class="bg" style="background:rgba(44,167,208,.2);color:#2CA7D0">Propuesta</span></td><td style="font-size:13px;font-weight:600">$460K</td><td style="font-size:12px;color:#94AFC9">Juan C.</td><td style="font-size:12px;color:#6A8BAD">3d</td><td><span class="sc" style="background:rgba(245,161,0,.2);color:#F5A100">77</span></td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Kumpel Capital — Build MVP</td><td><span class="bg" style="background:rgba(148,175,201,.2);color:#94AFC9">Brief</span></td><td style="font-size:13px;font-weight:600">$380K</td><td style="font-size:12px;color:#94AFC9">Leo</td><td style="font-size:12px;color:#6A8BAD">6d</td><td><span class="sc" style="background:rgba(245,161,0,.2);color:#F5A100">71</span></td></tr>
+      </tbody></table>
+    </div>
+  </div>
+
+  <!-- ══ MARKETING ══ -->
+  <div id="tab-mkt" class="tab-c">
+    <div class="slbl">KPIs principales</div>
+    <div class="r2">
+      <div class="kc"><div class="kh"><div class="kl">CAC Promedio</div></div><div class="kv sm">$18.5K</div><div class="kd"></div><div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn">Meta Q3</span><span class="tv">$15K</span><span class="tdv" style="color:#EF4444">↑ +$3.5K</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">$15K</span><span class="tdv" style="color:#F5A100">123%</span></div></div><div class="pw"><div class="pt"><div class="pb" style="width:100%;background:#F5A100"></div></div><div class="pf"><span class="pl" style="color:#F5A100">123% de meta</span></div></div></div>
+      <div class="kc"><div class="kh"><div class="kl">Leads Totales</div></div><div class="kv sm">157 leads</div><div class="kd"></div><div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn">Cierre Q3</span><span class="tv">150</span><span class="tdv" style="color:#0DB87A">↑ +7</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">200</span><span class="tdv" style="color:#F5A100">79%</span></div></div><div class="pw"><div class="pt"><div class="pb" style="width:79%;background:#F5A100"></div><div class="qm" style="left:75%"></div></div><div class="pf"><span class="pl" style="color:#F5A100">Actual 79%</span><span class="pl" style="color:#6A8BAD">Q3 75%</span></div></div></div>
+      <div class="kc"><div class="kh"><div class="kl">Leads Calificados</div></div><div class="kv sm">47 leads</div><div class="kd"></div><div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn">Cierre Q3</span><span class="tv">60</span><span class="tdv" style="color:#EF4444">↓ -13</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">80</span><span class="tdv" style="color:#EF4444">59%</span></div></div><div class="pw"><div class="pt"><div class="pb" style="width:59%;background:#EF4444"></div><div class="qm" style="left:75%"></div></div><div class="pf"><span class="pl" style="color:#EF4444">Actual 59%</span><span class="pl" style="color:#6A8BAD">Q3 75%</span></div></div></div>
+      <div class="kc"><div class="kh"><div class="kl">Win Rate</div></div><div class="kv sm">4.0%</div><div class="kd"></div><div class="kts"><div class="tl"><div class="tdot" style="background:#2CA7D0"></div><span class="tn">Meta Q3</span><span class="tv">6.0%</span><span class="tdv" style="color:#EF4444">↓ -2.0 pts</span></div><div class="tl"><div class="tdot" style="background:#3A5470"></div><span class="tn">Meta año</span><span class="tv">8.0%</span><span class="tdv" style="color:#EF4444">50%</span></div></div><div class="pw"><div class="pt"><div class="pb" style="width:50%;background:#EF4444"></div><div class="qm" style="left:75%"></div></div><div class="pf"><span class="pl" style="color:#EF4444">Actual 50%</span><span class="pl" style="color:#6A8BAD">Q3 75%</span></div></div></div>
+    </div>
+
+    <!-- AI INSIGHT MARKETING -->
+    <div class="ai-card">
+      <div class="ai-hdr"><div class="ai-tr"><span class="ai-sp">✦</span><span class="ai-lb">AI Insight</span><span class="ai-bd">Marketing · Año</span></div><button class="ai-rb" onclick="gMkt()">↻ Regenerar</button></div>
+      <div class="ai-bw" id="ai-b-mkt"><div class="ai-ld"><div class="sp"></div><span>Analizando KPIs de marketing...</span></div></div>
+    </div>
+
+    <div class="g2" style="margin-bottom:18px">
+      <div class="card"><div class="ct">Evolución de leads · 2026 vs 2025</div><div style="position:relative;height:185px"><canvas id="ldCh"></canvas></div>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:10px">
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:18px;height:2px;background:#94AFC9;border-radius:1px"></div><span style="font-size:10px;color:#6A8BAD">Total 2026</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><svg width="18" height="4" viewBox="0 0 18 4"><line x1="0" y1="2" x2="18" y2="2" stroke="#94AFC9" stroke-width="1.5" stroke-dasharray="4,2.5"/></svg><span style="font-size:10px;color:#6A8BAD">Total 2025</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:18px;height:2px;background:#2CA7D0;border-radius:1px"></div><span style="font-size:10px;color:#6A8BAD">Calificados 2026</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><svg width="18" height="4" viewBox="0 0 18 4"><line x1="0" y1="2" x2="18" y2="2" stroke="#2CA7D0" stroke-width="1.5" stroke-dasharray="4,2.5"/></svg><span style="font-size:10px;color:#6A8BAD">Calificados 2025</span></div>
+        </div>
+      </div>
+      <div class="card"><div class="ct">Costo por lead · canal</div><div style="position:relative;height:185px"><canvas id="cplCh"></canvas></div></div>
+    </div>
+    <div class="card" style="margin-bottom:18px">
+      <div class="ct">Conversión por campaña</div>
+      <table><thead><tr><th>Campaña</th><th style="text-align:center">Leads</th><th style="text-align:center">Calif.</th><th>Conv.</th><th style="text-align:center">Deals</th><th>Revenue</th><th></th></tr></thead>
+      <tbody>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Outbound CEMEX/Bimbo</td><td style="text-align:center;font-size:12px;color:#94AFC9">8</td><td style="text-align:center;font-size:12px;color:#94AFC9">6</td><td><span style="color:#0DB87A;font-weight:700;font-size:13px">75.0%</span></td><td style="text-align:center;font-size:12px;color:#94AFC9">2</td><td style="font-size:13px;font-weight:600">$1.5M</td><td style="color:#0DB87A">↑</td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Referidos Enterprise</td><td style="text-align:center;font-size:12px;color:#94AFC9">18</td><td style="text-align:center;font-size:12px;color:#94AFC9">12</td><td><span style="color:#0DB87A;font-weight:700;font-size:13px">66.7%</span></td><td style="text-align:center;font-size:12px;color:#94AFC9">3</td><td style="font-size:13px;font-weight:600">$1.8M</td><td style="color:#0DB87A">↑</td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">LinkedIn — FutureProof</td><td style="text-align:center;font-size:12px;color:#94AFC9">24</td><td style="text-align:center;font-size:12px;color:#94AFC9">8</td><td><span style="color:#F5A100;font-weight:700;font-size:13px">33.3%</span></td><td style="text-align:center;font-size:12px;color:#94AFC9">2</td><td style="font-size:13px;font-weight:600">$1.4M</td><td style="font-size:12px;color:#6A8BAD">—</td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Webinar AI UX 2026</td><td style="text-align:center;font-size:12px;color:#94AFC9">32</td><td style="text-align:center;font-size:12px;color:#94AFC9">9</td><td><span style="color:#F5A100;font-weight:700;font-size:13px">28.1%</span></td><td style="text-align:center;font-size:12px;color:#94AFC9">1</td><td style="font-size:13px;font-weight:600">$480K</td><td style="font-size:12px;color:#6A8BAD">—</td></tr>
+        <tr class="dr"><td style="font-size:13px;font-weight:500">Content SEO / Blog</td><td style="text-align:center;font-size:12px;color:#94AFC9">15</td><td style="text-align:center;font-size:12px;color:#94AFC9">4</td><td><span style="color:#EF4444;font-weight:700;font-size:13px">26.7%</span></td><td style="text-align:center;font-size:12px;color:#94AFC9">0</td><td style="font-size:13px;font-weight:600">—</td><td style="color:#EF4444">↓</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card">
+      <div class="ct">Calidad de leads inbound</div>
+      <div style="display:flex;align-items:center;gap:28px">
+        <div style="width:160px;height:160px;flex-shrink:0"><canvas id="qCh" width="160" height="160"></canvas></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="width:10px;height:10px;border-radius:50%;background:#0DB87A;flex-shrink:0"></div><div style="flex:1;font-size:13px;color:#94AFC9">Buen Fit</div><div style="font-size:13px;font-weight:700;min-width:32px;text-align:right">30%</div><div style="width:80px;height:4px;background:#1C3352;border-radius:2px"><div style="width:75%;height:100%;background:#0DB87A;border-radius:2px"></div></div></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="width:10px;height:10px;border-radius:50%;background:#2CA7D0;flex-shrink:0"></div><div style="flex:1;font-size:13px;color:#94AFC9">Regular Fit</div><div style="font-size:13px;font-weight:700;min-width:32px;text-align:right">24%</div><div style="width:80px;height:4px;background:#1C3352;border-radius:2px"><div style="width:60%;height:100%;background:#2CA7D0;border-radius:2px"></div></div></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="width:10px;height:10px;border-radius:50%;background:#EF4444;flex-shrink:0"></div><div style="flex:1;font-size:13px;color:#94AFC9">Mal Fit</div><div style="font-size:13px;font-weight:700;min-width:32px;text-align:right">27%</div><div style="width:80px;height:4px;background:#1C3352;border-radius:2px"><div style="width:68%;height:100%;background:#EF4444;border-radius:2px"></div></div></div>
+          <div style="display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#6A8BAD;flex-shrink:0"></div><div style="flex:1;font-size:13px;color:#94AFC9">Sin Clasificar</div><div style="font-size:13px;font-weight:700;min-width:32px;text-align:right">19%</div><div style="width:80px;height:4px;background:#1C3352;border-radius:2px"><div style="width:48%;height:100%;background:#6A8BAD;border-radius:2px"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const KD={
+  año:{lb:'Año (YTD jul 26)',vt:{v:31200000,q:39000000,ql:'Cierre Q3',a:52000000,bc:'#0DB87A'},mrr:{v:24,q:30,ql:'Cierre Q3',a:38.5,bc:'#0DB87A'},vn:{v:12800000,q:18000000,ql:'Cierre Q3',a:24000000,bc:'#F5A100'},ve:{v:18400000,q:21000000,ql:'Cierre Q3',a:28000000,bc:'#0DB87A'},lc:{v:47,q:90,ql:'Cierre Q3',a:120,bc:'#EF4444'},tc:{v:4.0,q:6.0,ql:'Cierre Q3',a:8.0,bc:'#F5A100'}},
+  q1:{lb:'Q1 2026',vt:{v:7800000,q:13000000,ql:'Meta Q1',a:52000000,bc:'#EF4444'},mrr:{v:22,q:25,ql:'Meta Q1',a:38.5,bc:'#0DB87A'},vn:{v:3200000,q:6000000,ql:'Meta Q1',a:24000000,bc:'#EF4444'},ve:{v:4600000,q:7000000,ql:'Meta Q1',a:28000000,bc:'#EF4444'},lc:{v:14,q:30,ql:'Meta Q1',a:120,bc:'#EF4444'},tc:{v:3.8,q:5.0,ql:'Meta Q1',a:8.0,bc:'#F5A100'}},
+  q2:{lb:'Q2 2026',vt:{v:9400000,q:13000000,ql:'Meta Q2',a:52000000,bc:'#F5A100'},mrr:{v:23,q:28,ql:'Meta Q2',a:38.5,bc:'#F5A100'},vn:{v:4100000,q:6000000,ql:'Meta Q2',a:24000000,bc:'#EF4444'},ve:{v:5300000,q:7000000,ql:'Meta Q2',a:28000000,bc:'#F5A100'},lc:{v:18,q:30,ql:'Meta Q2',a:120,bc:'#EF4444'},tc:{v:4.2,q:6.0,ql:'Meta Q2',a:8.0,bc:'#F5A100'}},
+  q3:{lb:'Q3 2026',vt:{v:14000000,q:13000000,ql:'Meta Q3',a:52000000,bc:'#0DB87A'},mrr:{v:28,q:32,ql:'Meta Q3',a:38.5,bc:'#0DB87A'},vn:{v:5500000,q:6000000,ql:'Meta Q3',a:24000000,bc:'#0DB87A'},ve:{v:8500000,q:7000000,ql:'Meta Q3',a:28000000,bc:'#0DB87A'},lc:{v:15,q:30,ql:'Meta Q3',a:120,bc:'#EF4444'},tc:{v:5.1,q:6.5,ql:'Meta Q3',a:8.0,bc:'#F5A100'}},
+  jul:{lb:'Julio 2026',vt:{v:4800000,q:4334000,ql:'Meta julio',a:52000000,bc:'#0DB87A'},mrr:{v:24,q:24,ql:'Meta julio',a:38.5,bc:'#0DB87A'},vn:{v:2100000,q:2000000,ql:'Meta julio',a:24000000,bc:'#0DB87A'},ve:{v:2700000,q:2334000,ql:'Meta julio',a:28000000,bc:'#0DB87A'},lc:{v:8,q:10,ql:'Meta julio',a:120,bc:'#F5A100'},tc:{v:4.5,q:5.0,ql:'Meta julio',a:8.0,bc:'#0DB87A'}}
+};
+const TY={vt:'$',mrr:'%',vn:'$',ve:'$',lc:'n',tc:'%'};
+let cur='año', mktDone=false;
+const MO=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+const N26=[1.3,1.5,1.7,1.8,2.0,2.2,2.3,null,null,null,null,null];
+const E26=[1.9,2.3,2.4,2.7,2.8,3.0,3.3,null,null,null,null,null];
+const T25=[2.6,3.1,3.4,3.6,3.9,4.1,4.2,3.8,3.5,3.4,3.2,3.2];
+
+function fV(v,t){if(t==='$')return v>=1e6?`$${(v/1e6).toFixed(1)}M`:v>=1e3?`$${(v/1e3).toFixed(0)}K`:`$${v}`;if(t==='%')return Number.isInteger(v)?`${v}%`:`${v.toFixed(1)}%`;return`${v}`;}
+function fD(d,t){const p=d>=0,a=Math.abs(d),ar=p?'↑':'↓';let s;if(t==='$')s=(p?'+':'-')+(a>=1e6?`$${(a/1e6).toFixed(1)}M`:a>=1e3?`$${(a/1e3).toFixed(0)}K`:`$${a}`);else if(t==='%')s=(p?'+':'-')+(Number.isInteger(a)?a:a.toFixed(1))+' pts';else s=(p?'+':'-')+a;return`${ar} ${s}`;}
+
+function uK(id,d){
+  const t=TY[id],ap=Math.min(Math.round(d.v/d.a*100),100),qp=Math.min(Math.round(d.q/d.a*100),100),dl=d.v-d.q,dc=dl>=0?'#0DB87A':'#EF4444',sh=d.ql.replace('Cierre ','').replace('Meta ','');
+  document.getElementById(`${id}-v`).textContent=fV(d.v,t);
+  document.getElementById(`${id}-ql`).textContent=d.ql;
+  document.getElementById(`${id}-qv`).textContent=fV(d.q,t);
+  document.getElementById(`${id}-qd`).textContent=fD(dl,t);document.getElementById(`${id}-qd`).style.color=dc;
+  document.getElementById(`${id}-ap`).textContent=ap+'%';document.getElementById(`${id}-ap`).style.color=d.bc;
+  document.getElementById(`${id}-b`).style.width=ap+'%';document.getElementById(`${id}-b`).style.background=d.bc;
+  document.getElementById(`${id}-qm`).style.left=qp+'%';
+  document.getElementById(`${id}-al`).textContent='Actual '+ap+'%';document.getElementById(`${id}-al`).style.color=d.bc;
+  document.getElementById(`${id}-ql2`).textContent=sh+' '+qp+'%';
+}
+
+function sTab(id,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-c').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');document.getElementById('tab-'+id).classList.add('active');
+  if(id==='mkt'){iCharts();if(!mktDone){gMkt();mktDone=true;}}
+}
+function sPer(id,btn){
+  cur=id;document.querySelectorAll('.per-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const pd=KD[id];['vt','mrr','vn','ve','lc','tc'].forEach(k=>uK(k,pd[k]));
+  document.getElementById('ai-bd-com').textContent=pd.lb;gCom();
+}
+
+const SYS='Eres asesor estratégico senior de BluePixel, agencia mexicana de UX/UI y software enterprise. Responde ÚNICAMENTE con JSON válido sin markdown. Formato: {"estado":"ok|atencion|critico","diagnostico":"máx 2 oraciones directas con números","recomendaciones":["acción máx 12 palabras","acción máx 12 palabras","acción máx 12 palabras"]}';
+
+function rI(el,d){
+  const c=d.estado==='ok'?'#0DB87A':d.estado==='atencion'?'#F5A100':'#EF4444';
+  const b=d.estado==='ok'?'rgba(13,184,122,.12)':d.estado==='atencion'?'rgba(245,161,0,.12)':'rgba(239,68,68,.12)';
+  const l=d.estado==='ok'?'✓ En ritmo':d.estado==='atencion'?'⚠ Requiere atención':'✕ Riesgo crítico';
+  document.getElementById(el).innerHTML=`<div style="margin-bottom:12px"><span class="ai-ch" style="color:${c};background:${b}">${l}</span></div><div class="ai-gr"><div><div class="ai-dl">Diagnóstico</div><div class="ai-dt">${d.diagnostico}</div></div><div><div class="ai-rl">Recomendaciones</div><div class="ai-rs">${d.recomendaciones.map(r=>`<div class="ai-rc"><span class="ai-ra">→</span><span class="ai-rt">${r}</span></div>`).join('')}</div></div></div>`;
+}
+
+async function gCom(){
+  const pd=KD[cur];
+  document.getElementById('ai-b-com').innerHTML='<div class="ai-ld"><div class="sp"></div><span>Analizando datos...</span></div>';
+  const ln=['vt','mrr','vn','ve','lc','tc'].map(i=>{const d=pd[i],t=TY[i],n={vt:'Ventas Totales',mrr:'% MRR',vn:'Ventas Nuevos',ve:'Ventas Existentes',lc:'Leads Calificados',tc:'Conv Lead→Venta'};return`${n[i]}: actual=${fV(d.v,t)}, ${d.ql}=${fV(d.q,t)}, meta_año=${fV(d.a,t)}, %=${Math.round(d.v/d.a*100)}%`;}).join('\n');
+  try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:SYS,messages:[{role:'user',content:`Período: ${pd.lb}\nKPIs Comercial:\n${ln}\nContexto: pipeline $8.4M, win rate 4%, 9.8% calificación, 27.8% Propuesta→Won, 5 leads hot $3.1M, meta $52M MXN.`}]})});
+  const dt=await r.json();rI('ai-b-com',JSON.parse(dt.content?.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim()));}
+  catch(e){document.getElementById('ai-b-com').innerHTML=`<div class="ai-er">Error. <button class="ai-rb" onclick="gCom()" style="margin-left:8px">↻ Reintentar</button></div>`;}
+}
+
+async function gMkt(){
+  document.getElementById('ai-b-mkt').innerHTML='<div class="ai-ld"><div class="sp"></div><span>Analizando KPIs de marketing...</span></div>';
+  const msg=`KPIs Marketing BluePixel YTD julio 2026:
+- CAC: $18.5K (meta $15K, 23% sobre meta)
+- Leads Totales: 157 (meta Q3: 150 ✓, meta año: 200, 79%)
+- Leads Calificados: 47 (meta Q3: 60 → -13, meta año: 80, 59%)
+- Win Rate: 4.0% (meta Q3: 6% → -2pts, meta año: 8%, 50%)
+- Calidad inbound: 30% Buen Fit, 24% Regular, 27% Mal Fit, 19% Sin Clasificar
+- Conversión por canal: Outbound 75% (8 leads), Referidos 66.7% (18 leads), LinkedIn 33.3%, Webinar 28.1%, SEO 26.7% (0 deals)
+- CAC por canal: Referidos $1.8K, Contenido $2.9K, LinkedIn $4.2K, Outbound $6.5K
+Contexto: agencia UX/UI enterprise mexicana, YoY ventas +25.3%.`;
+  try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:SYS,messages:[{role:'user',content:msg}]})});
+  const dt=await r.json();rI('ai-b-mkt',JSON.parse(dt.content?.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim()));}
+  catch(e){document.getElementById('ai-b-mkt').innerHTML=`<div class="ai-er">Error. <button class="ai-rb" onclick="gMkt()" style="margin-left:8px">↻ Reintentar</button></div>`;}
+}
+
+let sC;
+function gSD(f){const l={type:'line',data:T25,borderColor:'rgba(106,139,173,.55)',backgroundColor:'transparent',borderWidth:1.5,borderDash:[5,3],pointRadius:0,tension:0.3,order:0};if(f==='total')return[{type:'bar',data:N26,backgroundColor:'#2CA7D0',stack:'s',borderRadius:{topLeft:3,topRight:3},order:2},{type:'bar',data:E26,backgroundColor:'#0A5570',stack:'s',borderRadius:{topLeft:3,topRight:3},order:3},l];if(f==='nuevos')return[{type:'bar',data:N26,backgroundColor:'#2CA7D0',borderRadius:3,order:2},l];return[{type:'bar',data:E26,backgroundColor:'#0A5570',borderRadius:3,order:2},l];}
+function bSC(f){if(sC)sC.destroy();const sk=f==='total',g='#1C3352',m='#6A8BAD';sC=new Chart(document.getElementById('salesCh').getContext('2d'),{data:{labels:MO,datasets:gSD(f)},options:{responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:'index'},plugins:{legend:{display:false}},scales:{x:{stacked:sk,grid:{color:g,drawBorder:false},ticks:{color:m,font:{size:10}}},y:{stacked:sk,grid:{color:g,drawBorder:false},ticks:{color:m,font:{size:10},callback:v=>v!=null?`$${v}M`:''}}}}});}
+function sSF(f,btn){document.querySelectorAll('.sf-b').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('sl-n').style.display=f==='existentes'?'none':'flex';document.getElementById('sl-e').style.display=f==='nuevos'?'none':'flex';bSC(f);}
+
+const fcEl=document.getElementById('fc');
+[{s:'Leads totales',n:376,c:null,w:100},{s:'Brief',n:37,c:'9.8%',w:78},{s:'Propuesta',n:18,c:'48.6%',w:58},{s:'Negociación',n:11,c:'61.1%',w:40},{s:'Won',n:5,c:'45.5%',w:24}].forEach((f,i)=>{if(f.c){const sp=document.createElement('div');sp.className='fs';sp.innerHTML=`<div class="fsl"></div><span style="font-size:11px;color:#2CA7D0;font-weight:600">↓ ${f.c}</span><div class="fsl"></div>`;fcEl.appendChild(sp);}const b=document.createElement('div');b.className='fb';b.style.cssText=`width:${f.w}%;margin:0 auto;background:rgba(44,167,208,${[1,.65,.5,.37,.24][i]})`;b.innerHTML=`<span style="font-size:12px;font-weight:500;color:#fff">${f.s}</span><strong style="font-size:16px;font-weight:700;color:#fff">${f.n}</strong>`;fcEl.appendChild(b);});
+
+let ci=false;
+function iCharts(){if(ci)return;ci=true;const g='#1C3352',m='#6A8BAD',m2='#94AFC9';
+  new Chart(document.getElementById('ldCh'),{type:'line',data:{labels:MO,datasets:[{data:[12,15,18,14,10,22,28,32,25,35,38,42],borderColor:'#94AFC9',backgroundColor:'transparent',borderWidth:2,pointRadius:0,tension:0.4},{data:[18,20,22,16,14,24,26,28,22,30,32,35],borderColor:'rgba(148,175,201,.5)',backgroundColor:'transparent',borderWidth:1.5,borderDash:[4,3],pointRadius:0,tension:0.4},{data:[4,5,6,4,3,7,8,10,7,11,13,14],borderColor:'#2CA7D0',backgroundColor:'rgba(44,167,208,.07)',borderWidth:2,pointRadius:0,tension:0.4,fill:true},{data:[6,7,7,5,4,8,8,9,7,10,11,12],borderColor:'rgba(44,167,208,.45)',backgroundColor:'transparent',borderWidth:1.5,borderDash:[4,3],pointRadius:0,tension:0.4}]},options:{responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:'index'},plugins:{legend:{display:false}},scales:{x:{grid:{color:g,drawBorder:false},ticks:{color:m,font:{size:10}}},y:{grid:{color:g,drawBorder:false},ticks:{color:m,font:{size:10}}}}}});
+  new Chart(document.getElementById('cplCh'),{type:'bar',data:{labels:['Referidos','Contenido','LinkedIn','Outbound'],datasets:[{data:[1800,2900,4200,6500],backgroundColor:'#2CA7D0',borderRadius:4,borderSkipped:'left'}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:g,drawBorder:false},ticks:{color:m,font:{size:10},callback:v=>'$'+(v/1000).toFixed(0)+'K'}},y:{grid:{display:false},ticks:{color:m2,font:{size:11}}}}}});
+  new Chart(document.getElementById('qCh'),{type:'doughnut',data:{labels:['Buen Fit','Regular Fit','Mal Fit','Sin Clasificar'],datasets:[{data:[30,24,27,19],backgroundColor:['#0DB87A','#2CA7D0','#EF4444','#6A8BAD'],borderWidth:0,hoverOffset:0}]},options:{responsive:false,plugins:{legend:{display:false}},cutout:'65%'}});
+}
+window.addEventListener('DOMContentLoaded',()=>{gCom();bSC('total');});
+</script>
+</body>
+</html>
