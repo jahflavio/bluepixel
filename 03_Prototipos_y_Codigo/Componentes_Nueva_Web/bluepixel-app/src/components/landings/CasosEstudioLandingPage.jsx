@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import CaseStudiesSection from '../sections/CaseStudiesSection';
 import MultiStepContact from '../forms/MultiStepContact';
 import LeadMagnetSection from '../sections/LeadMagnetSection';
+import IndustriesImpactSection from '../sections/IndustriesImpactSection';
 
 const CasosEstudioLandingPage = () => {
   useEffect(() => {
@@ -50,6 +51,9 @@ const CasosEstudioLandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Industries Impact Section (Filtro por industria) */}
+      <IndustriesImpactSection />
 
       {/* Reutilizamos el componente original de Casos */}
       <CaseStudiesSection />
