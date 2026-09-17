@@ -18,6 +18,10 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
         {/* Center Nav Links (Desktop) */}
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
           
+          <a href="#/pilares" className="hover:text-blue-400 transition-colors">
+            Nuestros Pilares
+          </a>
+
           <a href="#/como-trabajamos" className="hover:text-blue-400 transition-colors">
             Cómo Trabajamos
           </a>
@@ -28,12 +32,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-blue-400 transition-colors focus:outline-none">
-              Capacidades
+            <a href="#/servicios" className="flex items-center gap-1 hover:text-blue-400 transition-colors focus:outline-none">
+              Directorio de Servicios
               <svg className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180 text-blue-400' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
+            </a>
 
             {/* Dropdown Menu (Mega Menu Style) */}
             <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-200 ${isDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>

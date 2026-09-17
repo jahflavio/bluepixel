@@ -14,6 +14,10 @@ const IngenieriaLandingPage = lazy(() => import('./components/landings/Ingenieri
 const TransformacionLandingPage = lazy(() => import('./components/landings/TransformacionLandingPage'));
 const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
 
+// Directorios Centrales (Hubs)
+const PilaresLandingPage = lazy(() => import('./components/landings/PilaresLandingPage'));
+const ServiciosLandingPage = lazy(() => import('./components/landings/ServiciosLandingPage'));
+
 // 6 Servicios Individuales (Capacidades)
 const UxUiServicePage = lazy(() => import('./components/landings/services/UxUiServicePage'));
 const AiEngineeringServicePage = lazy(() => import('./components/landings/services/AiEngineeringServicePage'));
@@ -26,13 +30,11 @@ const BusinessAiConsultingPage = lazy(() => import('./components/landings/servic
 const TrustBadgesSection = lazy(() => import('./components/sections/TrustBadgesSection'));
 const WorkflowTeardown = lazy(() => import('./components/sections/WorkflowTeardown'));
 const AgenticTechStack = lazy(() => import('./components/sections/AgenticTechStack'));
-const ThreeClustersOverview = lazy(() => import('./components/sections/ThreeClustersOverview'));
 const TechnicalSovereignty = lazy(() => import('./components/sections/TechnicalSovereignty'));
 const ImpathFrictionSection = lazy(() => import('./components/sections/ImpathFrictionSection'));
 const CaseStudiesSection = lazy(() => import('./components/sections/CaseStudiesSection'));
 const FAQSection = lazy(() => import('./components/sections/FAQSection'));
-const SixCapabilitiesGrid = lazy(() => import('./components/sections/SixCapabilitiesGrid'));
-const ThreeWaysToWork = lazy(() => import('./components/sections/ThreeWaysToWork'));
+const HomeDirectorySection = lazy(() => import('./components/sections/HomeDirectorySection'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
 const FinalCTA = lazy(() => import('./components/sections/FinalCTA'));
@@ -64,7 +66,8 @@ const App = () => {
         'apps', 'automatizacion', 'agentizacion', 
         'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
-        'servicio/data-analytics', 'servicio/security', 'servicio/business-ai'
+        'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
+        'pilares', 'servicios'
       ];
       
       if (validViews.includes(hash)) {
@@ -111,13 +114,11 @@ const App = () => {
           
           <Suspense fallback={<SectionLoader />}>
             <TrustBadgesSection />
-            <ThreeClustersOverview onNavigateCluster={navigateTo} onOpenContact={(pkg) => scrollToForm(pkg)} />
+            <HomeDirectorySection />
             <TechnicalSovereignty />
             <ImpathFrictionSection onOpenContact={() => scrollToForm('Diagnóstico FutureProof (IMPATH)')} />
             <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
             <FAQSection />
-            <SixCapabilitiesGrid onNavigateCluster={navigateTo} onOpenContact={(pkg) => scrollToForm(pkg)} />
-            <ThreeWaysToWork onSelectPackage={(pkg) => scrollToForm(pkg)} />
             <EngineeringLeadership />
             <PostContactSLA />
             <FinalCTA onOpenContact={() => scrollToForm()} />
@@ -141,6 +142,14 @@ const App = () => {
       ) : currentView === 'transformacion' ? (
         <Suspense fallback={<SectionLoader />}>
           <TransformacionLandingPage />
+        </Suspense>
+      ) : currentView === 'pilares' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <PilaresLandingPage />
+        </Suspense>
+      ) : currentView === 'servicios' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <ServiciosLandingPage />
         </Suspense>
       ) : currentView === 'como-trabajamos' ? (
         <Suspense fallback={<SectionLoader />}>
