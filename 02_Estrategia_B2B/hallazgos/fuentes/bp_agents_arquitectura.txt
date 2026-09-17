@@ -1,0 +1,138 @@
+                                                          Agentes para Builder y Strategist
+
+               Diseño                         Desarrollo                                     QA     PM / PO
+
+                  Peer reviews                Title                                          Title     Title
+Para revisiones internas del equipo donde se                                                           Text
+                                              Text                                           Text
+                      evalúa
+                       Title
+                        Text
+                                                                                                                                    Capa 0: Humanos
+
+                                                                                                                              Marketing Strategist Sr                                    Marketing Ops
+
+                                                                                                                                              El líder                                            AI Operator
+
+                                                                                                                           Define mensajes, aprueba contenido, toma          El que construye y mantiene los agentes, conecta
+                                                                                                                       decisiones de positioning. Entiende el negocio de     las herramientas, asegura que el sistema funcione.
+                                                                                                                       de BluePixel profundamente. No ejecuta, dirige a
+                                                                                                                                                                                Perfil híbrido: entiende marketing Y sabe usar
+                                                                                                                      los agentes y revisa outputs. El Strategist tiene que
+                                                                                                                      construir el playbook de voz para tener identidad.     Make, n8n, Clay, APIs. Este perfil es escaso y vale
+                                                                                                                                                                                     oro. Búscalo antes de al Strategist.
+                                                                                                                        Perfil: alguien que haya trabajado en marketing B2B
+                                                                                                                                      tech, no una agencia creativa.          Perfil: No es un desarrollador y no es un marketer. Es
+
+                                                                                                                                                                                                                                                un híbrido.
+
+                                                                                                                                    Capa 1: Estrategia
+
+                                                                              Researcher                                                          Agente Estratégico
+
+                                                                                        -                                                Planea campañas · genera briefs · asigna tareas
+                                                                            Investiga, contexto...
+                                                                                                                                    Define mensajes, aprueba contenido, toma decisiones de
+                                                                                        ---                                                positioning. Entiende el negocio de BluePixel
+
+                                                                                                                                    profundamente. No ejecuta, dirige a los agentes y revisa
+                                                                                                                                    outputs. Perfil: alguien que haya trabajado en marketing
+
+                                                                                                                                                  B2B tech, no una agencia creativa.
+
+                                                                                                                                      Claude API (system prompt extendido) + n8n para disparar
+                                                                                                                                          flujos + Notion o Airtable como tablero de campaña
+
+                                                                                                                                    Capa 2: Gestión
+
+                                                                                                                                                 Agente Orquestador                                        Optimizador
+
+                                                                                                                                          Coordina · prioriza · verifica calidad · reporta                               -
+                                                                                                                                                                                                Decide que modelo usar con Open Router
+                                                                                                                                    Verifica que cada agente entregó, revisa calidad básica,
+                                                                                                                                       re-asigna si hay fallas, genera reporte semanal de                           Open Router
+                                                                                                                                                        estado para el humano.
+
+                                                                                                                                    Claude API + n8n + webhooks entre agentes + Discord para
+                                                                                                                                                           notificaciones al equipo
+
+                                                                                                                                    Capa 3: Ejecución
+
+Contenido                Content Strategist*                                           Creative Producer                                               Publisher                                          Community Manager                                                                                               SEO Writer*
+
+                                      Parrilla y briefs                                    Diseño · Video · Avatars                                      Publica y Programa                                      Interacción y escucha                                                                                       Artículos y Web
+                                                                            Genera imágenes estáticas y carruseles. Para video:                                                                                                                                                                          Genera artículos de blog optimizados para búsqueda,
+               Genera parrilla mensual por red social. Define temas,        guión + voz (ElevenLabs) + avatar (HeyGen). Entrega     Toma el contenido aprobado y lo publica en LinkedIn,           Monitorea comentarios y menciones. Responde
+             ángulos, formatos y CTA para cada pieza. Produce briefs                                                                Instagram, X en los horarios óptimos. Maneja variantes      consultas genéricas. Escala al humano lo que requiere                                                      actualiza contenido existente, propone cluster de
+                                                                                            assets listos para publicar.
+                              listos para Creative Producer.                                                                                             A/B en captions.                               criterio o es una oportunidad comercial.                                                                               keywords por mes.
+                                                                             Midjourney / Ideogram (imágenes) + ElevenLabs (voz) +                                                                                                                                                                      Claude API + Semrush o Ahrefs API + Webflow CMS API para
+              Claude API + Perplexity (tendencias) + Airtable (calendario)        HeyGen (avatar/video) + Make para orquestar       Buffer o Taplio (LinkedIn) + Meta Business API + Make para  Claude API + Brandwatch o Mention + Make + Slack para
+                                                                                                                                                       automatizar publicación                                                                                                                                                      publicar directo
+                                 + Make para automatizar                                                                                                                                                                    escalaciones
+                                                                                                                                                                                                                                                                                                         GEO
+             Tiktok  IG  YT                                   FB
+
+Performance              Performance Auditor*                                              Paid Media                                                Report Gen                                            Prospector / Outreach                                                                                          PR Monitor
+
+                                    Métricas y alertas                                        Diseña campañas                                           Dashboards y KPIs                                           Listas y Mensajes                                                                                          Menciones y Prensa
+                                                                                                                                                                                                Enriquece listas de cuentas target. Genera mensajes
+             Revisa diario métricas de GA4, LinkedIn y CRM. Genera          Diseña estructura de campañas (audiencias, copies,         Produce reporte ejecutivo mensual: métricas clave,       personalizados por cuenta. En modo avanzado: envía                                                          Monitorea menciones de BluePixel y competidores.
+                                                                            presupuesto). El humano aprueba antes de activar.
+             alertas si algo cae. Propone ajustes al Orquestador para                                                               impacto en pipeline, ROI de contenido, recomendaciones                    secuencias automatizadas.                                                                    Detecta oportunidades de prensa. Propone pitches a
+                                     el siguiente ciclo.                                   Monitorea y ajusta bids.                                        para siguiente mes.                                                                                                                                                         medios.
+                                                                                                                                                                                                  Clay + Apollo + LinkedIn Sales Nav + Claude API para
+              GA4 API + LinkedIn API + Claude API para análisis + Looker    Claude API + Meta Ads API + Google Ads API + Make. La    Claude API + Looker Studio API + Power BI + datos de CRM           personalización + Lemlist para secuencias                                                          Brandwatch o Mention + Claude API + Make. Los pitches
+                                Studio para visualización                                                                                                         y GA4
+                                                                                      activación requiere aprobación humana.                                                                                                                                                                                            requieren revisión humana siempre.
+
+                                                                                                                                    Capa 4: Fuentes de Datos y Herramientas
+
+                             CRM / ERP                                                     Airtable o Notion                                       Clay/ Linkedin                                          GA4/Search Console                                                                                                  Looker
+
+                              Single source of truth                                            Memoria de Campañas                                Inteligencia de prospectos                                      Analítica web y SEO                                                                                   Visualización y reportes
+                                                                            Base de conocimiento viva que registra cada campaña,                                                                                                                                                                             Dashboards ejecutivos con métricas de pipeline,
+             Centraliza pipeline comercial, cuentas activas, historial                                                                  Enriquece listas de cuentas target con datos de         Tráfico orgánico, comportamiento en sitio, conversiones                                                    contenido y ROI de marketing. El Report Gen genera
+                                                                            pieza de contenido, resultado y aprendizaje mes a mes.  empresa, tecnologías en uso, contactos clave y señales                                                                                                                   vistas automáticas mensuales para María y Leo.
+             de clientes y estado de proyectos. Base de datos que           El sistema aprende: qué temas generaron engagement,                                                                 y rankings de keywords. El Performance Auditor extrae                                                       Preparado para conectar al ERP cuando esté listo.
+             alimenta al Orquestador con contexto de negocio real           qué formatos funcionaron, qué mensajes resonaron, etc.  de intención. LinkedIn Sales Navigator para identificar     datos diarios vía API para detectar caídas y tendencias                                                      Conecta a: Report Gen · Performance Auditor ·
+                                                                            Conecta a: Orquestador · Manager · Content Strategist
+                                        cada mes.                                                                                                 decisores en cuentas enterprise.                                         accionables.                                                                                           Manager
+                                                                                             · Prospector · Report Gen
+                Conecta a: Orquestador · Manager · Prospector ·                                                                     Conecta a: Prospector / Outreach · Content Strategist ·      Conecta a: Performance Auditor · SEO Writer · Report
+                        Report Gen · Performance Auditor                                                                                                                                                            Gen · Orquestador
+                                                                                                                                                               Orquestador
+
+                                                                                                                                           Capa 5: Herramientas de IA y Automatización
+
+               Claude API / Managed Agents                                          Make/N8N                                      Midjourney                                              ElevenLabs                                                                     HeyGen                                           Perplexity
+
+                            Cerebro del sistema                                         Sistema nervioso                          Generación de imágenes                                       Voz del avatar                                                               Avatar y video                             Research en tiempo real
+
+             Motor de razonamiento de todos los agentes.                 Orquesta los flujos entre agentes: dispara   Produce imágenes estáticas y assets visuales            Genera la voz del avatar de BluePixel a partir                                  Produce videos cortos con el avatar de         Monitorea tendencias del sector tech, UX y
+                Genera briefs, analiza métricas, redacta                  tareas, mueve datos entre herramientas,                                                            de guiones producidos por Claude. Voz clonada
+                  contenido, personaliza mensajes de                    maneja errores y reintentos. N8N para flujos  para posts de LinkedIn, carruseles y blog. El                                                                                             BluePixel sincronizado con la voz de       enterprise en tiempo real. Alimenta al Content
+                                                                                                                                                                             o diseñada que representa la marca. Output de                                   ElevenLabs. Recibe guión y audio, entrega
+              prospección y produce reportes ejecutivos.                internos complejos, Make para integraciones        Creative Producer genera el prompt,                                                                                                                                             Strategist con contexto actualizado para que el
+                                                                                                                                                                               audio que HeyGen sincroniza con el avatar                                     video listo para revisión humana antes de
+                 System prompt extendido por agente.                                    con APIs externas.            Midjourney produce, Make mueve el asset al                                                                                                                                                contenido de BluePixel sea relevante y
+                           Todos los agentes                                                                                                                                                           visual.                                                       publicar. 2-4 videos al mes.                                 oportuno.
+                                                                          Orquestador · Manager · todos los flujos                          Publisher.
+                                                                                                                                                                                               Creative Producer                                                            Creative Producer              Content Strategist · Orquestador · PR Monitor
+                                                                                                                                       Creative Producer
+
+                          Buffer / Taplio                                   Webflow / CMS                                         Apollo / Lemlist                                    Meta Ads / Google                                                                    BrandWatch                                       Zapier
+
+                           Publicación y calendario                               Publicación SEO                                 Outreach automatizado                                            Paid media                                                              Escucha social y PR                         Integraciones simples
+
+               Programa y publica contenido en LinkedIn,           Recibe artículos generados por el SEO Writer          Apollo para base de datos de contactos y            APIs de Meta Ads y Google Ads para monitoreo                                          Monitorea menciones de BluePixel,       Conector de respaldo para integraciones que
+              Instagram y X en los horarios óptimos. Taplio
+             para gestión avanzada de LinkedIn. El Publisher      vía API y los publica directamente en el blog de    secuencias de email. Lemlist para campañas de             de campañas, ajuste de bids y reporte de                                        competidores y temas clave del sector en        no tienen API nativa en N8N o Make.
+                                                                   BluePixel. Requiere revisión humana antes de            outreach personalizadas con variables                                                                                                                                                 Automatiza tareas puntuales entre
+              deposita el contenido aprobado aquí vía API.                                                                                                                     performance. El Paid Media Agent propone                                      tiempo real. Alimenta al Community Manager y
+                                                                         publicar. Gestiona metadatos SEO             dinámicas generadas por Claude. Seguimiento                                                                                             al PR Monitor con alertas de conversaciones  herramientas del stack. No es el orquestador
+                                     Publisher                                                                                  automatizado post-contacto.                  cambios; el humano aprueba antes de ejecutar                                                                                  principal -- es el pegamento para casos edge.
+                                                                                    automáticamente.                               Prospector / Outreach                                        cualquier ajuste.                                                 relevantes y oportunidades de prensa.
+                                                                                                                                                                                                                                                                                                                    Soporte a todos los agentes
+                                                                               SEO Writer · Publisher                                                                               Paid Media · Performance Auditor                                                Community Manager · PR Monitor
+

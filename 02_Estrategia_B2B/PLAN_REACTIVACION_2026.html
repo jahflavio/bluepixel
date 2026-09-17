@@ -1,0 +1,1159 @@
+<title>Plan de Reactivación BluePixel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#F4F5F7; --surface:#FFFFFF; --sunk:#EAECF0;
+    --ink:#111826; --ink-2:#39435A; --ink-3:#6B7589;
+    --rule:#D7DBE3; --rule-soft:#E6E9EF;
+    --accent:#1F6FEB; --accent-soft:#E7F0FE;
+    --crit:#C2362B; --crit-soft:#FBEAE8;
+    --warn:#8A5D14; --warn-soft:#FBF2E0;
+    --good:#166F52; --good-soft:#E3F3EC;
+    --shadow:0 1px 2px rgba(17,24,38,.06), 0 8px 24px rgba(17,24,38,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0C111B; --surface:#141B29; --sunk:#1B2434;
+      --ink:#E8ECF3; --ink-2:#AEB8CA; --ink-3:#7E8AA0;
+      --rule:#28324450; --rule:#2A3446; --rule-soft:#212B3B;
+      --accent:#6FA6FF; --accent-soft:#16233C;
+      --crit:#F08379; --crit-soft:#2E1A19;
+      --warn:#E0B463; --warn-soft:#2B2312;
+      --good:#5FC6A0; --good-soft:#12271F;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0C111B; --surface:#141B29; --sunk:#1B2434;
+    --ink:#E8ECF3; --ink-2:#AEB8CA; --ink-3:#7E8AA0;
+    --rule:#2A3446; --rule-soft:#212B3B;
+    --accent:#6FA6FF; --accent-soft:#16233C;
+    --crit:#F08379; --crit-soft:#2E1A19;
+    --warn:#E0B463; --warn-soft:#2B2312;
+    --good:#5FC6A0; --good-soft:#12271F;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:20px; padding-block:0 96px}
+  .prose{max-width:68ch}
+
+  /* ---- nav ---- */
+  nav.bar{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.bar .inner{
+    max-width:1080px; margin:0 auto; padding-inline:20px;
+    display:flex; gap:4px; align-items:center; overflow-x:auto; scrollbar-width:none;
+    height:46px;
+  }
+  nav.bar .inner::-webkit-scrollbar{display:none}
+  nav.bar a{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; letter-spacing:.04em;
+    color:var(--ink-3); text-decoration:none; white-space:nowrap;
+    padding:5px 9px; border-radius:5px;
+  }
+  nav.bar a:hover{color:var(--ink); background:var(--sunk)}
+  nav.bar a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+  /* ---- masthead ---- */
+  header.mast{padding-block:44px 30px; border-bottom:2px solid var(--ink)}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+  }
+  h1{
+    font-size:clamp(30px,5.4vw,46px); line-height:1.08; font-weight:700;
+    letter-spacing:-.022em; margin:0 0 16px; text-wrap:balance; max-width:20ch;
+  }
+  .standfirst{font-size:clamp(16px,2vw,18.5px); color:var(--ink-2); margin:0; max-width:60ch; line-height:1.55}
+  .meta{
+    display:flex; flex-wrap:wrap; gap:6px 22px; margin-top:24px;
+    font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-3); letter-spacing:.02em;
+  }
+  .meta b{color:var(--ink-2); font-weight:500}
+
+  /* ---- sections ---- */
+  section{padding-block:52px; border-bottom:1px solid var(--rule-soft)}
+  section:last-of-type{border-bottom:0}
+  .sechead{display:flex; gap:14px; align-items:baseline; margin-bottom:22px}
+  .secnum{
+    font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600;
+    color:var(--accent); letter-spacing:.06em; padding-top:6px; flex:none;
+  }
+  h2{font-size:clamp(23px,3.4vw,30px); line-height:1.16; font-weight:700; letter-spacing:-.018em; margin:0; text-wrap:balance}
+  h3{font-size:19px; font-weight:600; letter-spacing:-.008em; margin:34px 0 10px; text-wrap:balance}
+  h4{font-size:15.5px; font-weight:600; margin:22px 0 7px}
+  p{margin:0 0 15px}
+  a{color:var(--accent)}
+  strong{font-weight:600}
+  ul,ol{margin:0 0 15px; padding-left:20px; max-width:68ch}
+  li{margin-bottom:7px}
+  .lede{font-size:17.5px; color:var(--ink-2); max-width:62ch; line-height:1.55}
+
+  /* ---- number tiles ---- */
+  .figs{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:28px 0; border-radius:8px; overflow:hidden}
+  .fig{background:var(--surface); padding:20px 18px}
+  .fig .n{font-family:"IBM Plex Mono",monospace; font-size:clamp(25px,4vw,33px); font-weight:600; letter-spacing:-.03em; line-height:1; display:block; font-variant-numeric:tabular-nums}
+  .fig .k{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); margin-top:11px; display:block}
+  .fig .d{font-size:13.5px; color:var(--ink-2); margin-top:7px; line-height:1.4}
+  .fig.c .n{color:var(--crit)} .fig.w .n{color:var(--warn)} .fig.g .n{color:var(--good)} .fig.a .n{color:var(--accent)}
+
+  /* ---- callouts ---- */
+  .call{border-left:3px solid var(--accent); background:var(--accent-soft); padding:16px 18px; margin:22px 0; border-radius:0 7px 7px 0; max-width:72ch}
+  .call.crit{border-color:var(--crit); background:var(--crit-soft)}
+  .call.warn{border-color:var(--warn); background:var(--warn-soft)}
+  .call.good{border-color:var(--good); background:var(--good-soft)}
+  .call p:last-child{margin-bottom:0}
+  .call .lbl{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:7px}
+  .call .lbl{color:var(--accent)} .call.crit .lbl{color:var(--crit)} .call.warn .lbl{color:var(--warn)} .call.good .lbl{color:var(--good)}
+
+  /* ---- tables ---- */
+  .tw{overflow-x:auto; margin:22px 0; border:1px solid var(--rule); border-radius:8px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:13.8px; min-width:560px}
+  th,td{text-align:left; padding:10px 13px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+  thead th{
+    font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:600; background:var(--sunk); border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:0}
+  td.n,th.n{text-align:right; font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+  td.d{font-family:"IBM Plex Mono",monospace; font-size:12.5px; white-space:nowrap; color:var(--ink-2)}
+  tbody tr.tot td{font-weight:600; background:var(--sunk); border-top:1px solid var(--rule)}
+  caption{caption-side:bottom; text-align:left; padding:10px 13px; font-size:12.5px; color:var(--ink-3); border-top:1px solid var(--rule-soft)}
+
+  /* ---- verdict chips ---- */
+  .chip{
+    display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:600;
+    letter-spacing:.07em; text-transform:uppercase; padding:2.5px 7px; border-radius:4px; white-space:nowrap;
+  }
+  .chip.k{background:var(--crit-soft); color:var(--crit)}
+  .chip.r{background:var(--warn-soft); color:var(--warn)}
+  .chip.s{background:var(--good-soft); color:var(--good)}
+  .chip.n{background:var(--accent-soft); color:var(--accent)}
+
+  /* ---- waves ---- */
+  .waves{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:26px 0}
+  .wave{background:var(--surface); border:1px solid var(--rule); border-radius:9px; padding:20px; box-shadow:var(--shadow)}
+  .wave .when{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
+  .wave h3{margin:9px 0 9px; font-size:18px}
+  .wave .goal{font-size:14.5px; color:var(--ink-2); margin:0 0 14px}
+  .wave ul{font-size:14px; padding-left:17px; margin:0 0 14px}
+  .wave li{margin-bottom:5px}
+  .wave .gate{border-top:1px solid var(--rule-soft); padding-top:11px; font-size:13px; color:var(--ink-2)}
+  .wave .gate b{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); display:block; margin-bottom:4px; font-weight:600}
+  .wave.w1{border-top:3px solid var(--crit)}
+  .wave.w2{border-top:3px solid var(--warn)}
+  .wave.w3{border-top:3px solid var(--good)}
+
+  /* ---- week list ---- */
+  .weeks{display:flex; flex-direction:column; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:8px; overflow:hidden; margin:24px 0}
+  .wk{background:var(--surface); padding:17px 18px; display:grid; grid-template-columns:118px 1fr; gap:16px}
+  .wk .when{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--accent); font-weight:600; letter-spacing:.01em; line-height:1.45}
+  .wk .when span{display:block; color:var(--ink-3); font-weight:400; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; margin-top:3px}
+  .wk h4{margin:0 0 7px; font-size:15.5px}
+  .wk p{margin:0 0 9px; font-size:14.3px; color:var(--ink-2)}
+  .wk p:last-child{margin-bottom:0}
+  .wk .who{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-3); margin-top:9px}
+  .wk .who b{color:var(--ink-2); font-weight:500}
+  @media(max-width:620px){ .wk{grid-template-columns:1fr; gap:9px} }
+
+  /* ---- misc ---- */
+  .note{font-size:13px; color:var(--ink-3); max-width:68ch; margin-top:-6px}
+  .inf{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); background:var(--sunk); padding:1px 5px; border-radius:3px; white-space:nowrap}
+  hr.soft{border:0; border-top:1px solid var(--rule-soft); margin:34px 0}
+  .kill{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:24px 0}
+  .kbox{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--crit); border-radius:0 8px 8px 0; padding:16px}
+  .kbox h4{margin:8px 0 6px; font-size:15px}
+  .kbox p{font-size:13.6px; color:var(--ink-2); margin:0}
+  .kbox .amt{font-family:"IBM Plex Mono",monospace; font-size:19px; font-weight:600; color:var(--crit); font-variant-numeric:tabular-nums}
+  footer{padding-block:34px; border-top:2px solid var(--ink); font-size:13.4px; color:var(--ink-3); max-width:72ch}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<nav class="bar">
+  <div class="inner">
+    <a href="#veredicto">Veredicto</a>
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#ciegos">Puntos ciegos</a>
+    <a href="#apuesta">La apuesta</a>
+    <a href="#olas">Las 3 olas</a>
+    <a href="#ola1">Sep–Oct</a>
+    <a href="#ola2">Nov–Dic</a>
+    <a href="#ola3">Ene–Mar</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#dinero">Dinero</a>
+    <a href="#mando">KPIs</a>
+    <a href="#web">Sitio nuevo</a>
+    <a href="#riesgos">Riesgos</a>
+    <a href="#semana">Esta semana</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Plan de reactivación comercial · Sep 2026 – Mar 2027</p>
+  <h1>Dejar de vender diseño para poder vender ingeniería</h1>
+  <p class="standfirst">Seis meses sin una venta no se explican por el mensaje. Se explican por una mesa de cierre rota, una entidad pública que contradice el pitch, y una cartera que se está desangrando mientras nadie la mira.</p>
+  <div class="meta">
+    <span><b>Preparado por</b> Fabián Flores · Head of Growth &amp; RevOps</span>
+    <span><b>Para</b> Leonardo Flores y María, Dirección General</span>
+    <span><b>Corte</b> martes 15 de septiembre de 2026</span>
+  </div>
+</header>
+
+<!-- ============ 1 ============ -->
+<section id="veredicto">
+  <div class="sechead"><span class="secnum">01</span><h2>El veredicto</h2></div>
+
+  <div class="prose">
+    <p class="lede">BluePixel no tiene un problema de leads. Tiene un problema de cierre, un problema de retención y un problema de contabilidad de medios — en ese orden. La tesis interna del «desfase de información» es correcta pero incompleta, y arreglarla sola no detiene la caída.</p>
+  </div>
+
+  <div class="figs">
+    <div class="fig c">
+      <span class="n">4.3%</span>
+      <span class="k">Propuesta → venta</span>
+      <span class="d">47 propuestas, 2 ventas. El benchmark de servicios profesionales es 40–60%. Está 10 veces roto.</span>
+    </div>
+    <div class="fig c">
+      <span class="n">$1.19M</span>
+      <span class="k">Valor de libro destruido</span>
+      <span class="d">En dos meses. El 58% lo destruyó el churn, no la caída de ventas.</span>
+    </div>
+    <div class="fig w">
+      <span class="n">18×</span>
+      <span class="k">Volumen imposible</span>
+      <span class="d">Leads/mes que haría falta con ticket de $30K para volver a la rentabilidad de julio.</span>
+    </div>
+    <div class="fig c">
+      <span class="n">93.7%</span>
+      <span class="k">Gasto sin verificar</span>
+      <span class="d">De los $235,690 reportados en septiembre, solo $14,861 tiene respaldo de plataforma.</span>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>Lo que hay que hacer, en una frase</h3>
+    <p>Vender el diagnóstico en vez de la propuesta: convertir el Pilar 01 en un producto pagado de <strong>$95,000 MXN a 10 días hábiles</strong>, acreditable al 100% contra el proyecto, y usarlo para calificar presupuesto <em>antes</em> de invertir semanas en una propuesta de $3.9 millones. Es la única jugada que resuelve simultáneamente la tasa de cierre, el hueco de caja de octubre y el vacío de facturación que ya está contratado para el primer semestre de 2027.</p>
+
+    <div class="call crit">
+      <span class="lbl">Antes que cualquier otra cosa</span>
+      <p>No se firma el presupuesto de octubre hasta reconciliar <strong>$220,829 MXN de diferencia</strong> dentro del propio reporte de Rocketing. El panel de presupuesto dice que Google consumió $191,807.92 del 1 al 13 de septiembre; el panel de la plataforma dice $13,621.35 — y este último cuadra solo (317 clics × $42.97 de CPC). Son <strong>14.1 veces</strong> de diferencia. Anualizada, la discrepancia vale $6.2 millones de pesos. Ninguna decisión de este documento es defendible hasta cerrar ese número.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="diagnostico">
+  <div class="sechead"><span class="secnum">02</span><h2>Diagnóstico: la cadena causal</h2></div>
+
+  <div class="prose">
+    <p>El relato interno es que el mercado percibe a BluePixel como agencia de UX/UI y por eso llegan leads de $20,000. Eso es cierto y está documentado en los propios datos. Pero la cadena completa tiene cinco eslabones, y el del mensaje es el tercero, no el primero.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th style="width:38px">#</th><th>Eslabón</th><th>Evidencia</th><th style="width:96px">Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="d">1</td>
+          <td><strong>El modelo se rompió por diseño, no en agosto</strong><br>Se creció vendiendo clientes cada vez más pequeños.</td>
+          <td>Ingreso por cliente nuevo: $13,750 en enero → $6,600 en junio (−52%). El MRR subió 37% sobre una base que se adelgazaba.</td>
+          <td><span class="chip k">Causa raíz</span></td>
+        </tr>
+        <tr>
+          <td class="d">2</td>
+          <td><strong>El volumen de leads colapsó y no había ticket que lo sostuviera</strong></td>
+          <td>59 leads/mes en enero → 17 en junio (−71%). Con ticket de $30K harían falta 358 leads/mes para sostener el negocio.</td>
+          <td><span class="chip k">Causa raíz</span></td>
+        </tr>
+        <tr>
+          <td class="d">3</td>
+          <td><strong>La entidad pública contradice el pitch</strong><br>Lo que un comprador encuentra al validarte.</td>
+          <td>Clutch publica <em>$50–99 USD/hora</em> y reseñas de una carnicería, una red social de mascotas y estudios de resina. El sitio muestra Bimbo, BBVA y PepsiCo.</td>
+          <td><span class="chip k">Causa raíz</span></td>
+        </tr>
+        <tr>
+          <td class="d">4</td>
+          <td><strong>La mesa de cierre dejó de funcionar</strong></td>
+          <td>Lead→propuesta está en 18.7% (Q1) y 23.8% (Q2), <em>por encima</em> del benchmark de 10–20%. Propuesta→venta está en 4.3% contra 40–60%.</td>
+          <td><span class="chip k">Síntoma agudo</span></td>
+        </tr>
+        <tr>
+          <td class="d">5</td>
+          <td><strong>La cartera se desangra sin que nadie la atienda</strong></td>
+          <td>Churn 2.5% (jul) → 4.2% (sep). La vida media del cliente se acortó de 40 a 23.8 meses. No existe ritual de QBR ni persona nombrada en Cuentas.</td>
+          <td><span class="chip k">Hemorragia</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>La aritmética que cierra el debate del reposicionamiento</h3>
+  <div class="prose">
+    <p>Esta tabla convierte una discusión de marca en un sistema de ecuaciones. Con el run-rate real de 18–20 leads al mes, solo una columna es alcanzable.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Ticket promedio (TCV)</th><th class="n">Deals</th><th class="n">Propuestas</th><th class="n">Leads/mes</th><th class="n">vs. hoy</th><th>Veredicto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$30,000 — el que atrae el posicionamiento actual</td><td class="n">33</td><td class="n">429</td><td class="n">358</td><td class="n">18×</td><td><span class="chip k">Imposible</span></td></tr>
+        <tr><td>$150,000</td><td class="n">7</td><td class="n">91</td><td class="n">76</td><td class="n">4.0×</td><td><span class="chip k">Inviable</span></td></tr>
+        <tr><td>$350,000 — Pilar 01 + sprints</td><td class="n">3</td><td class="n">39</td><td class="n">33</td><td class="n">1.7×</td><td><span class="chip r">Estirado</span></td></tr>
+        <tr><td><strong>$850,000 — BUILD + EVOLVE</strong></td><td class="n">2</td><td class="n">26</td><td class="n">22</td><td class="n">1.1×</td><td><span class="chip s">Al alcance</span></td></tr>
+        <tr><td>$3,910,471 — ticket real cerrado en Q1</td><td class="n">1</td><td class="n">13</td><td class="n">11</td><td class="n">0.6×</td><td><span class="chip s">Holgado</span></td></tr>
+      </tbody>
+      <caption>Meta: volver a $92,000/mes de rentabilidad y $55,000 de MRR para marzo 2027. Supuestos de conversión: 20.1% lead→propuesta (promedio 2026) y 7.69% propuesta→venta (la mejor tasa observada, Q1 2026).</caption>
+    </table>
+  </div>
+
+  <div class="call">
+    <span class="lbl">La conclusión</span>
+    <p>El reposicionamiento hacia agentes, MCP y arquitectura crítica <strong>no es una apuesta de marca: es la única configuración en la que los números cierran</strong>. Cada mes que se sigue comunicando «agencia de diseño UX/UI» se está comprando la columna imposible.</p>
+  </div>
+
+  <h3>La trayectoria financiera, mes a mes</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Mes 2026</th><th class="n">MRR</th><th class="n">Churn</th><th class="n">Ingresos</th><th class="n">Costos op.</th><th class="n">Rentabilidad</th><th class="n">Margen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Enero</td><td class="n">38,000</td><td class="n">3.1%</td><td class="n">110,000</td><td class="n">65,000</td><td class="n">45,000</td><td class="n">40.9%</td></tr>
+        <tr><td>Abril</td><td class="n">45,000</td><td class="n">2.8%</td><td class="n">140,000</td><td class="n">70,000</td><td class="n">70,000</td><td class="n">50.0%</td></tr>
+        <tr><td><strong>Julio · pico</strong></td><td class="n">55,000</td><td class="n">2.5%</td><td class="n">170,000</td><td class="n">78,000</td><td class="n">92,000</td><td class="n">54.1%</td></tr>
+        <tr><td>Agosto</td><td class="n">46,000</td><td class="n">4.1%</td><td class="n">120,000</td><td class="n">78,000</td><td class="n">42,000</td><td class="n">35.0%</td></tr>
+        <tr class="tot"><td><strong>Septiembre</strong></td><td class="n">42,500</td><td class="n">4.2%</td><td class="n">85,000</td><td class="n">75,000</td><td class="n">10,000</td><td class="n">11.8%</td></tr>
+      </tbody>
+      <caption>Cifras en MXN. Entre julio y septiembre los ingresos cayeron 50% y los costos operativos solo 3.8%: la base de costos es rígida, así que el 100% de la caída de ingresos pasó directo a la línea de utilidad.</caption>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p><strong>El indicador adelantado que nadie tenía en un tablero:</strong> <code>Nuevos clientes</code> giró en julio (25 → 22), un mes antes que el MRR. Y el ingreso por cliente nuevo tocó piso en junio, dos meses antes del colapso. Ambas señales eran visibles y ninguna estaba siendo observada.</p>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="ciegos">
+  <div class="sechead"><span class="secnum">03</span><h2>Cinco cosas que el diagnóstico interno no vio</h2></div>
+
+  <div class="prose">
+    <p>El material de estrategia que ya existe es sólido y la tesis central es correcta. Estos cinco hallazgos son los que no aparecen en ningún documento y los que cambian el orden de las prioridades.</p>
+  </div>
+
+  <h3>1. El churn destruyó más valor que la caída de ventas</h3>
+  <div class="prose">
+    <p>Valorando el libro de MRR como perpetuidad (MRR ÷ churn), entre julio y septiembre se destruyeron <strong>$1,188,095 MXN</strong>. De esa destrucción, <strong>$688,095 (58%) la causó el alza del churn</strong> y $500,000 (42%) la caída del MRR. La vida media del cliente se acortó 16 meses.</p>
+    <p>Bajar el churn de 4.2% a 2.5% reduce la venta nueva requerida en <strong>$4,860 MXN/mes</strong> — contratos que no hay que salir a buscar. Es el peso que más rinde de toda la operación, y no hay un solo documento, ritual ni responsable dedicado a él.</p>
+  </div>
+
+  <h3>2. El 54% del presupuesto de Google se va en comprar tráfico que ya se gana gratis</h3>
+  <div class="prose">
+    <p>La campaña <strong>Brand consumió $103,957.04</strong> — el 54.2% del gasto de Google y el 98.07% de su propio presupuesto — sobre términos donde BluePixel ya rankea <strong>en posición 1 y 2 orgánicamente</strong>: <code>bluepixel ia</code> #1, <code>bluepixel modernización</code> #1, <code>bluepixel agencia digital</code> #2, <code>bluepixel inteligencia artificial</code> #2.</p>
+    <p>Por definición, quien teclea «bluepixel» ya conoce la marca: el 100% de ese gasto es defensivo, cero es adquisición nueva. Y compra un pozo de apenas <span class="inf">≈275 búsquedas/mes</span>.</p>
+    <p>El argumento que dará Rocketing —«Brand convierte a $499.50, lo más barato de la cuenta»— es cierto y es irrelevante: esa conversión no es incremental, y son 2.3 conversiones al mes de gente que ya te conocía.</p>
+  </div>
+
+  <h3>3. 31 de las 35 campañas no pueden costear un solo clic al día</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Cálculo</th><th class="n">Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>Impresiones por día, cuenta completa</td><td class="n">219.1</td></tr>
+        <tr><td>Impresiones por día, por campaña</td><td class="n">6.26</td></tr>
+        <tr><td>Presupuesto diario por campaña</td><td class="n">$29.94</td></tr>
+        <tr class="tot"><td>CPC promedio de la cuenta</td><td class="n">$42.97</td></tr>
+      </tbody>
+      <caption>El presupuesto diario por campaña es menor que el precio de un clic. Por eso 30 campañas produjeron 124 impresiones en 13 días — 0.32 impresiones por campaña por día. Ninguna ha salido nunca de la fase de aprendizaje del algoritmo, ni lo hará con esta estructura.</caption>
+    </table>
+  </div>
+
+  <h3>4. El CPC no es caro: es demasiado barato</h3>
+  <div class="prose">
+    <p>Un CPC de $42.97 MXN equivale a <span class="inf">$2.35 USD</span> cuando el benchmark B2B tech es de $8.50–14.00 USD. Eso no significa que se compre bien. Significa que <strong>se están ganando subastas que los compradores serios no están peleando</strong> — o sea, clics de intención informativa y de PyME. La única campaña dentro del benchmark real es App Dev ($196.10 MXN = $10.71 USD) y es la que convirtió.</p>
+    <p>Corolario incómodo: la caída de 59 a 17 leads/mes <strong>no es un fallo de la pauta, es el efecto correcto de subir la barra</strong>. El error fue bajar el volumen sin cambiar simultáneamente el destino ni la oferta.</p>
+  </div>
+
+  <h3>5. El sitio está configurado para un mercado que no compra</h3>
+  <div class="prose">
+    <p>Las 20 páginas del dominio raíz de <code>bluepixel.mx</code> sirven title, H1 y meta description <strong>en inglés</strong>. Los 21 leads orgánicos de septiembre fueron en español; en inglés fueron 0 (−100%). Las páginas de IA existen —<code>/custom-ai-agents</code>, <code>/ai-strategy-workflow-automation-services</code>, <code>/smart-ux-flows-ai-copilots</code>— pero están en inglés, y por eso no pueden rankear para <code>ia integrada software empresarial</code> (posición 61).</p>
+    <p>Esto reencuadra el problema entero: no es «no tenemos contenido de IA», es <strong>«no tenemos las páginas de IA en español»</strong>. Es diez veces más barato de resolver.</p>
+    <p>Además, 10 de 20 H1 tienen palabras pegadas sin espacio por un <code>&lt;br&gt;</code> de Webflow — <code>"ScaleAI-Powered"</code>, <code>"Headless SoftwareDevelopment"</code> — justo en las páginas de IA cuya entidad necesitamos que Google extraiga bien. Costo de arreglo: <strong>dos horas</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="apuesta">
+  <div class="sechead"><span class="secnum">04</span><h2>La apuesta</h2></div>
+
+  <div class="prose">
+    <p class="lede">BluePixel deja de vender proyectos y empieza a vender diagnósticos pagados, sobre el único territorio del mercado mexicano que está vacío: agentes de IA corriendo en producción con gobierno, sobre sistemas críticos, en español.</p>
+
+    <h3>Por qué ese territorio</h3>
+    <p>El mercado mexicano de TI crece 4.1% al año, pero el sub-mercado de software y servicios de IA crece <strong>52%</strong>. Los agentes de IA son la prioridad número uno de inversión 2026 en empresas mexicanas, empatados con ciberseguridad. Y al mismo tiempo:</p>
+    <ul>
+      <li><strong>Solo el 31% de las empresas corre agentes en producción</strong>, y el 88% de los pilotos nunca se despliega.</li>
+      <li><strong>Solo el 21% tiene un modelo maduro de gobierno de agentes.</strong> Ahí está la grieta comercial.</li>
+      <li>MCP se volvió estándar universal en marzo de 2026 (OpenAI, Google y Microsoft se alinearon) y promete −70% en costo de integración. <strong>En México, un solo proveedor lo reclama públicamente</strong> — Varela Insights, en Monterrey, vendiendo desde $14,965 MXN a PyMEs.</li>
+    </ul>
+
+    <div class="call good">
+      <span class="lbl">La vacante</span>
+      <p>«MCP y gobierno de agentes», en español, para empresa, en México, está prácticamente vacío. BluePixel ya tiene la capacidad técnica —el servidor MCP de Leo corre en producción— y ya usa un vocabulario que nadie más usa («agentizamos»). La ventana estimada antes de que Rocket Code o Wizeline la cubran es de <span class="inf">6–9 meses</span>.</p>
+    </div>
+
+    <h3>El ángulo de venta: vender el fracaso, no la promesa</h3>
+    <p>El comprador con presupuesto no es el que quiere IA. Es <strong>el que ya gastó en un piloto y no llegó a producción</strong>: tiene dolor documentado, presupuesto quemado y urgencia. El mensaje no es «hacemos agentes». Es:</p>
+    <div class="call">
+      <p><em>«Tu director te pidió algo con IA. Ya hiciste el piloto. No llegó a producción. Nosotros te decimos en tres semanas qué proceso sí aguanta, cuál te va a explotar, y cuánto cuesta cada uno — antes de que firmes un peso de desarrollo.»</em></p>
+    </div>
+
+    <h3>Contra quién se compite de verdad</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Competidor</th><th>Cuándo aparece</th><th>Postura</th></tr></thead>
+        <tbody>
+          <tr><td><strong>El equipo interno + ChatGPT + n8n</strong></td><td>En todas las oportunidades. Va ganando 21–0.</td><td><span class="chip n">Es el competidor #1</span> «Su equipo puede hacer el piloto. Lo que no puede es firmar quién responde cuando se caiga a las 3 AM del cierre de mes.»</td></tr>
+          <tr><td><strong>Rocket Code</strong></td><td>Colisión frontal: ya vende «roadmap accionable en 2–4 semanas» y LLMO.</td><td><span class="chip r">Evitar el vertical financiero</span> Posee CNBV/CNSF/CONDUSEF con 10 años y 200 plataformas.</td></tr>
+          <tr><td><strong>Globant / Wizeline</strong></td><td>Cuentas grandes. Venden «AI Pods» con precio por resultado, no por horas.</td><td><span class="chip r">Amenaza de modelo</span> Obliga a meter un componente de precio ligado a outcome en el Pilar 02.</td></tr>
+          <tr><td><strong>Enjambre PyME</strong> (19+ agencias)</td><td>Publican precios de $11K–$80K MXN/mes.</td><td><span class="chip k">No competir en genérico</span> Pujar por «agentes de ia» ancla el precio al piso.</td></tr>
+          <tr><td><strong>Integradores de ERP</strong></td><td>Cluster de automatización, siempre.</td><td><span class="chip s">Aliarse</span> «No venimos a tocar su SAP. Instalamos la capa encima y su partner sigue siendo su partner.»</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Lo que hay que dejar de decir, hoy</h3>
+    <p>Cada una de estas afirmaciones es indefendible en la primera due diligence de un CTO, y su presencia en el material comercial cuesta más de lo que aporta:</p>
+    <ul>
+      <li><strong>«SLA 99.9%»</strong> — y «99.98%» en otro documento. Dos cifras contractuales distintas, ningún contrato ni monitoreo que las respalde.</li>
+      <li><strong>«Código de grado militar»</strong> — no significa nada para un COO mexicano y suena a agencia.</li>
+      <li><strong>«Matemáticamente imposible que alucinen»</strong> — falso como afirmación técnica y riesgoso en un contrato.</li>
+      <li><strong>«70% de conversión del Diagnóstico al BUILD»</strong> — nunca se ha vendido un Diagnóstico 01. Es el número más peligroso del corpus porque es el que justifica todo el pivote.</li>
+      <li><strong>«IMPATH™»</strong> — marca registrada sin metodología documentada en ningún archivo.</li>
+      <li><strong>Dos juegos de cifras para los mismos clientes</strong> — RadioShack aparece como «+32% conversión» en un documento y «−60% fricción» en otro; Bimbo como «3 plataformas en 6 meses» y «+40% productividad». Hay que elegir uno y borrar el otro.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="olas">
+  <div class="sechead"><span class="secnum">05</span><h2>La secuencia: tres olas</h2></div>
+
+  <div class="prose">
+    <p>Octubre es negativo en los tres escenarios financieros. El ciclo de venta de 45–60 días lo impide. <strong>Octubre hay que financiarlo, no salvarlo.</strong> La secuencia está diseñada alrededor de esa restricción.</p>
+  </div>
+
+  <div class="waves">
+    <div class="wave w1">
+      <p class="when">Ola 1 · 15 sep – 30 oct</p>
+      <h3>Detener la sangría</h3>
+      <p class="goal">Recuperar el dinero que se está quemando y crear caja de ciclo corto con activos que ya existen.</p>
+      <ul>
+        <li>Reconciliar los $220,829 y congelar la orden de octubre</li>
+        <li>Recortar Brand −91% y matar 3 campañas</li>
+        <li>Arreglar Clutch y Sortlist</li>
+        <li>Sprint on-page de SEO (costo cero)</li>
+        <li>Rescate de las 21 propuestas muertas</li>
+        <li>Cerrar FR Medical</li>
+        <li>Programa de retención sobre el libro actual</li>
+      </ul>
+      <p class="gate"><b>Puerta al 30 de octubre</b>4 propuestas emitidas, churn ≤3.5%, gasto de medios reconciliado y bajo $60K/mes. Si no: no se avanza a Ola 2, se revisa la tesis.</p>
+    </div>
+
+    <div class="wave w2">
+      <p class="when">Ola 2 · 2 nov – 31 dic</p>
+      <h3>Reconstruir el motor</h3>
+      <p class="goal">Poner en pie la maquinaria que hoy no existe: captura, medición, contenido y canal B2B.</p>
+      <ul>
+        <li>Lanzar el sitio nuevo con plomería funcionando</li>
+        <li>3 páginas pilar de cluster en español</li>
+        <li>Reestructura de Google a 3 campañas + 1</li>
+        <li>LinkedIn orgánico con 5 perfiles</li>
+        <li>Atribución de punta a punta y conversión offline</li>
+        <li>Casos de estudio con cifras</li>
+      </ul>
+      <p class="gate"><b>Puerta al 31 de diciembre</b>MRR ≥$49,500, 8 reuniones agendadas desde LinkedIn, 2 deals firmados, atribución venta→campaña funcionando.</p>
+    </div>
+
+    <div class="wave w3">
+      <p class="when">Ola 3 · 4 ene – 31 mar 2027</p>
+      <h3>Escalar</h3>
+      <p class="goal">Convertir la máquina en pipeline repetible sobre cuentas nombradas y territorio propio.</p>
+      <ul>
+        <li>ABM sobre 200 cuentas objetivo</li>
+        <li>Oferta vertical de salud y logística</li>
+        <li>Reporte propietario de mercado</li>
+        <li>GEO/AEO medido con batería de prompts</li>
+        <li>Pilar 02 con precio ligado a resultado</li>
+      </ul>
+      <p class="gate"><b>Puerta al 31 de marzo</b>MRR $55,000, rentabilidad $92,000/mes, $4.94M de pipeline bruto construido, ≥40% de leads orgánicos en clusters 2 y 3.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="ola1">
+  <div class="sechead"><span class="secnum">06</span><h2>Ola 1 · Detener la sangría</h2></div>
+  <div class="prose">
+    <p class="lede">Del martes 15 de septiembre al viernes 30 de octubre. Ninguna acción de esta ola depende de que el sitio nuevo esté listo, ni de contratar a nadie, ni de presupuesto adicional.</p>
+  </div>
+
+  <div class="weeks">
+    <div class="wk">
+      <div class="when">15–18 SEP<span>Semana 1</span></div>
+      <div>
+        <h4>Parar la hemorragia de medios y reactivar el pipeline muerto</h4>
+        <p><strong>Exigir la conciliación factura por factura</strong> del gasto de septiembre, por escrito y con fecha límite el viernes 18: export nativo de Google Ads con Impression Share, IS perdido por presupuesto y por ranking, Quality Score e informe de términos de búsqueda; export de LinkedIn Campaign Manager con el reporte «Companies»; export de Meta; y las tres facturas.</p>
+        <p><strong>Apagar el jueves 17:</strong> campaña Competidores (CTR 2.80%, 0 conversiones, $2,017 quemados), WebDev BP (CPC $111.33, 0 conversiones) y las 3 publicaciones impulsadas de Instagram ($208.74 por 3 vistas de landing).</p>
+        <p><strong>Lanzar el rescate de las 21 propuestas</strong> emitidas entre abril y agosto que nunca cerraron. Es la única lista de prospectos con presupuesto validado que existe, y no depende de nadie externo. Oferta: Radiografía Operativa, $95,000 MXN, 10 días hábiles, acreditable al 100%.</p>
+        <p><strong>Agregar al CRM los 4 campos sin los cuales no hay forecast:</strong> Monto MXN, Etapa, Fecha de cierre estimada y Dueño. Los 7 registros actuales no los tienen.</p>
+        <p class="who"><b>Fabián</b> conciliación y CRM · <b>Diana Cardoso</b> apagado · <b>Pablo y José</b> rescate</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">15–26 SEP<span>En paralelo</span></div>
+      <div>
+        <h4>Sprint on-page de SEO — la acción de mayor retorno disponible hoy</h4>
+        <p>No requiere aprobación de nadie, no cuesta un peso de medios, y su impacto proyectado supera al de las tres «acciones en curso» del reporte sumadas.</p>
+        <p><strong>16 sep:</strong> arreglar los 10 H1 concatenados, añadir H1 a <code>/contact</code>, corregir el typo «dirven» que está en producción. <strong>17–18 sep:</strong> reescribir 20 titles a ≤58 caracteres con keyword al inicio. <strong>19–22 sep:</strong> reescribir 20 meta descriptions con verbo, número y CTA. <strong>23 sep:</strong> auditar hreflang es-MX / en-US. <strong>24 sep:</strong> publicar title, meta y H1 en español para todas las URLs <code>/es/</code>. <strong>25–26 sep:</strong> schema FAQPage en las 8 páginas con más impresiones. <strong>30 sep:</strong> snapshot de baseline en Search Console.</p>
+        <p>Proyección conservadora: <strong>+72% de tráfico orgánico</strong> sin mover una sola posición. Escenario base: +182%.</p>
+        <p class="who"><b>Fabián</b> técnico · <b>Leo</b> redacción de titles y metas</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">17 SEP<span>Jueves 11:00</span></div>
+      <div>
+        <h4>Cerrar FR Medical — la primera propuesta de Q3</h4>
+        <p>Hay tres cifras distintas circulando internamente ($300–600K, $450–650K y $550K). <strong>Ir a la mesa con tres rangos publicados es una invitación al descuento.</strong> Fijar hoy: <strong>$550,000 de Build + $85,000/mes de Evolve</strong>. Valor de contrato a 12 meses ≈ <span class="inf">$1,360,000 MXN</span>.</p>
+        <p>Salir de esa sesión con seis números de baseline del cliente —llamadas perdidas entre medianoche y 7 AM, horas para emitir una cotización, porcentaje de pedidos con segunda vuelta, costo mensual de viáticos, días de cierre de comisiones, ticket promedio de venta nocturna perdida— <strong>y con la cláusula de uso de marca y caso público en el contrato</strong>. Sin baseline no hay ROI defendible ante un comité, y sin cláusula no hay caso insignia.</p>
+        <p class="who"><b>Leo y María</b> presentación · <b>Fabián</b> baseline y cláusula</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">21–25 SEP<span>Semana 2</span></div>
+      <div>
+        <h4>Reparar la entidad pública — máximo impacto, mínimo costo</h4>
+        <p>El 86% de las citas de los LLMs viene de fuentes gestionadas por la marca, y el perfil de Clutch es el activo más consultado sobre BluePixel. Hoy proyecta $50–99 USD/hora y clientes SMB mientras el sitio muestra Bimbo y BBVA. <strong>Esa contradicción es la explicación más probable del win rate de 4.3%.</strong></p>
+        <p>Subir «AI Agents» del 15% al primer lugar del mix de servicios en Clutch y Sortlist. Elevar el mínimo de proyecto. Retirar o contextualizar la tarifa horaria pública — es lo que te marca como vendedor de horas frente a Globant, que vende por resultado. Solicitar <strong>8 reseñas verificadas de clientes enterprise</strong> con fecha de entrega al 31 de diciembre.</p>
+        <p>Enviar el sitemap a <strong>Bing Webmaster Tools</strong>: desbloquea la elegibilidad de cita en ChatGPT, que concentra el 62.6% del referral B2B de IA. Costo: cero. Publicar <code>llms.txt</code>, hoy inexistente (404).</p>
+        <p class="who"><b>Fabián</b> perfiles y GEO · <b>Pablo y José</b> solicitud de reseñas</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">21–30 SEP<span>Semana 2–3</span></div>
+      <div>
+        <h4>Arrancar el programa de retención que no existe</h4>
+        <p>Es la primera vez que la cartera instalada aparece como prioridad en un plan de BluePixel, y es el pipeline sin costo de adquisición. <strong>Nombrar un responsable de Cuentas antes del 25 de septiembre</strong> — hoy el organigrama dice «Área de Cuentas» sin ninguna persona.</p>
+        <p>Instituir el <strong>QBR trimestral</strong> con los clientes del libro de $42,500 de MRR. Correr un win/loss retroactivo sobre las 15 propuestas perdidas de Q2: nadie ha documentado por qué se cayeron. Y abrir la conversación de ampliación con los clientes actuales, que recibieron en 2026 el mismo mandato de «hagan algo con IA» que todos: presupuesto de $93,000 a $250,000 sin comité, por vía de ampliación de contrato.</p>
+        <p class="who"><b>María</b> nombramiento · <b>Pablo</b> QBR y ampliaciones · <b>Fabián</b> win/loss</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">24–30 SEP<span>Semana 3</span></div>
+      <div>
+        <h4>Decisión binaria sobre LinkedIn y reestructura de Google</h4>
+        <p>Se gastaron <strong>$24,999.71 en un objetivo «Awareness»</strong> que por construcción no puede generar leads, en el inventario más caro del digital, sin una sola métrica reportada y sin <code>li_fat_id</code> en ningún formulario. Mientras tanto el orgánico del canal donde vive el ICP está en coma: +81 seguidores en abril, +33 en mayo, <strong>+4 en junio</strong>.</p>
+        <p>Si Rocketing entrega el reporte completo antes del miércoles 24: se migra a Document Ads y Thought Leadership Ads de Leo, con capa ABM sobre las cuentas del pipeline. <strong>Si no entrega: apagado total el 25 de septiembre.</strong></p>
+        <p><strong>Colapsar 35 campañas en 4:</strong> una por cluster (Apps, Automatización, Agentización) más Brand reducida a $3,000/mes en concordancia exacta pura. Los $7,350 liberados de WebDev, App Dev y Competidores, al CPC de $22.80 de la campaña que sí funciona, compran <strong>322 clics contra los 61 actuales</strong>.</p>
+        <p class="who"><b>Fabián</b> decide · <b>Diana Cardoso</b> ejecuta · <b>Fabián</b> verifica el 1 de octubre</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">30 SEP<span>Miércoles</span></div>
+      <div>
+        <h4>Instalar la definición de MQL y la conversión offline</h4>
+        <p>Hoy el algoritmo de Google optimiza hacia <strong>6 formularios brutos</strong> cuando el ticket real es de $3.9 millones. Se le está pagando a Google para que traiga más leads de $20,000 — exactamente el problema que se quiere resolver.</p>
+        <p>Entregables verificables: captura de <code>gclid</code>, <code>fbclid</code> y <code>li_fat_id</code> en el formulario; Offline Conversion Import activo con dos acciones de valor («Diagnóstico 01 pagado» y «Contrato BUILD/EVOLVE» con valor real); WhatConverts reconectado o sustituido; UTMs en el 100% de los destinos; y <strong>definición escrita y firmada de MQL y SQL</strong>. El reporte mensual de Rocketing sustituye «leads brutos» por MQLs corporativos, costo por SQL y pipeline value en pesos.</p>
+        <p class="who"><b>Fabián</b> RevOps · <b>Leo</b> servidor MCP</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">5–30 OCT<span>Semanas 4–7</span></div>
+      <div>
+        <h4>Publicar los 3 pilares en español y traducir lo que ya existe</h4>
+        <p>Las páginas de IA ya están construidas, publicadas e indexadas — solo están en inglés. <strong>Traducirlas cuesta una fracción de escribirlas.</strong> Publicar <code>/es/agentes-ia-personalizados</code>, <code>/es/automatizacion-de-flujos-con-ia</code> y <code>/es/arquitectura-de-datos</code> con hreflang recíproco y enlace desde el home.</p>
+        <p>Además, tres páginas pilar nuevas de 2,500 palabras: <strong>6 oct</strong> automatización de procesos con IA; <strong>13 oct</strong> agentes en producción y qué es MCP; <strong>20 oct</strong> desarrollo de apps enterprise. Y el <strong>27 oct</strong>, «¿Cuánto cuesta automatizar un proceso con IA en México?» — el formato «cuánto cuesta» es el que ya funciona: su gemelo de apps móviles genera 135 impresiones en LLMs.</p>
+        <p><strong>Inyectar bloques puente</strong> en las 8 guías de UX que concentran las 2,706 impresiones en LLMs. No se borra ni se redirige nada: el pivote se hace por adición. Ese contenido sostiene 2 de las 10 posiciones en top-10.</p>
+        <p class="who"><b>Leo</b> pilares y narrativa · <b>Fabián</b> técnico, traducción y puentes</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">Lo que NO se hace en esta ola</span>
+    <p><strong>No se ejecutan las redirecciones 301</strong> hacia <code>/agentizacion</code>, <code>/automatizacion</code> y <code>/apps-b2b</code>: esas páginas no están desplegadas, y redirigir hacia destinos inexistentes destruiría el único canal que crece (+53.6% de clics orgánicos, +425% de leads en español). <strong>No se activan los Document Ads de LinkedIn</strong> hasta que exista la Blueprint Library en PDF, que hoy no existe como entregable. <strong>No se lanza el sitio nuevo</strong> hasta cerrar sus ocho bloqueadores.</p>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="ola2">
+  <div class="sechead"><span class="secnum">07</span><h2>Ola 2 · Reconstruir el motor</h2></div>
+  <div class="prose">
+    <p class="lede">Del lunes 2 de noviembre al jueves 31 de diciembre. Esta ola construye lo que hoy simplemente no existe: captura de lead, medición, canal B2B y prueba con cifras.</p>
+  </div>
+
+  <div class="weeks">
+    <div class="wk">
+      <div class="when">2–13 NOV<span>Semanas 8–9</span></div>
+      <div>
+        <h4>Lanzar el sitio nuevo — con criterio de go / no-go</h4>
+        <p>El sitio está al <strong>35% de preparación</strong>, pero lo que falta es plomería, no rediseño: <span class="inf">3 a 5 días de un desarrollador</span>. El criterio de lanzamiento es binario y no se negocia: <strong>los ocho bloqueadores cerrados y un envío de prueba confirmado de punta a punta antes de encender un solo anuncio.</strong> El detalle está en la sección 12.</p>
+        <p>Migración desde Webflow con mapa de redirecciones 301 que preserve <code>/es/blog/</code> y <code>/post/</code>, donde viven las citas de LLMs. Corregir <code>base: '/bluepixel/'</code> en la configuración de Vite — publicado en la raíz del dominio, el sitio sale en blanco.</p>
+        <p class="who"><b>Desarrollo</b> bloqueadores · <b>Fabián</b> QA, instrumentación y 301 · <b>Leo</b> go/no-go</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">2 NOV – 12 DIC<span>Semanas 8–13</span></div>
+      <div>
+        <h4>LinkedIn orgánico: cinco perfiles personales, no la página</h4>
+        <p>BluePixel tiene 16,448 seguidores en el canal donde no está su comprador, y una página en coma en el canal donde está el 100% de su pipeline de valor alto. El CTO de RetailX, el VP de Innovación de Banco Nacional y el CEO de Industrias HR están en LinkedIn todos los días y en Instagram nunca.</p>
+        <p>Cadencia semanal fija: <strong>María</strong> 1 publicación de POV de industria; <strong>Leo</strong> 2 de cluster y producto; <strong>Fabián</strong> 2 técnicas con datos y demos; <strong>Pablo y José</strong> 1 cada uno sobre las objeciones reales que escuchan —contenido comercial que hoy no existe y es el que más convierte— más 3 comentarios de valor al día en publicaciones de prospectos.</p>
+        <p>Hitos: semana del 13 de octubre, el post largo de MCP que define la categoría. Semana del 27 de octubre, video nativo de 60 segundos del Triage RAG funcionando. <strong>Semana del 8 de diciembre, María abre 10 espacios de Diagnóstico para enero</strong> — ese post convierte tres meses de trabajo en pipeline.</p>
+        <p class="who"><b>Los 5 perfiles</b> · <b>Fabián</b> higiene de perfiles y medición</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">NOV<span>Semanas 8–11</span></div>
+      <div>
+        <h4>Convertir los activos que ya existen en generación de demanda</h4>
+        <p>Hay cuatro demos construidas y ninguna está trabajando. Asignación de rol:</p>
+        <p><strong>Triage RAG → lead magnet público.</strong> Es la única con input de texto libre funcional, y su narrativa («intenta hacer alucinar al bot») es un argumento de venta genuino. Necesita 2 horas: ampliar sinónimos —hoy «¿cuánto cuesta?» no hace match— y quitar el ancla de precio de $10,000 USD que no corresponde a ningún pilar.</p>
+        <p><strong>Cotizador FR Medical → pieza de cierre.</strong> Es el único activo de grado enterprise del inventario. <strong>No se publica:</strong> hoy filtra margen bruto de 42%, comisión de vendedor de 8.5%, precios por convenio hospital por hospital, SKUs y hospitales nombrados. Requiere build anonimizado y autorización escrita de FR Medical.</p>
+        <p><strong>ERP Bridge → archivar o reconstruir.</strong> El hub promete traducción de lenguaje natural a SQL vía MCP; la demo tiene el campo de chat <em>deshabilitado</em> y muestra el P&amp;L real de BluePixel: MRR $42,500, churn 4.2%, ingresos cayendo 48% trimestre contra trimestre. <strong>Abrirla frente a un prospecto le enseña que la empresa está cayendo.</strong></p>
+        <p><strong>«Legal Onboarding KYC» → renombrar.</strong> El archivo es en realidad un onboarding de RR.HH. Vendida como KYC quema la credibilidad en el minuto uno.</p>
+        <p class="who"><b>Fabián</b> demos · <b>Leo</b> autorización FR Medical</p>
+      </div>
+    </div>
+
+    <div class="wk">
+      <div class="when">1–31 DIC<span>Semanas 12–15</span></div>
+      <div>
+        <h4>Prueba con números y cierre de año</h4>
+        <p>Producir los casos de estudio de Bimbo, IQOS, LifeMiles y RadioShack <strong>con un solo juego de cifras verificadas</strong>, no con los dos que circulan hoy. Un caso enterprise con cifras vale diez veces más que una pieza de portafolio, y es uno de los activos más escasos que tiene la empresa.</p>
+        <p>Publicar los listicles comparativos que los LLMs citan cuando alguien pregunta «¿a quién contrato?»: el patrón de <code>mejores-agencias-diseno-ux-ui-mexico</code> ya funciona —se autorankea #1, tiene 11 FAQs y 93 impresiones en IA— y se clona a automatización y a desarrollo de apps enterprise.</p>
+        <p class="who"><b>Leo</b> listicles · <b>Fabián</b> casos · <b>María</b> autorización de marca</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="ola3">
+  <div class="sechead"><span class="secnum">08</span><h2>Ola 3 · Escalar</h2></div>
+  <div class="prose">
+    <p class="lede">Del lunes 4 de enero al miércoles 31 de marzo de 2027. Solo se entra a esta ola si las puertas de las olas anteriores se cumplieron.</p>
+
+    <h3>ABM sobre cuentas nombradas</h3>
+    <p>Con tickets de $850,000 y ciclos de 6 a 9 meses, el inbound de bajo volumen nunca va a alimentar el negocio por sí solo. Definir 200 cuentas objetivo con criterio firmográfico duro: empresa mexicana de 200 a 2,000 empleados, con ERP instalado —SAP, Oracle, Odoo o Dynamics—, en distribución especializada, manufactura, construcción, retail multi-sucursal, logística o servicios financieros regulados.</p>
+    <p><strong>El requisito de calificación más predictivo es la existencia de un ERP, y hoy no está en ningún formulario.</strong> El comprador económico es el Director de Operaciones o el de Administración y Finanzas — no el CTO, que es validador técnico y bloqueador, no firmante.</p>
+    <p>Los cinco triggers que hay que buscar literalmente: cierre contable que tarda 10–12 días; cotización o licitación armada a mano en Excel; ERP que no conversa con el resto del stack tras una fusión; auditoría o requerimiento de LFPDPPP encima; y director nuevo con mandato de «eficiencia» o «IA» y presupuesto de 90 días.</p>
+
+    <h3>Oferta vertical replicable</h3>
+    <p>El Surgical OS de FR Medical es la primera instancia de un motor genérico: triage de urgencia, validación algorítmica de órdenes, puente al ERP por MCP, despacho con GPS y OCR. El ICP replicable inmediato son los <strong>distribuidores mexicanos de dispositivos médicos de alta especialidad con inventario en consignación hospitalaria</strong> — mismo dolor de COFEPRIS, misma ventana nocturna, mismo ERP rígido.</p>
+    <p>Rocket Code posee el vertical financiero y no conviene pelearlo de frente. <strong>Salud y logística están abiertos</strong>, y el mismo motor aplica sin reescribir arquitectura a maquinaria pesada y a WMS — cambia el catálogo y las reglas, no el core. Ambos ya están en el pipeline actual.</p>
+
+    <h3>Reporte propietario</h3>
+    <p>Los LLMs citan desproporcionadamente datos originales. Publicar el <strong>«Estado de la Automatización Empresarial en México 2027»</strong> con encuesta propia a 100 directores: es lo único que nadie más puede replicar y el mecanismo número uno de citación. Meta de publicación: 9 de marzo de 2027.</p>
+
+    <h3>Rediseñar el Pilar 02 antes de que el mercado lo exija</h3>
+    <p>Globant vende AI Pods con precio ligado a output o consumo — $32.8M USD de ARR en Q1 2026 y pipeline de $352M — y Wizeline ya copió el formato. El Pilar 02 de BluePixel son «sprints mensuales», que es tiempo y materiales. <strong>Meter al menos un componente de precio ligado a resultado antes de que el comprador enterprise mexicano se acostumbre a comprar así.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section id="oferta">
+  <div class="sechead"><span class="secnum">09</span><h2>Modelo de oferta y precios</h2></div>
+
+  <div class="prose">
+    <p>Hoy existe un hueco de 10× entre lo que el tráfico quiere pagar ($20–40K) y el ticket mínimo declarado ($300K), y el Pilar 02 se publica como «a cotizar» — que es exactamente por lo que nunca se vende. Un <em>entry package</em> sin precio no es un entry package.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>SKU</th><th class="n">Precio MXN</th><th>Duración</th><th>Alcance</th><th>Quién firma</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>01-A · Radiografía Operativa</strong></td>
+          <td class="n">95,000</td>
+          <td>10 días hábiles</td>
+          <td>Un proceso, un área. Mapeo, costeo en pesos del proceso actual, 3 escenarios de automatización, recomendación go/no-go.</td>
+          <td>Director de área, sin comité</td>
+        </tr>
+        <tr>
+          <td><strong>01-B · Diagnóstico FutureProof</strong></td>
+          <td class="n">185,000</td>
+          <td>4 semanas</td>
+          <td>Hasta 3 procesos, auditoría de arquitectura y datos, blueprint técnico, business case con VPN a 24 meses, plan de implementación.</td>
+          <td>Dirección / comité</td>
+        </tr>
+        <tr>
+          <td><strong>02 · Squad de Ingeniería</strong></td>
+          <td class="n">385,000 /mes</td>
+          <td>Mínimo 3 sprints</td>
+          <td>1 AI Engineer senior + 0.5 Tech Lead + 0.5 UX/Producto + QA. Precio único publicable. Descuento 8% por bloque de 3 adelantado.</td>
+          <td>Dirección de TI u Operaciones</td>
+        </tr>
+        <tr>
+          <td><strong>BUILD Foco</strong></td>
+          <td class="n">1,200,000</td>
+          <td>90 días</td>
+          <td>Un proceso crítico de punta a punta.</td>
+          <td>Comité</td>
+        </tr>
+        <tr>
+          <td><strong>BUILD Plataforma</strong></td>
+          <td class="n">2,400,000</td>
+          <td>90–150 días</td>
+          <td>Multi-proceso o plataforma nueva.</td>
+          <td>Comité / Consejo</td>
+        </tr>
+        <tr>
+          <td><strong>BUILD Transformación</strong></td>
+          <td class="n">desde 3,900,000</td>
+          <td>Programa</td>
+          <td>Ancla en el ticket real ya cerrado en Q1 2026.</td>
+          <td>Consejo</td>
+        </tr>
+        <tr>
+          <td><strong>EVOLVE</strong></td>
+          <td class="n">120,000–180,000 /mes</td>
+          <td>Contrato a 12 meses</td>
+          <td>Obligatorio al cierre de cualquier BUILD. La banda alta incluye SLA de respuesta en 4 horas.</td>
+          <td>Operaciones</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call good">
+    <span class="lbl">La cláusula que hace que funcione</span>
+    <p><strong>El 100% del monto del Pilar 01 se acredita al Pilar 02 o al BUILD si se firma dentro de los 45 días naturales siguientes a la entrega.</strong> Eso convierte el diagnóstico de gasto a anticipo, y es el mecanismo que realmente sube la conversión — no el «70%» que hoy se cita y que nunca se ha medido porque nunca se ha vendido un diagnóstico.</p>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Corrección crítica al filtro de calificación</span>
+    <p>La lista maestra de keywords negativas se diseñó para bloquear todo prospecto con presupuesto menor a $300,000 — <strong>lo que bloquea activamente al comprador natural del producto de entrada de $95,000</strong>. Bajar el umbral a $80,000 y calificar por <em>tamaño de empresa y existencia de ERP</em>, no por presupuesto autodeclarado: un Director de Operaciones de una empresa de 800 empleados casi nunca sabe su presupuesto en la primera visita.</p>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">Contradicción que hay que resolver antes de publicar nada</span>
+    <p>La web nueva vende <code>[ Solicitar Diagnóstico Operativo (Sin Costo) ]</code> con el chip «sin costo ni compromiso», mientras la estrategia comercial vende el Pilar 01 en $95,000–$185,000. <strong>Si el lead llega convencido de que es gratis, el entry package se cae en la llamada.</strong> Hay que elegir: o el diagnóstico es el producto pagado, o la sesión gratuita es otra cosa con otro nombre.</p>
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section id="dinero">
+  <div class="sechead"><span class="secnum">10</span><h2>El dinero</h2></div>
+
+  <h3>Lo que se mata, y cuánto libera</h3>
+  <div class="kill">
+    <div class="kbox">
+      <span class="amt">$103,957</span>
+      <h4>Campaña Brand</h4>
+      <p>Recorte de −91%, a $3,000/mes en exacta pura. Se revierte solo si Auction Insights muestra un competidor con más de 5% de impression share sobre términos de marca.</p>
+    </div>
+    <div class="kbox">
+      <span class="amt">$7,350</span>
+      <h4>WebDev + App Dev + Competidores</h4>
+      <p>54% del gasto de plataforma de Google para 61 clics y 1 conversión. Al CPC de la campaña que sí funciona, ese dinero compra 322 clics.</p>
+    </div>
+    <div class="kbox">
+      <span class="amt">$1,234</span>
+      <h4>Las 30 campañas de cola</h4>
+      <p>124 impresiones totales en 13 días, a $102.86 por clic — 2.39× el promedio de la cuenta.</p>
+    </div>
+    <div class="kbox">
+      <span class="amt">$208</span>
+      <h4>Publicaciones impulsadas de Instagram</h4>
+      <p>376 clics produjeron 3 vistas de landing. El 99.2% compra interacción que nunca toca el sitio.</p>
+    </div>
+  </div>
+
+  <h3>Presupuesto propuesto para Q4 2026</h3>
+  <div class="prose">
+    <p>Sobre de <strong>$180,000 MXN para el trimestre ($60,000/mes)</strong>. La justificación no es arbitraria: es el nivel de Q1 2026 —$189,714, el único trimestre del año que produjo ventas— con un ajuste de −5% por la caída de ingresos. Al CPL medido de Google, $180,000 compran 79 conversiones, muy por encima de las ~50 que exige el modelo. <strong>No hace falta más dinero: hace falta mejor targeting.</strong></p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Partida</th><th class="n">Q4 MXN</th><th class="n">%</th><th>Justificación</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google — 3 campañas de cluster</strong></td>
+          <td class="n">81,000</td><td class="n">45%</td>
+          <td>Consolidar 35 campañas en 3. Escalar el copy de «IA Operacional Enterprise», la única con volumen y CTR sano (14.1%, CPC $22.80).</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn — ABM de lista cerrada</strong></td>
+          <td class="n">36,000</td><td class="n">20%</td>
+          <td><span class="chip r">Condicionado</span> 100% sobre las 200 cuentas objetivo. <strong>Si al día 30 no hay tracking de conversión funcionando, se corta a cero.</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Contenido y SEO deep-tech</strong></td>
+          <td class="n">27,000</td><td class="n">15%</td>
+          <td>El orgánico entrega 13 de 26 leads a costo de medios cero, y hoy está sin financiar. Es el canal con mejor economía de la operación.</td>
+        </tr>
+        <tr>
+          <td>Google — Brand defensiva</td>
+          <td class="n">9,000</td><td class="n">5%</td>
+          <td>Solo exacta pura contra competidores que pujen por «bluepixel».</td>
+        </tr>
+        <tr>
+          <td>Google — Competidores reconstruida</td>
+          <td class="n">9,000</td><td class="n">5%</td>
+          <td>Relanzar con copy de agentes y MCP. El CTR de 2.8% prueba que el mensaje actual no responde a esa intención.</td>
+        </tr>
+        <tr>
+          <td>Meta — solo retargeting</td>
+          <td class="n">9,000</td><td class="n">5%</td>
+          <td>Exclusivamente visitantes de landings y demos. Y como laboratorio de mensaje: a $1.28 por clic contra $42.97 en Google, se valida un ángulo por $200 antes de portarlo.</td>
+        </tr>
+        <tr>
+          <td>Reserva y experimentos</td>
+          <td class="n">9,000</td><td class="n">5%</td>
+          <td>—</td>
+        </tr>
+        <tr class="tot"><td>Total Q4 2026</td><td class="n">180,000</td><td class="n">100%</td><td>$60,000 mensuales</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Versión austera, si la caja no aguanta</span>
+    <p>Con rentabilidad de $10,000 en septiembre, el sobre austero es de <strong>$108,000 al trimestre ($36,000/mes)</strong>: se sacrifican LinkedIn Ads por completo —se sustituye con orgánico de los 5 perfiles, que es gratis y es la mitad del valor del canal— y la reserva de experimentos. Se conservan íntegros Google de cluster y contenido, que son las dos partidas con retorno demostrable. <strong>Lo que no se sacrifica en ningún escenario es la instrumentación:</strong> sin atribución, cualquier presupuesto reproduce el Q2, que fue $102,712 → $0.</p>
+  </div>
+
+  <h3>Lo que hay que crear, y en cuánto tiempo</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Concepto</th><th class="n">Oct</th><th class="n">Nov</th><th class="n">Dic</th><th class="n">Ene</th><th class="n">Feb</th><th class="n">Mar</th></tr></thead>
+      <tbody>
+        <tr><td>Ingresos objetivo</td><td class="n">98,667</td><td class="n">112,333</td><td class="n">126,000</td><td class="n">139,667</td><td class="n">153,333</td><td class="n">167,000</td></tr>
+        <tr><td>Escenario sin intervención</td><td class="n">74,800</td><td class="n">65,824</td><td class="n">57,925</td><td class="n">50,974</td><td class="n">44,857</td><td class="n">39,474</td></tr>
+        <tr class="tot"><td>Brecha a crear</td><td class="n">23,867</td><td class="n">46,509</td><td class="n">68,075</td><td class="n">88,693</td><td class="n">108,476</td><td class="n">127,526</td></tr>
+        <tr><td>MRR objetivo</td><td class="n">45,000</td><td class="n">47,500</td><td class="n">50,000</td><td class="n">52,000</td><td class="n">53,500</td><td class="n">55,000</td></tr>
+      </tbody>
+      <caption>Cifras en MXN. Brecha total de facturación a crear en seis meses: $463,146. Con reconocimiento típico del 50% del TCV dentro de la ventana, eso equivale a firmar <strong>≈$988,000 MXN de valor de contrato</strong> entre octubre y marzo — dos deals de $850,000 o tres de $350,000. <span class="inf">inferencia</span> sobre el porcentaje de reconocimiento.</caption>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p><strong>Cobertura del pipeline actual:</strong> $3,370,000 de TCV bruto sobre $988,000 requeridos son 3.4× — se ve bien. Pero ponderado por probabilidad son $684,100, es decir <strong>0.69×</strong>, y excluyendo Banco Nacional (que cierra en 2027) baja a <strong>0.52×</strong>. El déficit de valor esperado es de $303,900, que a una tasa de cierre del 20% exige generar <strong>$1,519,500 de pipeline nuevo en Q4</strong>.</p>
+  </div>
+
+  <h3>El pipeline actual, priorizado</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Cuenta</th><th>Contacto</th><th class="n">Días sin contacto</th><th class="n">TCV</th><th class="n">P(cierre)</th><th class="n">Valor esperado</th><th>Jugada</th></tr></thead>
+      <tbody>
+        <tr><td><strong>RetailX</strong></td><td>Carlos Ruiz · CTO</td><td class="n">13</td><td class="n">850,000</td><td class="n">30%</td><td class="n">255,000</td><td>Reencuadrar «migración cloud»: migrar una arquitectura que no está lista para agentes es pagar dos veces. Demo ERP Bridge en vivo, no PDF.</td></tr>
+        <tr><td><strong>Banco Nacional</strong></td><td>Pedro Sánchez · VP Innovación</td><td class="n">12</td><td class="n">850,000</td><td class="n">20%</td><td class="n">170,000</td><td>ICP exacto. No ofrecer proyecto: ofrecer un «Agent Readiness Review» de 45 min. <strong>No contar en el forecast de Q4.</strong></td></tr>
+        <tr><td><strong>Industrias HR</strong></td><td>Hugo Ramírez · CEO</td><td class="n">21</td><td class="n">350,000</td><td class="n">35%</td><td class="n">122,500</td><td>Pidió «FutureProof» por su nombre: conoce la oferta y es decisor único. <strong>Propuesta con precio y fecha el mismo día de la llamada.</strong></td></tr>
+        <tr><td><strong>Logística Sur</strong></td><td>Ana Gómez · Directora Ops</td><td class="n">14</td><td class="n">350,000</td><td class="n">25%</td><td class="n">87,500</td><td>Convertir «Software WMS» (build largo y competido) en Radiografía Operativa de flujo logístico.</td></tr>
+        <tr><td>Constructora Alfa</td><td>Juan Pérez · Gerente de Compras</td><td class="n">31</td><td class="n">850,000</td><td class="n">5%</td><td class="n">42,500</td><td><span class="chip r">Calificar o matar</span> Una llamada de 10 minutos. Sin ruta a decisor técnico, se cierra como mal fit.</td></tr>
+        <tr><td>Tienda Online</td><td>Laura Torres · Marketing</td><td class="n">26</td><td class="n">60,000</td><td class="n">8%</td><td class="n">4,800</td><td><span class="chip k">Descalificar</span></td></tr>
+        <tr><td>Startup XYZ</td><td>María López · Fundadora</td><td class="n">67</td><td class="n">60,000</td><td class="n">3%</td><td class="n">1,800</td><td><span class="chip k">Cerrar como perdido</span></td></tr>
+      </tbody>
+      <caption>Valoración de TCV inferida a partir de los tres pilares de contratación. <strong>El argumento del costo de oportunidad:</strong> mantener vivos los tres prospectos de bajo fit consume unas 6 horas semanales de vendedor senior contra un valor esperado combinado de $6,600. Esas mismas 6 horas sobre RetailX operan sobre $255,000 — un rendimiento 38 veces mayor por hora invertida.</caption>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section id="mando">
+  <div class="sechead"><span class="secnum">11</span><h2>Cuadro de mando</h2></div>
+
+  <div class="prose">
+    <p>Los tres indicadores que se reportan hoy —leads, MRR, rentabilidad— son <strong>rezagados</strong>: para cuando se movieron en agosto, el daño ya estaba hecho. Estos tres son adelantados y se leen en 90 segundos.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>KPI</th><th>Definición</th><th class="n">Hoy</th><th class="n">Meta</th><th>Alarma</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Margen de contribución real semanal</strong></td>
+          <td>(Ingresos − Costos operativos − Gasto de medios) ÷ 4.33. Es el único número que muestra el costo total de operar, y hoy nadie lo está viendo.</td>
+          <td class="n">−$5,611</td>
+          <td class="n">+$1,428</td>
+          <td>Negativo 2 semanas seguidas → congelar todo medio no-marca</td>
+        </tr>
+        <tr>
+          <td><strong>Net new MRR semanal</strong></td>
+          <td>MRR nuevo firmado − MRR perdido por churn, en pesos, no en porcentaje.</td>
+          <td class="n">−$808</td>
+          <td class="n">+$946</td>
+          <td>Negativo 3 semanas seguidas → activar retención sobre el libro</td>
+        </tr>
+        <tr>
+          <td><strong>Pipeline ponderado ICP creado</strong></td>
+          <td>Σ (TCV × probabilidad) de oportunidades nuevas, <strong>solo cuentas con ticket ≥$350,000 y contacto a nivel C-level, VP o Director.</strong></td>
+          <td class="n">$0 /sem</td>
+          <td class="n">+$25,325 /sem</td>
+          <td>Cero propuestas nuevas en la semana — <strong>van 11 semanas consecutivas</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call">
+    <span class="lbl">Por qué el filtro del tercer KPI importa tanto</span>
+    <p>El umbral de ≥$350,000 y nivel C es deliberado. Es el mecanismo que impide que el reporte vuelva a verse sano contando leads de $30,000 que, según la aritmética de la sección 2, exigirían 358 leads al mes. <strong>Hace que el desfase de posicionamiento aparezca en el reporte financiero la semana en que ocurre, no seis meses después.</strong></p>
+  </div>
+
+  <h3>Rituales que faltan</h3>
+  <div class="prose">
+    <p>Hoy existe un solo ritual recurrente documentado: la revisión de Looker Studio con Rocketing los lunes a las 4:00 PM — y es una junta de <em>reporte</em>, no de <em>decisión</em>. Falta:</p>
+    <ul>
+      <li><strong>Junta semanal de pipeline y forecast</strong> con Pablo, José y Leo. Su ausencia es por lo que Q3 llegó a cero propuestas sin que nadie tocara la alarma hasta septiembre.</li>
+      <li><strong>Comité de bid/no-bid</strong> antes de invertir horas en una propuesta. Nadie decide qué NO cotizar: 41 propuestas en 2026 produjeron 2 ventas.</li>
+      <li><strong>Junta mensual de negocio con María</strong> sobre ROI de pauta. Con $292,426 de gasto anual y ROI de −100% en Q2, no existe foro donde la CEO apruebe o corte presupuesto.</li>
+      <li><strong>Contrato de desempeño con Rocketing.</strong> No hay KPI acordado, ni SLA de agencia, ni cláusula de desempeño.</li>
+      <li><strong>QBR con clientes de cartera</strong> y <strong>retro de propuesta perdida.</strong> Ambos mencionados en el glosario, inexistentes en la operación.</li>
+    </ul>
+  </div>
+
+  <h3>Los 7 datos que faltan y bloquean el análisis</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Dato</th><th>Qué bloquea</th><th>Responsable</th><th>Fecha</th></tr></thead>
+      <tbody>
+        <tr><td>Conciliación factura por factura de medios, 1–13 sep</td><td>Toda decisión de presupuesto Q4</td><td>Diana Cardoso</td><td class="d">vie 18 sep</td></tr>
+        <tr><td>Saldo de caja y línea de crédito al 30 sep</td><td>Cálculo de runway en meses</td><td>Finanzas / María</td><td class="d">vie 18 sep</td></tr>
+        <tr><td>Campos Monto, Etapa y Fecha de cierre en CRM</td><td>Cualquier forecast de ventas</td><td>Fabián</td><td class="d">vie 18 sep</td></tr>
+        <tr><td>Panel de desempeño de LinkedIn Ads</td><td>CAC del canal y decisión de continuidad</td><td>Diana Cardoso</td><td class="d">vie 18 sep</td></tr>
+        <tr><td>Número de cuentas activas por mes</td><td>ARPA → LTV → ratio LTV/CAC</td><td>Finanzas</td><td class="d">mar 22 sep</td></tr>
+        <tr><td>Definición de «Nuevos clientes»</td><td>El CSV reporta 130 en 9 meses; marketing reporta 2 ventas en 8. <strong>Los dos libros son irreconciliables.</strong></td><td>Fabián y Leo</td><td class="d">mar 22 sep</td></tr>
+        <tr><td>Costo de producción de contenido y SEO</td><td>CAC del canal que entrega el 50% de los leads</td><td>Leo</td><td class="d">mar 22 sep</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section id="web">
+  <div class="sechead"><span class="secnum">12</span><h2>Revisión del sitio nuevo</h2></div>
+
+  <div class="prose">
+    <p class="lede">Revisión de la nueva comunicación publicada en <code>jahflavio.github.io/bluepixel</code> para la revisión con Leo. Veredicto: es un excelente sitio de presentación y una máquina de conversión inexistente. Lo difícil ya está hecho; lo que falta es plomería.</p>
+  </div>
+
+  <div class="figs">
+    <div class="fig a"><span class="n">85%</span><span class="k">Diseño y sistema visual</span><span class="d">Consistente, nivel enterprise real.</span></div>
+    <div class="fig a"><span class="n">80%</span><span class="k">Mensaje y contenido</span><span class="d"><code>clustersData.js</code> es un activo estratégico terminado.</span></div>
+    <div class="fig c"><span class="n">0%</span><span class="k">Captura de lead</span><span class="d"><code>console.log</code> en el sitio, <code>alert()</code> en las 10 landings.</span></div>
+    <div class="fig c"><span class="n">0%</span><span class="k">Medición</span><span class="d">Ni un tag. Ni un evento. Ni un <code>gclid</code>.</span></div>
+  </div>
+
+  <h3>Lo que hay que conservar sin tocar</h3>
+  <div class="prose">
+    <ul>
+      <li><strong>El Hero.</strong> «Menos fricción operativa. Más control. Software que trabaja por ti» con subhead de SAP, MCP y agentes. Es el mejor activo anti-desfase de todo el sitio: en tres líneas posiciona ingeniería, no diseño.</li>
+      <li><strong><code>clustersData.js</code>.</strong> 397 líneas, los 3 clusters bien diferenciados, con stack y entregable verificable por subservicio. El copy del cluster de Automatización es el más fuerte del archivo: «cierra tu mes contable en 40 minutos en lugar de 8 días», CFDI 4.0, SAT. Habla de dinero y de dolor operativo mexicano concreto.</li>
+      <li><strong>ThreeClustersOverview y ThreeWaysToWork.</strong> La mejor arquitectura de demanda y el mejor mecanismo de calificación implícita: los CTAs pasan el nombre del paquete al formulario.</li>
+      <li><strong>TechnicalSovereignty y FAQSection.</strong> Manejo de objeción de altísima calidad para CTO y CISO.</li>
+    </ul>
+  </div>
+
+  <h3>Los ocho bloqueadores de lanzamiento</h3>
+  <div class="prose">
+    <p>Ninguno requiere rediseñar nada. Estimación: <span class="inf">3 a 5 días de un desarrollador</span> más la redacción del aviso de privacidad.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:34px">#</th><th>Bloqueador</th><th>Dónde</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1</td><td><strong>El formulario no entrega el lead a nadie.</strong> Hace <code>console.log</code> y muestra «un arquitecto te contactará en menos de 24 horas hábiles». Es una promesa de SLA sobre un dato que nunca existió.</td><td class="d">MultiStepContact.jsx:31</td></tr>
+        <tr><td class="d">2</td><td><strong>Cero instrumentación en toda la app.</strong> Sin GA4, GTM, Meta Pixel, LinkedIn Insight Tag ni conversion tag de Google Ads.</td><td class="d">index.html:3-9</td></tr>
+        <tr><td class="d">3</td><td><strong>Sin captura de <code>gclid</code>, UTMs ni referrer.</strong> Cero ocurrencias en todo el repositorio. Sin esto ninguna venta futura se podrá atribuir a campaña, ni siquiera con CRM conectado. <em>El Webflow actual sí los captura</em> — migrar hoy pierde la atribución.</td><td class="d">todo src/</td></tr>
+        <tr><td class="d">4</td><td><strong><code>base: '/bluepixel/'</code>.</strong> Publicado en la raíz del dominio, todos los assets dan 404 y el sitio sale en blanco.</td><td class="d">vite.config.js:7</td></tr>
+        <tr><td class="d">5</td><td><strong>GTM placeholder</strong> <code>GTM-XXXXXXX</code>, 20 ocurrencias, y su evento <code>lead_form_submitted</code> cae en el vacío.</td><td class="d">dist/landings/*.html</td></tr>
+        <tr><td class="d">6</td><td><strong>Las 10 landings son <code>alert()</code></strong> — y sus inputs no tienen <code>name</code> ni <code>value</code>: aunque hubiera endpoint, no hay datos que mandar.</td><td class="d">dist/landings/*.html</td></tr>
+        <tr><td class="d">7</td><td><strong>Sin aviso de privacidad.</strong> El checkbox pide consentimiento LFPDPPP y estiliza «Política de Privacidad» como enlace, pero es un <code>&lt;span&gt;</code> que no lleva a ningún lado y el documento no existe. Bloqueador legal y de políticas de Google Ads.</td><td class="d">MultiStepContact.jsx:189</td></tr>
+        <tr><td class="d">8</td><td><strong>Sin datos de contacto de la empresa</strong> en el footer: sin correo, teléfono, dirección ni razón social. Google Ads exige información verificable en la landing.</td><td class="d">Footer.jsx:68-84</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Tres cosas que dañan la credibilidad técnica</h3>
+  <div class="prose">
+    <p><strong>El HeroPromptEngine ignora lo que el usuario escribe.</strong> Devuelve el preset que estaba rotando en la animación. Un Director de Operaciones escribe «necesito conciliar facturas contra SAP», presiona «Analizar Fricción» y recibe «Fuga en checkout» — <em>con su propia frase impresa arriba</em>. En una empresa que vende agentes que no alucinan, es la peor demo posible: demuestra en vivo lo contrario de la tesis. Su valor potencial es muy alto: mapeando input a preset por palabras clave —el mismo patrón ya escrito en <code>ClusterLandingPage.jsx</code>— sería el mejor calificador de intención del sitio.</p>
+    <p><strong>La demo RAG fabrica una cita falsa.</strong> Ante cualquier pregunta fuera de las dos ramas guionadas, devuelve el texto del usuario envuelto en «respuesta generada con 0% de alucinación citando documentación técnica interna», con fuente «Vector Store Qdrant · Conexión MCP en Producción». Un evaluador pregunta «¿integran con Oracle Fusion?» y el sistema le afirma que consultó una base vectorial en producción. Es una alucinación fabricada en una demo titulada «Cero Alucinaciones».</p>
+    <p><strong>Cuatro cifras con marca nombrada sin respaldo documental</strong>, incluida «Caso Avianca / DiDi: 78% de consultas resueltas, 4.8/5 CSAT» — dos marcas distintas fusionadas en un solo claim, ninguna de las cuales aparece en la sección de casos. Y los 12 logos se sirven bajo el titular «operan agentes de IA construidos por BluePixel» cuando solo 4 tienen caso documentado. Además <strong>se hotlinkean desde el CDN de Webflow</strong>: si se cancela Webflow en la migración, la barra de prueba social del sitio nuevo se rompe entera.</p>
+  </div>
+
+  <h3>La jerarquía que contradice la tesis</h3>
+  <div class="prose">
+    <p>El archivo de datos vende ingeniería; el sitio que lo consume vende diseño. La evidencia no está en el contenido sino en el orden de lectura:</p>
+    <ol>
+      <li>El número ancla del sitio es <strong>«#1 Firma UX en México (DesignRush)»</strong>.</li>
+      <li>La tarjeta grande de badges es DesignRush.</li>
+      <li>La capacidad #1 de la rejilla es <strong>«UX/UI Design &amp; Product Strategy»</strong>; la ingeniería de agentes aparece hasta la #3.</li>
+      <li>El diferenciador declarado en el FAQ es «6 años de maestría en psicología de adopción humana».</li>
+      <li>La meta description cierra con «la mejor UX de México».</li>
+    </ol>
+    <p>El activo de prueba social más fuerte del sitio refuerza exactamente el posicionamiento que la tesis quiere abandonar. <strong>El arreglo no es borrar el UX — es moverlo de la adquisición al cierre.</strong> Se dice en la llamada y en la propuesta: «el 70% de los proyectos de automatización que fracasan no fallan por el código, fallan porque nadie los usa». Es el diferenciador real y verificable, y hoy está siendo usado como imán de leads equivocados.</p>
+  </div>
+
+  <div class="call good">
+    <span class="lbl">Recuperar esto es la mayor ganancia por hora de trabajo del sitio</span>
+    <p><code>AgentTerminalDemo.jsx</code> existe, tiene 220 líneas, reproduce el ciclo real de un agente —ingesta, <code>mcp_query_sap</code>, verificación contra política de margen, gate a humano, dispatch— con bitácora línea por línea, métricas de cierre y un disclaimer honesto. Es exactamente el contenido que separa a BluePixel de una agencia y que justifica un ticket de +$500,000 ante un CTO. <strong>No se renderiza en ninguna parte del sitio.</strong> Lo mismo pasa con <code>WorkflowTeardown.jsx</code> y <code>TechPartners.jsx</code>.</p>
+  </div>
+
+  <h3>Las tres preguntas para Leo</h3>
+  <div class="prose">
+    <ol>
+      <li><strong>¿El Diagnóstico es gratis o cuesta $95,000?</strong> El sitio dice «sin costo»; la estrategia dice $5–8K USD. No pueden convivir. Recomendación: es pagado, y la sesión de descubrimiento de 30 minutos es lo gratuito.</li>
+      <li><strong>¿Retiramos el badge de «#1 UX en México» del material de adquisición?</strong> Es el activo de prueba social más fuerte que existe y apunta al posicionamiento que se quiere abandonar. Recomendación: sale del home y de los badges, entra en la propuesta y en la llamada de cierre.</li>
+      <li><strong>¿Autorizamos los logos y las cifras de Bimbo, IQOS, LifeMiles y RadioShack, con un solo juego de números?</strong> Hoy hay dos juegos circulando y 8 de 12 logos no tienen caso que respalde el claim. Sin resolverlo, el sitio no debería recibir tráfico pagado.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section id="riesgos">
+  <div class="sechead"><span class="secnum">13</span><h2>Riesgos y supuestos</h2></div>
+
+  <h3>La amenaza dominante: la aritmética del tiempo</h3>
+  <div class="prose">
+    <p>Con ticket promedio de $3.9 millones, el ciclo de referencia es de 6 a 9 meses. <strong>Cero propuestas en Q3 significa que el primer semestre de 2027 ya no tiene pipeline que convertir.</strong> Cualquier estrategia que empiece a generar propuestas en octubre de 2026 factura hasta abril o julio de 2027.</p>
+    <p>Y la caja no da para esperar: la rentabilidad cayó 89% en dos meses. Bajo el escenario sin intervención, <strong>el break-even operativo se cruza alrededor del 22 de octubre de 2026</strong>.</p>
+    <p>Esta es la razón exacta por la que el plan se articula alrededor del diagnóstico pagado: es el único componente con ciclo de semanas en vez de meses, y es lo que financia el ciclo largo. No es una táctica más — es la condición de supervivencia del resto del plan.</p>
+  </div>
+
+  <h3>Los cinco supuestos de los que depende todo</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Supuesto</th><th>Cómo se valida</th><th>Para cuándo</th></tr></thead>
+      <tbody>
+        <tr><td>El gasto real de medios es ~$34,300/mes, no $551,000/mes</td><td>Conciliación factura por factura de Rocketing</td><td class="d">18 sep</td></tr>
+        <tr><td>Existe mercado a $850,000 de ticket para BluePixel en México</td><td>2 propuestas emitidas a ese nivel y aceptadas para revisión de comité</td><td class="d">30 nov</td></tr>
+        <tr><td>El churn responde a un programa de retención básico</td><td>Churn ≤3.5% en el corte de octubre</td><td class="d">31 oct</td></tr>
+        <tr><td>Arreglar Clutch y la entidad off-site mueve el win rate</td><td>Tasa propuesta→venta &gt;10% en el trimestre</td><td class="d">31 dic</td></tr>
+        <tr><td>El equipo puede entregar lo que venda</td><td>Ingeniero de backend o IA nombrado además de Leo y Cubillos</td><td class="d">31 oct</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">El riesgo del año, dicho en voz alta</span>
+    <p>Leo es simultáneamente líder de marketing, de ventas y de producto, arquitecto del MCP, aprobador de todo cambio técnico, protagonista de las entrevistas de video, líder técnico del taller de FR Medical, autor de la propuesta y —si FR Medical firma— responsable de entregar 12 módulos en 8 a 10 semanas. <strong>El organigrama no nombra a un solo ingeniero de backend o de IA fuera de Leo y Cubillos.</strong> Firmar $550,000 sin capacidad de entrega nombrada es el riesgo número uno del año, y es mayor que cualquier riesgo de marketing de este documento.</p>
+    <p>El segundo cuello de botella es Fabián, que concentra entre el 55% y el 65% de las horas útiles de growth de toda la operación. <span class="inf">inferencia</span> — no existe registro de horas en los archivos.</p>
+  </div>
+
+  <h3>Causas alternativas que no se pueden descartar</h3>
+  <div class="prose">
+    <p>Este plan apuesta a que el win rate se arregla con calificación y validación externa. Hay tres explicaciones alternativas que los datos disponibles no descartan, y cada una tiene un experimento que la resuelve:</p>
+    <ul>
+      <li><strong>Que el problema sea la propuesta misma</strong> — su estructura, su precio o su defensa en la mesa. Se resuelve con el retro de win/loss sobre las 15 propuestas perdidas de Q2, antes del 30 de septiembre.</li>
+      <li><strong>Que sea capacidad de entrega percibida</strong> — que el comprador no crea que un equipo de este tamaño puede ejecutar. Se resuelve documentando la composición del squad en la propuesta y midiendo si cambia la tasa de avance a comité.</li>
+      <li><strong>Que las 2 ventas de Q1 vinieran de pipeline construido en 2025</strong> y no haya realmente un motor de adquisición que se haya «roto» — solo uno que nunca existió. Se resuelve rastreando el origen y la fecha de primer contacto de esas dos cuentas. <strong>Si esto es cierto, el plan sigue siendo correcto pero las metas de Q4 son optimistas.</strong></li>
+    </ul>
+  </div>
+
+  <h3>La ironía que conviene nombrar antes de que la nombre un cliente</h3>
+  <div class="prose">
+    <p>Los 11 dolores que BluePixel diagnosticó en FR Medical —conocimiento tribal, cero SOPs, doble captura, datos sepultados sin automatizar, sin SLA, sin priorización objetiva— <strong>son los mismos que padece BluePixel</strong>. Es credibilidad si se convierte en dogfooding público. Es un problema si un cliente lo descubre primero.</p>
+  </div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section id="semana">
+  <div class="sechead"><span class="secnum">14</span><h2>Esta semana</h2></div>
+  <div class="prose">
+    <p class="lede">Martes 15 a viernes 18 de septiembre. Nada de esto requiere presupuesto nuevo ni aprobación externa.</p>
+  </div>
+
+  <div class="weeks">
+    <div class="wk">
+      <div class="when">MAR 15</div>
+      <div>
+        <h4>Reconciliar los tres números que pueden hundir la junta del lunes</h4>
+        <p>Antes de presentar nada el lunes 21, cerrar con Leo, Marily y Diana: <strong>(a)</strong> el gasto real de pauta del 1 al 13 de septiembre — ¿$13,621 o $235,690?; <strong>(b)</strong> LinkedIn — ¿$0 gastados, como dicen cuatro documentos internos, o $25,000, como dice el reporte?; <strong>(c)</strong> ventas contra nuevos clientes — la tabla financiera reporta 18, 20, 25, 22, 10 y 12 clientes nuevos entre abril y septiembre mientras el funnel reporta cero ventas desde marzo. <strong>Si Leo abre el Excel de finanzas durante la presentación de «cero ventas en cinco meses», se cae la credibilidad de todo el diagnóstico.</strong></p>
+        <p class="who"><b>Fabián</b></p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">MAR 15</div>
+      <div>
+        <h4>Llamar a Industrias HR y a RetailX hoy mismo</h4>
+        <p>Hugo Ramírez pidió «FutureProof» por su nombre: conoce la oferta, tiene el intent más alto del pipeline y es CEO, o sea decisor único con ciclo corto. <strong>Enviar propuesta del Pilar 01 con precio y fecha de arranque el mismo día de la llamada.</strong> Carlos Ruiz, CTO de RetailX, es el mayor valor esperado del pipeline: $255,000.</p>
+        <p class="who"><b>Pablo Gómez</b></p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">MAR 15</div>
+      <div>
+        <h4>Re-correr el audio del taller de FR Medical</h4>
+        <p>El protocolo de VOC pide cinco bloques y solo se corrieron el 1 y el 5. Faltan las <strong>cinco frases textuales de voz de cliente con su ángulo de video</strong>, la reacción registrada al momento «ajá», las objeciones de COFEPRIS y privacidad, y la matriz técnica. Por eso el motor de contenido arrancó vacío y Jessica y Sergio se quedaron sin munición. Son 2 horas de trabajo sobre un audio que ya existe.</p>
+        <p class="who"><b>Fabián</b> con Jessica y Sergio vía Marily</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">MIÉ 16</div>
+      <div>
+        <h4>Congelar los reclamos no verificables</h4>
+        <p>Eliminar de todo material que ve un cliente: SLA de 99.9% y 99.98%, «grado militar», IMPATH™, «matemáticamente imposible», «70% de conversión post-diagnóstico» y DesignRush #1. Elegir un solo juego de cifras STAR-ROI y borrar el otro. <strong>Arreglar los 10 H1 concatenados del sitio vivo</strong> y el typo «dirven» que lleva meses en producción.</p>
+        <p class="who"><b>Fabián</b> ejecuta · <b>Leo</b> aprueba</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">JUE 17</div>
+      <div>
+        <h4>Presentar FR Medical a las 11:00 y apagar tres campañas</h4>
+        <p>Precio fijo: $550,000 de Build, $85,000/mes de Evolve. Salir con los seis números de baseline y la cláusula de caso público. <strong>Es la primera propuesta de Q3.</strong></p>
+        <p>En paralelo, verificar que Rocketing apagó Competidores, WebDev BP y las publicaciones impulsadas de Instagram. Esto ya se acordó en la auditoría del 14 de septiembre y no se ejecutó.</p>
+        <p class="who"><b>Leo y María</b> · <b>Fabián</b> verifica el apagado</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">VIE 18</div>
+      <div>
+        <h4>Cerrar el pricing en una sola hoja y publicarlo</h4>
+        <p>Los siete SKU con precio en pesos, la regla de acreditación a 45 días, y el fin del «a cotizar» en el Pilar 02. <strong>Sin hoja de precios no se pueden escribir el guion de ventas, ni las landings, ni los anuncios.</strong> Y corregir el filtro de calificación antes de cargar las negativas: bajar el umbral de $300,000 a $80,000 y añadir al formulario los dos campos que sí predicen — número de empleados y ERP instalado.</p>
+        <p class="who"><b>Fabián, Leo y Pablo</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="call">
+    <span class="lbl">Y el lunes 21 a las 4:00 PM</span>
+    <p>Convertir la junta semanal con Rocketing de <em>reporte</em> a <em>decisión</em>: con la conciliación del gasto sobre la mesa, un KPI acordado por escrito, y el reporte mensual sustituyendo «leads brutos» por MQLs corporativos, costo por SQL y pipeline value en pesos. Sin la minuta de la junta del 14 firmada por Leo, esa junta no tiene mandato.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sobre las fuentes.</strong> Este plan se construyó sobre el reporte de campañas de Rocketing (1–13 sep 2026), los CSV de finanzas y prospectos de Q3, los once documentos de <code>01_Onboarding_y_Guias</code>, los once de <code>02_Estrategia_B2B</code> —incluida la auditoría web de 74KB y la estrategia maestra de 60KB—, el código completo del sitio nuevo y sus 10 landings, las 4 demos PLG, el <code>bluepixel_engine</code> con su auditoría SEO, y verificación externa en vivo de bluepixel.mx, cotiza.bluepixel.mx, el perfil de Clutch y 19 competidores del mercado mexicano.</p>
+  <p>Toda cifra sin marca proviene directamente de esas fuentes. Lo marcado como <span class="inf">inferencia</span> es una estimación derivada, no un dato medido. Las tres discrepancias de datos sin resolver —el gasto de medios, los leads orgánicos de septiembre y la definición de «nuevos clientes»— están señaladas en la sección 11 con responsable y fecha, y ninguna decisión de presupuesto debería tomarse antes de cerrarlas.</p>
+</footer>
+
+</div>

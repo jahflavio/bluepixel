@@ -1,0 +1,402 @@
+                                                                                                                                                  Resumen de Resultados
+
+Funnel de Mensual
+
+        Mes  Leads                 Tasa de Contacto      vs LC 2025  Contacto Efectivo  Tasa de Propuestas   vs PP 2025          Propuestas       Tasa de Ventas      vs V 2025                     Ventas
+1. Enero       59                         28.81%             3.5%              17               47.06%         -17.94%                 8                 0%            -53.85%                          0
+2. Febrero     41                         21.95%                                9                100%          35.29%                  9                11.11%           11.11%                         1
+3. Marzo       39                        38.46%            -25.05%             15                 60%          37.78%                  9                 0%               0%                            1
+4. Abril       20                          65%             -7.54%              13               23.08%            0%                   3                 0%               0%                            0
+5. Mayo        26                          50%                                 13               69.23%         69.23%                  9                 0%             -100%                           0
+6. Junio       17                        35.29%              26%                6               33.33%         33.33%                  2                 0%               0%                            0
+7. Julio       20                          55%               17%                11              27.27%          27.27%                 3                 0%               0%                            0
+8. Agosto      18                        44.44%            -19.71%              8                 50%            50%                   4                 0%               0%                            0
+                                                             22%
+                                                           -24.56%                                                                                                                               1-9/9 < >
+
+Reporte Trimestral
+
+Trimestre    Leads total           Leads contactados    Propuestas   Ventas             Total Venta         Gastos de Marketing Tasa de Contacto  Tasa de Propuesta  Tasa de Cierre  Conversión            ROI
+                                                                                                                                                                                      de Leads
+1. Q1               139                        41            26         2               $7,820,942          $189,714     48.92%                          63.41%           7.69%          0.01         4,022.49%
+2. Q2                                                         15        0                    $0             $102,712     66.15%                         34.88%             0%              0            -100%
+3. Q3                          65              43             0         0                     0                                                                              0             0               0
+4. Q4                                                         0         0                     0                 0           0                               0                0             0               0
+                               0               0                                                                0           0                               0
+                                                                                                                                                                                                 1-4/4 < >
+                               0               0
+
+ROI Consolidado Anual
+
+      Data   Total de Venta        Gastos de Marketing    ROI
+
+1. 2026           7,820,942                   292,426   2,574.5%
+2. 2025         16,992,182.32
+3. 2024         2,804,092.6        785,887.42           2,062.16%
+
+                                   379,598              638.7%
+
+                                                     1-3/3 < >
+                                              Resumen de Resultados
+
+Funnel de Ventas
+
+      Mes        Leads  Tasa de Contacto ...  Contacto Efectivo     Tasa de Propuesta  Propuesta      Tasa de Ventas             Venta
+
+1. Enero            79              25.3%                 20                    35%           7               14.3%                  1
+2. Febrero          81              20.9%                 17                   47.1%          8
+3. Marzo            62              14.5%                  9                  45.6%          4.1            0%                   0
+4. Abril            47              27.7%                 13                  38.5%           5
+5. Mayo             50               24%                  12                   33.3%          4             97.6%                4
+6. Junio            59              18.6%                  11                 54.5%           6
+7. Julio           84                25%                  21                   33.3%          7             20%                  1
+8. Agosto           75              17.3%                 13                   69.2%          9
+9. Septiembre       57              10.5%                  6                  83.3%           5             25%                  1
+10. Octubre         76               17.1%                13                   76.9%         10
+11. Noviembre       47              14.9%                  7                  42.9%           3             33.3%                2
+12. Diciembre       52              5.77%                  3                   100%           3
+                                                                                                            0%                   0
+
+                                                                                                            11.1%                1
+
+                                                                                                            20%                  1
+
+                                                                                                            0%                   0
+
+                                                                                                            0%                   0
+
+                                                                                                            0%                   0
+
+                                                                                                                               1 - 12 / 12 < >
+
+Funnel Mensual                                                      ROI de Marketing Digital
+
+   Enero                   Febrero                  Marzo                 Data         Total de Venta       Gastos de Marketing       ROI
+
+Leads Total...          Leads Totale...           Leads Totale...   1. 2026                 7,820,942                  292,426      2,574.5%
+Contacto Ef...          Contacto Efe...          Contacto Efe...
+ Propuesta ...          Propuesta Pr...          Propuesta Pr...    2. 2025            16,992,182.32               785,887.42       2,062.16%
+Venta Conc...           Venta Concr...            Venta Concr...
+                                                                    3. 2024            2,804,092.6                 379,598                638.7%
+                                                    Junio
+                                                                                                                               1-3/3 < >
+                                                   Leads Totale...
+                                                  Contacto Efe...   Fuente de leads
+                                                  Propuesta Pr...
+     Abril                  Mayo                   Venta Concr...         Fuente/medio                             Total de usuarios
+
+Leads Totale...         Leads Totale...       Septiembre            1. webflow.com / referral                                   1
+Contacto Efe...         Contacto Efe...                             2. tagassistant.google.com / referr...                      1
+Propuesta Pr...         Propuesta Pr...       Leads Totale...       3. search.google.com / referral                             1
+Venta Concr...          Venta Concr...        Contacto Efe...       4. insights.hotjar.com / referral                           1
+                                              Propuesta Pr...       5. google / organic                                        13
+                                              Venta Concr...        6. google / cpc                                            6
+
+                                                                    Grand total                                                26
+
+                                                                                                                                1-9/9 < >
+
+     Julio                 Agosto
+
+Leads Totale...         Leads Totale...
+Contacto Efe...         Contacto Efe...
+Propuesta Pr...         Propuesta Pr...
+Venta Concr...          Venta Concr...
+
+   Octubre               Noviembre             Diciembre
+
+Leads Totale...         Leads Totale...       Leads Totale...
+Contacto Efe...         Contacto Efe...       Propuesta Pr...
+Propuesta Pr...         Propuesta Pr...       Contacto Efe...
+Venta Concr...          Venta Concr...        Venta Concr...
+
+WhatConverts
+
+                     Unknown data source                                                                 Unknown data source
+
+The data source associated with this component could not be loaded                     The data source associated with this component could not be
+                                  See details                                                                              loaded
+
+                                                                                                                     See details
+                                                                              REPORTE DE CAMPAÑAS                                                                                                   Sep 1, 2026 - Sep 13, 2026                 arrow_drop_down
+
+        Evolución del presupuesto
+
+                                                                                                                                                                                                    Mes                                        
+
+        Inversión Total                                                       Google Ads                                                               Meta Ads                                              LinkedIn Ads
+
+                   Gasto real                                                    Gasto real                                                                  Gasto real                                                       Gasto real
+
+               $235.69K                                                       $191.81K                                                                      $5.53K                                                         $25.00K
+
+        $0                            $40K                       $0                          $30K                                             $0                             $4K                         $0                                    $8K
+
+        Campaña                       Plataforma                 Presupuesto  Gasto real                       % gastado                      Gasto ideal a la fecha         Desviación $ vs ideal  Desviación % vs ideal  Presupuesto restante
+                                      Google                         41,450   28,868.28                            5.55                                38,250                        -9,381.72                 -0.97                12,581.72
+1.      Brand                         Google                        106,000   103,957.04                          3.88                                                               11,290.37                 0.39                 2,042.96
+                                      Google                         19,025   13,365.02                            2.06                               92,666.67                      -5,659.98                -0.94                 5,659.98
+2. Cartera de Servicios               Google                         8,700    13,079.43                           4.44                                  19,025                       4,379.43                  1.44                -4,379.43
+                                      Google                         8,700     4,600.21                            1.61                                 8,700                        -4,099.79                 -1.39                4,099.79
+3. Desarrollo Web                     Google                         39,000   23,849.07                            1.76                                 8,700                        -15,150.93                -1.24                15,150.93
+                                      Google                         3,600    4,088.87                             1.14                                39,000                         488.87                   0.14                 -488.87
+4. Desarrollo de Apps                 Grand total                   227,375   191,807.92                          20.45                                 3,600                       -19,033.75                 -3.57
+                                                                                                                                                                                                                                   35,567.08
+5. Diseño UX/UI                       Plataforma                 Presupuesto  Gasto real                       % gastado                             210,841.67              Desviación $ vs ideal  Desviación % vs ideal
+                                      Instagram                      9,500      5,531.21                           1.72                                                              -2,635.46                 -0.71         < > 1 - 8 / 8
+6. Servicios Digitales                                                                                                                        Gasto ideal a la fecha
+                                                                                                                   1.72                                8,166.67                                                            Presupuesto restante
+7. Winning Keywords                                                                                                                                                                                                                 3,968.79
+                                                                                                               % gastado
+        Campaña                                                                                                    3.87
+                                                                                                                   3.87
+1.      Always On
+
+        Campaña                       Grand total                    9,500     5,531.21                                                               8,166.67                      -2,635.46                  -0.71               3,968.79
+
+1.      Awareness                     Plataforma                 Presupuesto  Gasto real                                                      Gasto ideal a la fecha         Desviación $ vs ideal  Desviación % vs ideal     1-1/1 < >
+                                      LinkedIn                       25,600   24,999.71                                                                25,600                         -600.29                  -0.13
+                                      Grand total                    25,600   24,999.71                                                                25,600                        -600.29                   -0.13       Presupuesto restante
+
+                                                                                                                                                                                                                                     600.29
+
+                                                                                                                                                                                                                                    600.29
+
+                                                                                                                                                                                                                              1-1/1 < >
+
+        Google Ads
+
+        Overview Mensual                              Evolución Anual
+
+        Impresiones      Clicks                          6 Conversiones                                                                                              Impresiones
+                                                         4                                                                                             2.28K
+        2,848 317                                        2                                                                                             1.53K
+                                                         0
+        CTR              CPC                            Jan Ja F 1 n 25 eb 1 M 8 ar 14 Apr 7 Ma M y 1 ay 2 J 5 un 18 Jul 1 A Au 2 ug 5 g 29               771
+                                                      100% CTR                                                                                             16
+        11.13%           $42.97                        10%                                                                                                Jan Ja F 1 n 25 eb 1 M 8 ar 14 Apr 7 Ma M y 1 ay 2 J 5 un 18 Jul 1 A Au 2 ug 5 g 29
+                                                                                                                                                          1 CPC
+        Conversions      Inversión                      0%
+                                                         Jan Ja F 1 n 25 eb 1 M 8 ar 14 Apr 7 Ma M y 1 ay 2 J 5 un 18 Jul 1 A Au 2 ug 5 g 29             0
+        6                $13,621.35                                                                                                                      Jan Ja F 1 n 25 eb 1 M 8 ar 14 Apr 7 Ma M y 1 ay 2 J 5 un 18 Jul 1 A Au 2 ug 5 g 29
+
+                           -6.9%
+
+Overview por Campaña
+
+            Campaña                                         Conversiones                     Clicks                                           Impresiones                          CTR                                     CPC
+
+    1.      IA Operacional Enterprise | RCKT | Ju...                  1                          199                                                 1,411                         14.1%                                   $22.8
+                                                                      1                          45                                                   119                         37.82%                                    $11.1
+    2.      BluePixel | RCKT | Jun26                                 0                            25                                                 273                           9.16%                                   $111.33
+                                                                     0                            23                                                 821                           2.8%                                    $87.73
+    3.      WebDev BP | RCKT | May26 PT2                              1                           13                                                 100                                                                   $196.1
+                                                                                                                                                                                    13%
+    4.      Competidores | RCKT | Jun26                                                                                                                                                                                    1 - 35 / 35 < >
+
+    5.      App Dev BP | RCKT | May26 PT2
+
+        Meta Ads
+
+        Impresiones     Vistas Landing Page           CTR                     Overview por Campaña
+
+        56,482          622                           1.71                    Campaña                     Landing page vi...                  Clicks        Impresiones           CTR                    CPC               Inversión
+
+                                                                              1. Always On | BP | RC...   260                                 416           24,292                        1.71           1.42              591.73
+
+        Alcance         CPC                           Inversión               2. Publicación de Insta...  2                                   126                     1,898               6.64           0.59              74.5
+
+        41,931          1.28                          $1,239.23               3. Publicación de Insta...  1                                   125           2,024                         6.18           0.6               74.76
+
+                                                                              4. Publicación: "La con...  0                                   125                     1,473                                                59.48
+                                                                                                                                                                                          8.49           < > 0.48
+
+                                                                                                                                                                                                                           1 - 12 / 12
+                                                                  REPORTE DE SEO                                                              Sep 1, 2026 - Sep 13, 2026                    arrow_drop_down
+
+Principales KPIs SEO
+
+Total de usuarios                                Sesiones                                               Vistas                                Posición Promedio
+
+1,528                                            1.8K                                                  2,236                                  13.01
+
+  208.7%                                           196.3%                                                 177.1%                                -10.8%
+
+Impresiones                                      Clicks                                               CTR del sitio
+
+64,282                                           410                                                  0.64%
+
+  19.7%                                            53.6%                                                28.3%
+
+                                                                                                          Leads orgánico
+
+                                                                                            Leads inglés                  Leads español            Descarga ebook
+
+                                                                                            0                             21                       0
+
+                                                                                              -100.0%                       425.0%                 N/A
+
+                                      Leads atribuibles a SEO septiembre
+
+                                      Fuente                      Empresa                                 Servicio                            Fecha
+
+                         1.           Gemini                      Five Diamond Club                       Automatizar flujo de clientes       Sep 10, 2026
+
+                                                                                                                                                            1-1/1 < >
+
+                                                                  Keywords en seguimiento
+
+                             Keyword                          Posición               Lugar de posicionami...              Movimiento en posici...  URL Posicionada
+
+                     1.      ia integrada software emp... 61                         organic                              11                       https://www.bluepixel.mx/...
+                                                                                     organic                              -32                      https://www.bluepixel.mx/...
+                     2.      diseño app móvil enterprise 60                          organic                              41                       https://www.bluepixel.mx/...
+                                                                                     organic                              7                        https://www.bluepixel.mx/...
+                     3.      ia en stack tecnológico e... 59                         organic                              48                       https://www.bluepixel.mx/...
+                                                                                     organic                              8                        https://www.bluepixel.mx/...
+                     4.      outsourcing desarrollo app 52                           organic                              -4                       https://www.bluepixel.mx/...
+                                                                                     organic                              55                       https://www.bluepixel.mx/...
+                     5.      digital product design age... 52                        organic                              59
+                                                                                                                                                   < > https://www bluepixel mx/
+                     6.      expertos en desarrollo web 48                                                                                           1 - 110 / 110
+
+                     7.      desarrollo web mexico            46
+
+                     8.      user research enterprise m... 45
+
+                     9       ia automatización operaci 41
+
+                                                                  Keywords con ganancia
+
+                     Keyword                               Posición actual      URL Posicionada                             Posiciones gana... Lugar de posicionamiento Re
+
+                     agencia ux ui para empresas           1                    https://www.bluepixel.mx/es/diseno-ux-ui    3                      organic
+
+                     agencia premium de desarrollo ... 1                        https://www.bluepixel.mx/es/desarrollo-de-aplicac... 1             organic
+
+                     bluepixel ia                          1                    https://www.bluepixel.mx/es/sobre-nosotros  1                      organic
+
+                     bluepixel modernización               1                    https://www.bluepixel.mx/es/sobre-nosotros  1                      organic
+
+                     partner transformacion digital ... 2                       https://www.bluepixel.mx/es/inicio          79                     organic
+
+                     empresa desarrollo aplicacione... 3                        https://www.bluepixel.mx/es/desarrollo-de-aplicac... 3             organic
+
+                     ux ui app movil empresa               5                    https://www.bluepixel.mx/es/diseno-ux-ui    5                      organic
+
+                     diseño ux ui para empresas            2                    https://www.bluepixel.mx/es/diseno-ux-ui    1                      organic
+
+                     empresa ux                            2                    https://www.bluepixel.mx/es/blog/mejores-agenci... 1               organic
+
+                     diseño ux ui corporativo              8                    https://www.bluepixel.mx/es/blog/diseno-ux-ui-qu... 19             organic
+
+                                                                  Keywords con disminución
+
+Keyword                               Posición actual URL         Lugares perdidos                                  Lugar de posicionamiento                                          Reco
+agencia de desarrollo de aplicaci...                              -9                                                organic
+blue pixel                            10          https://ww...   -1                                                site links
+bluepixel                                                         -1                                                site links
+bluepixel agencia digital             2           https://ww...   -1                                                organic
+bluepixel desarrollo                                              -1                                                organic
+bluepixel digital                     2           https://ww...   -1                                                organic
+bluepixel diseño ux                                               -1                                                organic
+bluepixel inteligencia artificial     2           https://ww...   -1                                                organic
+bluepixel mexico                                                  -1                                                organic
+bl i l l f                            2           https://ww...   1
+                                                                                                                            i
+                                      2           https://ww...
+
+                                      2           https://ww...
+
+                                      2           https://ww...
+
+                                      2           https://ww...
+
+                                      2           h //
+
+                                                                  Impresiones en IA
+
+                     Páginas principales                                                                                                                        Impresiones
+
+1.                   https://www.bluepixel.mx/es/blog/diseno-ux-ui-que-es-guia                                                                                                   698
+                                                                                                                                                                                 647
+2.                   https://www.bluepixel.mx/post/user-interface-types-classification-characteri...                                                                             521
+                                                                                                                                                                                 344
+3.                   https://www.bluepixel.mx/es/blog/10-ejemplos-de-interfaces-de-usuario-qu...                                                                                 140
+                                                                                                                                                                                 135
+4.                   https://www.bluepixel.mx/post/10-user-interfaces-that-prove-greatui-design-...                                                                              118
+                                                                                                                                                                                 103
+5.                   https://www.bluepixel.mx/es/blog/desarrollo-apps-moviles-cuanto-cuestan-...
+                                                                                                                                                            < >93
+6.                   https://www.bluepixel.mx/es/blog/etapas-desarrollo-web
+                                                                                                                                                   1 - 100 / 120
+7.                   https://www.bluepixel.mx/post/front-end-back-end-meaning-uses
+
+8.                   https://www.bluepixel.mx/es/blog/mejores-agencias-diseno-ux-ui-mexico
+
+9                    https://www bluepixel mx/es/desarrollo-de-aplicaciones-moviles
+
+                                                                  Acciones en curso
+
+Tarea                   Acción requerida
+Artículos para blog     Aprobación artículo HIR, Ajustes blog mejores agencias de Desarrollo de apps
+Clones de BluePixel     Empezar solicitud
+                              REPORTE DE REDES SOCIALES Sep 1, 2026 - Sep 13, 2026 arrow_drop_down
+
+                     Followers Instagram                                           Followers TikTok
+
+                Instagram Evolution > Followers                           TikTok Evolution > Followers
+
+                16,448                                                    8,727
+
+     Posts      Alcance    Me gusta   Comenta... Guarda...        Videos  Views    Alcance              Likes  Shares
+
+1.                  123            2  0          2           1.            11,619      10,084             916      4
+
+2.              143 1 0 1 2.                                              7,356    6,259                538    2
+
+         Reels                      1-2/2 < >
+
+   1.           Alcance    Me gusta   Comentarios Guarda...
+
+                      781       46       4                1  3.           3,581    3,269                256    3
+
+                                                             4.           577      520                  8      0
+
+2.              360        7             0                1
+
+                                                 1-4/4 <           5.     206      184                  2      0
+
+                                                             >
+
+                                                                                                        1-6/6 < >
+                                                 Balance de seguidores
+
+                       Followers Instagram                                            Followers TikTok
+
+                  Mes        Seguidores Ganados         Seguidores Perdidos                             Mes               Seguidores         Seguidores Perdidos
+Junio 2025                                       13                                   Junio 2025             1
+Julio 2025             4489                      680                                  Julio 2025             293                      33
+Agosto 2025            877                       19624                                Agosto 2025            727                      37
+Septiembre 2025        472                       -931                                 Septiembre 2025        1648                     12
+Octubre 2025           750                       -1917                                Octubre 2025           984
+Noviembre 2025         505                       -1443                                Noviembre 2025         999
+Diciembre 2025         327                       -215                                 Diciembre 2025         1143
+Enero 2026             90                        -1174                                enero 2026             1422
+Febrero 2026           199                       410                                  febrero 2026           1023
+Marzo 2026                                       210                                  Marzo 2026             527
+Abril 2026             184                       704                                  Abril 2026             135
+Mayo 2026              89                                                             Mayo 2026              0
+Junio 2026                                       462                                  Junio 2026             240
+                                                 149
+
+                                                 Followers Linked IN
+
+                                                                             Mes      Seguidores
+
+                                                 Abril 2026                       81
+
+                                                 Mayo 2026                        33
+
+                                                 Junio 2026                       4
+

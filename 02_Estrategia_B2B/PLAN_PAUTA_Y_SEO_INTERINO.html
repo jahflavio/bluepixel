@@ -1,0 +1,583 @@
+<title>Pauta y SEO · Plan Interino</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --paper:#FAF9F6; --surface:#FFFFFF; --sunk:#F0EEE9; --rule:#DCD8D0; --rule-soft:#E9E6E0;
+    --ink:#1A1714; --ink-2:#4A443D; --ink-3:#7A736A;
+    --accent:#3B3494; --accent-soft:#EAE9F7;
+    --crit:#A82E1E; --crit-soft:#FAEBE7;
+    --warn:#8A5B0C; --warn-soft:#FBF2DF;
+    --ok:#15654A; --ok-soft:#E3F1EB;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#131210; --surface:#1C1A17; --sunk:#232019; --rule:#332F28; --rule-soft:#282520;
+      --ink:#F0ECE5; --ink-2:#B5AEA3; --ink-3:#847C71;
+      --accent:#A9A2F0; --accent-soft:#1E1B3A;
+      --crit:#F0897A; --crit-soft:#2E1714;
+      --warn:#E2B461; --warn-soft:#2B2110;
+      --ok:#5CC49E; --ok-soft:#10261F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131210; --surface:#1C1A17; --sunk:#232019; --rule:#332F28; --rule-soft:#282520;
+    --ink:#F0ECE5; --ink-2:#B5AEA3; --ink-3:#847C71;
+    --accent:#A9A2F0; --accent-soft:#1E1B3A;
+    --crit:#F0897A; --crit-soft:#2E1714;
+    --warn:#E2B461; --warn-soft:#2B2110;
+    --ok:#5CC49E; --ok-soft:#10261F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:16px; line-height:1.58; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px; margin:0 auto; padding-inline:20px; padding-block:0 88px}
+  .prose{max-width:68ch}
+
+  nav.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule)}
+  nav.bar .inner{max-width:1020px; margin:0 auto; padding-inline:20px; height:44px;
+    display:flex; gap:3px; align-items:center; overflow-x:auto; scrollbar-width:none}
+  nav.bar .inner::-webkit-scrollbar{display:none}
+  nav.bar a{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3);
+    text-decoration:none; white-space:nowrap; padding:5px 8px; border-radius:5px}
+  nav.bar a:hover{color:var(--ink); background:var(--sunk)}
+  nav.bar a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+  header.mast{padding-block:40px 26px; border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 12px}
+  h1{font-size:clamp(28px,5vw,44px); line-height:1.07; font-weight:800; letter-spacing:-.025em;
+    margin:0 0 14px; text-wrap:balance; max-width:19ch}
+  .standfirst{font-size:clamp(15.5px,2vw,18px); color:var(--ink-2); margin:0; max-width:60ch; line-height:1.5}
+  .meta{display:flex; flex-wrap:wrap; gap:5px 20px; margin-top:20px;
+    font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3)}
+  .meta b{color:var(--ink-2); font-weight:500}
+
+  section{padding-block:46px; border-bottom:1px solid var(--rule-soft)}
+  section:last-of-type{border-bottom:0}
+  .sechead{display:flex; gap:13px; align-items:baseline; margin-bottom:18px}
+  .secnum{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; color:var(--accent); flex:none; padding-top:5px}
+  h2{font-size:clamp(22px,3.3vw,29px); line-height:1.15; font-weight:700; letter-spacing:-.02em; margin:0; text-wrap:balance}
+  h3{font-size:18.5px; font-weight:600; margin:30px 0 9px; text-wrap:balance}
+  p{margin:0 0 14px}
+  a{color:var(--accent)}
+  ul,ol{margin:0 0 14px; padding-left:20px; max-width:68ch}
+  li{margin-bottom:6px}
+  .lede{font-size:17px; color:var(--ink-2); max-width:62ch; line-height:1.52}
+  code{font-family:"IBM Plex Mono",monospace; font-size:.86em; background:var(--sunk); padding:1.5px 5px; border-radius:4px}
+
+  /* decision card */
+  .dec{background:var(--surface); border:1px solid var(--rule); border-radius:10px; margin:20px 0; overflow:hidden}
+  .dec > .hd{padding:15px 18px 13px; border-bottom:1px solid var(--rule-soft); display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap}
+  .dec .tag{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.07em; text-transform:uppercase;
+    font-weight:600; padding:3px 8px; border-radius:4px; flex:none; margin-top:2px}
+  .dec .ttl{font-weight:700; font-size:17px; letter-spacing:-.01em; flex:1; min-width:200px; line-height:1.3}
+  .dec .amt{font-family:"IBM Plex Mono",monospace; font-size:19px; font-weight:600; font-variant-numeric:tabular-nums; flex:none}
+  .dec > .bd{padding:15px 18px}
+  .dec .bd p:last-child{margin-bottom:0}
+  .dec .ft{padding:11px 18px; background:var(--sunk); border-top:1px solid var(--rule-soft);
+    font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); display:flex; gap:16px; flex-wrap:wrap}
+  .dec .ft b{color:var(--ink-2); font-weight:500}
+  .dec.k{border-left:3px solid var(--crit)} .dec.k .tag{background:var(--crit-soft); color:var(--crit)} .dec.k .amt{color:var(--crit)}
+  .dec.r{border-left:3px solid var(--warn)} .dec.r .tag{background:var(--warn-soft); color:var(--warn)} .dec.r .amt{color:var(--warn)}
+  .dec.s{border-left:3px solid var(--ok)}   .dec.s .tag{background:var(--ok-soft); color:var(--ok)}   .dec.s .amt{color:var(--ok)}
+  .dec.n{border-left:3px solid var(--accent)} .dec.n .tag{background:var(--accent-soft); color:var(--accent)} .dec.n .amt{color:var(--accent)}
+
+  .tw{overflow-x:auto; margin:18px 0; border:1px solid var(--rule); border-radius:8px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:13.6px; min-width:540px}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+  thead th{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:600; background:var(--sunk); border-bottom:1px solid var(--rule); white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n,th.n{text-align:right; font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+  td.m{font-family:"IBM Plex Mono",monospace; font-size:12.4px}
+  tbody tr.tot td{font-weight:600; background:var(--sunk); border-top:1px solid var(--rule)}
+  caption{caption-side:bottom; text-align:left; padding:9px 12px; font-size:12.4px; color:var(--ink-3); border-top:1px solid var(--rule-soft)}
+
+  .call{border-left:3px solid var(--accent); background:var(--accent-soft); padding:14px 16px; margin:20px 0; border-radius:0 7px 7px 0; max-width:72ch}
+  .call.crit{border-color:var(--crit); background:var(--crit-soft)}
+  .call.warn{border-color:var(--warn); background:var(--warn-soft)}
+  .call.ok{border-color:var(--ok); background:var(--ok-soft)}
+  .call p:last-child{margin-bottom:0}
+  .call .lbl{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+    font-weight:600; display:block; margin-bottom:6px; color:var(--accent)}
+  .call.crit .lbl{color:var(--crit)} .call.warn .lbl{color:var(--warn)} .call.ok .lbl{color:var(--ok)}
+
+  .chip{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:600;
+    letter-spacing:.06em; text-transform:uppercase; padding:2.5px 7px; border-radius:4px; white-space:nowrap}
+  .chip.k{background:var(--crit-soft); color:var(--crit)}
+  .chip.r{background:var(--warn-soft); color:var(--warn)}
+  .chip.s{background:var(--ok-soft); color:var(--ok)}
+  .chip.n{background:var(--accent-soft); color:var(--accent)}
+
+  .agenda{display:flex; flex-direction:column; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:9px; overflow:hidden; margin:22px 0}
+  .ag{background:var(--surface); padding:14px 16px; display:grid; grid-template-columns:52px 1fr auto; gap:14px; align-items:center}
+  .ag .min{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--accent); font-weight:600}
+  .ag .what{font-size:14.8px; font-weight:500}
+  .ag .what span{display:block; font-size:13px; color:var(--ink-3); font-weight:400; margin-top:2px}
+  .ag .amt{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink-2); font-variant-numeric:tabular-nums; text-align:right}
+  @media(max-width:600px){.ag{grid-template-columns:44px 1fr; } .ag .amt{grid-column:2; text-align:left}}
+
+  .weeks{display:flex; flex-direction:column; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:9px; overflow:hidden; margin:22px 0}
+  .wk{background:var(--surface); padding:16px 18px; display:grid; grid-template-columns:108px 1fr; gap:16px}
+  .wk .when{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--accent); font-weight:600; line-height:1.45}
+  .wk .when span{display:block; color:var(--ink-3); font-weight:400; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; margin-top:3px}
+  .wk h4{margin:0 0 6px; font-size:15.5px; font-weight:600}
+  .wk p{margin:0 0 8px; font-size:14.2px; color:var(--ink-2)}
+  .wk p:last-child{margin-bottom:0}
+  .wk .who{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); margin-top:8px}
+  .wk .who b{color:var(--ink-2); font-weight:500}
+  @media(max-width:620px){.wk{grid-template-columns:1fr; gap:8px}}
+
+  .note{font-size:13px; color:var(--ink-3); max-width:68ch}
+  footer{padding-block:30px; border-top:2px solid var(--ink); font-size:13.2px; color:var(--ink-3); max-width:72ch}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<nav class="bar">
+  <div class="inner">
+    <a href="#bloqueo">El bloqueo</a>
+    <a href="#agenda">Agenda del lunes</a>
+    <a href="#google">Google Ads</a>
+    <a href="#destino">Destino del tráfico</a>
+    <a href="#linkedin">LinkedIn</a>
+    <a href="#meta">Meta</a>
+    <a href="#seo">SEO</a>
+    <a href="#datos">Contrato de datos</a>
+    <a href="#presupuesto">Presupuesto</a>
+    <a href="#calendario">6 semanas</a>
+    <a href="#no">Qué no hacer</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Plan interino de pauta y SEO · 17 sep – 31 oct 2026</p>
+  <h1>Qué hacemos con la pauta mientras arreglamos el resto</h1>
+  <p class="standfirst">Nueve acuerdos se cerraron con Rocketing el 14 de septiembre. Tres apuntan a páginas que devuelven 404, uno se apoya en una cifra equivocada por un factor de 15, y el gasto más grande de la cuenta no aparece en ninguno.</p>
+  <div class="meta">
+    <span><b>Para</b> la junta del lunes 21, 4:00 PM</span>
+    <span><b>Con</b> Marily, Diana Cardoso, Daniel Arias · Rocketing</span>
+    <span><b>Preparado por</b> Fabián Flores · Growth &amp; RevOps</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="bloqueo">
+  <div class="sechead"><span class="secnum">01</span><h2>Por qué el plan actual no puede ejecutarse</h2></div>
+
+  <div class="prose">
+    <p class="lede">El plan acordado es correcto en su lógica. El problema es que tres de sus nueve acuerdos dependen de páginas que no existen, y el resto se dimensionó sobre un presupuesto que el reporte contradice.</p>
+  </div>
+
+  <h3>Los destinos no existen</h3>
+  <p class="prose">Verificado hoy, 17 de septiembre:</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>URL de destino acordada</th><th class="n">HTTP</th><th>Consecuencia</th></tr></thead>
+      <tbody>
+        <tr><td class="m">bluepixel.mx/es/agentizacion</td><td class="n"><span class="chip k">404</span></td><td>«Cambiar la URL de IA Operacional» no se puede ejecutar</td></tr>
+        <tr><td class="m">bluepixel.mx/es/automatizacion</td><td class="n"><span class="chip k">404</span></td><td>Las 301 de Daniel apuntarían al vacío</td></tr>
+        <tr><td class="m">cotiza.bluepixel.mx/</td><td class="n"><span class="chip s">200</span></td><td>Vivo, indexable y <strong>capturando leads</strong></td></tr>
+        <tr><td class="m">cotiza.bluepixel.mx/consultoria-inteligencia-artificial</td><td class="n"><span class="chip s">200</span></td><td>Destino viable hoy para el cluster de Agentización</td></tr>
+        <tr><td class="m">cotiza.bluepixel.mx/servicios-de-automatizacion</td><td class="n"><span class="chip s">200</span></td><td>Destino viable hoy para el cluster de Automatización</td></tr>
+        <tr><td class="m">bluepixel.mx/custom-ai-agents</td><td class="n"><span class="chip r">200</span></td><td>Existe, pero está <strong>en inglés</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">La consecuencia más cara</span>
+    <p>Ejecutar las <strong>redirecciones 301</strong> hacia esas rutas destruiría el único canal que está creciendo: el orgánico subió <strong>+53.6% en clics</strong> y <strong>+425% en leads en español</strong> en septiembre. Redirigir tráfico vivo hacia un 404 no es un retraso, es una pérdida permanente de autoridad. <strong>Las 301 se posponen hasta que las páginas existan y estén indexadas.</strong></p>
+  </div>
+
+  <h3>El presupuesto no cuadra consigo mismo</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Fuente</th><th class="n">Google</th><th class="n">LinkedIn</th><th class="n">Meta</th><th class="n">Total</th></tr></thead>
+      <tbody>
+        <tr><td>Auditoría interna del 14 sep</td><td class="n">~30,000 /mes</td><td class="n"><strong>0</strong></td><td class="n">2,500</td><td class="n">~32,500 /mes</td></tr>
+        <tr><td>Panel de presupuesto, reporte 1–13 sep</td><td class="n">191,808</td><td class="n"><strong>24,999.71</strong></td><td class="n">5,531</td><td class="n">235,690</td></tr>
+        <tr><td>Paneles de plataforma, mismo periodo</td><td class="n">13,621.35</td><td class="n">sin panel</td><td class="n">1,239.23</td><td class="n">14,860.58</td></tr>
+        <tr class="tot"><td>Factor de discrepancia</td><td class="n">14.1×</td><td class="n">∞</td><td class="n">4.5×</td><td class="n">15.9×</td></tr>
+      </tbody>
+      <caption>La cifra de plataforma cuadra sola: 317 clics × $42.97 de CPC = $13,621.49. Y su run-rate diario ($1,143) coincide al 0.16% con el promedio mensual de Q2. <strong>Todo el plan de reasignación se armó sobre la columna de $30,000, y dos de las tres fuentes dicen otra cosa.</strong></caption>
+    </table>
+  </div>
+
+  <h3>La partida más grande no está en ningún acuerdo</h3>
+  <p class="prose">La auditoría del 14 menciona la campaña <strong>Brand</strong> como «gasto innecesario de $6,000 MXN». El reporte de campañas dice que Brand consumió <strong>$103,957.04 — el 54.2% de todo el gasto de Google</strong> y el 98.07% de su propio presupuesto. Ninguno de los nueve acuerdos la toca.</p>
+  <p class="prose">Es la decisión de mayor impacto económico de toda la cuenta y no está en la mesa.</p>
+</section>
+
+<!-- 2 -->
+<section id="agenda">
+  <div class="sechead"><span class="secnum">02</span><h2>Agenda para el lunes 21, 4:00 PM</h2></div>
+  <div class="prose">
+    <p>Cinco decisiones, en orden de dinero. La junta deja de ser de reporte y pasa a ser de decisión: cada punto sale con responsable y fecha, o no sale.</p>
+  </div>
+
+  <div class="agenda">
+    <div class="ag"><span class="min">00–15</span><div class="what">Conciliación del gasto de septiembre<span>Export nativo de las tres plataformas + las tres facturas. Sin esto no se firma octubre.</span></div><span class="amt">$220,829<br>en disputa</span></div>
+    <div class="ag"><span class="min">15–25</span><div class="what">Recorte de la campaña Brand<span>De $103,957 a exacta pura defensiva. Ya se rankea #1–2 orgánico en toda la familia de marca.</span></div><span class="amt">−91%</span></div>
+    <div class="ag"><span class="min">25–35</span><div class="what">Consolidación de 35 campañas a 3 + 1<span>Con destinos que existen hoy, no con las landings futuras.</span></div><span class="amt">5.3× más<br>tráfico útil</span></div>
+    <div class="ag"><span class="min">35–45</span><div class="what">LinkedIn: reporte completo o apagado<span>Decisión binaria con fecha. 13 días de gasto sin una sola métrica.</span></div><span class="amt">$24,999.71</span></div>
+    <div class="ag"><span class="min">45–60</span><div class="what">Nuevo contrato de datos del reporte mensual<span>MQL, costo por SQL y pipeline value en pesos. Más Impression Share y términos de búsqueda.</span></div><span class="amt">—</span></div>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Lo que hay que llevar resuelto de casa</span>
+    <p>Antes de la junta hay que cerrar internamente con Leo <strong>los tres números que se contradicen</strong>: el gasto real de septiembre, si LinkedIn gastó $0 o $25,000, y la diferencia entre las ventas del funnel y los nuevos clientes del CSV de finanzas. Si un dato se cae en vivo, se cae el argumento completo.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="google">
+  <div class="sechead"><span class="secnum">03</span><h2>Google Ads · tres decisiones</h2></div>
+
+  <div class="dec k">
+    <div class="hd">
+      <span class="tag">Recortar</span>
+      <span class="ttl">Brand baja a mínimo defensivo</span>
+      <span class="amt">$103,957</span>
+    </div>
+    <div class="bd">
+      <p>Consume el 54.2% del gasto de Google para comprar <strong>119 impresiones en 13 días</strong> sobre términos donde BluePixel ya ocupa posición orgánica #1 y #2: <code>bluepixel ia</code> #1, <code>bluepixel modernización</code> #1, <code>bluepixel agencia digital</code> #2, <code>bluepixel inteligencia artificial</code> #2.</p>
+      <p>Por definición, quien teclea «bluepixel» ya conoce la marca: el 100% de ese gasto es defensivo y cero es adquisición. El pozo total de demanda de marca son unas <strong>275 búsquedas al mes</strong>.</p>
+      <p><strong>Contraargumento esperado de Rocketing:</strong> «Brand convierte a $499.50, lo más barato de la cuenta». Es cierto y es irrelevante — esa conversión no es incremental, y son 2.3 al mes de gente que ya te conocía. No se construye un pipeline de $3.9M por deal con eso.</p>
+      <p><strong>Propuesta:</strong> bajar a <strong>$3,000 MXN al mes</strong> en concordancia exacta pura sobre <code>[bluepixel]</code>, <code>[blue pixel]</code>, <code>[bluepixel mx]</code>. Se revierte solo si Auction Insights muestra un competidor con más de 5% de impression share sobre términos de marca — dato que Rocketing todavía no ha entregado.</p>
+    </div>
+    <div class="ft"><span><b>Ejecuta</b> Diana Cardoso</span><span><b>Verifica</b> Fabián, 24 sep</span><span><b>Libera</b> el 54% del presupuesto de Google</span></div>
+  </div>
+
+  <div class="dec k">
+    <div class="hd">
+      <span class="tag">Apagar</span>
+      <span class="ttl">Competidores, WebDev y App Dev</span>
+      <span class="amt">$7,350</span>
+    </div>
+    <div class="bd">
+      <p>Esto ya se acordó el 14 de septiembre con plazo de 24 horas y <strong>no se ejecutó</strong>. Los números:</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Campaña</th><th class="n">Impr.</th><th class="n">Clics</th><th class="n">CTR</th><th class="n">CPC</th><th class="n">Conv.</th></tr></thead>
+          <tbody>
+            <tr><td>Competidores</td><td class="n">821</td><td class="n">23</td><td class="n">2.80%</td><td class="n">$87.73</td><td class="n">0</td></tr>
+            <tr><td>WebDev BP</td><td class="n">273</td><td class="n">25</td><td class="n">9.16%</td><td class="n">$111.33</td><td class="n">0</td></tr>
+            <tr><td>App Dev BP</td><td class="n">100</td><td class="n">13</td><td class="n">13.00%</td><td class="n">$196.10</td><td class="n">1</td></tr>
+            <tr class="tot"><td>Frente a la que sí funciona: IA Operacional</td><td class="n">1,411</td><td class="n">199</td><td class="n">14.10%</td><td class="n">$22.80</td><td class="n">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Competidores no tiene rescate posible:</strong> un anuncio de <em>conquesting</em> no puede llevar la marca del competidor, así que la relevancia queda estructuralmente penalizada y el CPC alto es permanente, no corregible.</p>
+      <p>Los $7,350 liberados, al CPC de $22.80 de IA Operacional, compran <strong>322 clics contra los 61 actuales</strong>.</p>
+    </div>
+    <div class="ft"><span><b>Ejecuta</b> Diana Cardoso, jue 17</span><span><b>Verifica</b> Fabián, vie 18</span><span><b>Efecto</b> 5.3× más tráfico calificado con el mismo dinero</span></div>
+  </div>
+
+  <div class="dec n">
+    <div class="hd">
+      <span class="tag">Consolidar</span>
+      <span class="ttl">De 35 campañas a 3 + 1</span>
+      <span class="amt">31 → 0</span>
+    </div>
+    <div class="bd">
+      <p>La aritmética que cierra la discusión: el presupuesto diario por campaña es de <strong>$29.94</strong> y el CPC promedio de la cuenta es de <strong>$42.97</strong>. <strong>Treinta y una de las treinta y cinco campañas no pueden costear un solo clic al día.</strong> Por eso 30 campañas produjeron 124 impresiones en 13 días — 0.32 por campaña por día.</p>
+      <p>Y con 6 conversiones repartidas entre 35 campañas, cada una promedia <strong>0.39 conversiones al mes</strong>. Smart Bidding necesita entre 15 y 30. A ese ritmo una campaña tardaría entre tres y seis años en salir de fase de aprendizaje. Ninguna ha optimizado jamás, ni lo hará con esta estructura.</p>
+      <p><strong>Estructura propuesta:</strong> Search 01 Apps · Search 02 Automatización · Search 03 Agentización · más Brand defensiva. Concordancia exacta y de frase únicamente. Puja en <em>Maximizar clics</em> las primeras tres semanas para juntar volumen, y migración a <em>Maximizar conversiones</em> solo cuando haya 30 envíos calificados acumulados.</p>
+    </div>
+    <div class="ft"><span><b>Ejecuta</b> Diana Cardoso</span><span><b>Fecha</b> 30 sep</span><span><b>Depende de</b> los destinos de la sección 04</span></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="destino">
+  <div class="sechead"><span class="secnum">04</span><h2>Dónde aterriza el tráfico mientras tanto</h2></div>
+
+  <div class="prose">
+    <p class="lede">Esta es la pieza que desbloquea todo el plan, y la que el acuerdo original resolvió mal. La consolidación en 3 campañas no puede esperar al sitio nuevo — pero tampoco puede apuntar a un 404.</p>
+
+    <p><code>cotiza.bluepixel.mx</code> está vivo, indexado y <strong>capturando leads con formularios nativos de Webflow</strong>. Es imperfecto y la estrategia quiere matarlo, pero hoy es lo único que captura. <strong>Apagarlo antes de que el sitio nuevo capture sería quedarse sin captación.</strong></p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Campaña</th><th>Destino ahora · sep–oct</th><th>Destino después · nov</th></tr></thead>
+      <tbody>
+        <tr><td>Search 03 · Agentización<br><span class="note">incluye IA Operacional, la que funciona</span></td><td class="m">cotiza.bluepixel.mx/<br>consultoria-inteligencia-artificial</td><td class="m">bluepixel.mx/es/agentizacion</td></tr>
+        <tr><td>Search 02 · Automatización</td><td class="m">cotiza.bluepixel.mx/<br>servicios-de-automatizacion</td><td class="m">bluepixel.mx/es/automatizacion</td></tr>
+        <tr><td>Search 01 · Apps</td><td class="m">cotiza.bluepixel.mx/desarrollo-apps</td><td class="m">bluepixel.mx/es/desarrollo-apps</td></tr>
+        <tr><td>Brand defensiva</td><td class="m">bluepixel.mx/es/inicio</td><td class="m">sin cambio</td></tr>
+      </tbody>
+      <caption>El cambio de destino en noviembre se hace campaña por campaña, y solo cuando la página nueva ya esté indexada y capturando. No se mueven las cuatro el mismo día.</caption>
+    </table>
+  </div>
+
+  <h3>Los tres arreglos a cotiza, esta semana</h3>
+  <p class="prose">Son de Webflow, los puede hacer Juan Cano, y suben la conversión sin tocar el sitio nuevo:</p>
+  <ol class="prose">
+    <li><strong>Agregar el campo calificador.</strong> Hoy el formulario dice «¿Te ayudo a validar tu proyecto en 2 min?» y <strong>no pregunta ni tamaño de empresa ni ERP</strong> — que son las dos variables que separan al lead de $20,000 del de $850,000. El home de bluepixel.mx sí tiene rangos de presupuesto publicados; la landing donde aterriza la pauta no.</li>
+    <li><strong>Capturar <code>gclid</code>.</strong> El script de UTMs en <code>localStorage</code> ya existe en el sitio; solo hay que extenderlo. Sin <code>gclid</code> ninguna venta futura se podrá atribuir a campaña, ni siquiera cuando el CRM esté conectado.</li>
+    <li><strong>Cambiar el encabezado de las tres páginas destino</strong> para que diga lo que el anuncio prometió. Hoy el anuncio habla de agentes en producción y MCP, y la landing habla de «validar tu proyecto». Ese desajuste es parte del Quality Score.</li>
+  </ol>
+
+  <div class="call ok">
+    <span class="lbl">La ganancia inmediata</span>
+    <p>La campaña <strong>IA Operacional Enterprise</strong> trae 199 clics a $22.80 —el 63% del tráfico de la cuenta al costo más bajo— y hoy muere en una landing genérica. Reapuntarla a la página de consultoría de IA con el mensaje alineado es el cambio de una URL, y es la acción con mejor relación impacto-esfuerzo de toda la cuenta.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="linkedin">
+  <div class="sechead"><span class="secnum">05</span><h2>LinkedIn · decisión binaria, y el orden correcto</h2></div>
+
+  <div class="dec r">
+    <div class="hd">
+      <span class="tag">Decidir</span>
+      <span class="ttl">Reporte completo antes del 24, o apagado el 25</span>
+      <span class="amt">$24,999.71</span>
+    </div>
+    <div class="bd">
+      <p>Se gastó el <strong>97.66% del presupuesto</strong> en una campaña con objetivo <strong>«Awareness»</strong>, que por construcción no genera leads, en el inventario más caro del digital. Y no hay una sola métrica: ni impresiones, ni clics, ni CTR, ni CPC, ni conversiones. En GA4 no aparece un solo renglón de <code>linkedin/*</code> — o no hubo tráfico, o nunca se etiquetó.</p>
+      <p>Contexto de referencia: el CPC de LinkedIn segmentando C-level en México ronda los $80–250 MXN. Esos $25,000 debieron comprar entre <strong>100 y 312 clics</strong>. No hay rastro de ninguno.</p>
+      <p><strong>Lo que se exige antes del miércoles 24:</strong> impresiones, clics, CTR, CPC y CPM; el reporte <em>Companies</em> con las cuentas alcanzadas; demographics por seniority y tamaño de empresa; el Insight Tag instalado y disparando; UTMs en todos los destinos; y la factura conciliada. <strong>Si falta cualquiera, se apaga el canal completo el 25.</strong></p>
+    </div>
+    <div class="ft"><span><b>Exige</b> Fabián</span><span><b>Entrega</b> Diana Cardoso, mié 24</span><span><b>Decide</b> Fabián, jue 25</span></div>
+  </div>
+
+  <div class="call">
+    <span class="lbl">El orden que el plan original tenía invertido</span>
+    <p>El acuerdo del 14 dice encender <strong>Thought Leadership Ads</strong> de Leo en 48 horas. Pero ese formato <em>amplifica una publicación existente</em> — y el LinkedIn orgánico de BluePixel pasó de +81 seguidores en abril a <strong>+4 en junio</strong>. No hay publicaciones que amplificar.</p>
+    <p>El orden correcto es al revés: <strong>primero orgánico, que cuesta $0</strong>, y pauta solo sobre lo que ya demostró tracción. Amplificar a ciegas es repetir el error de la campaña de Awareness con otro formato.</p>
+    <p>Lo mismo con los <strong>Document Ads</strong>: el lead magnet es el PDF de la Blueprint Library, <strong>que no existe como entregable</strong>. Sin él, el formato no se puede activar.</p>
+  </div>
+
+  <h3>Lo que sí arranca ya, sin presupuesto</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Perfil</th><th class="n">Publicaciones</th><th>Tema</th></tr></thead>
+      <tbody>
+        <tr><td>Leo Flores</td><td class="n">2 / semana</td><td>Arquitectura, MCP, por qué mueren los pilotos de IA</td></tr>
+        <tr><td>Fabián Flores</td><td class="n">2 / semana</td><td>Datos, demos, teardowns técnicos</td></tr>
+        <tr><td>María</td><td class="n">1 / semana</td><td>POV de industria y autoridad ejecutiva</td></tr>
+        <tr><td>Pablo y José</td><td class="n">1 / semana c/u</td><td>Las objeciones reales que escuchan · es el contenido que más convierte y hoy no existe</td></tr>
+      </tbody>
+      <caption>Tres de los siete prospectos del pipeline —el CTO de RetailX, el VP de Innovación de Banco Nacional y el CEO de Industrias HR— están en LinkedIn todos los días y en Instagram nunca.</caption>
+    </table>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="meta">
+  <div class="sechead"><span class="secnum">06</span><h2>Meta · dejar de ser canal, empezar a ser laboratorio</h2></div>
+
+  <div class="prose">
+    <p>Meta produjo <strong>56,482 impresiones y cero leads atribuibles</strong>. El desglose explica por qué: tres de las cuatro campañas visibles son publicaciones de Instagram impulsadas, y generaron <strong>376 clics que produjeron 3 vistas de landing</strong>. Esos «clics» son me-gusta y visitas a perfil. El 99.2% de ese presupuesto compra interacción que nunca toca el sitio.</p>
+    <p>Encima, la audiencia está envenenada: 16,448 seguidores con alcance de 123 a 143 por publicación, y un balance histórico que registra <strong>19,624 seguidores perdidos en agosto de 2025</strong> contra 877 ganados. Meta está construyendo audiencias similares sobre una base comprada o purgada.</p>
+  </div>
+
+  <div class="dec s">
+    <div class="hd">
+      <span class="tag">Reconvertir</span>
+      <span class="ttl">Retargeting puro + banco de pruebas de mensaje</span>
+      <span class="amt">tope $1,500/mes</span>
+    </div>
+    <div class="bd">
+      <p><strong>Apagar hoy</strong> las tres publicaciones impulsadas: $208.74 por 3 vistas de landing.</p>
+      <p><strong>Conservar «Always On»</strong>, que es lo único que funciona —260 vistas de landing a $2.28— convertido a retargeting puro de visitantes de 180 días y de quienes abrieron las demos.</p>
+      <p><strong>Y el uso que nadie está viendo:</strong> a <strong>$1.28 por clic en Meta contra $42.97 en Google</strong>, se puede validar si «Agentes de IA en producción con MCP» supera a «Desarrollo de apps empresariales» por unos <strong>$200 pesos</strong>, y portar el ganador a Google y LinkedIn. Es 33 veces más barato equivocarse aquí que allá.</p>
+      <p><strong>Regla de corte:</strong> si el retargeting no produce un SQL en 60 días, el canal se apaga completo el 15 de noviembre.</p>
+    </div>
+    <div class="ft"><span><b>Ejecuta</b> Diana Cardoso</span><span><b>Fecha</b> jue 17 el apagado, 30 sep la reconversión</span></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="seo">
+  <div class="sechead"><span class="secnum">07</span><h2>SEO · lo que no depende de nadie</h2></div>
+
+  <div class="prose">
+    <p class="lede">El SEO es el único canal con economía sana: entrega 13 de 26 leads a costo de medios cero, y ya genera más clics que Google Ads (410 contra 317). Y el arreglo de mayor impacto no cuesta un peso ni requiere aprobación.</p>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">El hallazgo que reencuadra el problema</span>
+    <p>Las 20 páginas del dominio raíz sirven title, H1 y meta description <strong>en inglés</strong>. Los 21 leads orgánicos de septiembre fueron en español; en inglés fueron cero. Y las páginas de IA <strong>ya existen</strong> — <code>/custom-ai-agents</code>, <code>/ai-strategy-workflow-automation-services</code>, <code>/smart-ux-flows-ai-copilots</code> — pero están en inglés, y por eso no pueden rankear para <code>ia integrada software empresarial</code>, donde estamos en posición 61.</p>
+    <p>Esto convierte «no tenemos contenido de IA» en <strong>«no tenemos las páginas de IA traducidas»</strong>, que es diez veces más barato de resolver.</p>
+  </div>
+
+  <h3>Sprint on-page · 17 al 26 de septiembre</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Fecha</th><th>Tarea</th><th>Responsable</th></tr></thead>
+      <tbody>
+        <tr><td class="m">jue 17</td><td>Arreglar los <strong>10 H1 concatenados</strong> — un <code>&lt;br&gt;</code> sin espacio de Webflow está produciendo tokens como <code>"ScaleAI-Powered"</code> y <code>"Headless SoftwareDevelopment"</code> justo en las páginas de IA. Añadir H1 a <code>/contact</code>. Corregir el typo <em>«UX- dirven»</em> que lleva meses en producción.</td><td class="m">Fabián + Juan Cano</td></tr>
+        <tr><td class="m">18–19 sep</td><td>Reescribir 20 titles a ≤58 caracteres, keyword al inicio, «México» donde aplique. Siete están truncados en SERP hoy.</td><td class="m">Leo</td></tr>
+        <tr><td class="m">22–23 sep</td><td>Reescribir 20 meta descriptions con verbo, número y CTA. La del home tiene 76 de 160 caracteres y es una lista de categorías separadas por pipes.</td><td class="m">Leo</td></tr>
+        <tr><td class="m">24 sep</td><td>Auditar <code>hreflang</code> es-MX / en-US y publicar title, meta y H1 <strong>en español</strong> para todas las URLs <code>/es/</code>.</td><td class="m">Daniel Arias</td></tr>
+        <tr><td class="m">25–26 sep</td><td><code>FAQPage</code> schema en las 8 páginas con más impresiones. Snapshot de baseline en Search Console el 30.</td><td class="m">Daniel Arias</td></tr>
+      </tbody>
+      <caption>Con posición promedio 13 el CTR debería estar entre 0.8% y 1.6%; está en <strong>0.64%</strong>. Proyección conservadora del sprint: <strong>+72% de tráfico orgánico sin mover una sola posición</strong>. Escenario base: +182%.</caption>
+    </table>
+  </div>
+
+  <h3>Octubre · traducir antes que escribir</h3>
+  <ul class="prose">
+    <li><strong>Semana del 5 de octubre.</strong> Publicar <code>/es/agentes-ia-personalizados</code>, <code>/es/automatizacion-de-flujos-con-ia</code> y <code>/es/arquitectura-de-datos</code> como traducción y localización de las páginas que ya existen en inglés. Costo marginal: traducción, no creación. Y de paso quedan listos los destinos de pauta de noviembre.</li>
+    <li><strong>6, 13 y 20 de octubre.</strong> Las tres páginas pilar de cluster, de 2,500 palabras, en español. Son las que cierran la brecha de 50 posiciones de mediana.</li>
+    <li><strong>Bloques puente.</strong> Inyectar en las 8 guías de UX que concentran las 2,706 impresiones en LLMs un párrafo argumental que enlace al cluster correspondiente. <strong>No se borra ni se redirige nada</strong> — ese contenido sostiene 2 de las 10 posiciones en top-10. El pivote se hace por adición.</li>
+  </ul>
+
+  <h3>La entidad externa · el arreglo más barato de todos</h3>
+  <p class="prose">El perfil de <strong>Clutch</strong> es la fuente que consulta un comprador enterprise en due diligence y la que más citan los LLMs sobre BluePixel. Hoy publica <strong>tarifa de $50–99 USD por hora</strong> y reseñas de una carnicería, una red social de mascotas y estudios de resina — mientras el sitio muestra Bimbo, BBVA y PepsiCo.</p>
+  <p class="prose">Esa contradicción es la explicación más probable del win rate de 4.3%. Subir «AI Agents» al primer lugar del mix de servicios, elevar el mínimo de proyecto, retirar la tarifa horaria pública y gestionar reseñas de clientes enterprise es trabajo de semanas, sin costo de medios, y arregla SEO, GEO y due diligence a la vez.</p>
+  <p class="prose">Sumar a eso dos cosas de costo cero: <strong>enviar el sitemap a Bing Webmaster Tools</strong>, que desbloquea la elegibilidad de cita en ChatGPT —el 62.6% del referral B2B de IA—, y publicar <code>llms.txt</code>, que hoy devuelve 404.</p>
+</section>
+
+<!-- 8 -->
+<section id="datos">
+  <div class="sechead"><span class="secnum">08</span><h2>El nuevo contrato de datos con Rocketing</h2></div>
+  <div class="prose">
+    <p>El reporte mensual sustituye «leads brutos» por métricas de negocio. Esto ya estaba en la Solución 7 de la auditoría; lo que sigue agrega los campos de diagnóstico que hoy faltan y sin los cuales no se puede saber si la cuenta está estrangulada o si el mercado no existe.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Dato exigido</th><th>Por qué no se puede decidir sin él</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Impression Share</strong> + IS perdido por presupuesto y por ranking</td><td>Es el dato más importante que falta en todo el reporte. Sin él no se sabe si 2,848 impresiones es el techo del mercado o estrangulamiento de puja.</td></tr>
+        <tr><td><strong>Informe de términos de búsqueda</strong></td><td>Imposible verificar si la lista de negativas se cargó alguna vez, ni qué compraron los clics de $87.73 en Competidores.</td></tr>
+        <tr><td><strong>Quality Score</strong> por keyword, con sus tres componentes</td><td>Sin él no se puede demostrar si el CPC de $196.10 es penalización de relevancia o competencia real.</td></tr>
+        <tr><td><strong>Auction Insights</strong> sobre términos de marca</td><td>Es el único dato que podría justificar mantener presupuesto en Brand.</td></tr>
+        <tr><td><strong>MQL corporativo</strong> · correo corporativo + empresa de 200+ empleados</td><td>Sustituye el conteo de formularios brutos que es la causa del colapso de la tasa de cierre.</td></tr>
+        <tr><td><strong>Costo por SQL</strong> · cita de diagnóstico agendada y completada</td><td>Es la métrica que alinea el incentivo de la agencia con el del negocio.</td></tr>
+        <tr><td><strong>Pipeline value</strong> en pesos</td><td>Conecta la pauta con el forecast comercial.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="call warn">
+    <span class="lbl">Corrección a la lista de negativas antes de cargarla</span>
+    <p>La lista maestra bloquea todo prospecto con presupuesto menor a <strong>$300,000 MXN</strong>. Pero el producto de entrada —el Diagnóstico— cuesta entre $95,000 y $185,000. <strong>La lista está diseñada para bloquear al comprador natural del producto que resuelve el problema comercial.</strong> Hay que bajar el umbral a $80,000 y calificar por tamaño de empresa y ERP, no por presupuesto autodeclarado: un Director de Operaciones de una empresa de 800 empleados casi nunca sabe su presupuesto en la primera visita.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="presupuesto">
+  <div class="sechead"><span class="secnum">09</span><h2>Presupuesto interino</h2></div>
+
+  <div class="call crit">
+    <span class="lbl">Principio</span>
+    <p><strong>No se reasigna presupuesto sobre cifras que no cuadran.</strong> Hasta que la conciliación esté sobre la mesa, el gasto se congela en el nivel medido y verificable: <strong>$34,300 MXN al mes</strong>, que es el run-rate que cuadra con el promedio real de Q2.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Partida</th><th class="n">Sep–oct · congelado</th><th class="n">Nov–dic · si hay conciliación y destinos</th></tr></thead>
+      <tbody>
+        <tr><td>Google · 3 campañas de cluster</td><td class="n">24,000</td><td class="n">27,000</td></tr>
+        <tr><td>Google · Brand defensiva</td><td class="n">3,000</td><td class="n">3,000</td></tr>
+        <tr><td>LinkedIn · condicionado al reporte</td><td class="n">0</td><td class="n">12,000</td></tr>
+        <tr><td>Meta · retargeting y pruebas de mensaje</td><td class="n">1,500</td><td class="n">3,000</td></tr>
+        <tr><td>Contenido y SEO · producción</td><td class="n">5,800</td><td class="n">9,000</td></tr>
+        <tr><td>Reserva</td><td class="n">0</td><td class="n">6,000</td></tr>
+        <tr class="tot"><td>Total mensual</td><td class="n">34,300</td><td class="n">60,000</td></tr>
+      </tbody>
+      <caption>El nivel de noviembre —$60,000 al mes— corresponde al de Q1 2026 ajustado, que fue el único trimestre del año que produjo ventas. Al CPL medido de Google, $180,000 al trimestre compran 79 conversiones, muy por encima de las ~50 que exige el modelo de pipeline. <strong>No hace falta más dinero: hace falta mejor targeting y un destino que capture.</strong></caption>
+    </table>
+  </div>
+
+  <p class="prose">Las tres condiciones para pasar del nivel congelado al de noviembre: <strong>(a)</strong> conciliación entregada y firmada; <strong>(b)</strong> las tres páginas de cluster publicadas e indexadas; <strong>(c)</strong> captura de <code>gclid</code> funcionando de punta a punta con un envío de prueba confirmado.</p>
+</section>
+
+<!-- 10 -->
+<section id="calendario">
+  <div class="sechead"><span class="secnum">10</span><h2>Seis semanas</h2></div>
+
+  <div class="weeks">
+    <div class="wk">
+      <div class="when">17–19 SEP<span>Esta semana</span></div>
+      <div>
+        <h4>Apagar lo que sangra y arrancar el sprint</h4>
+        <p>Apagado verificado de Competidores, WebDev y las publicaciones impulsadas de Instagram. Solicitud formal por escrito de la conciliación y del reporte de LinkedIn, con fecha límite. Arranque del sprint on-page: los 10 H1 rotos y el typo en producción.</p>
+        <p class="who"><b>Diana</b> apagado · <b>Fabián</b> exige y verifica · <b>Juan Cano</b> H1</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">21–25 SEP<span>Semana 2</span></div>
+      <div>
+        <h4>Junta de decisión y arreglo de cotiza</h4>
+        <p>Lunes 21 a las 4:00 PM con la agenda de la sección 02. Recorte de Brand ejecutado y verificado. Campo calificador y captura de <code>gclid</code> en cotiza. Titles y metas reescritos. Reapuntar IA Operacional a la página de consultoría de IA. Decisión de LinkedIn el jueves 25.</p>
+        <p class="who"><b>Fabián</b> junta y verificación · <b>Juan Cano</b> Webflow · <b>Leo</b> copy</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">28 SEP – 2 OCT<span>Semana 3</span></div>
+      <div>
+        <h4>Consolidación de campañas y entidad externa</h4>
+        <p>Las 35 campañas colapsan a 3 + 1 con destinos vivos y negativas corregidas al umbral de $80,000. Perfiles de Clutch y Sortlist actualizados. Sitemap a Bing, <code>llms.txt</code> publicado. Baseline de Search Console.</p>
+        <p class="who"><b>Diana</b> campañas · <b>Fabián</b> entidad y GEO</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">5–16 OCT<span>Semanas 4–5</span></div>
+      <div>
+        <h4>Traducir las páginas de IA y publicar los pilares</h4>
+        <p>Las tres páginas de IA que ya existen en inglés, publicadas en español. Pilares de Automatización el 6 y de Agentización el 13. LinkedIn orgánico corriendo con los cinco perfiles desde la semana del 22 de septiembre.</p>
+        <p class="who"><b>Daniel Arias</b> traducción y técnico · <b>Leo y Fabián</b> pilares</p>
+      </div>
+    </div>
+    <div class="wk">
+      <div class="when">19–30 OCT<span>Semana 6</span></div>
+      <div>
+        <h4>Migrar destinos y medir el delta</h4>
+        <p>Cambio de destino campaña por campaña hacia las páginas nuevas, solo cuando cada una esté indexada. Pilar de Apps el 20. Primer reporte con el contrato de datos nuevo. <strong>Las 301 siguen sin ejecutarse</strong> hasta que las tres páginas tengan tráfico propio.</p>
+        <p class="who"><b>Diana</b> destinos · <b>Daniel</b> indexación · <b>Fabián</b> reporte</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Cómo se sabe si funcionó</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Métrica</th><th class="n">Hoy</th><th class="n">31 de octubre</th></tr></thead>
+      <tbody>
+        <tr><td>Clics orgánicos por periodo de 13 días</td><td class="n">410</td><td class="n">700+</td></tr>
+        <tr><td>CTR del sitio</td><td class="n">0.64%</td><td class="n">1.10%</td></tr>
+        <tr><td>Campañas activas en Google</td><td class="n">35</td><td class="n">4</td></tr>
+        <tr><td>% del gasto de Google en marca</td><td class="n">54.2%</td><td class="n">&lt;10%</td></tr>
+        <tr><td>Gasto de medios con respaldo de plataforma</td><td class="n">6.3%</td><td class="n">100%</td></tr>
+        <tr><td>Propuestas emitidas en el periodo</td><td class="n">0</td><td class="n">4</td></tr>
+      </tbody>
+      <caption>La última es la única que importa de verdad. Llevamos once semanas consecutivas en cero.</caption>
+    </table>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="no">
+  <div class="sechead"><span class="secnum">11</span><h2>Lo que no se hace todavía</h2></div>
+  <div class="prose">
+    <ul>
+      <li><strong>Las redirecciones 301.</strong> Hasta que las tres páginas destino existan, estén indexadas y tengan tráfico propio. Ejecutarlas hoy destruye el único canal que crece.</li>
+      <li><strong>Document Ads en LinkedIn.</strong> El lead magnet es la Blueprint Library en PDF y no existe como entregable.</li>
+      <li><strong>Thought Leadership Ads.</strong> Amplifican publicaciones que todavía no se han escrito. Primero el orgánico, que es gratis.</li>
+      <li><strong>Apagar cotiza.bluepixel.mx.</strong> Es lo único que captura leads hoy. Se apaga cuando el sitio nuevo capture, no antes.</li>
+      <li><strong>Migrar a Maximizar Conversiones.</strong> Con 6 conversiones al mes repartidas entre campañas nuevas, el algoritmo no tiene con qué optimizar. Se espera a acumular 30 envíos calificados.</li>
+      <li><strong>Subir el presupuesto.</strong> El problema no es que la pauta sea cara — el CAC de Q1 fue 2.43% del ticket, una cifra de clase mundial. El problema es el destino y la medición. Más dinero sobre la estructura actual reproduce el Q2: $102,712 gastados, $0 vendidos.</li>
+    </ul>
+  </div>
+
+  <div class="call">
+    <span class="lbl">El argumento de cierre para la junta</span>
+    <p>Desde el 1 de abril se han gastado <strong>$188,446 MXN</strong> para producir <strong>21 propuestas y cero ventas</strong> — $8,973 por cada propuesta que no cerró. La pauta de BluePixel no es cara: cuando cierra, cierra a un CAC de 2.43% del ticket. Lo que se rompió es que el tráfico aterriza donde no califica y nadie puede señalar con datos qué parte falló, porque la instrumentación no lo permite. <strong>Este plan no pide más presupuesto. Pide un destino que capture y un reporte que se pueda auditar.</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p>Plan interino redactado el 17 de septiembre de 2026 sobre el reporte de campañas de Rocketing (1–13 sep), la auditoría forense del 14 de septiembre, la Estrategia Maestra 2026, la Estrategia de Pauta y Campañas, la guía de la junta de las 4:00 PM y el crawl propio de <code>seo_audit_bluepixel.csv</code>. Los códigos de respuesta HTTP de la sección 01 se verificaron en vivo el 17 de septiembre.</p>
+  <p>Este plan cubre pauta y SEO únicamente, y está diseñado para no depender del lanzamiento del sitio nuevo, de la conexión del CRM ni de la definición final de precios. Esas tres piezas corren en paralelo y cada una desbloquea una mejora adicional, pero ninguna bloquea lo que está aquí.</p>
+</footer>
+
+</div>

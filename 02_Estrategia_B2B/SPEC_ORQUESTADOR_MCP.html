@@ -1,0 +1,794 @@
+<title>Orquestador MCP BluePixel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#F7F8F7; --surface:#FFFFFF; --sunk:#ECEEED; --code-bg:#F2F4F3;
+    --ink:#151A1C; --ink-2:#3C4649; --ink-3:#6C7679;
+    --rule:#D8DDDB; --rule-soft:#E7EAE9;
+    --accent:#0B6E7F; --accent-soft:#E2F0F2;
+    --crit:#AE2A20; --crit-soft:#FAEAE8;
+    --warn:#87560F; --warn-soft:#FAF1E2;
+    --ok:#0D6B4F; --ok-soft:#E2F1EB;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0D1113; --surface:#161B1E; --sunk:#1D2427; --code-bg:#11171A;
+      --ink:#E7ECEB; --ink-2:#AAB5B6; --ink-3:#78868A;
+      --rule:#283135; --rule-soft:#1F272A;
+      --accent:#4FCBD8; --accent-soft:#102A30;
+      --crit:#F08A80; --crit-soft:#2C1614;
+      --warn:#E0B061; --warn-soft:#2A2011;
+      --ok:#57C8A0; --ok-soft:#0F2620;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0D1113; --surface:#161B1E; --sunk:#1D2427; --code-bg:#11171A;
+    --ink:#E7ECEB; --ink-2:#AAB5B6; --ink-3:#78868A;
+    --rule:#283135; --rule-soft:#1F272A;
+    --accent:#4FCBD8; --accent-soft:#102A30;
+    --crit:#F08A80; --crit-soft:#2C1614;
+    --warn:#E0B061; --warn-soft:#2A2011;
+    --ok:#57C8A0; --ok-soft:#0F2620;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding-inline:20px; padding-block:0 90px}
+  .prose{max-width:70ch}
+
+  nav.bar{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--rule);
+  }
+  nav.bar .inner{
+    max-width:1000px; margin:0 auto; padding-inline:20px; height:44px;
+    display:flex; gap:3px; align-items:center; overflow-x:auto; scrollbar-width:none;
+  }
+  nav.bar .inner::-webkit-scrollbar{display:none}
+  nav.bar a{
+    font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.02em;
+    color:var(--ink-3); text-decoration:none; white-space:nowrap; padding:5px 8px; border-radius:5px;
+  }
+  nav.bar a:hover{color:var(--ink); background:var(--sunk)}
+  nav.bar a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+  header.mast{padding-block:40px 26px; border-bottom:2px solid var(--ink)}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 12px;
+  }
+  h1{font-size:clamp(28px,5vw,42px); line-height:1.1; font-weight:700; letter-spacing:-.02em; margin:0 0 14px; text-wrap:balance; max-width:22ch}
+  .standfirst{font-size:clamp(15.5px,2vw,18px); color:var(--ink-2); margin:0; max-width:62ch; line-height:1.5}
+  .meta{display:flex; flex-wrap:wrap; gap:5px 20px; margin-top:20px; font-family:"JetBrains Mono",monospace; font-size:11px; color:var(--ink-3)}
+  .meta b{color:var(--ink-2); font-weight:500}
+
+  section{padding-block:46px; border-bottom:1px solid var(--rule-soft)}
+  section:last-of-type{border-bottom:0}
+  .sechead{display:flex; gap:13px; align-items:baseline; margin-bottom:18px}
+  .secnum{font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:700; color:var(--accent); flex:none; padding-top:5px}
+  h2{font-size:clamp(21px,3.2vw,28px); line-height:1.18; font-weight:700; letter-spacing:-.015em; margin:0; text-wrap:balance}
+  h3{font-size:18px; font-weight:600; margin:30px 0 9px; text-wrap:balance}
+  h4{font-size:15px; font-weight:600; margin:20px 0 6px}
+  p{margin:0 0 14px}
+  a{color:var(--accent)}
+  ul,ol{margin:0 0 14px; padding-left:20px; max-width:70ch}
+  li{margin-bottom:6px}
+  .lede{font-size:17px; color:var(--ink-2); max-width:64ch; line-height:1.52}
+  code{font-family:"JetBrains Mono",monospace; font-size:.87em; background:var(--sunk); padding:1.5px 5px; border-radius:4px; color:var(--ink)}
+
+  /* code blocks */
+  .code{margin:18px 0; border:1px solid var(--rule); border-radius:8px; overflow:hidden; background:var(--code-bg)}
+  .code .lbl{
+    font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--ink-3); background:var(--sunk); padding:7px 13px; border-bottom:1px solid var(--rule); font-weight:500;
+    display:flex; justify-content:space-between; gap:12px;
+  }
+  .code pre{margin:0; padding:14px 13px; overflow-x:auto; font-family:"JetBrains Mono",monospace; font-size:12.6px; line-height:1.62; color:var(--ink)}
+  .code pre .c{color:var(--ink-3)}
+  .code pre .k{color:var(--accent); font-weight:500}
+  .code pre .s{color:var(--ok)}
+
+  /* tables */
+  .tw{overflow-x:auto; margin:18px 0; border:1px solid var(--rule); border-radius:8px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:13.6px; min-width:520px}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+  thead th{font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); font-weight:600; background:var(--sunk); border-bottom:1px solid var(--rule); white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n,th.n{text-align:right; font-family:"JetBrains Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+  td.m{font-family:"JetBrains Mono",monospace; font-size:12.4px}
+  tbody tr.tot td{font-weight:600; background:var(--sunk); border-top:1px solid var(--rule)}
+  caption{caption-side:bottom; text-align:left; padding:9px 12px; font-size:12.4px; color:var(--ink-3); border-top:1px solid var(--rule-soft)}
+
+  /* callouts */
+  .call{border-left:3px solid var(--accent); background:var(--accent-soft); padding:14px 16px; margin:20px 0; border-radius:0 7px 7px 0; max-width:72ch}
+  .call.crit{border-color:var(--crit); background:var(--crit-soft)}
+  .call.warn{border-color:var(--warn); background:var(--warn-soft)}
+  .call.ok{border-color:var(--ok); background:var(--ok-soft)}
+  .call p:last-child{margin-bottom:0}
+  .call .lbl{font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:700; display:block; margin-bottom:6px; color:var(--accent)}
+  .call.crit .lbl{color:var(--crit)} .call.warn .lbl{color:var(--warn)} .call.ok .lbl{color:var(--ok)}
+
+  /* route flow */
+  .flow{margin:24px 0; display:flex; flex-direction:column; gap:10px}
+  .fnode{background:var(--surface); border:1px solid var(--rule); border-radius:9px; padding:14px 16px}
+  .fnode .tag{font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+  .fnode .ttl{font-weight:600; font-size:15.5px; margin-top:4px}
+  .fnode .dsc{font-size:13.8px; color:var(--ink-2); margin-top:5px}
+  .farrow{text-align:center; font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-3); line-height:1}
+  .fsplit{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:10px}
+  .fnode.r1{border-left:3px solid var(--ink-3)}
+  .fnode.r2{border-left:3px solid var(--crit)}
+  .fnode.r3{border-left:3px solid var(--accent)}
+  .fnode.r4{border-left:3px solid var(--warn)}
+  .fnode.hub{border:1px solid var(--accent); background:var(--accent-soft)}
+
+  .chip{display:inline-block; font-family:"JetBrains Mono",monospace; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2.5px 7px; border-radius:4px; white-space:nowrap}
+  .chip.a{background:var(--accent-soft); color:var(--accent)}
+  .chip.c{background:var(--crit-soft); color:var(--crit)}
+  .chip.w{background:var(--warn-soft); color:var(--warn)}
+  .chip.o{background:var(--ok-soft); color:var(--ok)}
+
+  .note{font-size:13px; color:var(--ink-3); max-width:70ch}
+  .chk{list-style:none; padding-left:0; max-width:70ch}
+  .chk li{display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-bottom:1px solid var(--rule-soft); margin:0; font-size:14.5px}
+  .chk li:last-child{border-bottom:0}
+  .chk .bx{font-family:"JetBrains Mono",monospace; color:var(--ink-3); flex:none; font-size:13px; padding-top:1px}
+  .chk .who{font-family:"JetBrains Mono",monospace; font-size:11px; color:var(--ink-3); display:block; margin-top:2px}
+  footer{padding-block:30px; border-top:2px solid var(--ink); font-size:13.2px; color:var(--ink-3); max-width:72ch}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<nav class="bar">
+  <div class="inner">
+    <a href="#principio">Principio</a>
+    <a href="#arquitectura">Arquitectura</a>
+    <a href="#entrada">Payload</a>
+    <a href="#scoring">Scoring</a>
+    <a href="#descarte">Descarte</a>
+    <a href="#split">LLM vs código</a>
+    <a href="#prompt">System prompt</a>
+    <a href="#rutas">Las 4 rutas</a>
+    <a href="#gobierno">Gobierno</a>
+    <a href="#bitacora">Bitácora</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#no">Qué no hacer</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Especificación técnica · v1.0</p>
+  <h1>Orquestador MCP: el enrutador de ingresos de BluePixel</h1>
+  <p class="standfirst">Expansión del servidor MCP existente de cuatro rutas, con scoring determinístico, atribución de ciclo cerrado y capa de gobierno. No sustituye nada de lo que ya corre.</p>
+  <div class="meta">
+    <span><b>Para</b> Leonardo Flores · implementación en el servidor MCP</span>
+    <span><b>De</b> Fabián Flores · Growth &amp; RevOps</span>
+    <span><b>Base</b> Estrategia Maestra, Cap. 2.3.2</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="principio">
+  <div class="sechead"><span class="secnum">01</span><h2>Principio de diseño</h2></div>
+  <div class="prose">
+    <p class="lede">El servidor MCP que ya corre —Webflow → Notion → correo a ventas— no se toca. Se le agregan tres salidas y una capa de decisión antes de ellas. El flujo que Pablo y José usan hoy sigue funcionando exactamente igual el día del despliegue.</p>
+
+    <p>Esto importa más allá de la cortesía: la Ruta 1 es el camino que ya está probado en producción. Si cualquiera de las rutas nuevas falla, el lead <strong>de todas formas llega a Notion</strong>. Esa es la propiedad que hace desplegable esta especificación sin ventana de mantenimiento.</p>
+
+    <div class="call ok">
+      <span class="lbl">Lo que esto resuelve</span>
+      <p>Los tres cuellos de botella que ya están documentados en el Cap. 2.3.1: ceguera algorítmica de Google Ads, la fosa común del 80% sin nurturing, y la latencia de <em>speed-to-lead</em>. No es un sistema nuevo — es el cierre de tres huecos ya diagnosticados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="arquitectura">
+  <div class="sechead"><span class="secnum">02</span><h2>Arquitectura de las cuatro rutas</h2></div>
+
+  <div class="flow">
+    <div class="fnode">
+      <span class="tag">Origen</span>
+      <div class="ttl">Formulario web · Webflow o React</div>
+      <div class="dsc">Envía el payload de contacto más el bloque de atribución capturado en el navegador. Sin ese bloque las Rutas 3 y 4 no pueden existir.</div>
+    </div>
+    <div class="farrow">↓ POST /lead</div>
+
+    <div class="fnode hub">
+      <span class="tag">Capa de decisión · nueva</span>
+      <div class="ttl">Orquestador MCP</div>
+      <div class="dsc"><strong>1.</strong> Normaliza con LLM los campos de texto libre → <strong>2.</strong> Evalúa descalificadores → <strong>3.</strong> Calcula score determinístico → <strong>4.</strong> Enruta según banda.</div>
+    </div>
+    <div class="farrow">↓</div>
+
+    <div class="fsplit">
+      <div class="fnode r1">
+        <span class="tag">Ruta 1 · siempre</span>
+        <div class="ttl">Notion</div>
+        <div class="dsc">El flujo actual, intacto. Se le agregan campos nuevos: score, banda, cluster, proceso y atribución.</div>
+      </div>
+      <div class="fnode r2">
+        <span class="tag">Ruta 2 · banda SQL</span>
+        <div class="ttl">Alerta push</div>
+        <div class="dsc">Mensaje al canal de Nuevas Ventas con resumen, desglose de score y teléfono. SLA de contacto: 5 minutos.</div>
+      </div>
+      <div class="fnode r3">
+        <span class="tag">Ruta 3 · diferida</span>
+        <div class="ttl">Conversión offline</div>
+        <div class="dsc">Al cambiar el estado en Notion, devuelve el <code>gclid</code> y el valor real a Google Ads y LinkedIn.</div>
+      </div>
+      <div class="fnode r4">
+        <span class="tag">Ruta 4 · resto</span>
+        <div class="ttl">Nurturing</div>
+        <div class="dsc">HubSpot Free. Secuencia distinta por banda. Los tres flujos ya están escritos en el Cap. 4.3.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Decisión pendiente antes de implementar</span>
+    <p>La estrategia dice <strong>Discord/WhatsApp</strong> en el Cap. 2.3.2, <strong>Slack</strong> en el Cap. 3.2, y entrega <strong>canales de Slack</strong> en el onboarding del Cap. 4.3. El Orquestador necesita un destino, no tres. Esta especificación usa <code>ALERT_WEBHOOK_URL</code> como variable de entorno para que la decisión no bloquee el desarrollo — pero hay que tomarla antes del despliegue.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="entrada">
+  <div class="sechead"><span class="secnum">03</span><h2>Contrato de entrada</h2></div>
+  <div class="prose">
+    <p>Este es el objeto que el formulario envía al MCP. Es el contrato: si un campo no llega aquí, ningún agente posterior puede inventarlo.</p>
+  </div>
+
+  <div class="code">
+    <div class="lbl"><span>POST /lead · application/json</span><span>contrato v1</span></div>
+<pre>{
+  <span class="k">"contacto"</span>: {
+    <span class="k">"nombre"</span>:    <span class="s">"Roberto García"</span>,
+    <span class="k">"email"</span>:     <span class="s">"rgarcia@grupoindustrial.com.mx"</span>,
+    <span class="k">"telefono"</span>:  <span class="s">"+52 55 1234 5678"</span>       <span class="c">// opcional</span>
+  },
+  <span class="k">"empresa"</span>: {
+    <span class="k">"nombre"</span>:    <span class="s">"Grupo Industrial X"</span>,
+    <span class="k">"cargo"</span>:     <span class="s">"Director de Operaciones"</span>,  <span class="c">// texto libre → LLM normaliza</span>
+    <span class="k">"industria"</span>: <span class="s">"Manufactura"</span>,
+    <span class="k">"empleados"</span>: <span class="s">"200-999"</span>,               <span class="c">// CAMPO NUEVO · obligatorio</span>
+    <span class="k">"erp"</span>:       <span class="s">"SAP"</span>                     <span class="c">// CAMPO NUEVO · obligatorio</span>
+  },
+  <span class="k">"necesidad"</span>: {
+    <span class="k">"reto"</span>:      <span class="s">"Conciliar facturas entre SAP y el SAT..."</span>,
+    <span class="k">"urgencia"</span>:  <span class="s">"trimestre"</span>,             <span class="c">// asap | trimestre | 6_meses | explorando</span>
+    <span class="k">"paquete"</span>:   <span class="s">"Diagnóstico FutureProof"</span>,  <span class="c">// preselección de la sección de origen</span>
+    <span class="k">"promptHero"</span>: <span class="s">"necesito conciliar facturas contra SAP"</span>
+  },
+  <span class="k">"atribucion"</span>: {
+    <span class="k">"gclid"</span>:        <span class="s">"Cj0KCQjw..."</span>,          <span class="c">// sin esto la Ruta 3 no existe</span>
+    <span class="k">"li_fat_id"</span>:    <span class="s">null</span>,
+    <span class="k">"utm_source"</span>:   <span class="s">"google"</span>,
+    <span class="k">"utm_medium"</span>:   <span class="s">"cpc"</span>,
+    <span class="k">"utm_campaign"</span>: <span class="s">"automatizacion-mx"</span>,
+    <span class="k">"landing"</span>:      <span class="s">"/es/automatizacion"</span>,
+    <span class="k">"referrer"</span>:     <span class="s">"https://www.google.com/"</span>
+  },
+  <span class="k">"meta"</span>: {
+    <span class="k">"enviadoEn"</span>:  <span class="s">"2026-09-22T16:04:11-06:00"</span>,
+    <span class="k">"origen"</span>:     <span class="s">"web-react-2.0"</span>,
+    <span class="k">"consentimiento"</span>: <span class="k">true</span>              <span class="c">// LFPDPPP · sin esto no se procesa</span>
+  }
+}</pre>
+  </div>
+
+  <div class="call crit">
+    <span class="lbl">Prerrequisito de front end</span>
+    <p>Los tres campos marcados como nuevos —<code>empleados</code>, <code>erp</code> y el bloque <code>atribucion</code>— <strong>no existen hoy en ningún formulario de BluePixel.</strong> El sitio Webflow sí captura UTMs en <code>localStorage</code>, pero no captura <code>gclid</code>. Sin esos tres, el Orquestador arranca ciego: <code>empleados</code> es el 30% del score y <code>erp</code> el 15%.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="scoring">
+  <div class="sechead"><span class="secnum">04</span><h2>Motor de scoring corregido</h2></div>
+
+  <div class="call crit">
+    <span class="lbl">El bug que hay que corregir antes de conectar nada</span>
+    <p>El <code>lead_scoring.py</code> actual tiene cubetas de {40, 20, 0}, {30, 10, 0} y {30, 10, 0} sobre un umbral de <code>score >= 90</code>. <strong>La única combinación que alcanza 90 es 40+30+30 = 100 exacto</strong>; no existe ninguna otra suma entre 90 y 99. Y como <code>apollo_enrichment.py</code> solo conoce tres dominios en duro, cualquier lead real recibe <code>company_size: 1</code> y por tanto 0 puntos firmográficos — techo real de 60. <strong>Conectado hoy, ese motor enruta el 100% de los leads a nurturing y cero a ventas.</strong></p>
+  </div>
+
+  <h3>Las cuatro cubetas</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Cubeta</th><th>Criterio</th><th class="n">Puntos</th><th>Por qué ese peso</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="5"><strong>A · Firmografía</strong><br><span class="chip a">0–30</span></td><td class="m">1000+ empleados</td><td class="n">30</td><td rowspan="5">Es el separador más limpio entre el lead de $20K y el de $850K. La aritmética del ticket lo exige.</td></tr>
+        <tr><td class="m">200–999</td><td class="n">24</td></tr>
+        <tr><td class="m">100–199</td><td class="n">15</td></tr>
+        <tr><td class="m">50–99</td><td class="n">8</td></tr>
+        <tr><td class="m">&lt;50 o desconocido</td><td class="n">0</td></tr>
+
+        <tr><td rowspan="5"><strong>B · Autoridad</strong><br><span class="chip a">0–25</span></td><td class="m">C-Level</td><td class="n">25</td><td rowspan="5">El comprador económico real es Director de Operaciones o de Finanzas. El CTO valida y bloquea, no firma.</td></tr>
+        <tr><td class="m">VP</td><td class="n">20</td></tr>
+        <tr><td class="m">Director de área</td><td class="n">20</td></tr>
+        <tr><td class="m">Gerente / Head / Lead</td><td class="n">12</td></tr>
+        <tr><td class="m">Individual / desconocido</td><td class="n">4 / 0</td></tr>
+
+        <tr><td rowspan="4"><strong>C · Señal técnica</strong><br><span class="chip a">0–25</span></td><td class="m">ERP conocido (SAP, Oracle, Dynamics, Odoo, NetSuite, Infor)</td><td class="n">15</td><td rowspan="4">El ERP instalado es el calificador más predictivo del ICP, y hoy no se pregunta en ningún formulario. El dominio corporativo sustituye el enriquecimiento de Apollo a costo cero.</td></tr>
+        <tr><td class="m">ERP «otro» o «no sé»</td><td class="n">7</td></tr>
+        <tr><td class="m">Sin ERP</td><td class="n">0</td></tr>
+        <tr><td class="m">Dominio corporativo (no gmail/hotmail/etc.)</td><td class="n">+10</td></tr>
+
+        <tr><td rowspan="4"><strong>D · Intención</strong><br><span class="chip a">0–20</span></td><td class="m">ASAP</td><td class="n">20</td><td rowspan="4">Pesa menos que la firmografía a propósito: la urgencia autodeclarada es la señal menos confiable del formulario.</td></tr>
+        <tr><td class="m">Este trimestre</td><td class="n">14</td></tr>
+        <tr><td class="m">6 meses</td><td class="n">7</td></tr>
+        <tr><td class="m">Explorando</td><td class="n">2</td></tr>
+        <tr class="tot"><td colspan="2">Total posible</td><td class="n">100</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Bandas y acción</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="n">Score</th><th>Banda</th><th>Ruta</th><th>SLA</th></tr></thead>
+      <tbody>
+        <tr><td class="n">≥ 70</td><td><span class="chip c">SQL</span></td><td>1 + 2 · alerta push a Nuevas Ventas</td><td class="m">5 min</td></tr>
+        <tr><td class="n">50–69</td><td><span class="chip w">MQL</span></td><td>1 + 2 en horario hábil + 4 · secuencia técnica</td><td class="m">4 h</td></tr>
+        <tr><td class="n">30–49</td><td><span class="chip a">Nurturing</span></td><td>1 + 4 · secuencia STAR-ROI de 4 correos</td><td class="m">—</td></tr>
+        <tr><td class="n">&lt; 30</td><td><span class="chip o">Frío</span></td><td>1 + 4 · goteo lento, no toca a ventas</td><td class="m">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Validación contra el pipeline real</h3>
+  <p class="prose">Antes de desplegarlo, corrí el modelo contra los siete prospectos del CRM. Discrimina correctamente en los siete casos:</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Prospecto</th><th class="n">A</th><th class="n">B</th><th class="n">C</th><th class="n">D</th><th class="n">Total</th><th>Banda</th></tr></thead>
+      <tbody>
+        <tr><td>Pedro Sánchez · VP Innovación · Banco Nacional</td><td class="n">30</td><td class="n">20</td><td class="n">25</td><td class="n">14</td><td class="n"><strong>89</strong></td><td><span class="chip c">SQL</span></td></tr>
+        <tr><td>Carlos Ruiz · CTO · RetailX</td><td class="n">24</td><td class="n">25</td><td class="n">25</td><td class="n">14</td><td class="n"><strong>88</strong></td><td><span class="chip c">SQL</span></td></tr>
+        <tr><td>Hugo Ramírez · CEO · Industrias HR</td><td class="n">24</td><td class="n">25</td><td class="n">17</td><td class="n">20</td><td class="n"><strong>86</strong></td><td><span class="chip c">SQL</span></td></tr>
+        <tr><td>Ana Gómez · Directora Ops · Logística Sur</td><td class="n">24</td><td class="n">20</td><td class="n">25</td><td class="n">14</td><td class="n"><strong>83</strong></td><td><span class="chip c">SQL</span></td></tr>
+        <tr><td>Juan Pérez · Gerente de Compras · Constructora Alfa</td><td class="n">24</td><td class="n">12</td><td class="n">17</td><td class="n">2</td><td class="n"><strong>55</strong></td><td><span class="chip w">MQL</span></td></tr>
+        <tr><td>María López · Fundadora · Startup XYZ</td><td class="n">0</td><td class="n">25</td><td class="n">10</td><td class="n">2</td><td class="n"><strong>37</strong></td><td><span class="chip a">Nurturing</span></td></tr>
+        <tr><td>Laura Torres · Marketing · Tienda Online</td><td class="n">0</td><td class="n">4</td><td class="n">10</td><td class="n">2</td><td class="n"><strong>16</strong></td><td><span class="chip o">Frío</span></td></tr>
+      </tbody>
+      <caption>El caso que prueba que el modelo funciona es <strong>Startup XYZ</strong>: una fundadora es C-Level y se lleva los 25 puntos de autoridad, pero con 0 de firmografía y 0 de ERP no alcanza a ventas. El cargo por sí solo nunca basta. Los valores de ERP y empleados son inferencia sobre los datos del CRM, que hoy no tiene esos campos.</caption>
+    </table>
+  </div>
+
+  <div class="code">
+    <div class="lbl"><span>scoring.py · sustituye a lead_scoring.py</span><span>puro · sin red · sin estado</span></div>
+<pre><span class="c"># Determinístico por diseño: misma entrada → mismo score, siempre.</span>
+<span class="c"># Auditable, reproducible y testeable. Aquí NO va un LLM.</span>
+
+DOMINIOS_PERSONALES = {
+    <span class="s">"gmail.com"</span>, <span class="s">"hotmail.com"</span>, <span class="s">"hotmail.es"</span>, <span class="s">"outlook.com"</span>, <span class="s">"outlook.es"</span>,
+    <span class="s">"yahoo.com"</span>, <span class="s">"yahoo.com.mx"</span>, <span class="s">"live.com"</span>, <span class="s">"icloud.com"</span>, <span class="s">"msn.com"</span>,
+    <span class="s">"protonmail.com"</span>, <span class="s">"proton.me"</span>, <span class="s">"aol.com"</span>,
+}
+
+ERPS_CONOCIDOS = {<span class="s">"sap"</span>, <span class="s">"oracle"</span>, <span class="s">"dynamics"</span>, <span class="s">"microsoft dynamics"</span>,
+                  <span class="s">"odoo"</span>, <span class="s">"netsuite"</span>, <span class="s">"infor"</span>}
+
+RANGOS_EMPLEADOS = [(<span class="s">"1000+"</span>, 30), (<span class="s">"200-999"</span>, 24),
+                    (<span class="s">"100-199"</span>, 15), (<span class="s">"50-99"</span>, 8), (<span class="s">"1-49"</span>, 0)]
+
+<span class="k">def</span> _firmografia(rango):
+    <span class="k">return</span> dict(RANGOS_EMPLEADOS).get(rango, 0)
+
+<span class="k">def</span> _autoridad(seniority):
+    <span class="k">return</span> {<span class="s">"c_level"</span>: 25, <span class="s">"vp"</span>: 20, <span class="s">"director"</span>: 20,
+            <span class="s">"gerente"</span>: 12, <span class="s">"individual"</span>: 4}.get(seniority, 0)
+
+<span class="k">def</span> _tecnica(erp, email):
+    p = 0
+    e = (erp <span class="k">or</span> <span class="s">""</span>).strip().lower()
+    <span class="k">if</span> e <span class="k">in</span> ERPS_CONOCIDOS:            p += 15
+    <span class="k">elif</span> e <span class="k">in</span> (<span class="s">"otro"</span>, <span class="s">"no se"</span>, <span class="s">"no sé"</span>): p += 7
+    dominio = (email <span class="k">or</span> <span class="s">""</span>).split(<span class="s">"@"</span>)[-1].lower()
+    <span class="k">if</span> dominio <span class="k">and</span> dominio <span class="k">not in</span> DOMINIOS_PERSONALES: p += 10
+    <span class="k">return</span> p
+
+<span class="k">def</span> _intencion(urgencia):
+    <span class="k">return</span> {<span class="s">"asap"</span>: 20, <span class="s">"trimestre"</span>: 14,
+            <span class="s">"6_meses"</span>: 7, <span class="s">"explorando"</span>: 2}.get(urgencia, 0)
+
+<span class="k">def</span> evaluar(lead, norm):
+    <span class="c">"""lead = payload crudo · norm = salida del normalizador LLM"""</span>
+    motivo = descalificar(lead, norm)          <span class="c"># ver sección 05</span>
+    <span class="k">if</span> motivo:
+        <span class="k">return</span> {<span class="s">"score"</span>: 0, <span class="s">"banda"</span>: <span class="s">"descartado"</span>,
+                <span class="s">"motivo"</span>: motivo, <span class="s">"desglose"</span>: {}}
+
+    d = {
+        <span class="s">"firmografia"</span>: _firmografia(lead[<span class="s">"empresa"</span>].get(<span class="s">"empleados"</span>)),
+        <span class="s">"autoridad"</span>:   _autoridad(norm.get(<span class="s">"seniority"</span>)),
+        <span class="s">"tecnica"</span>:     _tecnica(lead[<span class="s">"empresa"</span>].get(<span class="s">"erp"</span>),
+                                lead[<span class="s">"contacto"</span>].get(<span class="s">"email"</span>)),
+        <span class="s">"intencion"</span>:   _intencion(lead[<span class="s">"necesidad"</span>].get(<span class="s">"urgencia"</span>)),
+    }
+    score = sum(d.values())
+
+    <span class="k">if</span>   score >= 70: banda = <span class="s">"sql"</span>
+    <span class="k">elif</span> score >= 50: banda = <span class="s">"mql"</span>
+    <span class="k">elif</span> score >= 30: banda = <span class="s">"nurturing"</span>
+    <span class="k">else</span>:            banda = <span class="s">"frio"</span>
+
+    <span class="k">return</span> {<span class="s">"score"</span>: score, <span class="s">"banda"</span>: banda,
+            <span class="s">"motivo"</span>: <span class="k">None</span>, <span class="s">"desglose"</span>: d}</pre>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="descarte">
+  <div class="sechead"><span class="secnum">05</span><h2>Descalificadores duros</h2></div>
+  <div class="prose">
+    <p>Se evalúan <strong>antes</strong> del score y lo anulan sin importar el resultado. Esto es lo que impide que el reporte vuelva a contaminarse.</p>
+    <p>El primer bloque no es teórico: de los 26 leads de septiembre, <strong>cuatro eran sesiones del propio equipo</strong> — el depurador de Tag Manager, el panel de Hotjar y el editor de Webflow — contadas como prospectos. Es el 15% del reporte.</p>
+  </div>
+
+  <div class="code">
+    <div class="lbl"><span>descalificar() · se ejecuta primero</span><span>lista cerrada</span></div>
+<pre>DOMINIOS_BLOQUEADOS = {
+    <span class="s">"webflow.com"</span>, <span class="s">"tagassistant.google.com"</span>, <span class="s">"insights.hotjar.com"</span>,
+    <span class="s">"clarity.microsoft.com"</span>, <span class="s">"search.google.com"</span>, <span class="s">"ads.google.com"</span>,
+    <span class="s">"bluepixel.mx"</span>,                    <span class="c"># pruebas internas</span>
+    <span class="c"># + dominios de agencias y competidores conocidos</span>
+}
+
+TERMINOS_DESCALIFICADORES = (
+    <span class="s">"estudiante"</span>, <span class="s">"tesis"</span>, <span class="s">"practicante"</span>, <span class="s">"becario"</span>, <span class="s">"servicio social"</span>,
+    <span class="s">"tarea escolar"</span>, <span class="s">"proyecto escolar"</span>, <span class="s">"trabajo de la escuela"</span>,
+)
+
+<span class="k">def</span> descalificar(lead, norm):
+    <span class="k">if not</span> lead[<span class="s">"meta"</span>].get(<span class="s">"consentimiento"</span>):
+        <span class="k">return</span> <span class="s">"sin_consentimiento_lfpdppp"</span>      <span class="c"># bloqueo legal</span>
+
+    dominio = lead[<span class="s">"contacto"</span>][<span class="s">"email"</span>].split(<span class="s">"@"</span>)[-1].lower()
+    <span class="k">if</span> dominio <span class="k">in</span> DOMINIOS_BLOQUEADOS:
+        <span class="k">return</span> <span class="k">f</span><span class="s">"dominio_bloqueado:{dominio}"</span>
+
+    texto = <span class="k">f</span><span class="s">"{lead['empresa']['cargo']} {lead['necesidad']['reto']}"</span>.lower()
+    <span class="k">for</span> t <span class="k">in</span> TERMINOS_DESCALIFICADORES:
+        <span class="k">if</span> t <span class="k">in</span> texto:
+            <span class="k">return</span> <span class="k">f</span><span class="s">"termino:{t}"</span>
+
+    <span class="k">return</span> <span class="k">None</span></pre>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Lo que NO debe ser descalificador</span>
+    <p>El filtro de <strong>presupuesto mínimo de $300,000 MXN</strong> que hoy vive en el formulario y en la lista de keywords negativas <strong>bloquea al comprador natural del Diagnóstico de $95,000</strong>. Un Director de Operaciones de una empresa de 800 empleados casi nunca conoce su presupuesto en la primera visita. Se califica por tamaño de empresa y ERP, no por presupuesto autodeclarado.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="split">
+  <div class="sechead"><span class="secnum">06</span><h2>Qué es LLM y qué es código</h2></div>
+
+  <div class="prose">
+    <p class="lede">La decisión de arquitectura más importante de esta especificación: <strong>el scoring y el enrutamiento no pasan por un modelo.</strong> Son aritmética pura.</p>
+
+    <p>Una empresa que sale al mercado a vender «agentes que no alucinan» y «gobierno de agentes» no puede tener su enrutamiento de ingresos dentro de una llamada no determinística. Si el mismo lead puede recibir dos scores distintos en dos ejecuciones, no hay auditoría posible, no hay prueba A/B posible, y la primera pregunta de un CTO en una demo —<em>«¿cómo sé que es reproducible?»</em>— no tiene respuesta.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Paso</th><th>Motor</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td>Normalizar cargo de texto libre → seniority</td><td><span class="chip a">LLM</span></td><td>«Head of IT», «Subdirector de Sistemas» y «Resp. de TI» no caben en una tabla de sinónimos.</td></tr>
+        <tr><td>Clasificar el reto en cluster</td><td><span class="chip a">LLM</span></td><td>Lenguaje natural del prospecto, no vocabulario controlado.</td></tr>
+        <tr><td>Extraer el proceso concreto mencionado</td><td><span class="chip a">LLM</span></td><td>Alimenta el resumen de la alerta y el brief comercial.</td></tr>
+        <tr><td>Redactar el resumen de 2 frases para ventas</td><td><span class="chip a">LLM</span></td><td>Es el único texto que Pablo lee antes de marcar.</td></tr>
+        <tr><td><strong>Calcular el score</strong></td><td><span class="chip o">Código</span></td><td><strong>Determinístico, auditable, testeable. Nunca un modelo.</strong></td></tr>
+        <tr><td><strong>Decidir la banda y la ruta</strong></td><td><span class="chip o">Código</span></td><td>Comparaciones de umbral. No hay juicio que delegar.</td></tr>
+        <tr><td><strong>Aplicar descalificadores</strong></td><td><span class="chip o">Código</span></td><td>Lista cerrada. Un modelo aquí introduce falsos negativos sin rastro.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call ok">
+    <span class="lbl">Esto es vendible</span>
+    <p>«Separamos la interpretación del lenguaje, que va a un modelo, de la decisión de negocio, que va a código auditable» es exactamente el argumento que distingue a BluePixel de las diecinueve agencias que venden automatización con IA en México. Vale la pena que la arquitectura interna pueda mostrarse tal cual en una llamada de venta.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="prompt">
+  <div class="sechead"><span class="secnum">07</span><h2>System prompt del normalizador</h2></div>
+  <div class="prose">
+    <p>Una sola llamada por lead, con salida estructurada forzada. Modelo sugerido: <code>claude-sonnet-5</code>. Temperatura 0.</p>
+  </div>
+
+  <div class="code">
+    <div class="lbl"><span>system prompt · normalizador</span><span>salida JSON estricta</span></div>
+<pre>Eres el normalizador de leads de BluePixel. Recibes un formulario web con
+campos de texto libre y devuelves JSON estricto. No inventas datos.
+
+DEVUELVE EXACTAMENTE ESTOS CINCO CAMPOS:
+
+1. seniority — clasifica el cargo en uno de:
+   c_level | vp | director | gerente | individual | desconocido
+   · c_level:    CEO, Director General, CTO, CIO, COO, CFO, Presidente,
+                 Socio, Fundador, Dueño
+   · vp:         VP, Vicepresidente
+   · director:   Director de un área (NO Director General)
+   · gerente:    Gerente, Head, Lead, Jefe, Subdirector, Responsable de
+   · individual: Analista, Especialista, Coordinador, Asistente, Becario
+   · desconocido: si no puedes clasificarlo con confianza razonable
+
+2. cluster — clasifica el reto descrito en:
+   apps | automatizacion | agentizacion | desconocido
+   · automatizacion: conciliación, facturas, ERP, SAP, captura manual,
+     integración entre sistemas, cierre contable, cotizaciones, CFDI
+   · agentizacion: agente, IA, chatbot, RAG, asistente, clasificar
+     documentos, atención automatizada, MCP, copiloto
+   · apps: app móvil, plataforma, portal, migración, legacy, MVP, rediseño
+
+3. proceso — el proceso de negocio concreto que menciona, máximo 8 palabras,
+   usando las palabras del propio prospecto. null si no menciona ninguno.
+
+4. resumen — dos frases para la alerta a ventas: qué empresa es, qué pide,
+   y el dato más accionable que hay en el mensaje. Sin adjetivos. Sin vender.
+   Lo va a leer alguien que tiene cinco minutos para marcar.
+
+5. senales — array de banderas observadas. Lista cerrada:
+   menciona_erp | menciona_presupuesto | menciona_fecha_limite |
+   menciona_proveedor_previo | menciona_piloto_fallido |
+   menciona_competidor | ninguna
+
+REGLAS
+· Devuelve SOLO el objeto JSON. Sin markdown, sin explicación, sin preámbulo.
+· Si un campo no se puede determinar, usa "desconocido" o null.
+  NUNCA adivines para rellenar un campo.
+· No corrijas, completes ni reinterpretes los datos del prospecto.
+· Si el texto está vacío o es incoherente, devuelve desconocido en todo
+  y "ninguna" en senales.</pre>
+  </div>
+
+  <div class="code">
+    <div class="lbl"><span>salida esperada</span><span>ejemplo</span></div>
+<pre>{
+  <span class="k">"seniority"</span>: <span class="s">"director"</span>,
+  <span class="k">"cluster"</span>:   <span class="s">"automatizacion"</span>,
+  <span class="k">"proceso"</span>:   <span class="s">"conciliación de facturas SAP contra SAT"</span>,
+  <span class="k">"resumen"</span>:   <span class="s">"Grupo Industrial X, manufactura, 200-999 empleados con SAP.
+                Su Director de Operaciones quiere automatizar la conciliación
+                de facturas contra el SAT; dice que el cierre les toma 12 días."</span>,
+  <span class="k">"senales"</span>:   [<span class="s">"menciona_erp"</span>, <span class="s">"menciona_fecha_limite"</span>]
+}</pre>
+  </div>
+
+  <div class="call warn">
+    <span class="lbl">Manejo de fallo</span>
+    <p>Si la llamada al modelo falla o devuelve JSON inválido, <strong>no se detiene el lead.</strong> Se usa <code>seniority: "desconocido"</code> (0 puntos), se marca <code>norm_fallida: true</code> y el lead sigue su curso hacia Notion. Un modelo caído nunca puede costar un prospecto.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="rutas">
+  <div class="sechead"><span class="secnum">08</span><h2>Las cuatro rutas en detalle</h2></div>
+
+  <h3>Ruta 1 · Notion <span class="chip o">siempre</span></h3>
+  <div class="prose">
+    <p>El flujo actual de Leo, intacto. Solo se agregan campos a la base existente. Ninguna propiedad actual se renombra ni se elimina.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Propiedad nueva</th><th>Tipo</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td class="m">score</td><td class="m">number</td><td>Priorización y reporte</td></tr>
+        <tr><td class="m">banda</td><td class="m">select</td><td>sql · mql · nurturing · frio · descartado</td></tr>
+        <tr><td class="m">desglose</td><td class="m">rich_text</td><td>JSON del desglose — hace auditable cada decisión</td></tr>
+        <tr><td class="m">cluster</td><td class="m">select</td><td>apps · automatizacion · agentizacion</td></tr>
+        <tr><td class="m">proceso</td><td class="m">rich_text</td><td>Munición directa para la llamada de ventas</td></tr>
+        <tr><td class="m">gclid</td><td class="m">rich_text</td><td><strong>Sin esto no existe la Ruta 3</strong></td></tr>
+        <tr><td class="m">utm_campaign</td><td class="m">rich_text</td><td>Atribución legible para el reporte semanal</td></tr>
+        <tr><td class="m">etapa</td><td class="m">select</td><td>Nuevo · Contactado · Calificado · Propuesta · Ganado · Perdido</td></tr>
+        <tr><td class="m">monto_mxn</td><td class="m">number</td><td>Valor real del contrato — alimenta la Ruta 3</td></tr>
+        <tr><td class="m">fecha_cierre_est</td><td class="m">date</td><td>Sin este campo no hay forecast posible</td></tr>
+      </tbody>
+      <caption>Las tres últimas —<code>etapa</code>, <code>monto_mxn</code> y <code>fecha_cierre_est</code>— no existen hoy en el CRM. Sin ellas no hay forecast ni Ruta 3.</caption>
+    </table>
+  </div>
+
+  <h3>Ruta 2 · Alerta push <span class="chip c">banda = sql</span></h3>
+  <div class="prose">
+    <p>Dispara solo con banda SQL. Con MQL se acumula y se envía un resumen en horario hábil — el objetivo es que la alerta nunca se vuelva ruido que el equipo aprenda a ignorar.</p>
+  </div>
+  <div class="code">
+    <div class="lbl"><span>POST $ALERT_WEBHOOK_URL</span><span>formato agnóstico · Discord o Slack</span></div>
+<pre>{
+  <span class="k">"titulo"</span>: <span class="s">"🔴 SQL 89 · Banco Nacional · VP Innovación"</span>,
+  <span class="k">"resumen"</span>: <span class="s">"&lt;resumen de 2 frases del normalizador&gt;"</span>,
+  <span class="k">"campos"</span>: [
+    {<span class="k">"k"</span>: <span class="s">"Contacto"</span>,  <span class="k">"v"</span>: <span class="s">"Pedro Sánchez · +52 ..."</span>},
+    {<span class="k">"k"</span>: <span class="s">"Proceso"</span>,   <span class="k">"v"</span>: <span class="s">"clasificación de tickets de soporte"</span>},
+    {<span class="k">"k"</span>: <span class="s">"Cluster"</span>,   <span class="k">"v"</span>: <span class="s">"agentizacion"</span>},
+    {<span class="k">"k"</span>: <span class="s">"Desglose"</span>,  <span class="k">"v"</span>: <span class="s">"firmo 30 · autoridad 20 · técnica 25 · intención 14"</span>},
+    {<span class="k">"k"</span>: <span class="s">"Origen"</span>,    <span class="k">"v"</span>: <span class="s">"google/cpc · automatizacion-mx"</span>},
+    {<span class="k">"k"</span>: <span class="s">"Señales"</span>,   <span class="k">"v"</span>: <span class="s">"menciona_piloto_fallido"</span>}
+  ],
+  <span class="k">"acciones"</span>: [
+    {<span class="k">"texto"</span>: <span class="s">"Abrir en Notion"</span>, <span class="k">"url"</span>: <span class="s">"https://notion.so/..."</span>},
+    {<span class="k">"texto"</span>: <span class="s">"Buscar en LinkedIn"</span>, <span class="k">"url"</span>: <span class="s">"https://linkedin.com/search/..."</span>}
+  ],
+  <span class="k">"sla_minutos"</span>: 5,
+  <span class="k">"asignado"</span>: <span class="s">"@nuevas-ventas"</span>
+}</pre>
+  </div>
+  <p class="note">El enlace de LinkedIn se construye como una búsqueda por nombre y empresa, no como un perfil resuelto. Resolver el perfil real requiere Apollo o Sales Navigator, y el <a href="#no">punto 12</a> explica por qué eso se aplaza.</p>
+
+  <h3>Ruta 3 · Conversión offline <span class="chip a">diferida · al cambiar etapa</span></h3>
+  <div class="prose">
+    <p>Esta es la ruta que deja de entrenar al algoritmo de Google para traer leads de $20,000. Se dispara con el cambio de <code>etapa</code> en Notion, no con el envío del formulario.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Etapa en Notion</th><th>Acción de conversión</th><th class="n">Valor enviado</th></tr></thead>
+      <tbody>
+        <tr><td class="m">Calificado</td><td class="m">bp_sql_calificado</td><td class="n">$5,000 MXN</td></tr>
+        <tr><td class="m">Propuesta</td><td class="m">bp_propuesta_emitida</td><td class="n">$25,000 MXN</td></tr>
+        <tr><td class="m">Ganado</td><td class="m">bp_contrato_firmado</td><td class="n">monto_mxn real</td></tr>
+      </tbody>
+      <caption>Los valores de las dos primeras son proxies de escalón, no ingresos: le enseñan al algoritmo la forma del embudo antes de que haya suficientes contratos firmados para entrenarlo. El de «Ganado» es el valor real del contrato.</caption>
+    </table>
+  </div>
+  <div class="call warn">
+    <span class="lbl">Restricciones de la API que hay que respetar</span>
+    <p>Las tres acciones de conversión deben existir en Google Ads <strong>antes</strong> del primer envío, marcadas como importación offline. El <code>gclid</code> tiene una ventana de <strong>90 días</strong> desde el clic: si un deal tarda seis meses en cerrar —y el ciclo de BluePixel es de seis a nueve meses— la conversión de «Ganado» <strong>va a ser rechazada</strong>. Por eso importa enviar también «Calificado» y «Propuesta», que sí caen dentro de la ventana. Es la única forma de que el algoritmo aprenda algo en un ciclo largo.</p>
+  </div>
+
+  <h3>Ruta 4 · Nurturing <span class="chip w">resto de las bandas</span></h3>
+  <p class="prose">Los tres flujos ya están especificados en el Cap. 4.3 de la estrategia. HubSpot Free incluye 2,000 correos al mes, que es de sobra para el volumen actual.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Banda</th><th>Secuencia</th><th>Cadencia</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip w">MQL</span></td><td>3 correos técnicos del cluster detectado + invitación a Diagnóstico</td><td class="m">día 2, 9, 21</td></tr>
+        <tr><td><span class="chip a">Nurturing</span></td><td>4 casos STAR-ROI, cero insistencia comercial</td><td class="m">cada 12 días</td></tr>
+        <tr><td><span class="chip o">Frío</span></td><td>Newsletter mensual únicamente</td><td class="m">mensual</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Enviar desde Google Workspace como correo uno a uno, no como campaña masiva. Tu Cap. 2.4 ya lo argumenta: parece el mensaje de un consultor, no un boletín — y de paso evita el problema del SPF en <code>~all</code> heredado de Mandrill, que sigue sin corregir.</p>
+</section>
+
+<!-- 9 -->
+<section id="gobierno">
+  <div class="sechead"><span class="secnum">09</span><h2>Capa de gobierno</h2></div>
+
+  <div class="prose">
+    <p class="lede">Esta sección no existe en ningún documento de BluePixel, y es la que convierte un piloto en un sistema de producción. Es, literalmente, lo que la empresa quiere vender.</p>
+  </div>
+
+  <h3>Idempotencia</h3>
+  <p class="prose">Un reintento de red no puede crear dos leads ni disparar dos alertas. Clave: <code>sha256(email + minuto_del_envio)</code>, guardada 24 horas. Si la clave ya existe, se registra y se descarta.</p>
+
+  <h3>Reintentos y cola de fallos</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Ruta</th><th>Si falla</th><th>Reintentos</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Notion</td><td><strong>Se detiene todo y se alerta.</strong> Es la única ruta crítica.</td><td class="m">3 · backoff 2s, 8s, 30s</td></tr>
+        <tr><td>2 · Alerta</td><td>Cola de fallos. El lead ya está en Notion.</td><td class="m">2 · backoff 5s, 30s</td></tr>
+        <tr><td>3 · Conversión</td><td>Cola de fallos con reproceso diario.</td><td class="m">3 · backoff exponencial</td></tr>
+        <tr><td>4 · Nurturing</td><td>Cola de fallos. No urgente.</td><td class="m">2</td></tr>
+      </tbody>
+      <caption>La cola de fallos es una base de Notion con la carga completa, la ruta, el error y la marca de tiempo. Se revisa los lunes en la junta de pipeline. Sin ella, los fallos son invisibles.</caption>
+    </table>
+  </div>
+
+  <h3>Interruptor de apagado</h3>
+  <p class="prose">Variable de entorno <code>RUTAS_ACTIVAS="1,2,3,4"</code>. Permite apagar una ruta sin desplegar código. Si la Ruta 3 empieza a mandar basura a Google Ads un viernes, se apaga con una variable y se corrige el lunes.</p>
+
+  <h3>Modo sombra</h3>
+  <div class="call ok">
+    <span class="lbl">Cómo desplegar sin riesgo</span>
+    <p>Las primeras <strong>dos semanas</strong>, correr con <code>RUTAS_ACTIVAS="1"</code> y el scoring calculándose y escribiéndose en Notion, pero <strong>sin disparar alertas ni conversiones</strong>. Al cabo de dos semanas hay entre 8 y 12 leads con score real para revisar con Pablo: <em>«¿este 72 te parece un SQL?»</em>. Se calibran los umbrales contra el criterio de quien lleva seis años cerrando, y recién entonces se encienden las rutas 2, 3 y 4.</p>
+    <p>Este paso es lo que separa este despliegue de los pilotos que el 88% del mercado no logra llevar a producción. Y es la historia que después se cuenta en la venta.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="bitacora">
+  <div class="sechead"><span class="secnum">10</span><h2>Bitácora: instrumentar para poder publicar</h2></div>
+  <div class="prose">
+    <p>Una línea por decisión, desde el primer día. Si esto se va a convertir en el caso de estudio de BluePixel agentizando su propio marketing, <strong>la línea base tiene que existir antes de encender el sistema</strong> — no se puede reconstruir después.</p>
+  </div>
+  <div class="code">
+    <div class="lbl"><span>bitacora.jsonl · una línea por lead</span><span>append-only</span></div>
+<pre>{
+  <span class="k">"ts"</span>: <span class="s">"2026-09-22T16:04:11-06:00"</span>,
+  <span class="k">"lead_id"</span>: <span class="s">"a3f9..."</span>,
+  <span class="k">"score"</span>: 89,
+  <span class="k">"banda"</span>: <span class="s">"sql"</span>,
+  <span class="k">"desglose"</span>: {<span class="s">"firmografia"</span>:30, <span class="s">"autoridad"</span>:20, <span class="s">"tecnica"</span>:25, <span class="s">"intencion"</span>:14},
+  <span class="k">"cluster"</span>: <span class="s">"agentizacion"</span>,
+  <span class="k">"norm_ms"</span>: 840,              <span class="c">// latencia del modelo</span>
+  <span class="k">"norm_fallida"</span>: <span class="k">false</span>,
+  <span class="k">"rutas_ok"</span>: [1, 2, 4],
+  <span class="k">"rutas_fallidas"</span>: [],
+  <span class="k">"ttfa_seg"</span>: <span class="k">null</span>          <span class="c">// se llena al primer contacto de ventas</span>
+}</pre>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Métrica</th><th>Qué prueba</th><th>Meta a 90 días</th></tr></thead>
+      <tbody>
+        <tr><td class="m">ttfa_seg · time to first action</td><td>Que el SLA de 5 minutos se cumple de verdad</td><td class="n">mediana &lt; 300 s</td></tr>
+        <tr><td class="m">precisión de banda</td><td>% de SQL que ventas confirma como calificado</td><td class="n">&gt; 70%</td></tr>
+        <tr><td class="m">tasa de fallo de rutas</td><td>Fiabilidad del sistema</td><td class="n">&lt; 1%</td></tr>
+        <tr><td class="m">conversiones aceptadas</td><td>Que Google está recibiendo la señal</td><td class="n">&gt; 95%</td></tr>
+        <tr><td class="m">costo de tokens por lead</td><td>Economía unitaria del agente</td><td class="n">&lt; $2 MXN</td></tr>
+      </tbody>
+      <caption>La penúltima es la que justifica el presupuesto de pauta ante María. La última es la que convierte esto en un argumento de venta: «orquestamos nuestro propio embudo por dos pesos por lead».</caption>
+    </table>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="checklist">
+  <div class="sechead"><span class="secnum">11</span><h2>Checklist de implementación</h2></div>
+
+  <h3>Bloqueantes · antes de escribir código</h3>
+  <ul class="chk">
+    <li><span class="bx">[ ]</span><div>Decidir el canal de alerta: Discord, Slack o WhatsApp. <span class="who">Leo y Fabián · antes del 19 sep</span></div></li>
+    <li><span class="bx">[ ]</span><div>Agregar <code>empleados</code> y <code>erp</code> al formulario, y capturar <code>gclid</code> en el navegador. <span class="who">Front end · 1 hora</span></div></li>
+    <li><span class="bx">[ ]</span><div>Crear <code>etapa</code>, <code>monto_mxn</code> y <code>fecha_cierre_est</code> en la base de Notion. <span class="who">Fabián · 30 min</span></div></li>
+    <li><span class="bx">[ ]</span><div>Crear las 3 acciones de conversión offline en Google Ads. <span class="who">Fabián con Diana · 30 min</span></div></li>
+    <li><span class="bx">[ ]</span><div>Resolver si el Diagnóstico es gratuito o cuesta $95,000 — cambia la secuencia de nurturing completa. <span class="who">Leo · decisión de negocio</span></div></li>
+  </ul>
+
+  <h3>Semana 1 · núcleo</h3>
+  <ul class="chk">
+    <li><span class="bx">[ ]</span><div><code>scoring.py</code> con pruebas unitarias sobre los 7 casos del pipeline real. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Normalizador LLM con salida estructurada y manejo de fallo. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Idempotencia, cola de fallos y bitácora. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Ruta 1 extendida con los campos nuevos. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Desplegar en <strong>modo sombra</strong> con <code>RUTAS_ACTIVAS="1"</code>. <span class="who">Leo</span></div></li>
+  </ul>
+
+  <h3>Semana 2 · calibración</h3>
+  <ul class="chk">
+    <li><span class="bx">[ ]</span><div>Revisar con Pablo los primeros 8–12 scores reales y ajustar umbrales. <span class="who">Fabián y Pablo · 1 hora</span></div></li>
+    <li><span class="bx">[ ]</span><div>Encender la Ruta 2. Medir <code>ttfa_seg</code> desde el primer día. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Activar HubSpot Free y cargar los 3 flujos del Cap. 4.3. <span class="who">Fabián</span></div></li>
+  </ul>
+
+  <h3>Semana 3 · cerrar el bucle</h3>
+  <ul class="chk">
+    <li><span class="bx">[ ]</span><div>Ruta 4 encendida. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Ruta 3: webhook de cambio de etapa → API de conversiones offline. <span class="who">Leo</span></div></li>
+    <li><span class="bx">[ ]</span><div>Reproceso histórico: enviar como conversión los deals de 2026 cuyo <code>gclid</code> aún esté dentro de la ventana de 90 días. <span class="who">Fabián</span></div></li>
+    <li><span class="bx">[ ]</span><div>Primer reporte de bitácora en la junta del lunes con Rocketing. <span class="who">Fabián</span></div></li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="no">
+  <div class="sechead"><span class="secnum">12</span><h2>Qué no hacer en la versión 1</h2></div>
+  <div class="prose">
+    <ul>
+      <li><strong>No conectar Apollo ni Clearbit todavía.</strong> Son $300–400 USD al mes. La heurística de dominio corporativo entrega la mayor parte del valor a costo cero. Se justifican cuando el volumen de leads lo pida, no antes.</li>
+      <li><strong>No meter n8n ni Make en la v1.</strong> El MCP ya habla HTTP. Agregar un orquestador encima del orquestador duplica los puntos de fallo y el costo. Se evalúa cuando haya más de cuatro rutas.</li>
+      <li><strong>No poner el scoring en un modelo</strong> por más tentador que sea. Ver la sección 06.</li>
+      <li><strong>No automatizar respuestas al prospecto.</strong> La v1 enruta y notifica. Un agente que le contesta a un CTO sin supervisión es exactamente el riesgo que BluePixel le vende a sus clientes que hay que evitar.</li>
+      <li><strong>No construir los agentes de contenido todavía.</strong> Publisher, Community Manager y Creative Producer atacan volumen de contenido, que no es el cuello de botella. Lead→propuesta ya está por encima del benchmark.</li>
+    </ul>
+  </div>
+
+  <div class="call">
+    <span class="lbl">El argumento para Leo</span>
+    <p>Esta especificación no reemplaza su servidor MCP: lo convierte en el enrutador de ingresos de la empresa. La Ruta 1 —su flujo— sigue siendo la única crítica y la única que puede detener el proceso. Todo lo demás cuelga de ella. Y cuando esté corriendo, BluePixel va a poder decir en una llamada de venta, con bitácora en la mano, que orquesta su propio embudo con agentes en producción, con gobierno y con costo unitario medido. <strong>Eso es el caso de estudio que hoy no existe en el mercado mexicano.</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p>Especificación v1.0 · redactada sobre el Cap. 2.3.2 de la Estrategia Maestra BluePixel 2026, el código existente de <code>bluepixel_engine</code> y el reporte de campañas de septiembre. Los valores de ERP y número de empleados usados en la tabla de validación son inferencias sobre los siete registros del CRM, que hoy no contienen esos campos — hay que confirmarlos antes de tomar la calibración como definitiva.</p>
+</footer>
+
+</div>
