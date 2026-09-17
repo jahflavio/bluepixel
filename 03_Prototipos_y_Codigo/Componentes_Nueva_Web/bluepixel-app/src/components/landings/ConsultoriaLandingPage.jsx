@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import MultiStepContact from '../forms/MultiStepContact';
 import WaysToWorkSubNavbar from '../layout/WaysToWorkSubNavbar';
 
-const DiagnosticoLandingPage = ({ onNavigateCluster }) => {
+const ConsultoriaLandingPage = ({ onNavigateCluster }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#02040A] text-white selection:bg-blue-500/30">
-      <WaysToWorkSubNavbar currentView="diagnostico" onNavigate={onNavigateCluster} />
+      <WaysToWorkSubNavbar currentView="consultoria-tecnologica" onNavigate={onNavigateCluster} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -21,8 +21,8 @@ const DiagnosticoLandingPage = ({ onNavigateCluster }) => {
             ● EL PRIMER PASO SIN RIESGO (14 DÍAS MÁXIMO)
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-8 font-display">
-            Auditoría de Deuda Técnica y <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Arquitectura Cloud en 14 Días</span>
+            Consultoría Tecnológica <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Estratégica en 14 Días</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
             El 85% de las iniciativas de software corporativo fallan porque empiezan programando sin entender el problema. Mitiga el riesgo y evita el "shock de precio": en 2 semanas dictaminamos tu deuda técnica, cuantificamos el costo de la fricción operativa en pesos y te entregamos el Blueprint de Arquitectura exacto.
@@ -31,7 +31,7 @@ const DiagnosticoLandingPage = ({ onNavigateCluster }) => {
       </section>
 
       {/* Qué entregamos */}
-      <section className="py-16 px-6 bg-navy-950/50 border-y border-white/[0.05]">
+      <section className="py-16 px-6 bg-[#040711] border-y border-white/[0.05]">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center font-mono text-sm tracking-widest text-slate-400 mb-12 uppercase">Al finalizar los 14 días recibes:</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -59,12 +59,12 @@ const DiagnosticoLandingPage = ({ onNavigateCluster }) => {
       <section className="py-24 px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-black mb-4">Solicita tu Diagnóstico Operativo</h2>
+            <h2 className="text-3xl font-black mb-4">Solicita tu Consultoría Estratégica</h2>
             <p className="text-slate-400">Déjanos tus datos y un Arquitecto de Soluciones te contactará en menos de 24 horas para evaluar si calificas.</p>
           </div>
           
           <div className="bg-navy-900 border border-white/[0.08] rounded-2xl p-2 md:p-6 shadow-2xl relative">
-            <MultiStepContact preselectedPackage="Diagnóstico Operativo FutureProof" hideCloseButton={true} />
+            <MultiStepContact preselectedPackage="Consultoría Tecnológica Estratégica" hideCloseButton={true} />
           </div>
         </div>
       </section>
@@ -77,4 +77,4 @@ const DiagnosticoLandingPage = ({ onNavigateCluster }) => {
   );
 };
 
-export default DiagnosticoLandingPage;
+export default ConsultoriaLandingPage;

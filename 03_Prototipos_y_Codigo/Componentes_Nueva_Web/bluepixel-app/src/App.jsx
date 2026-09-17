@@ -9,9 +9,9 @@ import SocialProofSection from './components/sections/SocialProofSection';
 import ClusterLandingPage from './components/clusters/ClusterLandingPage';
 
 // Landing Pages (Spokes y Hub - Lazy loaded)
-const DiagnosticoLandingPage = lazy(() => import('./components/landings/DiagnosticoLandingPage'));
-const IngenieriaLandingPage = lazy(() => import('./components/landings/IngenieriaLandingPage'));
-const TransformacionLandingPage = lazy(() => import('./components/landings/TransformacionLandingPage'));
+const ConsultoriaLandingPage = lazy(() => import('./components/landings/ConsultoriaLandingPage'));
+const AutomatizacionLandingPage = lazy(() => import('./components/landings/AutomatizacionLandingPage'));
+const ProductoDigitalLandingPage = lazy(() => import('./components/landings/ProductoDigitalLandingPage'));
 const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
 
 // Directorios Centrales (Hubs)
@@ -57,7 +57,7 @@ const App = () => {
   const [selectedSolution, setSelectedSolution] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [preselectedPkg, setPreselectedPkg] = useState(null);
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'diagnostico' | 'como-trabajamos' | 'ingenieria' | 'transformacion'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'consultoria' | 'como-trabajamos' | 'automatizacion-agentica' | 'producto-digital'
   const [selectedSubserviceId, setSelectedSubserviceId] = useState(null);
 
   // Sincronizar con hash
@@ -66,7 +66,7 @@ const App = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
       const validViews = [
         'apps', 'automatizacion', 'agentizacion', 
-        'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion',
+        'consultoria-tecnologica', 'como-trabajamos', 'automatizacion-agentica', 'producto-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
         'pilares', 'servicios', 'casos-de-exito'
@@ -118,7 +118,7 @@ const App = () => {
             <TrustBadgesSection />
             <HomeDirectorySection />
             <TechnicalSovereignty />
-            <ImpathFrictionSection onOpenContact={() => scrollToForm('Diagnóstico FutureProof (IMPATH)')} />
+            <ImpathFrictionSection onOpenContact={() => scrollToForm('Consultoría Tecnológica (IMPATH)')} />
             <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
             <FAQSection />
             <EngineeringLeadership />
@@ -134,17 +134,17 @@ const App = () => {
             />
           </Suspense>
         </>
-      ) : currentView === 'diagnostico' ? (
+      ) : currentView === 'consultoria-tecnologica' ? (
         <Suspense fallback={<SectionLoader />}>
-          <DiagnosticoLandingPage onNavigateCluster={navigateTo} />
+          <ConsultoriaLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : currentView === 'ingenieria' ? (
+      ) : currentView === 'automatizacion-agentica' ? (
         <Suspense fallback={<SectionLoader />}>
-          <IngenieriaLandingPage onNavigateCluster={navigateTo} />
+          <AutomatizacionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : currentView === 'transformacion' ? (
+      ) : currentView === 'producto-digital' ? (
         <Suspense fallback={<SectionLoader />}>
-          <TransformacionLandingPage onNavigateCluster={navigateTo} />
+          <ProductoDigitalLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'pilares' ? (
         <Suspense fallback={<SectionLoader />}>

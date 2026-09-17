@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import MultiStepContact from '../forms/MultiStepContact';
 import WaysToWorkSubNavbar from '../layout/WaysToWorkSubNavbar';
 
-const IngenieriaLandingPage = ({ onNavigateCluster }) => {
+const AutomatizacionLandingPage = ({ onNavigateCluster }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#02040A] text-white selection:bg-indigo-500/30">
-      <WaysToWorkSubNavbar currentView="ingenieria" onNavigate={onNavigateCluster} />
+      <WaysToWorkSubNavbar currentView="automatizacion-agentica" onNavigate={onNavigateCluster} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -18,14 +18,14 @@ const IngenieriaLandingPage = ({ onNavigateCluster }) => {
         
         <div className="max-w-4xl mx-auto text-center relative z-10 mt-10">
           <span className="inline-block text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 rounded-full mb-8 shadow-[0_0_15px_rgba(99,102,241,0.2)]">
-            ● INGENIERÍA DE AGENTES (SPRINTS MENSUALES)
+            ● AUTOMATIZACIÓN AGENTIZADA (SPRINTS MENSUALES)
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-8 font-display">
             Soberanía de Código y <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">99.9% de Uptime en Producción</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-            Olvida a las "fábricas de software" tradicionales. Integra un Squad Senior (Tech Lead, AI Engineer y UX Lead) diseñado para refactorizar sistemas legacy y crear arquitecturas agénticas resilientes. Mantén el 100% de la propiedad de tu código y blinda tu operación bajo estándares SOC2 y OWASP Top 10.
+            Olvida a las "fábricas de software" tradicionales. Integra un Squad Senior (Tech Lead, AI Engineer y UX Lead) enfocado en automatizar flujos operativos con Agentes de IA conectados a tu ERP. Mantén el 100% de la propiedad de tu código y blinda tu operación bajo estándares SOC2.
           </p>
         </div>
       </section>
@@ -59,12 +59,12 @@ const IngenieriaLandingPage = ({ onNavigateCluster }) => {
       <section className="py-24 px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-black mb-4">Agenda tu sesión de Staff Augmentation</h2>
+            <h2 className="text-3xl font-black mb-4">Agenda tu sesión de Automatización</h2>
             <p className="text-slate-400">Cuéntanos sobre tu roadmap técnico y te asignaremos un Arquitecto para evaluar el perfil del Squad que necesitas.</p>
           </div>
           
           <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl p-2 md:p-6 shadow-2xl relative">
-            <MultiStepContact preselectedPackage="Ingeniería de Agentes (02)" hideCloseButton={true} />
+            <MultiStepContact preselectedPackage="Automatización Agentizada (Agentic)" hideCloseButton={true} />
           </div>
         </div>
       </section>
@@ -77,4 +77,4 @@ const IngenieriaLandingPage = ({ onNavigateCluster }) => {
   );
 };
 
-export default IngenieriaLandingPage;
+export default AutomatizacionLandingPage;

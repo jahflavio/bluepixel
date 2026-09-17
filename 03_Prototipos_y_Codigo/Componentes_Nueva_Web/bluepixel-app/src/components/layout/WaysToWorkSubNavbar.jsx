@@ -21,34 +21,34 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
         {/* Selector Rápido de Modelos */}
         <div className="flex items-center gap-1 bg-[#090E1C] p-1 rounded-xl border border-white/[0.08] text-xs">
           <button
-            onClick={() => onNavigate('diagnostico')}
+            onClick={() => onNavigate('consultoria-tecnologica')}
             className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
-              currentView === 'diagnostico' 
+              currentView === 'consultoria-tecnologica' 
                 ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' 
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            01. Diagnóstico
+            01. Consultoría
           </button>
           <button
-            onClick={() => onNavigate('ingenieria')}
+            onClick={() => onNavigate('automatizacion-agentica')}
             className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
-              currentView === 'ingenieria' 
+              currentView === 'automatizacion-agentica' 
                 ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' 
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            02. Ingeniería
+            02. Automatización
           </button>
           <button
-            onClick={() => onNavigate('transformacion')}
+            onClick={() => onNavigate('producto-digital')}
             className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
-              currentView === 'transformacion' 
+              currentView === 'producto-digital' 
                 ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' 
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            03. Transformación
+            03. Producto Digital
           </button>
         </div>
       </div>

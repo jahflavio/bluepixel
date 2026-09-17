@@ -32,7 +32,7 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
         {/* Grid de 3 Tarjetas */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
-          {/* CARD 01: Diagnóstico */}
+          {/* CARD 01: Consultoría */}
           <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -42,16 +42,16 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Diagnóstico &amp; Auditoría FutureProof</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Consultoría Tecnológica Estratégica</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código.
+                Entendemos tu negocio antes de tirar una sola línea de código. Auditamos tu infraestructura y mapeamos cuellos de botella para modernizar tu empresa.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
                   'Mapeo de procesos y diagnóstico de operaciones',
                   'Detección de fricción con gemelos digitales (IMPATH™)',
-                  'Matriz de priorización de agentes IA y cálculo de ROI',
+                  'Matriz de priorización de tecnología y cálculo de ROI',
                   'Blueprint de arquitectura técnica y gobernanza de datos',
                   'Reporte ejecutivo con costo de inacción cuantificado en pesos'
                 ].map((item, i) => (
@@ -66,9 +66,9 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
               <a
-                href="#/diagnostico"
+                href="#/consultoria-tecnologica"
                 className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
-                <span>Solicitar Diagnóstico</span>
+                <span>Explorar Consultoría</span>
                 <span>→</span>
               </a>
             </div>
@@ -84,9 +84,9 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
                 <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Ingeniería de Agentes &amp; MCP</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Automatización Agentizada (Agentic)</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real.
+                Asignamos un Squad Senior enfocado en automatizar flujos operativos con Agentes de Inteligencia Artificial conectados a tu ERP.
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -94,7 +94,7 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
                   'Diseño de arquitectura agéntica con protocolos MCP',
                   'Flujos de trabajo autónomos sobre datos reales con RAG',
                   'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Ingeniería, pruebas de estrés y despliegue cloud en producción',
+                  'Sprints quincenales con entregas en staging',
                   'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
@@ -108,9 +108,9 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
               <a
-                href="#/ingenieria"
+                href="#/automatizacion-agentica"
                 className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
-                <span>Explorar Ingeniería</span>
+                <span>Explorar Automatización</span>
                 <span>→</span>
               </a>
             </div>
@@ -129,15 +129,15 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
                 <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Transformación: BUILD + EVOLVE</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Producto Digital (Build & Evolve)</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.
+                Construimos tu plataforma de misión crítica desde cero hasta producción en 90 días (BUILD), asumiendo la responsabilidad de su evolución continua (EVOLVE).
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
                   'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
-                  'Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)',
+                  'Todo lo incluido en los paquetes 01 (Consultoría) y 02 (Automatización)',
                   'Construcción completa de plataforma en 90 días (BUILD)',
                   'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
                   'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
@@ -153,9 +153,9 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
             <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
               <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
               <a
-                href="#/transformacion"
+                href="#/producto-digital"
                 className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
-                <span>Explorar Transformación</span>
+                <span>Explorar Producto Digital</span>
                 <span>→</span>
               </a>
             </div>

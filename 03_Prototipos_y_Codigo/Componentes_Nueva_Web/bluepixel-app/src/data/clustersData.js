@@ -94,43 +94,43 @@ export const CLUSTERS_DATA = {
         number: '01',
         type: 'ENTRY PACKAGE',
         duration: '14 DÍAS MÁXIMO',
-        title: 'Diagnóstico Operativo FutureProof',
-        desc: 'Auditamos tu código actual, infraestructura y UX. Diseñamos el blueprint técnico y cuantificamos tu ROI en pesos antes de invertir en desarrollo.',
+        title: 'Consultoría Tecnológica Estratégica',
+        desc: 'Auditamos tu código actual, infraestructura y UX. Entendemos tu negocio antes de tirar una sola línea de código y te entregamos un blueprint de arquitectura claro.',
         bullets: [
           'Auditoría forense de deuda técnica y cuellos de botella',
           'Auditoría de fricción UX y medición de abandono',
           'Blueprint de arquitectura Cloud y selección de stack',
           'Estimación de inversión con alcances y SLAs garantizados'
         ],
-        cta: 'Solicitar Diagnóstico Operativo'
+        cta: 'Solicitar Consultoría'
       },
       step2: {
         number: '02',
         type: 'ENTRY PACKAGE',
         duration: 'SPRINTS MENSUALES',
-        title: 'Ingeniería de Apps & Cloud Dedicada',
-        desc: 'Ya tienes requerimientos claros. Asignamos un Squad Senior enfocado en programar tu app con código 100% de tu propiedad.',
+        title: 'Automatización Agentizada (Agentic)',
+        desc: 'Asignamos un Squad Senior enfocado en programar flujos y aplicaciones con código 100% de tu propiedad para automatizar tu operación.',
         bullets: [
           'Squad senior dedicado: Tech Lead, Senior Devs y UX Lead',
           'Sprints quincenales con entregas funcionales en staging',
           'Pipeline CI/CD automatizado y pruebas con cobertura >85%',
           'Soberanía total de IP: entregamos el repositorio privado'
         ],
-        cta: 'Explorar Ingeniería de Apps'
+        cta: 'Explorar Automatización'
       },
       step3: {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Transformación Digital: BUILD + EVOLVE',
-        desc: 'De cero a producto digital de misión crítica en producción en 90 días (BUILD), con evolución continua y SLAs de mantenimiento (EVOLVE).',
+        title: 'Producto Digital (Build & Evolve)',
+        desc: 'Construimos tu plataforma de misión crítica desde cero hasta producción en 90 días (BUILD), con evolución continua y mantenimiento (EVOLVE).',
         bullets: [
-          'Todo lo incluido en Diagnóstico 01 e Ingeniería 02',
+          'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Construcción y lanzamiento en producción en 90 días',
           'Monitoreo trimestral de UX Health Score y rendimiento',
           'SLA de soporte correctivo y escalabilidad bajo demanda'
         ],
-        cta: 'Agendar Sesión de Transformación',
+        cta: 'Agendar Transformación',
         featured: true
       }
     }
@@ -216,43 +216,43 @@ export const CLUSTERS_DATA = {
         number: '01',
         type: 'ENTRY PACKAGE',
         duration: '14 DÍAS MÁXIMO',
-        title: 'Diagnóstico Operativo FutureProof',
-        desc: 'Mapeamos tus procesos manuales, medimos las horas desperdiciadas en Excel y dictaminamos la viabilidad técnica de automatización determinística.',
+        title: 'Consultoría Tecnológica Estratégica',
+        desc: 'Mapeamos tus procesos manuales, dictaminamos la viabilidad técnica y te entregamos un roadmap de automatización priorizado.',
         bullets: [
           'Mapeo de cuellos de botella y flujos manuales entre áreas',
           'Cálculo exacto del costo financiero de la inacción en pesos',
           'Dictamen de factibilidad de conexión de ERPs y APIs legacy',
           'Roadmap de automatización priorizado por ROI inmediato'
         ],
-        cta: 'Solicitar Diagnóstico Operativo'
+        cta: 'Solicitar Consultoría'
       },
       step2: {
         number: '02',
         type: 'ENTRY PACKAGE',
         duration: 'SPRINTS MENSUALES',
-        title: 'Ingeniería de Integración & APA',
-        desc: 'Desplegamos conectores y agentes de automatización resilientes que comunican tus sistemas sin afectar la estabilidad de tus bases de datos.',
+        title: 'Automatización Agentizada (Agentic)',
+        desc: 'Desplegamos conectores y agentes inteligentes que comunican tus sistemas empresariales sin afectar la estabilidad de tus bases de datos.',
         bullets: [
           'Desarrollo de conectores middleware para SAP, Oracle o CRM',
           'Implementación de robots con visión y auto-healing',
           'Pruebas de estrés y conciliación de datos en staging',
           'Monitoreo de colas de eventos y alertas automáticas'
         ],
-        cta: 'Explorar Ingeniería de Integración'
+        cta: 'Explorar Automatización'
       },
       step3: {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Transformación Operativa: BUILD + EVOLVE',
-        desc: 'Reingeniería integral de la operación digital de tu compañía. Eliminamos la fricción de raíz y optimizamos los flujos mes a mes.',
+        title: 'Producto Digital (Build & Evolve)',
+        desc: 'Reingeniería integral de tu operación digital. Construimos (BUILD) y evolucionamos (EVOLVE) los flujos automatizados de tu empresa mes a mes.',
         bullets: [
-          'Todo lo incluido en Diagnóstico 01 e Ingeniería 02',
+          'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Conexión end-to-end de todos los departamentos core',
           'Dashboard ejecutivo de horas ahorradas y KPIs en tiempo real',
           'Mantenimiento continuo y adaptación a nuevas versiones de ERP'
         ],
-        cta: 'Agendar Transformación Operativa',
+        cta: 'Agendar Transformación',
         featured: true
       }
     }
@@ -353,43 +353,43 @@ export const CLUSTERS_DATA = {
         number: '01',
         type: 'ENTRY PACKAGE',
         duration: '14 DÍAS MÁXIMO',
-        title: 'Diagnóstico Operativo FutureProof',
-        desc: 'Auditamos tus datos, evaluamos casos de uso viables y comprobamos el impacto financiero de la agentización antes de comprometer presupuestos grandes.',
+        title: 'Consultoría Tecnológica Estratégica',
+        desc: 'Evaluamos tu infraestructura y calidad de datos para identificar donde la Inteligencia Artificial genera un ROI real.',
         bullets: [
           'Evaluación de calidad y estructuración de datos corporativos',
           'Prueba de concepto RAG en sandbox con datos reales del cliente',
           'Dictamen de cumplimiento normativo (LFPDPPP y SOC2)',
           'Matriz de priorización y proyección de costos de inferencia'
         ],
-        cta: 'Solicitar Diagnóstico Operativo'
+        cta: 'Solicitar Consultoría'
       },
       step2: {
         number: '02',
         type: 'ENTRY PACKAGE',
         duration: 'SPRINTS MENSUALES',
-        title: 'Ingeniería de Agentes & MCP',
-        desc: 'Diseñamos la arquitectura agéntica con Protocolo MCP, programamos los agentes y los integramos en producción en tu entorno real.',
+        title: 'Automatización Agentizada (Agentic)',
+        desc: 'Diseñamos y programamos Agentes de IA autónomos (MCP) y los integramos en producción en tu entorno corporativo de forma segura.',
         bullets: [
           'Diseño de arquitectura agéntica con protocolos MCP',
           'Flujos de trabajo autónomos sobre datos reales con RAG',
           'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
           'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
         ],
-        cta: 'Explorar Ingeniería de Agentes'
+        cta: 'Explorar Automatización'
       },
       step3: {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Transformación: BUILD + EVOLVE Agéntico',
-        desc: 'De cero a una capa agéntica corporativa de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end.',
+        title: 'Producto Digital (Build & Evolve)',
+        desc: 'Construimos una plataforma con capa agéntica corporativa de alta disponibilidad (BUILD) y la monitoreamos continuamente (EVOLVE).',
         bullets: [
-          'Todo lo incluido en Diagnóstico 01 e Ingeniería 02',
+          'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Construcción completa de plataforma agéntica en 90 días',
           'Monitoreo continuo de salud del modelo y precisión de respuestas',
           'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
         ],
-        cta: 'Agendar Transformación Agéntica',
+        cta: 'Agendar Transformación',
         featured: true
       }
     }
