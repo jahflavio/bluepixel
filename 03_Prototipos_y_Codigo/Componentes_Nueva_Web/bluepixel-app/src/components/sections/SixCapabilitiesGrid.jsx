@@ -5,8 +5,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 1: APPS & PLATAFORMAS
     {
       cluster: 'CLUSTER 01 · APPS & PRODUCTO',
-      targetCluster: 'apps',
-      targetSubservice: 'ux-ui',
+      targetRoute: 'servicio/ux-ui',
       badge: 'IMPATH™ Enabled',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '🎯',
@@ -21,8 +20,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CLUSTER 01 · APPS & PRODUCTO',
-      targetCluster: 'apps',
-      targetSubservice: 'web',
+      targetRoute: 'servicio/ai-engineering',
       badge: 'Cloud-Native SOC2',
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
       icon: '</>',
@@ -39,8 +37,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 2: AUTOMATIZACIÓN & DATOS
     {
       cluster: 'CLUSTER 02 · AUTOMATIZACIÓN',
-      targetCluster: 'automatizacion',
-      targetSubservice: 'apa',
+      targetRoute: 'servicio/ai-agents',
       badge: 'Protocolo MCP',
       badgeColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
       icon: '⚙️',
@@ -55,8 +52,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CLUSTER 02 · AUTOMATIZACIÓN',
-      targetCluster: 'automatizacion',
-      targetSubservice: 'middleware',
+      targetRoute: 'servicio/data-analytics',
       badge: 'Mixpanel Telemetry',
       badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
       icon: '📈',
@@ -73,8 +69,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 3: AGENTIZACIÓN & GOBERNANZA
     {
       cluster: 'CLUSTER 03 · GOBERNANZA IA',
-      targetCluster: 'agentizacion',
-      targetSubservice: 'privacy',
+      targetRoute: 'servicio/security',
       badge: 'Vault Audited',
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
       icon: '🛡️',
@@ -89,8 +84,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CLUSTER 03 · GOBERNANZA IA',
-      targetCluster: 'agentizacion',
-      targetSubservice: 'consultoria',
+      targetRoute: 'servicio/business-ai',
       badge: 'FutureProof™ Framework',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '💡',
@@ -129,7 +123,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
           {capabilities.map((item, index) => (
             <div
               key={index}
-              onClick={() => onNavigateCluster && onNavigateCluster(item.targetCluster, item.targetSubservice)}
+              onClick={() => onNavigateCluster && onNavigateCluster(item.targetRoute)}
               className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-blue-500/20 group cursor-pointer"
             >
               <div>

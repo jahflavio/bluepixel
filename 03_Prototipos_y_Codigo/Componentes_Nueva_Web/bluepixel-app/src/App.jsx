@@ -14,6 +14,14 @@ const IngenieriaLandingPage = lazy(() => import('./components/landings/Ingenieri
 const TransformacionLandingPage = lazy(() => import('./components/landings/TransformacionLandingPage'));
 const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
 
+// 6 Servicios Individuales (Capacidades)
+const UxUiServicePage = lazy(() => import('./components/landings/services/UxUiServicePage'));
+const AiEngineeringServicePage = lazy(() => import('./components/landings/services/AiEngineeringServicePage'));
+const AiAgentsServicePage = lazy(() => import('./components/landings/services/AiAgentsServicePage'));
+const DataAnalyticsServicePage = lazy(() => import('./components/landings/services/DataAnalyticsServicePage'));
+const SecurityReliabilityServicePage = lazy(() => import('./components/landings/services/SecurityReliabilityServicePage'));
+const BusinessAiConsultingPage = lazy(() => import('./components/landings/services/BusinessAiConsultingPage'));
+
 // Below the fold sections - lazy loaded for optimal performance
 const TrustBadgesSection = lazy(() => import('./components/sections/TrustBadgesSection'));
 const WorkflowTeardown = lazy(() => import('./components/sections/WorkflowTeardown'));
@@ -48,11 +56,18 @@ const App = () => {
   const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'diagnostico' | 'como-trabajamos' | 'ingenieria' | 'transformacion'
   const [selectedSubserviceId, setSelectedSubserviceId] = useState(null);
 
-  // Sincronizar con hash si se usa #/apps, #/automatizacion, #/agentizacion
+  // Sincronizar con hash
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
-      if (['apps', 'automatizacion', 'agentizacion', 'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion'].includes(hash)) {
+      const validViews = [
+        'apps', 'automatizacion', 'agentizacion', 
+        'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion',
+        'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
+        'servicio/data-analytics', 'servicio/security', 'servicio/business-ai'
+      ];
+      
+      if (validViews.includes(hash)) {
         setCurrentView(hash);
       } else if (hash === 'home' || hash === '') {
         setCurrentView('home');
@@ -130,6 +145,30 @@ const App = () => {
       ) : currentView === 'como-trabajamos' ? (
         <Suspense fallback={<SectionLoader />}>
           <ComoTrabajamosLandingPage />
+        </Suspense>
+      ) : currentView === 'servicio/ux-ui' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <UxUiServicePage />
+        </Suspense>
+      ) : currentView === 'servicio/ai-engineering' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <AiEngineeringServicePage />
+        </Suspense>
+      ) : currentView === 'servicio/ai-agents' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <AiAgentsServicePage />
+        </Suspense>
+      ) : currentView === 'servicio/data-analytics' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <DataAnalyticsServicePage />
+        </Suspense>
+      ) : currentView === 'servicio/security' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <SecurityReliabilityServicePage />
+        </Suspense>
+      ) : currentView === 'servicio/business-ai' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <BusinessAiConsultingPage />
         </Suspense>
       ) : (
         <Suspense fallback={<SectionLoader />}>
