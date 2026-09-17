@@ -17,6 +17,7 @@ const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoT
 // Directorios Centrales (Hubs)
 const PilaresLandingPage = lazy(() => import('./components/landings/PilaresLandingPage'));
 const ServiciosLandingPage = lazy(() => import('./components/landings/ServiciosLandingPage'));
+const CasosEstudioLandingPage = lazy(() => import('./components/landings/CasosEstudioLandingPage'));
 
 // 6 Servicios Individuales (Capacidades)
 const UxUiServicePage = lazy(() => import('./components/landings/services/UxUiServicePage'));
@@ -67,7 +68,7 @@ const App = () => {
         'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
-        'pilares', 'servicios'
+        'pilares', 'servicios', 'casos-de-exito'
       ];
       
       if (validViews.includes(hash)) {
@@ -150,6 +151,10 @@ const App = () => {
       ) : currentView === 'servicios' ? (
         <Suspense fallback={<SectionLoader />}>
           <ServiciosLandingPage />
+        </Suspense>
+      ) : currentView === 'casos-de-exito' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <CasosEstudioLandingPage />
         </Suspense>
       ) : currentView === 'como-trabajamos' ? (
         <Suspense fallback={<SectionLoader />}>
