@@ -136,15 +136,15 @@ const App = () => {
         </>
       ) : currentView === 'diagnostico' ? (
         <Suspense fallback={<SectionLoader />}>
-          <DiagnosticoLandingPage />
+          <DiagnosticoLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'ingenieria' ? (
         <Suspense fallback={<SectionLoader />}>
-          <IngenieriaLandingPage />
+          <IngenieriaLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'transformacion' ? (
         <Suspense fallback={<SectionLoader />}>
-          <TransformacionLandingPage />
+          <TransformacionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'pilares' ? (
         <Suspense fallback={<SectionLoader />}>

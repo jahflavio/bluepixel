@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import MultiStepContact from '../forms/MultiStepContact';
+import WaysToWorkSubNavbar from '../layout/WaysToWorkSubNavbar';
 
-const IngenieriaLandingPage = () => {
+const IngenieriaLandingPage = ({ onNavigateCluster }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#02040A] text-white selection:bg-indigo-500/30">
+      <WaysToWorkSubNavbar currentView="ingenieria" onNavigate={onNavigateCluster} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
