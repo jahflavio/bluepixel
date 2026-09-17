@@ -113,13 +113,6 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
             </button>
           </div>
 
-          <button
-            onClick={() => onSelectPackage(cluster.threeWays.step1.title)}
-            className="hidden lg:flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-4 py-2 rounded-xl transition-all shadow-lg shadow-blue-600/20"
-          >
-            <span>Solicitar Diagnóstico</span>
-            <span>→</span>
-          </button>
         </div>
       </header>
 
