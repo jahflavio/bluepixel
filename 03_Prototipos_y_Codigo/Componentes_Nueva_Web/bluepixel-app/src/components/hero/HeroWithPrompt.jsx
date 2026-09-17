@@ -42,14 +42,11 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
               <span>Solicitar Diagnóstico Operativo</span>
               <span>→</span>
             </a>
-            <button
-              onClick={() => {
-                const el = document.getElementById('case-studies');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
+            <a
+              href="#/casos-de-exito"
               className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors">
-              Ver Casos de Éxito ↓
-            </button>
+              Ver el Portafolio Completo ↓
+            </a>
           </div>
         </div>
 

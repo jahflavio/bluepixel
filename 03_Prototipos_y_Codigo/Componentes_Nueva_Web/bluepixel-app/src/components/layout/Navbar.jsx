@@ -87,20 +87,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
             </div>
           </div>
 
-          <button 
-            onClick={() => {
-              if (onNavigateCluster) {
-                onNavigateCluster('home');
-                setTimeout(() => {
-                  const el = document.getElementById('case-studies');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }, 150);
-              }
-            }} 
-            className="hover:text-blue-400 transition-colors"
-          >
+          <a href="#/casos-de-exito" className="hover:text-blue-400 transition-colors">
             Casos de Estudio
-          </button>
+          </a>
         </div>
 
         {/* CTA */}
