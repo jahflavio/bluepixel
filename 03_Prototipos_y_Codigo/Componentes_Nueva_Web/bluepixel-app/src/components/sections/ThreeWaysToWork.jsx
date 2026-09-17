@@ -65,12 +65,12 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
 
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
-              <button
-                onClick={() => onSelectPackage && onSelectPackage('Diagnóstico & Auditoría (01)')}
+              <a
+                href="#/diagnostico"
                 className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
                 <span>Solicitar Diagnóstico</span>
                 <span>→</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -107,12 +107,12 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
 
             <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
-              <button
-                onClick={() => onSelectPackage && onSelectPackage('Ingeniería de Agentes (02)')}
+              <a
+                href="#/ingenieria"
                 className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
                 <span>Explorar Ingeniería</span>
                 <span>→</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -152,12 +152,12 @@ const ThreeWaysToWork = ({ onSelectPackage }) => {
 
             <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
               <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
-              <button
-                onClick={() => onSelectPackage && onSelectPackage('Transformación Integral (01+02)')}
+              <a
+                href="#/transformacion"
                 className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
-                <span>Agendar Sesión</span>
+                <span>Explorar Transformación</span>
                 <span>→</span>
-              </button>
+              </a>
             </div>
           </div>
 

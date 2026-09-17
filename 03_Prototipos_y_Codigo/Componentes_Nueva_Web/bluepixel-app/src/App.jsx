@@ -8,8 +8,11 @@ import HeroWithPrompt from './components/hero/HeroWithPrompt';
 import SocialProofSection from './components/sections/SocialProofSection';
 import ClusterLandingPage from './components/clusters/ClusterLandingPage';
 
-// Diagnostico Landing Page (Lazy loaded)
+// Landing Pages (Spokes y Hub - Lazy loaded)
 const DiagnosticoLandingPage = lazy(() => import('./components/landings/DiagnosticoLandingPage'));
+const IngenieriaLandingPage = lazy(() => import('./components/landings/IngenieriaLandingPage'));
+const TransformacionLandingPage = lazy(() => import('./components/landings/TransformacionLandingPage'));
+const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
 
 // Below the fold sections - lazy loaded for optimal performance
 const TrustBadgesSection = lazy(() => import('./components/sections/TrustBadgesSection'));
@@ -42,14 +45,14 @@ const App = () => {
   const [selectedSolution, setSelectedSolution] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [preselectedPkg, setPreselectedPkg] = useState(null);
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'diagnostico'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'diagnostico' | 'como-trabajamos' | 'ingenieria' | 'transformacion'
   const [selectedSubserviceId, setSelectedSubserviceId] = useState(null);
 
   // Sincronizar con hash si se usa #/apps, #/automatizacion, #/agentizacion
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
-      if (['apps', 'automatizacion', 'agentizacion', 'diagnostico'].includes(hash)) {
+      if (['apps', 'automatizacion', 'agentizacion', 'diagnostico', 'como-trabajamos', 'ingenieria', 'transformacion'].includes(hash)) {
         setCurrentView(hash);
       } else if (hash === 'home' || hash === '') {
         setCurrentView('home');
@@ -115,6 +118,18 @@ const App = () => {
       ) : currentView === 'diagnostico' ? (
         <Suspense fallback={<SectionLoader />}>
           <DiagnosticoLandingPage />
+        </Suspense>
+      ) : currentView === 'ingenieria' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <IngenieriaLandingPage />
+        </Suspense>
+      ) : currentView === 'transformacion' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <TransformacionLandingPage />
+        </Suspense>
+      ) : currentView === 'como-trabajamos' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <ComoTrabajamosLandingPage />
         </Suspense>
       ) : (
         <Suspense fallback={<SectionLoader />}>

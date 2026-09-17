@@ -36,7 +36,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => (
 
       <div className="hidden md:flex items-center gap-6 text-sm text-slate-300 font-medium">
         <a href="#clusters" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">Capacidades</a>
-        <a href="#three-ways" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">3 Formas de Trabajar</a>
+        <a href="#/como-trabajamos" className="hover:text-blue-400 transition-colors">3 Formas de Trabajar</a>
         <a href="#case-studies" onClick={() => onNavigateCluster && onNavigateCluster('home')} className="hover:text-blue-400 transition-colors">Casos de Éxito</a>
       </div>
 
