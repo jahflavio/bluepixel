@@ -35,7 +35,7 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
               href="#/diagnostico"
               className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
@@ -47,6 +47,12 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
               className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors">
               Ver el Portafolio Completo ↓
             </a>
+          </div>
+
+          {/* Differentiator Badge */}
+          <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+            <span className="text-emerald-400">✓</span>
+            <span>El rigor técnico de una Big 4. La agilidad de un squad élite. Cero bait-and-switch con talento junior.</span>
           </div>
         </div>
 

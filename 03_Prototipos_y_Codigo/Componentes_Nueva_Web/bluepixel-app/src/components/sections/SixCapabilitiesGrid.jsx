@@ -4,7 +4,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
   const capabilities = [
     // CLUSTER 1: APPS & PLATAFORMAS
     {
-      cluster: 'CLUSTER 01 · APPS & PRODUCTO',
+      cluster: 'PILAR 01 · APPS & PRODUCTO',
       targetRoute: 'servicio/ux-ui',
       badge: 'IMPATH™ Enabled',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
@@ -19,7 +19,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-blue-950/40 border-blue-500/30 text-blue-300'
     },
     {
-      cluster: 'CLUSTER 01 · APPS & PRODUCTO',
+      cluster: 'PILAR 01 · APPS & PRODUCTO',
       targetRoute: 'servicio/ai-engineering',
       badge: 'Cloud-Native SOC2',
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
@@ -36,7 +36,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
 
     // CLUSTER 2: AUTOMATIZACIÓN & DATOS
     {
-      cluster: 'CLUSTER 02 · AUTOMATIZACIÓN',
+      cluster: 'PILAR 02 · AUTOMATIZACIÓN',
       targetRoute: 'servicio/ai-agents',
       badge: 'Protocolo MCP',
       badgeColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
@@ -51,7 +51,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-purple-950/40 border-purple-500/30 text-purple-300'
     },
     {
-      cluster: 'CLUSTER 02 · AUTOMATIZACIÓN',
+      cluster: 'PILAR 02 · AUTOMATIZACIÓN',
       targetRoute: 'servicio/data-analytics',
       badge: 'Mixpanel Telemetry',
       badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
@@ -68,7 +68,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
 
     // CLUSTER 3: AGENTIZACIÓN & GOBERNANZA
     {
-      cluster: 'CLUSTER 03 · GOBERNANZA IA',
+      cluster: 'PILAR 03 · GOBERNANZA IA',
       targetRoute: 'servicio/security',
       badge: 'Vault Audited',
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
@@ -83,7 +83,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-amber-950/40 border-amber-500/30 text-amber-300'
     },
     {
-      cluster: 'CLUSTER 03 · GOBERNANZA IA',
+      cluster: 'PILAR 03 · GOBERNANZA IA',
       targetRoute: 'servicio/business-ai',
       badge: 'FutureProof™ Framework',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',

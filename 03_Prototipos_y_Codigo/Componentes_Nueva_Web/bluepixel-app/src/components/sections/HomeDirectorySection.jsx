@@ -30,7 +30,7 @@ const HomeDirectorySection = () => {
               Nuestros 3 Pilares
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Apps & Producto, Automatización y Gobernanza IA. Descubre nuestra filosofía arquitectónica y por qué estructuramos así la tecnología.
+              Apps & Producto, Automatización y Gobernanza IA. Descubre la filosofía arquitectónica que sostiene a los corporativos más ágiles.
             </p>
             <div className="flex items-center text-blue-400 text-sm font-semibold group-hover:translate-x-1 transition-transform">
               Explorar Pilares →
@@ -46,7 +46,7 @@ const HomeDirectorySection = () => {
               Directorio de Servicios
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Catálogo técnico detallado de nuestras 6 capacidades. Desde Ingeniería UX/UI hasta Agentes IA y Auditorías de Seguridad SOC2.
+              De la fricción operativa a la agentización total. Explora nuestras 6 capacidades técnicas, entregables y metodologías de implementación.
             </p>
             <div className="flex items-center text-purple-400 text-sm font-semibold group-hover:translate-x-1 transition-transform">
               Ver los 6 Servicios →
@@ -62,7 +62,7 @@ const HomeDirectorySection = () => {
               Modelos de Trabajo
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Conoce cómo estructuramos los equipos. Diagnósticos de 14 días, Staff Augmentation (Squads) y Transformación End-to-End.
+              Conoce cómo eliminamos el riesgo comercial. Desde Diagnósticos Operativos hasta Transformación Full-Stack garantizada.
             </p>
             <div className="flex items-center text-emerald-400 text-sm font-semibold group-hover:translate-x-1 transition-transform">
               Ver Modelos de Engagement →
