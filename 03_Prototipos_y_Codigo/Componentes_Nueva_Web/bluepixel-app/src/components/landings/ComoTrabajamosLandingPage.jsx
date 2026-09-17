@@ -8,15 +8,6 @@ const ComoTrabajamosLandingPage = () => {
 
   return (
     <div className="min-h-screen bg-[#040711] text-white selection:bg-blue-500/30">
-      {/* Simplified Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 py-6 px-6 md:px-12 flex justify-between items-center">
-        <a href="#/home" className="block transition-transform hover:scale-105">
-          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="BluePixel" className="h-10 w-auto object-contain" />
-        </a>
-        <a href="#/home" className="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2">
-          <span>← Volver al Inicio</span>
-        </a>
-      </header>
 
       {/* Intro Section */}
       <section className="relative pt-32 pb-8 px-6 text-center">
