@@ -146,7 +146,7 @@ const App = () => {
         </Suspense>
       ) : currentView === 'pilares' ? (
         <Suspense fallback={<SectionLoader />}>
-          <PilaresLandingPage />
+          <PilaresLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'servicios' ? (
         <Suspense fallback={<SectionLoader />}>

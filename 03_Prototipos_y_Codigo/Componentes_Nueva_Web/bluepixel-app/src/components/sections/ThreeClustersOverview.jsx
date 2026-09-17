@@ -13,7 +13,7 @@ const CLUSTERS = [
     badgeText: 'text-blue-400',
     badgeBg: 'bg-blue-500/10 border-blue-500/20',
     name: 'Apps & Plataformas',
-    tagline: 'CLUSTER 01 · SOFTWARE DE MISIÓN CRÍTICA',
+    tagline: 'PILAR 01 · SOFTWARE DE MISIÓN CRÍTICA',
     headline: 'Tu plataforma digital, construida para durar y escalar.',
     impact: '99.98% Uptime',
     impactLabel: 'SLA en Producción',
@@ -38,7 +38,7 @@ const CLUSTERS = [
     badgeText: 'text-purple-400',
     badgeBg: 'bg-purple-500/10 border-purple-500/20',
     name: 'Automatización Operativa',
-    tagline: 'CLUSTER 02 · MIDDLEWARE & APA DETERMINÍSTICO',
+    tagline: 'PILAR 02 · MIDDLEWARE & APA DETERMINÍSTICO',
     headline: 'Elimina la fricción manual entre tus sistemas y tu equipo.',
     impact: '−94%',
     impactLabel: 'Tiempo de Conciliación',
@@ -63,7 +63,7 @@ const CLUSTERS = [
     badgeText: 'text-emerald-400',
     badgeBg: 'bg-emerald-500/10 border-emerald-500/20',
     name: 'Agentización & IA Corporativa',
-    tagline: 'CLUSTER 03 · PROTOCOLO MCP & PRIVACIDAD LFPDPPP',
+    tagline: 'PILAR 03 · PROTOCOLO MCP & PRIVACIDAD LFPDPPP',
     headline: 'Agentes de IA que operan sobre tus datos reales. Sin alucinar.',
     impact: '0%',
     impactLabel: 'Alucinaciones en Políticas',
@@ -156,7 +156,7 @@ const ThreeClustersOverview = ({ onNavigateCluster, onOpenContact }) => {
                 <div className="pt-4 border-t border-white/[0.06]">
                   <div className={`text-[10px] font-mono ${cluster.badgeText} opacity-60 mb-3`}>{cluster.proof}</div>
                   <div className={`flex items-center justify-between text-xs font-semibold ${cluster.badgeText} group-hover:opacity-100 opacity-70 transition-opacity`}>
-                    <span>Explorar este cluster</span>
+                    <span>Explorar este pilar</span>
                     <span className="text-sm font-mono group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </div>

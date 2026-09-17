@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ThreeClustersOverview from '../sections/ThreeClustersOverview';
 import MultiStepContact from '../forms/MultiStepContact';
 
-const PilaresLandingPage = () => {
+const PilaresLandingPage = ({ onNavigateCluster }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,8 +26,8 @@ const PilaresLandingPage = () => {
         </div>
       </section>
 
-      {/* Reutilizamos el componente original pero sin el onNavigateCluster para que no parezca un botón que te saca de la página */}
-      <ThreeClustersOverview />
+      {/* Componente Original */}
+      <ThreeClustersOverview onNavigateCluster={onNavigateCluster} />
 
       {/* CTA Section */}
       <section className="py-24 px-6 relative border-t border-white/[0.05] bg-[#040711]">
