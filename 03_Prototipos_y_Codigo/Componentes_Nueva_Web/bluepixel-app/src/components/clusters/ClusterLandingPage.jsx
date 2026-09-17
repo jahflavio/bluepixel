@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import ImpathFrictionSection from '../sections/ImpathFrictionSection';
+import LeadMagnetSection from '../sections/LeadMagnetSection';
 const AgenticTechStack = lazy(() => import('../sections/AgenticTechStack'));
-
 
 const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, onSelectPackage }) => {
   const [activeSubserviceId, setActiveSubserviceId] = useState(() => {
@@ -584,6 +584,9 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
           </div>
         </div>
       </section>
+
+      {/* LEAD MAGNET */}
+      <LeadMagnetSection />
 
       {/* FOOTER CALL TO ACTION */}
       <section className="py-20 px-6 text-center max-w-4xl mx-auto">

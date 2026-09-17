@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import CaseStudiesSection from '../sections/CaseStudiesSection';
 import MultiStepContact from '../forms/MultiStepContact';
+import LeadMagnetSection from '../sections/LeadMagnetSection';
 
 const CasosEstudioLandingPage = () => {
   useEffect(() => {
@@ -52,6 +53,9 @@ const CasosEstudioLandingPage = () => {
 
       {/* Reutilizamos el componente original de Casos */}
       <CaseStudiesSection />
+
+      {/* LEAD MAGNET */}
+      <LeadMagnetSection />
 
       {/* CTA Section */}
       <section className="py-24 px-6 relative border-t border-white/[0.05] bg-[#040711]">

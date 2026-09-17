@@ -38,6 +38,7 @@ const FAQSection = lazy(() => import('./components/sections/FAQSection'));
 const HomeDirectorySection = lazy(() => import('./components/sections/HomeDirectorySection'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
+const LeadMagnetSection = lazy(() => import('./components/sections/LeadMagnetSection'));
 const FinalCTA = lazy(() => import('./components/sections/FinalCTA'));
 const Footer = lazy(() => import('./components/layout/Footer'));
 
@@ -122,6 +123,7 @@ const App = () => {
             <FAQSection />
             <EngineeringLeadership />
             <PostContactSLA />
+            <LeadMagnetSection />
             <FinalCTA onOpenContact={() => scrollToForm()} />
             <Footer />
             

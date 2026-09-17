@@ -20,6 +20,11 @@ export default {
           700: '#1A2540',
           600: '#253456',
         }
+      },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        }
       }
     },
   },
