@@ -23,9 +23,10 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
           </div>
 
           {/* Headline */}
-          <h1 className="mb-6 font-black font-display tracking-tight leading-[1.1] text-4xl lg:text-5xl xl:text-[3.5rem] text-white">
-            Menos fricción operativa<span className="text-blue-500">.</span> Más control<span className="text-blue-500">.</span> <br className="hidden lg:block" />
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Software que trabaja por ti</span><span className="text-blue-500">.</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-6 font-display">
+            Diseñamos la plataforma<span className="text-blue-500">,</span><br />
+            automatizamos la operación<span className="text-blue-500">,</span><br />
+            agentizamos el negocio<span className="text-blue-500">.</span>
           </h1>
 
           {/* Subheadline */}
@@ -35,12 +36,12 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={onOpenContact}
+            <a
+              href="#/diagnostico"
               className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(37,99,235,0.5)] flex items-center gap-2">
               <span>Solicitar Diagnóstico Operativo</span>
               <span>→</span>
-            </button>
+            </a>
             <a
               href="#clusters"
               className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors">

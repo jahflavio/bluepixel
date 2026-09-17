@@ -22,13 +22,13 @@ const FinalCTA = ({ onOpenContact }) => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <button 
-                    onClick={onOpenContact}
+                  <a 
+                    href="#/diagnostico"
                     className="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-bold text-sm px-8 py-3.5 rounded-full transition-all flex items-center justify-center gap-2"
                   >
                     <span>Solicitar Diagnóstico</span>
                     <span>↗</span>
-                  </button>
+                  </a>
                   
                   <a 
                     href="#case-studies"

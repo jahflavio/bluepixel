@@ -41,12 +41,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => (
       </div>
 
       <div className="flex items-center gap-3">
-        <button 
-          onClick={onOpenContact}
+        <a 
+          href="#/diagnostico"
           className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm px-5 py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/25 flex items-center gap-2">
           <span>Diagnóstico Operativo</span>
           <span className="text-xs">→</span>
-        </button>
+        </a>
       </div>
     </div>
   </nav>

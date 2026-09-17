@@ -45,9 +45,9 @@ export const CLUSTERS_DATA = {
       },
       {
         id: 'ux-ui',
-        title: 'Diseño de Producto Digital & UX/UI',
-        badge: 'Product Design',
-        icon: '🎨',
+        title: 'Adopción de Sistemas & UX Conductual',
+        badge: 'UX for Adoption',
+        icon: '🎯',
         originalUrl: 'cotiza.bluepixel.mx/diseno-ux-ui',
         valueProp: 'Diseño conductual que elimina la fricción cognitiva y garantiza que tu equipo realmente adopte el software corporativo.',
         cases: [
@@ -93,16 +93,16 @@ export const CLUSTERS_DATA = {
       step1: {
         number: '01',
         type: 'ENTRY PACKAGE',
-        duration: '2 A 4 SEMANAS',
-        title: 'Diagnóstico & Auditoría de Arquitectura',
-        desc: 'Auditamos tu código actual, infraestructura y UX. Diseñamos el blueprint técnico y mitigamos riesgos antes de invertir en código.',
+        duration: '14 DÍAS MÁXIMO',
+        title: 'Diagnóstico Operativo FutureProof',
+        desc: 'Auditamos tu código actual, infraestructura y UX. Diseñamos el blueprint técnico y cuantificamos tu ROI en pesos antes de invertir en desarrollo.',
         bullets: [
           'Auditoría forense de deuda técnica y cuellos de botella',
           'Auditoría de fricción UX y medición de abandono',
           'Blueprint de arquitectura Cloud y selección de stack',
           'Estimación de inversión con alcances y SLAs garantizados'
         ],
-        cta: 'Solicitar Diagnóstico Técnico'
+        cta: 'Solicitar Diagnóstico Operativo'
       },
       step2: {
         number: '02',
@@ -215,9 +215,9 @@ export const CLUSTERS_DATA = {
       step1: {
         number: '01',
         type: 'ENTRY PACKAGE',
-        duration: '2 A 4 SEMANAS',
-        title: 'Diagnóstico de Fricción Operativa',
-        desc: 'Mapeamos tus procesos manuales, medimos las horas desperdiciadas en Excel y dictaminamos la viabilidad técnica de conectar tus ERPs.',
+        duration: '14 DÍAS MÁXIMO',
+        title: 'Diagnóstico Operativo FutureProof',
+        desc: 'Mapeamos tus procesos manuales, medimos las horas desperdiciadas en Excel y dictaminamos la viabilidad técnica de automatización determinística.',
         bullets: [
           'Mapeo de cuellos de botella y flujos manuales entre áreas',
           'Cálculo exacto del costo financiero de la inacción en pesos',
@@ -352,16 +352,16 @@ export const CLUSTERS_DATA = {
       step1: {
         number: '01',
         type: 'ENTRY PACKAGE',
-        duration: '2 A 4 SEMANAS',
-        title: 'Diagnóstico FutureProof de IA',
-        desc: 'Auditamos tus datos, evaluamos casos de uso viables y construimos un prototipo RAG en ambiente cerrado para validar precisión y ROI.',
+        duration: '14 DÍAS MÁXIMO',
+        title: 'Diagnóstico Operativo FutureProof',
+        desc: 'Auditamos tus datos, evaluamos casos de uso viables y comprobamos el impacto financiero de la agentización antes de comprometer presupuestos grandes.',
         bullets: [
           'Evaluación de calidad y estructuración de datos corporativos',
           'Prueba de concepto RAG en sandbox con datos reales del cliente',
           'Dictamen de cumplimiento normativo (LFPDPPP y SOC2)',
           'Matriz de priorización y proyección de costos de inferencia'
         ],
-        cta: 'Solicitar Diagnóstico FutureProof'
+        cta: 'Solicitar Diagnóstico Operativo'
       },
       step2: {
         number: '02',
