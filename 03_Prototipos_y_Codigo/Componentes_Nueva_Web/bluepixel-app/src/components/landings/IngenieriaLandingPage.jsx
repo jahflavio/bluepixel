@@ -23,7 +23,7 @@ const IngenieriaLandingPage = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">99.9% de Uptime en Producción</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-            No tercerices tu propiedad intelectual. Integra un Squad Senior (Tech Lead, AI Engineer y UX Lead) que programa arquitecturas agénticas resilientes sobre tus datos reales, entregándote el repositorio privado mes a mes.
+            Olvida a las "fábricas de software" tradicionales. Integra un Squad Senior (Tech Lead, AI Engineer y UX Lead) diseñado para refactorizar sistemas legacy y crear arquitecturas agénticas resilientes. Mantén el 100% de la propiedad de tu código y blinda tu operación bajo estándares SOC2 y OWASP Top 10.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ const IngenieriaLandingPage = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-400"></div>
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">⚡</div>
               <h3 className="text-xl font-bold text-white mb-3">Arquitectura MCP</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Conectamos agentes autónomos con tus sistemas legacy (SAP, Salesforce) usando protocolos seguros que bloquean alucinaciones y fugas de datos.</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Conectamos agentes autónomos con tus sistemas corporativos (SAP, Oracle, Salesforce) usando el Patrón Strangler Fig y protocolos MCP que bloquean alucinaciones y fugas de datos.</p>
             </div>
             <div className="bg-[#060A14] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">📈</div>

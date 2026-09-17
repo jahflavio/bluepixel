@@ -19,10 +19,11 @@ const DiagnosticoLandingPage = () => {
             ● EL PRIMER PASO SIN RIESGO (14 DÍAS MÁXIMO)
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-8 font-display">
-            Descubre por qué tus sistemas están <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">ahogando tu rentabilidad</span>
+            Auditoría de Deuda Técnica y <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Arquitectura Cloud en 14 Días</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-            El 85% de las iniciativas de software corporativo fallan porque empiezan programando sin entender el problema. En 14 días dictaminamos tu deuda técnica, cuantificamos el costo de la fricción operativa en pesos y te entregamos el plano de arquitectura exacto.
+            El 85% de las iniciativas de software corporativo fallan porque empiezan programando sin entender el problema. Mitiga el riesgo y evita el "shock de precio": en 2 semanas dictaminamos tu deuda técnica, cuantificamos el costo de la fricción operativa en pesos y te entregamos el Blueprint de Arquitectura exacto.
           </p>
         </div>
       </section>
@@ -40,8 +41,8 @@ const DiagnosticoLandingPage = () => {
             <div className="bg-[#060A14] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden group hover:border-blue-500/30 transition-colors">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-emerald-400"></div>
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">🏗️</div>
-              <h3 className="text-xl font-bold text-white mb-3">Blueprint de Arquitectura</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">El diagrama técnico exacto (Cloud, Bases de Datos, Middleware) para escalar tu operación sin crear código spaghetti ni depender de un solo proveedor.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Blueprint de Arquitectura Cloud</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">El diagrama técnico exacto (Cloud, Bases de Datos, Middleware y Protocolos MCP) para escalar tu operación sin crear código espagueti ni depender de un solo proveedor.</p>
             </div>
             <div className="bg-[#060A14] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden group hover:border-blue-500/30 transition-colors">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">📊</div>

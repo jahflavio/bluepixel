@@ -19,10 +19,10 @@ const TransformacionLandingPage = () => {
             ● FULL TRANSFORMATION (BUILD + EVOLVE)
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-8 font-display">
-            Lleva tus operaciones a producción en <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">90 días</span>
+            MVPs Corporativos a producción en <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">90 días</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-            De cero a una capa agentizada de alta disponibilidad. Tomamos responsabilidad absoluta del ciclo completo: Estrategia técnica, construcción de la arquitectura (BUILD) y evolución continua de tus KPI's (EVOLVE).
+            De cero a una plataforma de alta disponibilidad. Tomamos responsabilidad absoluta del ciclo End-to-End: construcción de la arquitectura (BUILD) y evolución continua bajo estrictos SLAs (EVOLVE). Todo cumpliendo normativas SOC2 y privacidad LFPDPPP.
           </p>
         </div>
       </section>
