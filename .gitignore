@@ -1,22 +1,61 @@
-# Byte-compiled / optimized / DLL files
+# Node.js & Dependencies
+node_modules/
+package-lock.json
+package.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Ad-hoc Data, CRM & Ads Exports
+*.csv
+*.xlsx
+*.xls
+!03_Prototipos_y_Codigo/bluepixel_engine/seo_audit_bluepixel.csv
+Campaign report.csv
+Comercial 2025.xlsx
+Customer Match - Cuentas Prioritarias.csv
+Search terms report.csv
+Keyword Stats*.csv
+Definición de servicios y presentación base - Copy of Sheet1.pdf
+
+# Python & Virtual Environments
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Environments
+*.so
 .env
+.env.*
+!.env.example
 .venv
 env/
 venv/
 ENV/
 
-# OS files
+# OS Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 desktop.ini
 
 # IDE & Editor files
 .vscode/
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Temporary files & Logs
+*.log
+*.tmp
+*.temp
+test_output.txt
