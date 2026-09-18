@@ -55,7 +55,7 @@ const CONTENT = {
         titleLine1: 'Plataformas',
         titleLine2: 'Digitales',
         badges: ['STARTUPS', 'PYMES', 'ENTERPRISE'],
-        target: 'Para construir plataformas digitales desde cero con UX validado que convierte',
+        target: 'Para construir plataformas y MVPs desde cero con UX validado',
         desc: 'Unimos nuestra maestría referente en UX/UI con ingeniería Full Stack para crear plataformas que tus usuarios aman.',
         bullets: [
           'Plataforma o MVP listo en 3 meses con UX validado y time-to-market prioritario',
@@ -150,7 +150,7 @@ const CONTENT = {
         titleLine1: 'Digital',
         titleLine2: 'Platforms',
         badges: ['STARTUPS', 'SMES', 'ENTERPRISE'],
-        target: 'To build digital platforms from scratch with validated, high-converting UX',
+        target: 'To build digital platforms & MVPs from scratch with validated UX',
         desc: 'We blend our benchmark UX/UI mastery with Full Stack engineering to build intuitive platforms users genuinely love.',
         bullets: [
           'Production-ready platform or MVP in 3 months with validated UX and fast time-to-market',
