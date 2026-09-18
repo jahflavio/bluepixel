@@ -26,14 +26,14 @@ const ThreeWaysToWork = () => {
         {/* Grid de 4 Fases en Formato Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
 
-          {/* FASE 01: DIGITAL CONSULTING */}
+          {/* FASE 01: CONSULTORÍA DIGITAL */}
           <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-slate-500/50 transition-all group">
             <div className="p-8 flex-1 flex flex-col">
               {/* Phase Header - Fixed Height 64px */}
               <div className="flex items-start gap-3 mb-6 h-[64px]">
                 <span className="text-slate-500 font-mono text-sm font-semibold mt-1">01</span>
                 <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Digital<br/>Consulting
+                  Consultoría<br/>Digital
                 </h3>
               </div>
               
@@ -58,7 +58,7 @@ const ThreeWaysToWork = () => {
                 {[
                   'Auditoría profunda de arquitectura y fricción operativa',
                   'Mapeo de procesos y diagnóstico de operaciones',
-                  'AI Readiness Assessment: viabilidad y madurez de datos para IA',
+                  'Evaluación de viabilidad para IA (AI Readiness) y retorno medible',
                   'Matriz de priorización de tecnología y cálculo de ROI',
                   'Blueprint de arquitectura técnica y gobernanza de datos'
                 ].map((item, i) => (
@@ -88,14 +88,14 @@ const ThreeWaysToWork = () => {
             </div>
           </div>
 
-          {/* FASE 02: AGENTIC & AUTOMATION */}
+          {/* FASE 02: AGENTES & AUTOMATIZACIÓN */}
           <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all group">
             <div className="p-8 flex-1 flex flex-col">
               {/* Phase Header - Fixed Height 64px */}
               <div className="flex items-start gap-3 mb-6 h-[64px]">
                 <span className="text-slate-500 font-mono text-sm font-semibold mt-1">02</span>
                 <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Agentic &<br/>Automation
+                  Agentes &<br/>Automatización
                 </h3>
               </div>
               
@@ -118,9 +118,9 @@ const ThreeWaysToWork = () => {
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Flujos de trabajo autónomos sobre datos reales con RAG',
+                  'Agentes autónomos sobre datos reales de tu empresa (arquitectura RAG)',
                   'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Elimina tareas repetitivas y eleva a tu equipo a Subject Matter Experts',
+                  'Elimina tareas repetitivas para enfocar a tu equipo en estrategia (SMEs)',
                   'Sprints quincenales con entregas funcionales en staging',
                   'Blindaje contra alucinaciones y cumplimiento de seguridad'
                 ].map((item, i) => (
@@ -150,7 +150,7 @@ const ThreeWaysToWork = () => {
             </div>
           </div>
 
-          {/* FASE 03: DIGITAL PLATFORMS */}
+          {/* FASE 03: PLATAFORMAS DIGITALES */}
           <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all relative group overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all" />
             <div className="p-8 relative z-10 flex-1 flex flex-col">
@@ -158,7 +158,7 @@ const ThreeWaysToWork = () => {
               <div className="flex items-start gap-3 mb-6 h-[64px]">
                 <span className="text-slate-500 font-mono text-sm font-semibold mt-1">03</span>
                 <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Digital<br/>Platforms
+                  Plataformas<br/>Digitales
                 </h3>
               </div>
               
@@ -207,21 +207,21 @@ const ThreeWaysToWork = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shadow-[0_0_8px_rgba(59,130,246,0.8)] relative z-10 shrink-0"></div>
                 <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">AI-Forward Deploy Engineering.</div>
-                  <div className="text-slate-400 text-xs mt-1">Desarrollo acelerado con IA para reducir time-to-market sin deuda técnica.</div>
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ingeniería Acelerada por IA (AI-Forward).</div>
+                  <div className="text-slate-400 text-xs mt-1">Desarrollo potenciado con IA para reducir time-to-market sin deuda técnica.</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* FASE 04: DIGITAL EVOLUTION */}
+          {/* FASE 04: EVOLUCIÓN DIGITAL */}
           <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-indigo-500/50 transition-all group">
             <div className="p-8 flex-1 flex flex-col">
               {/* Phase Header - Fixed Height 64px */}
               <div className="flex items-start gap-3 mb-6 h-[64px]">
                 <span className="text-slate-500 font-mono text-sm font-semibold mt-1">04</span>
                 <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Digital<br/>Evolution
+                  Evolución<br/>Digital
                 </h3>
               </div>
               
@@ -247,7 +247,7 @@ const ThreeWaysToWork = () => {
                   'Roadmap vivo de 6, 12 o 24 meses con entregas continuas',
                   'Prioridades actualizadas cada sprint según comportamiento real de usuarios',
                   'UX Health Score continuo: usabilidad, estabilidad, velocidad y conversión',
-                  'Optimización de conversión (CRO) y analítica profunda de retención',
+                  'Optimización continua para convertir visitas en clientes (CRO) y retención',
                   'Cadencia estructurada de accountability y alineación a metas de negocio'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
