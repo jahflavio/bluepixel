@@ -1,6 +1,202 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ThreeWaysToWork = () => {
+const CONTENT = {
+  es: {
+    badge: 'MODELO LINEAL BLUEPIXEL • LÍNEA DE ASCENSO',
+    title: 'La ruta de ascenso hacia tu madurez digital',
+    subtitle: 'Una línea de ascenso progresiva: desde el diagnóstico estratégico y la agentización temprana hasta la construcción de plataformas core y su evolución continua con el mercado.',
+    phases: [
+      {
+        num: '01',
+        titleLine1: 'Consultoría',
+        titleLine2: 'Digital',
+        badges: ['PYMES', 'ENTERPRISE'],
+        target: 'Para empresas buscando certidumbre técnica',
+        desc: 'Elimina brechas actuales e identifica oportunidades de mayor ROI con las mejores metodologías de software.',
+        bullets: [
+          'Diagnóstico, backlog priorizado y cálculo de ROI en 2 a 4 semanas',
+          'Eliminación de brechas operativas con las mejores metodologías de software',
+          'Mapeo profundo de procesos de negocio y detección de cuellos de botella',
+          'Evaluación estratégica para integrar IA con sentido de negocio (AI Readiness)',
+          'Blueprint de arquitectura técnica, gobernanza y roadmap de trabajo'
+        ],
+        hoverBorder: 'hover:border-slate-500/50',
+        hasGlow: false,
+        dot: 'bg-slate-400 shadow-[0_0_8px_rgba(148,163,184,0.6)]',
+        gradient: 'from-slate-500/10',
+        hoverFooterBorder: 'group-hover:border-slate-500/30',
+        footerTitle: 'Roadmap Estratégico y Backlog.',
+        footerDesc: 'Entregable accionable con las mejores metodologías en 2 a 4 semanas.'
+      },
+      {
+        num: '02',
+        titleLine1: 'Agentes &',
+        titleLine2: 'Automatización',
+        badges: ['PYMES', 'ENTERPRISE'],
+        target: 'Para operaciones con cuellos de botella',
+        desc: 'Conecta softwares existentes, elimina trabajo repetitivo y eleva la calidad de tu equipo como Subject Matter Experts.',
+        bullets: [
+          'Primeros agentes y automatizaciones en producción en 2 a 4 semanas',
+          'Conexión e integración con softwares existentes (SAP, Salesforce, ERP, CRM)',
+          'Sistemas multi-agente con arquitectura RAG sobre datos reales de tu empresa',
+          'Eliminación de trabajo repetitivo y aumento medible de productividad',
+          'Eleva a tu equipo con skills desarrollados como Subject Matter Experts (SMEs)'
+        ],
+        hoverBorder: 'hover:border-emerald-500/50',
+        hasGlow: false,
+        dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]',
+        gradient: 'from-emerald-500/10',
+        hoverFooterBorder: 'group-hover:border-emerald-500/30',
+        footerTitle: 'Ecosistema Automatizado & RAG.',
+        footerDesc: 'Agentes operando y aumentando productividad en 2 a 4 semanas.'
+      },
+      {
+        num: '03',
+        titleLine1: 'Plataformas',
+        titleLine2: 'Digitales',
+        badges: ['STARTUPS', 'PYMES', 'ENTERPRISE'],
+        target: 'Para construir plataformas digitales desde cero',
+        desc: 'Construye software desde cero, MVPs y plataformas con capacidades Full Stack, UX/UI líder y time-to-market prioritario.',
+        bullets: [
+          'Plataforma o MVP listo en 3 meses con priorización de Time-to-Market',
+          'Construcción de software a la medida desde cero con capacidades Full Stack',
+          'Liderazgo y diseño de clase mundial en UX/UI con prototipado interactivo',
+          'Ingeniería acelerada por IA (AI-Forward Deploy Engineering) y QA testing riguroso',
+          'PMO dedicado, arquitectura sin deuda técnica y Security & Reliability'
+        ],
+        hoverBorder: 'hover:border-blue-500/50',
+        hasGlow: true,
+        dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
+        gradient: 'from-blue-500/10',
+        hoverFooterBorder: 'group-hover:border-blue-500/30',
+        footerTitle: 'Ingeniería Acelerada por IA (AI-Forward).',
+        footerDesc: 'Capacidades Full Stack, PMO y time-to-market con Security & Reliability.'
+      },
+      {
+        num: '04',
+        titleLine1: 'Evolución',
+        titleLine2: 'Digital',
+        badges: ['PYMES', 'ENTERPRISE'],
+        target: 'Para empresas con plataformas digitales existentes',
+        desc: 'Entendimiento de negocio, homologación de intereses y capacidades transversales para evolucionar con el mercado.',
+        bullets: [
+          'Roadmap vivo de 6 o 12 meses con entregas continuas cada sprint',
+          'Entendimiento profundo de negocio y homologación de intereses mutuos',
+          'Upscaling consultivo y evolución constante al ritmo del mercado',
+          'Capa de capacidades transversales (UX/UI, Software, Analítica y Seguridad)',
+          'Optimización continua de conversión (CRO), retención y UX Health Score'
+        ],
+        hoverBorder: 'hover:border-indigo-500/50',
+        hasGlow: false,
+        dot: 'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]',
+        gradient: 'from-purple-500/10',
+        hoverFooterBorder: 'group-hover:border-purple-500/30',
+        footerTitle: 'Capacidades Transversales On-Demand.',
+        footerDesc: 'Escuadrón continuo de CRO, UX/UI, Analítica y Seguridad sin elevar tu nómina.'
+      }
+    ]
+  },
+  en: {
+    badge: 'BLUEPIXEL LINEAR MODEL • ASCENT PATHWAY',
+    title: 'The ascent pathway to your digital maturity',
+    subtitle: 'A progressive, linear ascent: from strategic diagnosis and rapid agentization to core platform engineering and continuous market evolution.',
+    phases: [
+      {
+        num: '01',
+        titleLine1: 'Digital',
+        titleLine2: 'Consulting',
+        badges: ['SMES', 'ENTERPRISE'],
+        target: 'For companies seeking technical certainty',
+        desc: 'Eliminate existing gaps and identify highest-ROI opportunities with industry-leading software methodologies.',
+        bullets: [
+          'Diagnosis, prioritized backlog, and ROI projection in 2 to 4 weeks',
+          'Operational gap elimination with best-in-class software engineering practices',
+          'In-depth business process mapping and friction points discovery',
+          'Strategic assessment to integrate AI with real business viability (AI Readiness)',
+          'Technical architecture blueprint, data governance, and execution roadmap'
+        ],
+        hoverBorder: 'hover:border-slate-500/50',
+        hasGlow: false,
+        dot: 'bg-slate-400 shadow-[0_0_8px_rgba(148,163,184,0.6)]',
+        gradient: 'from-slate-500/10',
+        hoverFooterBorder: 'group-hover:border-slate-500/30',
+        footerTitle: 'Strategic Roadmap & Backlog.',
+        footerDesc: 'Actionable deliverable with top software methodologies in 2 to 4 weeks.'
+      },
+      {
+        num: '02',
+        titleLine1: 'Agents &',
+        titleLine2: 'Automation',
+        badges: ['SMES', 'ENTERPRISE'],
+        target: 'For operations facing productivity bottlenecks',
+        desc: 'Connect existing software, eliminate repetitive tasks, and elevate your team into Subject Matter Experts.',
+        bullets: [
+          'First production-ready agents and workflows deployed in 2 to 4 weeks',
+          'Seamless integration with your existing stack (SAP, Salesforce, ERP, CRM)',
+          'Multi-agent systems with enterprise RAG architecture on real company data',
+          'Elimination of repetitive manual work and immediate productivity gains',
+          'Empower your team with specialized skills as Subject Matter Experts (SMEs)'
+        ],
+        hoverBorder: 'hover:border-emerald-500/50',
+        hasGlow: false,
+        dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]',
+        gradient: 'from-emerald-500/10',
+        hoverFooterBorder: 'group-hover:border-emerald-500/30',
+        footerTitle: 'Automated Ecosystem & RAG.',
+        footerDesc: 'Autonomous agents operating and boosting productivity in 2 to 4 weeks.'
+      },
+      {
+        num: '03',
+        titleLine1: 'Digital',
+        titleLine2: 'Platforms',
+        badges: ['STARTUPS', 'SMES', 'ENTERPRISE'],
+        target: 'To engineer digital platforms from the ground up',
+        desc: 'Build software from scratch, MVPs, and platforms with Full Stack capabilities, world-class UX/UI, and rapid time-to-market.',
+        bullets: [
+          'Production-ready platform or MVP in 3 months with prioritized Time-to-Market',
+          'Custom software built from the ground up with end-to-end Full Stack capabilities',
+          'World-class UX/UI design leadership validated with interactive prototyping',
+          'AI-Forward Deploy Engineering with enterprise-grade QA testing',
+          'Dedicated PMO governance, zero technical debt, and Security & Reliability'
+        ],
+        hoverBorder: 'hover:border-blue-500/50',
+        hasGlow: true,
+        dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
+        gradient: 'from-blue-500/10',
+        hoverFooterBorder: 'group-hover:border-blue-500/30',
+        footerTitle: 'AI-Forward Deploy Engineering.',
+        footerDesc: 'Full Stack velocity, PMO oversight, and accelerated time-to-market with Security & Reliability.'
+      },
+      {
+        num: '04',
+        titleLine1: 'Digital',
+        titleLine2: 'Evolution',
+        badges: ['SMES', 'ENTERPRISE'],
+        target: 'For companies with existing digital platforms',
+        desc: 'Deep business understanding, shared incentives, and cross-functional capabilities to evolve alongside the market.',
+        bullets: [
+          'Living 6- or 12-month roadmap with continuous sprint-by-sprint deliveries',
+          'Deep business understanding and alignment of mutual incentives with company goals',
+          'Consultative upscaling and agile platform evolution matching market dynamics',
+          'Cross-functional capability layer: UX/UI, Software, Data Analytics, and Security',
+          'Continuous Conversion Rate Optimization (CRO), retention gains, and UX Health Score'
+        ],
+        hoverBorder: 'hover:border-indigo-500/50',
+        hasGlow: false,
+        dot: 'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]',
+        gradient: 'from-purple-500/10',
+        hoverFooterBorder: 'group-hover:border-purple-500/30',
+        footerTitle: 'On-Demand Cross-Functional Team.',
+        footerDesc: 'Always-on squad for CRO, UX/UI, Analytics, and Security without inflating your payroll.'
+      }
+    ]
+  }
+};
+
+const ThreeWaysToWork = ({ defaultLang = 'es' }) => {
+  const [lang, setLang] = useState(defaultLang);
+  const t = CONTENT[lang] || CONTENT.es;
+
   return (
     <section id="how-we-work" className="py-24 bg-[#02050A] border-t border-b border-white/[0.06] relative overflow-hidden">
       
@@ -12,277 +208,125 @@ const ThreeWaysToWork = () => {
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-            <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-              MODELO LINEAL BLUEPIXEL • LÍNEA DE ASCENSO
-            </span>
+          <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+                {t.badge}
+              </span>
+            </div>
+
+            {/* Language Switcher */}
+            <div className="inline-flex items-center p-0.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+              <button
+                type="button"
+                onClick={() => setLang('es')}
+                className={`px-3 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
+                  lang === 'es'
+                    ? 'bg-blue-600 text-white shadow-[0_0_10px_rgba(37,99,235,0.6)]'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                ES
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`px-3 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
+                  lang === 'en'
+                    ? 'bg-blue-600 text-white shadow-[0_0_10px_rgba(37,99,235,0.6)]'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </div>
+
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4">
-            La ruta de ascenso hacia tu madurez digital<span className="text-blue-500">.</span>
+            {t.title}<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Una línea de ascenso progresiva: desde el diagnóstico estratégico y la agentización temprana hasta la construcción de plataformas core y su evolución continua con el mercado.
+            {t.subtitle}
           </p>
         </div>
 
         {/* Grid de 4 Fases en Formato Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {t.phases.map((phase) => (
+            <div
+              key={phase.num}
+              className={`bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between ${phase.hoverBorder} transition-all group relative overflow-hidden`}
+            >
+              {phase.hasGlow && (
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all" />
+              )}
 
-          {/* FASE 01: CONSULTORÍA DIGITAL (SIGNAL) */}
-          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-slate-500/50 transition-all group">
-            <div className="p-8 flex-1 flex flex-col">
-              {/* Phase Header - Fixed Height 64px */}
-              <div className="flex items-start gap-3 mb-6 h-[64px]">
-                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">01</span>
-                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Consultoría<br/>Digital
-                </h3>
+              <div className="p-8 flex-1 flex flex-col relative z-10">
+                {/* Phase Header - Fixed Height 64px */}
+                <div className="flex items-start gap-3 mb-6 h-[64px]">
+                  <span className="text-slate-500 font-mono text-sm font-semibold mt-1">{phase.num}</span>
+                  <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
+                    {phase.titleLine1}<br/>{phase.titleLine2}
+                  </h3>
+                </div>
+                
+                {/* Badges - Single Row h-[32px] */}
+                <div className="flex items-center gap-1.5 mb-6 h-[32px] overflow-hidden">
+                  {phase.badges.map((badge, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase shrink-0"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Title - Uniform Min-Height 56px */}
+                <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                  {phase.target}
+                </h4>
+
+                {/* Subtitle - Uniform Min-Height 64px */}
+                <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
+                  {phase.desc}
+                </p>
+
+                {/* Bullets */}
+                <ul className="space-y-3.5 mb-8 flex-1">
+                  {phase.bullets.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                      <span className="text-white mt-0.5 opacity-60 font-bold shrink-0">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              {/* Badges - Single Row h-[32px] */}
-              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
-              </div>
 
-              {/* Title - Uniform Min-Height 56px */}
-              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
-                Para empresas buscando certidumbre técnica
-              </h4>
-
-              {/* Subtitle - Uniform Min-Height 64px */}
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Elimina brechas actuales e identifica oportunidades de mayor ROI con las mejores metodologías de software.
-              </p>
-
-              {/* Bullets */}
-              <ul className="space-y-3.5 mb-8 flex-1">
-                {[
-                  'Diagnóstico, backlog priorizado y cálculo de ROI en 2 a 4 semanas',
-                  'Eliminación de brechas operativas con las mejores metodologías de software',
-                  'Mapeo profundo de procesos de negocio y detección de cuellos de botella',
-                  'Evaluación estratégica para integrar IA con sentido de negocio (AI Readiness)',
-                  'Blueprint de arquitectura técnica, gobernanza y roadmap de trabajo'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Footer Area */}
-            <div className="px-8 pb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
-                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
-              </div>
-              
-              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-slate-500/30 transition-all min-h-[84px]">
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shadow-[0_0_8px_rgba(148,163,184,0.6)] relative z-10 shrink-0"></div>
-                <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Roadmap Estratégico y Backlog.</div>
-                  <div className="text-slate-400 text-xs mt-1">Entregable accionable con las mejores metodologías en 2 a 4 semanas.</div>
+              {/* Footer Area */}
+              <div className="px-8 pb-8 relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
+                  <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
+                </div>
+                
+                <div className={`bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden ${phase.hoverFooterBorder} transition-all min-h-[84px]`}>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${phase.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+                  <div className={`w-1.5 h-1.5 rounded-full ${phase.dot} mt-1.5 shrink-0 relative z-10`}></div>
+                  <div className="relative z-10">
+                    <div className="text-white text-sm font-bold min-h-[22px] flex items-center">{phase.footerTitle}</div>
+                    <div className="text-slate-400 text-xs mt-1">{phase.footerDesc}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* FASE 02: AGENTES & AUTOMATIZACIÓN */}
-          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all group">
-            <div className="p-8 flex-1 flex flex-col">
-              {/* Phase Header - Fixed Height 64px */}
-              <div className="flex items-start gap-3 mb-6 h-[64px]">
-                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">02</span>
-                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Agentes &<br/>Automatización
-                </h3>
-              </div>
-              
-              {/* Badges - Single Row h-[32px] */}
-              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
-              </div>
-
-              {/* Title - Uniform Min-Height 56px */}
-              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
-                Para operaciones con cuellos de botella
-              </h4>
-
-              {/* Subtitle - Uniform Min-Height 64px */}
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Conecta softwares existentes, elimina trabajo repetitivo y eleva la calidad de tu equipo como Subject Matter Experts.
-              </p>
-
-              {/* Bullets */}
-              <ul className="space-y-3.5 mb-8 flex-1">
-                {[
-                  'Primeros agentes y automatizaciones en producción en 2 a 4 semanas',
-                  'Conexión e integración con softwares existentes (SAP, Salesforce, ERP, CRM)',
-                  'Sistemas multi-agente con arquitectura RAG sobre datos reales de tu empresa',
-                  'Eliminación de trabajo repetitivo y aumento medible de productividad',
-                  'Eleva a tu equipo con skills desarrollados como Subject Matter Experts (SMEs)'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Footer Area */}
-            <div className="px-8 pb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
-                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
-              </div>
-              
-              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-emerald-500/30 transition-all min-h-[84px]">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shadow-[0_0_8px_rgba(16,185,129,0.8)] relative z-10 shrink-0"></div>
-                <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ecosistema Automatizado & RAG.</div>
-                  <div className="text-slate-400 text-xs mt-1">Agentes operando y aumentando productividad en 2 a 4 semanas.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* FASE 03: PLATAFORMAS DIGITALES */}
-          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all relative group overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all" />
-            <div className="p-8 relative z-10 flex-1 flex flex-col">
-              {/* Phase Header - Fixed Height 64px */}
-              <div className="flex items-start gap-3 mb-6 h-[64px]">
-                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">03</span>
-                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Plataformas<br/>Digitales
-                </h3>
-              </div>
-              
-              {/* Badges - Single Row h-[32px] */}
-              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">STARTUPS</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
-              </div>
-
-              {/* Title - Uniform Min-Height 56px */}
-              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
-                Para construir plataformas digitales desde cero
-              </h4>
-
-              {/* Subtitle - Uniform Min-Height 64px */}
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Construye software desde cero, MVPs y plataformas con capacidades Full Stack, UX/UI líder y time-to-market prioritario.
-              </p>
-
-              {/* Bullets */}
-              <ul className="space-y-3.5 mb-8 flex-1">
-                {[
-                  'Plataforma o MVP listo en 3 meses con priorización de Time-to-Market',
-                  'Construcción de software a la medida desde cero con capacidades Full Stack',
-                  'Liderazgo y diseño de clase mundial en UX/UI con prototipado interactivo',
-                  'Ingeniería acelerada por IA (AI-Forward Deploy Engineering) y QA testing riguroso',
-                  'PMO dedicado, arquitectura sin deuda técnica y Security & Reliability'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Footer Area */}
-            <div className="px-8 pb-8 relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
-                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
-              </div>
-              
-              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-blue-500/30 transition-all min-h-[84px]">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shadow-[0_0_8px_rgba(59,130,246,0.8)] relative z-10 shrink-0"></div>
-                <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ingeniería Acelerada por IA (AI-Forward).</div>
-                  <div className="text-slate-400 text-xs mt-1">Capacidades Full Stack, PMO y time-to-market con Security & Reliability.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* FASE 04: EVOLUCIÓN DIGITAL */}
-          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-indigo-500/50 transition-all group">
-            <div className="p-8 flex-1 flex flex-col">
-              {/* Phase Header - Fixed Height 64px */}
-              <div className="flex items-start gap-3 mb-6 h-[64px]">
-                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">04</span>
-                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                  Evolución<br/>Digital
-                </h3>
-              </div>
-              
-              {/* Badges - Single Row h-[32px] */}
-              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
-              </div>
-
-              {/* Title - Uniform Min-Height 56px */}
-              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
-                Para empresas con plataformas digitales existentes
-              </h4>
-
-              {/* Subtitle - Uniform Min-Height 64px */}
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Entendimiento de negocio, homologación de intereses y capacidades transversales para evolucionar con el mercado.
-              </p>
-
-              {/* Bullets */}
-              <ul className="space-y-3.5 mb-8 flex-1">
-                {[
-                  'Roadmap vivo de 6 o 12 meses con entregas continuas cada sprint',
-                  'Entendimiento profundo de negocio y homologación de intereses mutuos',
-                  'Upscaling consultivo y evolución constante al ritmo del mercado',
-                  'Capa de capacidades transversales (UX/UI, Software, Analítica y Seguridad)',
-                  'Optimización continua de conversión (CRO), retención y UX Health Score'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Footer Area */}
-            <div className="px-8 pb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
-                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
-              </div>
-              
-              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-purple-500/30 transition-all min-h-[84px]">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shadow-[0_0_8px_rgba(168,85,247,0.8)] relative z-10 shrink-0"></div>
-                <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Capacidades Transversales On-Demand.</div>
-                  <div className="text-slate-400 text-xs mt-1">Escuadrón continuo de CRO, UX/UI, Analítica y Seguridad sin elevar tu nómina.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
+export const ThreeWaysToWorkEN = (props) => <ThreeWaysToWork defaultLang="en" {...props} />;
 export default ThreeWaysToWork;
