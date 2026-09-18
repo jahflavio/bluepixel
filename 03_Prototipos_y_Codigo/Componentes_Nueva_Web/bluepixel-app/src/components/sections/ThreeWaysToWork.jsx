@@ -306,11 +306,6 @@ const ThreeWaysToWork = ({ defaultLang = 'es' }) => {
 
               {/* Footer Area */}
               <div className="px-8 pb-8 relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
-                  <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
-                </div>
-                
                 <div className={`bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden ${phase.hoverFooterBorder} transition-all min-h-[84px]`}>
                   <div className={`absolute inset-0 bg-gradient-to-r ${phase.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}></div>
                   <div className={`w-1.5 h-1.5 rounded-full ${phase.dot} mt-1.5 shrink-0 relative z-10`}></div>
