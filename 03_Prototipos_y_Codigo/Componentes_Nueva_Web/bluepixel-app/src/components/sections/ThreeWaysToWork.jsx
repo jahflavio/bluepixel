@@ -247,7 +247,7 @@ const ThreeWaysToWork = () => {
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Roadmap vivo de 6, 12 o 24 meses con entregas continuas cada sprint',
+                  'Roadmap vivo de 6 o 12 meses con entregas continuas cada sprint',
                   'Entendimiento profundo de negocio y homologación de intereses mutuos',
                   'Upscaling consultivo y evolución constante al ritmo del mercado',
                   'Capa de capacidades transversales (UX/UI, Software, Analítica y Seguridad)',
