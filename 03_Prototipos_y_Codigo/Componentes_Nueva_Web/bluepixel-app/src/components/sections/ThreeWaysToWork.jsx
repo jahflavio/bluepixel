@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const CONTENT = {
   es: {
-    badge: 'ADN HUMAN-CENTERED • MODELO LINEAL BLUEPIXEL',
-    title: 'La ruta de ascenso hacia tu madurez digital',
-    subtitle: 'Un modelo lineal guiado por nuestra maestría referente en UX: transformamos la incertidumbre en plataformas intuitivas de misión crítica que tus usuarios realmente adoptan.',
+    badge: 'SERVICIOS MODULARES B2B • EXPERTISE UX & IA',
+    title: '4 formas de trabajar juntos según el momento de tu empresa',
+    subtitle: 'Servicios independientes de alta especialidad con maestría en UX e ingeniería de misión crítica. Elige la capacidad exacta que tu negocio necesita hoy, sin procesos rígidos ni ciclos obligatorios.',
     phases: [
       {
         num: '01',
@@ -97,9 +97,9 @@ const CONTENT = {
     ]
   },
   en: {
-    badge: 'HUMAN-CENTERED DNA • BLUEPIXEL LINEAR MODEL',
-    title: 'The ascent pathway to your digital maturity',
-    subtitle: 'A linear model driven by our benchmark UX mastery: transforming uncertainty into intuitive, mission-critical platforms that users genuinely adopt and love.',
+    badge: 'MODULAR B2B SERVICES • UX & AI MASTERY',
+    title: '4 ways to partner based on where your business stands today',
+    subtitle: 'Independent, high-impact services backed by world-class UX and mission-critical engineering. Engage the exact capability you need today—no rigid cycles, no mandatory sequences.',
     phases: [
       {
         num: '01',
