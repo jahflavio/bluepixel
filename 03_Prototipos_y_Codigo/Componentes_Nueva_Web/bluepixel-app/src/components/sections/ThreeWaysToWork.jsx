@@ -11,7 +11,7 @@ const CONTENT = {
         titleLine1: 'Consultoría',
         titleLine2: 'Digital',
         badges: ['PYMES', 'ENTERPRISE'],
-        target: 'Para empresas buscando certidumbre técnica',
+        target: 'Para empresas buscando certidumbre técnica y ROI cuantificado',
         desc: 'Elimina brechas actuales e identifica oportunidades de mayor ROI con las mejores metodologías de software.',
         bullets: [
           'Diagnóstico, backlog priorizado y cálculo de ROI en 2 a 4 semanas',
@@ -33,7 +33,7 @@ const CONTENT = {
         titleLine1: 'Agentes &',
         titleLine2: 'Automatización',
         badges: ['PYMES', 'ENTERPRISE'],
-        target: 'Para operaciones con cuellos de botella',
+        target: 'Para operaciones con cuellos de botella y tareas repetitivas',
         desc: 'Conecta softwares existentes, elimina trabajo repetitivo y diseña adopción fluida para tu equipo (SMEs).',
         bullets: [
           'Primeros agentes y automatizaciones en producción en 2 a 4 semanas',
@@ -55,7 +55,7 @@ const CONTENT = {
         titleLine1: 'Plataformas',
         titleLine2: 'Digitales',
         badges: ['STARTUPS', 'PYMES', 'ENTERPRISE'],
-        target: 'Para construir plataformas digitales desde cero',
+        target: 'Para construir plataformas digitales desde cero con UX validado que convierte',
         desc: 'Unimos nuestra maestría referente en UX/UI con ingeniería Full Stack para crear plataformas que tus usuarios aman.',
         bullets: [
           'Plataforma o MVP listo en 3 meses con UX validado y time-to-market prioritario',
@@ -77,7 +77,7 @@ const CONTENT = {
         titleLine1: 'Evolución',
         titleLine2: 'Digital',
         badges: ['PYMES', 'ENTERPRISE'],
-        target: 'Para empresas con plataformas digitales existentes',
+        target: 'Para escalar plataformas existentes con optimización continua de UX',
         desc: 'Entendimiento de negocio, homologación de intereses y optimización continua de UX para evolucionar con el mercado.',
         bullets: [
           'Roadmap vivo de 6 o 12 meses con entregas continuas cada sprint',
@@ -106,7 +106,7 @@ const CONTENT = {
         titleLine1: 'Digital',
         titleLine2: 'Consulting',
         badges: ['SMES', 'ENTERPRISE'],
-        target: 'For companies seeking technical certainty',
+        target: 'For companies seeking technical certainty and quantified ROI',
         desc: 'Eliminate existing gaps and identify highest-ROI opportunities with industry-leading software methodologies.',
         bullets: [
           'Diagnosis, prioritized backlog, and ROI projection in 2 to 4 weeks',
@@ -128,7 +128,7 @@ const CONTENT = {
         titleLine1: 'Agents &',
         titleLine2: 'Automation',
         badges: ['SMES', 'ENTERPRISE'],
-        target: 'For operations facing productivity bottlenecks',
+        target: 'For operations facing productivity bottlenecks and repetitive tasks',
         desc: 'Connect existing software, eliminate repetitive tasks, and design frictionless adoption for your team (SMEs).',
         bullets: [
           'First production-ready agents and workflows deployed in 2 to 4 weeks',
@@ -150,7 +150,7 @@ const CONTENT = {
         titleLine1: 'Digital',
         titleLine2: 'Platforms',
         badges: ['STARTUPS', 'SMES', 'ENTERPRISE'],
-        target: 'To engineer digital platforms from the ground up',
+        target: 'To build digital platforms from scratch with validated, high-converting UX',
         desc: 'We blend our benchmark UX/UI mastery with Full Stack engineering to build intuitive platforms users genuinely love.',
         bullets: [
           'Production-ready platform or MVP in 3 months with validated UX and fast time-to-market',
@@ -172,7 +172,7 @@ const CONTENT = {
         titleLine1: 'Digital',
         titleLine2: 'Evolution',
         badges: ['SMES', 'ENTERPRISE'],
-        target: 'For companies with existing digital platforms',
+        target: 'To scale existing platforms with continuous UX and conversion optimization',
         desc: 'Deep business alignment, mutual incentives, and continuous UX optimization to evolve alongside market demands.',
         bullets: [
           'Living 6- or 12-month roadmap with continuous sprint-by-sprint deliveries',
@@ -283,8 +283,8 @@ const ThreeWaysToWork = ({ defaultLang = 'es' }) => {
                   ))}
                 </div>
 
-                {/* Title - Uniform Min-Height 56px */}
-                <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                {/* Title - Uniform Min-Height 84px */}
+                <h4 className="text-xl font-bold text-white mb-3 min-h-[84px] flex items-center leading-snug">
                   {phase.target}
                 </h4>
 
