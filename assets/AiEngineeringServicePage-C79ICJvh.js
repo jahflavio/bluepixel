@@ -1,1 +1,0 @@
-import{j as e}from"./index-DaPISz6n.js";import{S as i,s as r}from"./servicesData-Be5-s6YJ.js";import"./MultiStepContact-Dn-551pB.js";const s=()=>e.jsx(i,{data:r["ai-engineering"]});export{s as default};
