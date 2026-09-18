@@ -120,7 +120,7 @@ const ThreeWaysToWork = () => {
                 {[
                   'Agentes autónomos sobre datos reales de tu empresa (arquitectura RAG)',
                   'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Elimina tareas repetitivas para enfocar a tu equipo en estrategia (SMEs)',
+                  'Elimina la carga operativa y convierte a tu equipo en Subject Matter Experts (SMEs)',
                   'Sprints quincenales con entregas funcionales en staging',
                   'Blindaje contra alucinaciones y cumplimiento de seguridad'
                 ].map((item, i) => (
