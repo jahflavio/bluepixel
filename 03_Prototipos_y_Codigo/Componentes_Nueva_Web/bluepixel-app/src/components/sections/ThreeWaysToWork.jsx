@@ -25,8 +25,8 @@ const CONTENT = {
         dot: 'bg-slate-400 shadow-[0_0_8px_rgba(148,163,184,0.6)]',
         gradient: 'from-slate-500/10',
         hoverFooterBorder: 'group-hover:border-slate-500/30',
-        footerTitle: 'Roadmap Estratégico y Backlog.',
-        footerDesc: 'Entregable accionable con las mejores metodologías en 2 a 4 semanas.'
+        footerTitle: 'Certeza Técnica & ROI Cuantificado.',
+        footerDesc: 'Roadmap ejecutivo y business case para invertir sobre seguro antes de tirar una sola línea de código.'
       },
       {
         num: '02',
@@ -47,8 +47,8 @@ const CONTENT = {
         dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]',
         gradient: 'from-emerald-500/10',
         hoverFooterBorder: 'group-hover:border-emerald-500/30',
-        footerTitle: 'Ecosistema Automatizado & RAG.',
-        footerDesc: 'Agentes operando y aumentando productividad en 2 a 4 semanas.'
+        footerTitle: 'Ecosistema Conectado & Multi-Agente.',
+        footerDesc: 'Tu stack actual potenciado con IA para eliminar fricción y liberar tiempo operativo de tu equipo.'
       },
       {
         num: '03',
@@ -69,8 +69,8 @@ const CONTENT = {
         dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
         gradient: 'from-blue-500/10',
         hoverFooterBorder: 'group-hover:border-blue-500/30',
-        footerTitle: 'Maestría UX + Ingeniería por IA.',
-        footerDesc: 'Diseño UX de clase mundial, desarrollo Full Stack, PMO dedicado y Security & Reliability.'
+        footerTitle: 'Plataforma Core Lista para Escalar.',
+        footerDesc: 'Software a la medida con UX de clase mundial, arquitectura Full Stack sólida y cero deuda técnica.'
       },
       {
         num: '04',
@@ -91,8 +91,8 @@ const CONTENT = {
         dot: 'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]',
         gradient: 'from-purple-500/10',
         hoverFooterBorder: 'group-hover:border-purple-500/30',
-        footerTitle: 'Capacidades Transversales On-Demand.',
-        footerDesc: 'Escuadrón continuo de CRO, UX/UI, Analítica y Seguridad sin elevar tu nómina.'
+        footerTitle: 'Brazo Tecnológico On-Demand.',
+        footerDesc: 'Escuadrón continuo de CRO, UX, Analítica y Seguridad evolucionando tu plataforma sin inflar nómina.'
       }
     ]
   },
@@ -120,8 +120,8 @@ const CONTENT = {
         dot: 'bg-slate-400 shadow-[0_0_8px_rgba(148,163,184,0.6)]',
         gradient: 'from-slate-500/10',
         hoverFooterBorder: 'group-hover:border-slate-500/30',
-        footerTitle: 'Strategic Roadmap & Backlog.',
-        footerDesc: 'Actionable deliverable with top software methodologies in 2 to 4 weeks.'
+        footerTitle: 'Technical Certainty & Quantified ROI.',
+        footerDesc: 'Executive roadmap and business case to invest with total confidence before writing code.'
       },
       {
         num: '02',
@@ -142,8 +142,8 @@ const CONTENT = {
         dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]',
         gradient: 'from-emerald-500/10',
         hoverFooterBorder: 'group-hover:border-emerald-500/30',
-        footerTitle: 'Automated Ecosystem & RAG.',
-        footerDesc: 'Autonomous agents operating and boosting productivity in 2 to 4 weeks.'
+        footerTitle: 'Connected & Multi-Agent Ecosystem.',
+        footerDesc: 'Your existing stack supercharged with AI to eliminate operational friction and manual tasks.'
       },
       {
         num: '03',
@@ -164,8 +164,8 @@ const CONTENT = {
         dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
         gradient: 'from-blue-500/10',
         hoverFooterBorder: 'group-hover:border-blue-500/30',
-        footerTitle: 'World-Class UX + AI Engineering.',
-        footerDesc: 'Benchmark UX design, Full Stack execution, dedicated PMO, and Security & Reliability.'
+        footerTitle: 'Core Platform Ready to Scale.',
+        footerDesc: 'Custom software with benchmark UX design, robust Full Stack architecture, and zero technical debt.'
       },
       {
         num: '04',
@@ -186,8 +186,8 @@ const CONTENT = {
         dot: 'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]',
         gradient: 'from-purple-500/10',
         hoverFooterBorder: 'group-hover:border-purple-500/30',
-        footerTitle: 'On-Demand Cross-Functional Team.',
-        footerDesc: 'Always-on squad for CRO, UX/UI, Analytics, and Security without inflating your payroll.'
+        footerTitle: 'On-Demand Technology Partner.',
+        footerDesc: 'Dedicated squad for CRO, UX, Analytics, and Security evolving your platform without payroll overhead.'
       }
     ]
   }
