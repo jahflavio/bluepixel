@@ -48,8 +48,8 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="#three-ways" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm px-4 py-2 rounded-xl transition-all shadow-md shadow-blue-600/25 flex items-center gap-1.5">
-          <span>Ver 3 Paquetes</span>
+        <a href="#how-we-work" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm px-4 py-2 rounded-xl transition-all shadow-md shadow-blue-600/25 flex items-center gap-1.5">
+          <span>El Modelo BluePixel</span>
           <span>↓</span>
         </a>
       </div>
@@ -467,8 +467,8 @@
               \${c.subheadline}
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
-              <a href="#three-ways" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl transition-all shadow-xl shadow-blue-600/30 flex items-center gap-2">
-                <span>\${c.threeWays.step1.cta}</span>
+              <a href="#how-we-work" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl transition-all shadow-xl shadow-blue-600/30 flex items-center gap-2">
+                <span>Ver Modelo de Trabajo</span>
                 <span>→</span>
               </a>
               <a href="#subservices" class="bg-navy-900/80 hover:bg-navy-800 text-slate-200 font-semibold text-sm md:text-base px-7 py-3.5 rounded-xl border border-white/10 transition-all flex items-center gap-2">
@@ -838,79 +838,105 @@
           </div>
         </section>
 
-        <!-- THE 3 WAYS TO WORK CARDS (EXACT CARDS ADAPTED) -->
-        <section id="three-ways" class="py-20 bg-[#040711] border-t border-b border-white/[0.06] px-6">
+        <!-- EL MODELO DE 4 FASES (CÓMO TRABAJAMOS) -->
+        <section id="how-we-work" class="py-20 bg-[#040711] border-t border-b border-white/[0.06] px-6">
           <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-14">
-              <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">MODELO DE CONTRATACIÓN & COLABORACIÓN</span>
-              <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-2 mb-3">Tres formas de colaborar con BluePixel<span class="text-blue-500">.</span></h2>
-              <p class="text-slate-400 text-sm md:text-base">Eliminamos la incertidumbre de contratar software: paquetes de entrada para adquirir certidumbre y transformación completa.</p>
+              <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">MODELO BLUEPIXEL (CÓMO TRABAJAMOS)</span>
+              <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-2 mb-3">La ruta de ascenso hacia tu madurez digital<span class="text-blue-500">.</span></h2>
+              <p class="text-slate-400 text-sm md:text-base">No somos una fábrica de requerimientos. Trazamos una línea clara desde el diagnóstico estratégico hasta la escala y seguridad de tu plataforma.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-              <!-- CARD 01 -->
-              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-blue-500/40 transition-all">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+              <!-- FASE 01 -->
+              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-slate-500/40 transition-all border-l-4 border-l-slate-600 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-[120px] font-black text-white/[0.02] group-hover:text-white/[0.04] transition-all">01</div>
+                <div class="relative z-10">
                   <div class="flex items-center justify-between mb-5">
-                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">ENTRY PACKAGE</span>
-                    <span class="text-2xl font-black text-slate-600 font-mono">01</span>
+                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-slate-500/10 text-slate-300 font-bold">FASE 01</span>
                   </div>
-                  <h3 class="text-xl font-bold text-white mb-2">\${c.threeWays.step1.title}</h3>
-                  <p class="text-slate-400 text-xs leading-relaxed mb-6">\${c.threeWays.step1.desc}</p>
-                  <ul class="space-y-2.5 mb-6">
-                    \${c.threeWays.step1.bullets.map(b => \`<li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-blue-400">✦</span><span>\${b}</span></li>\`).join('')}
+                  <h3 class="text-2xl font-black text-white mb-1">Digital Consulting</h3>
+                  <h4 class="text-xs font-bold text-slate-400 mb-4">Descubrimiento y Estrategia</h4>
+                  <p class="text-slate-400 text-xs leading-relaxed mb-6">Encontramos tu ROI antes de tirar una sola línea de código. Identificación de brechas operativas y priorización con sentido de negocio.</p>
+                  <ul class="space-y-2.5 mb-6 relative z-10">
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-slate-500">✦</span><span>Auditoría de arquitectura y fricción</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-slate-500">✦</span><span>Roadmap estratégico priorizado</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-slate-500">✦</span><span>Estimación de inversión y SLAs</span></li>
                   </ul>
                 </div>
-                <div class="pt-5 border-t border-white/5">
-                  <div class="text-[11px] font-mono text-slate-500 mb-2">\${c.threeWays.step1.duration}</div>
-                  <button onclick="alert('Solicitando: ' + '\${c.threeWays.step1.title}')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 text-white font-semibold text-xs transition-all">
-                    \${c.threeWays.step1.cta} →
-                  </button>
+                <div class="pt-5 border-t border-white/5 relative z-10">
+                  <div class="text-[10px] font-mono text-slate-500 mb-2 font-bold">HITO DE NEGOCIO:</div>
+                  <div class="text-xs text-white font-semibold">Roadmap Estratégico Seguro</div>
                 </div>
               </div>
 
-              <!-- CARD 02 -->
-              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-blue-500/40 transition-all">
-                <div>
+              <!-- FASE 02 -->
+              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-emerald-500/40 transition-all border-l-4 border-l-emerald-500 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-[120px] font-black text-emerald-500/[0.03] group-hover:text-emerald-500/[0.08] transition-all">02</div>
+                <div class="relative z-10">
                   <div class="flex items-center justify-between mb-5">
-                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">ENTRY PACKAGE</span>
-                    <span class="text-2xl font-black text-slate-600 font-mono">02</span>
+                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold">FASE 02</span>
                   </div>
-                  <h3 class="text-xl font-bold text-white mb-2">\${c.threeWays.step2.title}</h3>
-                  <p class="text-slate-400 text-xs leading-relaxed mb-6">\${c.threeWays.step2.desc}</p>
-                  <ul class="space-y-2.5 mb-6">
-                    \${c.threeWays.step2.bullets.map(b => \`<li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-blue-400">✦</span><span>\${b}</span></li>\`).join('')}
+                  <h3 class="text-2xl font-black text-white mb-1">Agentic & Automation</h3>
+                  <h4 class="text-xs font-bold text-emerald-400 mb-4">Victorias Tempranas</h4>
+                  <p class="text-slate-400 text-xs leading-relaxed mb-6">Antes de construir desde cero, hacemos inteligente lo que ya tienes. Despliegue de automatizaciones y RAGs sobre tus herramientas actuales.</p>
+                  <ul class="space-y-2.5 mb-6 relative z-10">
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-emerald-500">✦</span><span>Sistemas multi-agentes (RAG's)</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-emerald-500">✦</span><span>Conexión de softwares aislados</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-emerald-500">✦</span><span>Eliminación de trabajo repetitivo</span></li>
                   </ul>
                 </div>
-                <div class="pt-5 border-t border-white/5">
-                  <div class="text-[11px] font-mono text-slate-500 mb-2">\${c.threeWays.step2.duration}</div>
-                  <button onclick="alert('Explorando: ' + '\${c.threeWays.step2.title}')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 text-white font-semibold text-xs transition-all">
-                    \${c.threeWays.step2.cta} →
-                  </button>
+                <div class="pt-5 border-t border-white/5 relative z-10">
+                  <div class="text-[10px] font-mono text-emerald-500 mb-2 font-bold">HITO DE NEGOCIO:</div>
+                  <div class="text-xs text-white font-semibold">Ecosistema Automatizado</div>
                 </div>
               </div>
 
-              <!-- CARD 01+02 -->
-              <div class="bg-gradient-to-b from-[#080E24] to-[#040816] border-2 border-blue-500/70 rounded-2xl p-7 flex flex-col justify-between shadow-xl shadow-blue-500/10 relative">
-                <div class="absolute -top-3 right-5 bg-blue-600 text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full font-bold">RECOMENDADO</div>
-                <div>
+              <!-- FASE 03 -->
+              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-blue-500/40 transition-all border-l-4 border-l-blue-500 relative overflow-hidden group">
+                <div class="absolute -top-3 right-5 bg-blue-600 text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full font-bold shadow-lg shadow-blue-500/30 z-20">CORE</div>
+                <div class="absolute -right-4 -bottom-4 text-[120px] font-black text-blue-500/[0.03] group-hover:text-blue-500/[0.08] transition-all">03</div>
+                <div class="relative z-10">
                   <div class="flex items-center justify-between mb-5">
-                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500 text-white font-bold">FULL TRANSFORMATION</span>
-                    <span class="text-2xl font-black text-blue-400 font-mono">01+02</span>
+                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 font-bold">FASE 03</span>
                   </div>
-                  <h3 class="text-xl font-bold text-white mb-2">\${c.threeWays.step3.title}</h3>
-                  <p class="text-slate-300 text-xs leading-relaxed mb-6">\${c.threeWays.step3.desc}</p>
-                  <ul class="space-y-2.5 mb-6">
-                    \${c.threeWays.step3.bullets.map(b => \`<li class="flex items-start gap-2 text-xs text-slate-200"><span class="text-emerald-400">✔</span><span>\${b}</span></li>\`).join('')}
+                  <h3 class="text-2xl font-black text-white mb-1">Digital Platforms</h3>
+                  <h4 class="text-xs font-bold text-blue-400 mb-4">Construcción del Núcleo</h4>
+                  <p class="text-slate-400 text-xs leading-relaxed mb-6">Desarrollo a la medida acelerado por IA. Construimos el núcleo tecnológico de tu empresa priorizando time-to-market sin sacrificar QA.</p>
+                  <ul class="space-y-2.5 mb-6 relative z-10">
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-blue-500">✦</span><span>Ingeniería Full Stack & Cloud</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-blue-500">✦</span><span>Diseño UX/UI de Producto</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-blue-500">✦</span><span>AI-Forward Deploy Engineering</span></li>
                   </ul>
                 </div>
-                <div class="pt-5 border-t border-white/10">
-                  <div class="text-[11px] font-mono text-blue-300 mb-2">\${c.threeWays.step3.duration}</div>
-                  <button onclick="alert('Agendando: ' + '\${c.threeWays.step3.title}')" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition-all">
-                    \${c.threeWays.step3.cta} →
-                  </button>
+                <div class="pt-5 border-t border-white/5 relative z-10">
+                  <div class="text-[10px] font-mono text-blue-500 mb-2 font-bold">HITO DE NEGOCIO:</div>
+                  <div class="text-xs text-white font-semibold">Lanzamiento MVP Productivo</div>
                 </div>
               </div>
+
+              <!-- FASE 04 -->
+              <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:border-indigo-500/40 transition-all border-l-4 border-l-indigo-500 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-[120px] font-black text-indigo-500/[0.03] group-hover:text-indigo-500/[0.08] transition-all">04</div>
+                <div class="relative z-10">
+                  <div class="flex items-center justify-between mb-5">
+                    <span class="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 font-bold">FASE 04</span>
+                  </div>
+                  <h3 class="text-2xl font-black text-white mb-1">Digital Evolution</h3>
+                  <h4 class="text-xs font-bold text-indigo-400 mb-4">Madurez y Escalamiento</h4>
+                  <p class="text-slate-400 text-xs leading-relaxed mb-6">El software vivo. Aseguramos y hacemos crecer tu inversión. Tu plataforma necesita evolucionar al ritmo de tus clientes.</p>
+                  <ul class="space-y-2.5 mb-6 relative z-10">
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-indigo-500">✦</span><span>Optimización de Conversión (CRO)</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-indigo-500">✦</span><span>Analítica Avanzada de Datos</span></li>
+                    <li class="flex items-start gap-2 text-xs text-slate-300"><span class="text-indigo-500">✦</span><span>Seguridad Grado ISO 27001</span></li>
+                  </ul>
+                </div>
+                <div class="pt-5 border-t border-white/5 relative z-10">
+                  <div class="text-[10px] font-mono text-indigo-500 mb-2 font-bold">HITO DE NEGOCIO:</div>
+                  <div class="text-xs text-white font-semibold">Plataforma Escalando & Segura</div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

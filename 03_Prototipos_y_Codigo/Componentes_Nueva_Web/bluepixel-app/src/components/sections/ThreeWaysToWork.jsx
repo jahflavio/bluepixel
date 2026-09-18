@@ -1,163 +1,278 @@
 import React from 'react';
 
-const ThreeWaysToWork = ({ onSelectPackage }) => {
+const ThreeWaysToWork = () => {
   return (
-    <section id="three-ways" className="py-24 bg-[#040711] border-t border-b border-white/[0.06] relative overflow-hidden">
+    <section id="how-we-work" className="py-24 bg-[#02050A] border-t border-b border-white/[0.06] relative overflow-hidden">
+      
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen" />
 
-      {/* Isometric Grid Background — full section width */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.07]"
-        style={{
-          backgroundImage: 'linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777), linear-gradient(60deg, #77777777 25%, transparent 25.5%, transparent 75%, #77777777 75%, #77777777)',
-          backgroundSize: '40px 70px',
-          backgroundPosition: '0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px'
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-            CÓMO TRABAJAR CON NOSOTROS
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+            MODELO BLUEPIXEL (CÓMO TRABAJAMOS)
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
-            Tres formas de colaborar con BluePixel<span className="text-blue-500">.</span>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-6 mb-4">
+            La ruta de ascenso hacia tu madurez digital<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Dos paquetes de entrada para equipos que buscan certidumbre técnica inmediata, y un programa integral para construir y operar tu capa completa de agentes en producción.
+            No somos una fábrica de requerimientos. Trazamos una línea clara desde el diagnóstico estratégico hasta la escala y seguridad de tu plataforma.
           </p>
         </div>
 
-        {/* Grid de 3 Tarjetas */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        {/* Grid de 4 Fases en Formato Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
 
-          {/* CARD 01: Consultoría */}
-          <div className="bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
-                  ENTRY PACKAGE
-                </span>
-                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-blue-400 transition-colors">01</span>
+          {/* FASE 01: DIGITAL CONSULTING */}
+          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-slate-500/50 transition-all group">
+            <div className="p-8 flex-1 flex flex-col">
+              {/* Phase Header - Fixed Height 64px */}
+              <div className="flex items-start gap-3 mb-6 h-[64px]">
+                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">01</span>
+                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
+                  Digital<br/>Consulting
+                </h3>
+              </div>
+              
+              {/* Badges - Single Row h-[32px] */}
+              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Consultoría Tecnológica Estratégica</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Entendemos tu negocio antes de tirar una sola línea de código. Auditamos tu infraestructura y mapeamos cuellos de botella para modernizar tu empresa.
+              {/* Title - Uniform Min-Height 56px */}
+              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                Para empresas buscando certidumbre técnica
+              </h4>
+
+              {/* Subtitle - Uniform Min-Height 64px */}
+              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
+                Identifica brechas y cuantifica el mayor ROI antes de programar con un roadmap técnico seguro.
               </p>
 
-              <ul className="space-y-3 mb-8">
+              {/* Bullets */}
+              <ul className="space-y-3.5 mb-8 flex-1">
                 {[
+                  'Auditoría profunda de arquitectura y fricción operativa',
                   'Mapeo de procesos y diagnóstico de operaciones',
-                  'Detección de fricción con gemelos digitales (IMPATH™)',
+                  'AI Readiness Assessment: viabilidad y madurez de datos para IA',
                   'Matriz de priorización de tecnología y cálculo de ROI',
-                  'Blueprint de arquitectura técnica y gobernanza de datos',
-                  'Reporte ejecutivo con costo de inacción cuantificado en pesos'
+                  'Blueprint de arquitectura técnica y gobernanza de datos'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                    <span className="text-blue-400 mt-0.5">✦</span>
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
-              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">2 a 4 Semanas</span>
-              <a
-                href="#/consultoria-tecnologica"
-                className="text-xs font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1.5 transition-colors">
-                <span>Explorar Consultoría</span>
-                <span>→</span>
-              </a>
+            {/* Footer Area */}
+            <div className="px-8 pb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
+                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
+              </div>
+              
+              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-slate-500/30 transition-all min-h-[84px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shadow-[0_0_8px_rgba(148,163,184,0.6)] relative z-10 shrink-0"></div>
+                <div className="relative z-10">
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Roadmap Estratégico Seguro.</div>
+                  <div className="text-slate-400 text-xs mt-1">Entregable accionable y cuantificado en 2 a 4 semanas.</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* CARD 02: Agentic Engineering */}
-          <div className="bg-[#060A14] border border-white/[0.08] hover:border-indigo-500/40 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
-                  ENTRY PACKAGE
-                </span>
-                <span className="text-2xl font-black text-slate-600 font-mono group-hover:text-indigo-400 transition-colors">02</span>
+          {/* FASE 02: AGENTIC & AUTOMATION */}
+          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all group">
+            <div className="p-8 flex-1 flex flex-col">
+              {/* Phase Header - Fixed Height 64px */}
+              <div className="flex items-start gap-3 mb-6 h-[64px]">
+                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">02</span>
+                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
+                  Agentic &<br/>Automation
+                </h3>
+              </div>
+              
+              {/* Badges - Single Row h-[32px] */}
+              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Automatización Agentizada (Agentic)</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Asignamos un Squad Senior enfocado en automatizar flujos operativos con Agentes de Inteligencia Artificial conectados a tu ERP.
+              {/* Title - Uniform Min-Height 56px */}
+              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                Para operaciones con cuellos de botella
+              </h4>
+
+              {/* Subtitle - Uniform Min-Height 64px */}
+              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
+                Conecta tus sistemas y elimina tareas manuales con agentes de IA sobre tu stack actual.
               </p>
 
-              <ul className="space-y-3 mb-8">
+              {/* Bullets */}
+              <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Diseño de arquitectura agéntica con protocolos MCP',
                   'Flujos de trabajo autónomos sobre datos reales con RAG',
                   'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Sprints quincenales con entregas en staging',
-                  'Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP'
+                  'Elimina tareas repetitivas y eleva a tu equipo a Subject Matter Experts',
+                  'Sprints quincenales con entregas funcionales en staging',
+                  'Blindaje contra alucinaciones y cumplimiento de seguridad'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-300">
-                    <span className="text-indigo-400 mt-0.5">✦</span>
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
-              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Sprints Mensuales</span>
-              <a
-                href="#/automatizacion-agentica"
-                className="text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1.5 transition-colors">
-                <span>Explorar Automatización</span>
-                <span>→</span>
-              </a>
+            {/* Footer Area */}
+            <div className="px-8 pb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
+                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
+              </div>
+              
+              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-emerald-500/30 transition-all min-h-[84px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shadow-[0_0_8px_rgba(16,185,129,0.8)] relative z-10 shrink-0"></div>
+                <div className="relative z-10">
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ecosistema Automatizado.</div>
+                  <div className="text-slate-400 text-xs mt-1">Retorno de inversión inmediato en tus procesos de negocio.</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* CARD 03: Full Transformation (Destacado) */}
-          <div className="bg-gradient-to-b from-[#0F1628] to-[#060A14] border-2 border-blue-500/60 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden shadow-2xl shadow-blue-500/20">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
-
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full bg-blue-500 text-white font-bold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-                  FULL TRANSFORMATION
-                </span>
-                <span className="text-2xl font-black text-blue-400 font-mono">01+02</span>
+          {/* FASE 03: DIGITAL PLATFORMS */}
+          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all relative group overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all" />
+            <div className="p-8 relative z-10 flex-1 flex flex-col">
+              {/* Phase Header - Fixed Height 64px */}
+              <div className="flex items-start gap-3 mb-6 h-[64px]">
+                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">03</span>
+                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
+                  Digital<br/>Platforms
+                </h3>
+              </div>
+              
+              {/* Badges - Single Row h-[32px] */}
+              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">STARTUPS</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-2">Producto Digital (Build & Evolve)</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                Construimos tu plataforma de misión crítica desde cero hasta producción en 90 días (BUILD), asumiendo la responsabilidad de su evolución continua (EVOLVE).
+              {/* Title - Uniform Min-Height 56px */}
+              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                Para construir plataformas digitales desde cero
+              </h4>
+
+              {/* Subtitle - Uniform Min-Height 64px */}
+              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
+                Tu plataforma digital construida para validar rápido y escalar con solidez desde el día uno.
               </p>
 
-              <ul className="space-y-3 mb-8">
+              {/* Bullets */}
+              <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead',
-                  'Todo lo incluido en los paquetes 01 (Consultoría) y 02 (Automatización)',
-                  'Construcción completa de plataforma en 90 días (BUILD)',
-                  'Monitoreo trimestral de UX Health Score y ROI (EVOLVE)',
-                  'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
+                  'Plataforma lista en 3 meses con UX validado',
+                  'Validación con usuarios reales y gemelos digitales antes de producción',
+                  'Ciclo completo: estrategia → UX/UI → arquitectura → desarrollo → QA → lanzamiento',
+                  'Design system y arquitectura sin deuda técnica',
+                  'Consola administrativa, Backend e integraciones con sistemas legacy y terceros'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-200">
-                    <span className="text-emerald-400 font-bold mt-0.5">✓</span>
-                    <span className="font-medium">{item}</span>
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-6 border-t border-white/[0.12] flex items-center justify-between">
-              <span className="text-xs font-mono text-blue-300 font-semibold uppercase tracking-wider">3+ Meses / Continuo</span>
-              <a
-                href="#/producto-digital"
-                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center gap-1.5">
-                <span>Explorar Producto Digital</span>
-                <span>→</span>
-              </a>
+            {/* Footer Area */}
+            <div className="px-8 pb-8 relative z-10">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
+                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
+              </div>
+              
+              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-blue-500/30 transition-all min-h-[84px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shadow-[0_0_8px_rgba(59,130,246,0.8)] relative z-10 shrink-0"></div>
+                <div className="relative z-10">
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">AI-Forward Deploy Engineering.</div>
+                  <div className="text-slate-400 text-xs mt-1">Desarrollo acelerado con IA para reducir time-to-market sin deuda técnica.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FASE 04: DIGITAL EVOLUTION */}
+          <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-indigo-500/50 transition-all group">
+            <div className="p-8 flex-1 flex flex-col">
+              {/* Phase Header - Fixed Height 64px */}
+              <div className="flex items-start gap-3 mb-6 h-[64px]">
+                <span className="text-slate-500 font-mono text-sm font-semibold mt-1">04</span>
+                <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
+                  Digital<br/>Evolution
+                </h3>
+              </div>
+              
+              {/* Badges - Single Row h-[32px] */}
+              <div className="flex items-center gap-1.5 mb-6 h-[32px]">
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">PYMES</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase">ENTERPRISE</span>
+              </div>
+
+              {/* Title - Uniform Min-Height 56px */}
+              <h4 className="text-xl font-bold text-white mb-3 min-h-[56px] flex items-center leading-snug">
+                Para empresas con plataformas digitales existentes
+              </h4>
+
+              {/* Subtitle - Uniform Min-Height 64px */}
+              <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
+                Convierte tu plataforma actual en una ventaja competitiva continua con impacto de negocio.
+              </p>
+
+              {/* Bullets */}
+              <ul className="space-y-3.5 mb-8 flex-1">
+                {[
+                  'Roadmap vivo de 6, 12 o 24 meses con entregas continuas',
+                  'Prioridades actualizadas cada sprint según comportamiento real de usuarios',
+                  'UX Health Score continuo: usabilidad, estabilidad, velocidad y conversión',
+                  'Optimización de conversión (CRO) y analítica profunda de retención',
+                  'Cadencia estructurada de accountability y alineación a metas de negocio'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Footer Area */}
+            <div className="px-8 pb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">POWERED BY</span>
+                <span className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300 text-[10px] font-bold tracking-widest">IMPATH</span>
+              </div>
+              
+              <div className="bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden group-hover:border-purple-500/30 transition-all min-h-[84px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shadow-[0_0_8px_rgba(168,85,247,0.8)] relative z-10 shrink-0"></div>
+                <div className="relative z-10">
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Capacidades Transversales On-Demand.</div>
+                  <div className="text-slate-400 text-xs mt-1">Escuadrón continuo de CRO, UX, Analítica y Seguridad sin elevar tu nómina.</div>
+                </div>
+              </div>
             </div>
           </div>
 
