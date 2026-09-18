@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const CONTENT = {
   es: {
-    badge: 'MODELO LINEAL BLUEPIXEL • LÍNEA DE ASCENSO',
+    badge: 'ADN HUMAN-CENTERED • MODELO LINEAL BLUEPIXEL',
     title: 'La ruta de ascenso hacia tu madurez digital',
-    subtitle: 'Una línea de ascenso progresiva: desde el diagnóstico estratégico y la agentización temprana hasta la construcción de plataformas core y su evolución continua con el mercado.',
+    subtitle: 'Un modelo lineal guiado por nuestra maestría referente en UX: transformamos la incertidumbre en plataformas intuitivas de misión crítica que tus usuarios realmente adoptan.',
     phases: [
       {
         num: '01',
@@ -16,7 +16,7 @@ const CONTENT = {
         bullets: [
           'Diagnóstico, backlog priorizado y cálculo de ROI en 2 a 4 semanas',
           'Eliminación de brechas operativas con las mejores metodologías de software',
-          'Mapeo profundo de procesos de negocio y detección de cuellos de botella',
+          'Mapeo profundo de procesos, journeys de usuario (UX Research) y fricción operativa',
           'Evaluación estratégica para integrar IA con sentido de negocio (AI Readiness)',
           'Blueprint de arquitectura técnica, gobernanza y roadmap de trabajo'
         ],
@@ -34,12 +34,12 @@ const CONTENT = {
         titleLine2: 'Automatización',
         badges: ['PYMES', 'ENTERPRISE'],
         target: 'Para operaciones con cuellos de botella',
-        desc: 'Conecta softwares existentes, elimina trabajo repetitivo y eleva la calidad de tu equipo como Subject Matter Experts.',
+        desc: 'Conecta softwares existentes, elimina trabajo repetitivo y diseña adopción fluida para tu equipo (SMEs).',
         bullets: [
           'Primeros agentes y automatizaciones en producción en 2 a 4 semanas',
           'Conexión e integración con softwares existentes (SAP, Salesforce, ERP, CRM)',
           'Sistemas multi-agente con arquitectura RAG sobre datos reales de tu empresa',
-          'Eliminación de trabajo repetitivo y aumento medible de productividad',
+          'UX conversacional e interfaces intuitivas para adopción humana fluida sin fricción',
           'Eleva a tu equipo con skills desarrollados como Subject Matter Experts (SMEs)'
         ],
         hoverBorder: 'hover:border-emerald-500/50',
@@ -56,11 +56,11 @@ const CONTENT = {
         titleLine2: 'Digitales',
         badges: ['STARTUPS', 'PYMES', 'ENTERPRISE'],
         target: 'Para construir plataformas digitales desde cero',
-        desc: 'Construye software desde cero, MVPs y plataformas con capacidades Full Stack, UX/UI líder y time-to-market prioritario.',
+        desc: 'Unimos nuestra maestría referente en UX/UI con ingeniería Full Stack para crear plataformas que tus usuarios aman.',
         bullets: [
-          'Plataforma o MVP listo en 3 meses con priorización de Time-to-Market',
+          'Plataforma o MVP listo en 3 meses con UX validado y time-to-market prioritario',
           'Construcción de software a la medida desde cero con capacidades Full Stack',
-          'Liderazgo y diseño de clase mundial en UX/UI con prototipado interactivo',
+          'Expertise referente en UX/UI: investigación con usuarios reales, design systems y prototipado',
           'Ingeniería acelerada por IA (AI-Forward Deploy Engineering) y QA testing riguroso',
           'PMO dedicado, arquitectura sin deuda técnica y Security & Reliability'
         ],
@@ -69,8 +69,8 @@ const CONTENT = {
         dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
         gradient: 'from-blue-500/10',
         hoverFooterBorder: 'group-hover:border-blue-500/30',
-        footerTitle: 'Ingeniería Acelerada por IA (AI-Forward).',
-        footerDesc: 'Capacidades Full Stack, PMO y time-to-market con Security & Reliability.'
+        footerTitle: 'Maestría UX + Ingeniería por IA.',
+        footerDesc: 'Diseño UX de clase mundial, desarrollo Full Stack, PMO dedicado y Security & Reliability.'
       },
       {
         num: '04',
@@ -78,12 +78,12 @@ const CONTENT = {
         titleLine2: 'Digital',
         badges: ['PYMES', 'ENTERPRISE'],
         target: 'Para empresas con plataformas digitales existentes',
-        desc: 'Entendimiento de negocio, homologación de intereses y capacidades transversales para evolucionar con el mercado.',
+        desc: 'Entendimiento de negocio, homologación de intereses y optimización continua de UX para evolucionar con el mercado.',
         bullets: [
           'Roadmap vivo de 6 o 12 meses con entregas continuas cada sprint',
           'Entendimiento profundo de negocio y homologación de intereses mutuos',
           'Upscaling consultivo y evolución constante al ritmo del mercado',
-          'Capa de capacidades transversales (UX/UI, Software, Analítica y Seguridad)',
+          'Capa de capacidades transversales (UX/UI Evolutivo, Software, Analítica y Seguridad)',
           'Optimización continua de conversión (CRO), retención y UX Health Score'
         ],
         hoverBorder: 'hover:border-indigo-500/50',
@@ -97,9 +97,9 @@ const CONTENT = {
     ]
   },
   en: {
-    badge: 'BLUEPIXEL LINEAR MODEL • ASCENT PATHWAY',
+    badge: 'HUMAN-CENTERED DNA • BLUEPIXEL LINEAR MODEL',
     title: 'The ascent pathway to your digital maturity',
-    subtitle: 'A progressive, linear ascent: from strategic diagnosis and rapid agentization to core platform engineering and continuous market evolution.',
+    subtitle: 'A linear model driven by our benchmark UX mastery: transforming uncertainty into intuitive, mission-critical platforms that users genuinely adopt and love.',
     phases: [
       {
         num: '01',
@@ -111,7 +111,7 @@ const CONTENT = {
         bullets: [
           'Diagnosis, prioritized backlog, and ROI projection in 2 to 4 weeks',
           'Operational gap elimination with best-in-class software engineering practices',
-          'In-depth business process mapping and friction points discovery',
+          'In-depth process mapping, user journey discovery (UX Research), and friction diagnosis',
           'Strategic assessment to integrate AI with real business viability (AI Readiness)',
           'Technical architecture blueprint, data governance, and execution roadmap'
         ],
@@ -129,12 +129,12 @@ const CONTENT = {
         titleLine2: 'Automation',
         badges: ['SMES', 'ENTERPRISE'],
         target: 'For operations facing productivity bottlenecks',
-        desc: 'Connect existing software, eliminate repetitive tasks, and elevate your team into Subject Matter Experts.',
+        desc: 'Connect existing software, eliminate repetitive tasks, and design frictionless adoption for your team (SMEs).',
         bullets: [
           'First production-ready agents and workflows deployed in 2 to 4 weeks',
           'Seamless integration with your existing stack (SAP, Salesforce, ERP, CRM)',
           'Multi-agent systems with enterprise RAG architecture on real company data',
-          'Elimination of repetitive manual work and immediate productivity gains',
+          'Conversational UX and intuitive interfaces for frictionless, human-first adoption',
           'Empower your team with specialized skills as Subject Matter Experts (SMEs)'
         ],
         hoverBorder: 'hover:border-emerald-500/50',
@@ -151,11 +151,11 @@ const CONTENT = {
         titleLine2: 'Platforms',
         badges: ['STARTUPS', 'SMES', 'ENTERPRISE'],
         target: 'To engineer digital platforms from the ground up',
-        desc: 'Build software from scratch, MVPs, and platforms with Full Stack capabilities, world-class UX/UI, and rapid time-to-market.',
+        desc: 'We blend our benchmark UX/UI mastery with Full Stack engineering to build intuitive platforms users genuinely love.',
         bullets: [
-          'Production-ready platform or MVP in 3 months with prioritized Time-to-Market',
+          'Production-ready platform or MVP in 3 months with validated UX and fast time-to-market',
           'Custom software built from the ground up with end-to-end Full Stack capabilities',
-          'World-class UX/UI design leadership validated with interactive prototyping',
+          'Benchmark UX/UI mastery: real user research, scalable design systems, and interactive prototyping',
           'AI-Forward Deploy Engineering with enterprise-grade QA testing',
           'Dedicated PMO governance, zero technical debt, and Security & Reliability'
         ],
@@ -164,8 +164,8 @@ const CONTENT = {
         dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
         gradient: 'from-blue-500/10',
         hoverFooterBorder: 'group-hover:border-blue-500/30',
-        footerTitle: 'AI-Forward Deploy Engineering.',
-        footerDesc: 'Full Stack velocity, PMO oversight, and accelerated time-to-market with Security & Reliability.'
+        footerTitle: 'World-Class UX + AI Engineering.',
+        footerDesc: 'Benchmark UX design, Full Stack execution, dedicated PMO, and Security & Reliability.'
       },
       {
         num: '04',
@@ -173,12 +173,12 @@ const CONTENT = {
         titleLine2: 'Evolution',
         badges: ['SMES', 'ENTERPRISE'],
         target: 'For companies with existing digital platforms',
-        desc: 'Deep business understanding, shared incentives, and cross-functional capabilities to evolve alongside the market.',
+        desc: 'Deep business alignment, mutual incentives, and continuous UX optimization to evolve alongside market demands.',
         bullets: [
           'Living 6- or 12-month roadmap with continuous sprint-by-sprint deliveries',
           'Deep business understanding and alignment of mutual incentives with company goals',
           'Consultative upscaling and agile platform evolution matching market dynamics',
-          'Cross-functional capability layer: UX/UI, Software, Data Analytics, and Security',
+          'Cross-functional capability layer: Evolutionary UX/UI, Software, Data Analytics, and Security',
           'Continuous Conversion Rate Optimization (CRO), retention gains, and UX Health Score'
         ],
         hoverBorder: 'hover:border-indigo-500/50',
