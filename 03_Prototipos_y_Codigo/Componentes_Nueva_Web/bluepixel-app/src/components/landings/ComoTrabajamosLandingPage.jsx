@@ -17,7 +17,7 @@ const ComoTrabajamosLandingPage = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">De la fricción a la agentización.</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
-            No somos una "fábrica de software". Operamos bajo un modelo de Ingeniería de Misión Crítica. Conoce nuestras 3 formas de colaboración diseñadas para mitigar riesgo, asegurar adopción y garantizar el ROI.
+            No somos una "fábrica de software". Operamos bajo un modelo de Ingeniería de Misión Crítica. Conoce nuestras 4 fases de colaboración diseñadas para mitigar riesgo, asegurar adopción y garantizar el ROI.
           </p>
         </div>
       </section>

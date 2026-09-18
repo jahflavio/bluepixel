@@ -12,21 +12,24 @@ const ThreeWaysToWork = () => {
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-            MODELO BLUEPIXEL (CÓMO TRABAJAMOS)
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-6 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
+              MODELO LINEAL BLUEPIXEL • LÍNEA DE ASCENSO
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4">
             La ruta de ascenso hacia tu madurez digital<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            No somos una fábrica de requerimientos. Trazamos una línea clara desde el diagnóstico estratégico hasta la escala y seguridad de tu plataforma.
+            Una línea de ascenso progresiva: desde el diagnóstico estratégico y la agentización temprana hasta la construcción de plataformas core y su evolución continua con el mercado.
           </p>
         </div>
 
         {/* Grid de 4 Fases en Formato Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
 
-          {/* FASE 01: CONSULTORÍA DIGITAL */}
+          {/* FASE 01: CONSULTORÍA DIGITAL (SIGNAL) */}
           <div className="bg-[#080B12] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-slate-500/50 transition-all group">
             <div className="p-8 flex-1 flex flex-col">
               {/* Phase Header - Fixed Height 64px */}
@@ -50,17 +53,17 @@ const ThreeWaysToWork = () => {
 
               {/* Subtitle - Uniform Min-Height 64px */}
               <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Identifica brechas y cuantifica el mayor ROI antes de programar con un roadmap técnico seguro.
+                Elimina brechas actuales e identifica oportunidades de mayor ROI con las mejores metodologías de software.
               </p>
 
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Auditoría profunda de arquitectura y fricción operativa',
-                  'Mapeo de procesos y diagnóstico de operaciones',
-                  'Evaluación de viabilidad para IA (AI Readiness) y retorno medible',
-                  'Matriz de priorización de tecnología y cálculo de ROI',
-                  'Blueprint de arquitectura técnica y gobernanza de datos'
+                  'Diagnóstico, backlog priorizado y cálculo de ROI en 2 a 4 semanas',
+                  'Eliminación de brechas operativas con las mejores metodologías de software',
+                  'Mapeo profundo de procesos de negocio y detección de cuellos de botella',
+                  'Evaluación estratégica para integrar IA con sentido de negocio (AI Readiness)',
+                  'Blueprint de arquitectura técnica, gobernanza y roadmap de trabajo'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
                     <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
@@ -81,8 +84,8 @@ const ThreeWaysToWork = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shadow-[0_0_8px_rgba(148,163,184,0.6)] relative z-10 shrink-0"></div>
                 <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Roadmap Estratégico Seguro.</div>
-                  <div className="text-slate-400 text-xs mt-1">Entregable accionable y cuantificado en 2 a 4 semanas.</div>
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Roadmap Estratégico y Backlog.</div>
+                  <div className="text-slate-400 text-xs mt-1">Entregable accionable con las mejores metodologías en 2 a 4 semanas.</div>
                 </div>
               </div>
             </div>
@@ -112,17 +115,17 @@ const ThreeWaysToWork = () => {
 
               {/* Subtitle - Uniform Min-Height 64px */}
               <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Conecta tus sistemas y elimina tareas manuales con agentes de IA sobre tu stack actual.
+                Conecta softwares existentes, elimina trabajo repetitivo y eleva la calidad de tu equipo como Subject Matter Experts.
               </p>
 
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Agentes autónomos sobre datos reales de tu empresa (arquitectura RAG)',
-                  'Integración con tu stack empresarial (SAP, Salesforce, ERP)',
-                  'Elimina la carga operativa y convierte a tu equipo en Subject Matter Experts (SMEs)',
-                  'Sprints quincenales con entregas funcionales en staging',
-                  'Blindaje contra alucinaciones y cumplimiento de seguridad'
+                  'Primeros agentes y automatizaciones en producción en 2 a 4 semanas',
+                  'Conexión e integración con softwares existentes (SAP, Salesforce, ERP, CRM)',
+                  'Sistemas multi-agente con arquitectura RAG sobre datos reales de tu empresa',
+                  'Eliminación de trabajo repetitivo y aumento medible de productividad',
+                  'Eleva a tu equipo con skills desarrollados como Subject Matter Experts (SMEs)'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
                     <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
@@ -143,8 +146,8 @@ const ThreeWaysToWork = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shadow-[0_0_8px_rgba(16,185,129,0.8)] relative z-10 shrink-0"></div>
                 <div className="relative z-10">
-                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ecosistema Automatizado.</div>
-                  <div className="text-slate-400 text-xs mt-1">Retorno de inversión inmediato en tus procesos de negocio.</div>
+                  <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ecosistema Automatizado & RAG.</div>
+                  <div className="text-slate-400 text-xs mt-1">Agentes operando y aumentando productividad en 2 a 4 semanas.</div>
                 </div>
               </div>
             </div>
@@ -176,17 +179,17 @@ const ThreeWaysToWork = () => {
 
               {/* Subtitle - Uniform Min-Height 64px */}
               <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Tu plataforma digital construida para validar rápido y escalar con solidez desde el día uno.
+                Construye software desde cero, MVPs y plataformas con capacidades Full Stack, UX/UI líder y time-to-market prioritario.
               </p>
 
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Plataforma lista en 3 meses con UX validado',
-                  'Validación con usuarios reales y gemelos digitales antes de producción',
-                  'Ciclo completo: estrategia → UX/UI → arquitectura → desarrollo → QA → lanzamiento',
-                  'Design system y arquitectura sin deuda técnica',
-                  'Consola administrativa, Backend e integraciones con sistemas legacy y terceros'
+                  'Plataforma o MVP listo en 3 meses con priorización de Time-to-Market',
+                  'Construcción de software a la medida desde cero con capacidades Full Stack',
+                  'Liderazgo y diseño de clase mundial en UX/UI con prototipado interactivo',
+                  'Ingeniería acelerada por IA (AI-Forward Deploy Engineering) y QA testing riguroso',
+                  'PMO dedicado, arquitectura sin deuda técnica y Security & Reliability'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
                     <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
@@ -208,7 +211,7 @@ const ThreeWaysToWork = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shadow-[0_0_8px_rgba(59,130,246,0.8)] relative z-10 shrink-0"></div>
                 <div className="relative z-10">
                   <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Ingeniería Acelerada por IA (AI-Forward).</div>
-                  <div className="text-slate-400 text-xs mt-1">Desarrollo potenciado con IA para reducir time-to-market sin deuda técnica.</div>
+                  <div className="text-slate-400 text-xs mt-1">Capacidades Full Stack, PMO y time-to-market con Security & Reliability.</div>
                 </div>
               </div>
             </div>
@@ -238,17 +241,17 @@ const ThreeWaysToWork = () => {
 
               {/* Subtitle - Uniform Min-Height 64px */}
               <p className="text-slate-400 text-sm mb-8 leading-relaxed min-h-[64px] flex items-start">
-                Convierte tu plataforma actual en una ventaja competitiva continua con impacto de negocio.
+                Entendimiento de negocio, homologación de intereses y capacidades transversales para evolucionar con el mercado.
               </p>
 
               {/* Bullets */}
               <ul className="space-y-3.5 mb-8 flex-1">
                 {[
-                  'Roadmap vivo de 6, 12 o 24 meses con entregas continuas',
-                  'Prioridades actualizadas cada sprint según comportamiento real de usuarios',
-                  'UX Health Score continuo: usabilidad, estabilidad, velocidad y conversión',
-                  'Optimización continua para convertir visitas en clientes (CRO) y retención',
-                  'Cadencia estructurada de accountability y alineación a metas de negocio'
+                  'Roadmap vivo de 6, 12 o 24 meses con entregas continuas cada sprint',
+                  'Entendimiento profundo de negocio y homologación de intereses mutuos',
+                  'Upscaling consultivo y evolución constante al ritmo del mercado',
+                  'Capa de capacidades transversales (UX/UI, Software, Analítica y Seguridad)',
+                  'Optimización continua de conversión (CRO), retención y UX Health Score'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
                     <span className="text-white mt-0.5 opacity-60 font-bold">✓</span>
@@ -270,7 +273,7 @@ const ThreeWaysToWork = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shadow-[0_0_8px_rgba(168,85,247,0.8)] relative z-10 shrink-0"></div>
                 <div className="relative z-10">
                   <div className="text-white text-sm font-bold min-h-[22px] flex items-center">Capacidades Transversales On-Demand.</div>
-                  <div className="text-slate-400 text-xs mt-1">Escuadrón continuo de CRO, UX, Analítica y Seguridad sin elevar tu nómina.</div>
+                  <div className="text-slate-400 text-xs mt-1">Escuadrón continuo de CRO, UX/UI, Analítica y Seguridad sin elevar tu nómina.</div>
                 </div>
               </div>
             </div>
