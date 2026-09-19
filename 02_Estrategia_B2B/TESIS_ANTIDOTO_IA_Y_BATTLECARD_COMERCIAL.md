@@ -189,15 +189,16 @@ Reglas de oro para los Closers (Pablo Gómez y José de Buen):
 
 ---
 
-## 🧭 10. EL MAPA DE ENRUTAMIENTO HACIA LOS 3 PILARES DE CONTRATACIÓN
+## 🧭 10. EL MAPA DE ENRUTAMIENTO HACIA LOS 4 PILARES DE CONTRATACIÓN
 
-Cuando un prospecto entra por pauta o prospección, el equipo de ventas lo califica y lo conduce hacia uno de los **3 Pilares Oficiales de BluePixel**:
+Cuando un prospecto entra por pauta o prospección, el equipo de ventas lo califica y lo conduce hacia uno de los **4 Pilares Oficiales de BluePixel**:
 
 | Perfil del Prospecto | Pregunta de Diagnóstico | Paquete a Presentar | Entregable y Plazo |
 | :--- | :--- | :--- | :--- |
-| **"Tengo dolor operativo pero no sé por dónde empezar ni cuánto cuesta"** | *"¿Sabe cuánto dinero le cuesta hoy a su empresa la fricción de ese proceso antes de meterle código?"* | **01: Diagnóstico & Auditoría FutureProof** *(Entry Package)* | Diagnóstico IMPATH™, Matriz de priorización y ROI, Blueprint técnico y Costo de inacción cuantificado en pesos.<br/>⏳ **2 a 4 Semanas**. |
-| **"Ya sé qué flujo o agente necesito construir e integrar a mi ERP"** | *"¿Necesita un equipo senior que programe el agente, lo conecte a su stack y lo deje corriendo en producción?"* | **02: Ingeniería de Agentes & MCP** *(Entry Package)* | Arquitectura agéntica MCP, RAG sobre datos reales, integración SAP/Salesforce, pruebas cloud y blindaje OWASP.<br/>⏳ **Sprints Mensuales**. |
-| **"Necesito transformar la plataforma completa o construir la app de cero a producción"** | *"¿Busca un partner tecnológico senior que diseñe, construya y opere la plataforma completa con evolución continua?"* | **01+02: Transformación: BUILD + EVOLVE** *(Full Transformation)* | Squad dedicado (Tech Lead + AI Engineer + UX Lead), incluye 01 y 02, plataforma lista en 90 días y monitoreo trimestral de UX Health Score y ROI.<br/>⏳ **3+ Meses / Continuo**. |
+| **"Tengo dolor operativo pero no sé por dónde empezar ni cuánto cuesta"** | *"¿Sabe cuánto dinero le cuesta hoy a su empresa la fricción de ese proceso antes de meterle código?"* | **01 · Consultoría Digital** *(Entry Package)* | Diagnóstico IMPATH™, Matriz de priorización y ROI, Blueprint técnico y Costo de inacción cuantificado en pesos.<br/>⏳ **2 a 4 Semanas**. |
+| **"Ya sé qué flujo o agente necesito construir e integrar a mi stack/ERP"** | *"¿Necesita un equipo senior que programe el agente, lo conecte a su stack y lo deje corriendo en producción?"* | **02 · Agentes & Automatización** *(Entry Package)* | Arquitectura agéntica MCP, RAG sobre datos reales, integración SAP/Salesforce, pruebas cloud y blindaje OWASP.<br/>⏳ **2 a 4 Semanas**. |
+| **"Necesito construir una plataforma digital o MVP desde cero para el mercado"** | *"¿Busca construir una plataforma o MVP desde cero con la certeza de que el UX está validado y la arquitectura es escalable?"* | **03 · Plataformas Digitales** *(Build Integral)* | Product Strategy, UX/UI validado con usuarios, desarrollo Full Stack Cloud-Native de 0 a producción y SLA 99.9%.<br/>⏳ **3 Meses (90 Días)**. |
+| **"Mi plataforma ya está en producción pero necesito un equipo senior para escalarla"** | *"¿Busca un partner tecnológico que evolucione continuamente su plataforma, optimice conversión (CRO) y reduzca deuda técnica?"* | **04 · Evolución Digital** *(Retainer Continuo)* | Squad senior extendido (Tech Lead, AI Engineer, Full Stack, UX/CRO), roadmap vivo, auditorías de UX Health Score y SLA de soporte crítico.<br/>⏳ **Roadmap 6 o 12 Meses**. |
 
 ---
 

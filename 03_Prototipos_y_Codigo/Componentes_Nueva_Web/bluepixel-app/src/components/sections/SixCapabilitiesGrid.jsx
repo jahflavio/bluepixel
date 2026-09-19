@@ -4,12 +4,12 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
   const capabilities = [
     // CLUSTER 1: APPS & PLATAFORMAS
     {
-      cluster: 'PILAR 01 · APPS & PRODUCTO',
+      cluster: 'CAPACIDAD 01 · EXPERIENCIA',
       targetRoute: 'servicio/ux-ui',
       badge: 'IMPATH™ Enabled',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '🎯',
-      title: 'UX/UI Design & Product Strategy',
+      title: 'UX/UI & PS (Product Strategy)',
       bullets: [
         'Diseñado para que los usuarios lo adopten y lo sigan eligiendo',
         'Decisiones de diseño respaldadas por datos de comportamiento real, no suposiciones',
@@ -19,29 +19,29 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-blue-950/40 border-blue-500/30 text-blue-300'
     },
     {
-      cluster: 'PILAR 01 · APPS & PRODUCTO',
+      cluster: 'CAPACIDAD 02 · INGENIERÍA',
       targetRoute: 'servicio/ai-engineering',
       badge: 'Cloud-Native SOC2',
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
       icon: '</>',
-      title: 'AI-Driven Software Engineering',
+      title: 'Software Engineering',
       bullets: [
         'Plataformas web y apps móviles construidas para escalar sin fricciones',
         'Ecosistema tecnológico conectado en un solo sistema cohesivo',
         'Estabilidad y rendimiento garantizados de desarrollo a producción'
       ],
-      banner: 'Tu negocio, crece con tu plataforma trimestre a trimestre.',
+      banner: 'Tu negocio crece con tu plataforma trimestre a trimestre.',
       bannerColor: 'bg-cyan-950/40 border-cyan-500/30 text-cyan-300'
     },
 
     // CLUSTER 2: AUTOMATIZACIÓN & DATOS
     {
-      cluster: 'PILAR 02 · AUTOMATIZACIÓN',
+      cluster: 'CAPACIDAD 03 · AGENTES',
       targetRoute: 'servicio/ai-agents',
-      badge: 'Protocolo MCP',
+      badge: 'Agentic Automation',
       badgeColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
       icon: '⚙️',
-      title: 'Agentes IA & Automatización',
+      title: 'IA & Automatización',
       bullets: [
         'Procesos agentizados que liberan capacidad operativa de tu equipo',
         'Tu plataforma responde con inteligencia y datos corporativos reales',
@@ -51,7 +51,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-purple-950/40 border-purple-500/30 text-purple-300'
     },
     {
-      cluster: 'PILAR 02 · AUTOMATIZACIÓN',
+      cluster: 'CAPACIDAD 04 · INTELIGENCIA',
       targetRoute: 'servicio/data-analytics',
       badge: 'Mixpanel Telemetry',
       badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
@@ -66,11 +66,11 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-indigo-950/40 border-indigo-500/30 text-indigo-300'
     },
 
-    // CLUSTER 3: AGENTIZACIÓN & GOBERNANZA
+    // CLUSTER 3: GOBERNANZA & ESTRATEGIA
     {
-      cluster: 'PILAR 03 · GOBERNANZA IA',
+      cluster: 'CAPACIDAD 05 · BLINDAJE',
       targetRoute: 'servicio/security',
-      badge: 'Vault Audited',
+      badge: 'ISO 27001 & OWASP',
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
       icon: '🛡️',
       title: 'Security & Reliability',
@@ -83,18 +83,18 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
       bannerColor: 'bg-amber-950/40 border-amber-500/30 text-amber-300'
     },
     {
-      cluster: 'PILAR 03 · GOBERNANZA IA',
+      cluster: 'CAPACIDAD 06 · ESTRATEGIA',
       targetRoute: 'servicio/business-ai',
       badge: 'FutureProof™ Framework',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '💡',
-      title: 'Business AI Consulting',
+      title: 'Digital Consulting',
       bullets: [
-        'Diagnóstico de las oportunidades de IA con mayor impacto en tu operación',
+        'Diagnóstico de las oportunidades de tecnología e IA con mayor impacto',
         'Roadmap ejecutable que tu equipo directivo puede defender trimestre a trimestre',
         'Claridad sobre dónde automatizar, dónde usar IA y dónde no invertir aún'
       ],
-      banner: 'Un mapa claro de dónde la IA genera ROI en tu ecosistema digital.',
+      banner: 'Un mapa claro de dónde la tecnología y la IA generan ROI en tu ecosistema.',
       bannerColor: 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300'
     }
   ];
@@ -108,13 +108,13 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-            ✦ CAPACIDADES Y METODOLOGÍA CORPORATIVA
+            ✦ 6 CAPACIDADES CORPORATIVAS
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-3 mb-4">
             Ingeniería, diseño y gobernanza con impacto financiero<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Seis pilares técnicos organizados bajo nuestros 3 Clusters de Demanda, respaldados con metodologías propietarias y retorno medible.
+            Seis capacidades técnicas y metodológicas para diseñar, blindar y escalar plataformas digitales con retorno medible.
           </p>
         </div>
 

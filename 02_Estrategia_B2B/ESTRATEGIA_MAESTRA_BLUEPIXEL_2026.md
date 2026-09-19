@@ -29,11 +29,14 @@ En BluePixel se rompió la frontera entre el arte y la ingeniería: **los creati
 *   El diseño UX/UI **no es un producto aislado que se vende por kilo**: es la armadura y la experiencia humana con la que vestimos nuestra arquitectura de ingeniería pesada.
 *   Entregamos **código de grado militar con la experiencia visual y conductual más pulida del mercado**.
 
-### 0.3 La Filosofía "FutureProof"
+### 0.3 La Filosofía "FutureProof" y sus 5 Principios Fundacionales
 En la era de la Inteligencia Artificial, los directivos viven con el temor de invertir en software que quede obsoleto en seis meses con cada nuevo lanzamiento de modelos fundacionales.  
-La bandera de marca de BluePixel es la filosofía **FutureProof**:
-*   **Sistemas Preparados para el Futuro:** Arquitecturas desacopladas, modulares y estandarizadas (mediante protocolos abiertos como MCP) que permiten incorporar nuevos modelos de IA, APIs o cambios de mercado sin tener que tirar el sistema a la basura ni rehacerlo desde cero.
-*   **Acompañamiento Continuo (Build & Evolve):** No entregamos un desarrollo y desaparecemos; nos convertimos en el socio tecnológico que acompaña la evolución del negocio mes a mes con analítica conductual y soporte de SLA.
+La bandera de marca y garantía central de BluePixel es la filosofía **FutureProof**:
+1.  **Enfoque No-Maquila (Anti-Commodity):** No somos una fábrica de software ni vendemos horas de programador sin rumbo. Asumimos la responsabilidad técnica y comercial del producto.
+2.  **Certeza Técnica y Financiera Previa:** Validar y cuantificar el retorno de inversión antes de codificar ("validar antes de picar piedra"). Cálculo riguroso del costo de inacción.
+3.  **Human-Centered UX como Armadura y Multiplicador:** El diseño UX/UI conductual y la estrategia de producto (PS) garantizan que el software sea adoptado masivamente por los usuarios y convierta a nivel de negocio.
+4.  **Arquitectura Desacoplada y Soberanía Total de Datos:** Cloud-native, protocolos abiertos (MCP), sin vendor lock-in y desplegable en la nube privada del cliente. Al evolucionar un LLM, solo se conmuta una API key sin reconstruir el sistema.
+5.  **Blindaje Grado Empresarial (Security & Reliability):** Prácticas de seguridad alineadas a ISO 27001 y OWASP Top 10, con alta disponibilidad y SLAs del 99.9%.
 
 ### 0.4 Plan de Alineación Estratégica en Tres Frentes:
 1.  **Pauta Pagada y Adquisición B2B (Rocketing / Diana Cardoso):**
@@ -43,14 +46,15 @@ La bandera de marca de BluePixel es la filosofía **FutureProof**:
         *   **Agentización:** Ingeniería de Agentes IA autónomos en producción con protocolos MCP y RAG privado blindado contra alucinaciones.
     *   Cargar la lista maestra de keywords negativas (anti-PyMEs < $300k, estudiantes y búsquedas gratuitas).
 2.  **Conversión en Web y Landings (`bluepixel.mx` y Blueprint Library):**
-    *   Canalizar el tráfico hacia los **3 Pilares Oficiales de Contratación**:
-        *   **01: Diagnóstico & Auditoría FutureProof** (*Entry Package | 2 a 4 semanas | CTA: Solicitar Diagnóstico*).
-        *   **02: Ingeniería de Agentes & MCP** (*Entry Package | Sprints mensuales | CTA: Explorar Ingeniería*).
-        *   **01+02: Transformación: BUILD + EVOLVE** (*Full Transformation | 3+ meses / continuo | CTA: Agendar Sesión*).
-    *   Uso de las 10 landing pages y blueprints interactivos como **Proof of Capability** (demostración tangible de soluciones ya probadas en producción).
+    *   Canalizar el tráfico hacia los **4 Pilares Oficiales de Servicio / Contratación**:
+        *   **01: Consultoría Digital** (*Entry Package | 2 a 4 semanas | Diagnóstico, backlog priorizado y ROI previo*).
+        *   **02: Agentes & Automatización** (*Entry Package | 2 a 4 semanas | Agentes autónomos sobre stack actual*).
+        *   **03: Plataformas Digitales** (*Build Integral | 3 meses | Plataformas y MVPs desde cero con UX validado*).
+        *   **04: Evolución Digital** (*Retainer Continuo | 6 o 12 meses | Roadmap vivo, CRO y squad dedicado*).
+    *   Sustentado en las **6 Capacidades de la Empresa**: `UX/UI & PS`, `Software Engineering`, `IA & Automatización (Agentic Automation)`, `Data & Analytics`, `Security & Reliability (ISO 27001 & OWASP)` y `Digital Consulting`.
 3.  **Discurso Comercial y Cierre (Pablo Gómez y José de Buen):**
     *   Vender certidumbre operativa, soberanía de datos en nube privada y arquitectura FutureProof en lugar de "pantallas decorativas u horas hombre".
-    *   Enrutar cada llamada de descubrimiento al paquete exacto de la imagen según la madurez técnica del cliente.
+    *   Enrutar cada llamada de descubrimiento al pilar exacto según la madurez técnica y el momento de la empresa.
 
 ---
 
@@ -647,25 +651,30 @@ El mercado B2B corporativo ha madurado. Ya no compran "bolsas de horas de desarr
 1.  **Venta por horas:** Se sustituye por **Soluciones Productizadas** a precio y tiempo fijo.
 2.  **Fragmentación de Pauta (10 landings aisladas):** El error histórico de Rocketing fue crear 10 URLs independientes (`cotiza.bluepixel.mx/desarrollo-web`, `/diseno-ux-ui`, etc.) con texto plano. Esto pulverizó el presupuesto de Ads, diluyó el Quality Score y derrumbó la tasa de cierre comercial de 1:10 a 1:50 al atraer tráfico descalificado.
 
-### 5.2 La Matriz Maestra 3×3: El QUÉ (Clusters) × El CÓMO (Pilares de Colaboración)
+### 5.2 La Matriz Maestra de Colaboración: Los 4 Pilares de Servicio y las 6 Capacidades
 
-Para absorber el 100% de los servicios de BluePixel sin perder foco ni presupuesto, estructuramos una matriz comercial perfecta donde **El Dolor del Cliente (Cluster)** se conecta de inmediato con **La Forma de Contratar (Pilar)**:
+Para absorber el 100% de los servicios de BluePixel sin perder foco ni presupuesto, estructuramos una matriz comercial perfecta donde **El Momento y Dolor del Cliente** se conecta de inmediato con **Uno de los 4 Pilares de Servicio**, ejecutado a través de las **6 Capacidades Técnicas**:
 
 ```
-                              ┌────────────────────────────────────────────────────────┐
-                              │           3 FORMAS DE COLABORAR (EL CÓMO)              │
-                              │  01 Diagnóstico & Aud. │ 02 Ingeniería & Sprints │ 01+02 BUILD + EVOLVE │
-┌─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
-│ CLUSTER 1: APPS B2B         │ Auditoría Arq. & UX    │ Squad Senior Dedicado   │ Entrega en 90 días   │
-│ (/desarrollo-apps)          │ (2-4 semanas)          │ (Sprints Mensuales)     │ + SLA continuo       │
-├─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
-│ CLUSTER 2: AUTOMATIZACIÓN   │ Mapeo Fricción Procesos│ Conectores Middleware   │ Reingeniería Total   │
-│ (/automatizacion)           │ (2-4 semanas)          │ y APAs resilientes      │ End-to-End en Nube   │
-├─────────────────────────────┼────────────────────────┼─────────────────────────┼──────────────────────┤
-│ CLUSTER 3: AGENTIZACIÓN     │ Viabilidad RAG & LFPDPPP│ Agentes MCP en Prod.   │ Capa Agéntica Corp.  │
-│ (/agentizacion)             │ (2-4 semanas)          │ sobre datos reales      │ y Gobernanza Total   │
-└─────────────────────────────┴────────────────────────┴─────────────────────────┴──────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 4 PILARES OFICIALES DE SERVICIO BLUEPIXEL                              │
+├─────────────────────────┬─────────────────────────┬─────────────────────────┬──────────────────────────┤
+│ 01 · Consultoría        │ 02 · Agentes &          │ 03 · Plataformas        │ 04 · Evolución           │
+│      Digital            │      Automatización     │      Digitales          │      Digital             │
+│ ⏳ 2 a 4 Semanas        │ ⏳ 2 a 4 Semanas        │ ⏳ 3 Meses (90 días)    │ ⏳ 6 o 12 Meses          │
+├─────────────────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────┤
+│ Diagnóstico, backlog    │ Agentes autónomos MCP   │ Plataformas y MVPs con  │ Roadmap vivo, squad      │
+│ priorizado y ROI previo │ y RAG sobre stack actual│ UX validado que convierte│ continuo y CRO mensual   │
+└─────────────────────────┴─────────────────────────┴─────────────────────────┴──────────────────────────┘
 ```
+
+#### Las 6 Capacidades Técnicas que Sustentan la Entrega:
+1. **UX/UI & PS (Product Strategy):** Psicología conductual, IMPATH™ Enabled, prototipado de alta conversión.
+2. **Software Engineering:** Cloud-Native SOC2, Full Stack moderno, arquitecturas resilientes.
+3. **IA & Automatización (Agentic Automation):** Agentes autónomos, RAG privado, protocolos MCP.
+4. **Data & Analytics:** Telemetría de eventos (Mixpanel), dashboards ejecutivos y analítica conductual.
+5. **Security & Reliability (ISO 27001 & OWASP):** DevSecOps, hardening, Zero-Trust y SLA 99.9%.
+6. **CONSULTING (Digital Consulting):** FutureProof™ Framework, valuación de ROI y gobernanza tecnológica.
 
 ### 5.3 Mapeo del 100% de Servicios e Inventario de Rocketing
 
