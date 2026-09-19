@@ -117,7 +117,8 @@ const App = () => {
           <Suspense fallback={<SectionLoader />}>
             <TrustBadgesSection />
             <ThreeWaysToWork />
-            <TechnicalSovereignty />
+            {/* SECCIÓN EN RESERVA: <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.") 
+                Catalogada en AGENTS.md y 02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md */}
             <ImpathFrictionSection onOpenContact={() => scrollToForm('Consultoría Tecnológica (IMPATH)')} />
             <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
             <FAQSection />

@@ -146,3 +146,5 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
    En cada propuesta técnica o página web, contrastar la garantía FutureProof contra el modelo obsoleto de fábricas de software o agencias superficiales.
 4. **Mapeo de Capacidades en Código Web:**
    El componente `SixCapabilitiesGrid.jsx` debe reflejar exactamente estas 6 capacidades con sus badges canónicos (`IMPATH™ Enabled`, `Cloud-Native SOC2`, `Agentic Automation`, `Mixpanel Telemetry`, `ISO 27001 & OWASP`, `FutureProof™ Framework`).
+5. **Inventario de Componentes en Reserva (Soberanía Técnica):**
+   El componente `TechnicalSovereignty.jsx` (*«Tu infraestructura. Tus datos. Tu código fuente.»* - Cero Lock-in / Despliegue en VPC / Zero-Trust) ha sido retirado temporalmente del Home para aligerar la navegación, pero está preservado y catalogado en `02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md` listo para ser reutilizado en páginas de servicio enterprise (`/servicio/security`, `/automatizacion`).
