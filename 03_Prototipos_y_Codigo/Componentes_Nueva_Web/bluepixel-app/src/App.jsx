@@ -18,6 +18,7 @@ const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoT
 const PilaresLandingPage = lazy(() => import('./components/landings/PilaresLandingPage'));
 const ServiciosLandingPage = lazy(() => import('./components/landings/ServiciosLandingPage'));
 const CasosEstudioLandingPage = lazy(() => import('./components/landings/CasosEstudioLandingPage'));
+const ComponentShowcasePage = lazy(() => import('./components/landings/ComponentShowcasePage'));
 
 // 6 Servicios Individuales (Capacidades)
 const UxUiServicePage = lazy(() => import('./components/landings/services/UxUiServicePage'));
@@ -69,7 +70,7 @@ const App = () => {
         'consultoria-tecnologica', 'como-trabajamos', 'automatizacion-agentica', 'producto-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
-        'pilares', 'servicios', 'casos-de-exito'
+        'pilares', 'servicios', 'casos-de-exito', 'componentes'
       ];
       
       if (validViews.includes(hash)) {
@@ -117,9 +118,10 @@ const App = () => {
           <Suspense fallback={<SectionLoader />}>
             <TrustBadgesSection />
             <ThreeWaysToWork />
-            {/* SECCIÓN EN RESERVA: <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.") 
-                Catalogada en AGENTS.md y 02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md */}
-            <ImpathFrictionSection onOpenContact={() => scrollToForm('Consultoría Tecnológica (IMPATH)')} />
+            {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):
+                - <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.")
+                - <ImpathFrictionSection /> ("Descubre qué fricción le cuesta más dinero con IMPATH y Mixpanel")
+                Catalogadas en AGENTS.md y 02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md */}
             <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
             <FAQSection />
             <EngineeringLeadership />
@@ -186,6 +188,13 @@ const App = () => {
       ) : currentView === 'servicio/business-ai' ? (
         <Suspense fallback={<SectionLoader />}>
           <BusinessAiConsultingPage />
+        </Suspense>
+      ) : currentView === 'componentes' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <ComponentShowcasePage 
+            onNavigateCluster={navigateTo} 
+            onOpenContact={(pkg) => scrollToForm(pkg)} 
+          />
         </Suspense>
       ) : (
         <Suspense fallback={<SectionLoader />}>
