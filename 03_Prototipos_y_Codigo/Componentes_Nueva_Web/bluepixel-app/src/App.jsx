@@ -35,7 +35,6 @@ const TechnicalSovereignty = lazy(() => import('./components/sections/TechnicalS
 const ImpathFrictionSection = lazy(() => import('./components/sections/ImpathFrictionSection'));
 const CaseStudiesSection = lazy(() => import('./components/sections/CaseStudiesSection'));
 const FAQSection = lazy(() => import('./components/sections/FAQSection'));
-const HomeDirectorySection = lazy(() => import('./components/sections/HomeDirectorySection'));
 const ThreeWaysToWork = lazy(() => import('./components/sections/ThreeWaysToWork'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
@@ -117,7 +116,6 @@ const App = () => {
           
           <Suspense fallback={<SectionLoader />}>
             <TrustBadgesSection />
-            <HomeDirectorySection />
             <ThreeWaysToWork />
             <TechnicalSovereignty />
             <ImpathFrictionSection onOpenContact={() => scrollToForm('Consultoría Tecnológica (IMPATH)')} />
