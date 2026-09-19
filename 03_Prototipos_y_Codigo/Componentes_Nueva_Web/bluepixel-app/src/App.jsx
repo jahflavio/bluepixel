@@ -116,8 +116,8 @@ const App = () => {
           <SocialProofSection />
           
           <Suspense fallback={<SectionLoader />}>
-            <TrustBadgesSection />
             <ThreeWaysToWork />
+            <TrustBadgesSection />
             {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):
                 - <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.")
                 - <ImpathFrictionSection /> ("Descubre qué fricción le cuesta más dinero con IMPATH y Mixpanel")
