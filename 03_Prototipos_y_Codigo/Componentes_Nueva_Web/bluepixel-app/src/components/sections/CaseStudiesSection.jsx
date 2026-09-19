@@ -1,132 +1,216 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 
 const CaseStudiesSection = ({ onOpenCase }) => {
-      const cases = [
-        {
-          id: 'bimbo',
-          client: 'Grupo Bimbo',
-          industry: 'Consumo Masivo / Global',
-          title: 'Estandarización analítica y aplicaciones operativas para miles de colaboradores',
-          kpi: '+40%',
-          kpiLabel: 'Productividad Directiva',
-          desc: 'Diseño y desarrollo de plataformas de analítica de datos e interfaces internas para estandarizar la toma de decisiones directivas en múltiples regiones.',
-          tags: ['Data & Analytics', 'Enterprise UX', 'Custom Software'],
-          image: `${import.meta.env.BASE_URL}case4.jpg`
-        },
-        {
-          id: 'radioshack',
-          client: 'RadioShack',
-          industry: 'Retail & E-commerce',
-          title: 'Reinvención transaccional de comercio digital y reducción de fricción de compra',
-          kpi: '-60%',
-          kpiLabel: 'Fricción de Pago',
-          desc: 'Rediseño integral de la plataforma de ventas y arquitectura transaccional para optimizar conversión, reduciendo fricción cognitiva en carritos de compra.',
-          tags: ['E-Commerce', 'Mobile Apps', 'UX Redesign'],
-          image: `${import.meta.env.BASE_URL}case1.jpg`
-        },
-        {
-          id: 'lifemiles',
-          client: 'LifeMiles / Avianca',
-          industry: 'Travel & Loyalty LATAM',
-          title: 'Optimización de experiencia en uno de los mayores programas de lealtad de LATAM',
-          kpi: '+28%',
-          kpiLabel: 'Retención Digital',
-          desc: 'Rediseño de flujos críticos de usuario y pasarelas de redención para reducir abandonos y maximizar retención de clientes en entornos móviles.',
-          tags: ['Loyalty Systems', 'Behavioral UX', 'Mobile First'],
-          image: `${import.meta.env.BASE_URL}case2.jpg`
-        },
-        {
-          id: 'iqos',
-          client: 'IQOS / Philip Morris',
-          industry: 'Retail & Hardware',
-          title: 'Arquitectura de pagos y billetera digital in-app',
-          kpi: '+55%',
-          kpiLabel: 'Retención de Usuarios',
-          desc: 'Construimos la plataforma transaccional de pagos recurrentes, reduciendo fricción y aumentando el Life Time Value de los usuarios en la región.',
-          tags: ['Fintech', 'Mobile Apps', 'Payment Gateways'],
-          image: `${import.meta.env.BASE_URL}case3.jpg`
-        }
-      ];
+  const sliderRef = useRef(null);
 
-      const [active, setActive] = useState(0);
+  const cases = [
+    {
+      id: 'bimbo-data',
+      client: 'Bimbo',
+      category: 'CONSUMO MASIVO · ENTERPRISE',
+      headline: 'Arquitectura de datos que acelera la toma de decisiones a escala global.',
+      badge: '↑ Eficiencia Operacional',
+      badgeClass: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      tags: ['UX/UI Design', 'Data Visualization', 'Design Systems'],
+      image: `${import.meta.env.BASE_URL}assets/bimbo.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case4.jpg`
+    },
+    {
+      id: 'bimbo-ops',
+      client: 'Bimbo',
+      category: 'CONSUMO MASIVO · ENTERPRISE',
+      headline: 'Evolución de plataformas internas para operaciones globales.',
+      badge: '↑ Eficiencia Operacional',
+      badgeClass: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      tags: ['UX/UI Design', 'Enterprise UX', 'Design Systems'],
+      image: `${import.meta.env.BASE_URL}case4.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}assets/bimbo.jpg`
+    },
+    {
+      id: 'lifemiles',
+      client: 'Avianca / LifeMiles',
+      category: 'TRAVEL · LEALTAD · LATAM',
+      headline: 'Plataforma de lealtad rediseñada para aumentar retención y descubrimiento de beneficios.',
+      badge: '↑ Retención',
+      badgeClass: 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30',
+      tags: ['UX/UI Design', 'Web Development'],
+      image: `${import.meta.env.BASE_URL}assets/lifemiles.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case2.jpg`
+    },
+    {
+      id: 'iqos',
+      client: 'IQOS',
+      category: 'CONSUMER TECH · LATAM',
+      headline: 'Experiencia digital que impulsa el descubrimiento y la adopción del producto.',
+      badge: '✦ Adopción Digital',
+      badgeClass: 'text-cyan-400 bg-cyan-500/15 border-cyan-500/30',
+      tags: ['UX/UI Design', 'Web Development', 'Content Strategy'],
+      image: `${import.meta.env.BASE_URL}assets/iqos.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case3.jpg`
+    },
+    {
+      id: 'radioshack',
+      client: 'RadioShack',
+      category: 'RETAIL · E-COMMERCE',
+      headline: 'E-commerce de alta conversión con reducción radical de fricción en compras.',
+      badge: '↑ Conversión E-com',
+      badgeClass: 'text-orange-400 bg-orange-500/15 border-orange-500/30',
+      tags: ['UX/UI Design', 'Mobile Apps', 'E-Commerce'],
+      image: `${import.meta.env.BASE_URL}assets/radioshack.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case1.jpg`
+    }
+  ];
 
-      return (
-        <section id="casos" className="py-24 bg-[#02040A] border-t border-white/[0.08] overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-             
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-                CASOS DE ÉXITO AUDITADOS
-              </span>
-              <h2 className="mt-3 mb-4 font-black font-display tracking-tight leading-[1.15] text-3xl md:text-4xl lg:text-5xl text-white">
-                Resultados medibles a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">escala corporativa</span><span className="text-blue-500">.</span>
-              </h2>
-            </div>
- 
-            {/* Interactive Showcase Layout */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
-               
-              {/* Left Column: Navigation Tabs */}
-              <div className="lg:w-1/3 flex flex-col gap-3">
-                {cases.map((c, idx) => (
-                  <button
-                    key={c.id}
-                    onClick={() => setActive(idx)}
-                    className={`text-left p-6 rounded-2xl border transition-all duration-300 ${active === idx ? 'bg-navy-800 border-blue-500/30 shadow-[0_0_30px_-5px_rgba(59,130,246,0.15)]' : 'bg-transparent border-transparent hover:bg-white/[0.02] opacity-50 hover:opacity-100'}`}
-                  >
-                    <h3 className={`font-bold font-display text-xl mb-1 transition-colors ${active === idx ? 'text-white' : 'text-slate-400'}`}>{c.client}</h3>
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{c.industry}</p>
-                  </button>
-                ))}
-              </div>
- 
-              {/* Right Column: Deep Dive Panel */}
-              <div className="lg:w-2/3 relative h-[650px] md:h-[550px]">
-                {cases.map((c, idx) => (
-                  <div 
-                    key={c.id} 
-                    className={`absolute inset-0 h-full bg-[#060A14]/90 backdrop-blur-xl border border-white/[0.08] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col md:flex-row ${active === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}`}
-                  >
-                    
-                    {/* Left side of the card: Text Content */}
-                    <div className="relative z-20 flex flex-col h-full p-8 md:p-12 md:w-3/5">
-                      {/* KPI Section */}
-                      <div className="mb-6 border-b border-white/[0.05] pb-6">
-                         <div className={`font-black font-display text-5xl md:text-7xl tracking-tighter mb-1 transition-colors duration-700 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-orange-400' : idx === 2 ? 'text-red-400' : 'text-teal-400'}`}>
-                           {c.kpi}
-                         </div>
-                         <div className="text-slate-400 text-xs md:text-sm font-mono uppercase tracking-widest">{c.kpiLabel}</div>
-                      </div>
- 
-                      {/* Challenge & Solution */}
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">{c.title}</h4>
-                      <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
-                        {c.desc}
-                      </p>
- 
-                      {/* Footer: Tags */}
-                      <div className="mt-auto flex flex-wrap gap-2">
-                        {c.tags.map(tag => (
-                          <span key={tag} className="bg-white/[0.03] border border-white/[0.08] text-slate-300 text-[10px] px-3 py-1.5 rounded-lg uppercase tracking-wider font-semibold">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
- 
-                    {/* Right side of the card: Visual Graphic */}
-                    <div className="relative md:w-2/5 h-48 md:h-full border-t md:border-t-0 md:border-l border-white/[0.05] bg-black">
-                       <div className={`absolute inset-0 bg-gradient-to-tr opacity-20 mix-blend-screen z-10 ${idx === 0 ? 'from-blue-600' : idx === 1 ? 'from-orange-600' : idx === 2 ? 'from-red-600' : 'from-teal-600'}`}></div>
-                       <img src={c.image} alt={c.client} className="w-full h-full object-cover object-left opacity-60 mix-blend-lighten" />
-                       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-[#060A14] via-[#060A14]/80 to-transparent z-10"></div>
+  const scroll = (direction) => {
+    if (sliderRef.current) {
+      const scrollAmount = 420;
+      sliderRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleCardClick = (item) => {
+    if (onOpenCase) {
+      onOpenCase(`Caso de Estudio: ${item.client} (${item.headline})`);
+    } else {
+      window.location.hash = '#/casos-de-exito';
+    }
+  };
+
+  return (
+    <section id="casos" className="py-24 bg-[#02050A] border-t border-b border-white/[0.06] relative overflow-hidden">
+      
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/10 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-indigo-600/10 blur-[130px] pointer-events-none" />
+
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+        
+        {/* Header exact to reference */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold block mb-3">
+            CASOS DE ÉXITO
+          </span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] mb-4">
+            Resultados reales, plataformas que evolucionaron<span className="text-blue-500">.</span>
+          </h2>
+          <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            Cuatro plataformas que dejaron de estar estancadas y se convirtieron en ventaja competitiva medible.
+          </p>
+        </div>
+
+        {/* Carousel Container with Side Navigation Buttons */}
+        <div className="relative group/carousel">
+          
+          {/* Left Arrow Button */}
+          <button
+            type="button"
+            onClick={() => scroll('left')}
+            aria-label="Anterior"
+            className="absolute -left-3 md:left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#060A14]/85 hover:bg-blue-600/30 border border-white/15 hover:border-blue-500/50 text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+          >
+            <ChevronLeft className="w-6 h-6 text-slate-300 hover:text-white" strokeWidth={2.2} />
+          </button>
+
+          {/* Right Arrow Button */}
+          <button
+            type="button"
+            onClick={() => scroll('right')}
+            aria-label="Siguiente"
+            className="absolute -right-3 md:right-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#060A14]/85 hover:bg-blue-600/30 border border-white/15 hover:border-blue-500/50 text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+          >
+            <ChevronRight className="w-6 h-6 text-slate-300 hover:text-white" strokeWidth={2.2} />
+          </button>
+
+          {/* Horizontal Scrollable Slider */}
+          <div
+            ref={sliderRef}
+            className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-2 md:px-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {cases.map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                onClick={() => handleCardClick(item)}
+                className="w-[310px] sm:w-[360px] md:w-[390px] shrink-0 bg-[#060A14] border border-white/[0.08] hover:border-blue-500/40 rounded-2xl md:rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-2xl hover:shadow-blue-500/15 group cursor-pointer snap-start"
+              >
+                {/* Top Mockup Image with Floating Badge */}
+                <div className="h-56 md:h-64 w-full relative overflow-hidden bg-black/40">
+                  <img
+                    src={item.image}
+                    alt={item.client}
+                    onError={(e) => {
+                      if (item.fallbackImage && e.target.src !== item.fallbackImage) {
+                        e.target.src = item.fallbackImage;
+                      }
+                    }}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                  />
+                  
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060A14] via-transparent to-black/20 pointer-events-none" />
+
+                  {/* Top Right Floating Metric Pill */}
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wide border backdrop-blur-md shadow-lg flex items-center gap-1.5 ${item.badgeClass}`}>
+                      {item.badge}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6 md:p-7 flex flex-col flex-1 justify-between">
+                  <div>
+                    {/* Client Name */}
+                    <h3 className="text-2xl font-black text-white tracking-tight mb-1 group-hover:text-blue-400 transition-colors">
+                      {item.client}
+                    </h3>
+
+                    {/* Sector / Industry */}
+                    <p className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-semibold mb-4">
+                      {item.category}
+                    </p>
+
+                    {/* Headline Value Proposition */}
+                    <p className="text-sm text-slate-300 font-medium leading-relaxed mb-6 min-h-[44px]">
+                      {item.headline}
+                    </p>
+
+                    {/* Tags Pills */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {item.tags.map((tag, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-slate-300 group-hover:border-white/20 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                ))}
+
+                  {/* Footer Action Link */}
+                  <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono uppercase tracking-wider font-bold text-slate-400 group-hover:text-blue-400 transition-colors">
+                    <span>VER CASO</span>
+                    <span className="font-mono text-sm group-hover:translate-x-1.5 transition-transform text-blue-400">→</span>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-      );
-    };
+        </div>
+
+        {/* Bottom Helper Indicator for Mobile */}
+        <div className="text-center mt-8 md:hidden text-xs font-mono text-slate-500">
+          ← Desliza para ver más casos →
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
 export default CaseStudiesSection;
