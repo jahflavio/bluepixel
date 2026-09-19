@@ -38,3 +38,23 @@
 * **Headline Principal:** *«Estructura Técnica y Comercial»*
 * **Propósito:** Directorio visual con accesos directos a `/pilares`, `/servicios` y `/como-trabajamos`.
 * **Estado:** Retirado del Home al consolidarse los **4 Pilares de Servicio** (`ThreeWaysToWork.jsx`) directamente en la página de inicio.
+
+---
+
+### 📊 3. ImpathFrictionSection.jsx (Fricción Operativa, Mixpanel & Vault)
+* **Ubicación en Código:** [`03_Prototipos_y_Codigo/Componentes_Nueva_Web/bluepixel-app/src/components/sections/ImpathFrictionSection.jsx`](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Componentes_Nueva_Web/bluepixel-app/src/components/sections/ImpathFrictionSection.jsx)
+* **Headline Principal:**  
+  *«Descubre qué fricción le cuesta más dinero a tu plataforma con IMPATH y Mixpanel.»*
+* **Propósito:**  
+  Mapea 7 dimensiones de comportamiento de usuarios con simulación de Personas (Power User vs Casual User), monitoreo de telemetría con Mixpanel Platform Health (UX Health Score) y cuantificación de riesgo financiero en pesos con Vault.
+* **Destinos Recomendados:**  
+  * Landing de Consultoría Tecnológica (`/consultoria-tecnologica`).
+  * Propuestas de Auditoría y Diagnóstico FutureProof (Pilar 01).
+* **Estado:** Retirado del Home principal para mantener la página ágil y directa; activo y visible en el **Showroom de Componentes (`#/componentes`)**.
+
+---
+
+### 🏛️ 4. Showroom & Galería Maestra de Componentes (`#/componentes`)
+* **Ubicación en Código:** [`03_Prototipos_y_Codigo/Componentes_Nueva_Web/bluepixel-app/src/components/landings/ComponentShowcasePage.jsx`](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/03_Prototipos_y_Codigo/Componentes_Nueva_Web/bluepixel-app/src/components/landings/ComponentShowcasePage.jsx)
+* **Acceso Directo:** Navegar a `#/componentes` o dar clic en el botón `Showroom` del Navbar.
+* **Propósito:** Muestra los **18 componentes del sistema** renderizados en vivo de manera interactiva con sus metadatos (ruta de archivo, estado, caso de uso y quick-jump index).

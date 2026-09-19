@@ -90,6 +90,11 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
           <a href="#/casos-de-exito" className="hover:text-blue-400 transition-colors">
             Casos de Estudio
           </a>
+
+          <a href="#/componentes" className="inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600/20 hover:text-white transition-all">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            Showroom
+          </a>
         </div>
 
         {/* CTA */}
