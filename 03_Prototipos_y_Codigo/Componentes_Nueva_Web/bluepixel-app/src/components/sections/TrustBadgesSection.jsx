@@ -1,115 +1,72 @@
 import React, { useState } from 'react';
 
 const TrustBadgesSection = () => {
-  // Default active card is 'iso27001' as in the reference design, 
-  // but hovering over any card shifts the focus dynamically
+  // Default active card is 'iso27001' as in the reference design,
+  // hovering over any card dynamically shifts the blue glow
   const [activeCard, setActiveCard] = useState('iso27001');
+
+  const baseUrl = import.meta.env.BASE_URL || '/';
 
   const badges = [
     {
       id: 'designrush',
+      name: 'DesignRush',
       pill: '#1',
       category: 'FIRMA UX/UI #1 EN MÉXICO',
       desc: 'Reconocidos como la firma líder de diseño de experiencia de usuario en México por el directorio de referencia de la industria global.',
-      logoRender: () => (
-        <div className="flex items-center gap-2.5">
-          {/* DesignRush flame icon with 3 dots */}
-          <div className="flex flex-col items-center justify-center shrink-0">
-            <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
-              <path 
-                d="M12 2C12 7.5 17.5 9.5 17.5 14C17.5 17 15 19.5 12 19.5C9 19.5 6.5 17 6.5 14C6.5 9.5 12 7.5 12 2Z" 
-                fill="currentColor" 
-              />
-            </svg>
-            <div className="flex gap-1 mt-1">
-              <span className="w-1 h-1 rounded-full bg-white"></span>
-              <span className="w-1 h-1 rounded-full bg-white"></span>
-              <span className="w-1 h-1 rounded-full bg-white"></span>
-            </div>
-          </div>
-          <span className="text-base md:text-lg font-black tracking-widest text-white font-sans uppercase">
-            DESIGNRUSH
-          </span>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/designrush.png`,
+      logoAlt: 'DesignRush',
+      logoHeight: 'h-6 sm:h-7',
     },
     {
       id: 'clutch',
+      name: 'Clutch',
       pill: 'VERIFICADO',
       category: 'REVIEWS VERIFICADOS DE CLIENTES',
       desc: 'Evaluaciones reales de clientes enterprise que documentan calidad de entrega, comunicación e impacto en el negocio.',
-      logoRender: () => (
-        <div className="flex items-baseline">
-          <span className="text-2xl md:text-3xl font-black tracking-tight text-white font-serif">
-            Clutch
-          </span>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/clutch.png`,
+      logoAlt: 'Clutch',
+      logoHeight: 'h-6 sm:h-7',
     },
     {
       id: 'aws',
+      name: 'AWS',
       pill: 'PARTNER',
       category: 'CLOUD PARTNER',
       desc: 'Infraestructura cloud certificada en la plataforma más confiable del mundo.',
-      logoRender: () => (
-        <div className="flex flex-col items-start leading-none select-none">
-          <span className="text-2xl md:text-3xl font-black tracking-tight text-white lowercase font-sans">
-            aws
-          </span>
-          <svg className="w-11 h-3 text-white -mt-0.5" viewBox="0 0 50 14" fill="none">
-            <path d="M2 3C14 12 36 12 48 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-            <path d="M43 2L48 3L46 8" fill="currentColor" />
-          </svg>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/aws_white.svg`,
+      logoAlt: 'Amazon Web Services',
+      logoHeight: 'h-7 sm:h-8',
     },
     {
       id: 'cybervadis',
+      name: 'CyberVadis',
       pill: 'AUDITADO',
       category: 'SEGURIDAD CERTIFICADA',
       desc: 'Buenas prácticas de seguridad verificadas por auditoría independiente.',
-      logoRender: () => (
-        <div className="flex items-center">
-          <span className="text-xl md:text-2xl font-bold tracking-tight text-white lowercase font-sans">
-            cybervadis
-          </span>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/cybervadis.png`,
+      logoAlt: 'CyberVadis',
+      logoHeight: 'h-5 sm:h-6',
     },
     {
       id: 'scrumstudy',
+      name: 'SCRUMstudy',
       pill: 'CERTIFICADOS',
       category: 'METODOLOGÍA ÁGIL',
       desc: 'Equipos certificados en metodologías ágiles de desarrollo y producto.',
-      logoRender: () => (
-        <div className="flex items-center gap-2.5">
-          <div className="flex flex-col items-center shrink-0">
-            <div className="w-5 h-5 rounded-full border border-white/70 flex items-center justify-center text-[10px] font-bold text-white">
-              ✓
-            </div>
-            <div className="flex gap-1 -mt-0.5">
-              <div className="w-0.5 h-1.5 bg-white/70 -rotate-12"></div>
-              <div className="w-0.5 h-1.5 bg-white/70 rotate-12"></div>
-            </div>
-          </div>
-          <div className="text-sm md:text-base font-bold text-white tracking-tight">
-            SCRUM<span className="font-light text-slate-300">study</span>
-          </div>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/scrumstudy.png`,
+      logoAlt: 'SCRUMstudy',
+      logoHeight: 'h-8 sm:h-9',
     },
     {
       id: 'iso27001',
+      name: 'ISO 27001',
       pill: 'PRÓXIMAMENTE',
       category: 'SEGURIDAD DE DATOS',
       desc: 'Cumplimiento del estándar internacional de gestión de seguridad de la información.',
-      logoRender: () => (
-        <div className="flex items-center">
-          <span className="text-xl md:text-2xl font-bold tracking-wider text-white font-sans">
-            ISO 27001
-          </span>
-        </div>
-      )
+      logoSrc: `${baseUrl}assets/logos/iso27001.png`,
+      logoAlt: 'ISO 27001',
+      logoHeight: 'h-5 sm:h-6',
     }
   ];
 
@@ -166,10 +123,15 @@ const TrustBadgesSection = () => {
                     />
                   )}
 
-                  {/* Top Row: Brand Logo + Verified/Status Pill */}
+                  {/* Top Row: Official Brand Logo + Status Pill */}
                   <div className="flex items-center justify-between mb-8 relative z-10">
-                    <div className="h-8 flex items-center">
-                      {item.logoRender()}
+                    <div className="h-9 flex items-center">
+                      <img 
+                        src={item.logoSrc} 
+                        alt={item.logoAlt} 
+                        className={`${item.logoHeight} w-auto object-contain object-left select-none`}
+                        loading="eager"
+                      />
                     </div>
                     <span 
                       className={`text-[10px] md:text-[11px] font-mono tracking-wider px-3 py-0.5 rounded-full border transition-colors ${
