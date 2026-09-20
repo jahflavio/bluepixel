@@ -1,64 +1,172 @@
 import React, { useState } from 'react';
 
 const FAQSection = () => {
-      const faqs = [
-        {
-          q: "¿Quién es dueño de la Propiedad Intelectual (código, datos y prompts)?",
-          a: "Ustedes. Al 100%. No usamos sus datos para entrenar modelos públicos ni retenemos derechos sobre la infraestructura que construimos. Todo el stack tecnológico se despliega en su nube privada (AWS, Azure o GCP) y es auditado por su equipo de seguridad antes del pase a producción."
-        },
-        {
-          q: "¿Cuánto tiempo toma llevar un agente de IA a producción real?",
-          a: "A diferencia de PoCs eternas, nuestra metodología de despliegue asegura un Agente MVP funcional en 4 a 6 semanas. Las semanas 7 a 12 se enfocan exclusivamente en hardening (seguridad, manejo de excepciones y escalabilidad) para un pase a producción libre de fricción."
-        },
-        {
-          q: "¿Qué modelos usan bajo el capó? ¿Están atados a OpenAI?",
-          a: "Somos completamente agnósticos. Diseñamos plataformas enrutables (Router-based AI). Usamos Claude 3.5 Sonnet para tareas complejas de razonamiento lógico, GPT-4o para parsing estructurado, o modelos Llama 3 on-premise si sus políticas de gobernanza de datos exigen aislamiento total."
-        },
-        {
-          q: "¿No podemos hacer esto internamente con nuestro equipo de ingeniería?",
-          a: "Construir aplicaciones SaaS tradicionales es muy distinto a orquestar agentes no-determinísticos. Su equipo domina su negocio y su código base; nosotros aportamos los patrones arquitectónicos exclusivos de IA (Graph-state, Vector DBs, Model Context Protocol) para no reinventar la rueda y evitar sobrecostos ocultos."
-        },
-        {
-          q: "¿Cuál es la diferencia entre BluePixel y una consultora de IA o una fábrica de software?",
-          a: "Las consultoras de IA pura (equipos de Python y ML) construyen algoritmos potentes pero interfaces toscas que el 70% de los empleados termina abandonando para volver a Excel. Las fábricas de software entregan código que funciona técnicamente pero nadie quiere usar. BluePixel es la única firma en México que fusiona ambas disciplinas: ingeniería de agentes en producción con 6 años de maestría en psicología de adopción humana. El resultado: sistemas que operan y que la gente realmente usa."
-        }
-      ];
-      
-      const [openIdx, setOpenIdx] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('todos');
+  const [openIdx, setOpenIdx] = useState(0); // First question open by default for immediate preview
 
-      return (
-        <section className="py-24 bg-[#02040A] relative border-t border-white/[0.05]">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-black tracking-widest uppercase mb-4">
-                Transparencia Técnica
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black font-display tracking-tight text-white mb-6">
-                Respuestas para líderes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">tecnología</span><span className="text-blue-500">.</span>
-              </h2>
-            </div>
-            
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="border border-white/[0.08] bg-[#060A14] rounded-2xl overflow-hidden transition-all duration-300 hover:border-white/[0.15]">
-                  <button 
-                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                    className="w-full text-left px-6 py-6 flex items-center justify-between focus:outline-none"
-                  >
-                    <span className={`text-lg font-bold pr-8 transition-colors ${openIdx === idx ? 'text-white' : 'text-slate-300'}`}>{faq.q}</span>
-                    <span className={`text-blue-400 flex-shrink-0 transform transition-transform duration-300 ${openIdx === idx ? 'rotate-180' : ''}`}>
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                    </span>
-                  </button>
-                  <div className={`px-6 overflow-hidden transition-all duration-300 ${openIdx === idx ? 'max-h-64 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <p className="text-slate-400 leading-relaxed mt-2">{faq.a}</p>
+  const categories = [
+    { id: 'todos', label: 'Todas las preguntas' },
+    { id: 'pilares', label: 'Los 4 Pilares de Servicio' },
+    { id: 'ingenieria', label: 'Ingeniería & Agentes IA' },
+    { id: 'seguridad', label: 'Seguridad, IP & Soberanía' }
+  ];
+
+  const faqs = [
+    {
+      category: 'pilares',
+      q: "¿Cómo se contrata a BluePixel? ¿Es obligatorio pasar por los 4 pilares en secuencia?",
+      a: "No. Los 4 pilares son completamente modulares e independientes. Un prospecto puede contratar directamente cualquiera de las 4 opciones según su necesidad: entrar por 01 · Consultoría Digital (2-4 sem) para validar el ROI antes de codificar; contratar directamente 02 · Agentes & Automatización (2-4 sem) para integrar IA sobre su ERP actual; contratar 03 · Plataformas Digitales (90 días) para lanzar un producto desde cero; o sumarse a 04 · Evolución Digital con un squad extendido continuo. No existe un ciclo lineal forzado."
+    },
+    {
+      category: 'pilares',
+      q: "¿Cuánto tiempo toma llevar una solución a producción en cada pilar?",
+      a: "Nuestros plazos están contractualmente garantizados: 01 · Consultoría Digital se entrega en 2 a 4 semanas (diagnóstico IMPATH™, cálculo de ROI y arquitectura recomendada); 02 · Agentes & Automatización se despliega en 2 a 4 semanas (agentes productivos conectados a SAP/Salesforce); 03 · Plataformas Digitales toma 3 meses (90 días exactos de concepción a producción con UX validado); y 04 · Evolución Digital opera mediante roadmaps vivos a 6 o 12 meses con entregas continuas cada sprint."
+    },
+    {
+      category: 'ingenieria',
+      q: "¿Cómo garantizan que los agentes de IA (Pilar 02) no alucinen ni cometan errores financieros?",
+      a: "Implementamos una arquitectura estrictamente determinística basada en el Model Context Protocol (MCP) y RAG privado sobre sus bases de datos corporativas reales. Los agentes no operan con 'creatividad abierta': solo ejecutan acciones contra endpoints verificados (SAP, Salesforce, ERPs, APIs bancarias) aplicando las reglas de negocio preaprobadas. Si un dato no existe en las fuentes oficiales o hay una anomalía, el sistema no inventa información y escala de inmediato a un supervisor humano (human-in-the-loop)."
+    },
+    {
+      category: 'pilares',
+      q: "¿Cómo logran construir una Plataforma Digital (Pilar 03) de cero a producción en 90 días?",
+      a: "Validamos antes de codificar. A través de Product Strategy (PS) y nuestra metodología propietaria IMPATH™, prototipamos y validamos la experiencia con usuarios reales antes de quemar capital en infraestructura. Construimos sobre arquitecturas modulares desacopladas y cloud-native (React, TypeScript, Node.js/Python, PostgreSQL), con design systems limpios sin deuda técnica, pruebas automatizadas y despliegue productivo con SLA empresarial de 99.9%."
+    },
+    {
+      category: 'pilares',
+      q: "¿Cómo funciona el acompañamiento en el Pilar 04 (Evolución Digital) y qué perfiles integran el squad?",
+      a: "Operamos como su equipo tecnológico extendido bajo un modelo de retainer con gobernanza trimestral. Un squad multidisciplinario dedicado (Tech Lead, AI Engineer, Senior Full Stack Developer y UX/CRO Specialist) asume la plataforma para monitorear permanentemente el UX Health Score (usabilidad, latencia, estabilidad y conversión), reduciendo deuda técnica y evolucionando el backlog según los objetivos financieros de su negocio."
+    },
+    {
+      category: 'seguridad',
+      q: "¿Quién es dueño de la Propiedad Intelectual, el código fuente y los datos?",
+      a: "Ustedes. Al 100% desde el primer día. Todo el código fuente, la propiedad intelectual y los modelos se despliegan en su propia nube privada (AWS, Azure o GCP en su VPC). Cero vendor lock-in: bajo nuestra filosofía FutureProof™, los sistemas se construyen sobre protocolos abiertos, permitiéndoles cambiar de modelo de lenguaje o proveedor cloud mediante configuración sin rehacer la plataforma. Jamás utilizamos sus datos corporativos para entrenar modelos públicos."
+    },
+    {
+      category: 'seguridad',
+      q: "¿Qué certificaciones y blindaje de seguridad aplican a los sistemas?",
+      a: "Diseñamos sistemas con blindaje de grado empresarial alineados estrictamente con estándares internacionales ISO 27001 y las mejores prácticas de mitigación de vulnerabilidades de OWASP Top 10. Implementamos arquitecturas Zero-Trust, cifrado de datos en reposo y en tránsito, trazabilidad de ejecuciones agénticas y cumplimiento riguroso de la regulación de protección de datos (LFPDPPP)."
+    },
+    {
+      category: 'ingenieria',
+      q: "¿Cuál es la diferencia entre BluePixel y una fábrica de software tradicional ('maquila') o una consultora de IA pura?",
+      a: "Las consultoras de IA pura construyen algoritmos potentes pero interfaces toscas que el 70% de los usuarios abandona para volver a Excel. Las fábricas de software tradicionales facturan horas-hombre a ciegas entregando código genérico que no convierte. BluePixel rompió esa frontera: entregamos más de 10 años de ingeniería cloud-native y blindaje corporativo, vestidos con la psicología conductual y el diseño UX de más alta conversión del mercado, garantizando más del 95% de adopción desde el primer release."
+    },
+    {
+      category: 'ingenieria',
+      q: "¿Por qué no podemos desarrollar estas soluciones internamente con nuestro equipo de ingeniería?",
+      a: "Su equipo conoce a fondo la lógica de su negocio. Sin embargo, orquestar flujos agénticos no-determinísticos, bases vectoriales, servidores MCP y microservicios resilientes requiere patrones arquitectónicos altamente especializados. BluePixel actúa como un catalizador que acelera su roadmap de 18 meses a 90 días, evitando sobrecostos de infraestructura y transfiriendo conocimiento, buenas prácticas y documentación limpia a su equipo interno al concluir."
+    }
+  ];
+
+  const filteredFaqs = activeCategory === 'todos' 
+    ? faqs 
+    : faqs.filter(f => f.category === activeCategory);
+
+  return (
+    <section id="faq" className="py-24 bg-[#02040A] relative border-t border-white/[0.06] overflow-hidden">
+      {/* Subtle background ambient light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-600/5 blur-[160px] pointer-events-none rounded-full" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono font-bold tracking-widest uppercase mb-4">
+            Transparencia Radical & Los 4 Pilares
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white mb-5 leading-tight">
+            Respuestas para líderes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">tecnología y directores</span><span className="text-blue-500">.</span>
+          </h2>
+          <p className="text-sm md:text-base text-slate-400 font-normal leading-relaxed">
+            Certidumbre técnica, financiera y legal: tiempos de entrega, soberanía de datos y cómo colaborar a través de nuestros 4 pilares modulares.
+          </p>
+        </div>
+
+        {/* Category Filters / Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => {
+                setActiveCategory(cat.id);
+                setOpenIdx(null);
+              }}
+              className={`px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all duration-200 border ${
+                activeCategory === cat.id
+                  ? 'bg-blue-600/20 text-blue-300 border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.2)]'
+                  : 'bg-[#060A14] text-slate-400 border-white/[0.06] hover:text-white hover:border-white/20'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+        
+        {/* FAQ Accordion List */}
+        <div className="space-y-3.5">
+          {filteredFaqs.map((faq, idx) => {
+            const isOpen = openIdx === idx;
+
+            return (
+              <div 
+                key={idx} 
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                  isOpen
+                    ? 'border-blue-500/40 bg-[#060D1E] shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
+                    : 'border-white/[0.07] bg-[#050811] hover:border-white/[0.16] hover:bg-[#070C18]'
+                }`}
+              >
+                <button 
+                  onClick={() => setOpenIdx(isOpen ? null : idx)}
+                  className="w-full text-left px-6 py-5 md:py-6 flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                  aria-expanded={isOpen}
+                >
+                  <span className={`text-base md:text-lg font-bold transition-colors pr-2 leading-snug ${
+                    isOpen ? 'text-white' : 'text-slate-200'
+                  }`}>
+                    {faq.q}
+                  </span>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border transition-all duration-300 ${
+                    isOpen 
+                      ? 'border-blue-500/50 bg-blue-500/20 text-blue-300 rotate-180' 
+                      : 'border-white/10 bg-white/[0.03] text-slate-400'
+                  }`}>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="pt-2 border-t border-white/[0.06]">
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                      {faq.a}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    };
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Context Callout */}
+        <div className="mt-12 text-center">
+          <p className="text-xs text-slate-500 font-mono">
+            ¿Tienes un requerimiento de arquitectura o cumplimiento específico?{' '}
+            <a href="#contacto" className="text-blue-400 hover:text-blue-300 underline underline-offset-4">
+              Agenda una llamada técnica con nuestro Tech Lead
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
 export default React.memo(FAQSection);
