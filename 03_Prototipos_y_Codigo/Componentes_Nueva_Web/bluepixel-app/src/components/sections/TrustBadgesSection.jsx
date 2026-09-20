@@ -1,78 +1,71 @@
 import React, { useState } from 'react';
 
-const TrustBadgesSection = () => {
-  // Default active card is 'iso27001' as in the reference design,
-  // hovering over any card dynamically shifts the blue glow
-  const [activeCard, setActiveCard] = useState('iso27001');
+// Official SVG vector logos from the Lovable application
+import designrushSvg from '../../assets/logos/designrush.svg';
+import clutchSvg from '../../assets/logos/clutch.svg';
+import awsSvg from '../../assets/logos/aws.svg';
+import cybervadisSvg from '../../assets/logos/cybervadis.svg';
+import scrumstudySvg from '../../assets/logos/scrumstudy.svg';
 
-  const baseUrl = import.meta.env.BASE_URL || '/';
+const TrustBadgesSection = () => {
+  // ISO 27001 is the default highlighted card as in the reference design;
+  // hovering over any card dynamically shifts the blue neon glow
+  const [activeCard, setActiveCard] = useState('iso27001');
 
   const badges = [
     {
       id: 'designrush',
       name: 'DesignRush',
       pill: '#1',
-      category: 'FIRMA UX/UI #1 EN MÉXICO',
+      category: 'Firma UX/UI #1 en México',
       desc: 'Reconocidos como la firma líder de diseño de experiencia de usuario en México por el directorio de referencia de la industria global.',
-      logoSrc: `${baseUrl}assets/logos/designrush.png`,
-      logoAlt: 'DesignRush',
-      logoHeight: 'h-6 sm:h-7',
+      logoSrc: designrushSvg,
     },
     {
       id: 'clutch',
       name: 'Clutch',
-      pill: 'VERIFICADO',
-      category: 'REVIEWS VERIFICADOS DE CLIENTES',
+      pill: 'Verificado',
+      category: 'Reviews verificados de clientes',
       desc: 'Evaluaciones reales de clientes enterprise que documentan calidad de entrega, comunicación e impacto en el negocio.',
-      logoSrc: `${baseUrl}assets/logos/clutch.png`,
-      logoAlt: 'Clutch',
-      logoHeight: 'h-6 sm:h-7',
+      logoSrc: clutchSvg,
     },
     {
       id: 'aws',
       name: 'AWS',
-      pill: 'PARTNER',
-      category: 'CLOUD PARTNER',
+      pill: 'Partner',
+      category: 'Cloud Partner',
       desc: 'Infraestructura cloud certificada en la plataforma más confiable del mundo.',
-      logoSrc: `${baseUrl}assets/logos/aws_white.svg`,
-      logoAlt: 'Amazon Web Services',
-      logoHeight: 'h-7 sm:h-8',
+      logoSrc: awsSvg,
     },
     {
       id: 'cybervadis',
       name: 'CyberVadis',
-      pill: 'AUDITADO',
-      category: 'SEGURIDAD CERTIFICADA',
+      pill: 'Auditado',
+      category: 'Seguridad Certificada',
       desc: 'Buenas prácticas de seguridad verificadas por auditoría independiente.',
-      logoSrc: `${baseUrl}assets/logos/cybervadis.png`,
-      logoAlt: 'CyberVadis',
-      logoHeight: 'h-5 sm:h-6',
+      logoSrc: cybervadisSvg,
     },
     {
       id: 'scrumstudy',
       name: 'SCRUMstudy',
-      pill: 'CERTIFICADOS',
-      category: 'METODOLOGÍA ÁGIL',
+      pill: 'Certificados',
+      category: 'Metodología Ágil',
       desc: 'Equipos certificados en metodologías ágiles de desarrollo y producto.',
-      logoSrc: `${baseUrl}assets/logos/scrumstudy.png`,
-      logoAlt: 'SCRUMstudy',
-      logoHeight: 'h-8 sm:h-9',
+      logoSrc: scrumstudySvg,
     },
     {
       id: 'iso27001',
       name: 'ISO 27001',
-      pill: 'PRÓXIMAMENTE',
-      category: 'SEGURIDAD DE DATOS',
+      pill: 'Próximamente',
+      category: 'Seguridad de Datos',
       desc: 'Cumplimiento del estándar internacional de gestión de seguridad de la información.',
-      logoSrc: `${baseUrl}assets/logos/iso27001.png`,
-      logoAlt: 'ISO 27001',
-      logoHeight: 'h-5 sm:h-6',
+      logoSrc: null, // Renders as typographic titlemark per official design
     }
   ];
 
   return (
     <section className="py-20 md:py-28 px-4 sm:px-6 bg-[#02050E] relative overflow-hidden">
-      {/* Ambient Blue Backlight Glow matching reference image */}
+      {/* Ambient Blue Backlight Glow */}
       <div 
         className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/15 blur-[160px] pointer-events-none rounded-full" 
       />
@@ -84,7 +77,7 @@ const TrustBadgesSection = () => {
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-medium text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-light text-white tracking-tight leading-tight">
             Respaldados por estándares líderes de la industria
           </h2>
         </div>
@@ -98,7 +91,6 @@ const TrustBadgesSection = () => {
             {badges.map((item, idx) => {
               const isActive = activeCard === item.id;
               
-              // Grid border divider classes:
               // Desktop (lg): 3 cols -> col 0,1 get right border; row 0,1,2 get bottom border
               const lgBorderRight = (idx % 3 !== 2) ? 'lg:border-r border-white/[0.08]' : '';
               const lgBorderBottom = (idx < 3) ? 'lg:border-b border-white/[0.08]' : '';
@@ -123,18 +115,24 @@ const TrustBadgesSection = () => {
                     />
                   )}
 
-                  {/* Top Row: Official Brand Logo + Status Pill */}
+                  {/* Top Row: Official SVG Brand Logo + Status Pill */}
                   <div className="flex items-center justify-between mb-8 relative z-10">
-                    <div className="h-9 flex items-center">
-                      <img 
-                        src={item.logoSrc} 
-                        alt={item.logoAlt} 
-                        className={`${item.logoHeight} w-auto object-contain object-left select-none`}
-                        loading="eager"
-                      />
+                    <div className="h-7 flex items-center">
+                      {item.logoSrc ? (
+                        <img 
+                          src={item.logoSrc} 
+                          alt={`${item.name} logo`} 
+                          className="h-full w-auto max-w-[132px] object-contain select-none opacity-90 group-hover:opacity-100 transition-opacity"
+                          loading="eager"
+                        />
+                      ) : (
+                        <span className="font-display font-light text-white text-xl sm:text-2xl tracking-tight">
+                          {item.name}
+                        </span>
+                      )}
                     </div>
                     <span 
-                      className={`text-[10px] md:text-[11px] font-mono tracking-wider px-3 py-0.5 rounded-full border transition-colors ${
+                      className={`font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] rounded-full px-2.5 py-0.5 border transition-colors ${
                         isActive
                           ? 'border-blue-400/50 text-blue-300 bg-blue-500/15'
                           : 'border-white/20 text-slate-300 bg-white/[0.03]'
@@ -146,10 +144,10 @@ const TrustBadgesSection = () => {
 
                   {/* Content Section: Category Subtitle + Description */}
                   <div className="relative z-10 flex-1 flex flex-col justify-end">
-                    <div className="text-[10px] md:text-[11px] font-mono uppercase tracking-widest text-slate-400 font-semibold mb-3">
+                    <div className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-400 font-semibold mb-2.5">
                       {item.category}
                     </div>
-                    <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
