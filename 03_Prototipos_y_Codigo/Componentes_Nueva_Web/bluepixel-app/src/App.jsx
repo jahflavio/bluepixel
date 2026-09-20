@@ -30,6 +30,7 @@ const BusinessAiConsultingPage = lazy(() => import('./components/landings/servic
 
 // Below the fold sections - lazy loaded for optimal performance
 const TrustBadgesSection = lazy(() => import('./components/sections/TrustBadgesSection'));
+const IndustriesImpactSection = lazy(() => import('./components/sections/IndustriesImpactSection'));
 const WorkflowTeardown = lazy(() => import('./components/sections/WorkflowTeardown'));
 const AgenticTechStack = lazy(() => import('./components/sections/AgenticTechStack'));
 const TechnicalSovereignty = lazy(() => import('./components/sections/TechnicalSovereignty'));
@@ -118,6 +119,7 @@ const App = () => {
           <Suspense fallback={<SectionLoader />}>
             <ThreeWaysToWork />
             <TrustBadgesSection />
+            <IndustriesImpactSection onSelectIndustryCase={(client) => scrollToForm(client)} />
             {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):
                 - <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.")
                 - <ImpathFrictionSection /> ("Descubre qué fricción le cuesta más dinero con IMPATH y Mixpanel")
