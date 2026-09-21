@@ -1,6 +1,45 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  AlertTriangle, 
+  CheckCircle2, 
+  Cpu, 
+  Database, 
+  ShieldAlert, 
+  TrendingDown, 
+  Users, 
+  Flame, 
+  ZapOff 
+} from 'lucide-react';
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
+
+const renderPainIcon = (iconType) => {
+  switch (iconType) {
+    case 'monolith':
+      return <Cpu className="w-5 h-5 text-red-400" />;
+    case 'ai-lock':
+    case 'silos-data':
+      return <Database className="w-5 h-5 text-amber-400" />;
+    case 'cloud-waste':
+    case 'roi-blind':
+      return <TrendingDown className="w-5 h-5 text-red-400" />;
+    case 'users-drop':
+    case 'funnel-leak':
+      return <Users className="w-5 h-5 text-orange-400" />;
+    case 'security-breach':
+    case 'compliance-fail':
+    case 'ai-leak':
+      return <ShieldAlert className="w-5 h-5 text-red-400" />;
+    case 'board-pressure':
+    case 'competitor-threat':
+      return <Flame className="w-5 h-5 text-amber-400" />;
+    case 'bot-rigid':
+    case 'pilot-fail':
+      return <ZapOff className="w-5 h-5 text-amber-400" />;
+    default:
+      return <AlertTriangle className="w-5 h-5 text-red-400" />;
+  }
+};
 
 // Motor de temas cromáticos por clave de servicio
 const THEME_CONFIG = {
@@ -345,28 +384,95 @@ const ServiceLandingTemplate = ({ data }) => {
         </section>
       )}
 
-      {/* 4. PAIN POINTS */}
+      {/* 4. PAIN POINTS & ANTIDOTES */}
       {data.painPoints && (
-        <section className="py-24 border-b border-white/[0.08] bg-[#050A17]">
-          <div className="max-w-7xl mx-auto px-6">
-            <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-4 ${theme.accentText}`}>
-              {data.painPoints.eyebrow}
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-12 max-w-3xl text-white">
-              {data.painPoints.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
-            </h2>
+        <section className="py-24 border-b border-white/[0.08] bg-[#050A17] relative overflow-hidden">
+          {/* Ambient subtle glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-red-600/5 blur-[160px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10 text-left">
+            <div className="max-w-3xl mb-14">
+              <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-3 ${theme.accentText}`}>
+                {data.painPoints.eyebrow}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                {data.painPoints.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
+              </h2>
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {data.painPoints.items.map((item, idx) => (
-                <div key={idx} className="bg-[#02040A] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:border-red-500/30 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 text-xl font-black">
-                    ✕
+                <div 
+                  key={idx} 
+                  className="bg-gradient-to-b from-[#080E24] to-[#030612] border border-white/[0.08] hover:border-red-500/30 rounded-3xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-2xl relative overflow-hidden group"
+                >
+                  {/* Subtle top ambient indicator */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/30 via-amber-500/20 to-transparent group-hover:from-red-500 group-hover:via-amber-500 transition-all duration-500"></div>
+
+                  <div>
+                    {/* Top Row: Contextual Icon & Severity Pill */}
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <div className="w-11 h-11 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shadow-inner">
+                        {renderPainIcon(item.iconType)}
+                      </div>
+                      {item.tag && (
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-red-400 font-bold px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20">
+                          {item.tag}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Problem Title */}
+                    <h3 className="text-xl font-bold text-white leading-tight mb-3 group-hover:text-red-300 transition-colors">
+                      {item.title}
+                    </h3>
+
+                    {/* Problem Description */}
+                    <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                      {item.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+
+                  {/* Antidote Block */}
+                  {item.antidote && (
+                    <div className="pt-4 border-t border-white/[0.08] mt-2">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1.5 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span>El Antídoto BluePixel:</span>
+                      </div>
+                      <p className="text-xs text-slate-200 font-medium leading-relaxed bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-3">
+                        {item.antidote}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
+
+            {/* Cost of Inaction Bottom Strip */}
+            {data.painPoints.costOfInaction && (
+              <div className="mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-r from-red-500/10 via-amber-500/10 to-transparent border border-red-500/20 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0 mt-1">
+                    <AlertTriangle className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono uppercase tracking-widest text-red-400 font-bold mb-1">
+                      ✦ Impacto Financiero del Costo de Inacción
+                    </div>
+                    <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-3xl">
+                      {data.painPoints.costOfInaction}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => scrollToFormWithPackage(data.packageName)}
+                  className="shrink-0 px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-lg shadow-red-600/25 cursor-pointer whitespace-nowrap"
+                >
+                  Evitar este costo ahora →
+                </button>
+              </div>
+            )}
           </div>
         </section>
       )}

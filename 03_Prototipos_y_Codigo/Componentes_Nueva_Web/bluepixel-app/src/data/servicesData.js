@@ -55,10 +55,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — El problema del diseño genérico',
       title: 'Tu plataforma es robusta, pero nadie quiere usarla.',
+      costOfInaction: 'El 70% de los proyectos de software corporativo fallan por falta de adopción de usuarios, no por fallas de código. El diseño conductual IMPATH™ asegura adopción inmediata.',
       items: [
-        { title: 'Baja adopción de usuarios', desc: 'Invertiste millones en un sistema que tu equipo o tus clientes evitan usar porque es confuso, anticuado o requiere manuales eternos.' },
-        { title: 'Fricción en flujos críticos', desc: 'Tus tasas de conversión caen en el momento del pago, registro o aprobación porque el usuario no sabe qué hacer a continuación.' },
-        { title: 'Deuda técnica de diseño', desc: 'El producto creció parchando pantallas sin un sistema de diseño estructurado, volviéndolo imposible y costoso de escalar.' }
+        {
+          tag: 'ADOPCIÓN COMPROMETIDA',
+          iconType: 'users-drop',
+          title: 'Baja adopción de usuarios',
+          desc: 'Invertiste millones en un sistema que tu equipo o tus clientes evitan usar porque es confuso, anticuado o requiere manuales eternos.',
+          antidote: 'Psicología conductual IMPATH™ y arquitectura de información validada con usuarios reales antes de programar.'
+        },
+        {
+          tag: 'FUGA EN CONVERSIÓN',
+          iconType: 'funnel-leak',
+          title: 'Fricción en flujos críticos',
+          desc: 'Tus tasas de conversión caen en el momento del pago, registro o aprobación porque el usuario no sabe qué hacer a continuación.',
+          antidote: 'Auditoría forense de fricción cognitiva y rediseño de embudos con micro-interacciones de alta conversión.'
+        },
+        {
+          tag: 'INFLACIÓN DE COSTOS',
+          iconType: 'design-debt',
+          title: 'Deuda técnica de diseño',
+          desc: 'El producto creció parchando pantallas sin un sistema de diseño estructurado, volviéndolo imposible y costoso de escalar.',
+          antidote: 'Design System empresarial centralizado en Figma con tokens sincronizados directamente a código React/Tailwind.'
+        }
       ]
     },
     matrix: {
@@ -210,10 +229,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Los retos de la infraestructura moderna',
       title: 'El software legado está frenando tu capacidad de innovar.',
+      costOfInaction: 'El 72% del presupuesto de ingeniería en empresas consolidadas se quema en apagar fuegos de software legado. Nosotros modernizamos de forma modular sin frenar tu operación.',
       items: [
-        { title: 'Deuda técnica inmanejable', desc: 'Tu código actual es un monolito frágil; agregar una nueva función rompe tres partes del sistema y retrasa los lanzamientos.' },
-        { title: 'Incompatibilidad con IA', desc: 'Quieres implementar agentes o machine learning, pero tus datos están atrapados en silos o bases de datos no estructuradas para IA.' },
-        { title: 'Costos de nube fuera de control', desc: 'Estás pagando fortunas en infraestructura cloud mal configurada que no escala de manera elástica ante picos de demanda.' }
+        {
+          tag: 'BLOQUEO DE TIME-TO-MARKET',
+          iconType: 'monolith',
+          title: 'Deuda técnica inmanejable',
+          desc: 'Tu código actual es un monolito frágil; agregar una nueva función rompe tres partes del sistema y retrasa los lanzamientos.',
+          antidote: 'Arquitectura desacoplada, microservicios independientes y pipelines CI/CD automatizados con pruebas de regresión.'
+        },
+        {
+          tag: 'SILOS DE DATOS',
+          iconType: 'ai-lock',
+          title: 'Incompatibilidad con IA',
+          desc: 'Quieres implementar agentes o machine learning, pero tus datos están atrapados en silos o bases de datos no estructuradas para IA.',
+          antidote: 'Capa de integración determinística vía protocolo abierto MCP y bases vectoriales RAG sin tocar tu core transaccional.'
+        },
+        {
+          tag: 'FUGA DE CAPITAL CLOUD',
+          iconType: 'cloud-waste',
+          title: 'Costos de nube fuera de control',
+          desc: 'Estás pagando fortunas en infraestructura cloud mal configurada que no escala de manera elástica ante picos de demanda.',
+          antidote: 'Arquitectura Cloud-Native Serverless con contenedores Docker/Kubernetes y auto-scaling elástico bajo demanda.'
+        }
       ]
     },
     matrix: {
@@ -365,10 +403,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Dónde se estanca la automatización',
       title: 'La IA se aprueba en el consejo. Rara vez llega a producción.',
+      costOfInaction: 'Un equipo de 15 analistas pierde más del 40% de su jornada copiando y pegando datos entre pantallas. Los agentes autónomos devuelven cientos de horas de capacidad operativa.',
       items: [
-        { title: 'Aprobación sin ejecución técnica', desc: 'La dirección aprueba "hacer algo con IA", pero nadie traduce esa aprobación en agentes que realmente operen sobre la operación diaria.' },
-        { title: 'Automatización superficial', desc: 'Se automatiza lo fácil y visible con bots rígidos, mientras el proceso que de verdad cuesta caro sigue dependiendo de personas y Excels.' },
-        { title: 'Pilotos que no escalan', desc: 'Existe un demo de agente que funcionó en la presentación, pero nunca se conectó a los datos transaccionales reales del ERP/CRM.' }
+        {
+          tag: 'BRECHA DE EJECUCIÓN',
+          iconType: 'board-pressure',
+          title: 'Aprobación sin ejecución técnica',
+          desc: 'La dirección aprueba "hacer algo con IA", pero nadie traduce esa aprobación en agentes que realmente operen sobre la operación diaria.',
+          antidote: 'Pase a producción en 2 a 4 semanas de agentes autónomos transaccionales conectados a tus APIs reales.'
+        },
+        {
+          tag: 'JUGUETES CONVERSACIONALES',
+          iconType: 'bot-rigid',
+          title: 'Automatización superficial',
+          desc: 'Se automatiza lo fácil y visible con bots rígidos, mientras el proceso que de verdad cuesta caro sigue dependiendo de personas y Excels.',
+          antidote: 'Agentes autónomos con razonamiento multi-paso, RAG privado y capacidad de modificar registros con confirmación.'
+        },
+        {
+          tag: 'PROTOTIPOS HUÉRFANOS',
+          iconType: 'pilot-fail',
+          title: 'Pilotos que no escalan',
+          desc: 'Existe un demo de agente que funcionó en la presentación, pero nunca se conectó a los datos transaccionales reales del ERP/CRM.',
+          antidote: 'Servidores MCP estandarizados que conectan los agentes a SAP, Salesforce o bases SQL en tu propia VPC.'
+        }
       ]
     },
     matrix: {
@@ -520,10 +577,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — El caos de los datos corporativos',
       title: 'Mucha información dispersa, ninguna respuesta clara.',
+      costOfInaction: 'Tomar decisiones comerciales con datos desfasados de 3 semanas cuesta millones en inventario mal asignado o churn no detectado.',
       items: [
-        { title: 'Silos de información desconectados', desc: 'Ventas mira Salesforce, finanzas el ERP y marketing otra plataforma; los números nunca cuadran al final del trimestre.' },
-        { title: 'Reportes manuales en hojas de cálculo', desc: 'Tu equipo pasa 40 horas al mes descargando, cruzando y parchando tablas estáticas propensas a errores humanos costosos.' },
-        { title: 'Incapacidad predictiva', desc: 'Solo ves lo que ya pasó (visión por retrovisor), pero no cuentas con modelos para anticipar demanda, retención o fuga de clientes.' }
+        {
+          tag: 'DISCREPANCIA DIRECTIVA',
+          iconType: 'silos-data',
+          title: 'Silos de información desconectados',
+          desc: 'Ventas mira Salesforce, finanzas el ERP y marketing otra plataforma; los números nunca cuadran al final del trimestre.',
+          antidote: 'Modern Data Stack unificado con pipelines de datos automatizados y diccionario único de métricas de negocio.'
+        },
+        {
+          tag: 'HORAS HOMBRE QUEMADAS',
+          iconType: 'excel-hell',
+          title: 'Reportes manuales en hojas de cálculo',
+          desc: 'Tu equipo pasa 40 horas al mes descargando, cruzando y parchando tablas estáticas propensas a errores humanos costosos.',
+          antidote: 'Telemetría de producto Mixpanel en tiempo real y tableros directivos automatizados que se actualizan al segundo.'
+        },
+        {
+          tag: 'VISIÓN POR RETROVISOR',
+          iconType: 'blind-spot',
+          title: 'Incapacidad predictiva',
+          desc: 'Solo ves lo que ya pasó (visión por retrovisor), pero no cuentas con modelos para anticipar demanda, retención o fuga de clientes.',
+          antidote: 'Modelos predictivos de machine learning entrenados sobre tus datos para alertas tempranas de churn y demanda.'
+        }
       ]
     },
     matrix: {
@@ -675,10 +751,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Riesgos invisibles',
       title: 'El precio oculto del crecimiento desordenado.',
+      costOfInaction: 'El costo promedio de una filtración de datos en LATAM supera los $2.8M USD, además del daño irreparable a la reputación corporativa y contratos bloqueados.',
       items: [
-        { title: 'Vulnerabilidades de código no detectadas', desc: 'Aplicaciones desarrolladas con urgencia que dejan puertas abiertas a inyecciones SQL, autenticación rota o ataques XSS.' },
-        { title: 'Falta de cumplimiento (ISO 27001 / SOC2)', desc: 'Estás perdiendo contratos corporativos de alto valor porque no puedes demostrar que los datos de tus clientes están blindados.' },
-        { title: 'Fugas en implementaciones de IA', desc: 'El riesgo inminente de que empleados envíen datos confidenciales de la empresa a herramientas públicas o que un agente filtre secretos.' }
+        {
+          tag: 'PUERTAS TRASERAS',
+          iconType: 'security-breach',
+          title: 'Vulnerabilidades de código no detectadas',
+          desc: 'Aplicaciones desarrolladas con urgencia que dejan puertas abiertas a inyecciones SQL, autenticación rota o ataques XSS.',
+          antidote: 'Auditoría exhaustiva OWASP Top 10, escaneo estático/dinámico (SAST/DAST) y DevSecOps automatizado en CI/CD.'
+        },
+        {
+          tag: 'CONTRATOS BLOQUEADOS',
+          iconType: 'compliance-fail',
+          title: 'Falta de cumplimiento (ISO 27001 / SOC2)',
+          desc: 'Estás perdiendo contratos corporativos de alto valor porque no puedes demostrar que los datos de tus clientes están blindados.',
+          antidote: 'Arquitectura Zero-Trust, cifrado KMS de grado bancario y alineación documental completa para SOC2 e ISO 27001.'
+        },
+        {
+          tag: 'FUGA DE SECRETOS',
+          iconType: 'ai-leak',
+          title: 'Fugas en implementaciones de IA',
+          desc: 'El riesgo inminente de que empleados envíen datos confidenciales de la empresa a herramientas públicas o que un agente filtre secretos.',
+          antidote: 'Filtros DLP (Data Loss Prevention), enmascaramiento de PII y despliegue de modelos en VPC privada sin salida a internet público.'
+        }
       ]
     },
     matrix: {
@@ -830,10 +925,29 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — La desorientación ejecutiva frente a la IA',
       title: 'Mucho ruido comercial, poca claridad sobre el impacto financiero real.',
+      costOfInaction: 'Gastar cientos de miles de dólares en iniciativas de IA teóricas que no mueven el P&L es la forma más rápida de quemar capital sin generar ventaja competitiva.',
       items: [
-        { title: 'Presión del Consejo por "usar IA"', desc: 'Los accionistas exigen modernización tecnológica, pero el equipo directivo no sabe por dónde empezar sin gastar a ciegas.' },
-        { title: 'Miedo a quedar obsoletos ante la competencia', desc: 'Tus competidores anuncian automatizaciones y sientes que la ventaja competitiva de tu empresa se erosiona sin una ruta clara.' },
-        { title: 'Proyectos desalineados del flujo de caja', desc: 'El área de TI lanza pilotos entretenidos pero que no resuelven ningún cuello de botella crítico del P&L o de los costos operativos.' }
+        {
+          tag: 'PRESIÓN DEL BOARD',
+          iconType: 'board-pressure',
+          title: 'Presión del Consejo por "usar IA"',
+          desc: 'Los accionistas exigen modernización tecnológica, pero el equipo directivo no sabe por dónde empezar sin gastar a ciegas.',
+          antidote: 'Diagnóstico de 2 a 4 semanas con business case matemático, valuación del costo de inacción y ROI proyectado por épica.'
+        },
+        {
+          tag: 'VENTAJA EROSIONADA',
+          iconType: 'competitor-threat',
+          title: 'Miedo a quedar obsoletos ante la competencia',
+          desc: 'Tus competidores anuncian automatizaciones y sientes que la ventaja competitiva de tu empresa se erosiona sin una ruta clara.',
+          antidote: 'FutureProof™ Framework: priorización estricta del backlog por impacto financiero y time-to-market agresivo.'
+        },
+        {
+          tag: 'CAPITAL DESPERDICIADO',
+          iconType: 'roi-blind',
+          title: 'Proyectos desalineados del flujo de caja',
+          desc: 'El área de TI lanza pilotos entretenidos pero que no resuelven ningún cuello de botella crítico del P&L o de los costos operativos.',
+          antidote: 'Roadmap ejecutivo trimestral alineado al EBITDA que condiciona cada sprint de desarrollo a un retorno medible.'
+        }
       ]
     },
     matrix: {
