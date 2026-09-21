@@ -12,6 +12,7 @@ import ClusterLandingPage from './components/clusters/ClusterLandingPage';
 const ConsultoriaLandingPage = lazy(() => import('./components/landings/ConsultoriaLandingPage'));
 const AutomatizacionLandingPage = lazy(() => import('./components/landings/AutomatizacionLandingPage'));
 const ProductoDigitalLandingPage = lazy(() => import('./components/landings/ProductoDigitalLandingPage'));
+const EvolucionLandingPage = lazy(() => import('./components/landings/EvolucionLandingPage'));
 const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
 
 // Directorios Centrales (Hubs)
@@ -68,7 +69,10 @@ const App = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
       const validViews = [
         'apps', 'automatizacion', 'agentizacion', 
-        'consultoria-tecnologica', 'automatizacion-agentica', 'producto-digital',
+        'consultoria-tecnologica', 'consultoria-digital', 'pilar/consultoria-digital',
+        'automatizacion-agentica', 'agentes-automatizacion', 'pilar/agentes-automatizacion',
+        'producto-digital', 'plataformas-digitales', 'pilar/plataformas-digitales',
+        'evolucion-digital', 'pilar/evolucion-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
         'servicios', 'casos-de-exito', 'componentes'
@@ -188,17 +192,21 @@ const App = () => {
             />
           </Suspense>
         </>
-      ) : currentView === 'consultoria-tecnologica' ? (
+      ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital') ? (
         <Suspense fallback={<SectionLoader />}>
           <ConsultoriaLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : currentView === 'automatizacion-agentica' ? (
+      ) : (currentView === 'automatizacion-agentica' || currentView === 'agentes-automatizacion' || currentView === 'pilar/agentes-automatizacion') ? (
         <Suspense fallback={<SectionLoader />}>
           <AutomatizacionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : currentView === 'producto-digital' ? (
+      ) : (currentView === 'producto-digital' || currentView === 'plataformas-digitales' || currentView === 'pilar/plataformas-digitales') ? (
         <Suspense fallback={<SectionLoader />}>
           <ProductoDigitalLandingPage onNavigateCluster={navigateTo} />
+        </Suspense>
+      ) : (currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital') ? (
+        <Suspense fallback={<SectionLoader />}>
+          <EvolucionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
       ) : currentView === 'pilares' ? (
         <Suspense fallback={<SectionLoader />}>

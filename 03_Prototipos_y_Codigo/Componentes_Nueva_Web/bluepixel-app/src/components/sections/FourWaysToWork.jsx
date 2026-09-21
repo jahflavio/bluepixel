@@ -311,7 +311,7 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
               </div>
 
               {/* Footer Area */}
-              <div className="px-8 pb-8 relative z-10">
+              <div className="px-8 pb-8 relative z-10 flex flex-col gap-3">
                 <div className={`bg-[#0C101A] border border-white/5 rounded-xl p-4 flex items-start gap-3 relative overflow-hidden ${phase.hoverFooterBorder} transition-all min-h-[84px]`}>
                   <div className={`absolute inset-0 bg-gradient-to-r ${phase.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}></div>
                   <div className={`w-1.5 h-1.5 rounded-full ${phase.dot} mt-1.5 shrink-0 relative z-10`}></div>
@@ -320,6 +320,22 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                     <div className="text-slate-400 text-xs mt-1">{phase.footerDesc}</div>
                   </div>
                 </div>
+
+                <a
+                  href={
+                    phase.num === '01' 
+                      ? '#/consultoria-tecnologica' 
+                      : phase.num === '02' 
+                        ? '#/automatizacion-agentica' 
+                        : phase.num === '03' 
+                          ? '#/producto-digital' 
+                          : '#/evolucion-digital'
+                  }
+                  className="flex items-center justify-between text-xs font-mono text-blue-400 hover:text-white px-3.5 py-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all group/link"
+                >
+                  <span className="font-semibold">Conocer este pilar a fondo</span>
+                  <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                </a>
               </div>
             </div>
           ))}
