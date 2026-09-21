@@ -183,6 +183,73 @@ export const pillarsData = {
         { value: '100%', label: 'Aprobación del business case ante el Comité Directivo' }
       ]
     },
+    financialCallout: {
+      eyebrow: 'IMPACTO FINANCIERO DEL COSTO DE INACCIÓN (COI)',
+      title: 'El costo oculto de programar a ciegas: $1.2M MXN en código desechable.',
+      desc: 'El 68% de las iniciativas de software corporativo en LATAM fracasan o exceden su presupuesto en más de 2.5x porque los equipos arrancan programando sin auditar deuda técnica previa ni validar la fricción en el P&L. Nuestro diagnóstico de 2 a 4 semanas detiene la hemorragia de capital antes de comprometer presupuestos mayores.',
+      exampleLabel: 'Caso típico evaluado',
+      exampleText: 'Empresa B2B invirtió $2.4M MXN en un portal con 80% de abandono. Con IMPATH™ en 3 semanas se identificó que solo 2 integraciones resolvían el 85% de las operaciones, ahorrando $1.8M MXN en refactorizaciones innecesarias.'
+    },
+    cycle: {
+      eyebrow: 'EL CICLO DE CERTEZA PREVIA',
+      title: 'Metodología estructurada de 5 pasos para blindar tu inversión.',
+      desc: 'Validar antes de codificar: convertimos la incertidumbre operativa en un business case matemáticamente defendible ante el Consejo Directivo.',
+      steps: [
+        { icon: '🔍', name: 'Discovery & P&L', desc: 'Alineación de objetivos de negocio con directores y cuantificación de pérdidas operativas.' },
+        { icon: '🧠', name: 'IMPATH™ Audit', desc: 'Mapeo forense de fricción cognitiva y operativa en los flujos críticos de usuario.' },
+        { icon: '🛡️', name: 'Deuda & Cloud', desc: 'Inspección de código, arquitectura de bases de datos, APIs y vulnerabilidades OWASP.' },
+        { icon: '📊', name: 'TCO & Payback', desc: 'Modelado financiero de costos de infraestructura, inferencia y retorno a 12/36 meses.' },
+        { icon: '🚀', name: 'Board Presentation', desc: 'Entrega del Blueprint técnico agnóstico y Backlog priorizado listo para ejecutar.' }
+      ]
+    },
+    plans: {
+      eyebrow: 'MODALIDADES DE DIAGNÓSTICO',
+      title: 'Tres niveles de certidumbre según el momento de tu empresa.',
+      subtitle: 'Elige el alcance óptimo para evaluar y blindar tu proyecto antes de comprometer presupuestos mayores.',
+      items: [
+        {
+          horizon: '2 Semanas',
+          name: 'SPRINT DISCOVERY',
+          desc: 'Para empresas con una plataforma existente que necesita validación rápida de fricción y viabilidad técnica.',
+          features: [
+            'Mapeo de fricción de usuarios con metodología IMPATH™',
+            'Auditoría heurística de pantallas y flujos críticos',
+            'Diagnóstico preliminar de deuda técnica y cuellos de botella',
+            'Dictamen de viabilidad técnica y estimación de tiempos'
+          ],
+          cta: 'Solicitar Sprint Discovery',
+          featured: false
+        },
+        {
+          horizon: '4 Semanas',
+          name: 'ARCHITECTURE & BUSINESS CASE',
+          badge: 'MÁS SOLICITADO · CONSEJO DIRECTIVO',
+          desc: 'El diagnóstico integral definitivo para justificar y blindar inversiones de software de mediana y gran escala.',
+          features: [
+            'Todo lo del Sprint Discovery',
+            'Blueprint de Arquitectura Cloud-Native desacoplada (Zero Lock-In)',
+            'Modelado financiero de TCO a 3 años y cálculo del Costo de Inacción (COI)',
+            'Backlog priorizado por impacto en EBITDA y retorno de inversión',
+            'Presentación ejecutiva defendible ante el Consejo / Board'
+          ],
+          cta: 'Solicitar Business Case Completo',
+          featured: true
+        },
+        {
+          horizon: '4 Semanas',
+          name: 'SECURITY & DUE DILIGENCE',
+          desc: 'Para corporativos o fondos de inversión que requieren auditoría exhaustiva de seguridad, código y compliance.',
+          features: [
+            'Auditoría profunda de seguridad alineada a ISO 27001 y OWASP Top 10',
+            'Escaneo estático y dinámico de vulnerabilidades y dependencias',
+            'Revisión de contratos de datos y cumplimiento LFPDPPP',
+            'Dictamen formal de Due Diligence técnica para comités de riesgo'
+          ],
+          cta: 'Solicitar Due Diligence Técnica',
+          featured: false
+        }
+      ]
+    },
     bridge: {
       eyebrow: 'De la Estrategia a la Producción',
       title: 'Claridad previa antes de comprometer capital.',
@@ -374,6 +441,73 @@ export const pillarsData = {
         { value: '1.8 seg', label: 'Generación de cotización formal COFEPRIS' },
         { value: '0.5 seg', label: 'Sincronización determinística con el ERP actual' },
         { value: '100%', label: 'Rescate de órdenes de guardia nocturna 24/7' }
+      ]
+    },
+    financialCallout: {
+      eyebrow: 'ROI DETERMINÍSTICO EN AUTOMATIZACIÓN AGÉNTICA',
+      title: 'De 40 horas semanales a 1.8 segundos: Automatización sobre lo que ya tienes.',
+      desc: 'Los chatbots tradicionales solo responden textos planos; los agentes autónomos de BluePixel ejecutan transacciones reales sobre tu ERP, CRM y core de negocio vía protocolo abierto MCP sin obligarte a migrar sistemas legados.',
+      exampleLabel: 'Caso real medido en producción',
+      exampleText: 'FR Medical Quirúrgico: Triage NLP nocturno de urgencias y cotización oficial COFEPRIS en 1.8 segundos, sincronizado con su ERP en 0.5s con 0 llamadas perdidas a las 2:00 AM.'
+    },
+    cycle: {
+      eyebrow: 'CICLO DETERMINÍSTICO AGÉNTICO',
+      title: '5 pasos de ingeniería para poner agentes autónomos en producción.',
+      desc: 'Cero alucinaciones, cero fuga de datos y total soberanía en tu propia nube privada.',
+      steps: [
+        { icon: '🗺️', name: 'Mapeo de Flujos', desc: 'Identificación de reglas de negocio, endpoints transaccionales y permisos de acceso.' },
+        { icon: '🧠', name: 'RAG Privado', desc: 'Ingesta de datos corporativos en base vectorial cifrada con citas y trazabilidad.' },
+        { icon: '🔌', name: 'Servidores MCP', desc: 'Conexión determinística mediante Model Context Protocol a tus sistemas actuales (SAP, Salesforce).' },
+        { icon: '🛡️', name: 'Guardrails & DLP', desc: 'Blindaje contra prompt injection, enmascaramiento de PII y filtros de seguridad OWASP.' },
+        { icon: '⚡', name: 'Go-Live en VPC', desc: 'Despliegue productivo en tu nube privada con telemetría en tiempo real y Human-in-the-Loop.' }
+      ]
+    },
+    plans: {
+      eyebrow: 'MODALIDADES DE AUTOMATIZACIÓN AGÉNTICA',
+      title: 'Planes modulares para integrar IA sobre tu infraestructura actual.',
+      subtitle: 'Desde un agente quirúrgico en 2 semanas hasta una orquestación multi-agente para toda tu operación.',
+      items: [
+        {
+          horizon: '2 Semanas',
+          name: 'SINGLE AGENT MCP',
+          desc: 'Ideal para automatizar un proceso operativo crítico de alta fricción o rescate de leads/órdenes.',
+          features: [
+            '1 Agente Autónomo especializado en un flujo transaccional',
+            'Conector MCP determinístico hacia 1 sistema clave (ERP, CRM o API)',
+            'RAG Privado sobre documentación operativa base',
+            'Panel de control Human-in-the-Loop para supervisión de decisiones'
+          ],
+          cta: 'Desplegar Agente en 2 Semanas',
+          featured: false
+        },
+        {
+          horizon: '4 Semanas',
+          name: 'MULTI-AGENT ORCHESTRATION',
+          badge: 'MÁS SOLICITADO · ALTO IMPACTO',
+          desc: 'Para empresas que buscan transformar un departamento completo con orquestación multi-agente coordinada.',
+          features: [
+            'Orquestación de 2 a 3 agentes colaborativos (Triage, Conciliación, Notificación)',
+            'Múltiples servidores MCP conectados (SAP + Salesforce + WhatsApp/Slack)',
+            'RAG Privado avanzado con búsqueda híbrida y citación determinística',
+            'Guardrails de seguridad enterprise (Anti-Prompt Injection & DLP PII)',
+            'Dashboard ejecutivo de telemetría de horas ahorradas y tasa de éxito'
+          ],
+          cta: 'Desplegar Orquestación en 4 Semanas',
+          featured: true
+        },
+        {
+          horizon: '8 Semanas',
+          name: 'ENTERPRISE AGENTIC MESH',
+          desc: 'Para corporativos con requerimientos de alta disponibilidad, múltiples nubes y compliance regulatorio.',
+          features: [
+            'Malla agéntica distribuida multi-departamento con conmutación por falla',
+            'Despliegue 100% On-Premise o VPC privada aislada (Zero-Trust)',
+            'Auditoría criptográfica de cada decisión y llamada de herramientas',
+            'Capacitación técnica al equipo interno y SLA 99.9% de resiliencia'
+          ],
+          cta: 'Diseñar Malla Agéntica Enterprise',
+          featured: false
+        }
       ]
     },
     bridge: {
