@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BluePixel · Arquitectura Visual, Sitemap y Flujos de Conversión 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #050814;
+      --bg-card: #0c1224;
+      --bg-card-hover: #131b35;
+      --border-color: rgba(56, 189, 248, 0.15);
+      --border-active: rgba(56, 189, 248, 0.6);
+      --primary-cyan: #38bdf8;
+      --accent-blue: #2563eb;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-pink: #ec4899;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, rgba(12, 18, 36, 0.95) 0%, rgba(5, 8, 20, 0.85) 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo span {
+      color: var(--primary-cyan);
+    }
+
+    .brand-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary-cyan);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .badge-status {
+      font-size: 0.8rem;
+      color: var(--accent-emerald);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .badge-status::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Top Nav Pills */
+    .nav-tabs-wrapper {
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      min-width: max-content;
+      background: var(--bg-card);
+      padding: 0.4rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .nav-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--primary-cyan);
+      color: #030712;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Tab Content Cards */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .card-title-group h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-title-group p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 0.3rem;
+    }
+
+    .card-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .chip-cyan {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .chip-emerald {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .chip-amber {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .chip-purple {
+      background: rgba(168, 85, 247, 0.12);
+      color: var(--accent-purple);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    /* Diagram Canvas */
+    .diagram-container {
+      background: #030611;
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .diagram-container svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Details Grid below diagram */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .detail-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .detail-box h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .detail-box p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .detail-box .quote {
+      font-style: italic;
+      color: var(--primary-cyan);
+      border-left: 2px solid var(--primary-cyan);
+      padding-left: 0.75rem;
+      margin-top: 0.3rem;
+    }
+
+    /* Table styles for Matrix */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: #090e1f;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Pillars banner */
+    .pillars-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--primary-cyan);
+      transform: translateY(-2px);
+    }
+
+    .pillar-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--primary-cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .pillar-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0.3rem 0;
+      color: #fff;
+    }
+
+    .pillar-time {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      background: rgba(56, 189, 248, 0.1);
+      border-radius: 4px;
+      color: var(--primary-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      background: #030611;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      header {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-wrap">
+      <div class="brand-logo">
+        BLUE<span>PIXEL</span>
+      </div>
+      <span class="brand-tag">B2B Strategy & Architecture 2026</span>
+    </div>
+    <div class="header-actions">
+      <span class="badge-status">Arquitectura Determinística & Anti-Maquila</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 4 Pillars quick overview banner -->
+    <div class="pillars-summary-grid">
+      <div class="pillar-card">
+        <span class="pillar-num">Pilar 01</span>
+        <h3 class="pillar-title">Consultoría Digital</h3>
+        <span class="pillar-time">⏳ 2 a 4 Semanas</span>
+        <p class="pillar-desc">Diagnóstico IMPATH™, cálculo de ROI proyectado y valuación del costo de inacción.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">Pilar 02</span>
+        <h3 class="pillar-title">Agentes & Automatización</h3>
+        <span class="pillar-time">⏳ 2 a 4 Semanas</span>
+        <p class="pillar-desc">Agentic RAG privado y sincronización ERP/CRM vía MCP sin tocar la base previa.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">Pilar 03</span>
+        <h3 class="pillar-title">Plataformas Digitales</h3>
+        <span class="pillar-time">⏳ 2 a 4 Meses</span>
+        <p class="pillar-desc">Construcción y lanzamiento de MVPs corporativos con UX validado y SLA 99.9%.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">Pilar 04</span>
+        <h3 class="pillar-title">Evolución Digital</h3>
+        <span class="pillar-time">⏳ 6 a 12 Meses</span>
+        <p class="pillar-desc">Squad dedicado senior, reducción de deuda técnica y monitoreo de UX Health Score™.</p>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs-wrapper">
+      <ul class="nav-tabs" role="tablist">
+        <li><button class="nav-tab-btn active" data-tab="tab-sitemap">🗺️ Sitemap Maestro (URLs)</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-macro">📊 Macro-Embudo Multicanal</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-sem">🎯 Campañas SEM & Landings</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f1">👔 1. CTO / VP Ingeniería</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f2">⚙️ 2. COO / CFO (ERP)</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f3">🏛️ 3. CEO / Dirección General</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f4">📚 4. Orgánico / Citas IA</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f5">🚀 5. Tráfico Google Ads</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f6">🔄 6. Retargeting (Agenda)</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f7">📄 7. LinkedIn Document Ads</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f8">💬 8. WhatsApp B2B (+52)</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-f9">📈 9. Expansión (Pilar 03 ➔ 04)</button></li>
+        <li><button class="nav-tab-btn" data-tab="tab-matriz">🛡️ Matriz de Fricciones</button></li>
+      </ul>
+    </div>
+
+    <!-- TAB 1: SITEMAP MAESTRO -->
+    <div class="tab-content active" id="tab-sitemap">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🗺️ Árbol Arquitectónico del Sitemap Maestro</h2>
+            <p>Estructura jerárquica de 5 niveles que preserva 164 URLs de blog histórico y habilita ecosistema B2B de alta conversión.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-cyan">Dominio: bluepixel.mx</span>
+            <span class="chip chip-emerald">257 URLs Indexables</span>
+            <span class="chip chip-amber">Landings /lp/ noindex</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef root fill:#050a19,stroke:#38bdf8,stroke-width:2.5px,color:#fff;
+    classDef proto fill:#0f172a,stroke:#94a3b8,stroke-width:1.5px,color:#e2e8f0;
+    classDef pub fill:#0c4a6e,stroke:#0284c7,stroke-width:1.5px,color:#f0f9ff;
+    classDef pilar fill:#1e1b4b,stroke:#818cf8,stroke-width:1.5px,color:#e0e7ff;
+    classDef cap fill:#172554,stroke:#3b82f6,stroke-width:1.5px,color:#eff6ff;
+    classDef sem fill:#451a03,stroke:#f97316,stroke-width:2px,color:#fff7ed;
+    classDef blog fill:#064e3b,stroke:#10b981,stroke-width:1.5px,color:#ecfdf5;
+    classDef legal fill:#312e81,stroke:#a5b4fc,stroke-width:1px,color:#e0e7ff;
+
+    BP["🌐 bluepixel.mx<br/>(Dominio Principal)"]:::root
+
+    %% Nivel 0
+    BP --> N0["🤖 Nivel 0: Protocolos & Motores IA"]:::proto
+    N0 --> R1["/robots.txt<br/>(Reglas GPTBot, ClaudeBot, Perplexity)"]:::proto
+    N0 --> R2["/sitemap.xml<br/>(Sincronizado a GSC y Bing Webmaster)"]:::proto
+    N0 --> R3["/llms.txt<br/>(Ontología B2B para Motores de IA)"]:::proto
+
+    %% Nivel 1
+    BP --> N1["🏛️ Nivel 1: Ecosistema Público & SEO (Indexable)"]:::pub
+    N1 --> H["/ (Home Page Institucional)<br/>Terminal Agéntica · Trust Badges · SLA"]:::pub
+    
+    N1 --> P["/pilares (4 Formas de Trabajar)"]:::pilar
+    P --> P1["/pilares/consultoria-digital<br/>(2 a 4 Semanas · ROI)"]:::pilar
+    P --> P2["/pilares/agentes-automatizacion<br/>(2 a 4 Semanas · RAG & MCP)"]:::pilar
+    P --> P3["/pilares/plataformas-digitales<br/>(2 a 4 Meses · MVP 99.9% SLA)"]:::pilar
+    P --> P4["/pilares/evolucion-digital<br/>(Roadmap 6-12 Meses · Squad)"]:::pilar
+
+    N1 --> S["/servicios (6 Capabilities Técnicas)"]:::cap
+    S --> S1["/servicios/ux-ui-product-strategy"]:::cap
+    S --> S2["/servicios/software-engineering"]:::cap
+    S --> S3["/servicios/agentic-ai-automation"]:::cap
+    S --> S4["/servicios/data-analytics"]:::cap
+    S --> S5["/servicios/security-reliability"]:::cap
+    S --> S6["/servicios/digital-consulting"]:::cap
+
+    N1 --> B["/blueprints (Biblioteca de Casos Técnicos)"]:::pub
+    B --> B1["/blueprints/conciliacion-financiera-erp"]:::pub
+    B --> B2["/blueprints/triage-documental-rag"]:::pub
+    B --> B3["/blueprints/onboarding-legal-kyc"]:::pub
+    B --> B4["/blueprints/sistemas-operativos-quirurgicos"]:::pub
+
+    N1 --> C["/casos-de-estudio (Evidence Hub)"]:::pub
+    C --> C1["/casos-de-estudio/radioshack"]:::pub
+    C --> C2["/casos-de-estudio/fr-medical"]:::pub
+    C --> C3["/casos-de-estudio/grupo-bimbo"]:::pub
+    C --> C4["/casos-de-estudio/morada-uno"]:::pub
+
+    N1 --> M["/metodologia-impath"]:::pub
+    N1 --> N["/nosotros (Squad Senior Anti-Maquila)"]:::pub
+    N1 --> CT["/contacto (Formulario Calificado)"]:::pub
+
+    %% Nivel 2: Pauta Privada
+    BP --> N2["🎯 Nivel 2: Landings Pauta (/lp/)<br/>noindex, nofollow · QS 10/10"]:::sem
+    N2 --> LP1["/lp/desarrollo-apps-enterprise<br/>(Google Search C1 ➔ Pilar 03)"]:::sem
+    N2 --> LP2["/lp/automatizacion-procesos-erp<br/>(Google Search C2 ➔ Pilar 02)"]:::sem
+    N2 --> LP3["/lp/agentes-ia-produccion<br/>(Google Search C3 ➔ MCP)"]:::sem
+    N2 --> LP4["/lp/blueprint-conciliacion-financiera<br/>(LinkedIn Document Ad)"]:::sem
+    N2 --> LP5["/lp/diagnostico-operativo-futureproof<br/>(Retargeting Display/LinkedIn)"]:::sem
+    N2 --> LP6["/lp/gracias-pauta<br/>(Pixel Conversión Google/LinkedIn)"]:::sem
+
+    %% Nivel 3: Blog 1:1
+    BP --> N3["📚 Nivel 3: Blog Histórico Preservado 1:1<br/>164 URLs · Fuente de Leads & Citas IA"]:::blog
+    N3 --> BL1["/es/blog/* (84 URLs en Español)"]:::blog
+    N3 --> BL2["/post/* (80 URLs en Inglés)"]:::blog
+
+    %% Nivel 4: Legal
+    BP --> N4["⚖️ Nivel 4: Legal & Transaccional"]:::legal
+    N4 --> L1["/gracias (Confirmación Orgánica)"]:::legal
+    N4 --> L2["/privacidad (LFPDPPP México)"]:::legal
+    N4 --> L3["/terminos (Condiciones Enterprise)"]:::legal
+          </pre>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-box">
+            <h4>🛡️ Preservación del Blog</h4>
+            <p>164 slugs canónicos congelados en <code>/es/blog/</code> y <code>/post/</code>. Cero 404s para proteger 21 leads orgánicos y citas en LLMs.</p>
+          </div>
+          <div class="detail-box">
+            <h4>🤖 AEO / GEO Habilitado</h4>
+            <p>Archivo <code>/llms.txt</code> activo y sitemap sincronizado en Bing Webmaster Tools (el motor detrás de ChatGPT Search).</p>
+          </div>
+          <div class="detail-box">
+            <h4>🎯 Pauta Hermética</h4>
+            <p>Landings en <code>/lp/*</code> con directiva <code>noindex, nofollow</code> para aislar tráfico pagado y alcanzar Quality Score 10/10.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: MACRO EMBUDO -->
+    <div class="tab-content" id="tab-macro">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>📊 Macro-Embudo Multicanal y Arquitectura de Conversión</h2>
+            <p>Mapeo integral de canales de entrada, experiencias en sitio y destinos de calificación comercial en el CRM.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-cyan">Multi-Canal B2B</span>
+            <span class="chip chip-emerald">Lead Scoring 100 pts</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef canal fill:#0f172a,stroke:#38bdf8,stroke-width:1.5px,color:#f8fafc;
+    classDef exp fill:#1e1b4b,stroke:#818cf8,stroke-width:1.5px,color:#e0e7ff;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    subgraph "CANALES DE ENTRADA"
+        E1["Google Search (Orgánico) / Citaciones LLMs"]:::canal
+        E2["Google Ads (Búsqueda SEM Exacta)"]:::canal
+        E3["LinkedIn Ads (Document Ads / InMail)"]:::canal
+        E4["Tráfico Directo / Marca / Referral C-Level"]:::canal
+        E5["Remarketing Multi-Canal (Google & LinkedIn)"]:::canal
+    end
+
+    subgraph "EXPERIENCIA EN SITIO / LANDINGS"
+        F1["Flujo 1: CTO / Arquitecto Técnico<br/>(Home ➔ Capabilities ➔ Soberanía ➔ Agenda)"]:::exp
+        F2["Flujo 2: COO / CFO Operaciones<br/>(LP ERP ➔ Teardown ➔ Calculadora ➔ Formulario)"]:::exp
+        F3["Flujo 3: CEO / Decisor Estratégico<br/>(Home ➔ IMPATH ➔ 4 Pilares ➔ Diagnóstico)"]:::exp
+        F4["Flujo 4: Investigador Orgánico / AEO<br/>(Blog 1:1 ➔ Blueprint Gated ➔ Nurturing)"]:::exp
+        F5["Flujo 5: Tráfico SEM Hermético<br/>(LP noindex ➔ Quality Score 10 ➔ SQL)"]:::exp
+        F6["Flujo 6: Reactivación Leads Tibios<br/>(LP Retargeting ➔ Agenda Directa 30 min)"]:::exp
+    end
+
+    subgraph "CONVERSIÓN COMERCIAL (CRM)"
+        C1["SQL Calificado con gclid / UTMs Inyectados"]:::conv
+        C2["Lead Corporativo en Nurturing a 90 Días"]:::conv
+        C3["Sesión de 30 min en Calendario con Lead Architect"]:::conv
+    end
+
+    E1 --> F4
+    E2 --> F5
+    E3 --> F2
+    E4 --> F1
+    E4 --> F3
+    E5 --> F6
+
+    F1 --> C3
+    F2 --> C1
+    F3 --> C1
+    F4 --> C2
+    F5 --> C1
+    F6 --> C3
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: CAMPAÑAS SEM -->
+    <div class="tab-content" id="tab-sem">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🎯 Ecosistema de Pauta Pagada (Google Ads & LinkedIn)</h2>
+            <p>Relación determinística entre macro-campañas, landing pages herméticas y pilares de contratación B2B.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-amber">Tickets > $300k MXN</span>
+            <span class="chip chip-cyan">Quality Score 10/10</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef camp fill:#0f172a,stroke:#f59e0b,stroke-width:1.5px,color:#fff7ed;
+    classDef lp fill:#451a03,stroke:#ea580c,stroke-width:1.5px,color:#ffedd5;
+    classDef dest fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    subgraph "CAMPAÑAS DE PAUTA B2B"
+        C1["Google Ads Search 1<br/>Apps & Plataformas Enterprise"]:::camp
+        C2["Google Ads Search 2<br/>Automatización ERP & SAP"]:::camp
+        C3["Google Ads Search 3<br/>Agentes IA & Protocolo MCP"]:::camp
+        C4["LinkedIn Document Ads<br/>Blueprints Técnicos Gated"]:::camp
+        C5["Retargeting Multi-Canal<br/>Google Display & LinkedIn"]:::camp
+    end
+
+    subgraph "LANDINGS DE CONVERSIÓN (/lp/ noindex)"
+        LP1["/lp/desarrollo-apps-enterprise"]:::lp
+        LP2["/lp/automatizacion-procesos-erp"]:::lp
+        LP3["/lp/agentes-ia-produccion"]:::lp
+        LP4["/lp/blueprint-[caso-de-uso]"]:::lp
+        LP5["/lp/diagnostico-operativo-futureproof"]:::lp
+    end
+
+    subgraph "DESTINO DE CONVERSIÓN COMERCIAL"
+        P3["Pilar 03 · Plataformas Digitales (2 a 4 Meses)"]:::dest
+        P2["Pilar 02 · Agentes & Automatización (2 a 4 Semanas)"]:::dest
+        P1["Pilar 01 · Consultoría Digital & ROI (2 a 4 Semanas)"]:::dest
+        Agenda["Agenda Directa 30 min con Lead Architect"]:::dest
+    end
+
+    C1 --> LP1 --> P3
+    C2 --> LP2 --> P2
+    C3 --> LP3 --> P2
+    C4 --> LP4 --> P1
+    C5 --> LP5 --> Agenda
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: FLUJO 1 -->
+    <div class="tab-content" id="tab-f1">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>👔 Flujo 1: CTO / VP de Ingeniería (Buyer Técnico)</h2>
+            <p>Validación de solvencia técnica, arquitectura desacoplada, seguridad ISO 27001 y soberanía de datos en su nube privada.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-cyan">Ticket Alto</span>
+            <span class="chip chip-emerald">Lead Architect Directo</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#38bdf8,stroke-width:1.5px,color:#f8fafc;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Tráfico Directo / Búsqueda [bluepixel] / Referral C-Level"]:::step
+    S2["2. Home Page: Terminal Agéntica en Vivo + Trust Badges (Bimbo, BBVA, Cemex)"]:::step
+    S3["3. Grid 6 Capabilities: Clic en Software Engineering o Security & Reliability"]:::step
+    S4["4. Página /servicios/software-engineering: Validación Stack Cloud-Native & CI/CD"]:::step
+    S5["5. Sección Soberanía Técnica: Despliegue en su propia VPC (AWS/GCP), Cero Lock-in & MCP"]:::step
+    S6["6. Casos de Estudio Reales: Teardown RadioShack o FR Medical (Triage 1.8s)"]:::step
+    S7["7. Garantía Anti-Maquila: Interlocución Directa con Lead Architect"]:::step
+    S8["CONVERSIÓN: Clic en [ Agendar Sesión de Arquitectura de 30 min ]"]:::conv
+    S9["OUTCOME: Reserva en HubSpot Meetings + Invitación Google Meet con Lead Architect"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+          </pre>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-box">
+            <h4>Fricción Subconsciente</h4>
+            <p class="quote">«¿Son otra agencia boutique que sólo hace pantallas bonitas en Figma y me va a dejar código espagueti inmanejable, o de verdad tienen ingenieros senior que entienden microservicios, seguridad y escalabilidad?»</p>
+          </div>
+          <div class="detail-box">
+            <h4>Antídoto Arquitectónico</h4>
+            <p>Sección de Soberanía Técnica, diagramas de arquitectura cloud, despliegue en su VPC, cero intermediarios comerciales en la sesión técnica.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Entregable en CRM</h4>
+            <p>Cita confirmada en HubSpot Meetings con Tech Lead + Invitación de Google Meet + NDA bilateral previo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: FLUJO 2 -->
+    <div class="tab-content" id="tab-f2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>⚙️ Flujo 2: COO / CFO / Director de Operaciones (Eficiencia & ERP)</h2>
+            <p>Solución a cuellos de botella operativos en SAP/Salesforce con retorno medible y sin sustitución de sistemas actuales.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-amber">Dolor Operativo</span>
+            <span class="chip chip-emerald">Pilar 02 (2-4 sem)</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#f97316,stroke-width:1.5px,color:#fff7ed;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Google Ads / LinkedIn ('automatizacion sap mexico', 'conciliacion erp')"]:::step
+    S2["2. Landing /lp/automatizacion-procesos-erp: Message Match ('Conecta tu ERP sin tirarlo')"]:::step
+    S3["3. Teardown Antes vs. Después: Fricción en Excel vs. Flujo Agéntico Determinístico"]:::step
+    S4["4. Calculadora Interactiva de ROI: Estimación de horas-hombre ahorradas al mes"]:::step
+    S5["5. Garantía de Cumplimiento: Cifrado en Reposo/Tránsito + Normativa LFPDPPP México"]:::step
+    S6["6. Formulario Progresivo: Selección de tamaño (+50 empleados) y caso ERP"]:::step
+    S7["CONVERSIÓN: Envío de Formulario con gclid y UTMs Ocultos"]:::conv
+    S8["7. Pantalla /lp/gracias-pauta: Promesa de NDA minuto 0 y Auditoría en 24h"]:::conv
+    S9["OUTCOME: SQL en CRM + Disparo de Micro-Conversión a Google Ads API"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+          </pre>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-box">
+            <h4>Fricción Subconsciente</h4>
+            <p class="quote">«¿Tengo que tirar mi software actual a la basura e incurrir en una migración de millones de pesos? ¿Cuánto me va a costar y cuánto tiempo me va a ahorrar realmente?»</p>
+          </div>
+          <div class="detail-box">
+            <h4>Antídoto Arquitectónico</h4>
+            <p>Promesa del Pilar 02: conexión agéntica sobre lo que ya tienen vía MCP en 2 a 4 semanas, sin sustituir infraestructura previa.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Entregable en CRM</h4>
+            <p>SQL con datos de ERP actual, tamaño de empresa (+50 colaboradores) y evento offline enviado a Google Ads API.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: FLUJO 3 -->
+    <div class="tab-content" id="tab-f3">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🏛️ Flujo 3: CEO / Board / Dirección General (Estratégico & Certeza)</h2>
+            <p>Evaluación de riesgo, certidumbre de entrega, adopción de usuario garantizada (95%) y garantía FutureProof.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-purple">C-Suite</span>
+            <span class="chip chip-emerald">Diagnóstico IMPATH™</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#818cf8,stroke-width:1.5px,color:#e0e7ff;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Búsqueda Institucional de Marca / Recomendación de Pares"]:::step
+    S2["2. Home Page: Bloque 'The Enterprise AI Reality' (El 70% fracasa por adopción)"]:::step
+    S3["3. /metodologia-impath: Tesis del Diseño Conductual como Armadura de Adopción"]:::step
+    S4["4. /pilares: Claridad Contractual en Plazos (2-4 sem / 2-4 meses / 6-12 m)"]:::step
+    S5["5. /nosotros: Manifiesto Anti-Maquila y Corresponsabilidad de Negocio"]:::step
+    S6["6. Evidencia en Grandes Marcas: Confirma relaciones con Grupo Bimbo, Cemex, BBVA"]:::step
+    S7["CONVERSIÓN: Clic en [ Solicitar Diagnóstico Operativo de Viabilidad ]"]:::conv
+    S8["OUTCOME: Oportunidad Enterprise asignada de inmediato a Dirección Comercial"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+          </pre>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-box">
+            <h4>Fricción Subconsciente</h4>
+            <p class="quote">«¿Por qué confiarle este proyecto a BluePixel en lugar de contratar a una Big 4 (Accenture/Deloitte) o una maquiladora tradicional de horas-hombre?»</p>
+          </div>
+          <div class="detail-box">
+            <h4>Antídoto Arquitectónico</h4>
+            <p>Metodología IMPATH™ para asegurar adopción del 95%, 4 pilares modulares cerrados sin facturación abierta a ciegas.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Entregable en CRM</h4>
+            <p>Oportunidad Enterprise de alto ticket canalizada de inmediato a Dirección Comercial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: FLUJO 4 -->
+    <div class="tab-content" id="tab-f4">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>📚 Flujo 4: Investigador Técnico / Nurturing (Blog & Citas LLMs)</h2>
+            <p>Captura de demanda informacional desde Google Orgánico y motores de IA (ChatGPT, Claude, Perplexity).</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-emerald">21 Leads Mensuales</span>
+            <span class="chip chip-cyan">AEO & Citas en IA</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#10b981,stroke-width:1.5px,color:#ecfdf5;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Búsqueda Orgánica Google o Citación en ChatGPT / Perplexity / Claude"]:::step
+    S2["2. Artículo Canónico de Blog /es/blog/[slug]: Contenido Técnico de Alta Autoridad"]:::step
+    S3["3. In-Article Smart Banner: Banners Contextuales al Dolor Abordado en el Artículo"]:::step
+    S4["4. /blueprints/[caso]: Inspección de Blueprint con Especificaciones Técnicas (SLA, ROI)"]:::step
+    S5["5. Micro-Conversión Gated: Ingreso de Correo Corporativo para Descargar Blueprint PDF"]:::conv
+    S6["6. Secuencia Automatizada de Nurturing: 4 Emails Técnicos (Días 1, 3, 7, 14)"]:::step
+    S7["CONVERSIÓN A MEDIANO PLAZO: Email 4 con Invitación a Diagnóstico de Viabilidad"]:::conv
+    S8["OUTCOME: Prospecto Nurtured Calificado Ingresa al Pipeline Activo"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 8: FLUJO 5 -->
+    <div class="tab-content" id="tab-f5">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🚀 Flujo 5: Tráfico Google Ads SEM (Hermético QS 10/10)</h2>
+            <p>Pauta de alta intención canalizada a landing pages sin menús de fuga y captura de gclid en campos ocultos.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-amber">Google Ads</span>
+            <span class="chip chip-cyan">Quality Score 10/10</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#eab308,stroke-width:1.5px,color:#fefce8;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Clic en Anuncio Google Search: Lleva gclid y parámetros UTM intactos"]:::step
+    S2["2. Landing Page Dedicada /lp/[cluster]: Navegación Hermética (Cero Menús de Fuga)"]:::step
+    S3["3. Titular H1 Idéntico a Término de Búsqueda: Message Match (Quality Score 10/10)"]:::step
+    S4["4. Viñetas Técnicas Duras: Plazo 2-4 sem / 2-4 meses + SLA 99.9% + Despliegue en VPC"]:::step
+    S5["5. Formulario Visible en Primer Scroll (Above the Fold) con Selector de +50 Empleados"]:::step
+    S6["CONVERSIÓN: Envío de Formulario + Inyección de gclid Oculto"]:::conv
+    S7["7. /lp/gracias-pauta: Disparo de Pixel Offline + Opción de Auto-Agendar"]:::conv
+    S8["OUTCOME: Lead Ingresa a CRM con Atribución Completa y Alerta Inmediata a Ventas"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 9: FLUJO 6 -->
+    <div class="tab-content" id="tab-f6">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🔄 Flujo 6: Retargeting Multi-Canal y Reactivación (Agenda Directa)</h2>
+            <p>Reactivación de visitantes previos que no completaron el formulario mediante invitación técnica directa sin ventas.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-pink">Remarketing</span>
+            <span class="chip chip-emerald">Agenda 30 Minutos</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#ec4899,stroke-width:1.5px,color:#fdf2f8;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Impacto: Anuncio Remarketing LinkedIn / Display a Visitante Previo"]:::step
+    S2["2. Ángulo del Anuncio: '30 Minutos de Auditoría Técnica con un Lead Architect. Cero Vendedores.'"]:::step
+    S3["3. /lp/diagnostico-operativo-futureproof: Mensaje Directo enfocado en Resolver Dudas"]:::step
+    S4["4. Widget de Calendario Embebido: Selección de Fecha y Hora en 2 Clics"]:::step
+    S5["CONVERSIÓN: Reserva Directa de Sesión Técnica con Lead Architect"]:::conv
+    S6["6. Confirmación Instantánea: Invitación Google Meet + Envío de NDA Bilateral"]:::conv
+    S7["OUTCOME: Lead Tibio Reactivado en Menos de 48 Horas con Cero Fricción"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 10: FLUJO 7 -->
+    <div class="tab-content" id="tab-f7">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>📄 Flujo 7: LinkedIn Document Ads (PDF Gated & Nurturing)</h2>
+            <p>Atracción de directores C-Level en LinkedIn a través de blueprints de arquitectura técnica en formato carrusel.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-cyan">LinkedIn B2B</span>
+            <span class="chip chip-purple">Lead Nurturing</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#06b6d4,stroke-width:1.5px,color:#ecfeff;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Feed de LinkedIn: Visualización de Document Ad con Preview de Blueprint PDF"]:::step
+    S2["2. Clic en Anuncio ➔ /lp/blueprint-[caso-de-uso]"]:::step
+    S3["3. Ficha Técnica del Blueprint: Diagrama de Arquitectura de 4 Pasos + ROI Estimado"]:::step
+    S4["4. Formulario Ligero: Nombre + Correo Corporativo + Empresa"]:::step
+    S5["CONVERSIÓN: Descarga Inmediata de PDF Técnico en Alta Resolución"]:::conv
+    S6["5. Disparo de Secuencia Automatizada de Nurturing por Email (Días 1, 3, 7, 14)"]:::step
+    S7["OUTCOME: Decisor C-Level en Base de Datos para Maduración Comercial y Retargeting"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 11: FLUJO 8 -->
+    <div class="tab-content" id="tab-f8">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>💬 Flujo 8: Comprador Inmediato vía WhatsApp B2B (+52)</h2>
+            <p>Atención prioritaria para tomadores de decisión que navegan desde móvil o requieren validación rápida.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-emerald">Speed-to-Lead < 15 min</span>
+            <span class="chip chip-cyan">Canal México (+52)</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#22c55e,stroke-width:1.5px,color:#f0fdf4;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Dispositivo Móvil (Web Pública o Landing de Pauta)"]:::step
+    S2["2. Clic en Botón Flotante Oficial de WhatsApp Corporativo (+52)"]:::step
+    S3["3. Mensaje Pre-Poblado: 'Hola, me interesa evaluar [Pilar 01 / 02 / 03]'"]:::step
+    S4["4. Enrutamiento Rápido: Triage Técnico de Preventa y Preguntas de Calificación"]:::step
+    S5["5. Envío Inmediato de NDA Bilateral en PDF para Firma Digital"]:::step
+    S6["CONVERSIÓN: Coordinación de Llamada Técnica para el Mismo Día"]:::conv
+    S7["OUTCOME: Lead Calificado Atendido con Speed-to-Lead < 15 Minutos"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 12: FLUJO 9 -->
+    <div class="tab-content" id="tab-f9">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>📈 Flujo 9: Expansión de Clientes (Pilar 03 ➔ Pilar 04 Retainer)</h2>
+            <p>Transición natural del lanzamiento de MVP o plataforma hacia el acompañamiento tecnológico continuo a 6 o 12 meses.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-purple">Retainer Continuo</span>
+            <span class="chip chip-emerald">Alto LTV</span>
+          </div>
+        </div>
+
+        <div class="diagram-container">
+          <pre class="mermaid">
+graph TD
+    classDef step fill:#0f172a,stroke:#a855f7,stroke-width:1.5px,color:#faf5ff;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Hito: Plataforma o MVP Entregado con Éxito en Producción (Pilar 03 · 2 a 4 Meses)"]:::step
+    S2["2. Auditoría Final de Entrega: Reporte de UX Health Score™ Base y Métricas Core"]:::step
+    S3["3. Sesión con Stakeholders: Demostración de Adopción, Uptime y SLA 99.9%"]:::step
+    S4["4. Presentación de Continuidad: Activación de Pilar 04 (Evolución Digital)"]:::step
+    S5["5. Asignación de Squad Dedicado: Tech Lead, AI Engineer, Full Stack, UX/CRO Specialist"]:::step
+    S6["CONVERSIÓN: Firma de Contrato de Retainer Mensual a 6 o 12 Meses"]:::conv
+    S7["OUTCOME: Relación B2B de Alto LTV y Protección de la Inversión a Largo Plazo"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 13: MATRIZ DE FRICCIONES -->
+    <div class="tab-content" id="tab-matriz">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <h2>🛡️ Matriz de Fricciones y Elementos Arquitectónicos de Resolución</h2>
+            <p>Cómo cada componente de la nueva arquitectura web neutraliza las dudas y objeciones de los decisores B2B.</p>
+          </div>
+          <div class="card-badges">
+            <span class="chip chip-cyan">Garantía Anti-Maquila</span>
+            <span class="chip chip-emerald">Conversión Determinística</span>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Paso del Flujo</th>
+                <th>Posible Fricción del Usuario</th>
+                <th>Elemento Arquitectónico que Resuelve la Fricción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Hero / Entrada</strong></td>
+                <td><em>«Parece otra agencia genérica que me hará perder el tiempo.»</em></td>
+                <td>Terminal Agéntica en vivo + Logotipos corporativos (Bimbo, BBVA) + Métricas duras (SLA 99.9%).</td>
+              </tr>
+              <tr>
+                <td><strong>Exploración de Oferta</strong></td>
+                <td><em>«Seguro cobran por hora sin comprometerse a una fecha de entrega.»</em></td>
+                <td>Los 4 Pilares con plazos contractuales cerrados (2-4 sem / 2-4 meses / 6-12 m).</td>
+              </tr>
+              <tr>
+                <td><strong>Evaluación Técnica</strong></td>
+                <td><em>«La IA va a inventar datos o van a usar mi información para entrenar modelos.»</em></td>
+                <td>Sección de Soberanía Técnica: Despliegue en VPC privada del cliente + Protocolo MCP sin alucinaciones.</td>
+              </tr>
+              <tr>
+                <td><strong>Formulario de Contacto</strong></td>
+                <td><em>«Me van a pedir $25,000 USD de entrada o me va a llamar un vendedor agresivo.»</em></td>
+                <td>Formulario modular sin piso de $25k + Promesa pública: <em>«Hablas directo con un Lead Architect senior»</em>.</td>
+              </tr>
+              <tr>
+                <td><strong>Post-Envío</strong></td>
+                <td><em>«Seguro tardan una semana en responder y se pierde el timing.»</em></td>
+                <td>Línea de tiempo PostContactSLA: Minuto 0 NDA bilateral ➔ 24h auditoría ➔ 48h sesión técnica de 30 min.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>BluePixel © 2026 · Arquitectura Web, Estrategia B2B y Ecosistema de Conversión · Confidencial e Interno</p>
+  </footer>
+
+  <script>
+    // Initialize Mermaid with clean dark mode theme
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#030611',
+        primaryColor: '#0f172a',
+        primaryTextColor: '#f8fafc',
+        primaryBorderColor: '#38bdf8',
+        lineColor: '#38bdf8',
+        secondaryColor: '#1e1b4b',
+        tertiaryColor: '#064e3b'
+      },
+      flowchart: {
+        curve: 'basis',
+        nodeSpacing: 45,
+        rankSpacing: 45,
+        htmlLabels: true
+      }
+    });
+
+    // Render Mermaid diagrams on tab switch
+    async function renderActiveDiagram() {
+      const activeTab = document.querySelector('.tab-content.active');
+      if (activeTab) {
+        const pre = activeTab.querySelector('.mermaid');
+        if (pre && !pre.getAttribute('data-processed')) {
+          await mermaid.run({ nodes: [pre] });
+        }
+      }
+    }
+
+    // Tab Navigation Logic
+    const tabs = document.querySelectorAll('.nav-tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', async () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-tab');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+          await renderActiveDiagram();
+        }
+      });
+    });
+
+    // Initial render on load
+    window.addEventListener('DOMContentLoaded', async () => {
+      await renderActiveDiagram();
+    });
+  </script>
+</body>
+</html>
