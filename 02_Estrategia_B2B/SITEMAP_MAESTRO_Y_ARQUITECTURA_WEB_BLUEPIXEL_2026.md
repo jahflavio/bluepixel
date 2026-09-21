@@ -33,6 +33,15 @@
    - 6.1. Regla de Oro del Blog y Cero Rotura de Enlaces
    - 6.2. Cierre y Redirección 301 de `cotiza.bluepixel.mx`
    - 6.3. Requisito de Static Site Generation (SSG) / Prerender
+7. [Mapeo Maestro de Flujos de Navegación (User Journeys & Conversion Paths)](#7-mapeo-maestro-de-flujos-de-navegación-user-journeys--conversion-paths)
+   - 7.1. Flujo 1: CTO / VP de Ingeniería (Buyer Técnico · Solvencia y Arquitectura)
+   - 7.2. Flujo 2: COO / CFO / Director de Operaciones (Buyer de Eficiencia · Dolor ERP & ROI)
+   - 7.3. Flujo 3: CEO / Board / Director General (Buyer Estratégico · Riesgo & Certeza)
+   - 7.4. Flujo 4: Investigador Técnico / Nurturing (Blog Orgánico & Citas en LLMs)
+   - 7.5. Flujo 5: Tráfico de Pauta SEM de Alta Conversión (Google Ads ➔ Landing Hermética)
+   - 7.6. Flujo 6: Retargeting Multi-Canal y Reactivación de Leads Tibios (Agenda Directa)
+   - 7.7. Matriz de Fricciones y Elementos de Transición por Paso de Flujo
+8. [Resumen de Impacto Operativo y Comercial](#8-resumen-de-impacto-operativo-y-comercial)
 
 ---
 
@@ -413,7 +422,220 @@ Cuando el equipo de ventas (Pablo Gómez o José de Buen) califique un prospecto
 
 ---
 
-## 📈 7. RESUMEN DE IMPACTO OPERATIVO Y COMERCIAL
+## 🗺️ 7. MAPEO MAESTRO DE FLUJOS DE NAVEGACIÓN (USER JOURNEYS & CONVERSION PATHS)
+
+Para que el sitio web institucional y el ecosistema de landing pages operen como una máquina de ventas determinística, cada perfil de visitante debe transitar por una secuencia calculada de pantallas que neutralice sus objeciones específicas y lo conduzca al siguiente paso del embudo.
+
+```mermaid
+graph TD
+    subgraph "CANALES DE ENTRADA"
+        E1["Google Search (Orgánico) / LLMs"]
+        E2["Google Ads (Búsqueda SEM)"]
+        E3["LinkedIn Ads (Document Ads)"]
+        E4["Tráfico Directo / Marca / Referral"]
+        E5["Remarketing Multi-Canal"]
+    end
+
+    subgraph "EXPERIENCIA EN SITIO / LANDINGS"
+        F1["Flujo 1: CTO / Arquitecto Técnico<br/>(Home ➔ Capabilities ➔ Soberanía ➔ Agenda)"]
+        F2["Flujo 2: COO / CFO Operaciones<br/>(LP ERP ➔ Teardown ➔ Calculadora ➔ Formulario)"]
+        F3["Flujo 3: CEO / Decisor Estratégico<br/>(Home ➔ IMPATH ➔ 4 Pilares ➔ Diagnóstico)"]
+        F4["Flujo 4: Investigador Orgánico / AEO<br/>(Blog 1:1 ➔ Blueprint Gated ➔ Nurturing)"]
+        F5["Flujo 5: Tráfico SEM Hermético<br/>(LP noindex ➔ Quality Score 10 ➔ SQL)"]
+        F6["Flujo 6: Reactivación de Leads Tibios<br/>(LP Retargeting ➔ Agenda Directa 30 min)"]
+    end
+
+    subgraph "CONVERSIÓN COMERCIAL (CRM)"
+        C1["SQL Calificado con gclid / UTMs"]
+        C2["Lead Corporativo en Nurturing"]
+        C3["Sesión de 30 min en Calendario con Lead Architect"]
+    end
+
+    E1 --> F4
+    E2 --> F5
+    E3 --> F2
+    E4 --> F1
+    E4 --> F3
+    E5 --> F6
+
+    F1 --> C3
+    F2 --> C1
+    F3 --> C1
+    F4 --> C2
+    F5 --> C1
+    F6 --> C3
+```
+
+---
+
+### 7.1. Flujo 1: CTO / VP de Ingeniería (Buyer Técnico · Solvencia & Arquitectura)
+* **Perfil & Trigger:** Líder técnico corporativo que evalúa un partner de desarrollo para modernizar sistemas o construir una plataforma de misión crítica. Llega por búsqueda directa, marca o referral de alto nivel.
+* **Pregunta / Fricción Subconsciente:** *«¿Son otra agencia boutique que sólo hace pantallas bonitas en Figma y me va a dejar un código espagueti inmanejable, o de verdad tienen ingenieros senior que entienden microservicios, seguridad y escalabilidad?»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Home Page] ➔ Valida el Hero con Terminal Agéntica y Trust Badges (Bimbo, BBVA, Cemex).
+        │
+        ▼
+  [Paso 2: 6 Capabilities Grid] ➔ Hace clic en "Software Engineering" o "Security & Reliability".
+        │
+        ▼
+  [Paso 3: Página /servicios/software-engineering] ➔ Lee stack Cloud-Native (React/Node/Python), CI/CD y SOC2-Ready.
+        │
+        ▼
+  [Paso 4: Sección de Soberanía Técnica] ➔ Descubre despliegue en su propia VPC (AWS/GCP), cero lock-in y protocolo MCP.
+        │
+        ▼
+  [Paso 5: Casos de Estudio Reales] ➔ Lee el teardown técnico de RadioShack (desacoplamiento) o FR Medical (triage 1.8s).
+        │
+        ▼
+  [Paso 6: Lead Architects] ➔ Conoce los rostros y credenciales técnicas de Leo Flores y Pablo Gómez.
+        │
+        ▼
+  [CONVERSIÓN]: Clic en [ Agendar Sesión de Arquitectura de 30 min ] ➔ Selecciona slot en HubSpot Meetings.
+  ```
+* **Entregable en CRM:** Lead técnico calificado con agenda confirmada e invitación a Google Meet con Lead Architect.
+
+---
+
+### 7.2. Flujo 2: COO / CFO / Director de Operaciones (Buyer de Eficiencia · Dolor ERP & ROI)
+* **Perfil & Trigger:** Director no-técnico pero con alto impacto en P&L, ahogado en tareas manuales, cuellos de botella en ERP (SAP/Salesforce/NetSuite) y retrasos en cierre de mes. Entra por Google Ads o LinkedIn Ads.
+* **Pregunta / Fricción Subconsciente:** *«¿Tengo que tirar mi software actual a la basura e incurrir en una migración de millones de pesos? ¿Cuánto me va a costar y cuánto tiempo me va a ahorrar realmente?»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Landing de Pauta /lp/automatizacion-procesos-erp] ➔ Message Match 100%: "Conecta tu ERP sin cambiar tu software".
+        │
+        ▼
+  [Paso 2: Teardown Visual Antes vs. Después] ➔ Ve el diagrama: Fricción actual en Excel vs. Flujo Agéntico en 2-4 semanas.
+        │
+        ▼
+  [Paso 3: Calculadora Interactiva de ROI] ➔ Simula el volumen de transacciones y calcula el ahorro en horas-hombre.
+        │
+        ▼
+  [Paso 4: Garantía de Seguridad Corporativa] ➔ Valida que los datos residen en México/nube privada y cumplen con LFPDPPP.
+        │
+        ▼
+  [Paso 5: Formulario Progresivo (Tú / Tu Empresa / Tu Proceso)] ➔ Selecciona tamaño de empresa (+50 empleados) y caso ERP.
+        │
+        ▼
+  [Paso 6: /lp/gracias-pauta] ➔ Confirmación inmediata con promesa de NDA en minuto 0 y auditoría en 24h.
+  ```
+* **Entregable en CRM:** MQL/SQL con `gclid`, caso de uso documentado y micro-conversión enviada a Google Ads API.
+
+---
+
+### 7.3. Flujo 3: CEO / Board / Director General (Buyer Estratégico · Riesgo & Certeza)
+* **Perfil & Trigger:** Máximo tomador de decisiones que busca acelerar la innovación de la empresa pero teme el fracaso del software. Llega por recomendación de pares, prensa o mención en LinkedIn.
+* **Pregunta / Fricción Subconsciente:** *«¿Por qué confiarle este proyecto a BluePixel en lugar de contratar a una Big 4 (Accenture/Deloitte) o una maquiladora tradicional de horas-hombre?»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Home Page] ➔ Lee "The Enterprise AI Reality": El 70% de las IAs fracasan por falta de adopción de los usuarios.
+        │
+        ▼
+  [Paso 2: /metodologia-impath] ➔ Entiende la tesis: El diseño conductual es la armadura de adopción humana de la tecnología.
+        │
+        ▼
+  [Paso 3: /pilares] ➔ Revisa los 4 Pilares: Claridad absoluta en tiempos (2 a 4 sem / 2 a 4 meses) y entregables cerrados.
+        │
+        ▼
+  [Paso 4: /nosotros] ➔ Manifiesto Anti-Maquila: BluePixel asume corresponsabilidad de negocio, no venta de horas a ciegas.
+        │
+        ▼
+  [Paso 5: Evidencia en Grandes Marcas] ➔ Confirma relaciones con Grupo Bimbo, BBVA, Cemex y Suerox.
+        │
+        ▼
+  [CONVERSIÓN]: Clic en [ Solicitar Diagnóstico Operativo de Viabilidad ] ➔ Formulario corporativo o contacto directo por WhatsApp B2B.
+  ```
+* **Entregable en CRM:** Oportunidad enterprise de alto valor asignada de inmediato a Dirección General.
+
+---
+
+### 7.4. Flujo 4: Investigador Técnico / Nurturing (Blog Orgánico & Citas en LLMs)
+* **Perfil & Trigger:** Profesional técnico o gerente de producto que busca respuestas en Google o recibe una cita referida por ChatGPT, Perplexity o Claude sobre metodologías UX o desarrollo de software.
+* **Pregunta / Fricción Subconsciente:** *«Buscaba un artículo informativo sobre diseño o desarrollo. ¿Quién escribió esto y qué servicios ofrecen para resolver mi problema a nivel empresa?»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Artículo Canónico de Blog /es/blog/[slug]] ➔ Lee contenido de alta autoridad (ej. etapas de desarrollo web).
+        │
+        ▼
+  [Paso 2: In-Article Smart Banner] ➔ Encuentra banner contextual: "¿Planeando un MVP? Descarga el Blueprint Técnico".
+        │
+        ▼
+  [Paso 3: /blueprints/[caso-de-uso]] ➔ Explora el Blueprint interactivo con especificaciones técnicas (SLA, tiempo, ROI).
+        │
+        ▼
+  [Paso 4: Micro-Conversión Gated] ➔ Ingresa correo corporativo para descargar el Blueprint en formato PDF.
+        │
+        ▼
+  [Paso 5: Secuencia Automatizada de Nurturing (Día 1, 3, 7, 14)] ➔ Recibe teardowns técnicos adicionales por correo.
+        │
+        ▼
+  [CONVERSIÓN A MEDIANO PLAZO]: Email 4 incluye invitación a sesión de diagnóstico sin costo ➔ Entra al Flujo 1.
+  ```
+* **Entregable en CRM:** Lead calificado en base de datos de nutrición con atribución de origen orgánico/IA.
+
+---
+
+### 7.5. Flujo 5: Tráfico de Pauta SEM de Alta Conversión (Google Ads ➔ Landing Hermética)
+* **Perfil & Trigger:** Usuario con dolor activo e intención de compra inmediata que hace clic en un anuncio de Google Search.
+* **Pregunta / Fricción Subconsciente:** *«Tengo un presupuesto asignado y necesito una solución seria. No quiero perder el tiempo navegando un sitio laberíntico.»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Clic en Anuncio de Google Ads] ➔ La URL incluye gclid y parámetros UTM.
+        │
+        ▼
+  [Paso 2: Landing Page Dedicada /lp/[cluster]]
+        ├── Sin menú superior desplegable (Cero fugas).
+        ├── Titular H1 idéntico al texto del anuncio (Quality Score 10/10).
+        ├── 3 viñetas con beneficios técnicos duras (Plazo 2-4 sem / 2-4 meses, SLA 99.9%, Nube Privada).
+        ├── 1 teardown interactivo del flujo.
+        └── Formulario visible en el primer scroll (above the fold).
+        │
+        ▼
+  [Paso 3: Envío de Formulario] ➔ Captura automática de gclid y datos firmográficos.
+        │
+        ▼
+  [Paso 4: /lp/gracias-pauta] ➔ Disparo de eventos de conversión y opción de auto-agendar en calendario.
+  ```
+* **Entregable en CRM:** SQL inmediato con datos de atribución listos para realimentar Google Ads Offline Conversions.
+
+---
+
+### 7.6. Flujo 6: Retargeting Multi-Canal y Reactivación de Leads Tibios (Agenda Directa)
+* **Perfil & Trigger:** Visitante que navegó por el sitio web o descargó un Blueprint pero abandonó antes de agendar o completar el formulario. Es impactado por un anuncio de remarketing en LinkedIn o Google Display.
+* **Pregunta / Fricción Subconsciente:** *«Ya los conozco, pero no tuve tiempo de llenar el formulario o dudé si me iban a presionar para vender.»*
+* **Clickstream / Secuencia de Navegación Ideal:**
+  ```
+  [Paso 1: Anuncio de Retargeting en LinkedIn / Meta] ➔ Ángulo: "30 Minutos de Auditoría Técnica con un Lead Architect. Cero Vendedores."
+        │
+        ▼
+  [Paso 2: /lp/diagnostico-operativo-futureproof]
+        ├── Mensaje directo enfocado en resolver dudas técnicas sin compromiso comercial.
+        ├── Widget de calendario embebido directamente en la página (HubSpot / Calendly).
+        └── Testimoniales en video y logotipos corporativos como respaldo.
+        │
+        ▼
+  [Paso 3: Selección de Fecha y Hora] ➔ El prospecto escoge su slot disponible en 2 clics.
+        │
+        ▼
+  [Paso 4: Pantalla de Confirmación] ➔ Envío automático de invitación a Google Meet con NDA bilateral adjunto.
+  ```
+* **Entregable en CRM:** Lead tibio reactivado y transformado en sesión técnica con el Tech Lead en menos de 48 horas.
+
+---
+
+### 7.7. Matriz de Fricciones y Elementos de Transición por Paso de Flujo
+
+| Paso del Flujo | Posible Fricción del Usuario | Elemento Arquitectónico que Resuelve la Fricción |
+| :--- | :--- | :--- |
+| **Hero / Entrada** | *"Parece otra agencia genérica que me hará perder el tiempo."* | Terminal Agéntica en vivo + Logotipos corporativos (Bimbo, BBVA) + Métricas duras (SLA 99.9%). |
+| **Exploración de Oferta** | *"Seguro cobran por hora sin comprometerse a una fecha de entrega."* | Los 4 Pilares con plazos contractuales cerrados (2-4 sem / 2-4 meses / 6-12 m). |
+| **Evaluación Técnica** | *"La IA va a inventar datos o van a usar mi información para entrenar modelos."* | Sección de Soberanía Técnica: Despliegue en VPC privada del cliente + Protocolo MCP sin alucinaciones. |
+| **Formulario de Contacto** | *"Me van a pedir $25,000 USD de entrada o me va a llamar un vendedor agresivo."* | Formulario modular sin piso de $25k + Promesa pública: *"Hablas directo con un Lead Architect, no con un vendedor"*. |
+| **Post-Envío** | *"Seguro tardan una semana en responder y se pierde el timing."* | Línea de tiempo PostContactSLA: Minuto 0 NDA bilateral ➔ 24h auditoría ➔ 48h sesión técnica de 30 min. |
+
+---
+
+## 📈 8. RESUMEN DE IMPACTO OPERATIVO Y COMERCIAL
 
 | Dimensión | Situación Histórica (Previa) | Situación con Nuevo Sitemap Maestro |
 | :--- | :--- | :--- |
