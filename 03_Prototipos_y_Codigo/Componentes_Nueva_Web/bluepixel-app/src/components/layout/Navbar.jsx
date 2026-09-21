@@ -182,71 +182,133 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
 
             {/* Dropdown Menu (Mega Menu Style) */}
             <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${isDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-              <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl shadow-2xl p-6 w-[660px] relative overflow-hidden">
+              <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl shadow-2xl p-5 w-[720px] relative overflow-hidden">
                 {/* Glow decorativo */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-emerald-400"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
 
-                <div className="grid grid-cols-3 gap-6">
-                  {/* Col 1 */}
-                  <div>
-                    <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-4 pb-2 border-b border-white/[0.05] font-bold">Apps & Producto</h4>
-                    <ul className="space-y-3">
-                      <li>
-                        <a href="#/servicio/ux-ui" onClick={closeMenus} className="block text-sm text-white hover:text-emerald-400 transition-colors group">
-                          <span className="font-semibold">UX/UI Design</span>
-                          <span className="block text-[10px] font-mono text-emerald-400/80">IMPATH™ Enabled</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#/servicio/ai-engineering" onClick={closeMenus} className="block text-sm text-white hover:text-cyan-400 transition-colors group">
-                          <span className="font-semibold">AI Engineering</span>
-                          <span className="block text-[10px] font-mono text-cyan-400/80">Cloud-Native SOC2</span>
-                        </a>
-                      </li>
-                    </ul>
+                {/* Header canónico del Dropdown */}
+                <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-4 pb-2.5 border-b border-white/[0.06] font-bold">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span className="text-white">6 Capacidades Oficiales</span>
                   </div>
-
-                  {/* Col 2 */}
-                  <div>
-                    <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-4 pb-2 border-b border-white/[0.05] font-bold">Automatización</h4>
-                    <ul className="space-y-3">
-                      <li>
-                        <a href="#/servicio/ai-agents" onClick={closeMenus} className="block text-sm text-white hover:text-purple-400 transition-colors group">
-                          <span className="font-semibold">Agentes IA</span>
-                          <span className="block text-[10px] font-mono text-purple-400/80">Agentic RAG & MCP</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#/servicio/data-analytics" onClick={closeMenus} className="block text-sm text-white hover:text-indigo-400 transition-colors group">
-                          <span className="font-semibold">Data & Analytics</span>
-                          <span className="block text-[10px] font-mono text-indigo-400/80">Mixpanel Telemetry</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Col 3 */}
-                  <div>
-                    <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-4 pb-2 border-b border-white/[0.05] font-bold">Gobernanza IA</h4>
-                    <ul className="space-y-3">
-                      <li>
-                        <a href="#/servicio/security" onClick={closeMenus} className="block text-sm text-white hover:text-amber-400 transition-colors group">
-                          <span className="font-semibold">Security & Vault</span>
-                          <span className="block text-[10px] font-mono text-amber-400/80">ISO 27001 & OWASP</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#/servicio/business-ai" onClick={closeMenus} className="block text-sm text-white hover:text-blue-400 transition-colors group">
-                          <span className="font-semibold">Business AI Consulting</span>
-                          <span className="block text-[10px] font-mono text-blue-400/80">FutureProof™ Framework</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <span className="text-blue-400">Músculo Técnico Transversal</span>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-[11px] text-slate-400">6 Capacidades de Misión Crítica</span>
+                {/* Grid 3 columnas x 2 filas = 6 Capacidades numeradas */}
+                <div className="grid grid-cols-3 gap-3">
+                  {/* Capacidad 01 */}
+                  <a 
+                    href="#/servicio/ux-ui" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-emerald-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold">01</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">IMPATH™ Enabled</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-emerald-300 transition-colors">
+                      UX/UI & Product Strategy
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Psicología conductual y adopción
+                    </div>
+                  </a>
+
+                  {/* Capacidad 02 */}
+                  <a 
+                    href="#/servicio/ai-engineering" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-cyan-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-cyan-400 font-bold">02</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud-Native SOC2</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-cyan-300 transition-colors">
+                      Software Engineering
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Full Stack Cloud-Native y resiliencia
+                    </div>
+                  </a>
+
+                  {/* Capacidad 03 */}
+                  <a 
+                    href="#/servicio/ai-agents" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-purple-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-purple-400 font-bold">03</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Agentic RAG & MCP</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-purple-300 transition-colors">
+                      IA & Automatización
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Agentes RAG y protocolos MCP
+                    </div>
+                  </a>
+
+                  {/* Capacidad 04 */}
+                  <a 
+                    href="#/servicio/data-analytics" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-indigo-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-indigo-400 font-bold">04</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Mixpanel Telemetry</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-indigo-300 transition-colors">
+                      Data & Analytics
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Telemetría y analítica directiva
+                    </div>
+                  </a>
+
+                  {/* Capacidad 05 */}
+                  <a 
+                    href="#/servicio/security" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-amber-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-amber-400 font-bold">05</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">ISO 27001 & OWASP</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-amber-300 transition-colors">
+                      Security & Reliability
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Hardening Zero-Trust y SLA 99.9%
+                    </div>
+                  </a>
+
+                  {/* Capacidad 06 */}
+                  <a 
+                    href="#/servicio/business-ai" 
+                    onClick={closeMenus} 
+                    className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-blue-500/30 transition-all group/item block"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono text-blue-400 font-bold">06</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">FutureProof™</span>
+                    </div>
+                    <div className="text-xs font-bold text-white group-hover/item:text-blue-300 transition-colors">
+                      Digital Consulting
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                      Priorización de ROI y roadmaps
+                    </div>
+                  </a>
+                </div>
+
+                {/* Footer del mega-menú */}
+                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-[11px] text-slate-400">Músculo técnico transversal a los 4 Pilares</span>
                   <a href="#/servicios" onClick={closeMenus} className="text-xs font-mono text-blue-400 hover:text-white transition-colors flex items-center gap-1">
                     <span>Directorio Completo de Servicios</span>
                     <span>→</span>

@@ -32,13 +32,13 @@ const HomeDirectorySection = () => {
                 <Layers className="w-6 h-6 text-blue-400" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                Nuestros 3 Pilares
+                4 Formas de Trabajar
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Apps & Producto, Automatización y Gobernanza IA. Descubre la filosofía arquitectónica que sostiene a los corporativos más ágiles.
+                Consultoría Digital, Agentes, Plataformas y Evolución Digital. Cuatro modelos de contratación modulares con ROI garantizado y plazos definidos.
               </p>
               <div className="flex items-center justify-between text-xs font-semibold text-blue-400 opacity-80 group-hover:opacity-100 transition-opacity">
-                <span>Explorar Pilares</span>
+                <span>Explorar los 4 Pilares</span>
                 <span className="font-mono group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
