@@ -1,38 +1,85 @@
 export const servicesData = {
   'ux-ui': {
     id: 'ux-ui',
+    themeKey: 'emerald',
+    clusterName: 'Apps & Producto',
+    canonicalBadge: 'IMPATH™ Enabled',
+    packageName: 'UX/UI Design & Product Strategy',
     eyebrow: 'Capability · UX/UI Design & Product Strategy',
-    title: 'Interfaces que reducen fricción y multiplican conversión.',
-    subtitle: 'Arquitectura de información y diseño de interfaces (UI) a nivel enterprise. Cero fricción cognitiva para que tus usuarios adopten tus plataformas desde el día uno.',
-    callout1: 'Un diseño bonito no es suficiente en B2B. En BluePixel entendemos que cada píxel debe estar justificado por una métrica de negocio. Nuestro enfoque se basa en reducir la fricción cognitiva: menos clics, menor carga mental y mayor claridad en cada flujo crítico, ya sea un checkout de e-commerce o un panel de control financiero.',
+    title: 'Interfaces que reducen fricción cognitiva y multiplican conversión.',
+    subtitle: 'Estrategia de producto (PS) y diseño UX/UI conductual de grado empresarial. Convertimos la experiencia de usuario en la armadura que asegura adopción inmediata y retorno medible.',
+    callout1: 'Un diseño decorativo no sirve en B2B. En BluePixel entendemos que el diseño es la armadura y la experiencia humana con la que vestimos arquitecturas de ingeniería pesada. Cada decisión de interfaz está respaldada por datos de comportamiento real, psicología conductual y nuestra metodología propietaria IMPATH™, eliminando la fricción que le cuesta dinero a tu empresa.',
+    stats: [
+      { value: '-65%', label: 'Reducción de fricción cognitiva en flujos críticos', sublabel: 'Metodología IMPATH™' },
+      { value: '3.8x', label: 'Multiplicador promedio en conversión y adopción', sublabel: 'Validado con usuarios reales' },
+      { value: '100%', label: 'Soberanía de Design System & Tokens reutilizables', sublabel: 'Zero deuda de diseño' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Auditoría Heurística & Discovery',
+        desc: 'Diagnóstico de fricción operativa IMPATH™, auditoría de pantallas actuales, mapeo de user journeys y cálculo del costo por abandono antes de codificar.',
+        deliverable: 'Reporte de Fricción IMPATH™ & UX Health Score'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'UX Conversacional & Control Agéntico',
+        desc: 'Diseño de interfaces intuitivas humano-agente, paneles de supervisión de decisiones y flujos sin fricción para adopción fluida de tu equipo (SMEs).',
+        deliverable: 'UI Kit de Supervisión Agéntica'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: true,
+        role: 'Diseño Integral de 0 a Producción',
+        desc: 'Product Strategy, prototipado interactivo de alta fidelidad probado con usuarios reales, Design System escalable y handoff perfecto a desarrollo Full Stack.',
+        deliverable: 'Design System en Figma & Prototipo Validado'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'CRO & UX Health Score Continuo',
+        desc: 'Squad multidisciplinario dedicado a optimizar tasas de conversión (CRO), monitoreo continuo de telemetría y rediseño incremental de flujos de valor.',
+        deliverable: 'Optimización Mensual de Conversión & A/B Testing'
+      }
+    ],
     painPoints: {
       eyebrow: '01 — El problema del diseño genérico',
       title: 'Tu plataforma es robusta, pero nadie quiere usarla.',
       items: [
-        { title: 'Baja adopción de usuarios', desc: 'Invertiste millones en un sistema que tu equipo o tus clientes evitan usar porque es confuso o anticuado.' },
-        { title: 'Fricción en flujos críticos', desc: 'Tus tasas de conversión caen en el momento del pago o registro porque el usuario no sabe qué hacer a continuación.' },
-        { title: 'Deuda técnica de diseño', desc: 'El producto creció parchando pantallas, sin un sistema de diseño estructurado, volviéndolo imposible de escalar.' }
+        { title: 'Baja adopción de usuarios', desc: 'Invertiste millones en un sistema que tu equipo o tus clientes evitan usar porque es confuso, anticuado o requiere manuales eternos.' },
+        { title: 'Fricción en flujos críticos', desc: 'Tus tasas de conversión caen en el momento del pago, registro o aprobación porque el usuario no sabe qué hacer a continuación.' },
+        { title: 'Deuda técnica de diseño', desc: 'El producto creció parchando pantallas sin un sistema de diseño estructurado, volviéndolo imposible y costoso de escalar.' }
       ]
     },
     matrix: {
       eyebrow: '02 — Nuestro enfoque',
-      title: 'De pantallas estáticas a experiencias vivas.',
-      subtitle: 'La evolución del diseño de productos digitales no se trata de colores, se trata de sistemas y comportamiento humano.',
-      headers: ['Nivel', 'Diseño Básico', 'Diseño Centrado en el Usuario', 'Diseño Enterprise', 'Métrica Impactada'],
+      title: 'De pantallas estáticas a experiencias vivas de alto impacto.',
+      subtitle: 'La evolución del diseño de productos digitales no se trata de adornos cosméticos, se trata de sistemas y comportamiento humano.',
+      headers: ['Nivel', 'Diseño Básico (Agencia)', 'Diseño Centrado en Usuario', 'Estándar BluePixel Enterprise', 'Métrica Impactada'],
       rows: [
-        { label: 'Sistemas Internos', cols: ['Pantallas funcionales pero feas', 'Flujos claros y usables', 'Design System escalable y adopción total', 'Tiempo de on-boarding: -70%'] },
-        { label: 'E-commerce', cols: ['Catálogo estándar', 'Checkout optimizado', 'Arquitectura transaccional sin fricción', 'Abandono de carrito: -40%'] },
-        { label: 'Apps Móviles', cols: ['App informativa', 'App transaccional', 'Ecosistema de lealtad y retención', 'Retención mensual: +50%'] }
+        { label: 'Sistemas Internos', cols: ['Pantallas funcionales pero toscas', 'Flujos claros y usables', 'Design System escalable y adopción total', 'Tiempo de on-boarding: -70%'] },
+        { label: 'E-commerce & Transacciones', cols: ['Catálogo estándar genérico', 'Checkout optimizado', 'Arquitectura transaccional sin fricción IMPATH™', 'Abandono de carrito: -40%'] },
+        { label: 'Apps Móviles', cols: ['App informativa plana', 'App transaccional básica', 'Ecosistema de lealtad y retención conductual', 'Retención mensual: +50%'] }
       ]
     },
     specs: {
       eyebrow: '03 — Cómo lo resolvemos',
-      title: 'Ingeniería de comportamiento y sistemas escalables.',
+      title: 'Psicología conductual y sistemas de diseño escalables.',
       subtitle: 'Diseñamos productos digitales que resuelven problemas reales a través de arquitectura de información rigurosa.',
       items: [
-        { title: 'Design Systems (Sistemas de Diseño)', desc: 'Construimos librerías de componentes reutilizables que permiten a tu equipo de desarrollo escalar el producto 10x más rápido sin romper la consistencia visual.' },
-        { title: 'Auditoría Heurística y Fricción', desc: 'Analizamos tus interfaces actuales con metodología científica para detectar cuellos de botella cognitivos y resolverlos con diseño puro.' },
-        { title: 'Prototipado de Alta Fidelidad', desc: 'Antes de tirar una sola línea de código, probamos prototipos interactivos con usuarios reales para validar la hipótesis de negocio.' }
+        { title: 'Design Systems Centralizados', desc: 'Construimos librerías de componentes reutilizables con tokens listos para exportar a React/Node, permitiendo a tu equipo escalar 10x más rápido.' },
+        { title: 'Diagnóstico de Fricción IMPATH™', desc: 'Analizamos tus interfaces actuales con metodología científica para detectar cuellos de botella cognitivos y cuantificar su impacto económico.' },
+        { title: 'Prototipado de Alta Fidelidad Validado', desc: 'Antes de tirar una sola línea de código, probamos prototipos interactivos con usuarios reales para validar la hipótesis de negocio sin quemar capital.' }
       ]
     },
     quiz: {
@@ -51,17 +98,17 @@ export const servicesData = {
         {
           q: '2. ¿Cómo validan si un nuevo feature será utilizado por los usuarios?',
           options: [
-            { text: 'Prototipamos y testeamos con usuarios', score: 3 },
+            { text: 'Prototipamos y testeamos con usuarios reales', score: 3 },
             { text: 'Hacemos encuestas preliminares', score: 2 },
             { text: 'Nos basamos en lo que pide dirección', score: 1 },
-            { text: 'Lanzamos y vemos qué pasa', score: 0 }
+            { text: 'Lanzamos y vemos qué pasa en producción', score: 0 }
           ]
         },
         {
           q: '3. ¿Tienen métricas claras sobre dónde los usuarios abandonan el flujo principal?',
           options: [
-            { text: 'Sí, mapeado con Analytics en tiempo real', score: 3 },
-            { text: 'Tenemos una idea general', score: 2 },
+            { text: 'Sí, mapeado con Analytics/Mixpanel en tiempo real', score: 3 },
+            { text: 'Tenemos una idea general aproximada', score: 2 },
             { text: 'Nos enteramos por quejas de soporte', score: 1 },
             { text: 'No medimos eso actualmente', score: 0 }
           ]
@@ -69,9 +116,9 @@ export const servicesData = {
         {
           q: '4. ¿Cómo describirías la curva de aprendizaje de tu plataforma principal?',
           options: [
-            { text: 'Intuitiva, cero fricción', score: 3 },
-            { text: 'Requiere manuales cortos', score: 2 },
-            { text: 'Requiere capacitación formal', score: 1 },
+            { text: 'Intuitiva, cero fricción cognitiva', score: 3 },
+            { text: 'Requiere manuales cortos o videos', score: 2 },
+            { text: 'Requiere capacitación formal obligatoria', score: 1 },
             { text: 'Muy frustrante para nuevos usuarios', score: 0 }
           ]
         }
@@ -81,162 +128,103 @@ export const servicesData = {
       eyebrow: '06 — Estándar de Calidad UX',
       title: 'Entregables que los desarrolladores aman.',
       items: [
-        { num: '01', title: 'Design System Centralizado', desc: 'Tokens, componentes y guías en Figma, listos para exportar a código.' },
+        { num: '01', title: 'Design System Centralizado', desc: 'Tokens, componentes y guías en Figma, listos para exportar a código limpio.' },
         { num: '02', title: 'Flujos de Usuario (User Journeys)', desc: 'Mapeo detallado de cada pantalla y caso de uso alterno (edge cases).' },
-        { num: '03', title: 'Prototipos Interactivos', desc: 'Simulaciones clickeables que se sienten como el producto final.' },
-        { num: '04', title: 'Auditoría Heurística', desc: 'Reporte de fricciones actuales y plan de remediación priorizado.' },
-        { num: '05', title: 'Handoff de Desarrollo', desc: 'Documentación técnica perfecta para que el equipo de software construya rápido.' },
-        { num: '06', title: 'UX Health Score', desc: 'Métrica base para comparar la mejora de adopción post-lanzamiento.' }
+        { num: '03', title: 'Prototipos Interactivos', desc: 'Simulaciones clickeables en alta fidelidad que se sienten como el producto final.' },
+        { num: '04', title: 'Auditoría Heurística IMPATH™', desc: 'Reporte de fricciones actuales y plan de remediación priorizado por impacto.' },
+        { num: '05', title: 'Handoff de Desarrollo Riguroso', desc: 'Documentación técnica perfecta para que el equipo de software construya rápido.' },
+        { num: '06', title: 'UX Health Score & CRO Baseline', desc: 'Métrica base para comparar la mejora de adopción y conversión post-lanzamiento.' }
       ]
     },
     timeline: {
-      eyebrow: '07 — Cómo Trabajamos',
+      eyebrow: '07 — Metodología de Entrega',
       title: 'Metodología rigurosa, de la investigación al pixel perfecto.',
       subtitle: 'Nuestro proceso está optimizado para descubrir el problema real antes de diseñar soluciones.',
       steps: [
-        { num: '01', title: 'Discovery & UX Audit', desc: 'Analizamos el estado actual, el modelo de negocio y las métricas de abandono.', deliverables: ['Reporte de fricción', 'UX Health Score actual'] },
-        { num: '02', title: 'Arquitectura y Wireframes', desc: 'Estructuramos la información y creamos esqueletos de baja fidelidad para validar la lógica.', deliverables: ['Sitemap', 'Wireframes funcionales'] },
-        { num: '03', title: 'Visual Design & UI', desc: 'Aplicamos el branding, creamos el sistema de diseño y diseñamos las pantallas finales.', deliverables: ['Design System', 'Pantallas UI en alta fidelidad'] },
-        { num: '04', title: 'Prototipado y Handoff', desc: 'Conectamos las pantallas en un flujo interactivo y lo entregamos al equipo de desarrollo.', deliverables: ['Prototipo navegable', 'Sesión de Handoff técnico'] }
+        { num: '01', title: 'Discovery & UX Audit', desc: 'Analizamos el estado actual, el modelo de negocio y las métricas de abandono.', deliverables: ['Reporte de fricción IMPATH™', 'UX Health Score actual'] },
+        { num: '02', title: 'Arquitectura y Wireframes', desc: 'Estructuramos la información y creamos esqueletos funcionales para validar la lógica.', deliverables: ['Sitemap de Producto', 'Wireframes interactivos'] },
+        { num: '03', title: 'Visual Design & UI', desc: 'Aplicamos el branding, creamos el sistema de diseño y diseñamos las pantallas finales.', deliverables: ['Design System Figma', 'Pantallas UI en alta fidelidad'] },
+        { num: '04', title: 'Prototipado y Handoff', desc: 'Conectamos las pantallas en un flujo interactivo y lo entregamos al equipo de ingeniería.', deliverables: ['Prototipo navegable', 'Handoff técnico para developers'] }
       ]
     },
     faqs: [
-      { q: '¿Ustedes desarrollan el código también?', a: 'Podemos hacerlo. Nuestra área de AI Engineering y Apps puede construir el producto completo con React/Node.js, o podemos entregar el diseño a tu equipo interno.' },
-      { q: '¿Trabajan sobre plataformas ya existentes?', a: 'Sí, la mayoría de nuestros proyectos corporativos involucran modernizar y reducir la fricción de sistemas legados o plataformas que ya están en producción.' },
-      { q: '¿Cuánto tarda un proceso de rediseño completo?', a: 'Depende de la complejidad, pero típicamente un Discovery toma 2 semanas, y el rediseño de flujos críticos toma entre 4 y 6 semanas adicionales.' }
+      { q: '¿Ustedes desarrollan el código también?', a: 'Sí. Nuestra capability de Software Engineering puede construir el producto completo de punta a punta con React/Node.js en 90 días (Pilar 03), o podemos entregar el diseño documentado a tu equipo interno de desarrollo.' },
+      { q: '¿Trabajan sobre plataformas ya existentes?', a: 'Sí, la mayoría de nuestros proyectos corporativos involucran modernizar y reducir la fricción de sistemas legados o plataformas que ya están en producción mediante el Pilar 01 (Diagnóstico) o Pilar 04 (Evolución continua).' },
+      { q: '¿Cuánto tarda un proceso de diseño completo?', a: 'Depende de la modalidad: una consultoría de diagnóstico toma de 2 a 4 semanas. El diseño integral de una plataforma completa se ejecuta dentro del sprint de 90 días del Pilar 03.' }
     ]
   },
-  'ai-agents': {
-    id: 'ai-agents',
-    eyebrow: 'Capability · Agentes IA & Automatización',
-    title: 'Agentes de IA integrados en la arquitectura de tu operación.',
-    subtitle: 'Procesos agentizados que liberan la capacidad de tu equipo, conectados a datos reales de tu negocio desde el primer sprint.',
-    callout1: 'Agentes IA & Automatización es la capability de BluePixel para integrar agentes de inteligencia artificial desde el diseño de la arquitectura de tu plataforma. Los agentes operan sobre datos reales de producción desde el sprint 1, ejecutando tareas de forma autónoma y optimizando procesos en tiempo real. El principio es simple: la IA multiplica la capacidad de las personas que ya tienes, construyendo capacidad interna real.',
-    painPoints: {
-      eyebrow: '01 — Dónde se estanca la automatización',
-      title: 'La IA se aprueba en el consejo. Rara vez llega a producción.',
-      items: [
-        { title: 'Aprobación sin ejecución técnica', desc: 'La dirección aprueba "hacer algo con IA", pero nadie traduce esa aprobación en agentes que realmente operen sobre la operación diaria.' },
-        { title: 'Automatización superficial', desc: 'Se automatiza lo fácil y visible, mientras el proceso que de verdad cuesta caro sigue dependiendo de personas y hojas de cálculo.' },
-        { title: 'Pilotos que no escalan', desc: 'Existe un prototipo o demo de agente que funcionó en la presentación, pero nunca se conectó a los datos y sistemas reales.' }
-      ]
-    },
-    matrix: {
-      eyebrow: '02 — Nuestro enfoque',
-      title: 'De tarea automatizada a operación agentizada.',
-      subtitle: 'La madurez de automatización avanza en etapas: cada negocio parte de reglas fijas y llega a agentes que deciden y actúan por sí mismos.',
-      headers: ['Nivel', 'Automatización', 'IA Asistida', 'Agentic (Autónoma)', 'Métrica Impactada'],
-      rows: [
-        { label: 'Atención a clientes', cols: ['Respuestas con reglas fijas a FAQs', 'Humano usa IA para redactar', 'El agente resuelve flujos completos y cruza sistemas', 'Tiempo de resolución: -80%'] },
-        { label: 'Conciliación', cols: ['Extracción de datos a Excel', 'IA sugiere, humano aprueba', 'Agente investiga anomalías en ERP y resuelve', 'Horas manuales: -70%'] },
-        { label: 'Onboarding', cols: ['Checklists y recordatorios automáticos', 'IA prellena formularios', 'Agente valida documentos y coordina CRM/ERP', 'Tiempo de alta: -60%'] }
-      ]
-    },
-    specs: {
-      eyebrow: '03 — Dónde aplicamos agentes',
-      title: 'Agentización que opera procesos completos de tu negocio.',
-      subtitle: 'Cada agente se conecta a datos reales de tu operación, ya sea de cara al cliente o en procesos internos.',
-      items: [
-        { title: 'Agentes Operativos', desc: 'Desde atención a clientes hasta back-office interno (finanzas, RH): flujos que se ejecutan, monitorean y escalan por sí solos, en cualquier horario.' },
-        { title: 'Integraciones Inteligentes', desc: 'Salesforce, HubSpot, SAP y Zendesk conectados en un solo flujo de datos, para que cada sistema alimente al resto en tiempo real.' },
-        { title: 'Optimización en Tiempo Real', desc: 'Agentes que identifican fricciones y anomalías apenas ocurren, y actúan antes de que el usuario o el equipo las note.' }
-      ]
-    },
-    quiz: {
-      title: '¿Qué tan lista está tu operación para agentes en producción?',
-      subtitle: '4 preguntas, resultado inmediato. Una primera lectura antes de tu diagnóstico.',
-      questions: [
-        {
-          q: '1. ¿Qué tan estandarizados están los procesos que quieres automatizar?',
-          options: [
-            { text: 'Documentados, con reglas claras', score: 3 },
-            { text: 'Parcialmente documentados', score: 2 },
-            { text: 'Dependen del criterio personal', score: 1 },
-            { text: 'No los hemos mapeado', score: 0 }
-          ]
-        },
-        {
-          q: '2. ¿Tus sistemas (CRM, ERP, pagos) están conectados entre sí?',
-          options: [
-            { text: 'Sí, con APIs en tiempo real', score: 3 },
-            { text: 'Parcialmente, manual', score: 2 },
-            { text: 'Cada sistema opera aislado', score: 1 },
-            { text: 'No lo sé con certeza', score: 0 }
-          ]
-        },
-        {
-          q: '3. ¿Han probado antes IA o automatización en tu operación?',
-          options: [
-            { text: 'Sí, ya operando en producción', score: 3 },
-            { text: 'Sí, como piloto que no escaló', score: 2 },
-            { text: 'Solo pruebas exploratorias', score: 1 },
-            { text: 'Nunca', score: 0 }
-          ]
-        },
-        {
-          q: '4. ¿Pueden medir hoy cuánto tiempo o dinero pierden en ese proceso?',
-          options: [
-            { text: 'Sí, con datos concretos', score: 3 },
-            { text: 'Estimación aproximada', score: 2 },
-            { text: 'Solo percepción cualitativa', score: 1 },
-            { text: 'No lo hemos medido', score: 0 }
-          ]
-        }
-      ]
-    },
-    deliverables: {
-      eyebrow: '06 — Estándar de automatización',
-      title: 'Agentes que operan, aprenden y mejoran con cada ciclo.',
-      items: [
-        { num: '01', title: 'Arquitectura AI-ready', desc: 'Infraestructura diseñada desde el día uno para que la IA escale.' },
-        { num: '02', title: 'Datos de producción reales', desc: 'Los agentes operan sobre comportamiento real y datos conectados a tu ERP/CRM.' },
-        { num: '03', title: 'Detección proactiva', desc: 'Identifica fricciones en tiempo real y actúa de inmediato.' },
-        { num: '04', title: 'Capacidad interna multiplicada', desc: 'Tu equipo de delegar carga operativa con total transparencia.' },
-        { num: '05', title: 'Trazabilidad y Auditoría', desc: 'Cada decisión del agente queda registrada y es 100% auditable por humanos.' },
-        { num: '06', title: 'Métricas de Negocio', desc: 'Impacto medido en horas liberadas, costo evitado o conversión lograda.' }
-      ]
-    },
-    timeline: {
-      eyebrow: '07 — Cómo trabajamos',
-      title: 'De diagnóstico a agente en producción, en ciclos cortos.',
-      subtitle: 'Cada proyecto avanza en 4 etapas, con un entregable concreto y tiempo estimado.',
-      steps: [
-        { num: '01', title: 'Diagnóstico de automatización', desc: 'Mapeo de procesos, datos y sistemas candidatos a agentizar.', deliverables: ['Reporte de oportunidades priorizadas'] },
-        { num: '02', title: 'Diseño del agente', desc: 'Definición de reglas, integraciones y capa de conocimiento (RAG).', deliverables: ['Especificación técnica y de negocio'] },
-        { num: '03', title: 'Construcción e integración', desc: 'Desarrollo del agente conectado a tu stack real.', deliverables: ['Agente funcional en ambiente controlado'] },
-        { num: '04', title: 'Producción y monitoreo', desc: 'Lanzamiento, monitoreo continuo y ajustes sobre datos en vivo.', deliverables: ['Dashboard de resultados operativos'] }
-      ]
-    },
-    faqs: [
-      { q: '¿Qué incluye exactamente Agentes IA & Automatización?', a: 'Incluye diagnóstico de procesos automatizables, diseño de agentes operativos, integración a tu stack actual (CRM, ERP, pagos), y monitoreo de resultado en producción.' },
-      { q: '¿En qué se diferencia de comprar un bot prefabricado?', a: 'Un bot prefabricado automatiza flujos rígidos y aislados. Nosotros diseñamos agentes autónomos que razonan sobre tus bases de datos privadas (RAG), se integran a tu core transaccional y escalan con reglas corporativas de seguridad (SOC2).' },
-      { q: '¿Los agentes reemplazarán a mi equipo?', a: 'No. El objetivo de la automatización empresarial es liberar a los humanos del trabajo repetitivo para que puedan enfocarse en el análisis estratégico, las negociaciones complejas y la toma de decisiones que requieren juicio humano.' }
-    ]
-  },
+
   'ai-engineering': {
     id: 'ai-engineering',
-    eyebrow: 'Capability · Arquitectura Cloud & AI Engineering',
-    title: 'Infraestructura tecnológica que soporta el futuro de tu negocio.',
-    subtitle: 'Diseñamos y construimos plataformas cloud-native listas para integraciones de IA. Escalabilidad técnica, baja latencia y soberanía de datos.',
-    callout1: 'Una aplicación moderna no puede depender de bases de datos monolíticas y servidores frágiles. En BluePixel empleamos metodologías de Arquitectura Cloud-Native (AWS, GCP, Azure), microservicios y protocolos MCP (Model Context Protocol). Preparamos tu capa de datos para que los modelos de lenguaje (LLMs) puedan consumirlos de forma segura y veloz.',
+    themeKey: 'cyan',
+    clusterName: 'Apps & Producto',
+    canonicalBadge: 'Cloud-Native SOC2',
+    packageName: 'Software Engineering & Cloud-Native',
+    eyebrow: 'Capability · Software Engineering & Cloud-Native',
+    title: 'Ingeniería Full Stack y arquitecturas cloud de misión crítica.',
+    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, Go) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
+    callout1: 'Rechazamos el modelo de maquila que factura horas a ciegas y entrega software frágil. Construimos plataformas con estándares de ingeniería de grado empresarial: microservicios, despliegue automatizado CI/CD, infraestructura como código (IaC) y arquitectura orientada a eventos. Tu código y tus datos siempre residen en tu nube privada.',
+    stats: [
+      { value: '99.9%', label: 'Garantía de SLA y disponibilidad en producción', sublabel: 'Arquitectura Cloud-Native' },
+      { value: '<120ms', label: 'Latencia p95 en APIs y endpoints transaccionales', sublabel: 'Rendimiento optimizado' },
+      { value: '0%', label: 'Vendor Lock-In: código y datos 100% en tu VPC', sublabel: 'Soberanía Técnica Total' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Architecture Assessment & Due Diligence',
+        desc: 'Auditoría profunda de deuda técnica en código legado, análisis de topología cloud y blueprint de arquitectura recomendado para escalar.',
+        deliverable: 'Blueprint Arquitectónico & Matriz de Deuda'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Conectores Determinísticos & Servidores MCP',
+        desc: 'Desarrollo de endpoints robustos y capas de conexión estandarizadas (MCP) para conectar agentes con SAP, Salesforce y ERPs legados.',
+        deliverable: 'Servidores MCP & APIs Documentadas'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: true,
+        role: 'Construcción Full Stack de 0 a Producción',
+        desc: 'De la arquitectura conceptual a despliegue productivo en 90 días con React, Node.js/Python, bases de datos resilientes y CI/CD automatizado.',
+        deliverable: 'Plataforma en Producción con SLA 99.9%'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'Squad Dedicado & Reducción de Deuda',
+        desc: 'Acompañamiento continuo con Tech Lead y Senior Full Stack para refactorización continua, optimización de costos cloud y nuevos microservicios.',
+        deliverable: 'Sprints Quincenales de Entrega Continua'
+      }
+    ],
     painPoints: {
       eyebrow: '01 — Los retos de la infraestructura moderna',
       title: 'El software legado está frenando tu capacidad de innovar.',
       items: [
-        { title: 'Deuda técnica inmanejable', desc: 'Tu código actual es un monolito frágil; agregar una nueva función rompe tres partes del sistema.' },
+        { title: 'Deuda técnica inmanejable', desc: 'Tu código actual es un monolito frágil; agregar una nueva función rompe tres partes del sistema y retrasa los lanzamientos.' },
         { title: 'Incompatibilidad con IA', desc: 'Quieres implementar agentes o machine learning, pero tus datos están atrapados en silos o bases de datos no estructuradas para IA.' },
-        { title: 'Costos de nube fuera de control', desc: 'Estás pagando fortunas en infraestructura cloud mal configurada que no escala de manera inteligente.' }
+        { title: 'Costos de nube fuera de control', desc: 'Estás pagando fortunas en infraestructura cloud mal configurada que no escala de manera elástica ante picos de demanda.' }
       ]
     },
     matrix: {
       eyebrow: '02 — Evolución Tecnológica',
-      title: 'De servidores locales a ecosistemas impulsados por IA.',
-      subtitle: 'La madurez arquitectónica dicta la velocidad a la que puedes lanzar nuevos productos.',
-      headers: ['Nivel', 'Arquitectura Legada', 'Cloud-Native', 'AI-Ready Enterprise', 'Impacto Operativo'],
+      title: 'De servidores frágiles a ecosistemas cloud resilientes.',
+      subtitle: 'La madurez arquitectónica dicta la velocidad a la que puedes lanzar nuevos productos al mercado.',
+      headers: ['Nivel', 'Arquitectura Legada', 'Cloud-Native Estándar', 'Estándar BluePixel Enterprise', 'Impacto Operativo'],
       rows: [
-        { label: 'Estructura', cols: ['Monolito en On-Premise', 'Microservicios Cloud', 'Arquitectura Event-Driven (MCP)', 'Velocidad de despliegue: 10x'] },
-        { label: 'Manejo de Datos', cols: ['Bases Relacionales Rígidas', 'Data Lakes & APIs', 'Bases Vectoriales para RAG/LLMs', 'Tiempo de acceso a insights: Segundos'] },
-        { label: 'Escalabilidad', cols: ['Manual (comprar servidores)', 'Auto-scaling básico', 'Computación distribuida y Serverless', 'Uptime: 99.999%'] }
+        { label: 'Estructura', cols: ['Monolito en On-Premise', 'Microservicios Cloud básicos', 'Arquitectura Desacoplada Event-Driven (MCP)', 'Velocidad de despliegue: 10x'] },
+        { label: 'Manejo de Datos', cols: ['Bases Relacionales Rígidas', 'Data Lakes & APIs estándar', 'Bases Vectoriales para RAG/LLMs y Caché distribuida', 'Acceso a insights: Milisegundos'] },
+        { label: 'Escalabilidad', cols: ['Manual (comprar servidores)', 'Auto-scaling básico reactivo', 'Computación distribuida, Serverless y Zero Lock-in', 'Uptime garantizado: 99.9%'] }
       ]
     },
     specs: {
@@ -244,29 +232,29 @@ export const servicesData = {
       title: 'Ingeniería profunda para problemas corporativos.',
       subtitle: 'No solo escribimos código; diseñamos la máquina completa.',
       items: [
-        { title: 'Desarrollo Full-Stack (Moderno)', desc: 'Construimos con React, Node.js, Python, y Go. Aplicaciones robustas, seguras y de alto rendimiento transaccional.' },
-        { title: 'Integraciones MCP y APIs', desc: 'Creamos capas de conexión estandarizadas para que los modelos de Inteligencia Artificial puedan interactuar con tus datos privados de forma segura.' },
-        { title: 'Cloud Architecture & DevOps', desc: 'Diseñamos despliegues automatizados (CI/CD) sobre AWS o Google Cloud, asegurando zero-downtime y auto-escalabilidad.' }
+        { title: 'Desarrollo Full-Stack Moderno', desc: 'Construimos con React, Node.js, Python y TypeScript. Aplicaciones web y móviles robustas, seguras y de alto rendimiento transaccional.' },
+        { title: 'Integraciones MCP y APIs Abiertas', desc: 'Creamos capas de conexión estandarizadas (Model Context Protocol) para que modelos de IA y sistemas externos interactúen de forma segura.' },
+        { title: 'Cloud Architecture & DevOps CI/CD', desc: 'Diseñamos despliegues automatizados sobre AWS, GCP o Azure, asegurando zero-downtime, infraestructura como código (Terraform) y auto-escalabilidad.' }
       ]
     },
     quiz: {
-      title: '¿Está tu infraestructura lista para la era de la IA?',
+      title: '¿Está tu infraestructura lista para la era de la IA y el alto tráfico?',
       subtitle: 'Diagnostica la salud de tu arquitectura técnica en 4 pasos.',
       questions: [
         {
           q: '1. ¿Cuánto tardan en hacer un despliegue a producción de nuevas funcionalidades?',
           options: [
-            { text: 'Minutos (CI/CD automatizado)', score: 3 },
-            { text: 'Horas o días (Requiere coordinación)', score: 2 },
-            { text: 'Semanas (Ventanas de mantenimiento)', score: 1 },
-            { text: 'Meses (Sistemas legacy críticos)', score: 0 }
+            { text: 'Minutos (CI/CD automatizado con pruebas)', score: 3 },
+            { text: 'Horas o días (Requiere coordinación manual)', score: 2 },
+            { text: 'Semanas (Ventanas de mantenimiento nocturnas)', score: 1 },
+            { text: 'Meses (Sistemas legacy críticos con alto riesgo)', score: 0 }
           ]
         },
         {
           q: '2. Si el tráfico se multiplica por 10x repentinamente, ¿qué pasa con tu plataforma?',
           options: [
-            { text: 'Se auto-escala sin intervención', score: 3 },
-            { text: 'Sobrevive pero se vuelve muy lenta', score: 2 },
+            { text: 'Se auto-escala elásticamente sin intervención', score: 3 },
+            { text: 'Sobrevive pero se vuelve lenta', score: 2 },
             { text: 'Requiere levantar servidores manualmente', score: 1 },
             { text: 'Se cae (Downtime inevitable)', score: 0 }
           ]
@@ -277,13 +265,13 @@ export const servicesData = {
             { text: 'Sí, estructuradas con APIs y vectores', score: 3 },
             { text: 'Tenemos Data Lakes listos', score: 2 },
             { text: 'Datos aislados en silos y ERPs', score: 1 },
-            { text: 'Información fragmentada en excels', score: 0 }
+            { text: 'Información fragmentada en hojas de cálculo', score: 0 }
           ]
         },
         {
           q: '4. ¿Cómo manejan la seguridad y control de accesos a nivel infraestructura?',
           options: [
-            { text: 'Zero Trust y políticas IAM estrictas', score: 3 },
+            { text: 'Zero Trust y políticas IAM estrictas en VPC', score: 3 },
             { text: 'Roles básicos de base de datos', score: 2 },
             { text: 'Seguridad perimetral tradicional', score: 1 },
             { text: 'Credenciales compartidas o hardcodeadas', score: 0 }
@@ -295,12 +283,12 @@ export const servicesData = {
       eyebrow: '06 — Entregables Técnicos',
       title: 'Transparencia total sobre tu IP tecnológico.',
       items: [
-        { num: '01', title: 'Repositorios de Código Limpio', desc: 'Propiedad intelectual 100% tuya, con altos estándares de Clean Code.' },
-        { num: '02', title: 'Documentación de Arquitectura', desc: 'Diagramas de red, flujos de datos y manuales operativos.' },
-        { num: '03', title: 'Pipelines CI/CD', desc: 'Sistemas automatizados de prueba y despliegue configurados en tu entorno.' },
-        { num: '04', title: 'Infraestructura como Código', desc: 'Scripts de Terraform/Pulumi para levantar entornos instantáneamente.' },
-        { num: '05', title: 'APIs Seguras (Swagger/OpenAPI)', desc: 'Endpoints completamente documentados para conexión con terceros o agentes IA.' },
-        { num: '06', title: 'Monitoreo y Alertas', desc: 'Dashboards en Datadog o Grafana para visibilidad técnica en tiempo real.' }
+        { num: '01', title: 'Repositorios de Código Limpio', desc: 'Propiedad intelectual 100% tuya, con estándares rigurosos de Clean Code y tipado estricto.' },
+        { num: '02', title: 'Documentación de Arquitectura', desc: 'Diagramas de topología cloud, flujos de datos y manuales operativos para tu equipo.' },
+        { num: '03', title: 'Pipelines CI/CD Automatizados', desc: 'Flujos automatizados de prueba, análisis estático y despliegue continuo en tu entorno.' },
+        { num: '04', title: 'Infraestructura como Código (IaC)', desc: 'Scripts de Terraform/Pulumi para replicar entornos de Staging y Producción en minutos.' },
+        { num: '05', title: 'APIs Seguras (Swagger / OpenAPI)', desc: 'Endpoints completamente documentados y testeados para conexión con terceros o agentes IA.' },
+        { num: '06', title: 'Monitoreo y Telemetría en Tiempo Real', desc: 'Dashboards en Datadog/Grafana para visibilidad de latencia, errores y consumo en vivo.' }
       ]
     },
     timeline: {
@@ -309,91 +297,294 @@ export const servicesData = {
       subtitle: 'Trabajamos como una extensión nativa de tu departamento de tecnología.',
       steps: [
         { num: '01', title: 'Architecture Assessment', desc: 'Revisamos tu deuda técnica, stack actual y cuellos de botella.', deliverables: ['Reporte de vulnerabilidades', 'Roadmap arquitectónico'] },
-        { num: '02', title: 'System Design', desc: 'Diseñamos la topología cloud, esquemas de bases de datos y contratos de APIs.', deliverables: ['Documento de Diseño Técnico (TDD)'] },
-        { num: '03', title: 'Desarrollo en Sprints', desc: 'Construcción iterativa. Entregamos módulos funcionales cada 2 semanas.', deliverables: ['Código en Staging', 'Tests automatizados'] },
-        { num: '04', title: 'Go-Live & DevOps', desc: 'Despliegue a producción, monitoreo y paso a la fase de mantenimiento evolutivo.', deliverables: ['Plataforma estable', 'Alertas activas'] }
+        { num: '02', title: 'System Design & Topología', desc: 'Diseñamos la topología cloud, esquemas de bases de datos y contratos de APIs.', deliverables: ['Documento de Diseño Técnico (TDD)'] },
+        { num: '03', title: 'Desarrollo en Sprints Ágiles', desc: 'Construcción iterativa. Entregamos módulos funcionales cada 2 semanas.', deliverables: ['Código en Staging', 'Tests automatizados'] },
+        { num: '04', title: 'Go-Live & DevOps', desc: 'Despliegue a producción con zero downtime y paso a mantenimiento evolutivo.', deliverables: ['Plataforma en Producción', 'SLA 99.9% activo'] }
       ]
     },
     faqs: [
-      { q: '¿De quién es la propiedad intelectual del código?', a: 'Tuya, al 100%. Al finalizar el proyecto o sprint, todo el código fuente, la infraestructura y los repositorios son transferidos completamente a la propiedad del cliente.' },
-      { q: '¿Trabajan junto a nuestro equipo interno de tecnología?', a: 'Absolutamente. Operamos como células ágiles de aumento de staff (Staff Augmentation) o como squads completamente autónomos. Nos adaptamos a los rituales de ingeniería de tu CTO.' },
-      { q: '¿Qué nubes (Cloud) soportan?', a: 'Somos expertos en Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure. Seleccionamos el entorno según tus licencias y preferencias corporativas.' }
+      { q: '¿De quién es la propiedad intelectual del código?', a: 'Tuya, al 100%. Todo el código fuente, infraestructura como código y documentación se entregan y residen en los repositorios privados de tu empresa desde el día uno.' },
+      { q: '¿Trabajan junto a nuestro equipo interno de tecnología?', a: 'Absolutamente. Operamos como células ágiles de ingeniería o como squad autónomo que entrega módulos listos para producción. Nos adaptamos a los rituales y estándares de tu CTO.' },
+      { q: '¿Qué proveedores de nube soportan?', a: 'Somos expertos en Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure. Diseñamos con estándares abiertos y contenedores Docker/Kubernetes para evitar cualquier vendor lock-in.' }
     ]
   },
+
+  'ai-agents': {
+    id: 'ai-agents',
+    themeKey: 'purple',
+    clusterName: 'Automatización',
+    canonicalBadge: 'Agentic Automation',
+    packageName: 'IA & Automatización Agéntica',
+    eyebrow: 'Capability · IA & Automatización Agéntica',
+    title: 'Agentes autónomos integrados sobre tu stack operativo actual.',
+    subtitle: 'Sistemas multi-agente y RAG privado sobre datos reales de tu negocio, con integración determinística vía MCP a ERPs y CRMs sin reemplazar tus sistemas.',
+    callout1: 'La IA superficial que se queda en demos no genera valor. En BluePixel creamos agentes autónomos que razonan sobre datos corporativos reales sin alucinaciones, ejecutan acciones en ERPs mediante el protocolo abierto MCP y liberan capacidad operativa desde el primer ciclo. La IA multiplica la capacidad de las personas que ya tienes en tu equipo.',
+    stats: [
+      { value: '-75%', label: 'Reducción de horas manuales en tareas repetitivas', sublabel: 'Flujos operativos agentizados' },
+      { value: '<800ms', label: 'Tiempo de respuesta en razonamiento y consulta RAG', sublabel: 'Bases vectoriales optimizadas' },
+      { value: '0%', label: 'Alucinaciones críticas sobre datos corporativos', sublabel: 'Blindaje con Guardrails y MCP' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'AI Readiness & Mapeo de Viabilidad',
+        desc: 'Evaluación técnica de procesos candidatos, cálculo de ROI proyectado y análisis de costos de inferencia antes de desplegar.',
+        deliverable: 'Business Case de Automatización & ROI'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: true,
+        role: 'Despliegue de Agentes en Producción',
+        desc: 'Implementación ágil de flujos agénticos autónomos con RAG privado, conectores MCP a SAP/Salesforce y guardrails de seguridad corporativa.',
+        deliverable: 'Agente en Producción en tu VPC Privada'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: false,
+        role: 'Workflows Inteligentes Nativos',
+        desc: 'Integración de motores agénticos dentro de la plataforma digital desde el sprint 1, transformando la app en un activo inteligente nativo.',
+        deliverable: 'Módulos Agénticos Embebidos en la App'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'Orquestación & Nuevos Agentes',
+        desc: 'Optimización continua de prompts, afinación de embeddings, incorporación de nuevos flujos agénticos y monitoreo de decisiones.',
+        deliverable: 'Monitoreo de Agentes & Nuevas Capacidades'
+      }
+    ],
+    painPoints: {
+      eyebrow: '01 — Dónde se estanca la automatización',
+      title: 'La IA se aprueba en el consejo. Rara vez llega a producción.',
+      items: [
+        { title: 'Aprobación sin ejecución técnica', desc: 'La dirección aprueba "hacer algo con IA", pero nadie traduce esa aprobación en agentes que realmente operen sobre la operación diaria.' },
+        { title: 'Automatización superficial', desc: 'Se automatiza lo fácil y visible con bots rígidos, mientras el proceso que de verdad cuesta caro sigue dependiendo de personas y Excels.' },
+        { title: 'Pilotos que no escalan', desc: 'Existe un demo de agente que funcionó en la presentación, pero nunca se conectó a los datos transaccionales reales del ERP/CRM.' }
+      ]
+    },
+    matrix: {
+      eyebrow: '02 — Nuestro enfoque',
+      title: 'De tarea automatizada a operación agentizada.',
+      subtitle: 'La madurez de automatización avanza en etapas: cada negocio parte de reglas fijas y llega a agentes que deciden y actúan por sí mismos.',
+      headers: ['Nivel', 'Automatización Básica', 'IA Asistida (Copilot)', 'Estándar BluePixel Agentic', 'Métrica Impactada'],
+      rows: [
+        { label: 'Atención a clientes', cols: ['Respuestas con reglas fijas a FAQs', 'Humano usa IA para redactar', 'El agente resuelve flujos completos y cruza sistemas', 'Tiempo de resolución: -80%'] },
+        { label: 'Conciliación Financiera', cols: ['Extracción de datos a Excel', 'IA sugiere, humano aprueba', 'Agente investiga anomalías en ERP y concilia', 'Horas manuales: -70%'] },
+        { label: 'Onboarding & Operaciones', cols: ['Checklists y recordatorios automáticos', 'IA prellena formularios', 'Agente valida documentos y coordina CRM/ERP', 'Tiempo de ciclo: -60%'] }
+      ]
+    },
+    specs: {
+      eyebrow: '03 — Dónde aplicamos agentes',
+      title: 'Agentización que opera procesos completos de tu negocio.',
+      subtitle: 'Cada agente se conecta a datos reales de tu operación, ya sea de cara al cliente o en procesos internos.',
+      items: [
+        { title: 'Agentes Operativos Autónomos', desc: 'Desde atención a clientes hasta back-office interno (finanzas, RH): flujos que se ejecutan, monitorean y escalan por sí solos 24/7.' },
+        { title: 'Integraciones Determinísticas MCP', desc: 'Salesforce, HubSpot, SAP y Zendesk conectados mediante el protocolo MCP, asegurando que los agentes interactúen con reglas de negocio exactas.' },
+        { title: 'RAG Privado Anti-Alucinaciones', desc: 'Arquitectura RAG sobre bases vectoriales en tu nube privada. El agente solo responde basándose en tu información oficial comprobada.' }
+      ]
+    },
+    quiz: {
+      title: '¿Qué tan lista está tu operación para agentes en producción?',
+      subtitle: '4 preguntas, resultado inmediato. Una primera lectura antes de tu diagnóstico.',
+      questions: [
+        {
+          q: '1. ¿Qué tan estandarizados están los procesos que quieres automatizar?',
+          options: [
+            { text: 'Documentados, con reglas de negocio claras', score: 3 },
+            { text: 'Parcialmente documentados en manuales', score: 2 },
+            { text: 'Dependen del criterio personal de cada persona', score: 1 },
+            { text: 'No los hemos mapeado formalmente', score: 0 }
+          ]
+        },
+        {
+          q: '2. ¿Tus sistemas (CRM, ERP, pagos) están conectados entre sí?',
+          options: [
+            { text: 'Sí, con APIs y webhooks en tiempo real', score: 3 },
+            { text: 'Parcialmente, con procesos manuales intermedios', score: 2 },
+            { text: 'Cada sistema opera aislado en su propio silo', score: 1 },
+            { text: 'No lo sabemos con certeza técnica', score: 0 }
+          ]
+        },
+        {
+          q: '3. ¿Han probado antes IA o automatización en tu operación?',
+          options: [
+            { text: 'Sí, agentes o flujos ya operando en producción', score: 3 },
+            { text: 'Sí, pero quedó como piloto que no escaló', score: 2 },
+            { text: 'Solo pruebas exploratorias con ChatGPT web', score: 1 },
+            { text: 'Nunca hemos implementado nada de IA', score: 0 }
+          ]
+        },
+        {
+          q: '4. ¿Pueden medir hoy cuánto tiempo o dinero pierden en ese proceso manual?',
+          options: [
+            { text: 'Sí, con métricas de costo y horas concretas', score: 3 },
+            { text: 'Estimación aproximada del equipo', score: 2 },
+            { text: 'Solo percepción cualitativa de fricción', score: 1 },
+            { text: 'No lo hemos medido cuantitativamente', score: 0 }
+          ]
+        }
+      ]
+    },
+    deliverables: {
+      eyebrow: '06 — Estándar de Automatización',
+      title: 'Agentes que operan, aprenden y mejoran con cada ciclo.',
+      items: [
+        { num: '01', title: 'Arquitectura AI-Ready', desc: 'Infraestructura diseñada desde el día uno para que los agentes escalen sin saturar servidores.' },
+        { num: '02', title: 'Conexión a Datos Reales (RAG)', desc: 'Los agentes operan sobre bases de conocimiento corporativas actualizadas y seguras.' },
+        { num: '03', title: 'Conectores Determinísticos MCP', desc: 'Integración vía Model Context Protocol con tus ERPs, CRMs y bases de datos transaccionales.' },
+        { num: '04', title: 'Trazabilidad y Auditoría Humana', desc: 'Cada decisión, llamada de API y razonamiento queda registrado y es 100% auditable.' },
+        { num: '05', title: 'Guardrails de Seguridad', desc: 'Filtros contra inyección de prompts, alucinaciones y fuga de datos confidenciales.' },
+        { num: '06', title: 'Dashboard de Impacto Operativo', desc: 'Medición en tiempo real de horas liberadas, costos evitados y tasa de éxito en resoluciones.' }
+      ]
+    },
+    timeline: {
+      eyebrow: '07 — Metodología de Entrega',
+      title: 'De diagnóstico a agente en producción, en ciclos cortos.',
+      subtitle: 'Cada proyecto avanza con un entregable concreto y tiempo estimado.',
+      steps: [
+        { num: '01', title: 'Diagnóstico de Automatización', desc: 'Mapeo de procesos, datos y sistemas candidatos a agentizar con cálculo de ROI.', deliverables: ['Reporte de oportunidades priorizadas'] },
+        { num: '02', title: 'Diseño del Agente & MCP', desc: 'Definición de reglas de negocio, herramientas determinísticas y capa RAG privada.', deliverables: ['Especificación técnica y de negocio'] },
+        { num: '03', title: 'Construcción e Integración', desc: 'Desarrollo del agente conectado a tus sistemas reales en ambiente controlado.', deliverables: ['Agente funcional testeado'] },
+        { num: '04', title: 'Producción y Monitoreo', desc: 'Lanzamiento a producción en tu VPC privada, monitoreo continuo y afinación.', deliverables: ['Dashboard de resultados operativos'] }
+      ]
+    },
+    faqs: [
+      { q: '¿Qué incluye exactamente el servicio de Agentes IA?', a: 'Incluye diagnóstico de procesos viables, diseño de la arquitectura multi-agente, RAG sobre datos corporativos reales, integración vía MCP a tus sistemas (ERP/CRM), y despliegue en tu nube privada en 2 a 4 semanas (Pilar 02).' },
+      { q: '¿En qué se diferencia de un bot prefabricado o chatbot tradicional?', a: 'Un bot prefabricado solo sigue árboles rígidos de decisiones. Nuestros agentes razonan de forma autónoma, consultan bases vectoriales privadas, llaman funciones y ejecutan transacciones reales en tus sistemas mediante protocolos determinísticos.' },
+      { q: '¿Nuestros datos privados se usan para entrenar modelos públicos?', a: 'Jamás. Desplegamos modelos en entornos privados (VPC) con acuerdos empresariales de cero retención de datos. Tu propiedad intelectual nunca sale de tu jurisdicción corporativa.' }
+    ]
+  },
+
   'data-analytics': {
     id: 'data-analytics',
+    themeKey: 'indigo',
+    clusterName: 'Automatización',
+    canonicalBadge: 'Mixpanel Telemetry',
+    packageName: 'Data & Analytics Enterprise',
     eyebrow: 'Capability · Data & Analytics',
-    title: 'De datos dispersos a inteligencia directiva accionable.',
-    subtitle: 'Centralizamos, limpiamos y estructuramos grandes volúmenes de información corporativa para habilitar dashboards predictivos y capas de Machine Learning.',
-    callout1: 'Los datos son inútiles si no puedes confiar en ellos o no son accesibles a tiempo. Implementamos pipelines robustos (ETL/ELT) y arquitecturas Modern Data Stack (Snowflake, BigQuery, dbt) para garantizar que los tomadores de decisiones vean una sola versión de la verdad, en tiempo real, habilitando analítica avanzada.',
+    title: 'De datos fragmentados a una sola fuente de verdad directiva.',
+    subtitle: 'Pipelines automatizados (ETL/ELT), Data Warehousing moderno y telemetría de producto con Mixpanel para decisiones en tiempo real y modelos predictivos.',
+    callout1: 'Tener terabytes de datos en silos desconectados cuesta dinero y paraliza a los comités directivos. Diseñamos arquitecturas analíticas modernas (BigQuery, Snowflake, dbt) y telemetría profunda de producto para que el C-Level cuente con KPIs en tiempo real y anticipe el comportamiento de clientes antes de que impacte el balance.',
+    stats: [
+      { value: '1 Sola', label: 'Fuente de verdad directiva conciliada en tiempo real', sublabel: 'Zero discrepancias de datos' },
+      { value: '<1s', label: 'Velocidad de carga en tableros ejecutivos y KPIs', sublabel: 'Arquitectura Modern Data Stack' },
+      { value: '360°', label: 'Visibilidad de comportamiento y conversión de usuario', sublabel: 'Telemetría Mixpanel instrumentada' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Data Audit & Diccionario de Métricas',
+        desc: 'Diagnóstico de calidad de datos, auditoría de silos (CRM/ERP), estandarización de definiciones y blueprint de arquitectura analítica.',
+        deliverable: 'Diccionario de Datos & Matriz de Fuentes'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Telemetría y Trazabilidad Agéntica',
+        desc: 'Instrumentación de pipelines en tiempo real para registrar y auditar cada ejecución, token consumido y decisión de los agentes de IA.',
+        deliverable: 'Pipeline de Telemetría Agéntica'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: false,
+        role: 'Data Stack & Mixpanel desde Sprint 1',
+        desc: 'Configuración nativa de analítica de producto, tracking de eventos clave y base de datos analítica conectada a la nueva plataforma.',
+        deliverable: 'Telemetría de Producto Mixpanel Activa'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'Dashboards Directivos & Modelos ML',
+        desc: 'Evolución continua de tableros directivos, análisis predictivo de churn/demanda y optimización de funnel basada en datos reales.',
+        deliverable: 'Dashboards Ejecutivos & Modelos Predictivos'
+      }
+    ],
     painPoints: {
       eyebrow: '01 — El caos de los datos corporativos',
-      title: 'Mucha información, ninguna respuesta clara.',
+      title: 'Mucha información dispersa, ninguna respuesta clara.',
       items: [
-        { title: 'Silos de información', desc: 'Ventas mira Salesforce, finanzas el ERP, marketing otra plataforma; los números nunca cuadran a fin de mes.' },
-        { title: 'Reportes manuales en Excel', desc: 'Tu equipo pasa 40 horas al mes descargando, cruzando y actualizando tablas estáticas propensas a error humano.' },
-        { title: 'Incapacidad predictiva', desc: 'Solo ves lo que ya pasó (visión retrovisor), pero no tienes modelos que prevean la demanda, fuga de clientes o fraude.' }
+        { title: 'Silos de información desconectados', desc: 'Ventas mira Salesforce, finanzas el ERP y marketing otra plataforma; los números nunca cuadran al final del trimestre.' },
+        { title: 'Reportes manuales en hojas de cálculo', desc: 'Tu equipo pasa 40 horas al mes descargando, cruzando y parchando tablas estáticas propensas a errores humanos costosos.' },
+        { title: 'Incapacidad predictiva', desc: 'Solo ves lo que ya pasó (visión por retrovisor), pero no cuentas con modelos para anticipar demanda, retención o fuga de clientes.' }
       ]
     },
     matrix: {
       eyebrow: '02 — Madurez de los Datos',
       title: 'Ascendiendo en la pirámide analítica.',
       subtitle: 'Antes de predecir el futuro, necesitas consolidar y confiar en el pasado.',
-      headers: ['Nivel', 'Descriptiva (Qué pasó)', 'Diagnóstica (Por qué)', 'Predictiva & Prescriptiva', 'Impacto en Negocio'],
+      headers: ['Nivel', 'Analítica Descriptiva (Qué pasó)', 'Analítica Diagnóstica (Por qué)', 'Estándar BluePixel Predictivo', 'Impacto en Negocio'],
       rows: [
-        { label: 'Estructura', cols: ['Reportes en Excel/CSV', 'Data Warehouse / BI', 'Machine Learning & AI', 'Decisiones Basadas en Datos'] },
-        { label: 'Tiempo de respuesta', cols: ['Días o Semanas', 'Horas', 'Tiempo Real', 'Reacción ante el mercado'] },
-        { label: 'Operación', cols: ['Extracción manual', 'Pipelines automatizados (ETL)', 'Modelos que recomiendan acciones', 'Eficiencia Directiva: +300%'] }
+        { label: 'Estructura', cols: ['Reportes en Excel/CSV', 'Data Warehouse / BI estándar', 'Modern Data Stack + Telemetría Mixpanel', 'Decisiones basadas en datos puros'] },
+        { label: 'Tiempo de respuesta', cols: ['Días o semanas de espera', 'Horas con actualización batch', 'Tiempo Real con streaming de eventos', 'Reacción inmediata al mercado'] },
+        { label: 'Operación', cols: ['Extracción manual repetitiva', 'Pipelines ETL básicos', 'Modelos predictivos que recomiendan acciones', 'Eficiencia directiva: +300%'] }
       ]
     },
     specs: {
       eyebrow: '03 — Capacidades Analíticas',
       title: 'Infraestructura de datos para corporativos.',
-      subtitle: 'Construimos el puente entre los fierros técnicos y los KPIs de negocio.',
+      subtitle: 'Construimos el puente entre los fierros técnicos y los KPIs directivos de negocio.',
       items: [
-        { title: 'Data Warehousing & Pipelines', desc: 'Diseñamos Data Lakes y bodegas de datos centralizadas conectando todas tus APIs y sistemas legados de manera automatizada.' },
-        { title: 'Business Intelligence (Dashboards)', desc: 'Visualizaciones potentes en Tableau, PowerBI o Looker. Interfaces limpias para que los ejecutivos entiendan el estado del negocio al instante.' },
-        { title: 'Modelos Predictivos (Machine Learning)', desc: 'Desarrollamos algoritmos para anticipar el comportamiento del usuario, optimizar cadenas de suministro y detectar anomalías financieras.' }
+        { title: 'Modern Data Warehousing & Pipelines', desc: 'Diseñamos Data Lakes y bodegas centralizadas en BigQuery, Snowflake o Redshift, con pipelines automatizados (dbt/Airflow).' },
+        { title: 'Telemetría de Producto con Mixpanel', desc: 'Instrumentamos el tracking granular de eventos y comportamiento para medir fricción, conversión de funnels y retención.' },
+        { title: 'Business Intelligence & Dashboards C-Level', desc: 'Tableros ejecutivos en Tableau, PowerBI o Looker que sintetizan los KPIs de salud financiera y operativa en una sola pantalla.' }
       ]
     },
     quiz: {
-      title: '¿Qué tan madura es tu infraestructura de datos?',
-      subtitle: 'Evalúa tu capacidad de tomar decisiones basadas en datos.',
+      title: '¿Qué tan madura es la infraestructura de datos de tu empresa?',
+      subtitle: 'Evalúa la capacidad de tu organización para tomar decisiones basadas en datos reales.',
       questions: [
         {
-          q: '1. Cuando el Directorio pide un reporte cruzado de finanzas y ventas, ¿cuánto tardan en generarlo?',
+          q: '1. Cuando la Dirección General pide un reporte cruzado de finanzas y ventas, ¿cuánto tardan en generarlo?',
           options: [
-            { text: 'Minutos (El dashboard está en vivo)', score: 3 },
-            { text: 'Horas (Alguien tiene que actualizarlo)', score: 2 },
-            { text: 'Días (Cruzar Excels a mano)', score: 1 },
-            { text: 'Es imposible conciliar esos datos', score: 0 }
+            { text: 'Minutos (El dashboard ejecutivo está en vivo)', score: 3 },
+            { text: 'Horas (Alguien tiene que correr consultas y compilar)', score: 2 },
+            { text: 'Días (Cruzar Excels y conciliar a mano)', score: 1 },
+            { text: 'Es imposible conciliar esos datos con certeza', score: 0 }
           ]
         },
         {
           q: '2. ¿Dónde reside actualmente la mayor parte de los datos históricos de tu empresa?',
           options: [
-            { text: 'Data Warehouse Cloud (Ej. Snowflake)', score: 3 },
-            { text: 'Bases de datos transaccionales (SQL)', score: 2 },
-            { text: 'Sistemas aislados (ERPs, CRMs)', score: 1 },
-            { text: 'Hojas de cálculo descentralizadas', score: 0 }
+            { text: 'Data Warehouse Cloud moderno (Snowflake/BigQuery)', score: 3 },
+            { text: 'Bases de datos transaccionales de producción (SQL)', score: 2 },
+            { text: 'Sistemas aislados en cada software (ERP, CRM)', score: 1 },
+            { text: 'Hojas de cálculo descentralizadas en computadoras', score: 0 }
           ]
         },
         {
-          q: '3. ¿Confías al 100% en la precisión de los KPIs que revisas diariamente?',
+          q: '3. ¿Confías al 100% en la precisión de los KPIs que revisas periódicamente?',
           options: [
-            { text: 'Totalmente, tenemos gobernanza y Data Quality', score: 3 },
-            { text: 'Generalmente sí, con pequeñas diferencias', score: 2 },
-            { text: 'Hay discrepancias constantes entre áreas', score: 1 },
-            { text: 'No, siempre dudamos de los números', score: 0 }
+            { text: 'Totalmente, tenemos gobernanza y Data Quality activa', score: 3 },
+            { text: 'Generalmente sí, aunque surgen discrepancias menores', score: 2 },
+            { text: 'Hay discusiones constantes entre áreas sobre cuál número es el bueno', score: 1 },
+            { text: 'No, siempre dudamos de la veracidad de los reportes', score: 0 }
           ]
         },
         {
-          q: '4. ¿Tu empresa usa modelos matemáticos o IA para predecir escenarios (Ej. ventas futuras, fuga de clientes)?',
+          q: '4. ¿Tu empresa usa modelos analíticos o IA para predecir escenarios futuros?',
           options: [
-            { text: 'Sí, modelos de ML en producción', score: 3 },
-            { text: 'Hacemos proyecciones estadísticas básicas', score: 2 },
-            { text: 'Tratamos de adivinar por tendencia visual', score: 1 },
-            { text: 'Cero predicción, pura reacción', score: 0 }
+            { text: 'Sí, modelos de ML en producción guiando decisiones', score: 3 },
+            { text: 'Hacemos proyecciones estadísticas básicas en hojas de cálculo', score: 2 },
+            { text: 'Tratamos de intuir tendencias de forma cualitativa', score: 1 },
+            { text: 'Cero predicción, pura reacción ante lo que ya ocurrió', score: 0 }
           ]
         }
       ]
@@ -402,212 +593,308 @@ export const servicesData = {
       eyebrow: '06 — Entregables Analíticos',
       title: 'Activos de datos listos para consumo directivo.',
       items: [
-        { num: '01', title: 'Diccionario de Datos', desc: 'Estandarización de definiciones para que toda la empresa hable el mismo idioma.' },
-        { num: '02', title: 'Data Pipelines', desc: 'Procesos de extracción, transformación y carga (ETL) automatizados.' },
-        { num: '03', title: 'Data Warehouse Arquitectura', desc: 'Repositorio centralizado en la nube (BigQuery, Snowflake, Redshift).' },
-        { num: '04', title: 'Dashboards Ejecutivos', desc: 'Paneles visuales conectados en tiempo real, diseñados con estándares de UX de lectura de datos.' },
-        { num: '05', title: 'Modelos de ML Entrenados', desc: 'Algoritmos (Python/R) integrados a la operación para recomendaciones predictivas.' },
-        { num: '06', title: 'Políticas de Gobernanza', desc: 'Reglas de acceso, privacidad (compliance) y seguridad de la información corporativa.' }
+        { num: '01', title: 'Diccionario & Gobernanza de Datos', desc: 'Estandarización de definiciones para que finanzas, operaciones y ventas hablen el mismo idioma.' },
+        { num: '02', title: 'Data Pipelines Automatizados', desc: 'Tuberías robustas de extracción, transformación y carga (ETL/ELT) en tiempo real.' },
+        { num: '03', title: 'Data Warehouse Centralizado', desc: 'Repositorio corporativo en la nube estructurado para consultas instantáneas a bajo costo.' },
+        { num: '04', title: 'Telemetría de Producto Mixpanel', desc: 'Tracking de eventos y embudos de comportamiento para optimización de producto digital.' },
+        { num: '05', title: 'Dashboards Directivos C-Level', desc: 'Paneles visuales conectados en vivo, diseñados con altos estándares de UX de lectura de datos.' },
+        { num: '06', title: 'Modelos de Machine Learning', desc: 'Algoritmos predictivos integrados a la operación para anticipar demanda o fuga de clientes.' }
       ]
     },
     timeline: {
-      eyebrow: '07 — Flujo de Implementación Data',
+      eyebrow: '07 — Metodología Data',
       title: 'Del caos al control analítico en fases probadas.',
       subtitle: 'No reconstruimos todo de golpe. Creamos victorias tempranas y valor de negocio inmediato.',
       steps: [
-        { num: '01', title: 'Data Discovery & Gobernanza', desc: 'Auditamos las fuentes, la calidad de los datos y definimos las métricas críticas.', deliverables: ['Matriz de Fuentes', 'Mapa Conceptual Analítico'] },
-        { num: '02', title: 'Ingeniería de Datos (Pipelines)', desc: 'Construimos la tubería que extrae y limpia la información de los sistemas origen.', deliverables: ['Pipelines automatizados en producción'] },
-        { num: '03', title: 'Data Modeling & Warehouse', desc: 'Estructuramos los datos para consultas eficientes y bajo costo computacional.', deliverables: ['Data Warehouse Activo'] },
-        { num: '04', title: 'Visualización & Machine Learning', desc: 'Creamos los tableros directivos y entrenamos modelos predictivos específicos.', deliverables: ['Dashboards BI', 'Modelos Predictivos (Opcional)'] }
+        { num: '01', title: 'Data Discovery & Auditoría', desc: 'Auditamos las fuentes, la calidad de datos y definimos las métricas críticas de negocio.', deliverables: ['Matriz de Fuentes', 'Mapa Conceptual Analítico'] },
+        { num: '02', title: 'Ingeniería de Pipelines', desc: 'Construimos las tuberías que extraen y limpian la información de los sistemas origen.', deliverables: ['Pipelines automatizados en producción'] },
+        { num: '03', title: 'Modelado & Data Warehouse', desc: 'Estructuramos las tablas en la nube para consultas eficientes y bajo costo.', deliverables: ['Data Warehouse Activo'] },
+        { num: '04', title: 'Visualización & Telemetría', desc: 'Configuramos tableros ejecutivos y telemetría de comportamiento para toma de decisiones.', deliverables: ['Dashboards BI & Telemetría Mixpanel'] }
       ]
     },
     faqs: [
-      { q: '¿Trabajan con PowerBI, Tableau o Looker?', a: 'Somos agnósticos en visualización. Podemos implementar desde cero o integrarnos a la licencia de BI que tu corporativo ya pague (PowerBI, Tableau, Looker, Quicksight).' },
-      { q: '¿Nuestros datos sensibles estarán seguros?', a: 'Absolutamente. Todo se mantiene dentro del entorno Cloud de tu empresa bajo estándares estrictos de encriptación y redes privadas. Nosotros solo creamos los conductos, los datos nunca salen de tu jurisdicción.' },
-      { q: '¿Cuánto tardan en unificar fuentes de datos?', a: 'Depende fuertemente de si los sistemas origen tienen APIs modernas o si son bases de datos legadas on-premise. Típicamente logramos unificar los KPIs principales (Data Mart financiero/ventas) en 4 a 8 semanas.' }
+      { q: '¿Trabajan con nuestras licencias actuales de BI (PowerBI, Tableau, Looker)?', a: 'Sí. Somos tecnológicamente agnósticos. Podemos diseñar sobre la herramienta de visualización que tu empresa ya tenga contratada (PowerBI, Tableau, Looker) o implementar soluciones cloud modernas desde cero.' },
+      { q: '¿Nuestros datos sensibles están seguros?', a: 'Absolutamente. Todos los pipelines, bodegas y almacenes residen dentro de tu propio entorno Cloud empresarial (VPC) bajo encriptación en reposo y en tránsito. Nosotros construimos los conductos, tus datos nunca salen de tu posesión.' },
+      { q: '¿Cuánto tiempo toma tener los primeros dashboards en producción?', a: 'En una Consultoría Digital (Pilar 01) o sprint inicial de 4 semanas logramos unificar las fuentes críticas (Data Mart financiero/operativo) y habilitar los primeros dashboards ejecutivos en vivo.' }
     ]
   },
+
   'security': {
     id: 'security',
+    themeKey: 'amber',
+    clusterName: 'Gobernanza IA',
+    canonicalBadge: 'ISO 27001 & OWASP',
+    packageName: 'Security, Vault & Reliability',
     eyebrow: 'Capability · Security, Compliance & Reliability',
-    title: 'Operaciones inquebrantables. Innovación sin riesgo corporativo.',
-    subtitle: 'Auditorías, blindaje cibernético y adecuación a estándares internacionales (SOC2, ISO27001) para que puedas escalar tu plataforma e IA con confianza.',
-    callout1: 'El costo de una vulneración de datos es devastador para la reputación de un corporativo. En BluePixel consideramos que la ciberseguridad y el cumplimiento (Compliance) no son opcionales, son la base habilitadora del crecimiento tecnológico. Aseguramos tus aplicaciones, APIs y arquitecturas Cloud contra ataques modernos y fugas accidentales de modelos LLMs.',
+    title: 'Blindaje cibernético y soberanía total para activos de misión crítica.',
+    subtitle: 'Auditorías de penetración (Pentesting), preparación para ISO 27001 / SOC2, arquitectura Zero-Trust y guardrails de seguridad para implementaciones de IA.',
+    callout1: 'La ciberseguridad y el cumplimiento normativo no son un trámite burocrático; son la habilitadora de contratos enterprise de siete cifras. Aplicamos estándares rigurosos de OWASP Top 10, DevSecOps y aislamiento en VPC privada para que tu empresa crezca e innove con IA sin arriesgar su patrimonio ni su reputación.',
+    stats: [
+      { value: 'ISO 27001', label: '& OWASP Top 10 alineado en cada línea de código', sublabel: 'Estándares de clase mundial' },
+      { value: '100%', label: 'Aislamiento de datos en la nube privada del cliente', sublabel: 'Cero entrenamiento con tu IP' },
+      { value: '0 Brechas', label: 'en infraestructuras y plataformas auditadas', sublabel: 'Blindaje proactivo y Red Teaming' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: true,
+        role: 'Threat Modeling & Auditoría de Vulnerabilidades',
+        desc: 'Evaluación exhaustiva de brechas de seguridad, auditoría OWASP Top 10, revisión de código estático (SAST) y plan de remediación priorizado.',
+        deliverable: 'Reporte Ejecutivo de Vulnerabilidades (CVSS)'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Guardrails para IA & Aislamiento DLP',
+        desc: 'Filtros PII contra fuga de datos sensibles, prevención de prompt injection y despliegue de inferencia en VPC privada aislada.',
+        deliverable: 'Capa de Seguridad & Guardrails para LLMs'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: false,
+        role: 'Arquitectura Zero-Trust & DevSecOps',
+        desc: 'Diseño de red segura, cifrado KMS de datos en tránsito y reposo, y pipelines CI/CD con escaneo automatizado de dependencias.',
+        deliverable: 'Infraestructura Hardened con SLA 99.9%'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'Monitoreo SLA 99.9% & Pentesting Continuo',
+        desc: 'Vigilancia activa, simulaciones de ataque periódicas (Red Teaming), parches de seguridad continuos y preparación continua para SOC2.',
+        deliverable: 'Auditorías Periódicas & Soporte Crítico 24/7'
+      }
+    ],
     painPoints: {
       eyebrow: '01 — Riesgos invisibles',
-      title: 'El precio oculto del crecimiento rápido.',
+      title: 'El precio oculto del crecimiento desordenado.',
       items: [
-        { title: 'Vulnerabilidades de código', desc: 'Aplicaciones desarrolladas con urgencia que dejan puertas traseras abiertas a inyecciones SQL o ataques XSS.' },
-        { title: 'Falta de Compliance (ISO/SOC2)', desc: 'Estás perdiendo grandes contratos corporativos porque no puedes demostrar que los datos de tus clientes están protegidos.' },
-        { title: 'Fugas en implementaciones de IA', desc: 'El miedo a que empleados envíen datos confidenciales de la empresa a ChatGPT o que un Agente IA alucine y comparta secretos.' }
+        { title: 'Vulnerabilidades de código no detectadas', desc: 'Aplicaciones desarrolladas con urgencia que dejan puertas abiertas a inyecciones SQL, autenticación rota o ataques XSS.' },
+        { title: 'Falta de cumplimiento (ISO 27001 / SOC2)', desc: 'Estás perdiendo contratos corporativos de alto valor porque no puedes demostrar que los datos de tus clientes están blindados.' },
+        { title: 'Fugas en implementaciones de IA', desc: 'El riesgo inminente de que empleados envíen datos confidenciales de la empresa a herramientas públicas o que un agente filtre secretos.' }
       ]
     },
     matrix: {
       eyebrow: '02 — Postura de Seguridad',
-      title: 'De la reacción al blindaje proactivo.',
-      subtitle: 'La seguridad no es un software que instalas, es una cultura de ingeniería constante.',
-      headers: ['Nivel', 'Reactiva (Peligro)', 'Proactiva (Estándar)', 'Resiliente (Enterprise)', 'Reducción de Riesgo'],
+      title: 'De la reacción al blindaje proactivo de grado corporativo.',
+      subtitle: 'La seguridad no es un software que se compra una vez, es una disciplina de ingeniería continua.',
+      headers: ['Nivel', 'Reactiva (Peligro)', 'Proactiva Básica', 'Estándar BluePixel Resiliente', 'Reducción de Riesgo'],
       rows: [
-        { label: 'Aplicaciones (AppSec)', cols: ['Parches tras ser atacados', 'Escaneo de código estático (SAST)', 'Pentesting continuo y Bug Bounties', 'Vulnerabilidades críticas: -99%'] },
-        { label: 'Infraestructura', cols: ['Servidores públicos sin WAF', 'Firewalls y redes privadas (VPC)', 'Arquitectura Zero-Trust y KMS', 'Superficie de ataque: Cero externa'] },
-        { label: 'Cumplimiento Normativo', cols: ['Documentos informales', 'Políticas documentadas', 'Certificación SOC2 / ISO27001 aprobada', 'Nuevos negocios Enterprise: Viables'] }
+        { label: 'Aplicaciones (AppSec)', cols: ['Parches tras sufrir ataques', 'Escaneo de código estático (SAST)', 'Pentesting continuo y DevSecOps en CI/CD', 'Vulnerabilidades críticas: -99%'] },
+        { label: 'Infraestructura Cloud', cols: ['Servidores públicos sin WAF', 'Firewalls y redes privadas básicas', 'Arquitectura Zero-Trust, KMS y VPC aislada', 'Superficie de ataque: Cero externa'] },
+        { label: 'Cumplimiento Normativo', cols: ['Políticas informales no auditadas', 'Manuales documentados en papel', 'Alineación completa ISO 27001 / SOC2 Ready', 'Contratos Enterprise: Viables'] }
       ]
     },
     specs: {
       eyebrow: '03 — Pilares de Protección',
-      title: 'Seguridad en profundidad para software corporativo.',
-      subtitle: 'Auditamos, remediamos y certificamos.',
+      title: 'Seguridad en profundidad para software e IA corporativa.',
+      subtitle: 'Auditamos, remediamos y garantizamos resiliencia.',
       items: [
-        { title: 'Ethical Hacking & Pentesting', desc: 'Simulamos ataques dirigidos por expertos (Red Teaming) para descubrir brechas en tu software antes de que los cibercriminales lo hagan.' },
-        { title: 'Preparación SOC2 e ISO27001', desc: 'Alineamos tus políticas, accesos y monitoreos técnicos para que apruebes auditorías internacionales sin contratiempos.' },
-        { title: 'DevSecOps & AI Security', desc: 'Insertamos escaneos de seguridad directamente en tu línea de código y filtramos (Data Loss Prevention) las consultas a modelos LLMs.' }
+        { title: 'Ethical Hacking & Pentesting Riguroso', desc: 'Simulamos ataques dirigidos por especialistas (Red Teaming) para descubrir brechas lógicas en tu software antes de que lo hagan actores maliciosos.' },
+        { title: 'Preparación ISO 27001 & SOC2 Readiness', desc: 'Alineamos tus políticas, controles técnicos y monitoreo de infraestructura para superar auditorías internacionales sin contratiempos.' },
+        { title: 'AI Security & Guardrails para LLMs', desc: 'Implementamos filtros DLP (Data Loss Prevention) y enmascaramiento de datos PII para que tus agentes operen sin riesgo de fuga de información.' }
       ]
     },
     quiz: {
       title: 'Mide la postura de ciberseguridad de tus plataformas.',
-      subtitle: '¿Sobreviviría tu infraestructura a un ataque dirigido hoy?',
+      subtitle: '¿Sobreviviría tu infraestructura a un ataque dirigido o a una auditoría estricta hoy?',
       questions: [
         {
           q: '1. ¿Cuándo fue la última vez que le hicieron una prueba de penetración (Pentest) profunda a tu app?',
           options: [
-            { text: 'Hace menos de 6 meses', score: 3 },
+            { text: 'Hace menos de 6 meses por expertos certificados', score: 3 },
             { text: 'Hace más de 1 año', score: 2 },
-            { text: 'Solo escaneos automáticos', score: 1 },
-            { text: 'Nunca hemos hecho una', score: 0 }
+            { text: 'Solo corremos escaneos automáticos de vulnerabilidades', score: 1 },
+            { text: 'Nunca le hemos hecho una prueba de penetración', score: 0 }
           ]
         },
         {
-          q: '2. Si un desarrollador ex-empleado intenta acceder hoy al código o servidores, ¿puede hacerlo?',
+          q: '2. Si un colaborador técnico clave sale hoy de la empresa, ¿puede acceder a los servidores o código?',
           options: [
-            { text: 'Imposible, procesos de off-boarding automáticos (IAM)', score: 3 },
-            { text: 'Poco probable, cambiamos contraseñas a mano', score: 2 },
-            { text: 'Quizás tenga claves de acceso o APIs viejas guardadas', score: 1 },
-            { text: 'Sí, las credenciales están hardcodeadas', score: 0 }
+            { text: 'Imposible, procesos de off-boarding y SSO/IAM automáticos', score: 3 },
+            { text: 'Poco probable, cambiamos contraseñas manualmente', score: 2 },
+            { text: 'Probable, podría tener API keys o tokens viejos guardados', score: 1 },
+            { text: 'Sí, las credenciales están hardcodeadas o compartidas', score: 0 }
           ]
         },
         {
-          q: '3. Si mañana un corporativo Fortune 500 te exige un reporte SOC2 o ISO27001 para firmar, ¿qué haces?',
+          q: '3. Si un cliente corporativo te exige hoy un reporte SOC2 o ISO 27001 para firmar contrato, ¿qué haces?',
           options: [
-            { text: 'Se lo envío en ese momento (Ya lo tenemos)', score: 3 },
-            { text: 'Tenemos controles, pero no el certificado oficial', score: 2 },
-            { text: 'Empezamos a correr para tratar de cumplir', score: 1 },
-            { text: 'Perdemos el contrato', score: 0 }
+            { text: 'Se lo enviamos de inmediato (Estamos preparados)', score: 3 },
+            { text: 'Tenemos controles, pero no la preparación formal', score: 2 },
+            { text: 'Empezamos a correr para tratar de documentar todo', score: 1 },
+            { text: 'Perdemos la oportunidad comercial por incumplimiento', score: 0 }
           ]
         },
         {
-          q: '4. Respecto al uso de IA en tu empresa, ¿cómo protegen la información confidencial?',
+          q: '4. Respecto al uso de IA en tu empresa, ¿cómo protegen los datos confidenciales?',
           options: [
-            { text: 'LLMs en instancias privadas y Data Loss Prevention', score: 3 },
-            { text: 'Políticas firmadas de no usar datos reales', score: 2 },
-            { text: 'Confiamos en el buen juicio de los empleados', score: 1 },
-            { text: 'Todos usan ChatGPT con datos de clientes libremente', score: 0 }
+            { text: 'Modelos en instancias privadas (VPC) y filtros DLP activos', score: 3 },
+            { text: 'Políticas firmadas de no usar información confidencial', score: 2 },
+            { text: 'Confiamos en el criterio individual de cada empleado', score: 1 },
+            { text: 'Todos usan herramientas públicas sin control ni supervisión', score: 0 }
           ]
         }
       ]
     },
     deliverables: {
-      eyebrow: '06 — Evidencia y Remedio',
+      eyebrow: '06 — Evidencia y Blindaje',
       title: 'Reportes ejecutivos y parches a nivel código.',
       items: [
-        { num: '01', title: 'Reporte de Pentesting', desc: 'Listado de vulnerabilidades encontradas categorizadas por criticidad (CVSS).' },
-        { num: '02', title: 'Plan de Remediación (Fixes)', desc: 'No solo damos los errores; nuestro equipo de ingenieros aplica los parches de seguridad en tu código.' },
-        { num: '03', title: 'Políticas de Seguridad de la Información', desc: 'Manuales y normativas requeridas por auditores corporativos.' },
-        { num: '04', title: 'Mapeo de Accesos (RBAC)', desc: 'Rediseño de los roles y permisos en la nube usando el principio de mínimo privilegio.' },
-        { num: '05', title: 'Guardrails para IA', desc: 'Filtros PII (Personal Identifiable Information) para enmascarar datos sensibles antes de enviarlos a LLMs.' },
-        { num: '06', title: 'Alineación de Infraestructura', desc: 'Configuraciones endurecidas de firewalls, WAFs y balanceadores en AWS/GCP.' }
+        { num: '01', title: 'Reporte de Pentesting (CVSS)', desc: 'Listado exhaustivo de vulnerabilidades categorizadas por criticidad y vector de ataque.' },
+        { num: '02', title: 'Plan de Remediación & Parches', desc: 'No solo señalamos fallas: nuestro equipo de ingeniería aplica los parches de código necesarios.' },
+        { num: '03', title: 'Políticas de Seguridad & ISO 27001', desc: 'Manuales y controles de seguridad técnica exigidos por auditores corporativos internacionales.' },
+        { num: '04', title: 'Matriz de Accesos (Zero-Trust RBAC)', desc: 'Rediseño de roles y privilegios bajo el principio de mínimo privilegio estricto.' },
+        { num: '05', title: 'Guardrails & Filtros para IA', desc: 'Protección contra prompt injection, enmascaramiento PII y políticas de seguridad para LLMs.' },
+        { num: '06', title: 'Infraestructura Cloud Endurecida', desc: 'WAF, cifrado KMS de llaves y configuración de redes privadas en AWS, GCP o Azure.' }
       ]
     },
     timeline: {
       eyebrow: '07 — Metodología Security',
-      title: 'Auditar, Blindar, Mantener.',
-      subtitle: 'La seguridad ágil no retrasa tus lanzamientos, los hace confiables.',
+      title: 'Auditar, Blindar, Monitorear.',
+      subtitle: 'La seguridad ágil no retrasa tus lanzamientos; los hace comercialmente viables y confiables.',
       steps: [
-        { num: '01', title: 'Assessment y Threat Modeling', desc: 'Entendemos tu arquitectura e identificamos los vectores de ataque más probables.', deliverables: ['Modelo de Amenazas'] },
-        { num: '02', title: 'Pentesting y Escaneos', desc: 'Ataques éticos controlados (Caja blanca, gris o negra) contra tu aplicación y APIs.', deliverables: ['Reporte de Vulnerabilidades Críticas'] },
-        { num: '03', title: 'Remediación Técnica', desc: 'Corregimos fallos de código, parcheamos librerías y aseguramos la red.', deliverables: ['Software Parcheado y Asegurado'] },
-        { num: '04', title: 'Auditoría Final y Certificación', desc: 'Re-evaluación para garantizar mitigación y entrega de artefactos para certificadores externos.', deliverables: ['Constancia de Seguridad'] }
+        { num: '01', title: 'Threat Modeling & Arquitectura', desc: 'Analizamos la topología e identificamos los vectores de ataque más probables.', deliverables: ['Modelo de Amenazas'] },
+        { num: '02', title: 'Pentesting Ético & Escaneos', desc: 'Ataques controlados de caja gris/blanca contra aplicaciones, APIs y red.', deliverables: ['Reporte de Vulnerabilidades'] },
+        { num: '03', title: 'Remediación y Blindaje Técnico', desc: 'Aplicamos parches de código, cerramos puertos y endurecemos la infraestructura.', deliverables: ['Código y Servidores Blindados'] },
+        { num: '04', title: 'Verificación & Certificación Ready', desc: 'Re-evaluación para certificar la mitigación total y entrega de constancia técnica.', deliverables: ['Constancia de Blindaje Técnico'] }
       ]
     },
     faqs: [
-      { q: '¿Emiten ustedes el certificado SOC2 o ISO27001?', a: 'Nosotros preparamos tu tecnología, infraestructura y procesos operativos (Readiness) para cumplir con la normativa al 100%. La certificación oficial debe ser emitida por una firma auditora externa acreditada independiente, que nosotros te ayudamos a transitar con éxito.' },
-      { q: '¿Qué diferencia hay entre Pentesting y escaneo automático?', a: 'Un escaneo automático usa herramientas que buscan errores conocidos, generando muchos falsos positivos. Nuestro Pentesting incluye hackers éticos humanos que encadenan lógicamente vulnerabilidades complejas para encontrar brechas que las máquinas no ven.' },
-      { q: '¿El pentesting causará que se caiga mi plataforma?', a: 'No. Nuestros ejercicios de caja gris/blanca se realizan primordialmente en entornos de Staging (réplicas exactas de producción). Las pruebas directas en producción se realizan con extremos cuidados para no alterar bases de datos ni causar denegación de servicio (DoS).' }
+      { q: '¿Ustedes emiten la certificación ISO 27001 o SOC2?', a: 'Nosotros preparamos tu tecnología, infraestructura y procesos (Readiness al 100%) y aplicamos las remediaciones de código. La certificación formal la otorga una casa auditora externa acreditada independiente, a la cual acompañamos a tu equipo.' },
+      { q: '¿Qué diferencia hay entre un escaneo automático y su Pentesting?', a: 'Un escaneo automático solo busca firmas conocidas y genera decenas de falsos positivos. Nuestro Pentesting es realizado por ingenieros de seguridad éticos que encadenan vulnerabilidades complejas para descubrir fallas lógicas que los scanners no ven.' },
+      { q: '¿Las pruebas de penetración causarán caídas en mi plataforma?', a: 'No. Los ejercicios profundos se realizan primordialmente en entornos de Staging que replican con exactitud la producción. Las pruebas directas en producción se calibran para garantizar cero denegación de servicio (DoS).' }
     ]
   },
+
   'business-ai': {
     id: 'business-ai',
-    eyebrow: 'Capability · Business AI Consulting',
-    title: 'De la visión ejecutiva al roadmap estratégico de IA.',
-    subtitle: 'Asesoramiento de alto nivel para consejos directivos y C-Levels. Identificamos dónde la IA genera valor real de negocio y estructuramos el camino para adoptarla con éxito.',
-    callout1: 'La Inteligencia Artificial no es un proyecto de TI, es una iniciativa estratégica del negocio. Muchas empresas fracasan comprando licencias de software sin un caso de uso claro. Nuestra consultoría actúa como el puente entre tu modelo de negocio y las capacidades tecnológicas de vanguardia, evaluando viabilidad, ROI y riesgo antes de escribir la primera línea de código.',
+    themeKey: 'blue',
+    clusterName: 'Gobernanza IA',
+    canonicalBadge: 'FutureProof™ Framework',
+    packageName: 'Business AI Consulting & Strategy',
+    eyebrow: 'Capability · Digital Consulting & Strategy',
+    title: 'De la visión del Consejo al roadmap ejecutable con ROI garantizado.',
+    subtitle: 'Consultoría estratégica B2B de alto nivel para Directores Generales y C-Levels. Cuantificamos el costo de inacción, priorizamos por impacto en caja y blindamos la adopción de IA.',
+    callout1: 'La Inteligencia Artificial no es un juguete del departamento de TI; es una palanca estratégica del modelo de negocio. Muchas empresas queman capital en licencias o pilotos aislados que no mueven la aguja financiera. Nuestra consultoría actúa como el puente entre tu P&L y la ingeniería de vanguardia: validamos viabilidad, calculamos retorno y priorizamos backlog antes de comprometer capital en desarrollo.',
+    stats: [
+      { value: '2 a 4', label: 'Semanas para tener diagnóstico y business case listo', sublabel: 'Celeridad analítica ejecutiva' },
+      { value: 'ROI Medible', label: 'Proyectado y validado antes de tirar una línea de código', sublabel: 'Certeza financiera previa' },
+      { value: '100%', label: 'Alineación con el Consejo Directivo y objetivos de negocio', sublabel: 'FutureProof™ Framework' }
+    ],
+    fourWaysToWork: [
+      {
+        num: '01',
+        name: 'Consultoría Digital',
+        duration: '2 a 4 Semanas',
+        isCore: true,
+        role: '🔥 Núcleo Principal: Diagnóstico & Roadmap',
+        desc: 'Diagnóstico de fricción IMPATH™, valuación del costo de inacción, business case con ROI proyectado y backlog priorizado por impacto económico.',
+        deliverable: 'Roadmap Estratégico & Business Case Oficial'
+      },
+      {
+        num: '02',
+        name: 'Agentes & Automatización',
+        duration: '2 a 4 Semanas',
+        isCore: false,
+        role: 'Priorización de Casos de Automatización',
+        desc: 'Definición de qué procesos operacionales deben agentizarse primero para recuperar la inversión en el menor plazo de tiempo.',
+        deliverable: 'Matriz de Casos de Uso por ROI Operativo'
+      },
+      {
+        num: '03',
+        name: 'Plataformas Digitales',
+        duration: '3 Meses a Producción',
+        isCore: false,
+        role: 'Product Strategy & Gobernanza de Entrega',
+        desc: 'Aseguramiento de que el software construido en 90 días resuelva con precisión milimétrica la tesis comercial del negocio.',
+        deliverable: 'Product Strategy Document (PSD)'
+      },
+      {
+        num: '04',
+        name: 'Evolución Digital',
+        duration: 'Roadmap 6 a 12 Meses',
+        isCore: true,
+        role: 'Acompañamiento Estratégico al Consejo',
+        desc: 'Comité de asesoría tecnológica trimestral para evaluar nuevas oportunidades de mercado, proteger el roadmap y auditar KPIs de adopción.',
+        deliverable: 'Priorización Trimestral del Backlog Directivo'
+      }
+    ],
     painPoints: {
       eyebrow: '01 — La desorientación ejecutiva frente a la IA',
-      title: 'Mucho ruido, poca claridad sobre el impacto real.',
+      title: 'Mucho ruido comercial, poca claridad sobre el impacto financiero real.',
       items: [
-        { title: 'Presión del Consejo por "usar IA"', desc: 'Los accionistas exigen modernización, pero el equipo directivo no sabe por dónde empezar sin gastar a ciegas.' },
-        { title: 'Miedo a quedar obsoletos', desc: 'Tus competidores están anunciando automatizaciones y sientes que la ventaja competitiva de tu empresa se erosiona.' },
-        { title: 'Proyectos desalineados del negocio', desc: 'El área de innovación lanza pruebas piloto de IA divertidas pero que no resuelven ningún problema crítico del flujo de caja o costos.' }
+        { title: 'Presión del Consejo por "usar IA"', desc: 'Los accionistas exigen modernización tecnológica, pero el equipo directivo no sabe por dónde empezar sin gastar a ciegas.' },
+        { title: 'Miedo a quedar obsoletos ante la competencia', desc: 'Tus competidores anuncian automatizaciones y sientes que la ventaja competitiva de tu empresa se erosiona sin una ruta clara.' },
+        { title: 'Proyectos desalineados del flujo de caja', desc: 'El área de TI lanza pilotos entretenidos pero que no resuelven ningún cuello de botella crítico del P&L o de los costos operativos.' }
       ]
     },
     matrix: {
       eyebrow: '02 — Madurez Estratégica AI',
       title: 'Niveles de adopción de IA en el corporativo.',
-      subtitle: 'Descubre en qué etapa se encuentra tu empresa y cómo dar el siguiente paso de manera rentable.',
-      headers: ['Etapa', 'Exploratoria', 'Táctica (Eficiencia)', 'Estratégica (Transformación)', 'Impacto Financiero'],
+      subtitle: 'Descubre en qué etapa se encuentra tu empresa y cómo dar el siguiente paso con retorno de inversión garantizado.',
+      headers: ['Etapa', 'Exploratoria (Hype)', 'Táctica (Eficiencia)', 'Estándar BluePixel Estratégico', 'Impacto Financiero'],
       rows: [
-        { label: 'Uso de la IA', cols: ['Licencias individuales de Copilot/ChatGPT', 'Agentes automatizando procesos internos', 'Productos nativos con IA como ventaja competitiva', 'Nuevos flujos de ingresos'] },
-        { label: 'Gobernanza', cols: ['Políticas inexistentes (Shadow AI)', 'Filtros y entornos privados seguros', 'Framework corporativo de IA ética y segura', 'Riesgo mitigado'] },
-        { label: 'Alineación de Negocio', cols: ['Iniciativas aisladas y desconectadas', 'Casos de uso para reducir costos operativos', 'IA embebida en el core del valor al cliente', 'Multiplicador de Valoración (M&A)'] }
+        { label: 'Uso de la IA', cols: ['Licencias individuales de ChatGPT', 'Agentes automatizando procesos internos', 'Productos nativos con IA como ventaja competitiva', 'Nuevos flujos de ingresos directos'] },
+        { label: 'Gobernanza & Seguridad', cols: ['Políticas inexistentes (Shadow AI)', 'Filtros y entornos privados básicos', 'Framework corporativo de IA ética y segura (VPC)', 'Riesgo reputacional mitigado'] },
+        { label: 'Alineación de Negocio', cols: ['Iniciativas aisladas desconectadas', 'Casos de uso para reducir costos operativos', 'IA embebida en el core del valor al cliente', 'Multiplicador de Valoración (M&A)'] }
       ]
     },
     specs: {
       eyebrow: '03 — Cómo te asesoramos',
-      title: 'Consultoría accionable, cero metodologías de humo.',
-      subtitle: 'Entendemos tu estado de resultados antes de recomendarte redes neuronales.',
+      title: 'Consultoría accionable, cero metodologías teóricas.',
+      subtitle: 'Entendemos tu estado de resultados antes de recomendarte cualquier arquitectura tecnológica.',
       items: [
-        { title: 'AI Readiness Assessment', desc: 'Evaluamos tu cultura organizacional, limpieza de datos y arquitectura tecnológica para determinar si estás realmente listo para la IA.' },
-        { title: 'Identificación de Casos de Uso (ROI)', desc: 'Mapeamos tu cadena de valor para encontrar los procesos donde la IA puede reducir fricción o costos de forma inmediata y medible.' },
-        { title: 'Diseño de Gobernanza Corporativa', desc: 'Establecemos los comités, las políticas de seguridad y las normativas éticas para usar IA sin poner en riesgo la reputación de tu corporativo.' }
+        { title: 'AI & Tech Readiness Assessment', desc: 'Evaluamos tu cultura operativa, calidad de datos y arquitectura tecnológica actual para determinar si estás realmente listo para la IA.' },
+        { title: 'Identificación de Casos de Uso por ROI', desc: 'Mapeamos tu cadena de valor para encontrar los procesos donde la tecnología y la IA reducen fricción o costos de forma inmediata y medible.' },
+        { title: 'Diseño de Gobernanza Corporativa', desc: 'Establecemos comités de dirección, políticas de soberanía de datos y normativas éticas para escalar tecnología sin riesgos.' }
       ]
     },
     quiz: {
       title: '¿Tienes una estrategia clara de IA o solo estás siguiendo la tendencia?',
-      subtitle: 'Mide la madurez de la visión de Inteligencia Artificial de tu empresa.',
+      subtitle: 'Mide la madurez de la visión de Inteligencia Artificial y tecnología de tu empresa.',
       questions: [
         {
           q: '1. ¿Quién lidera las iniciativas de Inteligencia Artificial en tu empresa actualmente?',
           options: [
-            { text: 'Un comité C-Level alineado con el negocio', score: 3 },
-            { text: 'El área de TI / Innovación por su cuenta', score: 2 },
-            { text: 'Empleados individuales de forma proactiva', score: 1 },
-            { text: 'Nadie, aún no empezamos formalmente', score: 0 }
+            { text: 'Un comité C-Level formalmente alineado con los objetivos del negocio', score: 3 },
+            { text: 'El área de TI / Innovación por su cuenta de forma aislada', score: 2 },
+            { text: 'Colaboradores individuales de forma proactiva y dispersa', score: 1 },
+            { text: 'Nadie, aún no comenzamos formalmente ninguna discusión', score: 0 }
           ]
         },
         {
-          q: '2. ¿Cómo deciden en qué proyecto de IA invertir tiempo y presupuesto?',
+          q: '2. ¿Cómo deciden en qué proyecto de tecnología o IA invertir presupuesto?',
           options: [
-            { text: 'Análisis estricto de ROI y viabilidad técnica', score: 3 },
-            { text: 'Nos basamos en lo que suena más prometedor', score: 2 },
-            { text: 'Por sugerencias aisladas de proveedores', score: 1 },
-            { text: 'Actuamos reactivamente a las modas (Hype)', score: 0 }
+            { text: 'Análisis estricto de ROI financiero y viabilidad técnica previa', score: 3 },
+            { text: 'Nos basamos en lo que suena más prometedor o novedoso', score: 2 },
+            { text: 'Por sugerencias de proveedores comerciales de software', score: 1 },
+            { text: 'Actuamos reactivamente a las modas del mercado (Hype)', score: 0 }
           ]
         },
         {
           q: '3. Respecto a las políticas corporativas del uso de IA, tu empresa:',
           options: [
-            { text: 'Tiene políticas estrictas, seguras y conocidas por todos', score: 3 },
-            { text: 'Tiene un documento de reglas básicas (pero no se vigila)', score: 2 },
+            { text: 'Tiene políticas estrictas, infraestructura privada y normativas claras', score: 3 },
+            { text: 'Tiene un documento de reglas básicas (pero poco supervisado)', score: 2 },
             { text: 'Están empezando a discutirlo en el área legal', score: 1 },
-            { text: 'No tiene reglas, cualquiera usa herramientas públicas', score: 0 }
+            { text: 'No tiene reglas, cualquiera usa herramientas públicas libremente', score: 0 }
           ]
         },
         {
-          q: '4. ¿Tus competidores directos ya están utilizando IA como ventaja en el mercado?',
+          q: '4. ¿Tus competidores directos ya están utilizando IA como ventaja operativa?',
           options: [
-            { text: 'Sí, y nosotros estamos a la par o liderando', score: 3 },
-            { text: 'Sí, y nosotros estamos tratando de alcanzarlos', score: 2 },
-            { text: 'Apenas están haciendo pilotos básicos', score: 1 },
-            { text: 'La industria en general aún no despierta', score: 0 }
+            { text: 'Sí, y nosotros estamos a la par o liderando el mercado', score: 3 },
+            { text: 'Sí, y nosotros estamos tratando de alcanzarlos con urgencia', score: 2 },
+            { text: 'Apenas están haciendo pruebas piloto básicas', score: 1 },
+            { text: 'La industria en general aún no ha comenzado a transformarse', score: 0 }
           ]
         }
       ]
@@ -618,27 +905,27 @@ export const servicesData = {
       items: [
         { num: '01', title: 'Roadmap Estratégico AI (1-3 Años)', desc: 'Plan calendarizado priorizando proyectos de IA por impacto financiero y viabilidad técnica.' },
         { num: '02', title: 'Casos de Negocio Estructurados', desc: 'Análisis de ROI financiero, costos de nube y requerimientos de talento para las iniciativas prioritarias.' },
-        { num: '03', title: 'Reporte de Data Readiness', desc: 'Evaluación dura de por qué tus datos actuales sirven o no sirven para alimentar modelos.' },
-        { num: '04', title: 'Framework de Gobernanza AI', desc: 'Políticas redactadas para compliance, manejo de datos privados y mitigación de sesgos algorítmicos.' },
+        { num: '03', title: 'Reporte de Data & AI Readiness', desc: 'Evaluación técnica de por qué tus datos y sistemas actuales sirven o no sirven para alimentar modelos.' },
+        { num: '04', title: 'Framework de Gobernanza AI', desc: 'Políticas redactadas para compliance, soberanía de datos y mitigación de riesgos operativos.' },
         { num: '05', title: 'Arquitectura Objetivo HLD', desc: 'Diagramas conceptuales (High-Level Design) de cómo encajará la IA en tus sistemas actuales.' },
-        { num: '06', title: 'Workshops Ejecutivos', desc: 'Sesiones de alineación para el Consejo Directivo, desmitificando la tecnología.' }
+        { num: '06', title: 'Workshops Ejecutivos para el Board', desc: 'Sesiones de alineación para el Consejo Directivo, desmitificando la tecnología con números.' }
       ]
     },
     timeline: {
       eyebrow: '07 — Metodología Consultiva',
       title: 'Celeridad analítica para no perder momentum.',
-      subtitle: 'En menos de un mes, transformamos la incertidumbre en un plan de acción concreto.',
+      subtitle: 'En menos de un mes, transformamos la incertidumbre en un plan de acción concreto y defendible ante el Consejo.',
       steps: [
-        { num: '01', title: 'Alineación de C-Levels', desc: 'Workshops profundos con líderes de área para entender dolores de negocio (finanzas, ventas, operaciones).', deliverables: ['Matriz de Problemas de Negocio'] },
-        { num: '02', title: 'Mapeo de Factibilidad', desc: 'Análisis rápido con el equipo de TI para entender los fierros y la calidad de datos actuales.', deliverables: ['AI Readiness Score'] },
-        { num: '03', title: 'Diseño del Portafolio AI', desc: 'Ideación estructurada de soluciones de IA ponderadas por impacto económico vs esfuerzo técnico.', deliverables: ['Backlog Priorizado de Casos de Uso'] },
-        { num: '04', title: 'Presentación del Roadmap', desc: 'Entrega final al Comité Ejecutivo con rutas claras: qué comprar, qué construir y qué ignorar.', deliverables: ['Roadmap Estratégico AI Oficial'] }
+        { num: '01', title: 'Alineación de C-Levels', desc: 'Sesiones con directores de área para entender cuellos de botella del negocio (P&L y operaciones).', deliverables: ['Matriz de Oportunidades de Negocio'] },
+        { num: '02', title: 'Mapeo de Factibilidad Técnica', desc: 'Análisis rápido con el equipo de TI para auditar sistemas, datos y costos de inferencia.', deliverables: ['AI Readiness Score'] },
+        { num: '03', title: 'Diseño del Portafolio AI', desc: 'Ideación estructurada de soluciones ponderadas por retorno económico vs esfuerzo técnico.', deliverables: ['Backlog Priorizado por ROI'] },
+        { num: '04', title: 'Presentación del Roadmap Oficial', desc: 'Entrega final al Comité Ejecutivo con rutas claras: qué comprar, qué construir y qué descartar.', deliverables: ['Roadmap Estratégico Oficial'] }
       ]
     },
     faqs: [
-      { q: '¿Cuál es la diferencia entre Business AI Consulting y AI Engineering?', a: 'Business AI es la fase estratégica (estrategia, viabilidad, ROI y gobernanza). AI Engineering es la fase de ejecución (construir, programar e implementar). Siempre recomendamos iniciar por Business AI antes de tocar una línea de código.' },
-      { q: '¿Esta consultoría recomienda soluciones de terceros o solo desarrollo a medida?', a: 'Somos tecnológicamente agnósticos. Si tu problema se resuelve mejor y más barato comprando licencias de Microsoft Copilot o un SaaS de IA especializado, esa será nuestra recomendación. Si requieres mantener la propiedad intelectual o ventajas competitivas únicas, recomendaremos construir con AI Engineering.' },
-      { q: '¿Quiénes de nuestra empresa deben participar en el proceso?', a: 'Idealmente los directores de línea de negocio (Ventas, Operaciones, Finanzas) para definir el "Qué", y los líderes tecnológicos (CIO, CTO) para evaluar el "Cómo".' }
+      { q: '¿Cuál es la diferencia entre Business AI Consulting y AI Engineering?', a: 'Business AI Consulting es la fase estratégica previa (estrategia, viabilidad, ROI y gobernanza en 2 a 4 semanas - Pilar 01). AI Engineering es la fase de ejecución técnica (construir la plataforma o los agentes - Pilar 02 o 03). Recomendamos comenzar por la consultoría para asegurar certeza antes de programar.' },
+      { q: '¿Esta consultoría recomienda soluciones de terceros o solo desarrollo a la medida?', a: 'Somos tecnológicamente agnósticos. Si tu necesidad se resuelve mejor y más barato comprando licencias de un software existente o un SaaS especializado, esa será nuestra recomendación. Si requieres propiedad intelectual y ventajas competitivas únicas, recomendaremos construir.' },
+      { q: '¿Quiénes de nuestra empresa deben participar en el proceso?', a: 'Idealmente los directores de línea de negocio (Finanzas, Operaciones, Ventas) para definir las prioridades estratégicas, y los líderes tecnológicos (CIO, CTO) para evaluar la viabilidad de la infraestructura.' }
     ]
   }
 };
