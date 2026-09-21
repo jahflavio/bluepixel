@@ -74,14 +74,29 @@ const App = () => {
         'servicios', 'casos-de-exito', 'componentes'
       ];
       
-      if (hash === 'como-trabajamos' || hash === 'formas-de-trabajo' || hash === 'how-we-work' || hash === 'pilares') {
+      if (
+        hash === 'como-trabajamos' || 
+        hash === 'formas-de-trabajo' || 
+        hash === 'four-ways-to-work' || 
+        hash === 'four-ways' || 
+        hash === 'how-we-work' || 
+        hash === 'pilares'
+      ) {
         setCurrentView('home');
-        setTimeout(() => {
-          const el = document.getElementById('como-trabajamos') || document.getElementById('how-we-work') || document.getElementById('pilares');
+        const scrollToTarget = () => {
+          const el = document.getElementById('como-trabajamos') || 
+                     document.getElementById('four-ways-to-work') || 
+                     document.getElementById('how-we-work') || 
+                     document.getElementById('pilares');
           if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const navHeight = 80;
+            const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({ top, behavior: 'smooth' });
           }
-        }, 200);
+        };
+        setTimeout(scrollToTarget, 100);
+        setTimeout(scrollToTarget, 300);
+        setTimeout(scrollToTarget, 600);
       } else if (validViews.includes(hash)) {
         setCurrentView(hash);
       } else if (hash === 'home' || hash === '') {
@@ -95,6 +110,32 @@ const App = () => {
   }, []);
 
   const navigateTo = (view, subserviceId = null) => {
+    if (
+      view === 'como-trabajamos' || 
+      view === 'formas-de-trabajo' || 
+      view === 'four-ways-to-work' || 
+      view === 'four-ways' || 
+      view === 'how-we-work' || 
+      view === 'pilares'
+    ) {
+      setCurrentView('home');
+      window.location.hash = '';
+      const scrollToTarget = () => {
+        const el = document.getElementById('como-trabajamos') || 
+                   document.getElementById('four-ways-to-work') || 
+                   document.getElementById('how-we-work') || 
+                   document.getElementById('pilares');
+        if (el) {
+          const navHeight = 80;
+          const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      };
+      setTimeout(scrollToTarget, 100);
+      setTimeout(scrollToTarget, 300);
+      return;
+    }
+
     setCurrentView(view);
     setSelectedSubserviceId(subserviceId); // Always update (clears on cluster switch without subservice)
     window.location.hash = view === 'home' ? '' : `/${view}`;
@@ -170,10 +211,6 @@ const App = () => {
       ) : currentView === 'casos-de-exito' ? (
         <Suspense fallback={<SectionLoader />}>
           <CasosEstudioLandingPage />
-        </Suspense>
-      ) : currentView === 'como-trabajamos' ? (
-        <Suspense fallback={<SectionLoader />}>
-          <ComoTrabajamosLandingPage />
         </Suspense>
       ) : currentView === 'servicio/ux-ui' ? (
         <Suspense fallback={<SectionLoader />}>

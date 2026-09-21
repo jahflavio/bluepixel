@@ -199,6 +199,8 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
 
   return (
     <section id="como-trabajamos" className="py-24 bg-[#02050A] border-t border-b border-white/[0.06] relative overflow-hidden scroll-mt-20">
+      <span id="four-ways-to-work" className="absolute -top-20" />
+      <span id="four-ways" className="absolute -top-20" />
       <span id="how-we-work" className="absolute -top-20" />
       <span id="pilares" className="absolute -top-20" />
       

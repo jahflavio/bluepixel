@@ -4,11 +4,16 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleComoTrabajamos = (e) => {
-    e.preventDefault();
-    const scrollToSection = () => {
-      const el = document.getElementById('como-trabajamos') || document.getElementById('how-we-work') || document.getElementById('pilares');
+    if (e) e.preventDefault();
+    const scrollToTarget = () => {
+      const el = document.getElementById('como-trabajamos') || 
+                 document.getElementById('four-ways-to-work') || 
+                 document.getElementById('how-we-work') || 
+                 document.getElementById('pilares');
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const navHeight = 80;
+        const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     };
 
@@ -18,9 +23,11 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
       } else {
         window.location.hash = '';
       }
-      setTimeout(scrollToSection, 150);
+      setTimeout(scrollToTarget, 100);
+      setTimeout(scrollToTarget, 300);
+      setTimeout(scrollToTarget, 600);
     } else {
-      scrollToSection();
+      scrollToTarget();
     }
   };
 
@@ -39,13 +46,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
         {/* Center Nav Links (Desktop) */}
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
           
-          <a 
-            href="#como-trabajamos" 
+          <button 
+            type="button"
             onClick={handleComoTrabajamos}
-            className="hover:text-blue-400 transition-colors cursor-pointer"
+            className="text-sm text-slate-300 hover:text-blue-400 font-medium transition-colors cursor-pointer bg-transparent border-none p-0 focus:outline-none"
           >
             Cómo Trabajamos
-          </a>
+          </button>
           
           {/* Dropdown Capacidades */}
           <div 
