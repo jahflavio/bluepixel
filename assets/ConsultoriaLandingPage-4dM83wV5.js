@@ -1,0 +1,1 @@
+import{j as t}from"./index-DIXyCX3e.js";import{P as r,p as o}from"./pillarsData-Z5UdTt_5.js";import"./MultiStepContact-DtKgPgqW.js";import"./Footer-CM3tvw1m.js";const i=({onNavigateCluster:a})=>t.jsx(r,{data:o["consultoria-digital"],onNavigateCluster:a}),p=a=>t.jsx(i,{...a});export{p as default};

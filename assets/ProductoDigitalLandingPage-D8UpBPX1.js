@@ -1,0 +1,1 @@
+import{j as t}from"./index-DIXyCX3e.js";import{P as r,p as i}from"./pillarsData-Z5UdTt_5.js";import"./MultiStepContact-DtKgPgqW.js";import"./Footer-CM3tvw1m.js";const o=({onNavigateCluster:a})=>t.jsx(r,{data:i["plataformas-digitales"],onNavigateCluster:a}),p=a=>t.jsx(o,{...a});export{p as default};
