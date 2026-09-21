@@ -1,0 +1,1 @@
+import{j as e}from"./index-Bojev-Eg.js";import{S as r,s as t}from"./servicesData-BidnvT8Z.js";import"./MultiStepContact-D2ElVBJW.js";import"./Footer-BKcGW6fm.js";const m=()=>e.jsx(r,{data:t["ux-ui"]});export{m as default};

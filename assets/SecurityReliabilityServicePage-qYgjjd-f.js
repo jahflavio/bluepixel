@@ -1,0 +1,1 @@
+import{j as e}from"./index-Bojev-Eg.js";import{S as t,s as r}from"./servicesData-BidnvT8Z.js";import"./MultiStepContact-D2ElVBJW.js";import"./Footer-BKcGW6fm.js";const m=()=>e.jsx(t,{data:r.security});export{m as default};
