@@ -10,7 +10,7 @@ const FILTER_PILLARS = [
   { id: 'todos', label: 'Todos los Casos (6)' },
   { id: 'consultoria-digital', label: '01 · Consultoría & ROI' },
   { id: 'agentes-automatizacion', label: '02 · Agentes & IA' },
-  { id: 'plataformas-digitales', label: '03 · Plataformas 90 Días' },
+  { id: 'plataformas-digitales', label: '03 · Plataformas (2 a 4 Meses)' },
   { id: 'evolucion-digital', label: '04 · Squad Continuo & CRO' }
 ];
 

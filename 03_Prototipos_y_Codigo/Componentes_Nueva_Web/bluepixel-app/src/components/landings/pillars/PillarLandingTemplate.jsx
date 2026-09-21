@@ -65,7 +65,7 @@ const PILLAR_THEMES = {
 const ALL_PILLARS = [
   { id: 'consultoria-digital', num: '01', name: 'Consultoría Digital', duration: '2 a 4 Semanas', route: 'consultoria-tecnologica', dot: 'bg-blue-400' },
   { id: 'agentes-automatizacion', num: '02', name: 'Agentes & Automatización', duration: '2 a 4 Semanas', route: 'automatizacion-agentica', dot: 'bg-purple-400' },
-  { id: 'plataformas-digitales', num: '03', name: 'Plataformas Digitales', duration: '3 Meses a Producción', route: 'producto-digital', dot: 'bg-cyan-400' },
+  { id: 'plataformas-digitales', num: '03', name: 'Plataformas Digitales', duration: '2 a 4 Meses a Producción', route: 'producto-digital', dot: 'bg-cyan-400' },
   { id: 'evolucion-digital', num: '04', name: 'Evolución Digital', duration: 'Roadmap 6/12 Meses', route: 'evolucion-digital', dot: 'bg-indigo-400' }
 ];
 
@@ -277,29 +277,29 @@ const McpAgentSimulatorWidget = () => {
   );
 };
 
-/* WIDGET INTERACTIVO PILAR 03: SIMULADOR DE CONSTRUCCIÓN 90 DÍAS */
+/* WIDGET INTERACTIVO PILAR 03: SIMULADOR DE CONSTRUCCIÓN 2 A 4 MESES */
 const BuildVisualizerWidget = () => {
-  const [day, setDay] = useState(0);
+  const [week, setWeek] = useState(0);
 
   useEffect(() => {
     let current = 0;
     const interval = setInterval(() => {
-      current += 3;
-      if (current >= 90) {
-        current = 90;
+      current += 1;
+      if (current >= 16) {
+        current = 16;
         clearInterval(interval);
       }
-      setDay(current);
-    }, 45);
+      setWeek(current);
+    }, 120);
     return () => clearInterval(interval);
   }, []);
 
   const phases = [
-    { label: 'UX DISCOVERY', color: 'bg-blue-500 text-blue-400', n: 5, activeN: Math.min(5, Math.ceil(day / 18)) },
-    { label: 'PROTOTIPADO', color: 'bg-emerald-500 text-emerald-400', n: 6, activeN: day > 18 ? Math.min(6, Math.ceil((day - 18) / 12)) : 0 },
-    { label: 'DESARROLLO CORE', color: 'bg-cyan-500 text-cyan-400', n: 14, activeN: day > 30 ? Math.min(14, Math.ceil((day - 30) / 3)) : 0 },
-    { label: 'QA & OWASP', color: 'bg-amber-500 text-amber-400', n: 8, activeN: day > 72 ? Math.min(8, Math.ceil((day - 72) / 2.2)) : 0 },
-    { label: 'GO-LIVE PRODUCCIÓN', color: 'bg-purple-500 text-purple-400', n: 4, activeN: day >= 88 ? 4 : 0 },
+    { label: 'UX DISCOVERY & PS (SEM 1-3)', color: 'bg-blue-500 text-blue-400', n: 3, activeN: Math.min(3, week) },
+    { label: 'PROTOTIPADO & ARQUITECTURA (SEM 4-6)', color: 'bg-emerald-500 text-emerald-400', n: 3, activeN: week > 3 ? Math.min(3, week - 3) : 0 },
+    { label: 'DESARROLLO CORE FULL STACK (SEM 7-12)', color: 'bg-cyan-500 text-cyan-400', n: 6, activeN: week > 6 ? Math.min(6, week - 6) : 0 },
+    { label: 'QA, SEGURIDAD & OWASP (SEM 13-14)', color: 'bg-amber-500 text-amber-400', n: 2, activeN: week > 12 ? Math.min(2, week - 12) : 0 },
+    { label: 'GO-LIVE PRODUCCIÓN & SLA (SEM 15-16)', color: 'bg-purple-500 text-purple-400', n: 2, activeN: week > 14 ? Math.min(2, week - 14) : 0 },
   ];
 
   return (
@@ -309,11 +309,11 @@ const BuildVisualizerWidget = () => {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
           <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-300 font-bold">
-            Simulador de Construcción · 90 Días
+            Simulador de Construcción · 2 a 4 Meses
           </span>
         </div>
         <span className="text-xs font-mono font-bold text-cyan-300">
-          Día {day}/90
+          Semana {week}/16 (Mes {Math.min(4, Math.max(1, Math.ceil(week / 4)))})
         </span>
       </div>
 

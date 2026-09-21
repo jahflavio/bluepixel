@@ -21,7 +21,7 @@ const CLUSTERS = [
     bullets: [
       'Apps nativas iOS/Android para operaciones de campo offline-first',
       'Portales B2B transaccionales que reemplazan hojas de cálculo',
-      'MVPs de alta fidelidad en 90 días con código de tu propiedad',
+      'MVPs de alta fidelidad en 2 a 4 meses con código de tu propiedad',
       'Modernización de software legacy sin parar tu operación',
     ],
     proof: 'SOC2 · OWASP · AWS Certified',

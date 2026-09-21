@@ -15,12 +15,12 @@ const FAQSection = () => {
     {
       category: 'pilares',
       q: "¿Cómo se contrata a BluePixel? ¿Es obligatorio pasar por los 4 pilares en secuencia?",
-      a: "No. Los 4 pilares son completamente modulares e independientes. Un prospecto puede contratar directamente cualquiera de las 4 opciones según su necesidad: entrar por 01 · Consultoría Digital (2-4 sem) para validar el ROI antes de codificar; contratar directamente 02 · Agentes & Automatización (2-4 sem) para integrar IA sobre su ERP actual; contratar 03 · Plataformas Digitales (90 días) para lanzar un producto desde cero; o sumarse a 04 · Evolución Digital con un squad extendido continuo. No existe un ciclo lineal forzado."
+      a: "No. Los 4 pilares son completamente modulares e independientes. Un prospecto puede contratar directamente cualquiera de las 4 opciones según su necesidad: entrar por 01 · Consultoría Digital (2-4 sem) para validar el ROI antes de codificar; contratar directamente 02 · Agentes & Automatización (2-4 sem) para integrar IA sobre su ERP actual; contratar 03 · Plataformas Digitales (2 a 4 meses) para lanzar un producto desde cero; o sumarse a 04 · Evolución Digital con un squad extendido continuo. No existe un ciclo lineal forzado."
     },
     {
       category: 'pilares',
       q: "¿Cuánto tiempo toma llevar una solución a producción en cada pilar?",
-      a: "Nuestros plazos están contractualmente garantizados: 01 · Consultoría Digital se entrega en 2 a 4 semanas (diagnóstico IMPATH™, cálculo de ROI y arquitectura recomendada); 02 · Agentes & Automatización se despliega en 2 a 4 semanas (agentes productivos conectados a SAP/Salesforce); 03 · Plataformas Digitales toma 3 meses (90 días exactos de concepción a producción con UX validado); y 04 · Evolución Digital opera mediante roadmaps vivos a 6 o 12 meses con entregas continuas cada sprint."
+      a: "Nuestros plazos están contractualmente garantizados: 01 · Consultoría Digital se entrega en 2 a 4 semanas (diagnóstico IMPATH™, cálculo de ROI y arquitectura recomendada); 02 · Agentes & Automatización se despliega en 2 a 4 semanas (agentes productivos conectados a SAP/Salesforce); 03 · Plataformas Digitales toma de 2 a 4 meses (MVP a producción con UX validado); y 04 · Evolución Digital opera mediante roadmaps vivos a 6 o 12 meses con entregas continuas cada sprint."
     },
     {
       category: 'ingenieria',
@@ -29,7 +29,7 @@ const FAQSection = () => {
     },
     {
       category: 'pilares',
-      q: "¿Cómo logran construir una Plataforma Digital (Pilar 03) de cero a producción en 90 días?",
+      q: "¿Cómo logran construir una Plataforma Digital (Pilar 03) de cero a producción en 2 a 4 meses?",
       a: "Validamos antes de codificar. A través de Product Strategy (PS) y nuestra metodología propietaria IMPATH™, prototipamos y validamos la experiencia con usuarios reales antes de quemar capital en infraestructura. Construimos sobre arquitecturas modulares desacopladas y cloud-native (React, TypeScript, Node.js/Python, PostgreSQL), con design systems limpios sin deuda técnica, pruebas automatizadas y despliegue productivo con SLA empresarial de 99.9%."
     },
     {
@@ -55,7 +55,7 @@ const FAQSection = () => {
     {
       category: 'ingenieria',
       q: "¿Por qué no podemos desarrollar estas soluciones internamente con nuestro equipo de ingeniería?",
-      a: "Su equipo conoce a fondo la lógica de su negocio. Sin embargo, orquestar flujos agénticos no-determinísticos, bases vectoriales, servidores MCP y microservicios resilientes requiere patrones arquitectónicos altamente especializados. BluePixel actúa como un catalizador que acelera su roadmap de 18 meses a 90 días, evitando sobrecostos de infraestructura y transfiriendo conocimiento, buenas prácticas y documentación limpia a su equipo interno al concluir."
+      a: "Su equipo conoce a fondo la lógica de su negocio. Sin embargo, orquestar flujos agénticos no-determinísticos, bases vectoriales, servidores MCP y microservicios resilientes requiere patrones arquitectónicos altamente especializados. BluePixel actúa como un catalizador que acelera su roadmap de 18 meses a sólo 2 a 4 meses, evitando sobrecostos de infraestructura y transfiriendo conocimiento, buenas prácticas y documentación limpia a su equipo interno al concluir."
     }
   ];
 

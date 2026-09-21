@@ -253,7 +253,7 @@ export const pillarsData = {
     bridge: {
       eyebrow: 'De la Estrategia a la Producción',
       title: 'Claridad previa antes de comprometer capital.',
-      desc: 'Una vez obtenido tu diagnóstico IMPATH™ y business case, puedes conectar agentes de IA sobre tu stack actual con el Pilar 02 o construir la plataforma completa en 90 días con el Pilar 03.',
+      desc: 'Una vez obtenido tu diagnóstico IMPATH™ y business case, puedes conectar agentes de IA sobre tu stack actual con el Pilar 02 o construir la plataforma completa en 2 a 4 meses con el Pilar 03.',
       ctaText: 'Explorar Pilar 02: Agentes & Automatización',
       ctaRoute: 'automatizacion-agentica'
     }
@@ -513,7 +513,7 @@ export const pillarsData = {
     bridge: {
       eyebrow: 'Expansión de Capacidades',
       title: 'Automatización inteligente sobre lo que ya funciona.',
-      desc: 'Si además de conectar agentes sobre tu infraestructura actual necesitas construir una nueva plataforma web o móvil corporativa desde cero en 90 días, explora el Pilar 03.',
+      desc: 'Si además de conectar agentes sobre tu infraestructura actual necesitas construir una nueva plataforma web o móvil corporativa desde cero en 2 a 4 meses, explora el Pilar 03.',
       ctaText: 'Explorar Pilar 03: Plataformas Digitales',
       ctaRoute: 'producto-digital'
     }
@@ -523,17 +523,17 @@ export const pillarsData = {
     id: 'plataformas-digitales',
     num: '03',
     name: 'Plataformas Digitales',
-    badgeText: 'FASE 03 · 3 MESES A PRODUCCIÓN',
-    duration: '3 Meses (90 Días a Producción)',
+    badgeText: 'FASE 03 · 2 A 4 MESES A PRODUCCIÓN',
+    duration: '2 a 4 Meses (MVP a Producción)',
     targetAudience: 'Para construir plataformas y MVPs desde cero con UX validado que convierte',
-    eyebrow: 'Pilar 03 · De la Concepción a Producción en 90 Días',
-    title: 'De la concepción a producción en 90 días con UX validado.',
-    subtitle: 'Inteligencia artificial integrada desde el primer sprint, UX validado con usuarios reales y arquitectura escalable y sólida. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas enterprise en 90 días con SLA 99.9%.',
-    takeaway: 'De la concepción a producción en 90 días con validación técnica y de mercado.',
+    eyebrow: 'Pilar 03 · De la Concepción a Producción en 2 a 4 Meses',
+    title: 'De la concepción a producción en 2 a 4 meses con UX validado.',
+    subtitle: 'Inteligencia artificial integrada desde el primer sprint, UX validado con usuarios reales y arquitectura escalable y sólida. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas y MVPs enterprise en 2 a 4 meses con SLA 99.9%.',
+    takeaway: 'De la concepción a producción en 2 a 4 meses con validación técnica y de mercado.',
     themeKey: 'cyan',
     packageName: 'Pilar 03 · Plataformas Digitales (Build)',
     stats: [
-      { value: '90 Días', label: 'De la concepción al lanzamiento oficial en producción', sublabel: 'Time-to-market agresivo' },
+      { value: '2 a 4 Meses', label: 'De la concepción al lanzamiento oficial del MVP en producción', sublabel: 'Time-to-market prioritario' },
       { value: '#1 UX/UI', label: 'Líder en diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
       { value: '50+', label: 'Plataformas enterprise construidas y operando', sublabel: 'SLA 99.9% Cloud-Native' }
     ],
@@ -550,10 +550,10 @@ export const pillarsData = {
     comparisonMatrix: {
       eyebrow: '02 — Diferenciación de Ingeniería',
       title: 'Construcción Full Stack BluePixel vs Fábricas de Software.',
-      subtitle: 'Por qué nuestro modelo de 90 días entrega software de grado enterprise con alta conversión.',
-      headers: ['Aspecto', 'Fábrica Tradicional ("Maquila")', 'Agencia Creativa de Diseño', 'Estándar BluePixel 90 Días'],
+      subtitle: 'Por qué nuestro modelo de 2 a 4 meses entrega software de grado enterprise con alta conversión.',
+      headers: ['Aspecto', 'Fábrica Tradicional ("Maquila")', 'Agencia Creativa de Diseño', 'Estándar BluePixel 2 a 4 Meses'],
       rows: [
-        { label: 'Tiempo a producción', cols: ['8 a 18 meses con retrasos constantes', 'Solo entregan pantallas en Figma', '90 días a producción con MVP funcional y probado'] },
+        { label: 'Tiempo a producción', cols: ['8 a 18 meses con retrasos constantes', 'Solo entregan pantallas en Figma', '2 a 4 meses a producción con MVP funcional y probado'] },
         { label: 'Calidad de UX/UI', cols: ['Interfaces toscas y sin pruebas de usuario', 'Diseño bonito pero inescalable en código', 'Psicología conductual IMPATH™ validada con usuarios reales'] },
         { label: 'Arquitectura de software', cols: ['Monolitos frágiles y deuda técnica oculta', 'Cero criterio de ingeniería pesada', 'Microservicios Cloud-Native, desacoplados y preparados para IA'] },
         { label: 'Propiedad y Soberanía', cols: ['Retienen propiedad o usan frameworks propietarios', 'Solo archivos de diseño', 'Repositorios 100% tuyos en tu VPC con CI/CD automatizado'] }
@@ -604,7 +604,7 @@ export const pillarsData = {
         id: 'business-ai',
         name: 'Digital Consulting',
         badge: 'FutureProof™ Framework',
-        role: 'Gobernanza de Entrega en 90 Días',
+        role: 'Gobernanza de Entrega en 2 a 4 Meses',
         desc: 'Aseguramiento estratégico de que cada feature construido resuelva con precisión la tesis comercial del negocio.',
         route: 'servicio/business-ai'
       }
@@ -621,7 +621,7 @@ export const pillarsData = {
     },
     quiz: {
       title: '¿Es el momento de construir tu plataforma o MVP corporativo?',
-      subtitle: '4 preguntas para evaluar si tu empresa está lista para el sprint de 90 días.',
+      subtitle: '4 preguntas para evaluar si tu empresa está lista para el sprint de 2 a 4 meses.',
       questions: [
         {
           q: '1. ¿Tienen clara la propuesta de valor y el problema principal que debe resolver la plataforma?',
@@ -635,7 +635,7 @@ export const pillarsData = {
         {
           q: '2. ¿Cuál es la urgencia de salir a producción con la plataforma?',
           options: [
-            { text: 'Crítica: requerimos estar en el mercado en 3 meses', score: 3 },
+            { text: 'Crítica: requerimos estar en el mercado en 2 a 4 meses', score: 3 },
             { text: 'Media: queremos lanzar antes de 6 meses', score: 2 },
             { text: 'Baja: no tenemos fecha límite clara', score: 1 },
             { text: 'Solo estamos pidiendo presupuestos informativos', score: 0 }
@@ -674,7 +674,7 @@ export const pillarsData = {
     },
     deliverables: {
       eyebrow: '06 — Entregables Oficiales Enterprise',
-      title: 'Una plataforma productiva completa entregada en 90 días.',
+      title: 'Una plataforma productiva completa entregada en 2 a 4 meses.',
       items: [
         { num: '01', title: 'Estrategia de Producto & Roadmap', desc: 'Discovery profundo, requerimientos priorizados por ROI y arquitectura técnica escalable.' },
         { num: '02', title: 'Sistema UX/UI Enterprise Validado', desc: 'Research con usuarios reales, prototipos interactivos navegables y Design System en Figma.' },
@@ -688,32 +688,32 @@ export const pillarsData = {
       ]
     },
     timeline: {
-      eyebrow: '07 — Metodología de 90 Días a Producción',
+      eyebrow: '07 — Metodología de 2 a 4 Meses a Producción',
       title: 'Cronograma acelerado de concepción a lanzamiento.',
       subtitle: 'Sprints quincenales con demostraciones funcionales de software en cada iteración.',
       steps: [
         { num: '01', title: 'Mes 1: Product Strategy & Diseño Validado', desc: 'Definición de arquitectura, prototipado interactivo y validación con usuarios reales.', deliverables: ['Prototipo en Figma', 'Blueprint Técnico'] },
         { num: '02', title: 'Mes 2: Desarrollo del Core Transaccional', desc: 'Programación de bases de datos, APIs, autenticación segura e interfaces principales.', deliverables: ['Módulos Core en Staging'] },
         { num: '03', title: 'Mes 3: Integraciones, QA & Hardening', desc: 'Conexión con pasarelas de pago, ERPs, pruebas automatizadas de seguridad y auditoría.', deliverables: ['Tests >85%', 'Auditoría OWASP'] },
-        { num: '04', title: 'Día 90: Go-Live Oficial a Producción', desc: 'Despliegue productivo en tu VPC con balanceadores, telemetría Mixpanel y SLA 99.9% activo.', deliverables: ['Plataforma en Producción'] }
+        { num: '04', title: 'Mes 4: Go-Live Oficial a Producción', desc: 'Despliegue productivo en tu VPC con balanceadores, telemetría Mixpanel y SLA 99.9% activo.', deliverables: ['Plataforma en Producción'] }
       ]
     },
     faqs: [
-      { q: '¿Es realmente viable lanzar una plataforma corporativa en solo 90 días?', a: 'Sí, porque aplicamos nuestra metodología de desarrollo acelerado por IA (AI-Forward Deploy Engineering) y priorizamos con rigor de cirujano el MVP que genera tracción comercial, sin quemar tiempo en funcionalidades secundarias.' },
+      { q: '¿Es realmente viable lanzar un MVP o plataforma corporativa en 2 a 4 meses?', a: 'Sí, porque aplicamos nuestra metodología de desarrollo acelerado por IA (AI-Forward Deploy Engineering) y priorizamos con rigor de cirujano el MVP que genera tracción comercial, sin quemar tiempo en funcionalidades secundarias.' },
       { q: '¿Qué tecnologías utilizan para construir la plataforma?', a: 'Construimos con el stack más moderno y demandado del mercado empresarial: React, Next.js, React Native, Node.js, Python, TypeScript, PostgreSQL y Redis, sobre contenedores Docker orquestados en AWS, GCP o Azure.' },
-      { q: '¿Qué sucede una vez que se lanza la plataforma en el día 90?', a: 'Tienes total libertad: entregamos la propiedad y documentación completa a tu equipo interno, o puedes hacer la transición sin fricciones hacia el Pilar 04 (Evolución Digital) para continuar optimizando con nuestro squad dedicado.' }
+      { q: '¿Qué sucede una vez que se lanza la plataforma en 2 a 4 meses?', a: 'Tienes total libertad: entregamos la propiedad y documentación completa a tu equipo interno, o puedes hacer la transición sin fricciones hacia el Pilar 04 (Evolución Digital) para continuar optimizando con nuestro squad dedicado.' }
     ],
     caseStudy: {
       tag: 'CASO REAL B2B · FINTECH & HIGH CONCURRENCY',
       client: 'Clip / RadioShack (Plataformas Transaccionales de Alto Tráfico)',
-      title: 'De la concepción a producción en 90 días con arquitectura Cloud-Native y UX validado',
+      title: 'De la concepción a producción en 2 a 4 meses con arquitectura Cloud-Native y UX validado',
       problem: 'La compañía requería lanzar una nueva experiencia digital transaccional con estrictos requerimientos de seguridad bancaria y capacidad para soportar picos masivos de transacciones simultáneas.',
-      solution: 'Squad BluePixel full-stack: estrategia de producto y validación con usuarios reales en el Mes 1, ingeniería serverless/contenedores en el Mes 2, e integración de pasarelas con blindaje OWASP y pruebas de carga en el Mes 3.',
-      result: 'Go-Live exacto en el día 90. Disponibilidad del 99.9% durante picos de demanda y adopción de usuarios superior al 92% sin necesidad de manuales de inducción.',
-      quote: 'BluePixel logró en 90 días lo que nuestra fábrica de software anterior no pudo entregar en un año.',
+      solution: 'Squad BluePixel full-stack: estrategia de producto y validación con usuarios reales en el Mes 1, ingeniería serverless/contenedores en el Mes 2, e integración de pasarelas con blindaje OWASP y pruebas de carga en los Meses 3 y 4.',
+      result: 'Go-Live en tiempo récord. Disponibilidad del 99.9% durante picos de demanda y adopción de usuarios superior al 92% sin necesidad de manuales de inducción.',
+      quote: 'BluePixel logró en pocos meses lo que nuestra fábrica de software anterior no pudo entregar en un año.',
       author: 'VP of Engineering & Product Lead',
       metrics: [
-        { value: '90 Días', label: 'De la primera sesión de UX al Go-Live en producción' },
+        { value: '2 a 4 Meses', label: 'De la primera sesión de UX al Go-Live en producción' },
         { value: '99.9%', label: 'Disponibilidad de arquitectura cloud ante picos de demanda' },
         { value: '>92%', label: 'Tasa de adopción de usuarios en el primer mes' }
       ]
@@ -1001,7 +1001,7 @@ export const pillarsData = {
     bridge: {
       eyebrow: 'Punto de Entrada Previo',
       title: '¿Tu plataforma aún no existe?',
-      desc: 'EVOLVE es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 90 días, el Pilar 03 (Plataformas Digitales) es tu camino.',
+      desc: 'EVOLVE es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 2 a 4 meses, el Pilar 03 (Plataformas Digitales) es tu camino.',
       ctaText: 'Conocer Pilar 03: Plataformas Digitales',
       ctaRoute: 'producto-digital'
     }

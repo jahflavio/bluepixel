@@ -60,11 +60,11 @@ export const CLUSTERS_DATA = {
       },
       {
         id: 'mvp',
-        title: 'MVPs de Alta Fidelidad en 90 Días',
+        title: 'MVPs de Alta Fidelidad en 2 a 4 Meses',
         badge: 'Rapid Build',
         icon: '⚡',
         originalUrl: 'cotiza.bluepixel.mx/desarrollo-mvp',
-        valueProp: 'Lanza nuevas unidades de negocio con software de grado corporativo en 12 semanas, no con prototipos desechables.',
+        valueProp: 'Lanza nuevas unidades de negocio con software de grado corporativo en 2 a 4 meses, no con prototipos desechables.',
         cases: [
           'Spin-offs y validación de nuevos canales de ingresos para corporativos consolidados.',
           'Lanzamiento de plataformas piloto para rondas de inversión y validación de mercado.',
@@ -123,10 +123,10 @@ export const CLUSTERS_DATA = {
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
         title: 'Producto Digital (Build & Evolve)',
-        desc: 'Construimos tu plataforma de misión crítica desde cero hasta producción en 90 días (BUILD), con evolución continua y mantenimiento (EVOLVE).',
+        desc: 'Construimos tu plataforma de misión crítica desde cero hasta producción en 2 a 4 meses (BUILD), con evolución continua y mantenimiento (EVOLVE).',
         bullets: [
           'Todo lo incluido en Consultoría 01 y Automatización 02',
-          'Construcción y lanzamiento en producción en 90 días',
+          'Construcción y lanzamiento en producción en 2 a 4 meses',
           'Monitoreo trimestral de UX Health Score y rendimiento',
           'SLA de soporte correctivo y escalabilidad bajo demanda'
         ],
@@ -385,7 +385,7 @@ export const CLUSTERS_DATA = {
         desc: 'Construimos una plataforma con capa agéntica corporativa de alta disponibilidad (BUILD) y la monitoreamos continuamente (EVOLVE).',
         bullets: [
           'Todo lo incluido en Consultoría 01 y Automatización 02',
-          'Construcción completa de plataforma agéntica en 90 días',
+          'Construcción completa de plataforma agéntica en 2 a 4 meses',
           'Monitoreo continuo de salud del modelo y precisión de respuestas',
           'Hand-off estructurado: tu equipo es dueño absoluto de lo que opera'
         ],

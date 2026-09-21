@@ -130,7 +130,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
                   <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-cyan-400">
                     <span className="font-mono text-cyan-400 text-xs">03</span>
                     <span>Plataformas Digitales</span>
-                    <span className="text-[10px] font-mono text-slate-500 ml-auto">90 días</span>
+                    <span className="text-[10px] font-mono text-slate-500 ml-auto">2-4 meses</span>
                   </div>
                   <span className="block text-[11px] text-slate-500 mt-0.5">De 0 a producción con UX validado</span>
                 </a>

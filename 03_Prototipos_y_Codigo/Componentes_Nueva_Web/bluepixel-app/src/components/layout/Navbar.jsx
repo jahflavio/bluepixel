@@ -130,7 +130,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                       <div className="text-xs font-bold text-white group-hover/item:text-cyan-400 flex items-center gap-1.5">
                         <span className="font-mono text-cyan-400 text-[10px]">03</span>
                         <span>Plataformas Digitales</span>
-                        <span className="text-[9px] font-mono text-slate-500">90 días</span>
+                        <span className="text-[9px] font-mono text-slate-500">2 a 4 meses</span>
                       </div>
                       <div className="text-[11px] text-slate-400 mt-0.5">De 0 a producción con UX validado</div>
                     </div>
@@ -414,7 +414,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="font-mono text-cyan-400 text-[10px]">03</span>
                     <span>Plataformas Digitales</span>
-                    <span className="text-[9px] font-mono text-slate-500">90 días</span>
+                    <span className="text-[9px] font-mono text-slate-500">2 a 4 meses</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">De 0 a producción con UX validado</div>
                 </div>

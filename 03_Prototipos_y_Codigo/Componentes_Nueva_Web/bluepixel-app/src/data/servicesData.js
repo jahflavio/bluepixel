@@ -36,7 +36,7 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: true,
         role: 'Diseño Integral de 0 a Producción',
         desc: 'Product Strategy, prototipado interactivo de alta fidelidad probado con usuarios reales, Design System escalable y handoff perfecto a desarrollo Full Stack.',
@@ -167,9 +167,9 @@ export const servicesData = {
       ]
     },
     faqs: [
-      { q: '¿Ustedes desarrollan el código también?', a: 'Sí. Nuestra capability de Software Engineering puede construir el producto completo de punta a punta con React/Node.js en 90 días (Pilar 03), o podemos entregar el diseño documentado a tu equipo interno de desarrollo.' },
+      { q: '¿Ustedes desarrollan el código también?', a: 'Sí. Nuestra capability de Software Engineering puede construir el producto completo de punta a punta con React/Node.js en 2 a 4 meses (Pilar 03), o podemos entregar el diseño documentado a tu equipo interno de desarrollo.' },
       { q: '¿Trabajan sobre plataformas ya existentes?', a: 'Sí, la mayoría de nuestros proyectos corporativos involucran modernizar y reducir la fricción de sistemas legados o plataformas que ya están en producción mediante el Pilar 01 (Diagnóstico) o Pilar 04 (Evolución continua).' },
-      { q: '¿Cuánto tarda un proceso de diseño completo?', a: 'Depende de la modalidad: una consultoría de diagnóstico toma de 2 a 4 semanas. El diseño integral de una plataforma completa se ejecuta dentro del sprint de 90 días del Pilar 03.' }
+      { q: '¿Cuánto tarda un proceso de diseño completo?', a: 'Depende de la modalidad: una consultoría de diagnóstico toma de 2 a 4 semanas. El diseño integral de una plataforma completa se ejecuta dentro del sprint de 2 a 4 meses del Pilar 03.' }
     ]
   },
 
@@ -210,10 +210,10 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: true,
         role: 'Construcción Full Stack de 0 a Producción',
-        desc: 'De la arquitectura conceptual a despliegue productivo en 90 días con React, Node.js/Python, bases de datos resilientes y CI/CD automatizado.',
+        desc: 'De la arquitectura conceptual a despliegue productivo en 2 a 4 meses con React, Node.js/Python, bases de datos resilientes y CI/CD automatizado.',
         deliverable: 'Plataforma en Producción con SLA 99.9%'
       },
       {
@@ -384,7 +384,7 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: false,
         role: 'Workflows Inteligentes Nativos',
         desc: 'Integración de motores agénticos dentro de la plataforma digital desde el sprint 1, transformando la app en un activo inteligente nativo.',
@@ -558,7 +558,7 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: false,
         role: 'Data Stack & Mixpanel desde Sprint 1',
         desc: 'Configuración nativa de analítica de producto, tracking de eventos clave y base de datos analítica conectada a la nueva plataforma.',
@@ -732,7 +732,7 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: false,
         role: 'Arquitectura Zero-Trust & DevSecOps',
         desc: 'Diseño de red segura, cifrado KMS de datos en tránsito y reposo, y pipelines CI/CD con escaneo automatizado de dependencias.',
@@ -906,10 +906,10 @@ export const servicesData = {
       {
         num: '03',
         name: 'Plataformas Digitales',
-        duration: '3 Meses a Producción',
+        duration: '2 a 4 Meses a Producción',
         isCore: false,
         role: 'Product Strategy & Gobernanza de Entrega',
-        desc: 'Aseguramiento de que el software construido en 90 días resuelva con precisión milimétrica la tesis comercial del negocio.',
+        desc: 'Aseguramiento de que el software construido en 2 a 4 meses resuelva con precisión milimétrica la tesis comercial del negocio.',
         deliverable: 'Product Strategy Document (PSD)'
       },
       {

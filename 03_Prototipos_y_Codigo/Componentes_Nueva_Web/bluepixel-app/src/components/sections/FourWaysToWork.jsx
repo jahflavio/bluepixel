@@ -58,7 +58,7 @@ const CONTENT = {
         target: 'Para construir plataformas y MVPs desde cero con UX validado',
         desc: 'Unimos nuestra maestría referente en UX/UI con ingeniería Full Stack para crear plataformas que tus usuarios aman.',
         bullets: [
-          'Plataforma o MVP listo en 3 meses con UX validado y time-to-market prioritario',
+          'Plataforma o MVP listo en 2 a 4 meses con UX validado y time-to-market prioritario',
           'Construcción de software a la medida desde cero con capacidades Full Stack',
           'Expertise referente en UX/UI: investigación con usuarios reales, design systems y prototipado',
           'Ingeniería acelerada por IA (AI-Forward Deploy Engineering) y QA testing riguroso',

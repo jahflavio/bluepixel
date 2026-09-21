@@ -55,7 +55,7 @@ export const caseStudiesData = [
     pillarId: 'plataformas-digitales',
     pillarName: 'Pilar 03 · Plataformas Digitales',
     pillarRoute: 'producto-digital',
-    headline: 'E-commerce móvil de alta conversión con reducción radical de fricción en compras en 90 días.',
+    headline: 'E-commerce móvil de alta conversión con reducción radical de fricción en compras en 3 meses.',
     badge: '+32% Conversión E-com',
     badgeClass: 'text-orange-400 bg-orange-500/15 border-orange-500/30',
     tags: ['UX/UI Design', 'Mobile Apps', 'E-Commerce', 'Cloud-Native'],
@@ -63,13 +63,13 @@ export const caseStudiesData = [
     image: `${import.meta.env.BASE_URL}assets/radioshack.jpg`,
     fallbackImage: `${import.meta.env.BASE_URL}case1.jpg`,
     challenge: 'Conversión móvil estancada y alta tasa de carritos abandonados debido a una arquitectura monolítica lenta y flujos de checkout redundantes que filtraban ingresos cada trimestre.',
-    solution: 'Construcción y lanzamiento de una nueva plataforma de e-commerce móvil desde cero en 90 días con arquitectura desacoplada Cloud-Native, microservicios serverless, checkout en 2 clics y diseño UI de alta conversión validado con usuarios reales.',
+    solution: 'Construcción y lanzamiento de una nueva plataforma de e-commerce móvil desde cero en 3 meses con arquitectura desacoplada Cloud-Native, microservicios serverless, checkout en 2 clics y diseño UI de alta conversión validado con usuarios reales.',
     results: [
       { value: '+32%', label: 'Aumento en tasa de conversión en compras móviles' },
-      { value: '90 Días', label: 'De la concepción al lanzamiento oficial a producción' },
+      { value: '3 Meses', label: 'De la concepción al lanzamiento oficial a producción' },
       { value: '1.2 seg', label: 'Tiempo de carga de catálogo (Core Web Vitals)' }
     ],
-    quote: 'BluePixel logró poner en producción en 90 días una plataforma que convirtió inmediatamente más que nuestro sistema anterior.',
+    quote: 'BluePixel logró poner en producción en 3 meses una plataforma que convirtió inmediatamente más que nuestro sistema anterior.',
     author: 'Dirección de E-Commerce & Retail'
   },
   {

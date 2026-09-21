@@ -26,7 +26,7 @@
 │ 01 · Consultoría     │ 02 · Agentes &       │ 03 · Plataformas Digitales    │
 │      Digital         │      Automatización  │      (Plataformas y MVPs con  │
 │ ⏳ 2 a 4 Semanas     │ ⏳ 2 a 4 Semanas     │       UX validado)            │
-│                      │                      │ ⏳ 3 Meses                    │
+│                      │                      │ ⏳ 2 a 4 Meses                │
 ├──────────────────────┴──────────────────────┴───────────────────────────────┤
 │ 04 · Evolución Digital (Roadmap vivo a 6 o 12 meses, capacidades continuas) │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -49,9 +49,9 @@
 ### 🔹 Pilar 03: Plataformas Digitales
 * **Objetivo:** Diseñar, validar y construir desde cero plataformas web, móviles o MVPs corporativos escalables y de alto impacto.
 * **Orientación / Para quién es:** Para construir plataformas y MVPs desde cero con UX validado que convierte.
-* **Plazo:** 3 meses (90 días a producción).
+* **Plazo:** 2 a 4 meses a producción.
 * **Entregables:** Product Strategy (PS), prototipado y validación con usuarios reales, diseño de UI de clase mundial, desarrollo Full Stack Cloud-Native, arquitectura desacoplada, pruebas automatizadas y despliegue productivo con SLA 99.9%.
-* **Takeaway de Valor:** *"De la concepción a producción en 90 días con validación técnica y de mercado."*
+* **Takeaway de Valor:** *"De la concepción a producción en 2 a 4 meses con validación técnica y de mercado."*
 
 ### 🔹 Pilar 04: Evolución Digital
 * **Objetivo:** Acompañamiento tecnológico continuo para optimizar, escalar y evolucionar activos digitales existentes.
@@ -132,7 +132,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
 | **IA & Automatización** | Evaluación de casos de uso viables | **Núcleo:** Agentic RAG y MCP | Módulos inteligentes en la app | Reentrenamiento y nuevos agentes |
 | **Data & Analytics** | Análisis de telemetría y métricas | Trazabilidad de ejecuciones de IA | Configuración de analítica base | Dashboards directivos y optimización |
 | **Security & Reliability** | Análisis de vulnerabilidades y brechas | Blindaje de prompts y datos RAG | Arquitectura segura ISO / OWASP | Monitoreo SLA 99.9% y DevSecOps |
-| **Digital Consulting** | **Núcleo:** Business case y roadmap | Priorización de flujos operativos | Gobernanza de entrega en 90 días | Priorización trimestral del backlog |
+| **Digital Consulting** | **Núcleo:** Business case y roadmap | Priorización de flujos operativos | Gobernanza de entrega en 2 a 4 meses | Priorización trimestral del backlog |
 
 ---
 
