@@ -18,10 +18,6 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
         {/* Center Nav Links (Desktop) */}
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
           
-          <a href="#/pilares" className="hover:text-blue-400 transition-colors">
-            Nuestros Pilares
-          </a>
-
           <a href="#/como-trabajamos" className="hover:text-blue-400 transition-colors">
             Cómo Trabajamos
           </a>
