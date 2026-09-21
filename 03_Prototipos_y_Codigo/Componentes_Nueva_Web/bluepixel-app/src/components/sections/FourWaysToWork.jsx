@@ -267,18 +267,20 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
               <div className="p-8 flex-1 flex flex-col relative z-10">
                 {/* Phase Header - Fixed Height 64px */}
                 <div className="flex items-start gap-3 mb-6 h-[64px]">
-                  <span className="text-slate-500 font-mono text-sm font-semibold mt-1">{phase.num}</span>
+                  <span className="text-blue-400 font-mono text-sm font-bold mt-1 drop-shadow-[0_0_8px_rgba(59,130,246,0.3)]">
+                    {phase.num}
+                  </span>
                   <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
                     {phase.titleLine1}<br/>{phase.titleLine2}
                   </h3>
                 </div>
                 
-                {/* Badges - Single Row h-[32px] */}
+                {/* Badges (Cápsulas) - Single Row h-[32px] */}
                 <div className="flex items-center gap-1.5 mb-6 h-[32px] overflow-hidden">
                   {phase.badges.map((badge, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-slate-400 text-[9px] font-bold tracking-widest uppercase shrink-0"
+                      className="px-2.5 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-[9px] font-bold tracking-widest uppercase shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.12)]"
                     >
                       {badge}
                     </span>
@@ -295,11 +297,11 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                   {phase.desc}
                 </p>
 
-                {/* Bullets */}
+                {/* Bullets (Palomitas en azul) */}
                 <ul className="space-y-3.5 mb-8 flex-1">
                   {phase.bullets.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                      <span className="text-white mt-0.5 opacity-60 font-bold shrink-0">✓</span>
+                      <span className="text-blue-400 mt-0.5 font-bold shrink-0 text-base leading-none drop-shadow-[0_0_6px_rgba(59,130,246,0.4)]">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
