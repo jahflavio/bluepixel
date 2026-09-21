@@ -91,8 +91,8 @@
 * **La Ventaja Injusta de BluePixel:**  
   El diseño UX conductual y la Product Strategy (PS) bajo metodología **IMPATH™** se posicionan como la **armadura de adopción humana** de arquitecturas de ingeniería pesada:  
   *«Las consultoras puras de IA desarrollan algoritmos potentes pero interfaces toscas que el 70% de los usuarios abandona; las fábricas de software facturan horas a ciegas; BluePixel entrega ingeniería grado enterprise con el 95% de adopción garantizada.»*
-* **Liderazgo Técnico Visible:**  
-  Página y secciones de *Lead Architects* con perfiles y experiencia verificable de Leonardo Flores, Pablo Gómez y los líderes técnicos.
+* **Seniority Técnico Directo (Garantía Anti-Maquila):**  
+  Sección institucional enfocada en certidumbre de entrega: cada proyecto está supervisado directamente por un *Lead Architect* con experiencia probada en arquitecturas enterprise, erradicando el modelo de las fábricas tradicionales que facturan juniors como seniors. Interlocución técnica directa y cero intermediarios comerciales en las sesiones de arquitectura.
 
 ### 1.5. Dimensión Técnica, Soberanía de Datos y Cumplimiento
 * **Soberanía Técnica y Cero Lock-In:**  
@@ -108,7 +108,7 @@ El tráfico pagado **no debe aterrizar en páginas generales de navegación**, y
 
 ```mermaid
 graph TD
-    subgraph "CAMPAÑAS DE PAUTA (ROCKETING)"
+    subgraph "CAMPAÑAS DE PAUTA B2B"
         C1["Google Ads Search 1<br/>Apps & Plataformas"]
         C2["Google Ads Search 2<br/>Automatización ERP"]
         C3["Google Ads Search 3<br/>Agentes IA & MCP"]
@@ -169,7 +169,7 @@ Cada landing de pauta está optimizada para alcanzar un **Quality Score de 9 a 1
 * **Message Match Estricto:** El título H1 replica de forma idéntica la promesa del anuncio.
 * **Teardown Visual:** Comparativa gráfica entre el proceso manual ineficiente y la solución arquitectónica implementada.
 * **Filtro de Tamaño de Empresa en Formulario:** Inclusión obligatoria del selector de colaboradores (`10-50`, `50-200`, `200+`) para activar la micro-conversión de valor en Google Ads (*"+50 empleados = Lead Calificado"*).
-* **Compromiso SLA Visible:** NDA bilateral en minuto 0, auditoría en 24 horas y contacto directo con un Lead Architect.
+* **Compromiso SLA Visible:** NDA bilateral en minuto 0, auditoría en 24 horas y contacto directo con un Lead Architect senior.
 
 ---
 
@@ -189,7 +189,7 @@ bluepixel.mx/
 │   │   ├── Rol: Posicionamiento como Consultora de Ingeniería Agéntica + UX de Adopción + FutureProof.
 │   │   ├── Secciones Clave: Hero con Terminal Agéntica, Trust Badges B2B (Bimbo, BBVA, Cemex),
 │   │   │   The Enterprise AI Reality, Grid de 4 Pilares, Soberanía Técnica, 6 Capacidades,
-│   │   │   Casos de Estudio, Lead Architects, FAQ Battlecard Corporativa y Formulario Calificado.
+│   │   │   Casos de Estudio, Garantía de Seniority (Lead Architects), FAQ Battlecard Corporativa y Formulario Calificado.
 │   │   └── Conversión: Solicitud de Diagnóstico Operativo / Agenda Técnica.
 │   │
 │   ├── /pilares (Los 4 Pilares de Contratación)
@@ -248,9 +248,10 @@ bluepixel.mx/
 │   │   │        de la IA y cómo se audita la deuda técnica y operativa.
 │   │   └── Secciones: 5 Principios FutureProof, Soberanía de Datos, Cero Vendor Lock-In, Metodología IMPATH™.
 │   │
-│   ├── /nosotros (Liderazgo Técnico & Manifiesto Anti-Maquila)
+│   ├── /nosotros (Cultura de Ingeniería & Manifiesto Anti-Maquila)
 │   │   ├── Rol: Construcción de confianza ejecutiva C-Level.
-│   │   └── Secciones: Perfiles de los Lead Architects (Leo Flores, Pablo Gómez), Certidumbre determinística.
+│   │   └── Secciones: El Manifiesto Anti-Maquila, Estructura del Squad de Ingeniería Senior,
+│   │                  Garantía de Seniority (cero juniors facturados como seniors) y SLA de entrega.
 │   │
 │   └── /contacto (Centro de Conversión & Diagnóstico B2B)
 │       ├── Rol: Captura calificada de leads de alto valor sin fricción económica previa.
@@ -345,7 +346,7 @@ sequenceDiagram
     participant G as Google Ads / LinkedIn
     participant LP as Landing Page (/lp/*)
     participant F as Formulario / Webhook
-    participant CRM as CRM (Pablo & José)
+    participant CRM as CRM / Pipeline de Ventas
     participant API as Google Ads API (Offline)
 
     U->>G: Clic en Anuncio ("Agentes de IA en Producción")
@@ -353,7 +354,7 @@ sequenceDiagram
     Note over LP: Script extrae gclid y UTMs<br/>y los persiste en sessionStorage
     LP->>F: Envío de formulario (+50 empleados, caso de uso)
     F->>CRM: Lead ingresa con gclid y puntuación (Lead Score)
-    Note over CRM: Pablo Gómez califica la oportunidad:<br/>SQL con presupuesto >$300,000 MXN
+    Note over CRM: El equipo comercial califica la oportunidad:<br/>SQL con presupuesto >$300,000 MXN
     CRM->>API: Conversión Offline enviada con gclid y valor real
     API->>G: Algoritmo de Google optimiza Smart Bidding para C-Levels
 ```
@@ -382,7 +383,7 @@ Sustitución del ID genérico `GTM-XXXXXXX` por el contenedor oficial de producc
 * `calendar_meeting_scheduled`: Agendamiento directo en HubSpot / Calendly.
 
 ### 5.3. Importación de Conversiones Offline a Google Ads API
-Cuando el equipo de ventas (Pablo Gómez o José de Buen) califique un prospecto como **SQL (Sales Qualified Lead)** o cierre un contrato de los Pilares 01, 02 o 03, el sistema envía un Webhook a la API de Google Ads con el `gclid`, la fecha y el valor monetario real. Esto entrena el Smart Bidding de Google para priorizar clics de tomadores de decisión reales y suprimir tráfico basura.
+Cuando el equipo comercial y de preventa técnica califique un prospecto como **SQL (Sales Qualified Lead)** o cierre un contrato de los Pilares 01, 02 o 03, el sistema envía un Webhook a la API de Google Ads con el `gclid`, la fecha y el valor monetario real. Esto entrena el Smart Bidding de Google para priorizar clics de tomadores de decisión reales y suprimir tráfico basura.
 
 ---
 
@@ -488,7 +489,7 @@ graph TD
   [Paso 5: Casos de Estudio Reales] ➔ Lee el teardown técnico de RadioShack (desacoplamiento) o FR Medical (triage 1.8s).
         │
         ▼
-  [Paso 6: Lead Architects] ➔ Conoce los rostros y credenciales técnicas de Leo Flores y Pablo Gómez.
+  [Paso 6: Garantía de Seniority] ➔ Valida el estándar de ingeniería: interlocución técnica directa con un Lead Architect senior sin intermediarios comerciales.
         │
         ▼
   [CONVERSIÓN]: Clic en [ Agendar Sesión de Arquitectura de 30 min ] ➔ Selecciona slot en HubSpot Meetings.
