@@ -1,0 +1,1 @@
+import{j as e}from"./index-BFg9ySWK.js";import{S as t,s as a}from"./servicesData-Js-vwxZa.js";import"./MultiStepContact-B0hrPsz_.js";import"./Footer-DXEkHScp.js";const m=()=>e.jsx(t,{data:a["ai-agents"]});export{m as default};
