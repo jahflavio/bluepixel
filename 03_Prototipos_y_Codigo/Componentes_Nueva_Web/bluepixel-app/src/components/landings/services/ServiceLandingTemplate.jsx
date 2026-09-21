@@ -278,14 +278,24 @@ const ServiceLandingTemplate = ({ data }) => {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
-                      <span>{way.name}</span>
-                      {way.isCore && (
-                        <span className={`text-[9px] font-mono uppercase font-black px-2 py-0.5 rounded-full border ${theme.pillCore}`}>
-                          Núcleo
-                        </span>
-                      )}
-                    </h3>
+                    <a 
+                      href={
+                        way.num === '01' ? '#/consultoria-tecnologica' :
+                        way.num === '02' ? '#/automatizacion-agentica' :
+                        way.num === '03' ? '#/producto-digital' :
+                        '#/evolucion-digital'
+                      }
+                      className="hover:text-blue-400 transition-colors group/title"
+                    >
+                      <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2 group-hover/title:text-blue-400 transition-colors">
+                        <span>{way.name}</span>
+                        {way.isCore && (
+                          <span className={`text-[9px] font-mono uppercase font-black px-2 py-0.5 rounded-full border ${theme.pillCore}`}>
+                            Núcleo
+                          </span>
+                        )}
+                      </h3>
+                    </a>
 
                     <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${theme.accentText}`}>
                       {way.role}
@@ -296,13 +306,28 @@ const ServiceLandingTemplate = ({ data }) => {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.06]">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">
-                      Entregable Concreto:
+                  <div className="pt-4 border-t border-white/[0.06] flex flex-col gap-3">
+                    <div>
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">
+                        Entregable Concreto:
+                      </div>
+                      <div className="text-xs font-semibold text-slate-200">
+                        {way.deliverable}
+                      </div>
                     </div>
-                    <div className="text-xs font-semibold text-slate-200">
-                      {way.deliverable}
-                    </div>
+
+                    <a
+                      href={
+                        way.num === '01' ? '#/consultoria-tecnologica' :
+                        way.num === '02' ? '#/automatizacion-agentica' :
+                        way.num === '03' ? '#/producto-digital' :
+                        '#/evolucion-digital'
+                      }
+                      className="w-full flex items-center justify-between text-xs font-mono font-bold text-blue-300 hover:text-white px-3.5 py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-400 shadow-[0_0_12px_-3px_rgba(59,130,246,0.25)] transition-all duration-200 group/btn"
+                    >
+                      <span>Ver Landing del Pilar {way.num}</span>
+                      <span className="group-hover/btn:translate-x-1 transition-transform font-bold">→</span>
+                    </a>
                   </div>
                 </div>
               ))}

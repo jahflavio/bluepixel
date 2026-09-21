@@ -272,9 +272,22 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                   <span className="text-blue-400 font-mono text-sm font-bold mt-1 drop-shadow-[0_0_8px_rgba(59,130,246,0.3)]">
                     {phase.num}
                   </span>
-                  <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                    {phase.titleLine1}<br/>{phase.titleLine2}<span className="text-blue-500">.</span>
-                  </h3>
+                  <a
+                    href={
+                      phase.num === '01' 
+                        ? '#/consultoria-tecnologica' 
+                        : phase.num === '02' 
+                          ? '#/automatizacion-agentica' 
+                          : phase.num === '03' 
+                            ? '#/producto-digital' 
+                            : '#/evolucion-digital'
+                    }
+                    className="hover:text-blue-400 transition-colors group/title"
+                  >
+                    <h3 className="text-white group-hover/title:text-blue-400 font-black text-2xl tracking-wide uppercase leading-tight transition-colors">
+                      {phase.titleLine1}<br/>{phase.titleLine2}<span className="text-blue-500">.</span>
+                    </h3>
+                  </a>
                 </div>
                 
                 {/* Badges (Cápsulas) - Single Row h-[32px] */}
@@ -331,14 +344,46 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                           ? '#/producto-digital' 
                           : '#/evolucion-digital'
                   }
-                  className="flex items-center justify-between text-xs font-mono text-blue-400 hover:text-white px-3.5 py-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all group/link"
+                  className="w-full flex items-center justify-between text-xs font-mono font-bold text-blue-300 hover:text-white px-4 py-3 rounded-xl bg-blue-600/15 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-400 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)] transition-all duration-200 group/btn"
                 >
-                  <span className="font-semibold">Conocer este pilar a fondo</span>
-                  <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover/btn:bg-white animate-pulse"></span>
+                    <span>{lang === 'en' ? `View Pillar ${phase.num} Landing Page` : `Ver Landing del Pilar ${phase.num}`}</span>
+                  </span>
+                  <span className="group-hover/btn:translate-x-1 transition-transform font-bold">→</span>
                 </a>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Banner Inferior con Enlaces Directos a las 4 Landings */}
+        <div className="mt-12 p-6 rounded-2xl bg-[#060A14] border border-white/[0.08] flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3 text-center lg:text-left">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shrink-0"></span>
+            <div>
+              <div className="text-sm font-bold text-white">
+                {lang === 'en' ? 'Dedicated Landing Pages by Pillar' : 'Landings Dedicadas por Pilar de Servicio'}
+              </div>
+              <div className="text-xs text-slate-400">
+                {lang === 'en' ? 'Explore real client case studies, deliverables, ROI benchmarks, and timelines' : 'Explora entregables, casos de estudio reales, quizzes y SLAs de cada pilar'}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <a href="#/consultoria-tecnologica" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-blue-400 hover:text-blue-400 text-slate-300 hover:bg-blue-500/10 transition-all font-semibold">
+              01. Consultoría Digital →
+            </a>
+            <a href="#/automatizacion-agentica" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-400 hover:text-purple-400 text-slate-300 hover:bg-purple-500/10 transition-all font-semibold">
+              02. Agentes & Auto →
+            </a>
+            <a href="#/producto-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 hover:bg-cyan-500/10 transition-all font-semibold">
+              03. Plataformas Digitales →
+            </a>
+            <a href="#/evolucion-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-indigo-400 hover:text-indigo-400 text-slate-300 hover:bg-indigo-500/10 transition-all font-semibold">
+              04. Evolución Digital →
+            </a>
+          </div>
         </div>
       </div>
     </section>
