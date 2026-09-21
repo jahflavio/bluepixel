@@ -6,6 +6,17 @@ const CaseStudiesSection = ({ onOpenCase }) => {
 
   const cases = [
     {
+      id: 'lifemiles',
+      client: 'Avianca / LifeMiles',
+      category: 'TRAVEL · LEALTAD · LATAM',
+      headline: 'Plataforma de lealtad rediseñada para aumentar retención y descubrimiento de beneficios.',
+      badge: '↑ Retención',
+      badgeClass: 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30',
+      tags: ['UX/UI Design', 'Web Development'],
+      image: `${import.meta.env.BASE_URL}assets/lifemiles.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case2.jpg`
+    },
+    {
       id: 'bimbo-data',
       client: 'Bimbo',
       category: 'CONSUMO MASIVO · ENTERPRISE',
@@ -17,26 +28,26 @@ const CaseStudiesSection = ({ onOpenCase }) => {
       fallbackImage: `${import.meta.env.BASE_URL}case4.jpg`
     },
     {
-      id: 'bimbo-ops',
-      client: 'Bimbo',
-      category: 'CONSUMO MASIVO · ENTERPRISE',
-      headline: 'Evolución de plataformas internas para operaciones globales.',
-      badge: '↑ Eficiencia Operacional',
-      badgeClass: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-      tags: ['UX/UI Design', 'Enterprise UX', 'Design Systems'],
-      image: `${import.meta.env.BASE_URL}case4.jpg`,
-      fallbackImage: `${import.meta.env.BASE_URL}assets/bimbo.jpg`
+      id: 'radioshack',
+      client: 'RadioShack',
+      category: 'RETAIL · E-COMMERCE',
+      headline: 'E-commerce de alta conversión con reducción radical de fricción en compras.',
+      badge: '↑ Conversión E-com',
+      badgeClass: 'text-orange-400 bg-orange-500/15 border-orange-500/30',
+      tags: ['UX/UI Design', 'Mobile Apps', 'E-Commerce'],
+      image: `${import.meta.env.BASE_URL}assets/radioshack.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case1.jpg`
     },
     {
-      id: 'lifemiles',
-      client: 'Avianca / LifeMiles',
-      category: 'TRAVEL · LEALTAD · LATAM',
-      headline: 'Plataforma de lealtad rediseñada para aumentar retención y descubrimiento de beneficios.',
-      badge: '↑ Retención',
-      badgeClass: 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30',
-      tags: ['UX/UI Design', 'Web Development'],
-      image: `${import.meta.env.BASE_URL}assets/lifemiles.jpg`,
-      fallbackImage: `${import.meta.env.BASE_URL}case2.jpg`
+      id: 'fr-medical',
+      client: 'FR Medical',
+      category: 'LOGÍSTICA QUIRÚRGICA · HEALTHCARE B2B',
+      headline: 'Sistema Operativo Quirúrgico: Triage en 1.8s y ERP Sync sin migración.',
+      badge: '⚡ Triage 1.8s & ERP',
+      badgeClass: 'text-purple-400 bg-purple-500/15 border-purple-500/30',
+      tags: ['Agentic IA', 'Protocolo MCP', 'ERP Integration'],
+      image: `${import.meta.env.BASE_URL}case4.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}assets/bimbo.jpg`
     },
     {
       id: 'iqos',
@@ -50,15 +61,15 @@ const CaseStudiesSection = ({ onOpenCase }) => {
       fallbackImage: `${import.meta.env.BASE_URL}case3.jpg`
     },
     {
-      id: 'radioshack',
-      client: 'RadioShack',
-      category: 'RETAIL · E-COMMERCE',
-      headline: 'E-commerce de alta conversión con reducción radical de fricción en compras.',
-      badge: '↑ Conversión E-com',
-      badgeClass: 'text-orange-400 bg-orange-500/15 border-orange-500/30',
-      tags: ['UX/UI Design', 'Mobile Apps', 'E-Commerce'],
-      image: `${import.meta.env.BASE_URL}assets/radioshack.jpg`,
-      fallbackImage: `${import.meta.env.BASE_URL}case1.jpg`
+      id: 'didi',
+      client: 'DiDi',
+      category: 'LOGÍSTICA Y MOVILIDAD · HIGH TRAFFIC',
+      headline: 'Estrategia de adopción digital y UX Research para millones de usuarios.',
+      badge: '↑ 87.5% Adopción',
+      badgeClass: 'text-amber-400 bg-amber-500/15 border-amber-500/30',
+      tags: ['UX Research', 'Usability Testing', 'Mobile Apps'],
+      image: `${import.meta.env.BASE_URL}case2.jpg`,
+      fallbackImage: `${import.meta.env.BASE_URL}case3.jpg`
     }
   ];
 
