@@ -1,7 +1,28 @@
 import React, { useState } from 'react';
 
-const Navbar = ({ onOpenContact, onNavigateCluster }) => {
+const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleComoTrabajamos = (e) => {
+    e.preventDefault();
+    const scrollToSection = () => {
+      const el = document.getElementById('como-trabajamos') || document.getElementById('how-we-work') || document.getElementById('pilares');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    if (currentView && currentView !== 'home') {
+      if (onNavigateCluster) {
+        onNavigateCluster('home');
+      } else {
+        window.location.hash = '';
+      }
+      setTimeout(scrollToSection, 150);
+    } else {
+      scrollToSection();
+    }
+  };
 
   return (
     <nav className="border-b border-white/[0.08] bg-[#02040A]/85 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
@@ -18,7 +39,11 @@ const Navbar = ({ onOpenContact, onNavigateCluster }) => {
         {/* Center Nav Links (Desktop) */}
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
           
-          <a href="#/como-trabajamos" className="hover:text-blue-400 transition-colors">
+          <a 
+            href="#como-trabajamos" 
+            onClick={handleComoTrabajamos}
+            className="hover:text-blue-400 transition-colors cursor-pointer"
+          >
             Cómo Trabajamos
           </a>
           

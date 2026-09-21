@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import ThreeWaysToWork from '../sections/ThreeWaysToWork';
+import FourWaysToWork from '../sections/FourWaysToWork';
 
 const ComoTrabajamosLandingPage = () => {
   useEffect(() => {
@@ -23,7 +23,7 @@ const ComoTrabajamosLandingPage = () => {
       </section>
 
       {/* Componente Reutilizado */}
-      <ThreeWaysToWork />
+      <FourWaysToWork />
 
       {/* Simplified Footer */}
       <footer className="border-t border-white/[0.05] py-8 text-center text-slate-500 text-xs font-mono bg-[#02040A]">

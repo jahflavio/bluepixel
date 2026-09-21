@@ -37,7 +37,7 @@ const TechnicalSovereignty = lazy(() => import('./components/sections/TechnicalS
 const ImpathFrictionSection = lazy(() => import('./components/sections/ImpathFrictionSection'));
 const CaseStudiesSection = lazy(() => import('./components/sections/CaseStudiesSection'));
 const FAQSection = lazy(() => import('./components/sections/FAQSection'));
-const ThreeWaysToWork = lazy(() => import('./components/sections/ThreeWaysToWork'));
+const FourWaysToWork = lazy(() => import('./components/sections/FourWaysToWork'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
 const LeadMagnetSection = lazy(() => import('./components/sections/LeadMagnetSection'));
@@ -68,13 +68,21 @@ const App = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
       const validViews = [
         'apps', 'automatizacion', 'agentizacion', 
-        'consultoria-tecnologica', 'como-trabajamos', 'automatizacion-agentica', 'producto-digital',
+        'consultoria-tecnologica', 'automatizacion-agentica', 'producto-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
-        'pilares', 'servicios', 'casos-de-exito', 'componentes'
+        'servicios', 'casos-de-exito', 'componentes'
       ];
       
-      if (validViews.includes(hash)) {
+      if (hash === 'como-trabajamos' || hash === 'formas-de-trabajo' || hash === 'how-we-work' || hash === 'pilares') {
+        setCurrentView('home');
+        setTimeout(() => {
+          const el = document.getElementById('como-trabajamos') || document.getElementById('how-we-work') || document.getElementById('pilares');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 200);
+      } else if (validViews.includes(hash)) {
         setCurrentView(hash);
       } else if (hash === 'home' || hash === '') {
         setCurrentView('home');
@@ -117,7 +125,7 @@ const App = () => {
           <SocialProofSection />
           
           <Suspense fallback={<SectionLoader />}>
-            <ThreeWaysToWork />
+            <FourWaysToWork />
             <TrustBadgesSection />
             <IndustriesImpactSection onSelectIndustryCase={(client) => scrollToForm(client)} />
             {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):

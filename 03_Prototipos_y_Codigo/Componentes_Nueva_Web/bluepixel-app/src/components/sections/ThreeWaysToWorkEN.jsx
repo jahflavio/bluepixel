@@ -1,8 +1,4 @@
-import React from 'react';
-import ThreeWaysToWork from './ThreeWaysToWork';
+import FourWaysToWorkEN from './FourWaysToWorkEN';
 
-const ThreeWaysToWorkEN = (props) => {
-  return <ThreeWaysToWork defaultLang="en" {...props} />;
-};
-
-export default ThreeWaysToWorkEN;
+export const ThreeWaysToWorkEN = FourWaysToWorkEN;
+export default FourWaysToWorkEN;

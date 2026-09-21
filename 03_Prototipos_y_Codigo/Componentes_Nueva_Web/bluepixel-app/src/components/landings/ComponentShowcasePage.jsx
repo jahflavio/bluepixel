@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ThreeWaysToWork from '../sections/ThreeWaysToWork';
+import FourWaysToWork from '../sections/FourWaysToWork';
 import SixCapabilitiesGrid from '../sections/SixCapabilitiesGrid';
 import TechnicalSovereignty from '../sections/TechnicalSovereignty';
 import ImpathFrictionSection from '../sections/ImpathFrictionSection';
@@ -69,7 +69,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const componentsIndex = [
-    { id: 'sec-pillars', num: '01', name: 'ThreeWaysToWork', label: '4 Pilares de Servicio', cat: 'core' },
+    { id: 'sec-pillars', num: '01', name: 'FourWaysToWork', label: '4 Pilares de Servicio', cat: 'core' },
     { id: 'sec-capabilities', num: '02', name: 'SixCapabilitiesGrid', label: '6 Capacidades Corporativas', cat: 'core' },
     { id: 'sec-sovereignty', num: '03', name: 'TechnicalSovereignty', label: 'Soberanía Técnica & VPC', cat: 'reserve' },
     { id: 'sec-impath', num: '04', name: 'ImpathFrictionSection', label: 'Fricción Operativa IMPATH', cat: 'reserve' },
@@ -152,19 +152,19 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
       </div>
 
       {/* ========================================================================= */}
-      {/* 01 · THREE WAYS TO WORK (4 PILARES) */}
+      {/* 01 · FOUR WAYS TO WORK (4 PILARES) */}
       {/* ========================================================================= */}
       <ComponentWrapper
         id="sec-pillars"
         number="01"
-        name="ThreeWaysToWork"
-        filePath="src/components/sections/ThreeWaysToWork.jsx"
+        name="FourWaysToWork"
+        filePath="src/components/sections/FourWaysToWork.jsx"
         status="✦ ACTIVO EN HOME"
         statusColor="text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
         desc="Los 4 Pilares Oficiales de BluePixel (Consultoría Digital, Agentes & Automatización, Plataformas Digitales, Evolución Digital) con toggle ES | EN y min-height uniforme."
-        targetUse="Home principal (#how-we-work) y landing /como-trabajamos."
+        targetUse="Home principal (#como-trabajamos) y landing /como-trabajamos."
       >
-        <ThreeWaysToWork />
+        <FourWaysToWork />
       </ComponentWrapper>
 
       {/* ========================================================================= */}
