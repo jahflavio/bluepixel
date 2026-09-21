@@ -1,1 +1,0 @@
-import{j as e}from"./index-Conzfor7.js";import{S as t,s as r}from"./servicesData-B3qY9fRl.js";import"./MultiStepContact-BptOTVZC.js";import"./Footer-CA3zIcAn.js";const m=()=>e.jsx(t,{data:r.security});export{m as default};

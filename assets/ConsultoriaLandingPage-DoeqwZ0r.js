@@ -1,1 +1,0 @@
-import{j as t}from"./index-Conzfor7.js";import{P as r,p as o}from"./pillarsData-BIU9J5K6.js";import"./MultiStepContact-BptOTVZC.js";import"./Footer-CA3zIcAn.js";const i=({onNavigateCluster:a})=>t.jsx(r,{data:o["consultoria-digital"],onNavigateCluster:a}),p=a=>t.jsx(i,{...a});export{p as default};

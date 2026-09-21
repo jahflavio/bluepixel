@@ -1,1 +1,0 @@
-import{j as s}from"./index-Conzfor7.js";import{S as t,s as a}from"./servicesData-B3qY9fRl.js";import"./MultiStepContact-BptOTVZC.js";import"./Footer-CA3zIcAn.js";const n=()=>s.jsx(t,{data:a["business-ai"]});export{n as default};
