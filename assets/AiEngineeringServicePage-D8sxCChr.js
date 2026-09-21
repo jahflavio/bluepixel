@@ -1,1 +1,0 @@
-import{j as e}from"./index-Bojev-Eg.js";import{S as i,s as r}from"./servicesData-BidnvT8Z.js";import"./MultiStepContact-D2ElVBJW.js";import"./Footer-BKcGW6fm.js";const o=()=>e.jsx(i,{data:r["ai-engineering"]});export{o as default};

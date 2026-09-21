@@ -1,1 +1,0 @@
-import{j as t}from"./index-Bojev-Eg.js";import{P as r,p as o}from"./pillarsData-BRa6wxuA.js";import"./MultiStepContact-D2ElVBJW.js";import"./Footer-BKcGW6fm.js";const i=({onNavigateCluster:a})=>t.jsx(r,{data:o["consultoria-digital"],onNavigateCluster:a}),p=a=>t.jsx(i,{...a});export{p as default};
