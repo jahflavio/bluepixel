@@ -69,6 +69,160 @@ const ALL_PILLARS = [
   { id: 'evolucion-digital', num: '04', name: 'Evolución Digital', duration: 'Roadmap 6/12 Meses', route: 'evolucion-digital', dot: 'bg-indigo-400' }
 ];
 
+/* WIDGET INTERACTIVO PILAR 03: SIMULADOR DE CONSTRUCCIÓN 90 DÍAS */
+const BuildVisualizerWidget = () => {
+  const [day, setDay] = useState(0);
+
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 3;
+      if (current >= 90) {
+        current = 90;
+        clearInterval(interval);
+      }
+      setDay(current);
+    }, 45);
+    return () => clearInterval(interval);
+  }, []);
+
+  const phases = [
+    { label: 'UX DISCOVERY', color: 'bg-blue-500 text-blue-400', n: 5, activeN: Math.min(5, Math.ceil(day / 18)) },
+    { label: 'PROTOTIPADO', color: 'bg-emerald-500 text-emerald-400', n: 6, activeN: day > 18 ? Math.min(6, Math.ceil((day - 18) / 12)) : 0 },
+    { label: 'DESARROLLO CORE', color: 'bg-cyan-500 text-cyan-400', n: 14, activeN: day > 30 ? Math.min(14, Math.ceil((day - 30) / 3)) : 0 },
+    { label: 'QA & OWASP', color: 'bg-amber-500 text-amber-400', n: 8, activeN: day > 72 ? Math.min(8, Math.ceil((day - 72) / 2.2)) : 0 },
+    { label: 'GO-LIVE PRODUCCIÓN', color: 'bg-purple-500 text-purple-400', n: 4, activeN: day >= 88 ? 4 : 0 },
+  ];
+
+  return (
+    <div className="bg-[#050A19] border border-cyan-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden text-left max-w-xl mx-auto mt-10">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500"></div>
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/[0.08]">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-300 font-bold">
+            Simulador de Construcción · 90 Días
+          </span>
+        </div>
+        <span className="text-xs font-mono font-bold text-white bg-cyan-500/10 border border-cyan-500/30 px-3 py-0.5 rounded-full">
+          Día {day}/90
+        </span>
+      </div>
+
+      <div className="space-y-3">
+        {phases.map((p, idx) => (
+          <div key={idx}>
+            <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider mb-1">
+              <span className={p.color.split(' ')[1]}>{p.label}</span>
+              <span className="text-slate-500">{p.activeN}/{p.n}</span>
+            </div>
+            <div className="flex gap-1">
+              {Array.from({ length: p.n }).map((_, i) => (
+                <div 
+                  key={i}
+                  className={`h-2 flex-1 rounded-sm transition-all duration-300 ${i < p.activeN ? p.color.split(' ')[0] : 'bg-white/[0.05]'}`}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
+        <div className="flex items-center gap-1.5">
+          <span className="text-emerald-400 font-bold">✓</span>
+          <span>SLA 99.9% Cloud-Native</span>
+        </div>
+        <span className="text-cyan-400 font-semibold">100% Código Tuyo</span>
+      </div>
+    </div>
+  );
+};
+
+/* WIDGET INTERACTIVO PILAR 04: DASHBOARD UX HEALTH SCORE™ */
+const UXHealthScoreWidget = () => {
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 2;
+      if (current >= 87) {
+        current = 87;
+        clearInterval(interval);
+      }
+      setScore(current);
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
+
+  const metrics = [
+    { name: 'Usabilidad (IMPATH™)', val: 94, color: 'bg-emerald-400' },
+    { name: 'Rendimiento (Core Web Vitals)', val: 88, color: 'bg-cyan-400' },
+    { name: 'Estabilidad (SLA 99.9%)', val: 99, color: 'bg-emerald-400' },
+    { name: 'Conversión (CRO Funnel)', val: 82, color: 'bg-indigo-400' },
+  ];
+
+  return (
+    <div className="bg-[#050A19] border border-indigo-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden text-left max-w-xl mx-auto mt-10">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-indigo-500 to-purple-500"></div>
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/[0.08]">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-300 font-bold">
+            UX Health Score™ · Monitoreo en Vivo
+          </span>
+        </div>
+        <span className="text-[10px] font-mono text-slate-400">Mixpanel Telemetry 24/7</span>
+      </div>
+
+      <div className="flex items-baseline justify-between mb-4">
+        <div>
+          <div className="text-4xl md:text-5xl font-black text-white font-mono tracking-tight">
+            {score}<span className="text-lg text-slate-500 font-normal">/100</span>
+          </div>
+          <div className="text-[11px] font-mono text-emerald-400 font-semibold mt-1">
+            ↑ +12 pts vs. trimestre anterior
+          </div>
+        </div>
+        <div className="text-right text-xs text-slate-400 font-mono">
+          <div>Ganancia 4 trimestres:</div>
+          <div className="text-base font-bold text-amber-400 font-mono">+34 pts CRO</div>
+        </div>
+      </div>
+
+      <div className="space-y-2.5 mb-5">
+        {metrics.map((m, idx) => (
+          <div key={idx}>
+            <div className="flex justify-between text-[11px] font-mono text-slate-300 mb-1">
+              <span>{m.name}</span>
+              <span className="font-bold text-white">{m.val}%</span>
+            </div>
+            <div className="h-2 w-full bg-white/[0.06] rounded-full overflow-hidden">
+              <div 
+                className={`h-full ${m.color} transition-all duration-700 rounded-full`}
+                style={{ width: `${(score / 87) * m.val}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-white/[0.06] text-center">
+        <div className="p-2 rounded-lg bg-red-500/10 border border-red-500/20 text-[10px] font-mono text-red-400 font-bold">
+          2 Fricciones Activas
+        </div>
+        <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[10px] font-mono text-amber-400 font-bold">
+          1 Oportunidad CRO
+        </div>
+        <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-400 font-bold">
+          SLA 99.9% Óptimo
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -166,6 +320,10 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                 <span>Ver Activación de Capacidades ↓</span>
               </button>
             </div>
+
+            {/* Interactive Hero Widget */}
+            {data.id === 'plataformas-digitales' && <BuildVisualizerWidget />}
+            {data.id === 'evolucion-digital' && <UXHealthScoreWidget />}
 
           </div>
         </div>
@@ -484,6 +642,184 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
         </section>
       )}
 
+      {/* 6.3. CAPA AGENTIC IA (Pilar 03) */}
+      {data.aiLayer && (
+        <section className="py-24 border-b border-white/[0.08] bg-[#030713]">
+          <div className="max-w-7xl mx-auto px-6">
+            <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-4 ${theme.accentText}`}>
+              {data.aiLayer.eyebrow}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 max-w-3xl text-white">
+              {data.aiLayer.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mb-12">{data.aiLayer.subtitle}</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {data.aiLayer.items.map((item, idx) => (
+                <div key={idx} className="bg-[#050A19] border border-cyan-500/20 rounded-2xl p-6 md:p-8 flex flex-col gap-3 hover:border-cyan-500/40 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 font-mono font-bold text-sm">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6.4. FINANCIAL CALLOUT (Pilar 04) */}
+      {data.financialCallout && (
+        <section className="py-20 border-b border-white/[0.08] bg-[#040816]">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-r from-amber-500/10 via-purple-500/10 to-indigo-500/10 border border-amber-500/30 shadow-2xl relative overflow-hidden">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold block mb-2">
+                ✦ {data.financialCallout.eyebrow}
+              </span>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-3">
+                {data.financialCallout.title}
+              </h3>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+                {data.financialCallout.desc}
+              </p>
+              <div className="p-4 rounded-xl bg-[#02050E] border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">
+                  {data.financialCallout.exampleLabel}:
+                </span>
+                <span className="text-sm md:text-base font-mono font-bold text-amber-300">
+                  {data.financialCallout.exampleText}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6.5. EL CICLO PERMANENTE DE EVOLUCIÓN (Pilar 04) */}
+      {data.cycle && (
+        <section className="py-24 border-b border-white/[0.08] bg-[#02040A]">
+          <div className="max-w-7xl mx-auto px-6">
+            <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-4 ${theme.accentText}`}>
+              {data.cycle.eyebrow}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 max-w-3xl text-white">
+              {data.cycle.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-slate-400 text-sm md:text-base italic max-w-2xl mb-12 border-l-2 border-indigo-500/40 pl-4">
+              "{data.cycle.desc}"
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {data.cycle.steps.map((step, idx) => (
+                <div key={idx} className="bg-[#050A17] border border-white/[0.08] rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500/30 transition-colors">
+                  <div>
+                    <div className="text-2xl mb-3">{step.icon}</div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[10px] font-mono text-indigo-400 font-bold">FASE 0{idx + 1}</span>
+                      <h4 className="text-base font-bold text-white">{step.name}</h4>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6.6. CADENCIA DE ACCOUNTABILITY (Pilar 04) */}
+      {data.cadence && (
+        <section className="py-24 border-b border-white/[0.08] bg-[#050A17]">
+          <div className="max-w-5xl mx-auto px-6">
+            <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-4 ${theme.accentText}`}>
+              {data.cadence.eyebrow}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 max-w-3xl text-white">
+              {data.cadence.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mb-12">{data.cadence.subtitle}</p>
+
+            <div className="space-y-4">
+              {data.cadence.items.map((item, idx) => (
+                <div key={idx} className="bg-[#02040A] border border-white/[0.08] rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-indigo-500/30 transition-colors">
+                  <div className="md:w-1/4">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 inline-block">
+                      {item.freq}
+                    </span>
+                  </div>
+                  <div className="md:w-3/4">
+                    <h4 className="text-base font-bold text-white mb-1">{item.title}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6.7. HORIZONTES DE EVOLUCIÓN (Pilar 04) */}
+      {data.plans && (
+        <section className="py-24 border-b border-white/[0.08] bg-[#02040A]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className={`block text-xs font-mono uppercase tracking-widest font-bold mb-3 ${theme.accentText}`}>
+                ✦ {data.plans.eyebrow}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">
+                {data.plans.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
+              </h2>
+              <p className="text-slate-400 text-base md:text-lg">{data.plans.subtitle}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {data.plans.items.map((plan, idx) => (
+                <div 
+                  key={idx}
+                  className={`rounded-3xl p-8 flex flex-col justify-between relative transition-all duration-300 ${plan.featured ? 'bg-[#060C1F] border-2 border-indigo-500/60 shadow-2xl shadow-indigo-500/10 -translate-y-2' : 'bg-[#040814] border border-white/[0.08] hover:border-white/20'}`}
+                >
+                  {plan.featured && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-indigo-600 text-white font-mono text-[10px] uppercase font-bold tracking-widest shadow-lg">
+                      {plan.badge}
+                    </div>
+                  )}
+
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">{plan.horizon}</span>
+                      <span className="text-xl font-black text-white font-mono">{plan.name}</span>
+                    </div>
+
+                    <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                      {plan.desc}
+                    </p>
+
+                    <div className="h-px bg-white/[0.06] mb-6"></div>
+
+                    <div className="space-y-3 mb-8">
+                      {plan.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <span className="text-emerald-400 font-bold mt-0.5">✓</span>
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button 
+                    onClick={scrollToContact}
+                    className={`w-full py-3.5 rounded-xl font-bold text-xs transition-all cursor-pointer ${plan.featured ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30' : 'bg-white/[0.04] hover:bg-white/10 text-white border border-white/10'}`}
+                  >
+                    {plan.cta} →
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 7. QUIZ DE AUTOEVALUACIÓN */}
       {data.quiz && (
         <section className="py-24 border-b border-white/[0.08] bg-[#02040A]">
@@ -728,6 +1064,32 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* 10.8. PUENTE TRANSICIÓN ENTRE PILARES */}
+      {data.bridge && (
+        <section className="border-b border-white/[0.08] bg-gradient-to-r from-blue-950/20 via-purple-950/20 to-cyan-950/20 py-14 px-6 relative overflow-hidden">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+              <span className={`text-[10px] font-mono uppercase tracking-widest font-bold block mb-1.5 ${theme.accentText}`}>
+                ✦ {data.bridge.eyebrow}
+              </span>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-2">
+                {data.bridge.title}
+              </h3>
+              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                {data.bridge.desc}
+              </p>
+            </div>
+            <a 
+              href={`#/${data.bridge.ctaRoute}`}
+              className={`font-bold text-xs md:text-sm px-7 py-4 rounded-xl transition-all whitespace-nowrap flex items-center gap-2 border ${theme.accentBorder} ${theme.accentBg} ${theme.accentText} hover:bg-white/10 hover:border-white/30`}
+            >
+              <span>{data.bridge.ctaText}</span>
+              <span>→</span>
+            </a>
           </div>
         </section>
       )}

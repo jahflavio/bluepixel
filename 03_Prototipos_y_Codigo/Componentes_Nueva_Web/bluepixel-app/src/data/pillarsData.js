@@ -182,6 +182,13 @@ export const pillarsData = {
         { value: '-$1.8M MXN', label: 'Ahorro directo en desarrollo innecesario evitado' },
         { value: '100%', label: 'Aprobación del business case ante el Comité Directivo' }
       ]
+    },
+    bridge: {
+      eyebrow: 'De la Estrategia a la Producción',
+      title: 'Claridad previa antes de comprometer capital.',
+      desc: 'Una vez obtenido tu diagnóstico IMPATH™ y business case, puedes conectar agentes de IA sobre tu stack actual con el Pilar 02 o construir la plataforma completa en 90 días con el Pilar 03.',
+      ctaText: 'Explorar Pilar 02: Agentes & Automatización',
+      ctaRoute: 'automatizacion-agentica'
     }
   },
 
@@ -368,6 +375,13 @@ export const pillarsData = {
         { value: '0.5 seg', label: 'Sincronización determinística con el ERP actual' },
         { value: '100%', label: 'Rescate de órdenes de guardia nocturna 24/7' }
       ]
+    },
+    bridge: {
+      eyebrow: 'Expansión de Capacidades',
+      title: 'Automatización inteligente sobre lo que ya funciona.',
+      desc: 'Si además de conectar agentes sobre tu infraestructura actual necesitas construir una nueva plataforma web o móvil corporativa desde cero en 90 días, explora el Pilar 03.',
+      ctaText: 'Explorar Pilar 03: Plataformas Digitales',
+      ctaRoute: 'producto-digital'
     }
   },
 
@@ -380,22 +394,23 @@ export const pillarsData = {
     targetAudience: 'Para construir plataformas y MVPs desde cero con UX validado que convierte',
     eyebrow: 'Pilar 03 · De la Concepción a Producción en 90 Días',
     title: 'De la concepción a producción en 90 días con UX validado.',
-    subtitle: 'Rompimos la frontera entre diseño e ingeniería pesada. Diseñamos con psicología conductual para asegurar adopción y construimos con arquitectura Full Stack Cloud-Native (React, Node, Python) con SLA 99.9% y cero deuda técnica.',
+    subtitle: 'Inteligencia artificial integrada desde el primer sprint, UX validado con usuarios reales y arquitectura escalable y sólida. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas enterprise en 90 días con SLA 99.9%.',
     takeaway: 'De la concepción a producción en 90 días con validación técnica y de mercado.',
     themeKey: 'cyan',
     packageName: 'Pilar 03 · Plataformas Digitales (Build)',
     stats: [
       { value: '90 Días', label: 'De la concepción al lanzamiento oficial en producción', sublabel: 'Time-to-market agresivo' },
-      { value: '99.9%', label: 'Garantía de disponibilidad y resiliencia en arquitectura cloud', sublabel: 'SLA Empresarial' },
-      { value: '100%', label: 'Soberanía de código fuente y pruebas automatizadas >85%', sublabel: 'Zero Vendor Lock-In' }
+      { value: '#1 UX/UI', label: 'Líder en diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
+      { value: '50+', label: 'Plataformas enterprise construidas y operando', sublabel: 'SLA 99.9% Cloud-Native' }
     ],
     painPoints: {
-      eyebrow: '01 — El desastre de los desarrollos interminables',
-      title: 'Software que tarda un año y nadie adopta al lanzarse.',
+      eyebrow: '01 — El problema que resolvemos',
+      title: 'Plataformas que se frenan antes de escalar.',
       items: [
-        { title: 'Ciclos de desarrollo de más de 12 meses', desc: 'Fábricas de software que alargan los cronogramas indefinidamente mientras el mercado y los competidores avanzan.' },
-        { title: 'Interfaces hermosas en Figma pero rotas en código', desc: 'Agencias de diseño superficiales que entregan pantallas vistosas que los desarrolladores no pueden construir de forma escalable.' },
-        { title: 'Lanzar un producto que los usuarios rechazan', desc: 'Invertir capital masivo sin haber validado la hipótesis de negocio ni la psicología de adopción con usuarios reales.' }
+        { title: 'Tecnología y negocio desalineados', desc: 'El equipo técnico ejecuta tickets a ciegas. Nadie conecta las decisiones de ingeniería con los objetivos financieros del negocio.' },
+        { title: 'Deuda técnica acumulada desde el MVP', desc: 'El MVP funciona hoy pero no sobrevive al segundo año. Cada feature nueva cuesta el doble y llega el triple de tarde.' },
+        { title: 'UX sin validación de usuarios reales', desc: 'Interfaces diseñadas por opinión, no por datos de comportamiento. Los usuarios no adoptan y los sprints se queman en parches.' },
+        { title: 'IA sin arquitectura preparada', desc: 'Quieren integrar IA pero la plataforma no está preparada. Termina siendo un experimento aislado y no una ventaja competitiva.' }
       ]
     },
     comparisonMatrix: {
@@ -512,16 +527,30 @@ export const pillarsData = {
         }
       ]
     },
+    aiLayer: {
+      eyebrow: '03.5 — Capa Agentic IA Integrada',
+      title: 'IA integrada en el corazón de tu plataforma desde el sprint 1.',
+      subtitle: 'La inteligencia artificial se piensa y se construye dentro de la plataforma desde el primer sprint, no como un experimento aislado ni un parche tardío.',
+      items: [
+        { title: 'Agentes que ejecutan de forma autónoma', desc: 'Flujos operativos que se ejecutan, monitorean y escalan solos. La plataforma sigue trabajando de forma continua, en cualquier horario.' },
+        { title: 'Inteligencia conectada a datos reales', desc: 'Los agentes operan sobre el comportamiento real de tus usuarios y datos de producción desde el sprint 1. La IA aprende desde el primer día.' },
+        { title: 'IA embebida que detecta, actúa y optimiza', desc: 'Sistemas que identifican fricciones en tiempo real y las resuelven antes de que el usuario las note. Aprendizaje y mejora continua.' },
+        { title: 'Arquitectura AI-ready desde el día uno', desc: 'La infraestructura se diseña para que los modelos escalen con la plataforma, manteniendo el costo de inferencia bajo control estricto.' }
+      ]
+    },
     deliverables: {
-      eyebrow: '06 — Entregables Oficiales',
+      eyebrow: '06 — Entregables Oficiales Enterprise',
       title: 'Una plataforma productiva completa entregada en 90 días.',
       items: [
-        { num: '01', title: 'Plataforma Web y/o Móvil Productiva', desc: 'Aplicación moderna de alto rendimiento desplegada en tu nube privada.' },
-        { num: '02', title: 'Design System Documentado en Figma', desc: 'Librería de componentes, tokens y guías de estilo para escalar el diseño.' },
-        { num: '03', title: 'Código Fuente en Repositorios Privados', desc: 'Propiedad intelectual 100% tuya con arquitectura limpia y tipado estricto.' },
-        { num: '04', title: 'Pipelines CI/CD Automatizados', desc: 'Flujos de integración y despliegue continuo en entornos de Staging y Producción.' },
-        { num: '05', title: 'Telemetría de Producto Mixpanel', desc: 'Tracking de eventos, embudos de conversión y analítica de comportamiento activa.' },
-        { num: '06', title: 'Garantía de SLA 99.9% y Soporte', desc: 'Monitoreo en vivo de errores y latencia con transferencia técnica completa a tu equipo.' }
+        { num: '01', title: 'Estrategia de Producto & Roadmap', desc: 'Discovery profundo, requerimientos priorizados por ROI y arquitectura técnica escalable.' },
+        { num: '02', title: 'Sistema UX/UI Enterprise Validado', desc: 'Research con usuarios reales, prototipos interactivos navegables y Design System en Figma.' },
+        { num: '03', title: 'Capa Agentic IA Integrada', desc: 'Agentes autónomos, automatizaciones y modelos RAG integrados desde el sprint 1.' },
+        { num: '04', title: 'Arquitectura Técnica Cloud-Native', desc: 'Microservicios modulares desacoplados, serverless/contenedores y bases PostgreSQL.' },
+        { num: '05', title: 'Desarrollo Full-Stack Web & Móvil', desc: 'Frontend en React/Next.js, backend en Node/Python y contratos OpenAPI con tipado estricto.' },
+        { num: '06', title: 'Consola Administrativa & Dashboard', desc: 'Panel de gestión interno, métricas operativas y módulos de control de usuarios y permisos.' },
+        { num: '07', title: 'Integraciones con Stack Actual', desc: 'Conectores determinísticos con ERP, CRM, pasarelas de pago y sistemas legados.' },
+        { num: '08', title: 'QA & Pruebas de Seguridad OWASP', desc: 'Pruebas funcionales, cobertura de tests >85% y auditoría contra vulnerabilidades OWASP Top 10.' },
+        { num: '09', title: 'Lanzamiento Productivo & Stores', desc: 'Deploy en tu VPC cloud, publicación oficial en App Store y Google Play, y monitoreo en vivo.' }
       ]
     },
     timeline: {
@@ -554,6 +583,13 @@ export const pillarsData = {
         { value: '99.9%', label: 'Disponibilidad de arquitectura cloud ante picos de demanda' },
         { value: '>92%', label: 'Tasa de adopción de usuarios en el primer mes' }
       ]
+    },
+    bridge: {
+      eyebrow: 'Transición Natural de Producto',
+      title: 'BUILD es el inicio. EVOLVE es donde crece.',
+      desc: 'Todo producto digital tiene más potencial del que muestra en su lanzamiento. EVOLVE convierte esa evolución en resultados medibles cada trimestre mediante un Squad continuo dedicado.',
+      ctaText: 'Conocer Pilar 04: Evolución Digital',
+      ctaRoute: 'evolucion-digital'
     }
   },
 
@@ -565,23 +601,26 @@ export const pillarsData = {
     duration: 'Roadmap Vivo 6 a 12 Meses (Retainer Mensual)',
     targetAudience: 'Para evolucionar plataformas existentes con capacidades transversales, optimización continua y CRO',
     eyebrow: 'Pilar 04 · Crecimiento Sostenido sin Inflar Nómina',
-    title: 'Tu equipo tecnológico extendido para proteger la inversión.',
-    subtitle: 'El lanzamiento es solo el inicio. Asignamos un Squad Senior multidisciplinario dedicado (Tech Lead, AI Engineer, Full Stack, UX/CRO) que reduce deuda técnica, optimiza la conversión mes a mes y mantiene tu plataforma en la vanguardia.',
+    title: 'El día que lanzas, empieza lo que más importa.',
+    subtitle: 'EVOLVE mantiene tu plataforma evolucionando con roadmap vivo a 6 o 12 meses, UX Health Score continuo y un Squad senior dedicado (Tech Lead, AI Engineer, Full Stack, UX/CRO) con accountability trimestral alineado a resultados de negocio reales.',
     takeaway: 'Tu equipo tecnológico extendido para proteger la inversión y sostener el crecimiento.',
     themeKey: 'indigo',
     packageName: 'Pilar 04 · Evolución Digital (Retainer)',
     stats: [
-      { value: '6-12', label: 'Meses de roadmap vivo con entregas quincenales continuas', sublabel: 'Velocidad predecible' },
-      { value: '+45%', label: 'Incremento promedio en tasas de conversión y retención', sublabel: 'Metodología CRO constante' },
-      { value: '0', label: 'Deuda técnica acumulada gracias a refactorización proactiva', sublabel: 'SLA Empresarial 99.9%' }
+      { value: '+34%', label: 'Incremento promedio en conversión en el primer año', sublabel: 'Metodología CRO constante' },
+      { value: '6 Sem', label: 'Semanas al primer impacto financiero medible', sublabel: 'Velocidad de ejecución' },
+      { value: '0', label: 'Deuda técnica acumulada con refactorización quincenal', sublabel: 'SLA Empresarial 99.9%' }
     ],
     painPoints: {
-      eyebrow: '01 — La muerte lenta de las plataformas estáticas',
-      title: 'El software que no evoluciona se convierte en deuda en 6 meses.',
+      eyebrow: '01 — El problema que resolvemos',
+      title: 'La plataforma lanzó. El trabajo apenas empieza.',
       items: [
-        { title: 'Inflar la nómina con contrataciones caras y lentas', desc: 'Contratar especialistas internos de UX, IA, DevOps y seguridad cuesta fortunas en reclutamiento y genera silos improductivos.' },
-        { title: 'Deuda técnica que paraliza los nuevos features', desc: 'Plataformas abandonadas tras el lanzamiento donde cada nuevo requerimiento tarda meses o rompe el código anterior.' },
-        { title: 'Tasas de conversión estancadas sin optimización', desc: 'Invertir en tráfico y marketing mientras la plataforma tiene fricciones que ahuyentan a los usuarios mes tras mes.' }
+        { title: 'Sin evolución estratégica basada en datos', desc: 'Tu plataforma lleva meses — o años — sin una sola mejora basada en el comportamiento real de los usuarios.' },
+        { title: 'La fricción existe pero no se puede cuantificar', desc: 'Sabes que los usuarios abandonan, pero nadie en la empresa tiene el número: ¿cuánto dinero estás perdiendo hoy por esa fricción?' },
+        { title: 'Mejoras sin accountability de negocio', desc: 'Cada trimestre se propone un roadmap que se diluye en tickets técnicos sin seguimiento ni métricas claras de ROI.' },
+        { title: 'El equipo no puede operar y evolucionar a la vez', desc: 'El equipo interno pasa el día apagando incendios operativos; la evolución estratégica siempre queda atrapada en el backlog.' },
+        { title: 'Inversión digital sin ROI comprobado', desc: 'Cada año se aprueba presupuesto de tecnología, pero nadie puede mostrar con total claridad qué ingresos generó ese gasto.' },
+        { title: 'Deuda técnica que crece en silencio', desc: 'Cada sprint de emergencia añade parches rápidos; la plataforma se vuelve cada vez más frágil, lenta y costosa de mantener.' }
       ]
     },
     comparisonMatrix: {
@@ -698,6 +737,90 @@ export const pillarsData = {
         }
       ]
     },
+    financialCallout: {
+      eyebrow: 'Inteligencia de Plataforma · Metodología IMPATH™',
+      title: 'Datos que se convierten en decisiones financieras.',
+      subtitle: 'IMPATH™ y Mixpanel corren en paralelo, permanentemente, para que ninguna fuga de capital quede invisible.',
+      exampleLabel: 'Ejemplo Real de Detección Forense',
+      exampleText: 'Fricción en paso 3 del checkout → $847,000 MXN/mes perdidos estimados',
+      desc: 'IMPATH™ analiza los flujos críticos de tu plataforma e identifica cada punto exacto donde el usuario abandona, con una estimación matemática del ingreso perdido en tiempo real. Un diagnóstico financiero que convierte comportamiento en decisiones concretas de backlog.'
+    },
+    cycle: {
+      eyebrow: '03.5 — El Ciclo Permanente de Evolución',
+      title: 'Un ciclo continuo que produce resultados cada trimestre.',
+      desc: 'EVOLVE es un ciclo permanente. Cada sprint detecta nueva información, prioriza las mejoras con mayor impacto financiero, ejecuta con calidad enterprise y mide el resultado en lenguaje de negocio.',
+      steps: [
+        { icon: '🔍', name: 'Detectar', desc: 'IMPATH™ y Mixpanel identifican fricciones y oportunidades con datos reales de comportamiento 24/7.' },
+        { icon: '📊', name: 'Priorizar', desc: 'Ranking estricto por impacto financiero y esfuerzo. El UX Health Score guía las decisiones.' },
+        { icon: '⚙️', name: 'Ejecutar', desc: 'Sprints quincenales de 2 semanas con entregables definidos y Squad senior BluePixel dedicado.' },
+        { icon: '📈', name: 'Medir', desc: 'KPIs de negocio, métricas de conversión y UX Health Score actualizado permanentemente.' },
+        { icon: '🔁', name: 'Repetir', desc: 'Cada ciclo alimenta el siguiente. El roadmap vive y se adapta con la realidad del mercado.' }
+      ]
+    },
+    cadence: {
+      eyebrow: '03.8 — Accountability Permanente',
+      title: 'Cada semana importa. Cada trimestre rinde cuentas.',
+      subtitle: 'Una cadencia estructurada donde cada acción tiene seguimiento y cada resultado tiene un responsable técnico.',
+      items: [
+        { freq: 'Cada Sprint', title: 'Revisión de Avances y Entregables', desc: 'Qué se construyó, qué está en QA y qué entra al próximo sprint. Transparencia total sobre el progreso quincenal.' },
+        { freq: 'Mensual', title: 'Reporte de Impacto Financiero', desc: 'Qué aprendimos de los datos, qué se ejecutó y cómo impactó las métricas de negocio. UX Health Score actualizado.' },
+        { freq: 'Trimestral', title: 'Sesión Presencial de Roadmap', desc: 'Alineación estratégica con directores y líderes de negocio. Roadmap de los siguientes 3 meses definido con evidencia.' },
+        { freq: 'Anual', title: 'Revisión Estratégica de Ecosistema', desc: 'Balance completo del año: evolución histórica del UX Health Score, ROI documentado y estrategia para el nuevo ciclo.' }
+      ]
+    },
+    plans: {
+      eyebrow: '03.9 — Horizontes de Evolución',
+      title: 'Elige el horizonte de tu Squad dedicado.',
+      subtitle: 'Todos los planes incluyen IMPATH™, Mixpanel, UX Health Score continuo y equipo senior multidisciplinario dedicado.',
+      items: [
+        {
+          name: 'CORE 6M',
+          horizon: '6 Meses',
+          featured: false,
+          desc: 'Para plataformas que necesitan estabilizarse, reducir deuda técnica acumulada y ganar tracción comercial rápida.',
+          features: [
+            'Diagnóstico inicial completo de fricción',
+            'Roadmap vivo priorizado a 6 meses',
+            'Sprints quincenales de ejecución continua',
+            'Reportes mensuales de impacto y CRO',
+            'Monitoreo IMPATH™ + Mixpanel 24/7',
+            'UX Health Score baseline y seguimiento'
+          ],
+          cta: 'Elegir Plan CORE 6M'
+        },
+        {
+          name: 'CORE 12M',
+          horizon: '12 Meses',
+          featured: true,
+          badge: 'Recomendado para Escalar',
+          desc: 'Para plataformas listas para crecer de manera sostenida con acompañamiento directivo y benchmarking competitivo.',
+          features: [
+            'Todo lo incluido en CORE 6M',
+            'Sesiones presenciales trimestrales de roadmap',
+            'UX Health Score anual vs. benchmark de industria',
+            'Auditoría continua de seguridad y OWASP',
+            'Acceso y evolución del Design System en Figma',
+            'Revisión estratégica anual de ecosistema y ROI'
+          ],
+          cta: 'Elegir Plan CORE 12M'
+        },
+        {
+          name: 'ECOSYSTEM',
+          horizon: '24 Meses',
+          featured: false,
+          desc: 'Para corporativos con múltiples activos digitales que requieren gobernanza técnica centralizada y evolución a escala.',
+          features: [
+            'Todo lo incluido en CORE 12M',
+            'Cobertura multi-producto (hasta 3 plataformas)',
+            'Gobernanza centralizada de arquitectura y roadmap',
+            'Squad extendido dedicado de alta disponibilidad',
+            'Estrategia de IA y agentes transversal',
+            'Alineación con OKRs directivos y comités ejecutivos'
+          ],
+          cta: 'Conocer Plan ECOSYSTEM'
+        }
+      ]
+    },
     deliverables: {
       eyebrow: '06 — Entregables Continuos',
       title: 'Valor tangible entregado en cada ciclo quincenal.',
@@ -740,6 +863,13 @@ export const pillarsData = {
         { value: '-60%', label: 'Reducción sistemática de deuda técnica en 6 meses' },
         { value: 'SLA 99.9%', label: 'Monitoreo proactivo con respuesta en minutos' }
       ]
+    },
+    bridge: {
+      eyebrow: 'Punto de Entrada Previo',
+      title: '¿Tu plataforma aún no existe?',
+      desc: 'EVOLVE es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 90 días, el Pilar 03 (Plataformas Digitales) es tu camino.',
+      ctaText: 'Conocer Pilar 03: Plataformas Digitales',
+      ctaRoute: 'producto-digital'
     }
   }
 };
