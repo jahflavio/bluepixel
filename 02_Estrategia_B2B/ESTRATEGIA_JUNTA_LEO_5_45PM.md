@@ -343,7 +343,7 @@ y menos por estudiantes → CPC efectivo baja de $111 a ~$35 MXN
 | **LinkedIn Ads** | Encender $8,000 MXN en Thought Leadership de Leo + Document Ads Blueprint Library. | Rocketing (Pauta B2B) | **48h** |
 | **Meta Ads** | Apagar Always On. Activar 100% Retargeting B2B con casos Bimbo/RadioShack. | Rocketing (Pauta) | **48h** |
 | **SEO** | Configurar redirecciones 301. Reorientar blog a ingeniería B2B con Blueprint Library. | Daniel Arias (SEO) | **3 días** |
-| **Comercial** | Contactar las 21 propuestas estancadas con oferta de Diagnóstico 01. | Pablo Gómez / José de Buen | **Esta semana** |
+| **Comercial** | Contactar las 21 propuestas estancadas con oferta de Diagnóstico 01. | Equipo Comercial y Closers | **Esta semana** |
 | **Métricas** | Reemplazar "leads brutos" por MQLs, Costo por SQL y Pipeline Value en el reporte mensual. | Rocketing (Analytics) | **Próximo reporte** |
 | **Algoritmo Ads** | Inyectar gclid en MultiStepContact y configurar Señal 1 (formulario +50 empleados, valor $500 MXN). | Diana Cardoso + Tecnología | **48h** |
 | **MCP → Ads** | Conectar servidor MCP de Leo a la API de Conversiones de Google con valor real del contrato. | Leo / Tecnología | **2–4 semanas** |

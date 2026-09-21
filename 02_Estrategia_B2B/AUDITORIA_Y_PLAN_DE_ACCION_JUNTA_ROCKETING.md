@@ -2,7 +2,7 @@
 ## Análisis Clínico de las Métricas Presentadas por Rocketing en la Junta de las 4:00 PM
 **Fecha:** 14 de Septiembre, 2026  
 **Empresa:** BluePixel Technologies  
-**Elaborado para:** Leonardo Flores (Dirección / Producto), Equipo Comercial y Rocketing
+**Elaborado para:** Dirección General, Producto, Equipo Comercial y Rocketing
 
 ---
 
@@ -80,16 +80,16 @@ Apagar las 35 campañas zombis y reestructurar la cuenta en **3 Campañas Search
 
 ### Solución 4: Activar los $8,000 MXN de LinkedIn Ads
 * Encender de inmediato el presupuesto de LinkedIn bajo dos formatos:
-  1. **Thought Leadership Ads:** Impulsar publicaciones técnicas de Leo Flores en primera persona (arquitectura MCP, diagramas reales).
+  1. **Thought Leadership Ads:** Impulsar publicaciones técnicas institucionales (arquitectura MCP, diagramas reales, soberanía en VPC).
   2. **Document Ads:** Descarga del PDF de la **Blueprint Library (10 Arquitecturas)** para captar correos corporativos de CTOs y Directores de Operaciones.
 
 ### Solución 5: Reconfigurar Meta Ads exclusivamente como Retargeting B2B
 * Convertir la campaña `Always On` de Instagram ($2,500 MXN) en **Retargeting 100% de video y carrusel**.
-* Impactar únicamente a usuarios que visitaron el sitio web o hicieron clic en Google/LinkedIn con pruebas sociales duras: Casos Bimbo (+40% productividad), RadioShack (-60% fricción de pago) y premio #1 de DesignRush.
+* Impactar únicamente a usuarios que visitaron el sitio web o hicieron clic en Google/LinkedIn con pruebas sociales duras: Casos Bimbo (+40% productividad), RadioShack (-60% fricción de pago) y metodología IMPATH™ Enabled.
 
 ### Solución 6: Desbloqueo Comercial en Ventas (El Diagnóstico 01)
-* El equipo comercial (Pablo y José) debe cambiar el guion de llamada: **dejar de cotizar proyectos directos de $50,000 USD** a leads fríos.
-* Toda llamada de descubrimiento debe cerrar vendiendo el **Diagnóstico Operativo de 2 a 4 semanas (Ticket de entrada)**. Una vez que el cliente paga el diagnóstico y recibe su Blueprint de Arquitectura, la tasa de conversión hacia la fase de construcción (BUILD) supera el 70%.
+* El equipo comercial y preventa técnica debe cambiar el guion de llamada: **dejar de cotizar proyectos directos de $50,000 USD** a leads fríos.
+* Toda llamada de descubrimiento debe cerrar vendiendo la **Consultoría Digital de 2 a 4 semanas (Ticket de entrada)**. Una vez que el cliente paga el diagnóstico y recibe su Blueprint de Arquitectura, la tasa de conversión hacia la fase de construcción de plataformas (Pilar 03) supera el 70%.
 
 ### Solución 7: Reemplazo del Tablero de Métricas (MQLs en vez de Clics)
 Exigir a Rocketing que el reporte mensual sustituya "Leads brutos" por:

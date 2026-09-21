@@ -39,7 +39,7 @@ Este documento contiene la arquitectura de comunicación, textos reales (copywri
 ├── [ 1. Apps Nativas e Híbridas (iOS / Android) ]
 ├── [ 2. Plataformas Web & Portales B2B ]
 ├── [ 3. Diseño de Producto Digital & UX/UI ]
-├── [ 4. MVPs de Alta Fidelidad (90 Días) ]
+├── [ 4. MVPs de Alta Fidelidad (2 a 4 Meses) ]
 └── [ 5. Modernización de Software Legacy ]
 ```
 
@@ -57,15 +57,15 @@ Este documento contiene la arquitectura de comunicación, textos reales (copywri
 
 #### Contenido de la Pestaña 3: Diseño UX/UI & Auditoría de Fricción (Ex `/diseno-ux-ui`)
 * **Propuesta de Valor:** "No diseñamos 'pantallas bonitas'. Eliminamos la fricción cognitiva que frena la adopción de software corporativo."
-* **Casos de Uso:** Rediseño de ERPs obsoletos, sistemas de diseño (Design Systems) para equipos distribuidos, investigación con usuarios reales.
+* **Casos de Uso:** Rediseño de ERPs obsoletos, sistemas de diseño (Design Systems) para equipos distribuidos, investigación con usuarios reales bajo metodología IMPATH™.
 * **Herramienta Integrada:** *Auditor de Fricción Web* (calcula cuántos miles de dólares pierde la empresa por cada segundo de retraso o clic redundante).
 * **Entregable Clave:** Sistema de Diseño en Figma con especificación lista para código (Tokens, accesibilidad WCAG AAA y prototipo navegable).
 
-#### Contenido de la Pestaña 4: MVPs de Alta Fidelidad en 90 Días (Ex `/desarrollo-mvp`)
-* **Propuesta de Valor:** "Valida nuevas unidades de negocio con software de grado de producción en 12 semanas, no con prototipos desechables."
+#### Contenido de la Pestaña 4: MVPs de Alta Fidelidad en 2 a 4 Meses (Ex `/desarrollo-mvp`)
+* **Propuesta de Valor:** "Valida nuevas unidades de negocio con software de grado de producción en 2 a 4 meses con UX validado, no con prototipos desechables."
 * **Casos de Uso:** Spin-offs corporativas, validación de nuevos canales de venta digital, plataformas piloto para fondos de inversión.
-* **Metodología:** Sprint cero de arquitectura + 6 sprints quincenales de despliegue continuo.
-* **Entregable Clave:** Producto operativo en producción con primeros usuarios reales y métricas de retención configuradas.
+* **Metodología:** Sprint cero de arquitectura + sprints quincenales de despliegue continuo con SLA 99.9%.
+* **Entregable Clave:** Producto operativo en producción con primeros usuarios reales y métricas de retención configuradas (Pilar 03).
 
 #### Contenido de la Pestaña 5: Modernización de Software Legacy (Ex `/software-a-la-medida`)
 * **Propuesta de Valor:** "Refactorizamos y migramos sistemas obsoletos a la nube sin detener la operación diaria de tu negocio."
@@ -74,18 +74,18 @@ Este documento contiene la arquitectura de comunicación, textos reales (copywri
 
 ---
 
-### 4. MODALIDAD DE CONTRATACIÓN (Cómo se conecta con el Pilar de Negocio)
-* **Card 1: Paso 01 - Diagnóstico Arquitectónico (4 Semanas | Inversión Fija)**
-  * Blueprint completo de arquitectura, auditoría de código/UX y plan de trabajo sprint por sprint antes de comprometer capital mayor.
-* **Card 2: Paso 02 - Sprints de Ingeniería (Despliegue Continuo)**
-  * Squad de ingeniería dedicado (Tech Lead, Senior Engineers, UX Architect) ejecutando sprints quincenales bajo SLAs estrictos.
+### 4. MODALIDAD DE CONTRATACIÓN (Conexión con los 4 Pilares Oficiales)
+* **Pilar 01 - Consultoría Digital (2 a 4 Semanas):** Blueprint completo de arquitectura, auditoría de código/UX y cálculo de ROI antes de comprometer capital mayor.
+* **Pilar 02 - Agentes & Automatización (2 a 4 Semanas):** Conexión de flujos determinísticos y RAG sobre stack actual vía MCP.
+* **Pilar 03 - Plataformas Digitales (2 a 4 Meses):** Construcción Full Stack Cloud-Native desde cero a producción con UX validado.
+* **Pilar 04 - Evolución Digital (Roadmap 6 a 12 Meses):** Squad dedicado continuo para optimización, reducción de deuda técnica y CRO.
 
 ---
 
 ### 5. CIERRE Y CONVERSIÓN
 * **Formulario Multi-Paso:**
   * "¿Qué tipo de producto necesitas construir o modernizar?" (App Móvil / Web App / Rediseño UX / MVP).
-  * "¿Cuál es tu ventana de tiempo de lanzamiento?" (Inmediato / 3-6 meses).
+  * "¿Cuál es tu ventana de tiempo de lanzamiento?" (Inmediato / 2 a 4 meses).
   * "Déjanos tu correo corporativo y agenda directamente con un Lead Architect."
 
 ---

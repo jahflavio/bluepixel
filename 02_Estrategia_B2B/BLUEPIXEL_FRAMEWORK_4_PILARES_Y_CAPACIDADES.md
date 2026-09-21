@@ -2,8 +2,8 @@
 ## Documento Maestro de Posicionamiento Estratégico, Portafolio de Servicios y Modelo Operativo 2026
 
 *Autor: Dirección Estratégica & Antigravity IDE*  
-*Audiencia: Leonardo, María, Fabián, Pablo Gómez, José de Buen y Squads de Ingeniería/Diseño*  
-*Versión: 3.0 Canónica*
+*Audiencia: Dirección General, Comités de Ingeniería, Producto y Equipos Comerciales*  
+*Versión: 3.1 Canónica*
 
 ---
 
@@ -31,7 +31,7 @@ A diferencia de modelos secuenciales rígidos en cascada, los **4 Pilares son op
 │ 01 · Consultoría     │ 02 · Agentes &       │ 03 · Plataformas Digitales    │
 │      Digital         │      Automatización  │      (Plataformas y MVPs con  │
 │ ⏳ 2 a 4 Semanas     │ ⏳ 2 a 4 Semanas     │       UX validado)            │
-│                      │                      │ ⏳ 3 Meses                    │
+│                      │                      │ ⏳ 2 a 4 Meses                │
 ├──────────────────────┴──────────────────────┴───────────────────────────────┤
 │ 04 · Evolución Digital (Roadmap vivo a 6 o 12 meses, capacidades continuas) │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -75,7 +75,7 @@ A diferencia de modelos secuenciales rígidos en cascada, los **4 Pilares son op
 > **"Para construir plataformas y MVPs desde cero con UX validado que convierte."**
 
 * **¿Para quién es?** Para compañías que requieren lanzar un nuevo producto digital, un portal de clientes/proveedores, un MVP de alta complejidad o reconstruir un sistema legado obsoleto.
-* **Plazo de Ejecución:** **3 meses (90 días de sprint integral a producción)**.
+* **Plazo de Ejecución:** **2 a 4 meses a producción**.
 * **Problema que Resuelve:** El riesgo de construir plataformas durante un año que al lanzarse nadie utiliza o que sufren fallas críticas de arquitectura.
 * **Entregables Concretos:**
   1. **Product Strategy & User Research:** Validación de flujos con usuarios reales antes de programar.
@@ -83,7 +83,7 @@ A diferencia de modelos secuenciales rígidos en cascada, los **4 Pilares son op
   3. **Ingeniería Full Stack Cloud-Native:** Código limpio, arquitecturas desacopladas, microservicios/serverless y pipelines CI/CD automatizados.
   4. **Lanzamiento a Producción:** Despliegue seguro en la nube del cliente con pruebas de carga y SLA operativo 99.9%.
 * **Pregunta de Ventas para Descubrimiento:**  
-  *«¿Busca lanzar una plataforma digital o MVP al mercado en 90 días, con la certeza de que el UX está validado con usuarios y la arquitectura soportará millones de transacciones?»*
+  *«¿Busca lanzar una plataforma digital o MVP al mercado en 2 a 4 meses, con la certeza de que el UX está validado con usuarios y la arquitectura soportará millones de transacciones?»*
 
 ---
 
@@ -203,7 +203,7 @@ Cada Pilar moviliza de manera orquestada las 6 Capacidades de la empresa, varian
 | Capacidad Técnica | 01 · Consultoría Digital | 02 · Agentes & Automatización | 03 · Plataformas Digitales | 04 · Evolución Digital |
 | :--- | :--- | :--- | :--- | :--- |
 | **1. UX/UI & PS** | Discovery de usuario y análisis de puntos de fricción | Mapeo de interfaz humano-agente y flujos conversacionales | **Rol Primario:** Arquitectura de información, UI y validación con usuarios | Auditoría continua de fricciones y optimización CRO |
-| **2. Software Engineering** | Auditoría técnica de stack, dependencias y deuda técnica | Conexión de endpoints, middleware y pipelines de datos | **Rol Primario:** Desarrollo Full Stack de cero a producción en 90 días | Refactorización de código, escalabilidad y nuevas features |
+| **2. Software Engineering** | Auditoría técnica de stack, dependencias y deuda técnica | Conexión de endpoints, middleware y pipelines de datos | **Rol Primario:** Desarrollo Full Stack de cero a producción en 2 a 4 meses | Refactorización de código, escalabilidad y nuevas features |
 | **3. IA & Automatización** | Identificación y viabilidad de casos de uso agénticos | **Rol Primario:** RAG corporativo, agentes MCP y automatización core | Integración de módulos agénticos nativos en la plataforma | Reentrenamiento de agentes y adición de nuevos flujos IA |
 | **4. Data & Analytics** | Evaluación de calidad de datos y telemetría histórica | Trazabilidad y observabilidad de ejecuciones de agentes | Configuración de analítica base y eventos clave de negocio | **Rol Primario:** Dashboards de conversión y telemetría continua |
 | **5. Security & Reliability** | Análisis de brechas de seguridad y cumplimiento regulatorio | Blindaje de prompts, aislamiento de datos y prevención de fugas | Arquitectura segura, DevSecOps y hardening OWASP | **Rol Primario:** Monitoreo activo de disponibilidad y SLA 99.9% |
@@ -211,7 +211,7 @@ Cada Pilar moviliza de manera orquestada las 6 Capacidades de la empresa, varian
 
 ---
 
-## 💼 PARTE V: BATTLECARD COMERCIAL PARA EL EQUIPO DE VENTAS (PABLO & JOSÉ)
+## 💼 PARTE V: BATTLECARD COMERCIAL PARA EL EQUIPO COMERCIAL Y PREVENTA TÉCNICA
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -228,7 +228,7 @@ Cada Pilar moviliza de manera orquestada las 6 Capacidades de la empresa, varian
 │ horas en tareas manuales"            │                                                 │
 ├──────────────────────────────────────┼─────────────────────────────────────────────────┤
 │ "Necesitamos construir una nueva     │ PILAR 03: Plataformas Digitales                 │
-│ plataforma, app o MVP desde cero     │ ⏳ 3 meses | De concepción a prod con UX validado│
+│ plataforma, app o MVP desde cero     │ ⏳ 2 a 4 meses | De concepción a prod validada  │
 │ para el mercado"                     │                                                 │
 ├──────────────────────────────────────┼─────────────────────────────────────────────────┤
 │ "Ya tenemos una plataforma operando  │ PILAR 04: Evolución Digital                     │

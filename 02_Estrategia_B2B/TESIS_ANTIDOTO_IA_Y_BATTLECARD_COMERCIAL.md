@@ -1,11 +1,11 @@
 # 🛡️ TESIS ESTRATÉGICA Y BATTLECARD COMERCIAL: EL ANTÍDOTO AL ESPEJISMO DE LA IA
-*Manual de Combate Comercial para Pablo Gómez, José de Buen, Leo y María: Cómo recuperar la tasa de conversión (de 1:50 de vuelta a 1:10), neutralizar la objeción del "hágalo usted mismo con IA" y resolver la crisis de identidad de marca.*
+*Manual de Combate Comercial para el Equipo de Ventas, Closers y Preventa Técnica: Cómo recuperar la tasa de conversión (de 1:50 de vuelta a 1:10), neutralizar la objeción del "hágalo usted mismo con IA" y resolver la crisis de identidad de marca.*
 
 ---
 
 ## 📉 1. EL DIAGNÓSTICO FORENSE: LA CAÍDA DE CONVERSIÓN (DE 1:10 A 1:50)
 
-En las reuniones comerciales con Pablo Gómez (6 años en ventas) y José de Buen (2 años en ventas) se identificó un síntoma alarmante:
+En los comités comerciales y análisis del pipeline de ventas se identificó un síntoma alarmante:
 *   **Inicio de 2026:** Mejor época histórica de ventas de BluePixel. Tasa de cierre promedio de **1 de cada 10 prospectos** (10% Win Rate).
 *   **Situación Actual:** Caída abrupta a **1 de cada 50 prospectos** (2% Win Rate). Se requiere un 400% más de reuniones para cerrar un contrato.
 
@@ -57,7 +57,7 @@ Este fenómeno paraliza las decisiones de compra o empuja a los prospectos a exp
 
 ## 💥 4. LA MATRIZ DE RIESGOS: "HÁGALO USTED MISMO CON IA" VS. "PARTNER BLUEPIXEL"
 
-Esta tabla debe ser dominada por Pablo Gómez y José de Buen para desarmar a los clientes en las llamadas de Discovery:
+Esta tabla debe ser dominada por el equipo comercial y los Lead Architects para desarmar a los clientes en las llamadas de Discovery:
 
 | Dimensión Crítica | ⚠️ El Espejismo "DIY con IA / Becario" | 🛡️ La Solución de Ingeniería con BluePixel |
 | :--- | :--- | :--- |
@@ -70,11 +70,11 @@ Esta tabla debe ser dominada por Pablo Gómez y José de Buen para desarmar a lo
 
 ---
 
-## 🎯 5. BATTLECARD COMERCIAL: GUIONES EXACTOS PARA PABLO GÓMEZ Y JOSÉ DE BUEN
+## 🎯 5. BATTLECARD COMERCIAL: GUIONES EXACTOS PARA EL EQUIPO DE VENTAS
 
 ### 🥊 Escenario 1: El cliente dice *"Eso lo podemos hacer internamente con nuestro equipo o con IA"*
 *   **Lo que NO debes decir:** *"No, la IA no sirve, nosotros somos mejores"*. (Suena defensivo y obsoleto).
-*   **La Respuesta Quirúrgica de Pablo / José:**
+*   **La Respuesta Quirúrgica del Closer:**
     > *"Licenciado / Ingeniero, estamos 100% de acuerdo con usted: hoy la IA escribe código más rápido que nunca. De hecho, nosotros en BluePixel usamos herramientas de frontera todos los días.*
     >
     > *Pero déjeme hacerle una pregunta muy sincera: **¿El problema de su empresa es escribir código rápido, o es que el sistema sea seguro, no tire sus servidores cuando se conecten 1,000 usuarios, y no fugue datos confidenciales de sus clientes?***
@@ -155,7 +155,7 @@ Tu trabajo es escuchar el dolor del cliente y, en lugar de decirle *"Claro, pode
 
 ## 🛡️ 9. BATTLECARDS POR MÓDULO & DOLOR CORPORATIVO (SOBERANÍA PRIVATE CLOUD)
 
-Reglas de oro para los Closers (Pablo Gómez y José de Buen):
+Reglas de oro para los Closers y el Equipo Comercial:
 1. **Nunca vendas la tecnología, vende el impacto en P&L:** *"El módulo reduce 40 horas operativas semanales a 0, liberando margen operativo en el Q4"*.
 2. **Mata la objeción SaaS de inmediato:** Si preguntan si esto es como ChatGPT o Salesforce, responde: *"No. Los SaaS públicos exponen tus datos a modelos de terceros. Nosotros desplegamos los agentes dentro de tu propia nube privada (AWS / Azure). Tú mantienes la Soberanía Absoluta de Datos bajo cumplimiento LFPDPPP y OWASP"*.
 

@@ -1,8 +1,8 @@
 # 🌐 AUDITORÍA MAESTRA, BENCHMARKING Y PLAN DE REDISEÑO WEB BLUEPIXEL 2026
 **De Despacho UX/UI a Consultora de Deep Tech, Ingeniería Agentica y Garantía FutureProof**
 
-> **Documento Estratégico y Técnico para la Reunión de Alineación con Leonardo Flores (Leo), Pablo Gómez y Dirección.**  
-> *Versión:* 1.0 (Oficial) · *Fecha:* Septiembre 2026 · *Área:* Dirección de Estrategia, Tecnología y Producto B2B.
+> **Documento Estratégico y Técnico de Alineación para Dirección General, Producto y Equipos Comerciales.**  
+> *Versión:* 3.1 Canónica · *Fecha:* Septiembre 2026 · *Área:* Dirección de Estrategia, Tecnología y Producto B2B.
 
 ---
 
@@ -63,7 +63,7 @@ Analizando las capturas compartidas y el benchmark técnico del sitio de Vstorm:
 | **Hero Headline** | *"We build AI agents that run in production."* | Corto, asertivo, ataca el mayor dolor corporativo (los demos de IA que nunca llegan a producción). | *"Construimos agentes de Inteligencia Artificial que operan en producción."* |
 | **Interactive Hero Prompt Bar** | `[ 900 quote requests a month, retype... ↗ ]`<br/>*"You're chatting with an AI versed in our content."* | **Product-Led Growth (PLG) inmediato:** En vez de pedir que agenden una llamada genérica, le permite al visitante teclear su problema operativo y recibir una respuesta arquitectónica al instante. | **Implementar la barra interactiva en el Hero:** Permitir seleccionar o teclear casos típicos (cotizaciones, logística, soporte, reconciliación contable) y mostrar solución técnica + caso real análogo. |
 | **Trust Bar / Hard Proof** | `30+ PRODUCTION DEPLOYMENTS \| OFFICIAL PYDANTIC PARTNER \| FIRST IN AGENTIC AI FOUNDATION` | Métricas técnicas verificables, no frases motivacionales. | `200+ PLATAFORMAS EN PRODUCCIÓN \| AWS CLOUD PARTNER \| MCP PROTOCOL NATIVE \| SISTEMAS DE ALTA DISPONIBILIDAD`. |
-| **Three Ways to Work With Us** | Divide la oferta en 3 escalones claros: 01 Advisory (4-8 sem), 02 Engineering (Mensual), 01+02 Transform (3+ meses). | Resuelve la objeción de entrada. Un cliente escéptico no te compra un contrato anual de primera intención; entra por un diagnóstico pagado. | **Estructurar la oferta de BluePixel en 3 niveles:**<br/>1. Diagnóstico & Auditoría FutureProof (2-4 sem)<br/>2. BUILD: Ingeniería de Agentes & MCP (8-12 sem)<br/>3. EVOLVE: Transformación & Escala Continua (Retainer). |
+| **Los 4 Pilares Oficiales** | Divide la oferta en 4 modelos modulares: 01 Consultoría (2-4 sem), 02 Agentes (2-4 sem), 03 Plataformas (2-4 meses), 04 Evolución (6-12 m). | Resuelve la objeción de entrada. Un cliente escéptico entra por diagnóstico o agentes sobre stack actual sin comprometer contratos a ciegas. | **Estructurar la oferta de BluePixel en sus 4 Pilares Canónicos:**<br/>1. Consultoría Digital (2-4 sem)<br/>2. Agentes & Automatización (2-4 sem)<br/>3. Plataformas Digitales (2-4 meses)<br/>4. Evolución Digital (Roadmap 6-12 m). |
 | **Diseño Visual** | Tipografía nítida, rejilla técnica con puntos, tarjetas con bordes finos, acentos de color sobrios (rojo/negro/blanco), **cero ilustraciones de IA con cerebros de neón**. | Comunica seriedad de ingeniería. No parece plantilla de ThemeForest ni render de Midjourney. | Mantener el dark mode sofisticado de Leo (`#080C16`), tipografía Inter/Onest + JetBrains Mono, líneas estructurales de 1px y diagramas interactivos de procesos. |
 
 ### 2.2. Benchmarking contra Otros Jugadores B2B de Frontera
@@ -155,7 +155,7 @@ No todo lo anterior debe descartarse. El sitio actual contiene activos de credib
     *   Actualmente el Hero de Leo tiene dos botones estáticos: `[ Hablemos ]` y `[ Conoce cómo trabajamos ]`. No hay un enganche de producto inmediato que demuestre la IA en acción.
 3.  **El Modelo "FutureProof" Salta Directo a BUILD y EVOLVE, Omitiendo la Auditoría:**
     *   Leo presenta únicamente BUILD (para quien arranca desde cero) y EVOLVE (para quien ya tiene plataforma).
-    *   *El gran gap:* Ningún director de operaciones o CTO que no conoce a BluePixel firma un contrato de desarrollo de 3 meses ($30,000+ USD) sin haber pasado por una **Auditoría o Diagnóstico Técnico inicial de bajo riesgo (2 a 4 semanas)**.
+    *   *El gran gap:* Ningún director de operaciones o CTO que no conoce a BluePixel firma un contrato de desarrollo de 2 a 4 meses ($30,000+ USD) sin haber pasado por una **Auditoría o Diagnóstico Técnico inicial de bajo riesgo (2 a 4 semanas)**.
 4.  **Desbalance Visual hacia UX en el Home:**
     *   Aunque Leo agregó un cintillo morado en BUILD y EVOLVE (*"Incluye capa de Agentes IA"*), la sección principal se siente como un dashboard de analítica de usabilidad web, no como el centro de mando de una empresa que automatiza operaciones complejas.
 5.  **Las 6 Tarjetas de Capabilities Diluyen el Mensaje:**
@@ -283,62 +283,77 @@ Esta sección resuelve el vacío de la **oferta de entrada** que detectamos en e
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    TRES FORMAS DE TRABAJAR CON BLUEPIXEL                               │
-│  Dos paquetes de entrada para empresas que buscan certidumbre técnica inmediata, y un programa integral │
-│          end-to-end para transformar tu operación completa con gobernanza y propiedad tuya.            │
+│                                 4 FORMAS MODULARES DE TRABAJAR CON BLUEPIXEL                           │
+│  Modelos independientes según el momento de la empresa. No son fases forzadas; el cliente entra directo │
+│                   por el pilar que resuelve su cuello de botella operativo inmediato.                   │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```mermaid
-graph LR
-    P1["01. DIAGNÓSTICO & AUDITORÍA<br/>Entry Package (2 - 4 Semanas)<br/>Radiografía, ROI y Blueprint"] --> P3["01 + 02. TRANSFORMACIÓN INTEGRAL<br/>Strategic Partner (3+ Meses)<br/>Equipo Embebido, Build + Evolve"]
-    P2["02. INGENIERÍA DE AGENTES & MCP<br/>Entry Package (Mensual / Sprints)<br/>Construcción sobre tu Stack"] --> P3
+graph TD
+    classDef pilar fill:#1e1b4b,stroke:#818cf8,stroke-width:1.5px,color:#e0e7ff;
+    P1["01. CONSULTORÍA DIGITAL<br/>(2 a 4 Semanas · ROI y Diagnóstico IMPATH)"]:::pilar
+    P2["02. AGENTES & AUTOMATIZACIÓN<br/>(2 a 4 Semanas · RAG & Conectores MCP)"]:::pilar
+    P3["03. PLATAFORMAS DIGITALES<br/>(2 a 4 Meses · MVP Prod SLA 99.9%)"]:::pilar
+    P4["04. EVOLUCIÓN DIGITAL<br/>(Roadmap 6-12 Meses · Squad Continuo)"]:::pilar
 ```
 
-### Paquete 01: Diagnóstico & Auditoría FutureProof (Entry Package · 2 a 4 Semanas)
-*   **Kicker:** `ENTRY PACKAGE · CERTIDUMBRE TÉCNICA`
-### Paquete 01: Diagnóstico & Auditoría FutureProof (Entry Package · 2 a 4 Semanas)
-*   **Kicker:** `ENTRY PACKAGE · 01`
-*   **Titular:** **Diagnóstico & Auditoría FutureProof**
-*   **Subtítulo:** *"Te mostramos exactamente el camino e identificamos qué automatizar. Tu equipo adquiere claridad y músculo antes de invertir en código."*
+### Pilar 01: Consultoría Digital (Entry Package · 2 a 4 Semanas)
+*   **Kicker:** `PILAR 01 · CERTIDUMBRE TÉCNICA`
+*   **Titular:** **Consultoría Digital & Diagnóstico IMPATH™**
+*   **Subtítulo:** *"Claridad estratégica y retorno medible antes de escribir la primera línea de código."*
 *   **Qué incluye (Balas Oficiales):**
-    *   ✦ Mapeo de procesos y diagnóstico de operaciones
-    *   ✦ Detección de fricción con gemelos digitales (IMPATH™)
-    *   ✦ Matriz de priorización de agentes IA y cálculo de ROI
+    *   ✦ Mapeo de procesos y diagnóstico de operaciones IMPATH™
+    *   ✦ Detección de fricción de usuario y cuellos de botella en ERP/CRM
+    *   ✦ Matriz de priorización de iniciativas por impacto financiero
     *   ✦ Blueprint de arquitectura técnica y gobernanza de datos
-    *   ✦ Reporte ejecutivo con costo de inacción cuantificado en pesos
+    *   ✦ Business case cuantitativo con cálculo del costo de inacción
 *   **Duración:** `2 a 4 Semanas`
 *   **CTA Oficial:** `[ Solicitar Diagnóstico → ]`
 
 ---
 
-### Paquete 02: Ingeniería de Agentes & MCP (Entry Package · Sprints Mensuales)
-*   **Kicker:** `ENTRY PACKAGE · 02`
-*   **Titular:** **Ingeniería de Agentes & MCP**
-*   **Subtítulo:** *"Ya sabes qué flujo necesitas construir. Nosotros diseñamos la arquitectura, programamos los agentes y los integramos en tu entorno real."*
+### Pilar 02: Agentes & Automatización (Entry Package · 2 a 4 Semanas)
+*   **Kicker:** `PILAR 02 · AGENTIC AUTOMATION`
+*   **Titular:** **Agentes & Automatización**
+*   **Subtítulo:** *"Automatización inteligente sobre lo que ya tienes funcionando, sin reemplazar tu software actual."*
 *   **Qué incluye (Balas Oficiales):**
-    *   ✦ Diseño de arquitectura agéntica con protocolos MCP
-    *   ✦ Flujos de trabajo autónomos sobre datos reales con RAG
-    *   ✦ Integración con tu stack empresarial (SAP, Salesforce, ERP)
-    *   ✦ Ingeniería, pruebas de estrés y despliegue cloud en producción
-    *   ✦ Blindaje contra alucinaciones y cumplimiento OWASP / LFPDPPP
-*   **Duración:** `Sprints Mensuales`
-*   **CTA Oficial:** `[ Explorar Ingeniería → ]`
+    *   ✦ Agentes IA autónomos orientados a tareas determinísticas
+    *   ✦ Arquitectura RAG privada sobre datos corporativos sin alucinaciones
+    *   ✦ Conectores determinísticos vía MCP con SAP, Salesforce o ERP propietario
+    *   ✦ Despliegue en nube privada (VPC) con soberanía total de datos
+    *   ✦ Pruebas de estrés y blindaje OWASP / LFPDPPP
+*   **Duración:** `2 a 4 Semanas a Producción`
+*   **CTA Oficial:** `[ Explorar Automatización → ]`
 
 ---
 
-### Paquete 01+02: Transformación: BUILD + EVOLVE (Full Transformation · 3+ Meses / Continuo)
-*   **Kicker:** `FULL TRANSFORMATION · 01+02`
-*   **Titular:** **Transformación: BUILD + EVOLVE**
-*   **Subtítulo:** *"De cero a una capa agentizada y plataforma digital de alta disponibilidad en producción. Estrategia, ingeniería y evolución continua end-to-end."*
+### Pilar 03: Plataformas Digitales (Build Integral · 2 a 4 Meses)
+*   **Kicker:** `PILAR 03 · CLOUD-NATIVE BUILD`
+*   **Titular:** **Plataformas Digitales**
+*   **Subtítulo:** *"Para construir plataformas y MVPs desde cero con UX validado que convierte."*
 *   **Qué incluye (Balas Oficiales):**
-    *   ✓ Equipo senior dedicado embebido: Tech Lead, AI Engineer y UX Lead
-    *   ✓ Todo lo incluido en los paquetes 01 (Diagnóstico) y 02 (Ingeniería)
-    *   ✓ Construcción completa de plataforma en 90 días (BUILD)
-    *   ✓ Monitoreo trimestral de UX Health Score y ROI (EVOLVE)
-    *   ✓ Hand-off estructurado: tu equipo es dueño absoluto de lo que opera
-*   **Duración:** `3+ Meses / Continuo`
-*   **CTA Oficial:** `[ Agendar Sesión → ]`
+    *   ✓ Product Strategy (PS) e investigación con usuarios reales
+    *   ✓ Diseño UI de clase mundial y sistemas de diseño (Design Systems)
+    *   ✓ Desarrollo Full Stack Cloud-Native (React, Node, Python, TypeScript)
+    *   ✓ Arquitectura desacoplada de microservicios y pipelines CI/CD
+    *   ✓ Despliegue productivo auditado con SLA 99.9%
+*   **Duración:** `2 a 4 Meses a Producción`
+*   **CTA Oficial:** `[ Construir Plataforma → ]`
+
+---
+
+### Pilar 04: Evolución Digital (Acompañamiento Continuo · 6 a 12 Meses)
+*   **Kicker:** `PILAR 04 · EVOLUCIÓN CONTINUA`
+*   **Titular:** **Evolución Digital**
+*   **Subtítulo:** *"Tu equipo tecnológico extendido para proteger la inversión y sostener el crecimiento."*
+*   **Qué incluye (Balas Oficiales):**
+    *   ✓ Squad multidisciplinario dedicado (Tech Lead, AI Engineer, Full Stack, UX/CRO Specialist)
+    *   ✓ Auditorías y monitoreo continuo de UX Health Score™
+    *   ✓ Reducción sistemática de deuda técnica y optimización de conversión
+    *   ✓ Soporte con SLA empresarial y actualización continua de dependencias
+*   **Duración:** `Roadmap vivo de 6 o 12 Meses (Retainer)`
+*   **CTA Oficial:** `[ Activar Squad Continuo → ]`
 
 ---
 
@@ -598,7 +613,7 @@ Permite al visitante mover dos controles deslizantes:
 
 #### 4. La Barra de Credenciales del Stack de Élite (Tech Stack Trust Bar)
 Sustituir insignias aisladas por una franja técnica unificada:
-`AWS ADVANCED PARTNER  |  MODEL CONTEXT PROTOCOL (MCP)  |  MIXPANEL CERTIFIED  |  CYBERVADIS SECURITY  |  DESIGNRUSH #1 UX`
+`AWS ADVANCED PARTNER  |  MODEL CONTEXT PROTOCOL (MCP)  |  MIXPANEL CERTIFIED  |  CYBERVADIS SECURITY  |  IMPATH™ ENABLED UX (>95% ADOPCIÓN)`
 
 ---
 
@@ -629,7 +644,7 @@ graph TD
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Propuesta Central** | Modelos de IA, ontologías complejas y despliegues matemáticos. | "Horas de desarrollador", staffing rápido y cuadrillas de código. | Research de usuario, workshops y diseño visual en Figma. | Chatbots de OpenAI conectados a WhatsApp con prompts básicos. | **Ingeniería Agentica y Sistemas Deep Tech con Adopción Humana Garantizada (>95%).** |
 | **Incentivo de Negocio** | Licenciamiento millonario recurrente o proyectos de 12 a 18 meses. | **Facturación por hora consumida:** Más tardado el proyecto, más dinero ganan. | Venta de entregables estáticos (maquetas) sin responsabilidad de producción. | Cobro de suscripción mensual por un bot que alucina. | **Entrega de sistemas autónomos en 4 a 8 semanas con ROI medido en balance financiero.** |
-| **Usabilidad y Adopción Humana** | **Crítica:** Interfaces oscuras, complejas y difíciles de usar. Requieren meses de capacitación. | Variable: Código funcional pero interfaces secundarias de baja calidad. | **Alta en diseño, nula en ejecución:** Diseños espectaculares que los ingenieros no pueden programar. | Pobre: Interfaces predeterminadas de WhatsApp o webchat genérico. | **Moat Letal:** Galardonados como la **Firma #1 de UX en México por DesignRush**, garantizando >95% de adopción en piso. |
+| **Usabilidad y Adopción Humana** | **Crítica:** Interfaces oscuras, complejas y difíciles de usar. Requieren meses de capacitación. | Variable: Código funcional pero interfaces secundarias de baja calidad. | **Alta en diseño, nula en ejecución:** Diseños espectaculares que los ingenieros no pueden programar. | Pobre: Interfaces predeterminadas de WhatsApp o webchat genérico. | **Moat Letal:** Metodología **IMPATH™ Enabled**, garantizando >95% de adopción en piso. |
 | **Soberanía Técnica y Lock-in** | **Riesgo Alto:** Dependencia extrema de su plataforma cerrada (ej. ecosistema Palantir). | Código en el repositorio del cliente, pero arquitectura a menudo desordenada. | Nula: No construyen infraestructura. | **Riesgo Máximo:** Tus datos viajan a servidores públicos de OpenAI o bots de terceros. | **Soberanía Absoluta:** Despliegue en la nube privada (VPC) del cliente, protocolo MCP abierto, cero dependencia de BluePixel. |
 | **Respuesta al Dolor del C-Level** | Hablan de algoritmos e inferencia; confunden al CFO y al Director Comercial. | Hablan de "headcount", "seniority" y tarifas horarias; aburren al CEO. | Hablan de "empatía" y "arquetipos de usuario"; frustran al Director de Operaciones. | Hablan de "mágica inteligencia artificial"; generan desconfianza técnica. | **Habla en horas liberadas, reducción de tiempos (de 48 hrs a 90 seg) y payback de 60 a 90 días.** |
 
@@ -670,7 +685,7 @@ Hicimos una inspección forense de los 3 estadios por los que ha pasado el proye
 Para asegurar que todo el equipo (Fabián, Leo, Pablo, ingenieros y comerciales) hable con una sola voz letal:
 
 1.  **Regla de la Métrica Dura:** Prohibido usar adjetivos vacíos (*"revolucionario"*, *"innovador"*, *"ágil"*). Cada afirmación debe acompañarse de una métrica operativa (*"reducción de 48 hrs a 90 seg"*, *"ahorro de $1.2M MXN"*, *">95% tasa de adopción"*).
-2.  **Regla del UX como Moat Técnico:** El galardón #1 de UX en México otorgado por DesignRush **nunca se comunica como un fin estético**, sino como la **Garantía de Supervivencia del Software**: *"El 70% del software corporativo fracasa porque los empleados lo rechazan; nosotros diseñamos interfaces tan intuitivas que alcanzan más del 95% de uso diario sin resistencia."*
+2.  **Regla del UX como Armadura de Adopción:** La psicología conductual y metodología **IMPATH™ Enabled** **nunca se comunican como un fin estético**, sino como la **Garantía de Supervivencia del Software**: *"El 70% del software corporativo fracasa porque los empleados lo rechazan; nosotros diseñamos interfaces tan intuitivas que alcanzan más del 95% de uso diario sin resistencia."*
 3.  **Regla del Determinismo Agentico:** Dejar claro en cada punto de contacto que BluePixel **no vende chatbots de alucinación**, sino agentes estructurados con servidores MCP que ejecutan lógica matemática determinística sobre ERPs y bases de datos reales.
 4.  **Regla de la Soberanía Absoluta:** Reafirmar en cada propuesta comercial y página web que el cliente es el dueño absoluto de su software. Cero cajas negras, cero licencias abusivas por usuario, despliegue en su propia VPC.
 5.  **Regla de la Fricción Cero en Entrada (Paquete 01 Diagnóstico):** Reducir el riesgo comercial del cliente ofreciendo una puerta de entrada pequeña y de alto valor: el *Diagnóstico Operativo de 2 a 4 semanas*. No exigimos un contrato de un año desde el día 1; demostramos viabilidad técnica primero.
@@ -683,7 +698,7 @@ Para asegurar que todo el equipo (Fabián, Leo, Pablo, ingenieros y comerciales)
 
 1.  **Archivos Guardados en Repositorio:** Toda esta auditoría, benchmarking de segundo nivel, auto-auditoría forense y arquitectura quedan respaldados permanentemente en `02_Estrategia_B2B/AUDITORIA_Y_REDISEÑO_WEB_BLUEPIXEL_2026.md`.
 2.  **Prototipo en Código Actualizado al 100%:** `03_Prototipos_y_Codigo/Componentes_Nueva_Web/index.html` ahora contiene todos los nuevos elementos (Teardown Antes/Después, Calculadora Interactiva de ROI, Soberanía de Datos y Gobernanza, PostContactSLA y Tech Stack Bar).
-3.  **Siguiente Acción:** Presentar este plan estratégico en la sesión de alineación con Leo y Pablo Gómez.
+3.  **Siguiente Acción:** Presentar este plan estratégico en la sesión de alineación con el equipo directivo y comités técnicos.
 
 
 

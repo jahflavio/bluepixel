@@ -49,7 +49,7 @@ La bandera de marca y garantía central de BluePixel es la filosofía **FuturePr
     *   Canalizar el tráfico hacia los **4 Pilares Oficiales de Servicio / Contratación**:
         *   **01: Consultoría Digital** (*Entry Package | 2 a 4 semanas | Diagnóstico, backlog priorizado y ROI previo*).
         *   **02: Agentes & Automatización** (*Entry Package | 2 a 4 semanas | Agentes autónomos sobre stack actual*).
-        *   **03: Plataformas Digitales** (*Build Integral | 3 meses | Plataformas y MVPs desde cero con UX validado*).
+        *   **03: Plataformas Digitales** (*Build Integral | 2 a 4 meses | Plataformas y MVPs desde cero con UX validado*).
         *   **04: Evolución Digital** (*Retainer Continuo | 6 o 12 meses | Roadmap vivo, CRO y squad dedicado*).
     *   Sustentado en las **6 Capacidades de la Empresa**: `UX/UI & PS`, `Software Engineering`, `IA & Automatización (Agentic Automation)`, `Data & Analytics`, `Security & Reliability (ISO 27001 & OWASP)` y `Digital Consulting`.
 3.  **Discurso Comercial y Cierre (Pablo Gómez y José de Buen):**
@@ -661,7 +661,7 @@ Para absorber el 100% de los servicios de BluePixel sin perder foco ni presupues
 ├─────────────────────────┬─────────────────────────┬─────────────────────────┬──────────────────────────┤
 │ 01 · Consultoría        │ 02 · Agentes &          │ 03 · Plataformas        │ 04 · Evolución           │
 │      Digital            │      Automatización     │      Digitales          │      Digital             │
-│ ⏳ 2 a 4 Semanas        │ ⏳ 2 a 4 Semanas        │ ⏳ 3 Meses (90 días)    │ ⏳ 6 o 12 Meses          │
+│ ⏳ 2 a 4 Semanas        │ ⏳ 2 a 4 Semanas        │ ⏳ 2 a 4 Meses          │ ⏳ 6 o 12 Meses          │
 ├─────────────────────────┼─────────────────────────┼─────────────────────────┼──────────────────────────┤
 │ Diagnóstico, backlog    │ Agentes autónomos MCP   │ Plataformas y MVPs con  │ Roadmap vivo, squad      │
 │ priorizado y ROI previo │ y RAG sobre stack actual│ UX validado que convierte│ continuo y CRO mensual   │
@@ -684,7 +684,7 @@ Ningún servicio se elimina; se reubican como capacidades interactivas dentro de
     *   *Plataformas Web & Portales B2B* (Ex `/desarrollo-web`).
     *   *Apps Nativas e Híbridas iOS / Android* (Ex `/desarrollo-apps`).
     *   *Diseño de Producto Digital & UX/UI* (Ex `/diseno-ux-ui` con Auditor de Fricción).
-    *   *MVPs de Alta Fidelidad en 90 días* (Ex `/desarrollo-mvp`).
+    *   *MVPs de Alta Fidelidad en 2 a 4 meses* (Ex `/desarrollo-mvp`).
     *   *Modernización de Software Legacy* (Ex `/software-a-la-medida`).
 2.  **Cluster 2: Automatización Operativa (`/automatizacion`):**
     *   *Integración de ERPs SAP/Oracle* (Ex `/erp-bridge`).

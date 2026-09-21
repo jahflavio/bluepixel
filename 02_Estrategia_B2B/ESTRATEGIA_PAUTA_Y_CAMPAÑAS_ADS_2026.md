@@ -1,5 +1,5 @@
 # 🎯 ESTRATEGIA MAESTRA DE PAUTA PAGADA & ADQUISICIÓN B2B (BLUEPIXEL 2026)
-**Directiva Oficial para Leonardo Flores (Leo), Dirección General y la Agencia de Pauta (Rocketing)**
+**Directiva Oficial para Dirección General, Producto y la Agencia de Pauta (Rocketing)**
 
 ---
 
@@ -10,7 +10,7 @@ La aproximación anterior sugería pautar términos ultra-específicos vinculado
 *   **El problema técnico:** En México y LATAM, el volumen de búsqueda mensual exacto de estos términos en Google Search es prácticamente nulo o extremadamente disperso.
 *   **El impacto financiero:** Campañas que no gastan presupuesto, o que terminan abriendo concordancias amplias que atraen estudiantes o búsquedas informativas irrelevantes.
 
-### 1.2. La Directiva de Leo: Los 3 Clusters de Demanda Real y Volumen B2B
+### 1.2. Los 3 Clusters de Demanda Real y Volumen B2B
 Los tomadores de decisión con presupuestos de **+$300,000 MXN** (CEOs, CTOs, Directores de Operaciones, CFOs) buscan soluciones en Google y LinkedIn a través de **tres grandes dolores macro**:
 
 ```mermaid
@@ -23,10 +23,11 @@ graph TD
     C --> E
     D --> E
     
-    E --> F["CANALIZACIÓN A LOS 3 PILARES DE CONTRATACIÓN"]
-    F --> G["01: Diagnóstico & Auditoría FutureProof (2-4 sem)"]
-    F --> H["02: Ingeniería de Agentes & MCP (Sprints)"]
-    F --> I["01+02: Transformación BUILD + EVOLVE (3+ meses)"]
+    E --> F["CANALIZACIÓN A LOS 4 PILARES DE CONTRATACIÓN"]
+    F --> G["01: Consultoría Digital & ROI (2-4 sem)"]
+    F --> H["02: Agentes & Automatización (2-4 sem)"]
+    F --> I["03: Plataformas Digitales (2-4 meses)"]
+    F --> J["04: Evolución Digital (6-12 meses)"]
 ```
 
 1.  **Cluster 1: Desarrollo de Apps (Modernización y Plataformas Escalables):**
@@ -49,9 +50,9 @@ graph TD
     *   `[modernizacion de sistemas legacy]` | `"desarrollo de plataformas cloud aws"`
 *   **Ángulo del Anuncio (Ad Copy):**
     *   *Titular 1:* Desarrollo de Apps Empresariales | Cero Deuda Técnica
-    *   *Titular 2:* Software de Grado Militar con UX #1 en México
-    *   *Descripción:* Tu plataforma digital lista en 90 días. Diseñamos con arquitectura FutureProof y desplegamos en tu nube privada con SLA 99.9%. Conoce los 3 modelos de colaboración.
-*   **URL de Destino:** `bluepixel.mx/#three-ways` (con preselección en formulario: *"Desarrollo de Apps / Build"*) o landing de plataforma dedicada.
+    *   *Titular 2:* Software de Grado Corporativo con Adopción Garantizada
+    *   *Descripción:* Tu plataforma digital lista en 2 a 4 meses. Diseñamos con arquitectura FutureProof y desplegamos en tu nube privada con SLA 99.9%. Conoce los 4 modelos de colaboración.
+*   **URL de Destino:** `/lp/desarrollo-apps-enterprise` (Landing hermética `noindex, nofollow` con Quality Score 10/10).
 
 ---
 
@@ -66,7 +67,7 @@ graph TD
     *   *Titular 1:* Automatización de Procesos Críticos | BluePixel
     *   *Titular 2:* Conecta tu ERP sin Tirar tu Software Actual
     *   *Descripción:* Elimina horas de captura manual y errores de conciliación. Diseñamos flujos determinísticos con arquitectura FutureProof y ROI cuantificado en pesos.
-*   **URL de Destino:** `bluepixel.mx/landings/apa.html` o `bluepixel.mx/#three-ways` (Preselección: *"Automatización de Procesos"*).
+*   **URL de Destino:** `/lp/automatizacion-procesos-erp` (Landing hermética `noindex, nofollow` con Quality Score 10/10).
 
 ---
 
@@ -81,7 +82,7 @@ graph TD
     *   *Titular 1:* Agentes de IA en Producción | Protocolo MCP Nativo
     *   *Titular 2:* Cero Alucinaciones en tu Nube Privada
     *   *Descripción:* Construimos y desplegamos agentes autónomos conectados a tus datos reales bajo estándares OWASP y LFPDPPP. Tu equipo es dueño del 100% de la infraestructura.
-*   **URL de Destino:** `bluepixel.mx/landings/triage_rag.html` o `bluepixel.mx/#three-ways` (Preselección: *"Ingeniería de Agentes (02)"*).
+*   **URL de Destino:** `/lp/agentes-ia-produccion` (Landing hermética `noindex, nofollow` con Quality Score 10/10).
 
 ---
 
@@ -97,37 +98,28 @@ Para evitar el colapso de conversión y bloquear clics de personas sin presupues
 
 ---
 
-## 📦 3. CONEXIÓN DIRECTA CON LOS 3 PILARES DE CONTRATACIÓN (LA OFERTA REAL)
+## 📦 3. CONEXIÓN DIRECTA CON LOS 4 PILARES DE CONTRATACIÓN (LA OFERTA REAL)
 
-Toda la pauta y las landing pages deben canalizar el tráfico hacia los **3 paquetes de servicio oficiales de BluePixel**:
+Toda la pauta y las landing pages deben canalizar el tráfico hacia los **4 modelos de servicio oficiales de BluePixel**:
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                       TRES FORMAS DE COLABORAR CON BLUEPIXEL                                     │
-├──────────────────────────────────┬────────────────────────────────────────┬──────────────────────────────────────┤
-│ 01: DIAGNÓSTICO & AUDITORÍA      │ 02: INGENIERÍA DE AGENTES & MCP        │ 01+02: TRANSFORMACIÓN: BUILD+EVOLVE  │
-│ [ENTRY PACKAGE]                  │ [ENTRY PACKAGE]                        │ [FULL TRANSFORMATION]                │
-├──────────────────────────────────┼────────────────────────────────────────┼──────────────────────────────────────┤
-│ "Te mostramos exactamente el     │ "Ya sabes qué flujo necesitas          │ "De cero a una capa agentizada y     │
-│ camino e identificamos qué       │ construir. Nosotros diseñamos la       │ plataforma digital de alta           │
-│ automatizar. Tu equipo adquiere  │ arquitectura, programamos los agentes  │ disponibilidad en producción.        │
-│ claridad y músculo antes de      │ y los integramos en tu entorno real."  │ Estrategia, ingeniería y evolución   │
-│ invertir en código."             │                                        │ continua end-to-end."                │
-│                                  │                                        │                                      │
-│ • Mapeo de procesos y            │ • Diseño de arquitectura agéntica      │ • Equipo senior dedicado embebido:   │
-│   diagnóstico de operaciones     │   con protocolos MCP                   │   Tech Lead, AI Engineer y UX Lead   │
-│ • Detección de fricción con      │ • Flujos de trabajo autónomos sobre    │ • Todo lo incluido en paquetes 01    │
-│   gemelos digitales (IMPATH™)    │   datos reales con RAG                 │   (Diagnóstico) y 02 (Ingeniería)    │
-│ • Matriz de priorización de      │ • Integración con stack empresarial    │ • Construcción completa de plataforma│
-│   agentes IA y cálculo de ROI    │   (SAP, Salesforce, ERP)               │   en 90 días (BUILD)                 │
-│ • Blueprint de arquitectura      │ • Ingeniería, pruebas de estrés y      │ • Monitoreo trimestral de UX Health  │
-│   técnica y gobernanza de datos  │   despliegue cloud en producción       │   Score y ROI (EVOLVE)               │
-│ • Reporte ejecutivo con costo de │ • Blindaje contra alucinaciones y      │ • Hand-off estructurado: tu equipo es│
-│   inacción cuantificado en pesos │   cumplimiento OWASP / LFPDPPP         │   dueño absoluto de lo que opera     │
-├──────────────────────────────────┼────────────────────────────────────────┼──────────────────────────────────────┤
-│ ⏳ 2 a 4 Semanas                 │ ⏳ Sprints Mensuales                   │ ⏳ 3+ Meses / Continuo               │
-│ 🔘 CTA: Solicitar Diagnóstico →  │ 🔘 CTA: Explorar Ingeniería →          │ 🔘 CTA: Agendar Sesión →             │
-└──────────────────────────────────┴────────────────────────────────────────┴──────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                 4 FORMAS DE COLABORAR CON BLUEPIXEL                                                  │
+├──────────────────────────────────┬──────────────────────────────────┬─────────────────────────────────┬──────────────────────────────┤
+│ 01 · CONSULTORÍA DIGITAL         │ 02 · AGENTES & AUTOMATIZACIÓN    │ 03 · PLATAFORMAS DIGITALES      │ 04 · EVOLUCIÓN DIGITAL       │
+├──────────────────────────────────┼──────────────────────────────────┼─────────────────────────────────┼──────────────────────────────┤
+│ "Claridad estratégica,          │ "Automatización inteligente      │ "Construcción de plataformas    │ "Tu equipo tecnológico       │
+│  arquitectura técnica y          │  sobre lo que ya tienes          │  y MVPs desde cero con UX       │  extendido para sostener     │
+│  cálculo de ROI antes de código."│  funcionando, sin tirarlo."      │  validado que convierte."       │  el crecimiento."            │
+│                                  │                                  │                                 │                              │
+│ • Diagnóstico IMPATH™ y ROI      │ • Agentic RAG sin alucinaciones  │ • Product Strategy (PS) y UX UI │ • Squad multidisciplinario   │
+│ • Blueprint de arquitectura      │ • Protocolo MCP determinístico   │ • Full Stack Cloud-Native       │ • Monitoreo UX Health Score  │
+│ • Matriz de priorización         │ • Despliegue en VPC privada      │ • Arquitectura desacoplada      │ • Reducción deuda técnica    │
+│ • Costo de inacción cuantificado │ • Cumplimiento OWASP/LFPDPPP     │ • Despliegue prod con SLA 99.9% │ • Soporte continuo con SLA   │
+├──────────────────────────────────┼──────────────────────────────────┼─────────────────────────────────┼──────────────────────────────┤
+│ ⏳ 2 a 4 Semanas                 │ ⏳ 2 a 4 Semanas                 │ ⏳ 2 a 4 Meses a Producción     │ ⏳ Roadmap 6 a 12 Meses      │
+│ 🔘 CTA: Solicitar Diagnóstico →  │ 🔘 CTA: Explorar Automatización →│ 🔘 CTA: Construir Plataforma →  │ 🔘 CTA: Activar Squad →      │
+└──────────────────────────────────┴──────────────────────────────────┴─────────────────────────────────┴──────────────────────────────┘
 ```
 
 ### Cómo se enruta cada búsqueda hacia su paquete ideal:

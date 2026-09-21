@@ -84,7 +84,7 @@ Cuando el usuario hace clic en `Ver Blueprint Técnico`, NO lo sacamos de la pá
     4. Agente aprueba la conciliación en el ERP.
 *   **Caso Análogo:** *"Reducción del cierre contable de 8 días a 40 minutos en empresa transnacional logística."*
 *   **Costo Predictivo:** *"Rango de inversión inicial fijo. No hay facturación infinita por horas."*
-*   **Botón Final CTA:** `Diagnóstico de Viabilidad de 4 Semanas →`
+*   **Botón Final CTA:** `Consultoría y Diagnóstico de Viabilidad (2 a 4 Semanas) →`
 
 ---
 
@@ -96,5 +96,6 @@ Una franja minimalista y oscura antes del Footer.
 **[COPYS]**
 *   **Título:** Habla directo con los Arquitectos.
 *   **Descripción:** A diferencia de agencias comunes, no hablamos con ejecutivos de cuentas junior. Tu diagnóstico es evaluado y dictaminado directamente por Lead Architects responsables del ROI operativo.
-*   **(Fotos en B/N de Leo y Pablo con sus títulos técnicos).**
+*   **(Insignias, certificaciones y credenciales técnicas del Squad de Lead Architects).**
 *   **Botón Final:** `Agendar Sesión de Escaneo Arquitectónico`
+

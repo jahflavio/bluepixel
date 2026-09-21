@@ -148,3 +148,11 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
    El componente `SixCapabilitiesGrid.jsx` debe reflejar exactamente estas 6 capacidades con sus badges canónicos (`IMPATH™ Enabled`, `Cloud-Native SOC2`, `Agentic Automation`, `Mixpanel Telemetry`, `ISO 27001 & OWASP`, `FutureProof™ Framework`).
 5. **Inventario de Componentes en Reserva (Soberanía Técnica):**
    El componente `TechnicalSovereignty.jsx` (*«Tu infraestructura. Tus datos. Tu código fuente.»* - Cero Lock-in / Despliegue en VPC / Zero-Trust) ha sido retirado temporalmente del Home para aligerar la navegación, pero está preservado y catalogado en `02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md` listo para ser reutilizado en páginas de servicio enterprise (`/servicio/security`, `/automatizacion`).
+6. **Política Institucional (Cero Nombres Personales):**
+   En copies públicos, propuestas, código y documentación no se deben incluir nombres individuales (e.g. Leonardo Flores, Pablo Gómez, José de Buen). Se deben usar exclusivamente roles institucionales: *Lead Architects*, *Tech Leads*, *Squad de Ingeniería Senior*, *Equipo Comercial / Preventa Técnica*.
+7. **Diseño Visual Web Limpio (Sin Cápsulas):**
+   En el Hero y componentes web: tipografía limpia y directa sin cápsulas/badges pesados rodeando textos; prompt del Hero con elevación y H1 balanceado.
+8. **Canal Oficial B2B de Contacto:**
+   WhatsApp corporativo oficial en México (+52), descartando números internacionales obsoletos (+1 510).
+9. **Sitemap Canónico de 5 Niveles y 9 Flujos Gráficos:**
+   La estructura de URLs (Nivel 0 al 4), Landings de pauta herméticas (`/lp/*` noindex) y los 9 flujos de conversión mapeados gráficamente se rigen por `02_Estrategia_B2B/SITEMAP_MAESTRO_Y_ARQUITECTURA_WEB_BLUEPIXEL_2026.md` y `02_Estrategia_B2B/VISUAL_SITEMAP_Y_FLUJOS.html`.
