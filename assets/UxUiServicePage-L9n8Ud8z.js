@@ -1,0 +1,1 @@
+import{j as r}from"./index-BlkvNtle.js";import{S as t,s as e}from"./servicesData-CZEUK2pg.js";import"./MultiStepContact-Cqnni89x.js";import"./Footer-DTVyTfbA.js";import"./users-C-YEksy-.js";const p=()=>r.jsx(t,{data:e["ux-ui"]});export{p as default};

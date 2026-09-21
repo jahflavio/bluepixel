@@ -1,0 +1,1 @@
+import{j as t}from"./index-BlkvNtle.js";import{S as e,s as r}from"./servicesData-CZEUK2pg.js";import"./MultiStepContact-Cqnni89x.js";import"./Footer-DTVyTfbA.js";import"./users-C-YEksy-.js";const p=()=>t.jsx(e,{data:r.security});export{p as default};
