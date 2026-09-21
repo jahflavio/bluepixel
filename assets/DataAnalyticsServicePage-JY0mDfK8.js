@@ -1,0 +1,1 @@
+import{j as a}from"./index-CDIutCos.js";import{S as t,s as r}from"./servicesData-CSMvblcH.js";import"./MultiStepContact-D0sUn1tY.js";import"./Footer-Bey5cQDb.js";import"./users-W2lXaCRT.js";const p=()=>a.jsx(t,{data:r["data-analytics"]});export{p as default};

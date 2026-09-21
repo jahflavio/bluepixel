@@ -1,1 +1,0 @@
-import{j as s}from"./index-qFc552Nf.js";import{S as t,s as a}from"./servicesData-Cs9LJvQh.js";import"./MultiStepContact-w8EcxjXp.js";import"./Footer-BO1dm2Y3.js";const n=()=>s.jsx(t,{data:a["business-ai"]});export{n as default};
