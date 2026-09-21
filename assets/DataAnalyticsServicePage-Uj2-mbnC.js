@@ -1,0 +1,1 @@
+import{j as a}from"./index-Bhg1Xadx.js";import{S as t,s as e}from"./servicesData-C8E_gdDB.js";import"./MultiStepContact-k2Lx9fKQ.js";const o=()=>a.jsx(t,{data:e["data-analytics"]});export{o as default};
