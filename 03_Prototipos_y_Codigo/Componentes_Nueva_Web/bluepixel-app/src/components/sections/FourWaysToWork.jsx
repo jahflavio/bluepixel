@@ -273,7 +273,7 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                     {phase.num}
                   </span>
                   <h3 className="text-white font-black text-2xl tracking-wide uppercase leading-tight">
-                    {phase.titleLine1}<br/>{phase.titleLine2}
+                    {phase.titleLine1}<br/>{phase.titleLine2}<span className="text-blue-500">.</span>
                   </h3>
                 </div>
                 
