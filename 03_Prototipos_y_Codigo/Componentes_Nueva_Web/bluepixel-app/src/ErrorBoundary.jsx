@@ -12,6 +12,25 @@ export class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     console.error("ErrorBoundary caught an error", error, errorInfo);
+    
+    // Auto-recuperación si un usuario tenía la pestaña abierta durante un nuevo despliegue
+    const isChunkLoadFailed = error?.message && (
+      error.message.includes('Failed to fetch dynamically imported module') ||
+      error.message.includes('Importing a module script failed') ||
+      error.message.includes('error loading dynamically imported module') ||
+      error.message.includes('Loading chunk')
+    );
+
+    if (isChunkLoadFailed) {
+      const lastReload = sessionStorage.getItem('last_chunk_reload');
+      const now = Date.now();
+      if (!lastReload || now - parseInt(lastReload, 10) > 10000) {
+        sessionStorage.setItem('last_chunk_reload', now.toString());
+        window.location.reload();
+        return;
+      }
+    }
+
     this.setState({ error, errorInfo });
   }
 
@@ -34,10 +53,13 @@ export class ErrorBoundary extends React.Component {
               </pre>
             </div>
             <button
-              onClick={() => window.location.reload()}
-              className="mt-6 bg-red-600/20 hover:bg-red-600/40 text-red-300 border border-red-500/30 px-4 py-2 rounded-lg text-sm transition-colors"
+              onClick={() => {
+                try { sessionStorage.clear(); } catch(e) {}
+                window.location.reload();
+              }}
+              className="mt-6 bg-red-600/20 hover:bg-red-600/40 text-red-300 border border-red-500/30 px-5 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer"
             >
-              Recargar página
+              Recargar página y actualizar versión
             </button>
           </div>
         </div>
