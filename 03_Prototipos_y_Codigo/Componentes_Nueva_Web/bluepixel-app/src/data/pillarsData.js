@@ -167,7 +167,22 @@ export const pillarsData = {
       { q: '¿Qué pasa si después de la consultoría decidimos no desarrollar el software?', a: 'Ese es precisamente el mayor valor del Pilar 01: si el diagnóstico demuestra que el proyecto no es rentable o que la tecnología no está lista, habrás ahorrado cientos de miles de dólares y meses de desgaste. El entregable te pertenece y puedes usarlo cuando tu empresa lo decida.' },
       { q: '¿Estamos obligados a contratar el desarrollo (Pilar 02 o 03) con BluePixel?', a: 'En lo absoluto. Los 4 Pilares son 100% independientes y modulares. Todos los blueprints, especificaciones técnicas y modelos de arquitectura se entregan con estándares abiertos para que cualquier equipo interno o externo pueda ejecutarlos.' },
       { q: '¿Cuánto tiempo de nuestro equipo requiere este proceso?', a: 'Diseñamos el proceso para ser sumamente eficiente: realizamos 3 a 4 sesiones de trabajo estructuradas de 60 minutos con los líderes clave durante las primeras 2 semanas. Nosotros nos encargamos de todo el análisis técnico y modelado.' }
-    ]
+    ],
+    caseStudy: {
+      tag: 'CASO REAL B2B · FMCG & RETAIL',
+      client: 'Grupo Bimbo & Ecosistemas de Gran Consumo',
+      title: 'Diagnóstico de Fricción IMPATH™: Ahorro de $1.8M MXN en desarrollo innecesario',
+      problem: 'El cliente planeaba una reconstrucción completa de plataforma de 8 meses con un costo estimado de $3.2M MXN, sin tener certeza de qué pantallas o procesos estaban causando la caída de conversión.',
+      solution: 'En un sprint de 3 semanas aplicamos la metodología propietaria IMPATH™: mapeo profundo de journeys de usuario, análisis forense de telemetría de abandono y auditoría técnica de arquitectura cloud.',
+      result: 'Se demostró que el 70% de la fuga de conversión se concentraba en 2 pasos específicos del checkout. Se estructuró un backlog quirúrgico que evitó reconstruir todo el sistema, ahorró $1.8M MXN y generó ROI positivo en el primer trimestre.',
+      quote: 'BluePixel nos dio la claridad técnica y financiera que necesitábamos para presentar ante el Consejo Directivo con total certidumbre.',
+      author: 'Dirección de Transformación Digital & Canales B2B',
+      metrics: [
+        { value: '3 Semanas', label: 'Tiempo total de diagnóstico a dictamen final' },
+        { value: '-$1.8M MXN', label: 'Ahorro directo en desarrollo innecesario evitado' },
+        { value: '100%', label: 'Aprobación del business case ante el Comité Directivo' }
+      ]
+    }
   },
 
   'agentes-automatizacion': {
@@ -338,7 +353,22 @@ export const pillarsData = {
       { q: '¿Necesitamos reemplazar nuestro software actual para usar agentes?', a: 'No. El principio fundacional de este pilar es operar sobre lo que ya tienes funcionando. Creamos conectores determinísticos vía MCP que interactúan con tus ERPs, CRMs o bases de datos actuales a través de APIs seguras.' },
       { q: '¿Qué garantía tenemos de que el agente no va a alucinar o cometer errores?', a: 'Implementamos una arquitectura RAG estricta donde el agente solo tiene acceso a responder con fuentes verificadas. Para cualquier acción que modifique bases de datos críticas, se configuran flujos de Human-in-the-Loop que exigen confirmación de un supervisor.' },
       { q: '¿Los agentes reemplazan a las personas de nuestro equipo?', a: 'No. El objetivo es liberar a tu equipo del trabajo mecánico repetitivo para que operen como Subject Matter Experts (SMEs), supervisando procesos con mayor velocidad y enfocándose en análisis de alto valor.' }
-    ]
+    ],
+    caseStudy: {
+      tag: 'CASO REAL B2B · LOGÍSTICA QUIRÚRGICA',
+      client: 'FR Medical S.A. de C.V. (Distribución Quirúrgica de Urgencias)',
+      title: 'FR Medical Surgical OS: Triage de quirófano en 1.8s y ERP Sync sin migración',
+      problem: 'Urgencias hospitalarias nocturnas (2:00 AM) con llamadas no contestadas, cotizaciones manuales en Excel que tardaban 45 minutos y riesgo de despachos sin confirmación en hospitales de alta exigencia (Ángeles, ABC, Médica Sur).',
+      solution: 'BluePixel diseñó e implementó el Sistema Operativo Quirúrgico: Agente de Voz y WhatsApp 24/7, motor de Triage NLP (Código Rojo < 2h), cotizador inteligente de kits de fijación con registro COFEPRIS y ERP Sync Bridge vía protocolo MCP en 0.5s sin reemplazar su software legado.',
+      result: 'Cero llamadas perdidas en quirófano nocturno, cotizaciones membretadas emitidas en 1.8 segundos y despacho automático con GPS sin requerir personal administrativo a medianoche.',
+      quote: 'No tuvimos que tirar nuestro software ni gastar millones cambiando de ERP: los agentes de BluePixel operaron sobre lo que ya teníamos funcionando.',
+      author: 'Dirección General, FR Medical',
+      metrics: [
+        { value: '1.8 seg', label: 'Generación de cotización formal COFEPRIS' },
+        { value: '0.5 seg', label: 'Sincronización determinística con el ERP actual' },
+        { value: '100%', label: 'Rescate de órdenes de guardia nocturna 24/7' }
+      ]
+    }
   },
 
   'plataformas-digitales': {
@@ -509,7 +539,22 @@ export const pillarsData = {
       { q: '¿Es realmente viable lanzar una plataforma corporativa en solo 90 días?', a: 'Sí, porque aplicamos nuestra metodología de desarrollo acelerado por IA (AI-Forward Deploy Engineering) y priorizamos con rigor de cirujano el MVP que genera tracción comercial, sin quemar tiempo en funcionalidades secundarias.' },
       { q: '¿Qué tecnologías utilizan para construir la plataforma?', a: 'Construimos con el stack más moderno y demandado del mercado empresarial: React, Next.js, React Native, Node.js, Python, TypeScript, PostgreSQL y Redis, sobre contenedores Docker orquestados en AWS, GCP o Azure.' },
       { q: '¿Qué sucede una vez que se lanza la plataforma en el día 90?', a: 'Tienes total libertad: entregamos la propiedad y documentación completa a tu equipo interno, o puedes hacer la transición sin fricciones hacia el Pilar 04 (Evolución Digital) para continuar optimizando con nuestro squad dedicado.' }
-    ]
+    ],
+    caseStudy: {
+      tag: 'CASO REAL B2B · FINTECH & HIGH CONCURRENCY',
+      client: 'Clip / RadioShack (Plataformas Transaccionales de Alto Tráfico)',
+      title: 'De la concepción a producción en 90 días con arquitectura Cloud-Native y UX validado',
+      problem: 'La compañía requería lanzar una nueva experiencia digital transaccional con estrictos requerimientos de seguridad bancaria y capacidad para soportar picos masivos de transacciones simultáneas.',
+      solution: 'Squad BluePixel full-stack: estrategia de producto y validación con usuarios reales en el Mes 1, ingeniería serverless/contenedores en el Mes 2, e integración de pasarelas con blindaje OWASP y pruebas de carga en el Mes 3.',
+      result: 'Go-Live exacto en el día 90. Disponibilidad del 99.9% durante picos de demanda y adopción de usuarios superior al 92% sin necesidad de manuales de inducción.',
+      quote: 'BluePixel logró en 90 días lo que nuestra fábrica de software anterior no pudo entregar en un año.',
+      author: 'VP of Engineering & Product Lead',
+      metrics: [
+        { value: '90 Días', label: 'De la primera sesión de UX al Go-Live en producción' },
+        { value: '99.9%', label: 'Disponibilidad de arquitectura cloud ante picos de demanda' },
+        { value: '>92%', label: 'Tasa de adopción de usuarios en el primer mes' }
+      ]
+    }
   },
 
   'evolucion-digital': {
@@ -680,6 +725,21 @@ export const pillarsData = {
       { q: '¿Cuál es la duración mínima del compromiso en Evolución Digital?', a: 'Trabajamos bajo esquemas de roadmap vivo de 6 o 12 meses con revisiones trimestrales de desempeño. Esto permite construir una relación estratégica profunda y generar retornos acumulativos de CRO y eficiencia operativa.' },
       { q: '¿Podemos ajustar los perfiles del Squad según la necesidad de cada trimestre?', a: 'Sí. Si un trimestre requiere mayor intensidad en desarrollo de agentes de IA y otro en rediseño de flujos de conversión de UX, re-calibramos la asignación de especialistas para maximizar el valor de tu presupuesto.' },
       { q: '¿Cómo se compara el costo de este Squad con contratar personal interno?', a: 'Un equipo interno de 4 especialistas seniors (Tech Lead, AI Engineer, Full Stack y UX Lead) representa más del doble en salarios brutos, prestaciones, reclutamiento y rotación. Con nuestro Squad obtienes talento de élite inmediato, metodologías probadas y cero pasivo laboral.' }
-    ]
+    ],
+    caseStudy: {
+      tag: 'CASO REAL B2B · ESCALA CONTINUA & CRO',
+      client: 'Avianca / LifeMiles (Ecosistema Transaccional de Gran Escala)',
+      title: 'Squad Continuo: +34% de conversión transaccional y -60% de deuda técnica',
+      problem: 'Plataforma con millones de usuarios activos sufriendo por acumulación de deuda técnica tras años de parches, con lentitud en despliegues y caída paulatina en las tasas de conversión transaccional.',
+      solution: 'Asignación de un Squad Dedicado BluePixel (Tech Lead, AI Engineer, Full Stack Senior y Especialista en CRO/UX). Monitoreo continuo de UX Health Score con telemetría Mixpanel y refactorizaciones proactivas en cada sprint quincenal.',
+      result: 'Incremento del 34% en conversión en flujos clave, reducción del 60% de deuda técnica en 6 meses y despliegues continuos sin tiempo de inactividad.',
+      quote: 'Tener un squad dedicado de BluePixel es como tener un equipo de Silicon Valley integrado a nuestro negocio sin el costo de inflar la nómina.',
+      author: 'Director de Producto & Canales Digitales',
+      metrics: [
+        { value: '+34%', label: 'Aumento medible en conversión transaccional (CRO)' },
+        { value: '-60%', label: 'Reducción sistemática de deuda técnica en 6 meses' },
+        { value: 'SLA 99.9%', label: 'Monitoreo proactivo con respuesta en minutos' }
+      ]
+    }
   }
 };

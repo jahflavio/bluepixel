@@ -171,6 +171,35 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
         </div>
       </section>
 
+      {/* 1.5. TRUST CLIENTS STRIP */}
+      <div className="border-b border-white/[0.08] bg-[#030612] py-8 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2 text-slate-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="text-[11px] font-mono uppercase tracking-widest font-bold">
+              Confianza Enterprise Comprobada:
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-xs font-mono font-bold text-slate-400 tracking-wider">
+            <span className="hover:text-white transition-colors">GRUPO BIMBO</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">COCA-COLA FEMSA</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">AVIANCA</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">CLIP</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">FR MEDICAL</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">RADIOSHACK</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">BBVA</span>
+            <span className="text-slate-700">•</span>
+            <span className="hover:text-white transition-colors">CEMEX</span>
+          </div>
+        </div>
+      </div>
+
       {/* 2. STATS STRIP */}
       {data.stats && (
         <div className="border-b border-white/[0.08] bg-[#040813]">
@@ -190,6 +219,107 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
             ))}
           </div>
         </div>
+      )}
+
+      {/* 2.5. CASO DE ESTUDIO REAL DEL PILAR */}
+      {data.caseStudy && (
+        <section className="py-20 border-b border-white/[0.08] bg-gradient-to-b from-[#040815] to-[#02040A] relative overflow-hidden">
+          {/* Ambient Glow */}
+          <div className={`absolute top-0 right-1/4 w-[600px] h-[350px] ${theme.glow} blur-[140px] pointer-events-none rounded-full`}></div>
+          
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="bg-[#050A19] border border-white/[0.1] rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+              <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${theme.gradientText}`}></div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8 pr-0 lg:pr-6">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className={`text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${theme.accentBorder} ${theme.accentBg} ${theme.accentText}`}>
+                      ✦ {data.caseStudy.tag}
+                    </span>
+                    <span className="text-xs font-mono text-slate-400 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.08]">
+                      Cliente: <strong className="text-white">{data.caseStudy.client}</strong>
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug mb-6">
+                    {data.caseStudy.title}
+                  </h3>
+
+                  <div className="space-y-4 text-sm text-slate-300 mb-8">
+                    <div className="bg-red-500/5 border border-red-500/15 rounded-xl p-4">
+                      <span className="text-red-400 font-mono text-xs font-bold uppercase tracking-wider block mb-1">
+                        El Desafío Crítico:
+                      </span>
+                      <p className="text-slate-300 text-xs md:text-sm leading-relaxed">
+                        {data.caseStudy.problem}
+                      </p>
+                    </div>
+
+                    <div className="bg-blue-500/5 border border-blue-500/15 rounded-xl p-4">
+                      <span className="text-blue-400 font-mono text-xs font-bold uppercase tracking-wider block mb-1">
+                        La Solución de Ingeniería BluePixel:
+                      </span>
+                      <p className="text-slate-300 text-xs md:text-sm leading-relaxed">
+                        {data.caseStudy.solution}
+                      </p>
+                    </div>
+
+                    <div className="bg-emerald-500/5 border border-emerald-500/15 rounded-xl p-4">
+                      <span className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider block mb-1">
+                        El Impacto Cuantificado en Negocio:
+                      </span>
+                      <p className="text-slate-300 text-xs md:text-sm leading-relaxed">
+                        {data.caseStudy.result}
+                      </p>
+                    </div>
+                  </div>
+
+                  {data.caseStudy.quote && (
+                    <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] italic text-xs md:text-sm text-slate-200">
+                      "{data.caseStudy.quote}"
+                      {data.caseStudy.author && (
+                        <span className="block not-italic text-[11px] font-mono text-slate-400 mt-2 font-semibold">
+                          — {data.caseStudy.author}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="lg:col-span-4 bg-[#02040A] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col justify-between space-y-6 shadow-xl">
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold border-b border-white/[0.06] pb-3 mb-4">
+                      Métricas Reales Obtenidas
+                    </div>
+                    <div className="space-y-5">
+                      {data.caseStudy.metrics.map((m, mIdx) => (
+                        <div key={mIdx} className="border-b border-white/[0.04] pb-4 last:border-b-0 last:pb-0">
+                          <div className={`text-3xl md:text-4xl font-black tracking-tight ${theme.accentText}`}>
+                            {m.value}
+                          </div>
+                          <div className="text-xs text-slate-300 mt-1 leading-snug">
+                            {m.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/[0.06]">
+                    <button
+                      onClick={scrollToContact}
+                      className={`w-full text-center py-3.5 px-4 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer ${theme.btnPrimary}`}
+                    >
+                      <span>Replicar este modelo en mi empresa</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* 3. ACTIVACIÓN DE LAS 6 CAPACIDADES TÉCNICAS */}
@@ -478,6 +608,101 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
           </div>
         </section>
       )}
+
+      {/* 9.5. GARANTÍA DE LIDERAZGO & FILOSOFÍA FUTUREPROOF */}
+      <section className="py-20 border-b border-white/[0.08] bg-[#02040A] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className={`inline-block text-xs font-mono uppercase tracking-widest font-bold mb-3 ${theme.accentText}`}>
+              ✦ RESPALDO DIRECTIVO & GARANTÍA DE SOBERANÍA
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-4">
+              Dirección Técnica y Filosofía FutureProof™<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+              En BluePixel los fundadores y tech leads asumen la responsabilidad técnica de cada entrega. Cero intermediarios, cero desarrolladores junior aprendiendo con tu capital.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Leonardo Flores */}
+            <div className="bg-[#050A17] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:border-blue-500/30 transition-colors">
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold font-mono">
+                    LF
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-white">Leonardo Flores</h4>
+                    <span className="text-xs font-mono text-blue-400">CEO & Head of Product Strategy</span>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-xs md:text-sm leading-relaxed italic mb-4">
+                  "El código más sofisticado fracasa si los usuarios lo rechazan. Nuestro diseño conductual y estrategia de producto no es cosmética: es la armadura que asegura adopción y convierte tecnología pesada en ventaja comercial desde el día 1."
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500">
+                Liderazgo UX & Psicología Conductual · IMPATH™ Creator
+              </div>
+            </div>
+
+            {/* Fabián Flores */}
+            <div className="bg-[#050A17] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold font-mono">
+                    FF
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-white">Fabián Flores</h4>
+                    <span className="text-xs font-mono text-purple-400">CTO & VP of Systems Engineering</span>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-xs md:text-sm leading-relaxed italic mb-4">
+                  "No vendemos horas de programador ni maquetas de Figma. Diseñamos sistemas desacoplados, agentes con protocolo abierto MCP y despliegues en la VPC del cliente con cero vendor lock-in y SLA 99.9%."
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500">
+                Arquitectura Cloud-Native · Deep Tech & Protocolos MCP
+              </div>
+            </div>
+          </div>
+
+          {/* 5 Principios FutureProof Bar */}
+          <div className="bg-[#060B18] border border-white/[0.08] rounded-2xl p-6">
+            <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-white font-bold">
+                Los 5 Principios Innegociables de la Garantía FutureProof™:
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+                Soberanía Total de Datos
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <strong className="text-white block font-mono text-[11px] mb-1">1. Anti-Maquila</strong>
+                <span className="text-slate-400 text-[11px]">Socios estratégicos de producto, no horas ciegas.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <strong className="text-white block font-mono text-[11px] mb-1">2. Certeza Previa</strong>
+                <span className="text-slate-400 text-[11px]">Validar técnica y financieramente antes de codificar.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <strong className="text-white block font-mono text-[11px] mb-1">3. UX como Armadura</strong>
+                <span className="text-slate-400 text-[11px]">Psicología conductual para adopción superior al 90% desde el día 1.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <strong className="text-white block font-mono text-[11px] mb-1">4. Cero Lock-in</strong>
+                <span className="text-slate-400 text-[11px]">Protocolos abiertos MCP; código y datos en tu VPC.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <strong className="text-white block font-mono text-[11px] mb-1">5. Blindaje Seguro</strong>
+                <span className="text-slate-400 text-[11px]">ISO 27001, OWASP Top 10 y SLA 99.9% de resiliencia.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 10. FAQs */}
       {data.faqs && (
