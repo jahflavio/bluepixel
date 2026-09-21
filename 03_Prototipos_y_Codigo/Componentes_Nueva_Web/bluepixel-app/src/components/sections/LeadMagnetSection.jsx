@@ -30,7 +30,7 @@ const LeadMagnetSection = () => {
           <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 rounded-full">
+              <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
                 REPORTE EJECUTIVO GRATUITO
               </span>
             </div>

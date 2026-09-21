@@ -53,7 +53,7 @@ const SocialProofSection = () => {
 
           {/* Micro-callout: The UX Moat explained to CTOs */}
           <div className="max-w-3xl mx-auto mt-8 px-4 text-center">
-            <p className="text-xs font-mono text-slate-400 bg-navy-850/80 py-2 px-4 rounded-full border border-white/[0.06] inline-flex items-center gap-2">
+            <p className="text-xs font-mono text-slate-400 inline-flex items-center gap-2">
               <span className="text-emerald-400 font-bold">✦ VENTAJA INJUSTA: </span>
               <span>Las consultoras de IA entregan interfaces toscas que los empleados rechazan. Nuestra maestría en diseño conductual garantiza +95% de adopción desde el día 1.</span>
             </p>

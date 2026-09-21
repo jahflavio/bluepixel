@@ -203,7 +203,7 @@ const ServiceLandingTemplate = ({ data }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className={`inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border ${theme.accentBorder} ${theme.accentBg} ${theme.accentText} font-bold`}>
+            <span className={`inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest ${theme.accentText} font-bold`}>
               <span className={`w-1.5 h-1.5 rounded-full ${theme.dot} animate-pulse`}></span>
               {data.canonicalBadge}
             </span>
@@ -225,8 +225,8 @@ const ServiceLandingTemplate = ({ data }) => {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 gap-10 items-center text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             
-            {/* Cluster Pill */}
-            <div className="inline-flex items-center gap-2 text-[10px] md:text-xs font-mono uppercase tracking-widest font-bold border border-white/10 bg-white/[0.03] px-4 py-1.5 rounded-full mb-6">
+            {/* Cluster Kicker - Clean typography without capsule */}
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold mb-6">
               <span className="text-slate-400">{data.clusterName}</span>
               <span className="text-slate-600">•</span>
               <span className={theme.accentText}>{data.canonicalBadge}</span>
@@ -312,7 +312,7 @@ const ServiceLandingTemplate = ({ data }) => {
                       <span className="text-xs font-mono font-black text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-md">
                         {way.num}
                       </span>
-                      <span className="text-[11px] font-mono text-slate-400 bg-white/[0.03] border border-white/[0.08] px-2.5 py-1 rounded-full">
+                      <span className="text-[11px] font-mono text-slate-400 font-semibold">
                         ⏳ {way.duration}
                       </span>
                     </div>
@@ -329,8 +329,8 @@ const ServiceLandingTemplate = ({ data }) => {
                       <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2 group-hover/title:text-blue-400 transition-colors">
                         <span>{way.name}</span>
                         {way.isCore && (
-                          <span className={`text-[9px] font-mono uppercase font-black px-2 py-0.5 rounded-full border ${theme.pillCore}`}>
-                            Núcleo
+                          <span className={`text-[10px] font-mono uppercase font-black ${theme.accentText}`}>
+                            [Núcleo]
                           </span>
                         )}
                       </h3>
@@ -416,7 +416,7 @@ const ServiceLandingTemplate = ({ data }) => {
                         {renderPainIcon(item.iconType)}
                       </div>
                       {item.tag && (
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-red-400 font-bold px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-red-400 font-bold">
                           {item.tag}
                         </span>
                       )}
@@ -673,13 +673,13 @@ const ServiceLandingTemplate = ({ data }) => {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">{step.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {step.deliverables.map((del, dIdx) => (
-                      <span key={dIdx} className={`text-[10px] font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border ${theme.accentBg} ${theme.accentBorder} ${theme.accentText}`}>
-                        Entregable: {del}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap items-center gap-4">
+                      {step.deliverables.map((del, dIdx) => (
+                        <span key={dIdx} className={`text-xs font-mono font-semibold uppercase tracking-wider ${theme.accentText} flex items-center gap-1.5`}>
+                          <span>✦</span> Entregable: {del}
+                        </span>
+                      ))}
+                    </div>
                 </div>
               ))}
             </div>

@@ -9,7 +9,7 @@ const HomeDirectorySection = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10">
+          <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold block mb-3">
             ✦ EXPLORA BLUEPIXEL
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-4">

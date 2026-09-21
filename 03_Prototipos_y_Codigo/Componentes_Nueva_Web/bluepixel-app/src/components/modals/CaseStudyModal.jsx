@@ -28,17 +28,18 @@ const CaseStudyModal = ({ caseStudy, onClose, onOpenContact }) => {
         {/* Modal Header */}
         <div className="p-6 md:p-8 border-b border-white/[0.08] flex items-start justify-between gap-4 bg-[#050B1F]/60">
           <div>
-            <div className="flex flex-wrap items-center gap-2.5 mb-3">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold px-3 py-1 rounded-full bg-white/[0.04] border border-white/10">
+            <div className="flex flex-wrap items-center gap-2.5 mb-3 text-xs font-mono">
+              <span className="uppercase tracking-widest text-slate-400 font-bold">
                 {caseStudy.industry}
               </span>
+              <span className="text-slate-600">•</span>
               <a
                 href={`#/${caseStudy.pillarRoute}`}
                 onClick={onClose}
-                className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500/20 transition-colors flex items-center gap-1"
+                className="uppercase tracking-wider text-cyan-400 hover:text-cyan-300 font-bold transition-colors flex items-center gap-1"
               >
                 <span>{caseStudy.pillarName}</span>
-                <ExternalLink className="w-2.5 h-2.5" />
+                <ExternalLink className="w-3 h-3" />
               </a>
             </div>
 

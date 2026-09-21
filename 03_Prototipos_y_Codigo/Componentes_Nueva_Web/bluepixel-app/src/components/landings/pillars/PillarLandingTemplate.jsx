@@ -212,7 +212,7 @@ const McpAgentSimulatorWidget = () => {
             Simulador Agéntico · Protocolo MCP en Vivo
           </span>
         </div>
-        <span className="text-xs font-mono font-bold text-white bg-purple-500/10 border border-purple-500/30 px-2.5 py-0.5 rounded-full">
+        <span className="text-xs font-mono font-bold text-purple-300">
           Cero Alucinaciones
         </span>
       </div>
@@ -312,7 +312,7 @@ const BuildVisualizerWidget = () => {
             Simulador de Construcción · 90 Días
           </span>
         </div>
-        <span className="text-xs font-mono font-bold text-white bg-cyan-500/10 border border-cyan-500/30 px-3 py-0.5 rounded-full">
+        <span className="text-xs font-mono font-bold text-cyan-300">
           Día {day}/90
         </span>
       </div>
@@ -480,13 +480,14 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             
-            {/* Header badges */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-              <span className={`inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border ${theme.accentBorder} ${theme.accentBg} ${theme.accentText} font-bold`}>
+            {/* Header badges - Clean typography, no capsules */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <span className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest ${theme.accentText} font-bold`}>
                 <span className={`w-2 h-2 rounded-full ${theme.dot} animate-pulse`}></span>
                 {data.badgeText}
               </span>
-              <span className="text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/[0.08] px-3 py-1.5 rounded-full">
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="text-xs font-mono text-slate-400 font-semibold">
                 🎯 {data.targetAudience}
               </span>
             </div>
@@ -601,11 +602,12 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 pr-0 lg:pr-6">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className={`text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${theme.accentBorder} ${theme.accentBg} ${theme.accentText}`}>
+                  <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono">
+                    <span className={`font-bold uppercase tracking-widest ${theme.accentText}`}>
                       ✦ {data.caseStudy.tag}
                     </span>
-                    <span className="text-xs font-mono text-slate-400 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.08]">
+                    <span className="text-slate-600">•</span>
+                    <span className="text-slate-400">
                       Cliente: <strong className="text-white">{data.caseStudy.client}</strong>
                     </span>
                   </div>
@@ -714,7 +716,7 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-white/10 bg-white/[0.03] text-slate-400">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold">
                         {cap.badge}
                       </span>
                       <a 
@@ -954,7 +956,7 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
               {data.cadence.items.map((item, idx) => (
                 <div key={idx} className="bg-[#02040A] border border-white/[0.08] rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-indigo-500/30 transition-colors">
                   <div className="md:w-1/4">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 inline-block">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 inline-block">
                       {item.freq}
                     </span>
                   </div>
@@ -990,7 +992,7 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                   className={`rounded-3xl p-8 flex flex-col justify-between relative transition-all duration-300 ${plan.featured ? 'bg-[#060C1F] border-2 border-indigo-500/60 shadow-2xl shadow-indigo-500/10 -translate-y-2' : 'bg-[#040814] border border-white/[0.08] hover:border-white/20'}`}
                 >
                   {plan.featured && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-indigo-600 text-white font-mono text-[10px] uppercase font-bold tracking-widest shadow-lg">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-md bg-indigo-600 text-white font-mono text-[10px] uppercase font-bold tracking-widest shadow-lg">
                       {plan.badge}
                     </div>
                   )}
@@ -1141,10 +1143,10 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">{step.desc}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap items-center gap-4">
                     {step.deliverables.map((del, dIdx) => (
-                      <span key={dIdx} className={`text-[10px] font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border ${theme.accentBg} ${theme.accentBorder} ${theme.accentText}`}>
-                        Entregable: {del}
+                      <span key={dIdx} className={`text-xs font-mono font-semibold uppercase tracking-wider ${theme.accentText} flex items-center gap-1.5`}>
+                        <span>✦</span> Entregable: {del}
                       </span>
                     ))}
                   </div>
@@ -1220,7 +1222,7 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
               <span className="text-[11px] font-mono uppercase tracking-widest text-white font-bold">
                 Los 5 Principios Innegociables de la Garantía FutureProof™:
               </span>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+              <span className="text-xs font-mono text-emerald-400 font-bold">
                 Soberanía Total de Datos
               </span>
             </div>

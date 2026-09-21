@@ -42,7 +42,7 @@ const CasosEstudioLandingPage = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-blue-600/20 blur-[120px] pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto relative z-10 mt-6">
-          <span className="inline-block text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-bold border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold mb-4">
             ✦ WORK & PORTAFOLIO CORPORATIVO
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-6 font-display">
@@ -128,14 +128,14 @@ const CasosEstudioLandingPage = () => {
 
                 {/* Pillar Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-wide border border-white/20 bg-black/70 text-slate-300 backdrop-blur-md">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300 drop-shadow-md">
                     {item.pillarName.split('·')[0].trim()}
                   </span>
                 </div>
 
                 {/* Metric Badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <span className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wide border backdrop-blur-md shadow-lg ${item.badgeClass}`}>
+                  <span className="text-xs font-mono font-black tracking-wide text-emerald-400 drop-shadow-md flex items-center gap-1.5">
                     {item.badge}
                   </span>
                 </div>

@@ -92,14 +92,14 @@ const CaseStudiesSection = ({ onOpenCase }) => {
 
                   {/* Top Left Pillar Badge */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-wide border border-white/20 bg-black/60 text-slate-300 backdrop-blur-md shadow-lg">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300 drop-shadow-md">
                       {item.pillarName.split('·')[0].trim()}
                     </span>
                   </div>
 
-                  {/* Top Right Floating Metric Pill */}
+                  {/* Top Right Floating Metric */}
                   <div className="absolute top-4 right-4 z-10">
-                    <span className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wide border backdrop-blur-md shadow-lg flex items-center gap-1.5 ${item.badgeClass}`}>
+                    <span className="text-xs font-mono font-black tracking-wide text-emerald-400 drop-shadow-md flex items-center gap-1.5">
                       {item.badge}
                     </span>
                   </div>
@@ -123,14 +123,12 @@ const CaseStudiesSection = ({ onOpenCase }) => {
                       {item.headline}
                     </p>
 
-                    {/* Tags Pills */}
-                    <div className="flex flex-wrap gap-1.5 mb-6">
+                    {/* Tags - Clean text, no capsules */}
+                    <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-6 text-[11px] font-mono text-slate-400">
                       {item.tags.slice(0, 3).map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[11px] font-mono text-slate-400 group-hover:border-white/20 transition-colors"
-                        >
-                          {tag}
+                        <span key={tIdx} className="flex items-center gap-2">
+                          {tIdx > 0 && <span className="text-slate-600">•</span>}
+                          <span>{tag}</span>
                         </span>
                       ))}
                     </div>

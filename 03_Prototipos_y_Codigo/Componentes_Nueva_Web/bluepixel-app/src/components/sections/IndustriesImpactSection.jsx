@@ -196,14 +196,12 @@ const IndustriesImpactSection = ({ onSelectIndustryCase }) => {
               </div>
             </div>
 
-            {/* Bottom Capability Badges */}
-            <div className="flex flex-wrap gap-2 pt-2 border-t border-white/[0.06]">
+            {/* Bottom Capability Badges - Clean text, no capsules */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-2 border-t border-white/[0.06] text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400">
               {active.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-slate-300 bg-white/[0.03] border border-white/10 rounded-full px-3 py-1 font-medium"
-                >
-                  {tag}
+                <span key={idx} className="flex items-center gap-2">
+                  {idx > 0 && <span className="text-slate-600">•</span>}
+                  <span>{tag}</span>
                 </span>
               ))}
             </div>

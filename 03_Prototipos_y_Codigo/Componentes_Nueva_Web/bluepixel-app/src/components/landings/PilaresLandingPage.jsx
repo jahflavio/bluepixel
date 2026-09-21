@@ -14,7 +14,7 @@ const PilaresLandingPage = ({ onNavigateCluster }) => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-blue-600/20 blur-[120px] pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10 mt-10">
-          <span className="inline-block text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 rounded-full mb-8">
+          <span className="inline-block text-xs font-mono uppercase tracking-widest text-blue-400 font-bold mb-4">
             ✦ FILOSOFÍA Y ARQUITECTURA
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-8 font-display">

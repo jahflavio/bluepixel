@@ -38,7 +38,7 @@ const PostContactSLA = ({ onOpenContact }) => {
               {steps.map((s, idx) => (
                 <div key={idx} className="bg-navy-900 border border-white/[0.08] rounded-2xl p-6 relative">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    <span className="text-xs font-mono font-bold text-blue-400">
                       {s.time}
                     </span>
                     <span className="text-slate-600 font-mono text-sm">0{idx + 1}</span>

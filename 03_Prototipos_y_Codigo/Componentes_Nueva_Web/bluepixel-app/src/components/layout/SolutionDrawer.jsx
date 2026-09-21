@@ -13,7 +13,7 @@ const SolutionDrawer = ({ solution, onClose, onOpenContact }) => {
             </button>
 
             <div className="mb-6">
-              <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/25 uppercase tracking-widest font-semibold">
+              <span className="text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">
                 {solution.categoria}
               </span>
               <h3 className="md: mt-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2]">

@@ -87,7 +87,7 @@ const ThreeClustersOverview = ({ onNavigateCluster, onOpenContact }) => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+          <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold block mb-3">
             ✦ CAPACIDADES TÉCNICAS
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-4 mb-4 leading-[1.1]">

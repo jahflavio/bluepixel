@@ -213,11 +213,9 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
-                {t.badge}
-              </span>
+              <span>{t.badge}</span>
             </div>
 
             {/* Language Switcher */}
@@ -290,14 +288,12 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                   </a>
                 </div>
                 
-                {/* Badges (Cápsulas) - Single Row h-[32px] */}
-                <div className="flex items-center gap-1.5 mb-6 h-[32px] overflow-hidden">
+                {/* Badges - Clean typography without capsules */}
+                <div className="flex items-center gap-2 mb-6 h-[32px] overflow-hidden text-[10px] font-mono font-bold tracking-widest uppercase text-blue-400">
                   {phase.badges.map((badge, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-[9px] font-bold tracking-widest uppercase shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.12)]"
-                    >
-                      {badge}
+                    <span key={idx} className="flex items-center gap-2">
+                      {idx > 0 && <span className="text-slate-600">•</span>}
+                      <span>{badge}</span>
                     </span>
                   ))}
                 </div>

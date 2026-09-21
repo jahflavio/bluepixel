@@ -132,10 +132,8 @@ const TrustBadgesSection = () => {
                       )}
                     </div>
                     <span 
-                      className={`font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] rounded-full px-2.5 py-0.5 border transition-colors ${
-                        isActive
-                          ? 'border-blue-400/50 text-blue-300 bg-blue-500/15'
-                          : 'border-white/20 text-slate-300 bg-white/[0.03]'
+                      className={`font-mono text-[10px] uppercase tracking-[0.2em] font-bold transition-colors ${
+                        isActive ? 'text-blue-400' : 'text-slate-400'
                       }`}
                     >
                       {item.pill}

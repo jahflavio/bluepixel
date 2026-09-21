@@ -74,9 +74,9 @@ const HeroPromptEngine = ({ onSelectSolution }) => {
         </svg>
         
         {/* Floating Node Labels */}
-        <div className="absolute left-[5%] top-[23%] text-[9px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.3)]">Internal API</div>
-        <div className="absolute right-[5%] top-[23%] text-[9px] font-mono text-blue-400 bg-blue-950/80 border border-blue-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.3)]">External ERP</div>
-        <div className="absolute left-[45%] top-[5%] text-[9px] font-mono text-purple-400 bg-purple-950/80 border border-purple-500/50 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.3)]">LLM Router</div>
+        <div className="absolute left-[5%] top-[23%] text-[9px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-500/50 px-2.5 py-1 rounded-md shadow-[0_0_15px_rgba(16,185,129,0.3)]">Internal API</div>
+        <div className="absolute right-[5%] top-[23%] text-[9px] font-mono text-blue-400 bg-blue-950/80 border border-blue-500/50 px-2.5 py-1 rounded-md shadow-[0_0_15px_rgba(59,130,246,0.3)]">External ERP</div>
+        <div className="absolute left-[45%] top-[5%] text-[9px] font-mono text-purple-400 bg-purple-950/80 border border-purple-500/50 px-2.5 py-1 rounded-md shadow-[0_0_15px_rgba(168,85,247,0.3)]">LLM Router</div>
       </div>
 
       <div className="w-full max-w-xl mx-auto relative group perspective-1000 z-10">
@@ -85,7 +85,7 @@ const HeroPromptEngine = ({ onSelectSolution }) => {
       {/* Interactive Hint - Visible before interaction */}
       {!isManualMode && (
         <div className="absolute -top-10 right-4 animate-bounce z-20">
-          <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center gap-2 border border-blue-400/30">
+          <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center gap-2 border border-blue-400/30">
             <span>Escribe tu problema y halla una solución</span>
             <span className="text-white/70">↓</span>
           </div>
@@ -128,9 +128,9 @@ const HeroPromptEngine = ({ onSelectSolution }) => {
             </div>
             {/* Suggestion Chips */}
             <div className={`mt-4 flex flex-wrap gap-2 transition-opacity duration-500 ${isManualMode ? 'opacity-100' : 'opacity-0 pointer-events-none hidden'}`}>
-               <button type="button" onClick={() => { setInputVal(PRESETS[0].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Cotizaciones lentas</button>
-               <button type="button" onClick={() => { setInputVal(PRESETS[1].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Conciliación SAP</button>
-               <button type="button" onClick={() => { setInputVal(PRESETS[2].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-full px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Fuga en Checkout</button>
+               <button type="button" onClick={() => { setInputVal(PRESETS[0].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-lg px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Cotizaciones lentas</button>
+               <button type="button" onClick={() => { setInputVal(PRESETS[1].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-lg px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Conciliación SAP</button>
+               <button type="button" onClick={() => { setInputVal(PRESETS[2].prompt); setIsManualMode(true); setPlaceholderText(''); }} className="text-[10px] font-sans bg-white/5 hover:bg-blue-500/20 border border-white/10 rounded-lg px-3 py-1.5 text-slate-400 hover:text-blue-300 transition-colors">Fuga en Checkout</button>
             </div>
             
             <div className="mt-4 pt-4 border-t border-white/[0.05] flex items-center justify-between">

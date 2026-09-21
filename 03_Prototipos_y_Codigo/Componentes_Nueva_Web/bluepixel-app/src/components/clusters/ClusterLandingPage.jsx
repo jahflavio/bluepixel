@@ -122,10 +122,10 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-blue-600/15 via-indigo-600/5 to-transparent blur-3xl pointer-events-none" />
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-blue-400 font-bold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-blue-400 font-bold mb-6">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
             {cluster.tagline}
-          </span>
+          </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.15] mb-6 max-w-5xl mx-auto">
             {cluster.headline}
@@ -152,12 +152,12 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
             </a>
           </div>
 
-          {/* Social Proof Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-white/[0.08]">
-            <span className="text-xs font-mono uppercase text-slate-500 mr-2">Estándares & Auditoría:</span>
+          {/* Social Proof - Clean typography, no capsules */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-6 border-t border-white/[0.08]">
+            <span className="text-xs font-mono uppercase text-slate-500 mr-1">Estándares & Auditoría:</span>
             {cluster.socialProof.map((item, i) => (
-              <span key={i} className="text-xs font-mono px-3 py-1 rounded-full bg-[#060B18] border border-white/[0.08] text-slate-300">
-                ✦ {item}
+              <span key={i} className="text-xs font-mono text-slate-300 flex items-center gap-1.5">
+                <span className="text-blue-400">✦</span> {item}
               </span>
             ))}
           </div>
@@ -534,7 +534,7 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
 
             {/* Card 01+02: Full Transformation */}
             <div className="bg-gradient-to-b from-[#080E24] to-[#040816] border-2 border-blue-500/60 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xl shadow-blue-500/10 relative">
-              <div className="absolute -top-3 right-6 bg-blue-600 text-white text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded-full font-bold shadow-md">
+              <div className="absolute -top-3 right-6 bg-blue-600 text-white text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded-md font-bold shadow-md">
                 RECOMENDADO
               </div>
 

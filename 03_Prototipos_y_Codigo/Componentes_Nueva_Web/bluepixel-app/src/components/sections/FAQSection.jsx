@@ -72,7 +72,7 @@ const FAQSection = () => {
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono font-bold tracking-widest uppercase mb-4">
+          <span className="inline-block text-xs font-mono font-bold tracking-widest uppercase text-blue-400 mb-4">
             Transparencia Radical & Los 4 Pilares
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white mb-5 leading-tight">

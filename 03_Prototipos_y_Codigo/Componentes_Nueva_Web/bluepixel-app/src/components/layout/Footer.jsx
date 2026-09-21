@@ -280,12 +280,14 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
+            <div className="inline-flex items-center gap-2 text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-wider">All Systems Operational</span>
+              <span>All Systems Operational</span>
             </div>
             
-            <div className="inline-flex items-center gap-1.5 bg-white/[0.03] px-3 py-1.5 rounded-full border border-white/[0.08] text-slate-400 text-[10px]">
+            <span className="text-slate-600 hidden sm:inline">•</span>
+
+            <div className="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono">
               <span className="text-blue-400 font-bold">VPC</span>
               <span>Private Cloud Ready</span>
             </div>
