@@ -153,6 +153,13 @@ const App = () => {
     });
   };
 
+  useEffect(() => {
+    window.__openContactModal = (pkg) => scrollToForm(pkg);
+    return () => {
+      delete window.__openContactModal;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#02040A] text-white">
       <Navbar 
@@ -183,7 +190,7 @@ const App = () => {
             <PostContactSLA />
             <LeadMagnetSection />
             <FinalCTA onOpenContact={() => scrollToForm()} />
-            <Footer />
+            <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />
             
             <SolutionDrawer 
               solution={selectedSolution} 
@@ -259,7 +266,7 @@ const App = () => {
             onNavigateCluster={navigateTo} 
             onSelectPackage={(pkg) => scrollToForm(pkg)}
           />
-          <Footer />
+          <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />
         </Suspense>
       )}
 
