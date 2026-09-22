@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
+import OrbitingTechStack from '../../sections/OrbitingTechStack';
 
 const renderPainIcon = (iconType) => {
   switch (iconType) {
@@ -383,6 +384,9 @@ const ServiceLandingTemplate = ({ data }) => {
           </div>
         </section>
       )}
+
+      {/* 3.5. STACK TECNOLÓGICO Y ECOSISTEMA FUTUREPROOF */}
+      <OrbitingTechStack />
 
       {/* 4. PAIN POINTS & ANTIDOTES */}
       {data.painPoints && (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
 import WaysToWorkSubNavbar from '../../layout/WaysToWorkSubNavbar';
+import OrbitingTechStack from '../../sections/OrbitingTechStack';
 
 const PILLAR_THEMES = {
   blue: {
@@ -753,6 +754,9 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
           </div>
         </section>
       )}
+
+      {/* 3.5. STACK TECNOLÓGICO Y ECOSISTEMA FUTUREPROOF */}
+      <OrbitingTechStack />
 
       {/* 4. PAIN POINTS */}
       {data.painPoints && (
