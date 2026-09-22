@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Database, Shield, Brain, Network, Cloud } from 'lucide-react';
+import { Layers, Database, Shield, Brain, Network, Cloud, Cpu } from 'lucide-react';
 
 const OrbitingTechStack = () => {
   return (
@@ -91,13 +91,13 @@ const OrbitingTechStack = () => {
               <div className="relative z-20 w-36 h-36 md:w-44 md:h-44 rounded-full bg-navy-900 border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.3)] flex items-center justify-center p-2 backdrop-blur-xl overflow-hidden group hover:border-blue-500/50 transition-colors">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-cyan-400/20 opacity-50 group-hover:opacity-100 transition-opacity"></div>
                 
-                {/* Fallback SVG logic for central core */}
-                <svg className="w-16 h-16 md:w-20 md:h-20 text-white relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                  <circle cx="12" cy="12" r="10" strokeWidth="1" className="stroke-blue-500" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" className="stroke-cyan-500/50"/>
-                  <path d="M2 12h20" className="stroke-blue-500/50" />
-                </svg>
+                {/* Premium glowing central core */}
+                <div className="relative z-10 flex items-center justify-center">
+                  <div className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full border border-blue-500/40 animate-[ping_3s_ease-in-out_infinite]"></div>
+                  <div className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full border border-cyan-400/60 animate-[pulse_2s_ease-in-out_infinite]"></div>
+                  <div className="absolute w-12 h-12 md:w-16 md:h-16 bg-blue-500/20 blur-xl rounded-full"></div>
+                  <Cpu className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" strokeWidth={1} />
+                </div>
               </div>
 
             </div>
