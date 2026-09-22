@@ -2,6 +2,34 @@ export const servicesData = {
   'ux-ui': {
     id: 'ux-ui',
     themeKey: 'emerald',
+    showImpath: true,
+    futureproofMethodology: {
+      stagnationContext: 'los productos digitales',
+      stagnationSubtitle: 'Diseños hermosos pero estáticos. La metodología Futureproof los transforma en interfaces de alta conversión.',
+      painPoints: [
+        { title: 'El lanzamiento no valida hipótesis.', description: 'Se sale a producción asumiendo qué quiere el usuario, y el aprendizaje de UX llega tarde, cuando ya se gastó el presupuesto.' },
+        { title: 'Diseño sin fricción cuantificada.', description: 'Se hacen rediseños "bonitos" que no atacan los cuellos de botella donde los usuarios reales están abandonando.' },
+        { title: 'Sistemas de diseño fragmentados.', description: 'Inconsistencia visual que retrasa a los desarrolladores y rompe la experiencia de marca sprint a sprint.' },
+        { title: 'La interfaz nace desactualizada.', description: 'Sin telemetría ni A/B testing continuo, el diseño se estanca el día del lanzamiento.' }
+      ],
+      phases: {
+        design: {
+          title: 'Descubrimos dónde duele',
+          description: 'Auditoría heurística, mapeo de journeys y diagnóstico IMPATH para identificar dónde se cae la conversión.',
+          bullets: ['Auditoría UX', 'Mapeo IMPATH', 'User Personas']
+        },
+        build: {
+          title: 'Sistemas escalables',
+          description: 'Construimos Design Systems atómicos listos para que los ingenieros los implementen sin fricción.',
+          bullets: ['Atomic Design', 'Prototipos Alta Fidelidad', 'Hand-off QA']
+        },
+        evolve: {
+          title: 'Optimización por telemetría',
+          description: 'Medimos el UX Health Score y ajustamos la interfaz basados en el comportamiento real del usuario.',
+          bullets: ['Mixpanel/PostHog', 'A/B Testing', 'CRO Continuo']
+        }
+      }
+    },
     clusterName: 'Apps & Producto',
     canonicalBadge: 'IMPATH™ Enabled',
     packageName: 'UX/UI Design & Product Strategy',

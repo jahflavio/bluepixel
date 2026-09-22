@@ -13,6 +13,7 @@ import {
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
 import OrbitingTechStack from '../../sections/OrbitingTechStack';
+import FutureproofMethodology from '../../sections/FutureproofMethodology';
 
 const renderPainIcon = (iconType) => {
   switch (iconType) {
@@ -539,6 +540,8 @@ const ServiceLandingTemplate = ({ data }) => {
         </section>
       )}
 
+      {/* 3.4. METODOLOGÍA FUTUREPROOF (Build & Evolve) */}
+      <FutureproofMethodology data={data.futureproofMethodology} />
       {/* 6. SPECS / SOLUTIONS */}
       {data.specs && (
         <section className="py-24 border-b border-white/[0.08] bg-[#050A17]">
