@@ -46,13 +46,18 @@ Para mantener la **Arquitectura Desacoplada** y evitar que una actualización en
 *   Se alojarán bajo un **subdominio dedicado a pauta**, por ejemplo: `cotiza.bluepixel.mx` o `lp.bluepixel.mx`. 
 *   La agencia tendrá control total sobre este subdominio para iterar rápido (A/B testing) sin depender de sprints de desarrollo de BluePixel.
 
-## 📊 REGLA 5: ATRIBUCIÓN CERRADA Y GCLID
+## 📊 REGLA 5: ATRIBUCIÓN CERRADA Y GCLID (OFFLINE CONVERSIONS)
 
 Para poder optimizar las campañas en base a dinero ingresado y no a leads brutos, los formularios deben estar instrumentados correctamente:
 
 *   **Campos de Formulario Exigidos:** Nombre, Email Corporativo (rechazar dominios genéricos si es posible), y el selector de **Tamaño de Empresa (10-50, 50-200, 200+)**.
 *   **Parámetros Ocultos:** Todos los formularios deben capturar y enviar a través de campos ocultos (Hidden Fields) los parámetros UTM de la URL y el **GCLID** (Google Click ID).
-*   **Hand-off de Datos:** Al completarse, el lead debe ser enviado vía Webhook al CRM / Servidor MCP de BluePixel con el GCLID intacto, para permitir la importación de conversiones offline en Google Ads API.
+*   **Hand-off de Datos y Tokens:** Al completarse, el lead debe ser enviado vía Webhook al CRM / Servidor MCP de BluePixel con el GCLID intacto. **Crucial:** La agencia debe entregar el **Developer Token** y **Customer ID** de Google Ads a BluePixel para que el Servidor MCP devuelva la señal de ventas exitosas.
+
+## ⛔ REGLA 6: EJECUCIÓN ESTRICTA DE KEYWORDS NEGATIVAS
+
+Es obligatorio cargar a nivel cuenta la **Lista Maestra de Negativas** proporcionada por BluePixel. Sin este muro de contención, las campañas quemarán presupuesto en tráfico basura.
+*   **Términos a bloquear (Broad y Phrase):** gratis, curso, tutorial, vacantes, sueldo, barato, economico, plantilla, demo gratis, que es, como funciona, freelancer, fiverr, workana.
 
 ---
 
