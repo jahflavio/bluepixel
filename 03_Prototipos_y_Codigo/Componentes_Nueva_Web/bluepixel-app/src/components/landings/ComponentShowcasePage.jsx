@@ -18,6 +18,10 @@ import PostContactSLA from '../sections/PostContactSLA';
 import HomeDirectorySection from '../sections/HomeDirectorySection';
 import FinalCTA from '../sections/FinalCTA';
 import Footer from '../layout/Footer';
+import RoiCalculatorWidget from '../widgets/RoiCalculatorWidget';
+import McpAgentSimulatorWidget from '../widgets/McpAgentSimulatorWidget';
+import BuildVisualizerWidget from '../widgets/BuildVisualizerWidget';
+import UXHealthScoreWidget from '../widgets/UXHealthScoreWidget';
 
 const ComponentWrapper = ({ id, number, name, filePath, status, statusColor, desc, targetUse, children }) => {
   return (
@@ -87,6 +91,10 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
     { id: 'sec-sla', num: '16', name: 'PostContactSLA', label: 'SLA de Respuesta', cat: 'conversion' },
     { id: 'sec-directory', num: '17', name: 'HomeDirectorySection', label: 'Directorio Estructura', cat: 'reserve' },
     { id: 'sec-cta', num: '18', name: 'FinalCTA', label: 'Call to Action Final', cat: 'conversion' },
+    { id: 'sec-roi-calc', num: '19', name: 'RoiCalculatorWidget', label: 'Calculadora ROI / COI', cat: 'reserve' },
+    { id: 'sec-mcp-sim', num: '20', name: 'McpAgentSimulatorWidget', label: 'Simulador Agéntico MCP', cat: 'reserve' },
+    { id: 'sec-build-viz', num: '21', name: 'BuildVisualizerWidget', label: 'Simulador de Construcción', cat: 'reserve' },
+    { id: 'sec-ux-health', num: '22', name: 'UXHealthScoreWidget', label: 'UX Health Score Telemetry', cat: 'reserve' },
   ];
 
   const scrollToSection = (id) => {
@@ -438,6 +446,58 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
       >
         <FinalCTA onOpenContact={onOpenContact} />
       </ComponentWrapper>
+
+        <ComponentWrapper
+          id="sec-roi-calc"
+          number="19"
+          name="RoiCalculatorWidget"
+          filePath="src/components/widgets/RoiCalculatorWidget.jsx"
+          status="EN RESERVA"
+          statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
+          desc="Calculadora interactiva del costo de inacción (COI) y proyección de ROI."
+          targetUse="Módulos de consultoría digital y páginas de producto enterprise."
+        >
+          <div className="py-20 bg-[#030612]"><RoiCalculatorWidget /></div>
+        </ComponentWrapper>
+
+        <ComponentWrapper
+          id="sec-mcp-sim"
+          number="20"
+          name="McpAgentSimulatorWidget"
+          filePath="src/components/widgets/McpAgentSimulatorWidget.jsx"
+          status="EN RESERVA"
+          statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
+          desc="Simulador interactivo de casos de uso agénticos con protocolo MCP."
+          targetUse="Landing de Automatización con Agentes."
+        >
+          <div className="py-20 bg-[#030612]"><McpAgentSimulatorWidget /></div>
+        </ComponentWrapper>
+
+        <ComponentWrapper
+          id="sec-build-viz"
+          number="21"
+          name="BuildVisualizerWidget"
+          filePath="src/components/widgets/BuildVisualizerWidget.jsx"
+          status="EN RESERVA"
+          statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
+          desc="Visualizador de roadmap de construcción (2 a 4 meses) de plataforma."
+          targetUse="Landing de Plataformas Digitales."
+        >
+          <div className="py-20 bg-[#030612]"><BuildVisualizerWidget /></div>
+        </ComponentWrapper>
+
+        <ComponentWrapper
+          id="sec-ux-health"
+          number="22"
+          name="UXHealthScoreWidget"
+          filePath="src/components/widgets/UXHealthScoreWidget.jsx"
+          status="EN RESERVA"
+          statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
+          desc="Dashboard de telemetría y salud de experiencia de usuario en tiempo real."
+          targetUse="Landing de Evolución Digital."
+        >
+          <div className="py-20 bg-[#030612]"><UXHealthScoreWidget /></div>
+        </ComponentWrapper>
 
       {/* Footer */}
       <Footer />

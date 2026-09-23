@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        onest: ['Onest', 'sans-serif'],
       },
       colors: {
         navy: {

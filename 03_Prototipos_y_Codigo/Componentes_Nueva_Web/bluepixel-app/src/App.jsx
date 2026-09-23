@@ -14,6 +14,7 @@ const AutomatizacionLandingPage = lazy(() => import('./components/landings/Autom
 const ProductoDigitalLandingPage = lazy(() => import('./components/landings/ProductoDigitalLandingPage'));
 const EvolucionLandingPage = lazy(() => import('./components/landings/EvolucionLandingPage'));
 const ComoTrabajamosLandingPage = lazy(() => import('./components/landings/ComoTrabajamosLandingPage'));
+const FutureproofLandingPage = lazy(() => import('./components/landings/FutureproofLandingPage'));
 
 // Directorios Centrales (Hubs)
 const PilaresLandingPage = lazy(() => import('./components/landings/PilaresLandingPage'));
@@ -42,6 +43,7 @@ const FourWaysToWork = lazy(() => import('./components/sections/FourWaysToWork')
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
 const LeadMagnetSection = lazy(() => import('./components/sections/LeadMagnetSection'));
+const FutureproofCTABanner = lazy(() => import('./components/widgets/FutureproofCTABanner'));
 const FinalCTA = lazy(() => import('./components/sections/FinalCTA'));
 const Footer = lazy(() => import('./components/layout/Footer'));
 
@@ -75,7 +77,7 @@ const App = () => {
         'evolucion-digital', 'pilar/evolucion-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
-        'servicios', 'casos-de-exito', 'componentes'
+        'servicios', 'casos-de-exito', 'componentes', 'filosofia-futureproof'
       ];
       
       if (
@@ -182,13 +184,14 @@ const App = () => {
             <IndustriesImpactSection onSelectIndustryCase={(client) => scrollToForm(client)} />
             {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):
                 - <TechnicalSovereignty /> ("Tu infraestructura. Tus datos. Tu código fuente.")
-                - <ImpathFrictionSection /> ("Descubre qué fricción le cuesta más dinero con IMPATH y Mixpanel")
                 Catalogadas en AGENTS.md y 02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md */}
+            <ImpathFrictionSection onOpenContact={() => scrollToForm('Diagnóstico de Fricción')} />
             <CaseStudiesSection onOpenCase={(client) => scrollToForm(client)} />
             <FAQSection />
             <EngineeringLeadership />
             <PostContactSLA />
             <LeadMagnetSection />
+            <FutureproofCTABanner />
             <FinalCTA onOpenContact={() => scrollToForm()} />
             <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />
             
@@ -199,6 +202,10 @@ const App = () => {
             />
           </Suspense>
         </>
+      ) : currentView === 'filosofia-futureproof' ? (
+        <Suspense fallback={<SectionLoader />}>
+          <FutureproofLandingPage onNavigateCluster={navigateTo} />
+        </Suspense>
       ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital') ? (
         <Suspense fallback={<SectionLoader />}>
           <ConsultoriaLandingPage onNavigateCluster={navigateTo} />

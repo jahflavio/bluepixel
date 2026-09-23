@@ -14,7 +14,7 @@ const FinalCTA = ({ onOpenContact }) => {
                 </span>
                 
                 <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl text-white">
-                  El 85% de los proyectos de IA nunca llega a producción<span className="text-blue-500">.</span> Nosotros sí<span className="text-blue-500">.</span>
+                  De la estrategia de negocio a un sistema en producción en 2 a 4 meses<span className="text-blue-500">.</span>
                 </h2>
                 
                 <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">

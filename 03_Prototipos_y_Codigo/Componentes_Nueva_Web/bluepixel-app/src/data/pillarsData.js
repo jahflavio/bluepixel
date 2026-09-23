@@ -3,7 +3,7 @@ export const pillarsData = {
     id: 'consultoria-digital',
     num: '01',
     name: 'Consultoría Digital',
-    badgeText: 'FASE 01 · 2 A 4 SEMANAS',
+    badgeText: 'CONSULTORÍA · 2 A 4 SEMANAS',
     duration: '2 a 4 Semanas',
     targetAudience: 'Para empresas que necesitan diagnóstico, backlog priorizado y cálculo de ROI antes de invertir',
     eyebrow: 'Pilar 01 · Certidumbre Técnica y Financiera Previa',
@@ -27,7 +27,7 @@ export const pillarsData = {
       ]
     },
     comparisonMatrix: {
-      eyebrow: '02 — Diferenciación B2B',
+      eyebrow: '05 — Diferenciación B2B',
       title: 'Consultoría Estratégica vs Enfoques Tradicionales.',
       subtitle: 'Por qué nuestro diagnóstico genera certidumbre inmediata donde otros solo entregan presentaciones teóricas.',
       headers: ['Criterio', 'Fábrica Tradicional', 'Consultora de PowerPoint', 'Estándar BluePixel FutureProof'],
@@ -89,7 +89,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '03 — Metodología de Certeza Previa',
+      eyebrow: '02 — Metodología de Certeza Previa',
       title: 'Tres principios que protegen tu capital de inversión.',
       subtitle: 'Nuestra consultoría actúa como la póliza de seguro antes de comprometer presupuestos mayores.',
       items: [
@@ -138,7 +138,12 @@ export const pillarsData = {
             { text: 'Nunca hemos testeado antes de programar', score: 0 }
           ]
         }
-      ]
+      ],
+      results: {
+        high: { band: 'Vía Libre para Desarrollo', desc: 'Tu empresa tiene madurez técnica y estratégica absoluta. Estás listo para saltar directamente a la fase de construcción con el Pilar 02 o Pilar 03 sin necesidad de consultoría previa.' },
+        medium: { band: 'Alineación Parcial', desc: 'Tienen buenas bases, pero hay áreas de riesgo técnico o de alineación que podrían desbordar el presupuesto. El Pilar 01 es ideal para blindar el proyecto antes de codificar.' },
+        low: { band: 'Diagnóstico Urgente Requerido', desc: 'Comenzar a programar en este estado es un riesgo financiero muy alto. El Pilar 01 es exactamente lo que necesitas para cuantificar el ROI y definir un roadmap seguro.' }
+      }
     },
     deliverables: {
       eyebrow: '06 — Entregables Oficiales',
@@ -153,7 +158,7 @@ export const pillarsData = {
       ]
     },
     timeline: {
-      eyebrow: '07 — Metodología en 4 Semanas',
+      eyebrow: '07 — Metodología de Ejecución',
       title: 'Cronograma estricto de diagnóstico a entregables finales.',
       subtitle: 'Sprints de inmersión técnica y estratégica sin quitarle tiempo excesivo a tus líderes.',
       steps: [
@@ -263,7 +268,7 @@ export const pillarsData = {
     id: 'agentes-automatizacion',
     num: '02',
     name: 'Agentes & Automatización',
-    badgeText: 'FASE 02 · 2 A 4 SEMANAS',
+    badgeText: 'AGENTES · 2 A 4 SEMANAS',
     duration: '2 a 4 Semanas',
     targetAudience: 'Para empresas que buscan conectar agentes de IA y automatizaciones a sus sistemas actuales sin reemplazarlos',
     eyebrow: 'Pilar 02 · Inteligencia Determinística en Producción',
@@ -287,7 +292,7 @@ export const pillarsData = {
       ]
     },
     comparisonMatrix: {
-      eyebrow: '02 — Diferenciación Tecnológica',
+      eyebrow: '05 — Diferenciación Tecnológica',
       title: 'Agentes Autónomos BluePixel vs Chatbots Comunes.',
       subtitle: 'La diferencia entre un juguete conversacional y una infraestructura de automatización de misión crítica.',
       headers: ['Capacidad', 'Chatbot Básico (SaaS)', 'Scripting / RPA Tradicional', 'Estándar BluePixel Agentic'],
@@ -349,7 +354,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '03 — Arquitectura Agéntica',
+      eyebrow: '02 — Arquitectura Agéntica',
       title: 'Tecnología determinística para procesos corporativos.',
       subtitle: 'Diseñado para convivir en perfecta armonía con tu infraestructura existente.',
       items: [
@@ -398,7 +403,12 @@ export const pillarsData = {
             { text: 'Baja: no manejamos datos sensibles en este flujo', score: 0 }
           ]
         }
-      ]
+      ],
+      results: {
+        high: { band: 'Alineación Total Agéntica', desc: 'Tu infraestructura y procesos tienen las condiciones ideales. Podemos tener el primer agente autónomo operando y generando ROI en menos de 4 semanas.' },
+        medium: { band: 'Viabilidad Favorable', desc: 'El proceso tiene gran potencial de agentización. Recomendamos iniciar con un piloto de 2 semanas (Single Agent MCP) para validar conectividad con tus sistemas.' },
+        low: { band: 'Recomendación de Fase Previa', desc: 'Tu infraestructura requiere orden previo o los procesos no están estandarizados. Te sugerimos iniciar con el Pilar 01 para estructurar tus datos antes de inyectar Inteligencia Artificial.' }
+      }
     },
     deliverables: {
       eyebrow: '06 — Entregables Oficiales',
@@ -414,7 +424,7 @@ export const pillarsData = {
     },
     timeline: {
       eyebrow: '07 — Metodología de Despliegue Rápido',
-      title: 'De mapeo de proceso a agente en producción en 4 semanas.',
+      title: 'De mapeo de proceso a agente en producción.',
       subtitle: 'Ciclos cortos y determinísticos con resultados tangibles cada semana.',
       steps: [
         { num: '01', title: 'Semana 1: Mapeo de Flujo & Conectores MCP', desc: 'Definición de reglas de negocio, endpoints requeridos y arquitectura RAG.', deliverables: ['Especificación Técnica MCP'] },
@@ -523,7 +533,7 @@ export const pillarsData = {
     id: 'plataformas-digitales',
     num: '03',
     name: 'Plataformas Digitales',
-    badgeText: 'FASE 03 · 2 A 4 MESES A PRODUCCIÓN',
+    badgeText: 'PLATAFORMAS · 2 A 4 MESES A PRODUCCIÓN',
     duration: '2 a 4 Meses (MVP a Producción)',
     targetAudience: 'Para construir plataformas y MVPs desde cero con UX validado que convierte',
     eyebrow: 'Pilar 03 · De la Concepción a Producción en 2 a 4 Meses',
@@ -548,7 +558,7 @@ export const pillarsData = {
       ]
     },
     comparisonMatrix: {
-      eyebrow: '02 — Diferenciación de Ingeniería',
+      eyebrow: '05 — Diferenciación de Ingeniería',
       title: 'Construcción Full Stack BluePixel vs Fábricas de Software.',
       subtitle: 'Por qué nuestro modelo de 2 a 4 meses entrega software de grado enterprise con alta conversión.',
       headers: ['Aspecto', 'Fábrica Tradicional ("Maquila")', 'Agencia Creativa de Diseño', 'Estándar BluePixel 2 a 4 Meses'],
@@ -610,7 +620,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '03 — Estándar de Construcción',
+      eyebrow: '02 — Estándar de Construcción',
       title: 'Ingeniería pesada vestida con la mejor experiencia humana.',
       subtitle: 'La combinación que asegura adopción inmediata y escalabilidad sin límites.',
       items: [
@@ -659,10 +669,15 @@ export const pillarsData = {
             { text: 'No nos importa usar plataformas cerradas de terceros', score: 0 }
           ]
         }
-      ]
+      ],
+      results: {
+        high: { band: 'Listos para el Sprint a Producción', desc: 'Tienen claridad de negocio, urgencia y liderazgo. Tu empresa reúne las condiciones perfectas para construir y lanzar la plataforma al mercado en 2 a 4 meses.' },
+        medium: { band: 'Alineación Favorable', desc: 'El proyecto tiene mucho sentido, pero requiere afinar la definición del MVP para asegurar el time-to-market. Agendemos una sesión para delimitar el alcance del primer trimestre.' },
+        low: { band: 'Recomendación de Fase Previa', desc: 'La visión del producto aún tiene ambigüedad. Te sugerimos iniciar con el Pilar 01 (Consultoría) para definir la arquitectura y el business case antes de comprometer capital en desarrollo.' }
+      }
     },
     aiLayer: {
-      eyebrow: '03.5 — Capa Agentic IA Integrada',
+      eyebrow: '03 — Capa Agentic IA Integrada',
       title: 'IA integrada en el corazón de tu plataforma desde el sprint 1.',
       subtitle: 'La inteligencia artificial se piensa y se construye dentro de la plataforma desde el primer sprint, no como un experimento aislado ni un parche tardío.',
       items: [
@@ -731,7 +746,7 @@ export const pillarsData = {
     id: 'evolucion-digital',
     num: '04',
     name: 'Evolución Digital',
-    badgeText: 'FASE 04 · ROADMAP VIVO 6 A 12 MESES',
+    badgeText: 'EVOLUCIÓN · ROADMAP VIVO 6 A 12 MESES',
     duration: 'Roadmap Vivo 6 a 12 Meses (Retainer Mensual)',
     targetAudience: 'Para evolucionar plataformas existentes con capacidades transversales, optimización continua y CRO',
     eyebrow: 'Pilar 04 · Crecimiento Sostenido sin Inflar Nómina',
@@ -758,7 +773,7 @@ export const pillarsData = {
       ]
     },
     comparisonMatrix: {
-      eyebrow: '02 — Diferenciación Operativa',
+      eyebrow: '05 — Diferenciación Operativa',
       title: 'Squad Continuo BluePixel vs Mantenimiento Tradicional.',
       subtitle: 'La diferencia entre pagar por parchar errores y tener un motor de evolución de negocio.',
       headers: ['Concepto', 'Soporte Tradicional de Fábrica', 'Equipo Interno Básico', 'Estándar BluePixel Evolución'],
@@ -820,7 +835,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '03 — Modelo de Evolución Continua',
+      eyebrow: '02 — Modelo de Evolución Continua',
       title: 'Capacidades transversales de élite sin fricción de nómina.',
       subtitle: 'Flexibilidad total para escalar la velocidad de ingeniería según la temporada de tu negocio.',
       items: [
@@ -869,7 +884,12 @@ export const pillarsData = {
             { text: 'Carecemos por completo de perfiles de vanguardia', score: 0 }
           ]
         }
-      ]
+      ],
+      results: {
+        high: { band: 'Alineación Total con Evolución', desc: 'Tienes una plataforma operando y necesitas escalar métricas de negocio. El Pilar 04 es el motor perfecto para reducir tu deuda técnica e incrementar conversiones de manera continua.' },
+        medium: { band: 'Evolución Favorable', desc: 'Tu plataforma requiere estabilización y optimización. Un Squad Dedicado de BluePixel puede comenzar a generar mejoras incrementales desde el primer sprint quincenal.' },
+        low: { band: 'Recomendación de Diagnóstico', desc: 'Dado que no hay métricas claras o la deuda es muy alta, te recomendamos iniciar con el Pilar 01 (Sprint Discovery) para auditar la plataforma antes de asignar un Squad completo.' }
+      }
     },
     financialCallout: {
       eyebrow: 'Inteligencia de Plataforma · Metodología IMPATH™',

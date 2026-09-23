@@ -32,13 +32,13 @@ const HomeDirectorySection = () => {
                 <Layers className="w-6 h-6 text-blue-400" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                4 Formas de Trabajar
+                Nuestros 4 Servicios
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Consultoría Digital, Agentes, Plataformas y Evolución Digital. Cuatro modelos de contratación modulares con ROI garantizado y plazos definidos.
               </p>
               <div className="flex items-center justify-between text-xs font-semibold text-blue-400 opacity-80 group-hover:opacity-100 transition-opacity">
-                <span>Explorar los 4 Pilares</span>
+                <span>Explorar los 4 Servicios</span>
                 <span className="font-mono group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
@@ -53,7 +53,7 @@ const HomeDirectorySection = () => {
                 <TerminalSquare className="w-6 h-6 text-purple-400" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                Directorio de Servicios
+                Directorio de Capacidades
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 De la fricción operativa a la agentización total. Explora nuestras 6 capacidades técnicas, entregables y metodologías de implementación.

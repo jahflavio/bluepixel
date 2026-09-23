@@ -14,6 +14,7 @@ import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
 import OrbitingTechStack from '../../sections/OrbitingTechStack';
 import FutureproofMethodology from '../../sections/FutureproofMethodology';
+import ImpathFrictionSection from '../../sections/ImpathFrictionSection';
 
 const renderPainIcon = (iconType) => {
   switch (iconType) {
@@ -539,6 +540,9 @@ const ServiceLandingTemplate = ({ data }) => {
           </div>
         </section>
       )}
+
+      {/* 3.3. IMPATH FRICTION SECTION (Dynamic) */}
+      {data.showImpath && <ImpathFrictionSection />}
 
       {/* 3.4. METODOLOGÍA FUTUREPROOF (Build & Evolve) */}
       <FutureproofMethodology data={data.futureproofMethodology} />

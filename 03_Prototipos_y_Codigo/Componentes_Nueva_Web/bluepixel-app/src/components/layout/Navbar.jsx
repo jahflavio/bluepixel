@@ -73,7 +73,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
               onClick={handleComoTrabajamos}
               className="flex items-center gap-1 text-sm text-slate-300 hover:text-blue-400 font-medium transition-colors cursor-pointer bg-transparent border-none p-0 focus:outline-none"
             >
-              <span>Cómo Trabajamos</span>
+              <span className="font-onest font-medium">Nuestros Servicios</span>
               <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${isPilaresOpen ? 'rotate-180 text-blue-400' : 'text-slate-500'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -83,8 +83,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
             <div className={`absolute top-full left-0 pt-3 transition-all duration-200 ${isPilaresOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
               <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl shadow-2xl p-4 w-[360px] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400"></div>
-                <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-3 px-2 pt-1 font-bold">
-                  <span>4 Formas de Trabajar</span>
+                <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-3 px-2 pt-1 font-bold">
+                  <span>4 Modelos de Servicio</span>
                   <span className="text-blue-400">Modulares</span>
                 </div>
                 
@@ -95,12 +95,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
                     <div>
-                      <div className="text-xs font-bold text-white group-hover/item:text-blue-400 flex items-center gap-1.5">
+                      <div className="text-sm font-bold text-white group-hover/item:text-blue-400 flex items-center gap-1.5">
                         <span className="font-mono text-blue-400 text-[10px]">01</span>
                         <span>Consultoría Digital</span>
-                        <span className="text-[9px] font-mono text-slate-500">2-4 sem</span>
+                        <span className="text-[10px] font-mono text-slate-500">2-4 sem</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">Diagnóstico, ROI y arquitectura previa</div>
+                      <div className="text-xs text-slate-400 mt-0.5">Diagnóstico, ROI y arquitectura previa</div>
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-blue-400">→</span>
                   </a>
@@ -111,12 +111,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
                     <div>
-                      <div className="text-xs font-bold text-white group-hover/item:text-purple-400 flex items-center gap-1.5">
+                      <div className="text-sm font-bold text-white group-hover/item:text-purple-400 flex items-center gap-1.5">
                         <span className="font-mono text-purple-400 text-[10px]">02</span>
                         <span>Agentes & Automatización</span>
-                        <span className="text-[9px] font-mono text-slate-500">2-4 sem</span>
+                        <span className="text-[10px] font-mono text-slate-500">2-4 sem</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">Agentes en producción sobre tu stack actual</div>
+                      <div className="text-xs text-slate-400 mt-0.5">Agentes en producción sobre tu stack actual</div>
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-purple-400">→</span>
                   </a>
@@ -127,12 +127,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
                     <div>
-                      <div className="text-xs font-bold text-white group-hover/item:text-cyan-400 flex items-center gap-1.5">
+                      <div className="text-sm font-bold text-white group-hover/item:text-cyan-400 flex items-center gap-1.5">
                         <span className="font-mono text-cyan-400 text-[10px]">03</span>
                         <span>Plataformas Digitales</span>
-                        <span className="text-[9px] font-mono text-slate-500">2 a 4 meses</span>
+                        <span className="text-[10px] font-mono text-slate-500">2 a 4 meses</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">De 0 a producción con UX validado</div>
+                      <div className="text-xs text-slate-400 mt-0.5">De 0 a producción con UX validado</div>
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-cyan-400">→</span>
                   </a>
@@ -143,12 +143,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
                     <div>
-                      <div className="text-xs font-bold text-white group-hover/item:text-indigo-400 flex items-center gap-1.5">
+                      <div className="text-sm font-bold text-white group-hover/item:text-indigo-400 flex items-center gap-1.5">
                         <span className="font-mono text-indigo-400 text-[10px]">04</span>
                         <span>Evolución Digital</span>
-                        <span className="text-[9px] font-mono text-slate-500">6-12 m</span>
+                        <span className="text-[10px] font-mono text-slate-500">6-12 m</span>
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">Squad continuo, CRO y cero deuda técnica</div>
+                      <div className="text-xs text-slate-400 mt-0.5">Squad continuo, CRO y cero deuda técnica</div>
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-indigo-400">→</span>
                   </a>
@@ -174,7 +174,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <a href="#/servicios" className="flex items-center gap-1 hover:text-blue-400 transition-colors focus:outline-none">
-              <span>Directorio de Servicios</span>
+              <span className="font-onest font-medium">Nuestras Capacidades</span>
               <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180 text-blue-400' : 'text-slate-500'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -187,7 +187,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
 
                 {/* Header canónico del Dropdown */}
-                <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-4 pb-2.5 border-b border-white/[0.06] font-bold">
+                <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-4 pb-2.5 border-b border-white/[0.06] font-bold">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span className="text-white">6 Capacidades Oficiales</span>
@@ -204,13 +204,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-emerald-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-emerald-400 font-bold">01</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">IMPATH™ Enabled</span>
+                      <span className="text-[11px] font-mono text-emerald-400 font-bold">01</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">IMPATH™ Enabled</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-emerald-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-emerald-300 transition-colors">
                       UX/UI & Product Strategy
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Psicología conductual y adopción
                     </div>
                   </a>
@@ -222,13 +222,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-cyan-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-cyan-400 font-bold">02</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud-Native SOC2</span>
+                      <span className="text-[11px] font-mono text-cyan-400 font-bold">02</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud-Native SOC2</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-cyan-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-cyan-300 transition-colors">
                       Software Engineering
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Full Stack Cloud-Native y resiliencia
                     </div>
                   </a>
@@ -240,13 +240,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-purple-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-purple-400 font-bold">03</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Agentic RAG & MCP</span>
+                      <span className="text-[11px] font-mono text-purple-400 font-bold">03</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Agentic RAG & MCP</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-purple-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-purple-300 transition-colors">
                       IA & Automatización
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Agentes RAG y protocolos MCP
                     </div>
                   </a>
@@ -258,13 +258,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-indigo-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-indigo-400 font-bold">04</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Mixpanel Telemetry</span>
+                      <span className="text-[11px] font-mono text-indigo-400 font-bold">04</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Mixpanel Telemetry</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-indigo-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-indigo-300 transition-colors">
                       Data & Analytics
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Telemetría y analítica directiva
                     </div>
                   </a>
@@ -276,13 +276,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-amber-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-amber-400 font-bold">05</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">ISO 27001 & OWASP</span>
+                      <span className="text-[11px] font-mono text-amber-400 font-bold">05</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">ISO 27001 & OWASP</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-amber-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-amber-300 transition-colors">
                       Security & Reliability
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Hardening Zero-Trust y SLA 99.9%
                     </div>
                   </a>
@@ -294,13 +294,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-blue-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono text-blue-400 font-bold">06</span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">FutureProof™</span>
+                      <span className="text-[11px] font-mono text-blue-400 font-bold">06</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">FutureProof™</span>
                     </div>
-                    <div className="text-xs font-bold text-white group-hover/item:text-blue-300 transition-colors">
+                    <div className="text-sm font-bold text-white group-hover/item:text-blue-300 transition-colors">
                       Digital Consulting
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-1 line-clamp-1">
+                    <div className="text-xs text-slate-400 mt-1 line-clamp-1">
                       Priorización de ROI y roadmaps
                     </div>
                   </a>
@@ -363,7 +363,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
           {/* 4 Pilares Mobile */}
           <div>
             <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-3 px-2">
-              <span>4 Formas de Trabajar</span>
+              <span>4 Modelos de Servicio</span>
               <button 
                 type="button" 
                 onClick={handleComoTrabajamos}
@@ -382,7 +382,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="font-mono text-blue-400 text-[10px]">01</span>
                     <span>Consultoría Digital</span>
-                    <span className="text-[9px] font-mono text-slate-500">2-4 sem</span>
+                    <span className="text-[10px] font-mono text-slate-500">2-4 sem</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">Diagnóstico, ROI y arquitectura</div>
                 </div>
@@ -398,7 +398,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="font-mono text-purple-400 text-[10px]">02</span>
                     <span>Agentes & Automatización</span>
-                    <span className="text-[9px] font-mono text-slate-500">2-4 sem</span>
+                    <span className="text-[10px] font-mono text-slate-500">2-4 sem</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">Agentes RAG sobre tu stack actual</div>
                 </div>
@@ -414,7 +414,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="font-mono text-cyan-400 text-[10px]">03</span>
                     <span>Plataformas Digitales</span>
-                    <span className="text-[9px] font-mono text-slate-500">2 a 4 meses</span>
+                    <span className="text-[10px] font-mono text-slate-500">2 a 4 meses</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">De 0 a producción con UX validado</div>
                 </div>
@@ -430,7 +430,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="font-mono text-indigo-400 text-[10px]">04</span>
                     <span>Evolución Digital</span>
-                    <span className="text-[9px] font-mono text-slate-500">6-12 m</span>
+                    <span className="text-[10px] font-mono text-slate-500">6-12 m</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">Squad continuo, CRO y cero deuda</div>
                 </div>

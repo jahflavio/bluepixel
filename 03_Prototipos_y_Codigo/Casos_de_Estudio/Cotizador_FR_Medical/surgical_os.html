@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FR Medical Surgical OS | Sistema Operativo Quirúrgico y Logístico 24/7</title>
+    <title> Surgical OS | Sistema Operativo Quirúrgico y Logístico 24/7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <!-- jsPDF & AutoTable for Real Medical PDF Generation -->
@@ -11,65 +12,118 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #060b16; color: #f1f5f9; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #060b16;
+            color: #f1f5f9;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
         .glass-card {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(56, 189, 248, 0.15);
         }
+
         .pulse-red {
             animation: pulse-border-red 1.8s infinite;
         }
+
         @keyframes pulse-border-red {
-            0%, 100% { border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); }
-            50% { border-color: rgba(239, 68, 68, 0.9); box-shadow: 0 0 28px rgba(239, 68, 68, 0.45); }
+
+            0%,
+            100% {
+                border-color: rgba(239, 68, 68, 0.4);
+                box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+            }
+
+            50% {
+                border-color: rgba(239, 68, 68, 0.9);
+                box-shadow: 0 0 28px rgba(239, 68, 68, 0.45);
+            }
         }
+
         .pulse-green {
             animation: pulse-border-green 2s infinite;
         }
+
         @keyframes pulse-border-green {
-            0%, 100% { border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
-            50% { border-color: rgba(16, 185, 129, 0.85); box-shadow: 0 0 25px rgba(16, 185, 129, 0.35); }
+
+            0%,
+            100% {
+                border-color: rgba(16, 185, 129, 0.4);
+                box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+            }
+
+            50% {
+                border-color: rgba(16, 185, 129, 0.85);
+                box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+            }
         }
+
         .glow-cyan {
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
         }
+
         /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0b1329; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b1329;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between text-slate-100 bg-[#060b16]">
 
     <!-- BARRA SUPERIOR DE ALTA DIRECCIÓN & ESTADO DE QUIRÓFANO -->
     <header class="w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-[1550px] mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
-            
+
             <!-- Logo & Brand Identity -->
             <div class="flex items-center gap-3.5">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25">
                     <i class="fa-solid fa-heart-pulse text-lg"></i>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <span class="text-lg font-black tracking-tight text-white">FR MEDICAL</span>
-                        <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-bold uppercase tracking-wider">SURGICAL OS v2.4</span>
+                        <span class="text-lg font-black tracking-tight text-white"></span>
+                        <span
+                            class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-bold uppercase tracking-wider">SURGICAL
+                            OS v2.4</span>
                     </div>
-                    <p class="text-[11px] text-slate-400">Sistema Operativo Quirúrgico, Logístico y Financiero • Powered by BluePixel MCP</p>
+                    <p class="text-[11px] text-slate-400">Sistema Operativo Quirúrgico, Logístico y Financiero • Powered
+                        by BluePixel MCP</p>
                 </div>
             </div>
 
             <!-- Central Switch: Turno / Guardia Nocturna (24/7 Simulator) -->
             <div class="flex items-center bg-slate-900/90 border border-slate-700/70 rounded-2xl p-1 shadow-inner">
-                <button id="btnTurnoNoche" onclick="setTurno('noche')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-md">
+                <button id="btnTurnoNoche" onclick="setTurno('noche')"
+                    class="px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-md">
                     <i class="fa-solid fa-moon text-amber-300"></i>
                     <span>Guardia 24/7 (02:15 AM)</span>
                     <span class="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
                 </button>
-                <button id="btnTurnoDia" onclick="setTurno('dia')" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2">
+                <button id="btnTurnoDia" onclick="setTurno('dia')"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2">
                     <i class="fa-solid fa-sun text-amber-400"></i>
                     <span>Horario Hábil (10:00 AM)</span>
                 </button>
@@ -77,7 +131,8 @@
 
             <!-- Health Status & Telemetry Indicators -->
             <div class="flex items-center gap-2 text-xs">
-                <div class="hidden xl:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-[11px]">
+                <div
+                    class="hidden xl:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-[11px]">
                     <span class="flex items-center gap-1.5 text-emerald-400">
                         <i class="fa-solid fa-shield-halved"></i> Validation Sentinel 0.8s
                     </span>
@@ -90,7 +145,8 @@
                         <i class="fa-solid fa-file-shield"></i> COFEPRIS Shield
                     </span>
                 </div>
-                <a href="../index.html" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-semibold text-xs flex items-center gap-1.5 transition">
+                <a href="../index.html"
+                    class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-semibold text-xs flex items-center gap-1.5 transition">
                     <i class="fa-solid fa-arrow-left"></i> Demos
                 </a>
             </div>
@@ -99,17 +155,22 @@
     </header>
 
     <!-- BANNER DE ALERTA DE GUARDIA NOCTURNA DINÁMICO -->
-    <div id="nightAlertBanner" class="bg-gradient-to-r from-red-950/90 via-slate-900 to-slate-950 border-b border-red-500/30 px-4 py-2">
+    <div id="nightAlertBanner"
+        class="bg-gradient-to-r from-red-950/90 via-slate-900 to-slate-950 border-b border-red-500/30 px-4 py-2">
         <div class="max-w-[1550px] mx-auto flex flex-wrap items-center justify-between text-xs gap-2">
             <div class="flex items-center gap-2 text-red-300 font-medium">
-                <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-bold border border-red-500/40 text-[10px] uppercase tracking-wider flex items-center gap-1">
+                <span
+                    class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-bold border border-red-500/40 text-[10px] uppercase tracking-wider flex items-center gap-1">
                     <i class="fa-solid fa-triangle-exclamation"></i> Brecha Nocturna Activa (12:00 AM - 7:00 AM)
                 </span>
-                <span>Personal administrativo no disponible en oficina. El <strong>Cerebro MCP de BluePixel</strong> asume la guardia de conmutador, triage y auto-aprobación.</span>
+                <span>Personal administrativo no disponible en oficina. El <strong>Cerebro MCP de BluePixel</strong>
+                    asume la guardia de conmutador, triage y auto-aprobación.</span>
             </div>
             <div class="flex items-center gap-3">
-                <span class="text-slate-400 mono text-[11px]"><i class="fa-solid fa-clock text-red-400"></i> Hora de simulación: <strong class="text-white">02:15:42 AM</strong></span>
-                <span class="text-emerald-400 font-bold mono text-[11px]"><i class="fa-solid fa-circle-check"></i> 0 llamadas perdidas hoy</span>
+                <span class="text-slate-400 mono text-[11px]"><i class="fa-solid fa-clock text-red-400"></i> Hora de
+                    simulación: <strong class="text-white">02:15:42 AM</strong></span>
+                <span class="text-emerald-400 font-bold mono text-[11px]"><i class="fa-solid fa-circle-check"></i> 0
+                    llamadas perdidas hoy</span>
             </div>
         </div>
     </div>
@@ -121,38 +182,48 @@
         <!-- COLUMNA 1: PILAR 1 & 2 (FRENTE CLÍNICO & TRIAGE) (4 COLS) -->
         <!-- ========================================== -->
         <div class="lg:col-span-4 space-y-5">
-            
+
             <!-- PANEL 1: ENTRADA DE URGENCIAS & AGENTE DE VOZ -->
             <div class="glass-card rounded-2xl p-5 shadow-2xl border-slate-800">
                 <div class="flex items-center justify-between mb-3.5">
                     <div class="flex items-center gap-2">
-                        <span class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold">1</span>
+                        <span
+                            class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold">1</span>
                         <h2 class="text-sm font-extrabold text-white tracking-wide">Frente Clínico 24/7</h2>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/30 mono">PILAR 1 & 2</span>
+                    <span
+                        class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/30 mono">PILAR
+                        1 & 2</span>
                 </div>
 
                 <!-- SIMULADOR DE LLAMADA DE QUIRÓFANO (VOZ IA) -->
                 <div class="mb-4 p-3.5 rounded-xl bg-slate-900/90 border border-cyan-500/30 relative overflow-hidden">
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-xs font-bold text-cyan-300 flex items-center gap-1.5">
-                            <i class="fa-solid fa-phone-volume text-cyan-400 animate-bounce"></i> Llamada Entrante de Urgencia
+                            <i class="fa-solid fa-phone-volume text-cyan-400 animate-bounce"></i> Llamada Entrante de
+                            Urgencia
                         </span>
-                        <span class="text-[10px] text-amber-300 mono bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">02:15 AM • 2do Timbrazo</span>
+                        <span
+                            class="text-[10px] text-amber-300 mono bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">02:15
+                            AM • 2do Timbrazo</span>
                     </div>
                     <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
-                        Simula la entrada de audio del <strong>Dr. Méndez</strong> solicitando material quirúrgico de alta especialidad para un quirófano activo:
+                        Simula la entrada de audio del <strong>Dr. Méndez</strong> solicitando material quirúrgico de
+                        alta especialidad para un quirófano activo:
                     </p>
                     <div class="flex items-center gap-2">
-                        <button id="btnAudioCall" onclick="simularLlamadaVoz()" class="flex-1 py-2 px-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/25 transition active:scale-95">
+                        <button id="btnAudioCall" onclick="simularLlamadaVoz()"
+                            class="flex-1 py-2 px-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/25 transition active:scale-95">
                             <i class="fa-solid fa-microphone-lines"></i> Escuchar & Cotizar con IA
                         </button>
-                        <button onclick="detenerAudio()" title="Detener audio" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition">
+                        <button onclick="detenerAudio()" title="Detener audio"
+                            class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition">
                             <i class="fa-solid fa-stop"></i>
                         </button>
                     </div>
                     <!-- Audio Waveform Simulated -->
-                    <div id="waveform" class="hidden mt-2 pt-2 border-t border-slate-800 flex items-center justify-between gap-1 h-5 text-cyan-400">
+                    <div id="waveform"
+                        class="hidden mt-2 pt-2 border-t border-slate-800 flex items-center justify-between gap-1 h-5 text-cyan-400">
                         <span class="w-1 bg-cyan-400 rounded animate-pulse h-2"></span>
                         <span class="w-1 bg-cyan-400 rounded animate-pulse h-4"></span>
                         <span class="w-1 bg-cyan-400 rounded animate-pulse h-5"></span>
@@ -165,21 +236,27 @@
 
                 <!-- Casos Rápidos Preseteados -->
                 <div class="mb-4">
-                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">O selecciona un caso clínico predefinido:</label>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">O selecciona
+                        un caso clínico predefinido:</label>
                     <div class="grid grid-cols-2 gap-2">
-                        <button onclick="cargarCasoPreset(1)" class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
-                            <div class="font-bold text-cyan-300 group-hover:text-cyan-200">Fractura Costal Múltiple</div>
+                        <button onclick="cargarCasoPreset(1)"
+                            class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
+                            <div class="font-bold text-cyan-300 group-hover:text-cyan-200">Fractura Costal Múltiple
+                            </div>
                             <div class="text-[10px] text-slate-400">Stracos (MedXpert) • Trauma</div>
                         </button>
-                        <button onclick="cargarCasoPreset(2)" class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
+                        <button onclick="cargarCasoPreset(2)"
+                            class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
                             <div class="font-bold text-cyan-300 group-hover:text-cyan-200">Drenaje Cardiotorácico</div>
                             <div class="text-[10px] text-slate-400">Redax Drentech • Post-Op</div>
                         </button>
-                        <button onclick="cargarCasoPreset(3)" class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
+                        <button onclick="cargarCasoPreset(3)"
+                            class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
                             <div class="font-bold text-cyan-300 group-hover:text-cyan-200">Estenosis Traqueal</div>
                             <div class="text-[10px] text-slate-400">Stent Boston Medical • Vía Aérea</div>
                         </button>
-                        <button onclick="cargarCasoPreset(4)" class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
+                        <button onclick="cargarCasoPreset(4)"
+                            class="p-2 text-left rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500 text-xs transition group">
                             <div class="font-bold text-cyan-300 group-hover:text-cyan-200">Pectus Excavatum</div>
                             <div class="text-[10px] text-slate-400">Barra Nuss Titanio • Tórax</div>
                         </button>
@@ -189,51 +266,71 @@
                 <!-- Formulario de Entrada -->
                 <div class="space-y-3.5">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">Hospital / Centro Quirúrgico:</label>
-                        <select id="hospitalSelect" onchange="actualizarConvenio()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 transition">
-                            <option value="Hospital Ángeles Lomas">Hospital Ángeles Lomas (Convenio AAA - Despacho sin Anticipo)</option>
-                            <option value="Hospital Ángeles Pedregal">Hospital Ángeles Pedregal (Convenio AAA - Despacho sin Anticipo)</option>
-                            <option value="Centro Médico ABC Observatorio">Centro Médico ABC Observatorio (Convenio AAA)</option>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Hospital / Centro
+                            Quirúrgico:</label>
+                        <select id="hospitalSelect" onchange="actualizarConvenio()"
+                            class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 transition">
+                            <option value="Hospital Ángeles Lomas">Hospital Ángeles Lomas (Convenio AAA - Despacho sin
+                                Anticipo)</option>
+                            <option value="Hospital Ángeles Pedregal">Hospital Ángeles Pedregal (Convenio AAA - Despacho
+                                sin Anticipo)</option>
+                            <option value="Centro Médico ABC Observatorio">Centro Médico ABC Observatorio (Convenio AAA)
+                            </option>
                             <option value="Médica Sur">Médica Sur (Convenio Nivel 2)</option>
-                            <option value="Clínica Privada Santa Elena (Sin Convenio)">Clínica Privada Santa Elena (Requiere Anticipo Express)</option>
-                            <option value="Instituto Nacional de Enfermedades Respiratorias (INER)">INER (Licitación Pública)</option>
+                            <option value="Clínica Privada Santa Elena (Sin Convenio)">Clínica Privada Santa Elena
+                                (Requiere Anticipo Express)</option>
+                            <option value="Instituto Nacional de Enfermedades Respiratorias (INER)">INER (Licitación
+                                Pública)</option>
                         </select>
                     </div>
 
                     <!-- SEMÁFORO DE CRÉDITO DINÁMICO 24/7 -->
-                    <div id="boxCreditStatus" class="p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-xs flex items-center justify-between">
+                    <div id="boxCreditStatus"
+                        class="p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-xs flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-credit-card text-emerald-400"></i>
                             <div>
-                                <span class="font-bold text-emerald-300 block text-[11px]" id="creditTitle">Semáforo: Convenio AAA Activo</span>
-                                <span class="text-[10px] text-slate-400" id="creditSubtitle">Línea de crédito abierta. Despacho sin anticipo contra folio hospitalario.</span>
+                                <span class="font-bold text-emerald-300 block text-[11px]" id="creditTitle">Semáforo:
+                                    Convenio AAA Activo</span>
+                                <span class="text-[10px] text-slate-400" id="creditSubtitle">Línea de crédito abierta.
+                                    Despacho sin anticipo contra folio hospitalario.</span>
                             </div>
                         </div>
-                        <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold uppercase border border-emerald-500/30">APROBADO</span>
+                        <span
+                            class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold uppercase border border-emerald-500/30">APROBADO</span>
                     </div>
 
                     <!-- Prompt Quirúrgico / Transcripción -->
                     <div>
                         <div class="flex items-center justify-between mb-1">
-                            <label class="text-xs font-semibold text-slate-300">Detalle Clínico / Transcripción de Quirófano:</label>
-                            <span id="badgeTriageNLP" class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/40">🔴 CÓDIGO ROJO (&lt; 2h)</span>
+                            <label class="text-xs font-semibold text-slate-300">Detalle Clínico / Transcripción de
+                                Quirófano:</label>
+                            <span id="badgeTriageNLP"
+                                class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/40">🔴
+                                CÓDIGO ROJO (&lt; 2h)</span>
                         </div>
-                        <textarea id="promptText" rows="3" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-500 leading-relaxed font-mono text-[11px]">Cirugía de urgencia por trauma torácico severo con tórax inestable en Hospital Ángeles Pedregal. Cirujano solicita placas de osteosíntesis costal Stracos de titanio con pinzas conformadoras y tornillos de reserva para ingresar a quirófano de inmediato.</textarea>
+                        <textarea id="promptText" rows="3"
+                            class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-500 leading-relaxed font-mono text-[11px]">Cirugía de urgencia por trauma torácico severo con tórax inestable en Hospital Ángeles Pedregal. Cirujano solicita placas de osteosíntesis costal Stracos de titanio con pinzas conformadoras y tornillos de reserva para ingresar a quirófano de inmediato.</textarea>
                     </div>
 
                     <!-- TOGGLE DE KITS ANTI-VUELTAS -->
                     <div class="p-3 rounded-xl bg-slate-900 border border-amber-500/30 flex items-start gap-3">
-                        <input type="checkbox" id="checkKitAntiVueltas" checked class="mt-1 w-4 h-4 text-amber-500 rounded bg-slate-950 border-slate-700 focus:ring-0 cursor-pointer">
+                        <input type="checkbox" id="checkKitAntiVueltas" checked
+                            class="mt-1 w-4 h-4 text-amber-500 rounded bg-slate-950 border-slate-700 focus:ring-0 cursor-pointer">
                         <label for="checkKitAntiVueltas" class="text-xs cursor-pointer">
                             <strong class="text-amber-300 block flex items-center gap-1.5">
-                                <i class="fa-solid fa-kit-medical text-amber-400"></i> Recomendador de Kits Anti-Vueltas (Activo)
+                                <i class="fa-solid fa-kit-medical text-amber-400"></i> Recomendador de Kits Anti-Vueltas
+                                (Activo)
                             </strong>
-                            <span class="text-[10px] text-slate-400">Añade instrumental complementario y tornillería de reserva para evitar que el mensajero deba dar un 2do o 3er viaje al mismo hospital a mitad de cirugía.</span>
+                            <span class="text-[10px] text-slate-400">Añade instrumental complementario y tornillería de
+                                reserva para evitar que el mensajero deba dar un 2do o 3er viaje al mismo hospital a
+                                mitad de cirugía.</span>
                         </label>
                     </div>
 
                     <!-- Botón Principal de Cotización -->
-                    <button id="btnCotizarMain" onclick="ejecutarSurgicalOS()" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-black text-sm shadow-xl shadow-cyan-500/25 flex items-center justify-center gap-2 transition transform active:scale-95">
+                    <button id="btnCotizarMain" onclick="ejecutarSurgicalOS()"
+                        class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-black text-sm shadow-xl shadow-cyan-500/25 flex items-center justify-center gap-2 transition transform active:scale-95">
                         <i class="fa-solid fa-bolt text-yellow-300"></i> Procesar Orden con Surgical OS (1.8s)
                     </button>
                 </div>
@@ -245,47 +342,59 @@
         <!-- COLUMNA 2: VALIDATION SENTINEL & COTIZACIÓN (4 COLS) -->
         <!-- ========================================== -->
         <div class="lg:col-span-4 space-y-5">
-            
+
             <!-- PANEL 2: VALIDATION SENTINEL EN TIEMPO REAL -->
             <div class="glass-card rounded-2xl p-5 shadow-2xl border-slate-800">
                 <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center gap-2">
-                        <span class="w-6 h-6 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">2</span>
+                        <span
+                            class="w-6 h-6 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">2</span>
                         <h2 class="text-sm font-extrabold text-white tracking-wide">Validation Sentinel</h2>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-500/30 mono">PILAR 3 (0.8s)</span>
+                    <span
+                        class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-500/30 mono">PILAR
+                        3 (0.8s)</span>
                 </div>
 
                 <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 text-xs space-y-2 mb-4">
-                    <div class="flex items-center justify-between text-[11px] text-slate-400 pb-1.5 border-b border-slate-800">
+                    <div
+                        class="flex items-center justify-between text-[11px] text-slate-400 pb-1.5 border-b border-slate-800">
                         <span>Auditoría Autónoma de Orden:</span>
                         <span id="sentinelSpeed" class="mono text-emerald-400 font-bold">Listo para auditar</span>
                     </div>
-                    
+
                     <!-- Checklist animado de Sentinel -->
                     <div id="sentinelChecklist" class="space-y-1.5 text-[11px]">
                         <div class="flex items-center gap-2 text-slate-500" id="chk1">
-                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Verificación de SKUs y compatibilidad quirúrgica
+                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Verificación de SKUs y compatibilidad
+                            quirúrgica
                         </div>
                         <div class="flex items-center gap-2 text-slate-500" id="chk2">
-                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Lista de precios según convenio hospitalario vigente
+                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Lista de precios según convenio
+                            hospitalario vigente
                         </div>
                         <div class="flex items-center gap-2 text-slate-500" id="chk3">
-                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Semáforo de crédito y reglas de anticipo nocturno
+                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Semáforo de crédito y reglas de
+                            anticipo nocturno
                         </div>
                         <div class="flex items-center gap-2 text-slate-500" id="chk4">
-                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Existencia física en Almacén Central CDMX
+                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Existencia física en Almacén Central
+                            CDMX
                         </div>
                         <div class="flex items-center gap-2 text-slate-500" id="chk5">
-                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Validación de Registro Sanitario COFEPRIS
+                            <i class="fa-solid fa-circle-notch text-[10px]"></i> Validación de Registro Sanitario
+                            COFEPRIS
                         </div>
                     </div>
 
-                    <div id="sentinelApprovalBox" class="hidden mt-3 p-2.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-center">
-                        <span class="text-xs font-black text-emerald-300 block flex items-center justify-center gap-1.5">
+                    <div id="sentinelApprovalBox"
+                        class="hidden mt-3 p-2.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-center">
+                        <span
+                            class="text-xs font-black text-emerald-300 block flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-circle-check"></i> AUTO-APROBACIÓN EMITIDA (0.8s)
                         </span>
-                        <span class="text-[10px] text-slate-300">Orden validada sin necesidad de esperar a las 7:00 AM. Almacén liberado.</span>
+                        <span class="text-[10px] text-slate-300">Orden validada sin necesidad de esperar a las 7:00 AM.
+                            Almacén liberado.</span>
                     </div>
                 </div>
 
@@ -298,24 +407,29 @@
                         <span id="erpSyncBadge" class="text-[10px] text-slate-500 font-mono">En espera...</span>
                     </div>
                     <p class="text-[10px] text-slate-400 leading-tight mb-2">
-                        Inyecta el pedido en el ERP actual de FR Medical para descontar inventario vivo y habilitar timbrado fiscal CFDI 4.0 sin doble captura.
+                        Inyecta el pedido en el ERP actual de para descontar inventario vivo y habilitar timbrado fiscal
+                        CFDI 4.0 sin doble captura.
                     </p>
-                    <div id="erpJsonBox" class="p-2 rounded bg-black/60 mono text-[9px] text-cyan-300/80 overflow-x-auto max-h-16">
+                    <div id="erpJsonBox"
+                        class="p-2 rounded bg-black/60 mono text-[9px] text-cyan-300/80 overflow-x-auto max-h-16">
                         // Conector MCP en espera de orden...
                     </div>
                 </div>
             </div>
 
             <!-- HOJA FORMAL DE COTIZACIÓN (VISTA PREVIA) -->
-            <div id="hojaCotizacion" class="glass-card rounded-2xl p-5 shadow-2xl border-slate-800 transition-all duration-500 opacity-60">
+            <div id="hojaCotizacion"
+                class="glass-card rounded-2xl p-5 shadow-2xl border-slate-800 transition-all duration-500 opacity-60">
                 <div class="flex items-start justify-between pb-3 mb-3 border-b border-slate-800">
                     <div>
-                        <span class="text-[9px] font-bold text-cyan-400 uppercase tracking-widest block">FR Medical S.A. de C.V.</span>
+                        <span class="text-[9px] font-bold text-cyan-400 uppercase tracking-widest block"> S.A. de
+                            C.V.</span>
                         <h3 id="docFolio" class="text-base font-extrabold text-white mono">FRM-2026-9214</h3>
                         <p id="docHospitalName" class="text-[11px] text-slate-400">Hospital: --</p>
                     </div>
                     <div class="text-right">
-                        <span id="docBadgeStock" class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
+                        <span id="docBadgeStock"
+                            class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
                             Pendiente
                         </span>
                         <div id="docFecha" class="text-[9px] text-slate-500 mt-1 mono">--/--/2026 02:15 AM</div>
@@ -359,10 +473,12 @@
 
                 <!-- Acciones Rápidas -->
                 <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between gap-2">
-                    <button onclick="descargarPDFOficial()" class="flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 hover:border-red-500 transition flex items-center justify-center gap-1.5 shadow-sm">
+                    <button onclick="descargarPDFOficial()"
+                        class="flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 hover:border-red-500 transition flex items-center justify-center gap-1.5 shadow-sm">
                         <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar PDF COFEPRIS
                     </button>
-                    <button onclick="enviarWhatsAppAlerta()" class="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/20">
+                    <button onclick="enviarWhatsAppAlerta()"
+                        class="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/20">
                         <i class="fa-brands fa-whatsapp text-sm"></i> Notificar a Quirófano
                     </button>
                 </div>
@@ -374,15 +490,18 @@
         <!-- COLUMNA 3: PILAR 4 (LOGÍSTICA GPS, SOPS & FINANZAS) (4 COLS) -->
         <!-- ========================================== -->
         <div class="lg:col-span-4 space-y-5">
-            
+
             <!-- PANEL 3: LOGÍSTICA & DESPACHO GPS EN TIEMPO REAL -->
             <div class="glass-card rounded-2xl p-5 shadow-2xl border-slate-800">
                 <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center gap-2">
-                        <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">3</span>
+                        <span
+                            class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">3</span>
                         <h2 class="text-sm font-extrabold text-white tracking-wide">Ruteo GPS de Quirófano</h2>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/30 mono">PILAR 2 & 4</span>
+                    <span
+                        class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/30 mono">PILAR
+                        2 & 4</span>
                 </div>
 
                 <!-- SIMULADOR DE MAPA GPS / RUTA CDMX -->
@@ -390,28 +509,34 @@
                     <!-- Mapa Vectorial Esquematizado CDMX -->
                     <svg viewBox="0 0 400 180" class="w-full h-full opacity-60">
                         <!-- Red vial simulada -->
-                        <path d="M 20 40 Q 150 60 220 30 T 380 70" stroke="#334155" stroke-width="2" fill="none"/>
-                        <path d="M 60 160 Q 140 100 240 110 T 360 150" stroke="#334155" stroke-width="2" fill="none"/>
-                        <path d="M 120 10 L 140 170" stroke="#1e293b" stroke-width="3" fill="none"/>
-                        <path d="M 260 10 L 250 170" stroke="#1e293b" stroke-width="3" fill="none"/>
+                        <path d="M 20 40 Q 150 60 220 30 T 380 70" stroke="#334155" stroke-width="2" fill="none" />
+                        <path d="M 60 160 Q 140 100 240 110 T 360 150" stroke="#334155" stroke-width="2" fill="none" />
+                        <path d="M 120 10 L 140 170" stroke="#1e293b" stroke-width="3" fill="none" />
+                        <path d="M 260 10 L 250 170" stroke="#1e293b" stroke-width="3" fill="none" />
                         <!-- Periférico Ruta Activa -->
-                        <path id="rutaGPS" d="M 70 50 Q 180 80 240 60 T 330 130" stroke="#06b6d4" stroke-width="3.5" stroke-dasharray="6,4" fill="none"/>
+                        <path id="rutaGPS" d="M 70 50 Q 180 80 240 60 T 330 130" stroke="#06b6d4" stroke-width="3.5"
+                            stroke-dasharray="6,4" fill="none" />
                         <!-- Almacén Central -->
-                        <circle cx="70" cy="50" r="7" fill="#3b82f6"/>
-                        <text x="70" y="38" font-family="sans-serif" font-size="8" fill="#93c5fd" text-anchor="middle" font-weight="bold">Almacén Central</text>
+                        <circle cx="70" cy="50" r="7" fill="#3b82f6" />
+                        <text x="70" y="38" font-family="sans-serif" font-size="8" fill="#93c5fd" text-anchor="middle"
+                            font-weight="bold">Almacén Central</text>
                         <!-- Hospital Destino -->
-                        <circle cx="330" cy="130" r="8" fill="#ef4444"/>
-                        <text x="330" y="152" font-family="sans-serif" font-size="8" fill="#fca5a5" text-anchor="middle" font-weight="bold">Hosp. Ángeles Pedregal</text>
+                        <circle cx="330" cy="130" r="8" fill="#ef4444" />
+                        <text x="330" y="152" font-family="sans-serif" font-size="8" fill="#fca5a5" text-anchor="middle"
+                            font-weight="bold">Hosp. Ángeles Pedregal</text>
                         <!-- Marcador Mensajero en Movimiento -->
                         <g id="mensajeroMarker" transform="translate(160, 68)">
-                            <circle cx="0" cy="0" r="6" fill="#10b981"/>
-                            <circle cx="0" cy="0" r="10" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.7" class="animate-ping"/>
-                            <text x="0" y="-9" font-family="sans-serif" font-size="7" fill="#34d399" text-anchor="middle" font-weight="bold">Móvil #03</text>
+                            <circle cx="0" cy="0" r="6" fill="#10b981" />
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.7"
+                                class="animate-ping" />
+                            <text x="0" y="-9" font-family="sans-serif" font-size="7" fill="#34d399"
+                                text-anchor="middle" font-weight="bold">Móvil #03</text>
                         </g>
                     </svg>
 
                     <!-- Overlay Telemetría GPS -->
-                    <div class="absolute bottom-2 left-2 right-2 p-2 rounded-lg bg-slate-900/90 backdrop-blur-md border border-slate-700/80 flex items-center justify-between text-[11px]">
+                    <div
+                        class="absolute bottom-2 left-2 right-2 p-2 rounded-lg bg-slate-900/90 backdrop-blur-md border border-slate-700/80 flex items-center justify-between text-[11px]">
                         <div>
                             <span class="text-slate-400 block text-[9px]">Chofer de Guardia:</span>
                             <span class="font-bold text-white" id="choferName">Carlos Morales (Unidad 03)</span>
@@ -426,7 +551,8 @@
                 <!-- LIVING SOPS & FIRMA DIGITAL DE RECEPCIÓN -->
                 <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs mb-3">
                     <span class="font-bold text-slate-300 block mb-1 text-[11px]">
-                        <i class="fa-solid fa-list-check text-cyan-400"></i> Living SOP: Protocolo de Entrega en Quirófano
+                        <i class="fa-solid fa-list-check text-cyan-400"></i> Living SOP: Protocolo de Entrega en
+                        Quirófano
                     </span>
                     <div class="space-y-1 text-[10px] text-slate-400">
                         <label class="flex items-center gap-1.5 cursor-pointer">
@@ -445,7 +571,8 @@
                             <span class="text-slate-400">Firma Digital de Recepción (Médico / Quirófano):</span>
                             <button onclick="limpiarFirma()" class="text-cyan-400 hover:underline">Limpiar</button>
                         </div>
-                        <canvas id="firmaCanvas" width="320" height="60" class="w-full h-14 bg-slate-950 border border-dashed border-slate-700 rounded-lg cursor-crosshair"></canvas>
+                        <canvas id="firmaCanvas" width="320" height="60"
+                            class="w-full h-14 bg-slate-950 border border-dashed border-slate-700 rounded-lg cursor-crosshair"></canvas>
                     </div>
                 </div>
 
@@ -455,7 +582,9 @@
                         <span class="font-bold text-white flex items-center gap-1.5 text-[11px]">
                             <i class="fa-solid fa-calculator text-amber-400"></i> Liquidación Automática de Comisiones
                         </span>
-                        <span class="text-[9px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">Cero Calculadora</span>
+                        <span
+                            class="text-[9px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">Cero
+                            Calculadora</span>
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
@@ -467,7 +596,8 @@
                         <div class="p-2 rounded bg-slate-900 border border-slate-800">
                             <span class="text-slate-400 block text-[10px]">OCR Viáticos (Gas/Caseta):</span>
                             <span class="font-bold text-cyan-300 mono">$380.00 MXN</span>
-                            <span class="text-[9px] text-emerald-400 block"><i class="fa-solid fa-check"></i> Ticket WhatsApp</span>
+                            <span class="text-[9px] text-emerald-400 block"><i class="fa-solid fa-check"></i> Ticket
+                                WhatsApp</span>
                         </div>
                     </div>
                 </div>
@@ -479,12 +609,13 @@
     </main>
 
     <!-- FOOTER EJECUTIVO -->
-    <footer class="max-w-[1550px] mx-auto w-full px-4 py-4 border-t border-slate-800 text-xs flex flex-col md:flex-row items-center justify-between gap-2 text-slate-500">
+    <footer
+        class="max-w-[1550px] mx-auto w-full px-4 py-4 border-t border-slate-800 text-xs flex flex-col md:flex-row items-center justify-between gap-2 text-slate-500">
         <div>
-            FR Medical Surgical OS • Demostración de Arquitectura Integral de Transformación Digital (BluePixel 2026)
+            Surgical OS • Demostración de Arquitectura Integral de Transformación Digital (BluePixel 2026)
         </div>
         <div class="flex items-center gap-3">
-            <span class="text-slate-400">Diseñado para la mesa directiva de FR Medical</span>
+            <span class="text-slate-400">Diseñado para la mesa directiva de </span>
             <span class="text-slate-600">•</span>
             <span class="text-cyan-400 font-bold">Leonardo Flores, María, Fabián Flores</span>
         </div>
@@ -494,7 +625,7 @@
     <!-- LOGIC JAVASCRIPT: THE SURGICAL OS ENGINE -->
     <!-- ========================================== -->
     <script>
-        // BASE DE DATOS QUIRÚRGICA OFICIAL FR MEDICAL
+        // BASE DE DATOS QUIRÚRGICA OFICIAL 
         const CASOS_DATA = {
             1: {
                 hospital: "Hospital Ángeles Pedregal",
@@ -641,7 +772,7 @@
             wave.classList.remove('hidden');
 
             const textToSpeak = "Buenas noches, habla el Doctor Méndez desde quirófano de Ángeles Pedregal. Tengo un paciente en sala de choque con fractura costal bilateral y tórax inestable. Requiero urgente el kit Stracos de MedXpert con pinzas e instrumental y tornillos de reserva para entrar en 45 minutos. ¿Tienen disponible?";
-            
+
             document.getElementById('promptText').value = textToSpeak;
             document.getElementById('hospitalSelect').value = "Hospital Ángeles Pedregal";
             actualizarConvenio();
@@ -715,7 +846,7 @@
                 chks[3].innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> Stock en Almacén Central CDMX confirmado (0.65s)`;
                 chks[4].className = "flex items-center gap-2 text-emerald-400 font-medium";
                 chks[4].innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> Registros Sanitarios COFEPRIS vigentes (0.80s)`;
-                
+
                 speed.innerText = "✓ Auditoría Completada en 0.8s";
                 approval.classList.remove('hidden');
 
@@ -779,7 +910,7 @@
                         <div class="text-[8.5px] text-amber-400/80">Reg. COFEPRIS: ${it.reg}</div>
                     </td>
                     <td class="py-2 text-center text-white font-bold">${it.cant}</td>
-                    <td class="py-2 text-right text-slate-200">$${totalItem.toLocaleString('es-MX', {minimumFractionDigits: 2})}</td>
+                    <td class="py-2 text-right text-slate-200">$${totalItem.toLocaleString('es-MX', { minimumFractionDigits: 2 })}</td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -788,14 +919,14 @@
             const total = subtotal + iva;
             currentCalculatedTotal = total;
 
-            document.getElementById('subtotalVal').innerText = `$${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`;
-            document.getElementById('ivaVal').innerText = `$${iva.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`;
-            document.getElementById('totalVal').innerText = `$${total.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`;
+            document.getElementById('subtotalVal').innerText = `$${subtotal.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`;
+            document.getElementById('ivaVal').innerText = `$${iva.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`;
+            document.getElementById('totalVal').innerText = `$${total.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`;
 
             // Comisión del vendedor (8.5% sobre margen bruto estimado del 42%)
             const utilidad = subtotal * 0.42;
             const comision = utilidad * 0.085;
-            document.getElementById('comisionVendedorVal').innerText = `$${comision.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`;
+            document.getElementById('comisionVendedorVal').innerText = `$${comision.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`;
         }
 
         // SIMULADOR DE MOVIMIENTO GPS EN MAPA SVG
@@ -880,7 +1011,7 @@
 
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-            
+
             const rawHosp = document.getElementById('hospitalSelect').value;
             const hosp = cleanPdfText(rawHosp.split('(')[0].trim());
             const folio = cleanPdfText(currentActiveData.folio);
@@ -900,13 +1031,13 @@
             doc.setTextColor(255, 255, 255);
             doc.setFontSize(17);
             doc.setFont('helvetica', 'bold');
-            doc.text('FR MEDICAL S.A. DE C.V.', 14, 15);
+            doc.text(' S.A. DE C.V.', 14, 15);
 
             doc.setFontSize(8.5);
             doc.setFont('helvetica', 'normal');
             doc.setTextColor(56, 189, 248);
             doc.text('SISTEMA OPERATIVO QUIRURGICO • ALTA ESPECIALIDAD CARDIOTORACICA Y VIA AEREA', 14, 21.5);
-            
+
             doc.setTextColor(148, 163, 184);
             doc.setFontSize(7.5);
             doc.text('RFC: FRM120918XX9 • Av. Insurgentes Sur 1602, Benito Juarez, CDMX • Tel: 55 5374 1133 • contacto@frmedical.com.mx', 14, 27.5);
@@ -1034,7 +1165,7 @@
             const total = subtotal + iva;
 
             // 4. BLOQUE INFERIOR: COFEPRIS SEAL (IZQ) Y TOTALES (DER)
-            
+
             // Caja COFEPRIS (Izquierda x: 14 a 122)
             doc.setFillColor(240, 253, 244);
             doc.setDrawColor(134, 239, 172);
@@ -1077,14 +1208,14 @@
             // 5. BLOQUE DE FIRMAS DIGITALES
             const sigY = finalY + 44;
             if (sigY <= 265) {
-                // Firma Chofer FR Medical
+                // Firma Chofer 
                 doc.setDrawColor(148, 163, 184);
                 doc.setLineWidth(0.3);
                 doc.line(18, sigY, 90, sigY);
                 doc.setFontSize(7.5);
                 doc.setFont('helvetica', 'bold');
                 doc.setTextColor(30, 41, 59);
-                doc.text('DESPACHO Y CUSTODIA FR MEDICAL', 54, sigY + 4, { align: 'center' });
+                doc.text('DESPACHO Y CUSTODIA ', 54, sigY + 4, { align: 'center' });
                 doc.setFont('helvetica', 'normal');
                 doc.setFontSize(6.8);
                 doc.setTextColor(100, 116, 139);
@@ -1117,7 +1248,7 @@
             doc.setFontSize(6.5);
             doc.setFont('helvetica', 'italic');
             doc.setTextColor(148, 163, 184);
-            doc.text('Documento oficial emitido por el sistema autonomo FR Medical Surgical OS (BluePixel Engine). Listo para remision de quirofano y CFDI 4.0.', 105, 287, { align: 'center' });
+            doc.text('Documento oficial emitido por el sistema autonomo  Surgical OS (BluePixel Engine). Listo para remision de quirofano y CFDI 4.0.', 105, 287, { align: 'center' });
 
             doc.save(`Cotizacion_Oficial_FR_Medical_${folio}.pdf`);
         }
@@ -1125,8 +1256,8 @@
         function enviarWhatsAppAlerta() {
             const hosp = document.getElementById('hospitalSelect').value;
             const folio = currentActiveData.folio;
-            const msg = `🏥 *FR MEDICAL QUIRÓFANO 24/7*\n\nOrden Confirmada: *${folio}*\nDestino: *${hosp}*\nEstado: *Despacho Express en Camino con GPS*\nChofer: *${currentActiveData.chofer}*\nTriage: *${currentActiveData.urgencia}*\nTotal: *$${currentCalculatedTotal.toLocaleString('es-MX')} MXN*\n\nSeguimiento de entrega y remisión digital activada en tiempo real.`;
-            alert(`Mensaje enviado por la API de WhatsApp de FR Medical:\n\n${msg}`);
+            const msg = `🏥 * QUIRÓFANO 24/7*\n\nOrden Confirmada: *${folio}*\nDestino: *${hosp}*\nEstado: *Despacho Express en Camino con GPS*\nChofer: *${currentActiveData.chofer}*\nTriage: *${currentActiveData.urgencia}*\nTotal: *$${currentCalculatedTotal.toLocaleString('es-MX')} MXN*\n\nSeguimiento de entrega y remisión digital activada en tiempo real.`;
+            alert(`Mensaje enviado por la API de WhatsApp de :\n\n${msg}`);
         }
 
         // INICIALIZACIÓN POR DEFECTO
@@ -1136,4 +1267,5 @@
         };
     </script>
 </body>
+
 </html>

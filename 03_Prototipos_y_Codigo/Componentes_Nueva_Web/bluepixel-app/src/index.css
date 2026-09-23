@@ -76,3 +76,13 @@
 .animate-shine {
   animation: shine 8s ease-in-out infinite;
 }
+
+@keyframes bpag-glow-flow {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.animate-glow-flow {
+  background-size: 200% auto;
+  animation: bpag-glow-flow 3s linear infinite;
+}
