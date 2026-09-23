@@ -13,9 +13,9 @@ Tras revisar la auditoría forense interna y la nueva propuesta visual enviada p
 *   **LinkedIn Ads para Lead Gen:** Rocketing destina $12,000 MXN a LinkedIn enfocado en IA y Producto Digital, lo cual es la plataforma correcta para el tomador de decisión B2B (CTO, COO).
 
 ### Puntos de Fricción / Innovación a Discutir ⚠️
-*   **Meta Ads (Audiencias Similares):** Nuestra estrategia dictaba "Cero Meta frío" y usar Meta solo para Retargeting. Rocketing propone $1,500 MXN para Lookalike (LAL 1%). *Recomendación: Aprobar como experimento controlado por su bajo costo, pero monitorear la calidad del lead (Filtro Anti-PyME).*
+*   **Meta Ads (Audiencias Similares):** Nuestra estrategia dictaba "Cero Meta frío" y usar Meta solo para Retargeting. Rocketing propone $1,500 MXN para Lookalike (LAL 1%). *Decisión: **RECHAZADO**. El LAL en Meta para B2B suele traer leads basura o PyMEs sin presupuesto. Ese presupuesto se reasigna a LinkedIn Retargeting.*
 *   **ChatGPT Ads (Test):** Rocketing propone $2,500 MXN en ads dentro de ChatGPT. *Recomendación: Fuerte aprobación. Como consultora en Agentización, probar adquisición nativa en ChatGPT es un ángulo innovador y coherente con nuestra oferta.*
-*   **Distribución de Presupuesto:** El total propuesto por Rocketing suma $43,500 MXN/mes ($23.5k Google, $12k LinkedIn, $5.5k Meta, $2.5k ChatGPT). Esto es ligeramente superior a los $30,000 MXN que estábamos gastando solo en Google. Debemos validar el presupuesto global con Dirección.
+*   **Distribución de Presupuesto:** El total propuesto por Rocketing suma $43,500 MXN/mes ($23.5k Google, $13.5k LinkedIn, $4k Meta, $2.5k ChatGPT). Esto es ligeramente superior a los $30,000 MXN que estábamos gastando solo en Google. Debemos validar el presupuesto global con Dirección.
 
 ---
 
@@ -37,20 +37,18 @@ Esta es la estructura unificada que integra la propuesta de Rocketing con las di
 
 *Directiva inamovible:* Aplicar Lista Maestra de Negativas (Anti-PyME, Gratis, Educativo) a nivel cuenta.
 
-### 💼 B. LINKEDIN ADS (Captación Directa CTOs/COOs) - $12,000 MXN
+### 💼 B. LINKEDIN ADS (Captación Directa CTOs/COOs) - $13,500 MXN
 **Objetivo:** Generación de leads calificados por puesto corporativo.
 1.  **Lead Generation ($8,000 MXN)**
     *   *Formatos:* Formularios Nativos ofreciendo "Blueprint de Arquitectura".
     *   *Enfoque:* IA Operacional y Producto Digital.
-2.  **Retargeting B2B ($4,000 MXN)**
+2.  **Retargeting B2B ($5,500 MXN)**
     *   *Enfoque:* Re-impacto a visitantes de landings de alto valor.
 
-### 📱 C. META ADS (Retargeting Visual) - $5,500 MXN
+### 📱 C. META ADS (Retargeting Visual) - $4,000 MXN
 **Objetivo:** Reducción de costo por adquisición y recordación de marca.
 1.  **Remarketing de Conversión ($4,000 MXN)**
     *   *Enfoque:* Abandonos de formulario, Visitantes de Landings IA y Producto. Uso intensivo de video testimonials / casos de éxito.
-2.  **Audiencias Similares ($1,500 MXN)**
-    *   *Enfoque:* LAL 1% de base de datos de clientes actuales (Alta permanencia).
 
 ### 🤖 D. CHATGPT ADS (Test Innovador) - $2,500 MXN
 **Objetivo:** Captar usuarios de IA buscando profesionalizar herramientas.
@@ -59,10 +57,9 @@ Esta es la estructura unificada que integra la propuesta de Rocketing con las di
 
 ---
 
-## 3. PUNTOS CRÍTICOS Y CHECKLIST PARA LA JUNTA DE HOY (ACUERDOS A FIRMAR)
+## 3. CHECKLIST PARA LA JUNTA DE HOY (ACUERDOS A FIRMAR)
 
-1.  [ ] **Atribución de "Bucle Cerrado" (Offline Conversions):** El diagrama actual de Rocketing termina en la "Landing". Para evitar optimizar campañas hacia prospectos que solo llenan formularios pero no compran, les exigiremos la captura del GCLID. Nosotros internamente extraeremos el **Developer Token y Customer ID** de nuestro Google Ads para conectar el servidor de IA y devolver la señal de ventas exitosas (tickets >$300k).
-2.  [ ] **Pausar Meta Ads LAL 1% (Audiencias Similares):** Condicionar el lanzamiento de Lookalikes en Meta. Dado que en meses pasados hubo cero ventas, si hacemos LAL basado en esos leads históricos, el algoritmo atraerá prospectos de baja calidad. Todo el presupuesto de Meta debe ir a **Retargeting** hasta que el servidor MCP nutra a Meta con clientes cerrados.
-3.  [ ] **Ejecución Estricta de Keywords Negativas:** Aprobamos la estructura de IA Operacional y Producto Digital, con la condición de cargar a nivel cuenta la **Lista Maestra de Negativas** (términos como: gratis, curso, tutorial, vacantes). Sin este muro de contención, la pauta quemará presupuesto en estudiantes.
-4.  [ ] **Plan de Contingencia de Landings:** Definir a qué URLs transitorias apuntará el tráfico si las nuevas landings herméticas (`/lp/*`) demoran algunos días adicionales en desarrollo.
-5.  [ ] **Aprobar Presupuesto Consolidado:** Confirmar con Dirección el presupuesto omnicanal de $43,500 MXN (Google, LinkedIn, Meta, ChatGPT).
+1.  [ ] **Aprobar el aumento/distribución del presupuesto** ($43,500 MXN distribuidos en 4 plataformas vs los $30,000 MXN originales atomizados en Google).
+2.  [ ] **Confirmar entrega de las 3 Landings Herméticas** por parte de BluePixel para que Rocketing pueda apuntar el tráfico de Google.
+3.  [ ] **Acordar la carga inmediata de Negativas** en Google Ads para evitar sangrado (Tráfico educativo y startups sin fondos).
+4.  [ ] **Solicitar API Tokens a Rocketing** (Developer Token y Customer ID de Google Ads) para conectar el Servidor MCP de BluePixel y enviar conversiones offline reales (ventas, no solo formularios).
