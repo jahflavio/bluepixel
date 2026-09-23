@@ -431,27 +431,15 @@ export const pillarsData = {
       { q: '¿Qué garantía tenemos de que el agente no va a alucinar o cometer errores?', a: 'Implementamos una arquitectura RAG estricta donde el agente solo tiene acceso a responder con fuentes verificadas. Para cualquier acción que modifique bases de datos críticas, se configuran flujos de Human-in-the-Loop que exigen confirmación de un supervisor.' },
       { q: '¿Los agentes reemplazan a las personas de nuestro equipo?', a: 'No. El objetivo es liberar a tu equipo del trabajo mecánico repetitivo para que operen como Subject Matter Experts (SMEs), supervisando procesos con mayor velocidad y enfocándose en análisis de alto valor.' }
     ],
-    caseStudy: {
-      tag: 'CASO REAL B2B · LOGÍSTICA QUIRÚRGICA',
-      client: 'FR Medical S.A. de C.V. (Distribución Quirúrgica de Urgencias)',
-      title: 'FR Medical Surgical OS: Triage de quirófano en 1.8s y ERP Sync sin migración',
-      problem: 'Urgencias hospitalarias nocturnas (2:00 AM) con llamadas no contestadas, cotizaciones manuales en Excel que tardaban 45 minutos y riesgo de despachos sin confirmación en hospitales de alta exigencia (Ángeles, ABC, Médica Sur).',
-      solution: 'BluePixel diseñó e implementó el Sistema Operativo Quirúrgico: Agente de Voz y WhatsApp 24/7, motor de Triage NLP (Código Rojo < 2h), cotizador inteligente de kits de fijación con registro COFEPRIS y ERP Sync Bridge vía protocolo MCP en 0.5s sin reemplazar su software legado.',
-      result: 'Cero llamadas perdidas en quirófano nocturno, cotizaciones membretadas emitidas en 1.8 segundos y despacho automático con GPS sin requerir personal administrativo a medianoche.',
-      quote: 'No tuvimos que tirar nuestro software ni gastar millones cambiando de ERP: los agentes de BluePixel operaron sobre lo que ya teníamos funcionando.',
-      author: 'Dirección General, FR Medical',
-      metrics: [
-        { value: '1.8 seg', label: 'Generación de cotización formal COFEPRIS' },
-        { value: '0.5 seg', label: 'Sincronización determinística con el ERP actual' },
-        { value: '100%', label: 'Rescate de órdenes de guardia nocturna 24/7' }
-      ]
-    },
+    // Sin 'caseStudy': el que vivia aqui era FR Medical, que todavia no es
+    // cliente, y ademas nombraba a terceros (hospitales). Este pilar queda sin
+    // seccion de prueba hasta que se sustituya por un caso real autorizado.
     financialCallout: {
       eyebrow: 'ROI DETERMINÍSTICO EN AUTOMATIZACIÓN AGÉNTICA',
-      title: 'De 40 horas semanales a 1.8 segundos: Automatización sobre lo que ya tienes.',
+      title: 'Automatización sobre lo que ya tienes, sin migrar tu core.',
       desc: 'Los chatbots tradicionales solo responden textos planos; los agentes autónomos de BluePixel ejecutan transacciones reales sobre tu ERP, CRM y core de negocio vía protocolo abierto MCP sin obligarte a migrar sistemas legados.',
-      exampleLabel: 'Caso real medido en producción',
-      exampleText: 'FR Medical Quirúrgico: Triage NLP nocturno de urgencias y cotización oficial COFEPRIS en 1.8 segundos, sincronizado con su ERP en 0.5s con 0 llamadas perdidas a las 2:00 AM.'
+      exampleLabel: 'Cómo opera un agente determinístico',
+      exampleText: 'Consulta tu ERP vía MCP, valida contra tus reglas de negocio y ejecuta la transacción, sin humanos copiando datos entre pantallas.'
     },
     // Sin 'cycle' por la misma razon que en 'consultoria-digital': sus 5 pasos
     // repetian las 4 semanas del timeline (mapeo de flujo, construccion del

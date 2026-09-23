@@ -72,30 +72,8 @@ export const caseStudiesData = [
     quote: 'BluePixel logró poner en producción en 3 meses una plataforma que convirtió inmediatamente más que nuestro sistema anterior.',
     author: 'Dirección de E-Commerce & Retail'
   },
-  {
-    id: 'fr-medical',
-    client: 'FR Medical',
-    industry: 'LOGÍSTICA QUIRÚRGICA · HEALTHCARE B2B',
-    pillarId: 'agentes-automatizacion',
-    pillarName: 'Pilar 02 · Agentes & Automatización',
-    pillarRoute: 'automatizacion-agentica',
-    headline: 'Sistema Operativo Quirúrgico: Triage en 1.8s y ERP Sync sin reemplazar software legado.',
-    badge: '⚡ Triage 1.8s & ERP',
-    badgeClass: 'text-purple-400 bg-purple-500/15 border-purple-500/30',
-    tags: ['Agentic IA', 'Protocolo MCP', 'ERP Integration', 'RAG Privado'],
-    techStack: ['Protocolo MCP', 'RAG Privado Vectorial', 'WhatsApp Business API', 'Python', 'FastAPI', 'ERP Bridge'],
-    image: `${import.meta.env.BASE_URL}case4.jpg`,
-    fallbackImage: `${import.meta.env.BASE_URL}assets/bimbo.jpg`,
-    challenge: 'Urgencias hospitalarias nocturnas (2:00 AM) con llamadas no contestadas, cotizaciones manuales en Excel que tardaban 45 minutos y riesgo crítico de despachos sin confirmación en hospitales de alta exigencia.',
-    solution: 'BluePixel diseñó e implementó el Sistema Operativo Quirúrgico: Agente autónomo con motor de Triage NLP (Código Rojo < 2h), cotizador inteligente con registro COFEPRIS y ERP Sync Bridge vía protocolo MCP en 0.5s sin tocar su base de software legado.',
-    results: [
-      { value: '1.8 seg', label: 'Generación de cotización formal membretada COFEPRIS' },
-      { value: '0.5 seg', label: 'Sincronización determinística con el ERP actual' },
-      { value: '100%', label: 'Rescate de órdenes de guardia nocturna 24/7' }
-    ],
-    quote: 'No tuvimos que tirar nuestro software ni gastar millones cambiando de ERP: los agentes de BluePixel operaron sobre lo que ya teníamos funcionando.',
-    author: 'Dirección General, FR Medical'
-  },
+  // El caso 'fr-medical' se retiro: todavia no es cliente, y el registro
+  // incluia testimonio atribuido y metricas de produccion.
   {
     id: 'iqos',
     client: 'IQOS',

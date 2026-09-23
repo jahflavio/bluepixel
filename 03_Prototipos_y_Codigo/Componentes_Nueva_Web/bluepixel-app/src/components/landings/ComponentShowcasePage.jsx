@@ -297,7 +297,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         filePath="src/components/sections/CaseStudiesSection.jsx"
         status="✦ ACTIVO EN HOME"
         statusColor="text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
-        desc="Casos de éxito corporativos reales con métricas de ROI demostradas (Bimbo, DiDi, Oxxo, Prosa, FR Medical)."
+        desc="Casos de éxito corporativos reales con métricas de ROI demostradas (Bimbo, DiDi, Oxxo, Prosa)."
         targetUse="Home principal y landing de Casos de Éxito (/casos-de-exito)."
       >
         <CaseStudiesSection onOpenCase={onOpenContact} />

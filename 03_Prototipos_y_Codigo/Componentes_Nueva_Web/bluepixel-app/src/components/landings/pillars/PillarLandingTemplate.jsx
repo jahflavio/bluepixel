@@ -181,7 +181,7 @@ const McpAgentSimulatorWidget = () => {
 
   const scenarios = [
     {
-      title: 'Quirófano 24/7 (FR Medical)',
+      title: 'Quirófano 24/7 (logística quirúrgica)',
       event: 'Urgencia 2:14 AM: Solicitud Kit Fijación Cirugía de Columna vía WhatsApp',
       agentStep: 'RAG Privado: Validación COFEPRIS y cruce con stock de guardia en 0.4s',
       mcpStep: 'Protocolo MCP: POST /erp/v1/orders - Reserva y despacho GPS en 0.5s',
