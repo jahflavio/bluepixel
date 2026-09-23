@@ -308,7 +308,7 @@ const ServiceLandingTemplate = ({ data }) => {
                 }}
                 className={`font-bold text-sm px-7 py-4 rounded-xl transition-all border border-white/10 bg-white/[0.03] text-slate-300 hover:text-white hover:border-white/20`}
               >
-                <span>Ver 4 Formas de Contratar ↓</span>
+                <span>Ver cómo contratarla ↓</span>
               </button>
             </div>
           </div>
@@ -860,8 +860,11 @@ const ServiceLandingTemplate = ({ data }) => {
           concreta aporta dentro de cada pilar, que es lo que ya traia el dato
           'fourWaysToWork'. Asi se recuperan los enlaces sin volver a ocupar una
           seccion entera. */}
+      {/* Conserva el id 'cuatro-formas': el CTA del hero salta aqui. Al
+          reemplazar la seccion anterior se perdio el ancla y el boton caia en
+          su fallback silencioso, llevando al visitante a los entregables. */}
       {data.fourWaysToWork && (
-        <section className="py-16 border-b border-white/[0.08] bg-[#030611]">
+        <section id="cuatro-formas" className="py-16 border-b border-white/[0.08] bg-[#030611]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
               <div>
