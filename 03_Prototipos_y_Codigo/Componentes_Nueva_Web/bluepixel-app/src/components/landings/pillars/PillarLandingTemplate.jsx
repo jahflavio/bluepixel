@@ -19,7 +19,8 @@ const PILLAR_THEMES = {
     tableHighlight: 'text-blue-400 font-semibold bg-blue-500/5',
     iconCheck: 'bg-blue-500/20 border-blue-500/30 text-blue-400',
     deliverableNum: 'text-blue-400/60',
-    timelineNode: 'border-blue-500 text-blue-400'
+    timelineNode: 'border-blue-500 text-blue-400',
+    solidGlow: 'bg-blue-600'
   },
   purple: {
     accentText: 'text-purple-400',
@@ -33,7 +34,8 @@ const PILLAR_THEMES = {
     tableHighlight: 'text-purple-400 font-semibold bg-purple-500/5',
     iconCheck: 'bg-purple-500/20 border-purple-500/30 text-purple-400',
     deliverableNum: 'text-purple-400/60',
-    timelineNode: 'border-purple-500 text-purple-400'
+    timelineNode: 'border-purple-500 text-purple-400',
+    solidGlow: 'bg-purple-600'
   },
   cyan: {
     accentText: 'text-cyan-400',
@@ -47,7 +49,8 @@ const PILLAR_THEMES = {
     tableHighlight: 'text-cyan-400 font-semibold bg-cyan-500/5',
     iconCheck: 'bg-cyan-500/20 border-cyan-500/30 text-cyan-400',
     deliverableNum: 'text-cyan-400/60',
-    timelineNode: 'border-cyan-500 text-cyan-400'
+    timelineNode: 'border-cyan-500 text-cyan-400',
+    solidGlow: 'bg-cyan-500'
   },
   indigo: {
     accentText: 'text-indigo-400',
@@ -61,7 +64,8 @@ const PILLAR_THEMES = {
     tableHighlight: 'text-indigo-400 font-semibold bg-indigo-500/5',
     iconCheck: 'bg-indigo-500/20 border-indigo-500/30 text-indigo-400',
     deliverableNum: 'text-indigo-400/60',
-    timelineNode: 'border-indigo-500 text-indigo-400'
+    timelineNode: 'border-indigo-500 text-indigo-400',
+    solidGlow: 'bg-indigo-600'
   }
 };
 
@@ -536,11 +540,11 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
           <div className="w-full lg:-mt-4 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
               {/* Outer Glow */}
-              <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] ${theme.glow} blur-[100px] opacity-20 pointer-events-none rounded-full`}></div>
+              <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square ${theme.solidGlow} blur-[120px] opacity-30 pointer-events-none rounded-full`}></div>
               
               <div className="relative bg-[#050A19]/80 backdrop-blur-xl border border-white/[0.1] rounded-3xl p-8 shadow-2xl overflow-hidden">
                 {/* Inner Glow */}
-                <div className={`absolute top-0 right-0 w-32 h-32 ${theme.glow} blur-3xl`}></div>
+                <div className={`absolute top-0 right-0 w-32 h-32 ${theme.glow} blur-3xl opacity-60`}></div>
                 
                 <div className="flex items-center gap-3 mb-6 relative z-10">
                   <div className={`w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center ${theme.accentText}`}>
@@ -590,6 +594,27 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
       </div>
 
       {/* 2. STATS STRIP */}
+      {data.stats && (
+        <div className="border-b border-white/[0.08] bg-[#040813]">
+          <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/[0.08]">
+            {data.stats.map((st, sIdx) => (
+              <div key={sIdx} className="flex flex-col items-center text-center pt-6 md:pt-0">
+                <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 0 ? theme.gradientText : 'from-white to-slate-200'}`}>
+                  {st.value}
+                </div>
+                <div className="text-sm font-medium text-slate-300 max-w-xs">{st.label}</div>
+                {st.sublabel && (
+                  <div className={`text-[11px] font-mono tracking-wider uppercase mt-1 ${theme.accentText}`}>
+                    {st.sublabel}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 3. PAIN POINTS */}
       {data.painPoints && (
         <section className="py-24 border-b border-white/[0.08] bg-[#050A17]">
           <div className="max-w-7xl mx-auto px-6">
@@ -615,27 +640,6 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
             </div>
           </div>
         </section>
-      )}
-
-      {/* 5. COMPARISON MATRIX FUTUREPROOF */}
-      {data.stats && (
-        <div className="border-b border-white/[0.08] bg-[#040813]">
-          <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/[0.08]">
-            {data.stats.map((st, sIdx) => (
-              <div key={sIdx} className="flex flex-col items-center text-center pt-6 md:pt-0">
-                <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 0 ? theme.gradientText : 'from-white to-slate-200'}`}>
-                  {st.value}
-                </div>
-                <div className="text-sm font-medium text-slate-300 max-w-xs">{st.label}</div>
-                {st.sublabel && (
-                  <div className={`text-[11px] font-mono tracking-wider uppercase mt-1 ${theme.accentText}`}>
-                    {st.sublabel}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       )}
 
       {/* 2.5. CASO DE ESTUDIO REAL DEL PILAR */}

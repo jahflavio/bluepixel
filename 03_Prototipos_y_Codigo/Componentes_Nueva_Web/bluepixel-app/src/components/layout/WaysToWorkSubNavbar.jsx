@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
   const isConsultoria = currentView === 'consultoria-tecnologica' || currentView === 'pilar/consultoria-digital' || currentView === 'consultoria-digital';
   const isAutomatizacion = currentView === 'automatizacion-agentica' || currentView === 'pilar/agentes-automatizacion' || currentView === 'agentes-automatizacion';
   const isPlataformas = currentView === 'producto-digital' || currentView === 'pilar/plataformas-digitales' || currentView === 'plataformas-digitales';
   const isEvolucion = currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital';
+
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        setIsScrolledDown(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsScrolledDown(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const handleNav = (targetRoute) => {
     if (onNavigate) {
@@ -15,7 +35,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
   };
 
   return (
-    <header className="sticky top-20 z-40 w-full bg-[#060A14]/80 backdrop-blur-2xl border-y border-white/[0.08] px-4 md:px-6 py-3">
+    <header className={`sticky z-40 w-full bg-[#060A14]/80 backdrop-blur-2xl border-y border-white/[0.08] px-4 md:px-6 py-3 transition-all duration-300 ${isScrolledDown ? 'top-0' : 'top-[72px] lg:top-20'}`}>
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         
         {/* Left: Go Back Button (Styled as a dark pill) */}

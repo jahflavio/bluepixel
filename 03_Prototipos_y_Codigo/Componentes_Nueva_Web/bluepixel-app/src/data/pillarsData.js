@@ -8,7 +8,7 @@ export const pillarsData = {
     targetAudience: 'Para empresas que necesitan diagnóstico, backlog priorizado y cálculo de ROI antes de invertir',
     eyebrow: 'Pilar 01 · Certidumbre Técnica y Financiera Previa',
     title: 'Claridad estratégica y ROI cuantificado antes de escribir código.',
-    subtitle: 'El 85% de los proyectos de software fracasan porque empiezan programando sin entender el problema real. En 2 a 4 semanas auditamos tu deuda técnica, cuantificamos el costo de inacción y estructuramos un business case defendible ante el Consejo.',
+    subtitle: 'Los proyectos de software fracasan cuando se empieza a programar sin entender el problema real. En 2 a 4 semanas auditamos tu deuda técnica, cuantificamos el costo de inacción y estructuramos un business case defendible ante el Consejo.',
     takeaway: 'Claridad estratégica y retorno medible antes de escribir la primera línea de código.',
     themeKey: 'blue',
     packageName: 'Pilar 01 · Consultoría Digital',

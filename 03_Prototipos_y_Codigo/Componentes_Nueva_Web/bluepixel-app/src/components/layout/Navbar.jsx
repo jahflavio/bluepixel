@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPilaresOpen, setIsPilaresOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Hide navbar when scrolling down (after threshold)
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        setIsScrolledDown(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Show navbar when scrolling up
+        setIsScrolledDown(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const handleComoTrabajamos = (e) => {
     if (e) e.preventDefault();
@@ -43,7 +64,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
   };
 
   return (
-    <nav className="border-b border-white/[0.08] bg-[#02040A]/90 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
+    <nav className={`border-b border-white/[0.08] bg-[#02040A]/90 backdrop-blur-xl sticky top-0 z-50 px-6 py-4 transition-transform duration-300 ${isScrolledDown ? '-translate-y-full' : 'translate-y-0'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
