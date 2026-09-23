@@ -35,16 +35,16 @@
 *   **Titular:** Tu Infraestructura. Tus Datos. Tu Código Fuente.
 *   **Puntos clave (Bullets):**
     *   ✅ **Soberanía Total:** El código y los datos residen en tu nube privada (VPC). Cero *vendor lock-in*.
-    *   ✅ **Grado Empresarial:** Estándares de seguridad de clase mundial alineados a ISO 27001.
+    *   ✅ **Grado Empresarial:** Estándares de seguridad de clase mundial alineados a OWASP Top 10.
     *   ✅ **Arquitectura Desacoplada:** Microservicios y APIs robustas listas para escalar sin rehacer el sistema.
 
-> *🧠 **Justificación de Conversión:** Los 3 miedos principales del director de sistemas son: 1) que le secuestren el código (vendor lock-in), 2) las brechas de seguridad, y 3) que la app no escale. Aquí desactivamos las tres objeciones de un solo golpe usando jerga técnica correcta (VPC, ISO 27001, Desacoplada).*
+> *🧠 **Justificación de Conversión:** Los 3 miedos principales del director de sistemas son: 1) que le secuestren el código (vendor lock-in), 2) las brechas de seguridad, y 3) que la app no escale. Aquí desactivamos las tres objeciones de un solo golpe usando jerga técnica correcta (VPC, OWASP, Desacoplada).*
 
 ## 4. SECCIÓN: TRUST SIGNALS 
 *(Usar los logos y diseño que ya tienen en Webflow)*
 *   **Titular:** Confianza B2B Verificada.
 *   **Casos:** Bimbo (+40% productividad), RadioShack, Farmacias del Ahorro.
-*   **Respaldos:** AWS Partner, ISO 27001, Evaluaciones Enterprise de Clutch.
+*   **Respaldos:** AWS Partner, CyberVadis, Evaluaciones Enterprise de Clutch.
 
 > *🧠 **Justificación de Conversión:** El Social Proof corporativo. Nadie compra B2B sin referencias. Mencionar resultados numéricos (+40%) con marcas conocidas elimina la percepción de riesgo.*
 

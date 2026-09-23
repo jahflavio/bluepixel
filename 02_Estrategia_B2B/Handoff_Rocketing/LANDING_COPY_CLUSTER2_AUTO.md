@@ -43,7 +43,7 @@
 *(Usar los logos y diseño que ya tienen en Webflow)*
 *   **Titular:** Seguridad Grado Empresarial.
 *   **Casos:** Bimbo (+40% productividad en ruteo), Reducción del 60% de fricción en RadioShack.
-*   **Respaldos:** AWS Partner, ISO 27001 (Auditoría OWASP Top 10), Arquitectura Zero-Trust.
+*   **Respaldos:** AWS Partner, CyberVadis (Auditoría OWASP Top 10), Arquitectura Zero-Trust.
 
 > *🧠 **Justificación de Conversión:** Para integrar un sistema a un ERP, la confianza es todo. Mencionar "Seguridad Grado Bancario", OWASP y SOC2-Ready es un filtro que aleja a los curiosos y da luz verde al director de ciberseguridad.*
 

@@ -42,7 +42,7 @@
 
 ## 4. SECCIÓN: TRUST SIGNALS 
 *(Usar los logos y diseño que ya tienen en Webflow)*
-*   **Titular:** Infraestructura Segura (ISO 27001).
+*   **Titular:** Infraestructura Segura (CyberVadis & OWASP).
 *   **Casos:** Implementaciones de alto rendimiento en LATAM.
 *   **Respaldos:** AWS Partner, Estricto Cumplimiento LFPDPPP e Infraestructura Cloud Certificada.
 

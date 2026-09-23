@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Estratégico y Propuesta: Red Cherry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f20232;
+            --text-main: #1a1b26;
+            --text-muted: #64748b;
+            --bg-page: #ffffff;
+            --border: #e2e8f0;
+            --bg-accent: #f8fafc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-main); background: #f1f5f9; padding: 40px; display: flex; justify-content: center; }
+        .page { background: var(--bg-page); max-width: 850px; width: 100%; padding: 60px 70px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 6px solid var(--primary); }
+        .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--border); }
+        .header h1 { font-size: 24px; font-weight: 700; color: var(--text-main); max-width: 500px; line-height: 1.3; }
+        .header .meta { text-align: right; font-size: 13px; color: var(--text-muted); }
+        h2 { font-size: 18px; font-weight: 700; margin: 30px 0 15px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        h3 { font-size: 15px; font-weight: 600; margin: 20px 0 10px; color: var(--text-main); }
+        p { font-size: 14.5px; line-height: 1.6; margin-bottom: 12px; color: #334155; }
+        ul { margin-bottom: 16px; padding-left: 20px; }
+        li { font-size: 14.5px; line-height: 1.6; margin-bottom: 8px; color: #334155; }
+        strong { font-weight: 600; color: var(--text-main); }
+        .highlight-box { background: var(--bg-accent); border: 1px solid var(--border); border-left: 4px solid var(--primary); padding: 16px 20px; margin: 20px 0; border-radius: 4px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .pill { display: inline-block; padding: 3px 10px; background: #fee2e2; color: #b91c1c; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+        
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; border-top: none; padding: 0; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <h1>Análisis Estratégico y Propuesta: Red Cherry <> BluePixel</h1>
+        <div class="meta">
+            <strong>DOCUMENTO EJECUTIVO</strong><br>
+            Septiembre 2026<br>
+            Confidencial
+        </div>
+    </div>
+
+    <h2>1. Contexto y Perfil del Cliente</h2>
+    <p><strong>Red Cherry</strong> es una agencia de marketing experiencial en México (con agencias hermanas y ~30 empleados) enfocada en:</p>
+    <ul>
+        <li>Medios Digitales y Tradicionales (su mayor facturación actual)</li>
+        <li>Promotoría y Gestión de Personal</li>
+        <li>Activaciones (BTL, ATL, stands, convenciones)</li>
+    </ul>
+    <div class="highlight-box">
+        <strong>Diagnóstico General:</strong> Operan con alta fricción operativa. Son <em>"muy a la antigüita"</em> (basados en Excel, WhatsApp, y reportes manuales). Tienen problemas de silos de información, triangulación en la asignación de tareas y falta de visibilidad en tiempo real para la dirección (Marlene y Oliver).
+    </div>
+
+    <h2>2. Puntos de Fricción Identificados (Pain Points)</h2>
+    <ul>
+        <li><strong>Cotizaciones Manuales y Lentas:</strong> Priscilla invierte mucho tiempo buscando costos históricos en Excels para armar presupuestos. Desconocen tabuladores actualizados y márgenes de ganancia claros.</li>
+        <li><strong>Reporteo y Dashboards Desarticulados:</strong> Extracción manual de data desde Meta/Google y medios tradicionales. El cliente sube info manual, lo que provoca errores de captura.</li>
+        <li><strong>Falta de Sistema Centralizado (ERP / Portal):</strong> El cliente pide por correo o WhatsApp. Internamente no hay un estatus claro de proyectos ni control centralizado de facturación/finanzas.</li>
+        <li><strong>Asignación Ineficiente de Recursos:</strong> Los proyectos se asignan <em>"a quien tenga disponibilidad"</em> y no por <em>rol</em> o <em>capacidad técnica</em>, provocando retrabajo y cuellos de botella ("triangulación de información").</li>
+        <li><strong>Comunicación Fragmentada:</strong> Todo se maneja por WhatsApp o email sin políticas claras (Cero "Single Source of Truth").</li>
+    </ul>
+
+    <h2>3. Propuesta de Valor BluePixel (FutureProof)</h2>
+    <p>Para presentar una solución de <strong>Ingeniería Agéntica</strong> y <strong>Soberanía Tecnológica</strong>, debemos enfocar la conversación técnica y comercial en los siguientes Pilares:</p>
+
+    <h3>🔹 Pilar 01: Consultoría Digital (El punto de partida ideal)</h3>
+    <ul>
+        <li><strong>El Enfoque:</strong> Antes de construir el "ERP perfecto", necesitamos mapear su operación.</li>
+        <li><strong>Solución:</strong> Diagnóstico de fricción operativa <strong>IMPATH™</strong>. Reduciremos su catálogo de servicios a lo más rentable y estructuraremos políticas de comunicación.</li>
+        <li><strong>Takeaway para el cliente:</strong> <em>"Claridad estratégica y cálculo del costo de inacción antes de escribir la primera línea de código."</em> (Evaluar cuánto dinero/tiempo pierden hoy en cotizaciones lentas y reportes manuales).</li>
+    </ul>
+
+    <h3>🔹 Pilar 02: Agentes & Automatización</h3>
+    <p>Dado que ya tienen bases de datos en Excel y herramientas desconectadas, podemos implementar automatizaciones sin reemplazar todo su ecosistema de golpe.</p>
+    <ul>
+        <li><strong>Agente de Cotización RAG:</strong> Un agente de IA que consuma su histórico de Excel y tabuladores de proveedores. Al ingresar un brief, sugiere pricing y margen en segundos.</li>
+        <li><strong>Agente de Asignación / Routing:</strong> Genera tickets automáticamente a la célula correcta evitando la triangulación.</li>
+        <li><strong>Conectores MCP / Reporteo:</strong> Extracción automatizada (RPA/APIs) desde Google/Meta hacia un dashboard unificado.</li>
+    </ul>
+
+    <h3>🔹 Pilar 03: Plataformas Digitales (MVP)</h3>
+    <p>BluePixel ya tiene un "ERP/Capacity Planner" validado. Propondremos modularizar un MVP.</p>
+    <ul>
+        <li><strong>Capacity Planner y Dashboard Financiero:</strong> Visibilidad ejecutiva en tiempo real para los directores (Oliver y Marlene) sobre la rentabilidad de cada proyecto.</li>
+        <li><strong>Portal de Cliente (Self-Service):</strong> Una interfaz UX de clase mundial donde sus clientes puedan solicitar pautas, aprobar cotizaciones y ver métricas sin mandar un WhatsApp.</li>
+    </ul>
+
+    <h2>4. Estrategia para la Junta (Talking Points)</h2>
+    <div class="grid-2">
+        <div class="highlight-box" style="margin:0;">
+            <span class="pill">Cero Vendor Lock-in</span><br>
+            <strong>Soberanía Total de Datos</strong><br>
+            <p style="font-size:13px; margin-top:8px;">Resaltar que cualquier agente o dashboard que construyamos residirá en su nube privada.</p>
+        </div>
+        <div class="highlight-box" style="margin:0;">
+            <span class="pill">Socios, no maquila</span><br>
+            <strong>Escalabilidad Real</strong><br>
+            <p style="font-size:13px; margin-top:8px;">Instalaremos un motor que les dará escalabilidad para atender a más clientes sin duplicar su plantilla laboral.</p>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <strong>El Camino a Seguir:</strong> Sugerir fuertemente iniciar con el <strong>Pilar 01 (Consultoría)</strong> de 2 a 4 semanas para priorizar su backlog por ROI. ¿Qué les duele más: no cotizar rápido o no tener visibilidad financiera? El diagnóstico nos lo dirá.
+    </div>
+</div>
+
+</body>
+</html>

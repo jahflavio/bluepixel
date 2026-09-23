@@ -66,7 +66,7 @@ Es obligatorio cargar a nivel cuenta la **Lista Maestra de Negativas** proporcio
 Hemos realizado una auditoría del código y estructura de las tres landings actuales operadas por Rocketing en el subdominio (`cotiza.bluepixel.mx`). Estas son las modificaciones exactas que la agencia debe realizar **hoy mismo** para cumplir con este SLA:
 
 ### ✅ 1. Lo que SÍ funciona (Conservar intacto)
-*   **Trust Signals:** Toda la sección de *«Respaldados por estándares líderes»* (ISO 27001, AWS, certificaciones).
+*   **Trust Signals:** Toda la sección de *«Respaldados por estándares líderes»* (CyberVadis, AWS, certificaciones).
 *   **Casos de Éxito:** Las menciones a la marca global de consumo y los rediseños en LATAM. Ayudan a la validación corporativa.
 *   **Sección de FAQs:** Las preguntas frecuentes están correctamente estructuradas.
 
@@ -77,7 +77,7 @@ Hemos realizado una auditoría del código y estructura de las tres landings act
 
 ### ➕ 3. Lo que FALTA y se debe INYECTAR
 Para que la landing convierta leads calificados de $300k+ MXN, Rocketing debe integrar estas 3 secciones clave:
-1.  **La Promesa Anti-Commodity (FutureProof):** Un bloque de texto contundente que declare nuestra ventaja injusta: *"Cero alucinaciones de IA, soberanía total de datos en tu Nube (VPC), y código grado empresarial (ISO 27001)"*.
+1.  **La Promesa Anti-Commodity (FutureProof):** Un bloque de texto contundente que declare nuestra ventaja injusta: *"Cero alucinaciones de IA, soberanía total de datos en tu Nube (VPC), y código grado empresarial"*.
 2.  **El "Gancho" Comercial (Pilar 01):** Sustituir el botón genérico de "Cotizar App" por un llamado a la acción para agendar el **Diagnóstico de Fricción Operativa (2-4 semanas)**. Es más fácil vender un diagnóstico que un desarrollo de 6 meses de golpe.
 3.  **Visuales "Proof of Capability":** Quitar fotos genéricas de "equipos trabajando" y colocar diagramas técnicos o dashboards que demuestren que construimos infraestructura pesada, no solo interfaces bonitas.
 
