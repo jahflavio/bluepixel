@@ -79,7 +79,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
                 <span className="text-[11px] font-mono font-bold text-white uppercase tracking-wider">Enterprise Ready</span>
               </div>
               <p className="text-slate-400 text-xs leading-relaxed font-sans">
-                Despliegues en VPC privada del cliente. Blindaje ISO 27001 & OWASP Top 10. Cero entrenamiento de modelos públicos con tu IP propietaria.
+                Despliegues en VPC privada del cliente. Blindaje OWASP Top 10 y seguridad verificada por CyberVadis. Cero entrenamiento de modelos públicos con tu IP propietaria.
               </p>
             </div>
 
@@ -199,7 +199,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
               <li>
                 <a href="#/servicio/security" className="block text-slate-300 hover:text-amber-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-amber-400">Security & Reliability</span>
-                  <span className="block text-[10px] font-mono text-amber-400/80">ISO 27001 • OWASP Top 10 • SLA 99.9%</span>
+                  <span className="block text-[10px] font-mono text-amber-400/80">CyberVadis • OWASP Top 10 • SLA 99.9%</span>
                 </a>
               </li>
 

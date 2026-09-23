@@ -75,7 +75,7 @@ La filosofía **FutureProof** es la bandera de ingeniería y la garantía centra
 4. **Arquitectura Desacoplada y Soberanía Total de Datos:**
    Sistemas modulares, agnósticos y cloud-native diseñados bajo protocolos abiertos (e.g. MCP). Cero *vendor lock-in*. Si mañana sale una nueva versión de un LLM o proveedor cloud, el sistema conmuta mediante configuración sin rehacer la plataforma. El código y los datos siempre residen en la nube privada del cliente.
 5. **Blindaje Grado Empresarial (Security & Reliability):**
-   Estándares de seguridad de clase mundial alineados con **ISO 27001** y mejores prácticas de **OWASP Top 10**. Trazabilidad de accesos, cifrado de datos en reposo y en tránsito, y pruebas automatizadas de resiliencia.
+   Estándares de seguridad de clase mundial: prácticas verificadas por **CyberVadis** (certificación vigente) y mejores prácticas de **OWASP Top 10**. La certificación **ISO 27001** aún no se tiene, por lo que no debe presentarse como credencial propia; sí puede ofrecerse como servicio de preparación para el cliente. Trazabilidad de accesos, cifrado de datos en reposo y en tránsito, y pruebas automatizadas de resiliencia.
 
 ---
 
@@ -99,7 +99,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
 │ 4. Data & Analytics      │ Telemetría de Producto, Analítica de        │
 │                          │ Comportamiento, Mixpanel, KPIs Directivos   │
 ├──────────────────────────┼─────────────────────────────────────────────┤
-│ 5. Security &            │ Prácticas ISO 27001, Hardening OWASP,       │
+│ 5. Security &            │ CyberVadis, Hardening OWASP,                │
 │    Reliability           │ DevSecOps, Alta Disponibilidad (99.9% SLA)  │
 ├──────────────────────────┼─────────────────────────────────────────────┤
 │ 6. CONSULTING            │ Digital Consulting, Priorización de Backlog │
@@ -116,7 +116,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
    - *Foco:* Creación de agentes autónomos orientados a tareas complejas, RAG sin alucinaciones conectado a bases de conocimiento corporativas, integración determinística vía MCP con sistemas de misión crítica.
 4. **Data & Analytics:**
    - *Foco:* Instrumentación de telemetría de producto, pipelines de datos, tableros de control ejecutivos en tiempo real y análisis predictivo del comportamiento de clientes.
-5. **Security & Reliability (ISO 27001 & OWASP):**
+5. **Security & Reliability (CyberVadis & OWASP):**
    - *Foco:* Arquitectura de seguridad Zero-Trust, auditoría de vulnerabilidades OWASP Top 10, cumplimiento normativo (ISO 27001, LFPDPPP), cifrado y resiliencia con alta disponibilidad.
 6. **CONSULTING (Digital Consulting):**
    - *Foco:* Consultoría estratégica de transformación, valuación del costo de inacción, diseño de roadmaps ejecutivos trimestrales y alineación entre tecnología y objetivos financieros del negocio.
@@ -145,7 +145,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
 3. **Uso riguroso de la Filosofía FutureProof:**
    En cada propuesta técnica o página web, contrastar la garantía FutureProof contra el modelo obsoleto de fábricas de software o agencias superficiales.
 4. **Mapeo de Capacidades en Código Web:**
-   El componente `SixCapabilitiesGrid.jsx` debe reflejar exactamente estas 6 capacidades con sus badges canónicos (`IMPATH™ Enabled`, `Cloud-Native Architecture`, `Agentic Automation`, `Mixpanel Telemetry`, `ISO 27001 & OWASP`, `FutureProof™ Framework`).
+   El componente `SixCapabilitiesGrid.jsx` debe reflejar exactamente estas 6 capacidades con sus badges canónicos (`IMPATH™ Enabled`, `Cloud-Native Architecture`, `Agentic Automation`, `Mixpanel Telemetry`, `CyberVadis & OWASP`, `FutureProof™ Framework`).
 5. **Inventario de Componentes en Reserva (Soberanía Técnica):**
    El componente `TechnicalSovereignty.jsx` (*«Tu infraestructura. Tus datos. Tu código fuente.»* - Cero Lock-in / Despliegue en VPC / Zero-Trust) ha sido retirado temporalmente del Home para aligerar la navegación, pero está preservado y catalogado en `02_Estrategia_B2B/INVENTARIO_COMPONENTES_Y_SECCIONES_RESERVA.md` listo para ser reutilizado en páginas de servicio enterprise (`/servicio/security`, `/automatizacion`).
 6. **Política Institucional (Cero Nombres Personales):**

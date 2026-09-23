@@ -24,7 +24,7 @@ const CLUSTERS = [
       'MVPs de alta fidelidad en 2 a 4 meses con código de tu propiedad',
       'Modernización de software legacy sin parar tu operación',
     ],
-    proof: 'SOC2 · OWASP · AWS Certified',
+    proof: 'CyberVadis · OWASP · AWS Partner',
   },
   {
     number: '02',

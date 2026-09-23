@@ -10,7 +10,9 @@ export const CLUSTERS_DATA = {
     subheadline: 'Dejamos atrás las "fábricas de software" tradicionales. Desarrollamos aplicaciones nativas, portales empresariales y sistemas transaccionales con arquitectura modular, telemetría en tiempo real y propiedad intelectual absoluta de tu empresa.',
     heroMetric: '99.98% Uptime en Producción',
     heroTag: 'Arquitecturas Cloud-Native',
-    socialProof: ['AWS Certified', 'Azure Partner', 'SOC2 Compliant', 'OWASP Top 10 Auditado'],
+    // Credenciales propias: solo las que se pueden acreditar. 'SOC2 Compliant'
+    // se retiro porque BluePixel no tiene esa certificacion; CyberVadis si.
+    socialProof: ['AWS Partner', 'CyberVadis Verificado', 'OWASP Top 10 Auditado'],
     demoType: 'apps',
     subservices: [
       {
@@ -70,7 +72,7 @@ export const CLUSTERS_DATA = {
           'Lanzamiento de plataformas piloto para rondas de inversión y validación de mercado.',
           'Sustitución rápida de herramientas de terceros costosas por plataformas propias.'
         ],
-        stack: ['Arquitectura Modular', 'Serverless APIs', 'TailwindCSS / Next.js', 'Stripe / OpenPay B2B'],
+        stack: ['Arquitectura Modular', 'Serverless APIs', 'React / Next.js', 'Stripe / OpenPay B2B'],
         deliverable: 'Plataforma funcional en producción operando con los primeros clientes reales y embudo de métricas configurado.'
       },
       {

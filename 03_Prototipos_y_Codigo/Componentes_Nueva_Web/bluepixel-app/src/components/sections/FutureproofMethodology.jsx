@@ -120,7 +120,7 @@ const FutureproofMethodology = ({ data }) => {
                   {d.phases?.build?.description || 'Ciclo completo de ingeniería con QA continuo, integraciones y una arquitectura sin deuda técnica lista para escalar.'}
                 </p>
                 <ul className="space-y-2">
-                  {(d.phases?.build?.bullets || ['Ingeniería Cloud-Native', 'Seguridad ISO 27001', 'Lanzamiento Zero-Downtime']).map((item, i) => (
+                  {(d.phases?.build?.bullets || ['Ingeniería Cloud-Native', 'Hardening OWASP Top 10', 'Lanzamiento Zero-Downtime']).map((item, i) => (
                     <li key={i} className="text-xs font-mono text-slate-500 flex items-center gap-2">
                       <ArrowRight className="w-3 h-3 text-indigo-500" /> {item}
                     </li>

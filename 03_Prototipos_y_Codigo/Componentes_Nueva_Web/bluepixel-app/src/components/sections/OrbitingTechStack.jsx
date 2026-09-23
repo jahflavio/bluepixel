@@ -32,9 +32,9 @@ const OrbitingTechStack = () => {
                 <Layers className="w-7 h-7 text-blue-400" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-blue-400 transition-colors">Frontend & Adopción (UX/UI)</h3>
+                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-blue-400 transition-colors">Frontend, Móvil & Adopción (UX/UI)</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  React, Next.js, Tailwind CSS y Framer Motion. Código tipado y validación rigurosa de accesibilidad WCAG.
+                  React y Next.js en web. React Native, Swift (iOS) y Kotlin (Android) en móvil. Código tipado y validación rigurosa de accesibilidad WCAG.
                 </p>
               </div>
             </div>

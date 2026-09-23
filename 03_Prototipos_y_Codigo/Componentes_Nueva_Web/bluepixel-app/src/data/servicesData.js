@@ -3,37 +3,17 @@ export const servicesData = {
     id: 'ux-ui',
     themeKey: 'emerald',
     showImpath: true,
-    futureproofMethodology: {
-      stagnationContext: 'los productos digitales',
-      stagnationSubtitle: 'Diseños hermosos pero estáticos. La metodología Futureproof los transforma en interfaces de alta conversión.',
-      painPoints: [
-        { title: 'El lanzamiento no valida hipótesis.', description: 'Se sale a producción asumiendo qué quiere el usuario, y el aprendizaje de UX llega tarde, cuando ya se gastó el presupuesto.' },
-        { title: 'Diseño sin fricción cuantificada.', description: 'Se hacen rediseños "bonitos" que no atacan los cuellos de botella donde los usuarios reales están abandonando.' },
-        { title: 'Sistemas de diseño fragmentados.', description: 'Inconsistencia visual que retrasa a los desarrolladores y rompe la experiencia de marca sprint a sprint.' },
-        { title: 'La interfaz nace desactualizada.', description: 'Sin telemetría ni A/B testing continuo, el diseño se estanca el día del lanzamiento.' }
-      ],
-      phases: {
-        design: {
-          title: 'Descubrimos dónde duele',
-          description: 'Auditoría heurística, mapeo de journeys y diagnóstico IMPATH para identificar dónde se cae la conversión.',
-          bullets: ['Auditoría UX', 'Mapeo IMPATH', 'User Personas']
-        },
-        build: {
-          title: 'Sistemas escalables',
-          description: 'Construimos Design Systems atómicos listos para que los ingenieros los implementen sin fricción.',
-          bullets: ['Atomic Design', 'Prototipos Alta Fidelidad', 'Hand-off QA']
-        },
-        evolve: {
-          title: 'Optimización por telemetría',
-          description: 'Medimos el UX Health Score y ajustamos la interfaz basados en el comportamiento real del usuario.',
-          bullets: ['Mixpanel/PostHog', 'A/B Testing', 'CRO Continuo']
-        }
-      }
-    },
+    // Se retiro 'futureproofMethodology': la seccion que lo consumia salio de
+    // la plantilla de servicios por duplicar los pain points de la propia
+    // pagina. El componente sigue vivo en /filosofia-futureproof.
     clusterName: 'Apps & Producto',
+    // Caso real de caseStudiesData que prueba esta capacidad. Solo se asigna
+    // donde existe un caso pertinente; el resto de servicios no muestra prueba.
+    caseStudyId: 'didi',
     canonicalBadge: 'IMPATH™ Enabled',
+    // 'eyebrow' se retiro de los 6 servicios: nunca se renderizaba (el hero usa
+    // clusterName + canonicalBadge) y solo repetia 'Capability · ' + packageName.
     packageName: 'UX/UI Design & Product Strategy',
-    eyebrow: 'Capability · UX/UI Design & Product Strategy',
     title: 'Interfaces que reducen fricción cognitiva y multiplican conversión.',
     subtitle: 'Estrategia de producto (PS) y diseño UX/UI conductual de grado empresarial. Convertimos la experiencia de usuario en la armadura que asegura adopción inmediata y retorno medible.',
     callout1: 'Un diseño decorativo no sirve en B2B. En BluePixel entendemos que el diseño es la armadura y la experiencia humana con la que vestimos arquitecturas de ingeniería pesada. Cada decisión de interfaz está respaldada por datos de comportamiento real, psicología conductual y nuestra metodología propietaria IMPATH™, eliminando la fricción que le cuesta dinero a tu empresa.',
@@ -104,7 +84,7 @@ export const servicesData = {
           iconType: 'design-debt',
           title: 'Deuda técnica de diseño',
           desc: 'El producto creció parchando pantallas sin un sistema de diseño estructurado, volviéndolo imposible y costoso de escalar.',
-          antidote: 'Design System empresarial centralizado en Figma con tokens sincronizados directamente a código React/Tailwind.'
+          antidote: 'Design System empresarial centralizado en Figma con tokens sincronizados directamente a código React.'
         }
       ]
     },
@@ -205,11 +185,11 @@ export const servicesData = {
     id: 'ai-engineering',
     themeKey: 'cyan',
     clusterName: 'Apps & Producto',
-    canonicalBadge: 'Cloud-Native SOC2',
+    caseStudyId: 'radioshack',
+    canonicalBadge: 'Cloud-Native Architecture',
     packageName: 'Software Engineering & Cloud-Native',
-    eyebrow: 'Capability · Software Engineering & Cloud-Native',
     title: 'Ingeniería Full Stack y arquitecturas cloud de misión crítica.',
-    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, Go) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
+    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, React Native, Swift y Kotlin) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
     callout1: 'Rechazamos el modelo de maquila que factura horas a ciegas y entrega software frágil. Construimos plataformas con estándares de ingeniería de grado empresarial: microservicios, despliegue automatizado CI/CD, infraestructura como código (IaC) y arquitectura orientada a eventos. Tu código y tus datos siempre residen en tu nube privada.',
     stats: [
       { value: '99.9%', label: 'Garantía de SLA y disponibilidad en producción', sublabel: 'Arquitectura Cloud-Native' },
@@ -381,7 +361,6 @@ export const servicesData = {
     clusterName: 'Automatización',
     canonicalBadge: 'Agentic Automation',
     packageName: 'IA & Automatización Agéntica',
-    eyebrow: 'Capability · IA & Automatización Agéntica',
     title: 'Agentes autónomos integrados sobre tu stack operativo actual.',
     subtitle: 'Sistemas multi-agente y RAG privado sobre datos reales de tu negocio, con integración determinística vía MCP a ERPs y CRMs sin reemplazar tus sistemas.',
     callout1: 'La IA superficial que se queda en demos no genera valor. En BluePixel creamos agentes autónomos que razonan sobre datos corporativos reales sin alucinaciones, ejecutan acciones en ERPs mediante el protocolo abierto MCP y liberan capacidad operativa desde el primer ciclo. La IA multiplica la capacidad de las personas que ya tienes en tu equipo.',
@@ -553,16 +532,16 @@ export const servicesData = {
     id: 'data-analytics',
     themeKey: 'indigo',
     clusterName: 'Automatización',
+    caseStudyId: 'bimbo-data',
     canonicalBadge: 'Mixpanel Telemetry',
     packageName: 'Data & Analytics Enterprise',
-    eyebrow: 'Capability · Data & Analytics',
     title: 'De datos fragmentados a una sola fuente de verdad directiva.',
     subtitle: 'Pipelines automatizados (ETL/ELT), Data Warehousing moderno y telemetría de producto con Mixpanel para decisiones en tiempo real y modelos predictivos.',
     callout1: 'Tener terabytes de datos en silos desconectados cuesta dinero y paraliza a los comités directivos. Diseñamos arquitecturas analíticas modernas (BigQuery, Snowflake, dbt) y telemetría profunda de producto para que el C-Level cuente con KPIs en tiempo real y anticipe el comportamiento de clientes antes de que impacte el balance.',
     stats: [
-      { value: '1 Sola', label: 'Fuente de verdad directiva conciliada en tiempo real', sublabel: 'Zero discrepancias de datos' },
+      { value: '-40 hrs', label: 'Al mes que tu equipo deja de cruzar y parchar tablas a mano', sublabel: 'Fuente de verdad única conciliada' },
       { value: '<1s', label: 'Velocidad de carga en tableros ejecutivos y KPIs', sublabel: 'Arquitectura Modern Data Stack' },
-      { value: '360°', label: 'Visibilidad de comportamiento y conversión de usuario', sublabel: 'Telemetría Mixpanel instrumentada' }
+      { value: '+300%', label: 'Eficiencia directiva al pasar de reportes estáticos a modelos predictivos', sublabel: 'Telemetría Mixpanel instrumentada' }
     ],
     fourWaysToWork: [
       {
@@ -727,16 +706,15 @@ export const servicesData = {
     id: 'security',
     themeKey: 'amber',
     clusterName: 'Gobernanza IA',
-    canonicalBadge: 'ISO 27001 & OWASP',
+    canonicalBadge: 'CyberVadis & OWASP',
     packageName: 'Security, Vault & Reliability',
-    eyebrow: 'Capability · Security, Compliance & Reliability',
     title: 'Blindaje cibernético y soberanía total para activos de misión crítica.',
     subtitle: 'Auditorías de penetración (Pentesting), preparación para ISO 27001 / SOC2, arquitectura Zero-Trust y guardrails de seguridad para implementaciones de IA.',
     callout1: 'La ciberseguridad y el cumplimiento normativo no son un trámite burocrático; son la habilitadora de contratos enterprise de siete cifras. Aplicamos estándares rigurosos de OWASP Top 10, DevSecOps y aislamiento en VPC privada para que tu empresa crezca e innove con IA sin arriesgar su patrimonio ni su reputación.',
     stats: [
-      { value: 'ISO 27001', label: '& OWASP Top 10 alineado en cada línea de código', sublabel: 'Estándares de clase mundial' },
+      { value: 'CyberVadis', label: 'Prácticas de seguridad verificadas por auditoría independiente', sublabel: 'Certificación vigente' },
       { value: '100%', label: 'Aislamiento de datos en la nube privada del cliente', sublabel: 'Cero entrenamiento con tu IP' },
-      { value: '0 Brechas', label: 'en infraestructuras y plataformas auditadas', sublabel: 'Blindaje proactivo y Red Teaming' }
+      { value: 'SLA 99.9%', label: 'Disponibilidad comprometida en infraestructura endurecida', sublabel: 'Arquitectura Zero-Trust' }
     ],
     fourWaysToWork: [
       {
@@ -901,15 +879,15 @@ export const servicesData = {
     id: 'business-ai',
     themeKey: 'blue',
     clusterName: 'Gobernanza IA',
+    caseStudyId: 'iqos',
     canonicalBadge: 'FutureProof™ Framework',
     packageName: 'Business AI Consulting & Strategy',
-    eyebrow: 'Capability · Digital Consulting & Strategy',
-    title: 'De la visión del Consejo al roadmap ejecutable con ROI garantizado.',
+    title: 'De la visión del Consejo al roadmap ejecutable con ROI cuantificado.',
     subtitle: 'Consultoría estratégica B2B de alto nivel para Directores Generales y C-Levels. Cuantificamos el costo de inacción, priorizamos por impacto en caja y blindamos la adopción de IA.',
     callout1: 'La Inteligencia Artificial no es un juguete del departamento de TI; es una palanca estratégica del modelo de negocio. Muchas empresas queman capital en licencias o pilotos aislados que no mueven la aguja financiera. Nuestra consultoría actúa como el puente entre tu P&L y la ingeniería de vanguardia: validamos viabilidad, calculamos retorno y priorizamos backlog antes de comprometer capital en desarrollo.',
     stats: [
       { value: '2 a 4', label: 'Semanas para tener diagnóstico y business case listo', sublabel: 'Celeridad analítica ejecutiva' },
-      { value: 'ROI Medible', label: 'Proyectado y validado antes de tirar una línea de código', sublabel: 'Certeza financiera previa' },
+      { value: '6', label: 'Artefactos ejecutivos que recibe el Consejo al cierre', sublabel: 'Roadmap, business case y gobernanza' },
       { value: '100%', label: 'Alineación con el Consejo Directivo y objetivos de negocio', sublabel: 'FutureProof™ Framework' }
     ],
     fourWaysToWork: [

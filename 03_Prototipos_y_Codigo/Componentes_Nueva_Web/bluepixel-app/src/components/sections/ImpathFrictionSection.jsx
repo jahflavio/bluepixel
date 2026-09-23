@@ -247,7 +247,7 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
                 <h4 className="text-xs text-blue-400 font-semibold mb-3">Seguridad con Impacto Financiero</h4>
 
                 <p className="text-slate-400 text-xs leading-relaxed mb-6">
-                  Audita continuamente las vulnerabilidades de tu plataforma y las traduce a riesgo económico medible. Cumplimiento OWASP, ISO 27001 y GDPR con monitoreo en tiempo real.
+                  Audita continuamente las vulnerabilidades de tu plataforma y las traduce a riesgo económico medible. Cumplimiento OWASP, LFPDPPP y GDPR con monitoreo en tiempo real.
                 </p>
 
                 <ul className="space-y-2.5 mb-6 text-xs text-slate-300">
@@ -261,7 +261,7 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-amber-400 text-xs">✦</span>
-                    <span>Cumplimiento OWASP · ISO 27001 · GDPR</span>
+                    <span>Cumplimiento OWASP · LFPDPPP · GDPR</span>
                   </li>
                 </ul>
               </div>

@@ -244,7 +244,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <span className="text-[11px] font-mono text-cyan-400 font-bold">02</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud-Native SOC2</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud-Native Architecture</span>
                     </div>
                     <div className="text-sm font-bold text-white group-hover/item:text-cyan-300 transition-colors">
                       Software Engineering
@@ -298,7 +298,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <span className="text-[11px] font-mono text-amber-400 font-bold">05</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">ISO 27001 & OWASP</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">CyberVadis & OWASP</span>
                     </div>
                     <div className="text-sm font-bold text-white group-hover/item:text-amber-300 transition-colors">
                       Security & Reliability
@@ -507,7 +507,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">Security</div>
-                <div className="text-[9px] font-mono text-amber-400/80">ISO 27001 & OWASP</div>
+                <div className="text-[9px] font-mono text-amber-400/80">CyberVadis & OWASP</div>
               </a>
               <a 
                 href="#/servicio/business-ai" 

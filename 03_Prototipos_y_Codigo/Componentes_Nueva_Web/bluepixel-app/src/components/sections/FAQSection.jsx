@@ -45,7 +45,7 @@ const FAQSection = () => {
     {
       category: 'seguridad',
       q: "¿Qué certificaciones y blindaje de seguridad aplican a los sistemas?",
-      a: "Diseñamos sistemas con blindaje de grado empresarial alineados estrictamente con estándares internacionales ISO 27001 y las mejores prácticas de mitigación de vulnerabilidades de OWASP Top 10. Implementamos arquitecturas Zero-Trust, cifrado de datos en reposo y en tránsito, trazabilidad de ejecuciones agénticas y cumplimiento riguroso de la regulación de protección de datos (LFPDPPP)."
+      a: "Diseñamos sistemas con blindaje de grado empresarial alineados estrictamente con las mejores prácticas de mitigación de vulnerabilidades de OWASP Top 10 y con nuestras prácticas de seguridad verificadas por CyberVadis. Implementamos arquitecturas Zero-Trust, cifrado de datos en reposo y en tránsito, trazabilidad de ejecuciones agénticas y cumplimiento riguroso de la regulación de protección de datos (LFPDPPP)."
     },
     {
       category: 'ingenieria',

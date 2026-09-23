@@ -40,7 +40,7 @@ const FutureproofCTABanner = () => {
             </div>
             <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
               <strong className="text-white block font-mono text-[11px] mb-1">5. Blindaje Seguro</strong>
-              <span className="text-slate-400 text-[11px]">ISO 27001, OWASP Top 10 y SLA 99.9% de resiliencia.</span>
+              <span className="text-slate-400 text-[11px]">OWASP Top 10, CyberVadis y SLA 99.9% de resiliencia.</span>
             </div>
           </div>
         </div>

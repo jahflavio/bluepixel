@@ -21,7 +21,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     {
       cluster: 'CAPACIDAD 02 · INGENIERÍA',
       targetRoute: 'servicio/ai-engineering',
-      badge: 'Cloud-Native SOC2',
+      badge: 'Cloud-Native Architecture',
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
       icon: '</>',
       title: 'Software Engineering',
@@ -70,7 +70,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     {
       cluster: 'CAPACIDAD 05 · BLINDAJE',
       targetRoute: 'servicio/security',
-      badge: 'ISO 27001 & OWASP',
+      badge: 'CyberVadis & OWASP',
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
       icon: '🛡️',
       title: 'Security & Reliability',

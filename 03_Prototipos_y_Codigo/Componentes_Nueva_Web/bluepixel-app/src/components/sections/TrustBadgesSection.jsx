@@ -8,9 +8,10 @@ import cybervadisSvg from '../../assets/logos/cybervadis.svg';
 import scrumstudySvg from '../../assets/logos/scrumstudy.svg';
 
 const TrustBadgesSection = () => {
-  // ISO 27001 is the default highlighted card as in the reference design;
-  // hovering over any card dynamically shifts the blue neon glow
-  const [activeCard, setActiveCard] = useState('iso27001');
+  // CyberVadis es la tarjeta destacada por defecto: es la credencial de
+  // seguridad vigente. Al pasar el cursor, el glow azul se mueve a la tarjeta
+  // correspondiente.
+  const [activeCard, setActiveCard] = useState('cybervadis');
 
   const badges = [
     {
@@ -52,15 +53,10 @@ const TrustBadgesSection = () => {
       category: 'Metodología Ágil',
       desc: 'Equipos certificados en metodologías ágiles de desarrollo y producto.',
       logoSrc: scrumstudySvg,
-    },
-    {
-      id: 'iso27001',
-      name: 'ISO 27001',
-      pill: 'Próximamente',
-      category: 'Seguridad de Datos',
-      desc: 'Cumplimiento del estándar internacional de gestión de seguridad de la información.',
-      logoSrc: null, // Renders as typographic titlemark per official design
     }
+    // Se retiro la tarjeta 'ISO 27001': la certificacion aun no se tiene, y
+    // ademas era la destacada por defecto. El lugar de credencial de seguridad
+    // lo ocupa CyberVadis, que si esta vigente.
   ];
 
   return (

@@ -85,7 +85,7 @@ export const caseStudiesData = [
     badge: '✦ Adopción Digital',
     badgeClass: 'text-cyan-400 bg-cyan-500/15 border-cyan-500/30',
     tags: ['UX/UI Design', 'Web Development', 'Content Strategy', 'Product Strategy'],
-    techStack: ['React', 'Next.js', 'Tailwind CSS', 'Headless CMS', 'Mixpanel', 'AWS CloudFront'],
+    techStack: ['React', 'Next.js', 'Headless CMS', 'Mixpanel', 'AWS CloudFront'],
     image: `${import.meta.env.BASE_URL}assets/iqos.jpg`,
     fallbackImage: `${import.meta.env.BASE_URL}case3.jpg`,
     challenge: 'Baja comprensión de los beneficios tecnológicos del dispositivo por parte de nuevos prospectos y fricción en el proceso de registro de garantía y compra de accesorios.',

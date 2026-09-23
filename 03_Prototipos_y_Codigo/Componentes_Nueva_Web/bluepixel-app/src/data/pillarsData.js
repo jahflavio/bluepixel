@@ -50,7 +50,7 @@ export const pillarsData = {
       {
         id: 'ai-engineering',
         name: 'Software Engineering',
-        badge: 'Cloud-Native SOC2',
+        badge: 'Cloud-Native Architecture',
         role: 'Architecture Assessment',
         desc: 'Auditoría de código, evaluación de deuda técnica y diseño de la topología cloud escalable bajo protocolos abiertos.',
         route: 'servicio/ai-engineering'
@@ -74,7 +74,7 @@ export const pillarsData = {
       {
         id: 'security',
         name: 'Security & Reliability',
-        badge: 'ISO 27001 & OWASP',
+        badge: 'CyberVadis & OWASP',
         role: 'Threat Modeling & Brechas',
         desc: 'Análisis de vulnerabilidades, escaneo de dependencias y alineación de controles para SOC2 e ISO 27001.',
         route: 'servicio/security'
@@ -308,7 +308,7 @@ export const pillarsData = {
       {
         id: 'ai-engineering',
         name: 'Software Engineering',
-        badge: 'Cloud-Native SOC2',
+        badge: 'Cloud-Native Architecture',
         role: 'Servidores MCP & APIs',
         desc: 'Construcción de conectores determinísticos vía Model Context Protocol para interactuar de forma segura con tu ERP.',
         route: 'servicio/ai-engineering'
@@ -332,7 +332,7 @@ export const pillarsData = {
       {
         id: 'security',
         name: 'Security & Reliability',
-        badge: 'ISO 27001 & OWASP',
+        badge: 'CyberVadis & OWASP',
         role: 'Guardrails & Filtros DLP',
         desc: 'Enmascaramiento de datos personales (PII), prevención de prompt injection y despliegue en VPC privada aislada.',
         route: 'servicio/security'
@@ -553,7 +553,7 @@ export const pillarsData = {
       {
         id: 'ai-engineering',
         name: 'Software Engineering',
-        badge: 'Cloud-Native SOC2',
+        badge: 'Cloud-Native Architecture',
         role: '🔥 Núcleo del Pilar: Full Stack 0 a Prod',
         desc: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, PostgreSQL), CI/CD y microservicios resilientes.',
         route: 'servicio/ai-engineering'
@@ -577,7 +577,7 @@ export const pillarsData = {
       {
         id: 'security',
         name: 'Security & Reliability',
-        badge: 'ISO 27001 & OWASP',
+        badge: 'CyberVadis & OWASP',
         role: 'Arquitectura Segura ISO/OWASP',
         desc: 'Blindaje de endpoints, cifrado KMS de datos sensibles y preparación para auditorías de cumplimiento normativo.',
         route: 'servicio/security'
@@ -676,7 +676,7 @@ export const pillarsData = {
         { num: '02', title: 'Sistema UX/UI Enterprise Validado', desc: 'Research con usuarios reales, prototipos interactivos navegables y Design System en Figma.' },
         { num: '03', title: 'Capa Agentic IA Integrada', desc: 'Agentes autónomos, automatizaciones y modelos RAG integrados desde el sprint 1.' },
         { num: '04', title: 'Arquitectura Técnica Cloud-Native', desc: 'Microservicios modulares desacoplados, serverless/contenedores y bases PostgreSQL.' },
-        { num: '05', title: 'Desarrollo Full-Stack Web & Móvil', desc: 'Frontend en React/Next.js, backend en Node/Python y contratos OpenAPI con tipado estricto.' },
+        { num: '05', title: 'Desarrollo Full-Stack Web & Móvil', desc: 'Frontend en React/Next.js, móvil en React Native, Swift (iOS) y Kotlin (Android), backend en Node/Python y contratos OpenAPI con tipado estricto.' },
         { num: '06', title: 'Consola Administrativa & Dashboard', desc: 'Panel de gestión interno, métricas operativas y módulos de control de usuarios y permisos.' },
         { num: '07', title: 'Integraciones con Stack Actual', desc: 'Conectores determinísticos con ERP, CRM, pasarelas de pago y sistemas legados.' },
         { num: '08', title: 'QA & Pruebas de Seguridad OWASP', desc: 'Pruebas funcionales, cobertura de tests >85% y auditoría contra vulnerabilidades OWASP Top 10.' },
@@ -832,7 +832,7 @@ export const pillarsData = {
       {
         id: 'ai-engineering',
         name: 'Software Engineering',
-        badge: 'Cloud-Native SOC2',
+        badge: 'Cloud-Native Architecture',
         role: 'Refactorización & Nuevos Módulos',
         desc: 'Despliegue continuo de nuevos microservicios, optimización de consultas de bases de datos y reducción de costos cloud.',
         route: 'servicio/ai-engineering'
@@ -856,7 +856,7 @@ export const pillarsData = {
       {
         id: 'security',
         name: 'Security & Reliability',
-        badge: 'ISO 27001 & OWASP',
+        badge: 'CyberVadis & OWASP',
         role: 'Monitoreo SLA 99.9% & Pentest',
         desc: 'Vigilancia 24/7 de infraestructura, simulaciones de ataque periódicas y actualización proactiva de parches de seguridad.',
         route: 'servicio/security'

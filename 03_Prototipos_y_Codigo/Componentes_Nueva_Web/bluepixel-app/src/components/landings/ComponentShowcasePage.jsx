@@ -135,7 +135,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
           </div>
           <div className="bg-[#080D1A] border border-white/10 rounded-xl p-4">
             <div className="text-2xl font-black text-emerald-400 font-mono">100%</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Tailwind & React</div>
+            <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">React & Next.js</div>
           </div>
         </div>
 
@@ -313,7 +313,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         filePath="src/components/sections/TrustBadgesSection.jsx"
         status="✦ ACTIVO EN HOME"
         statusColor="text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
-        desc="Indicadores de confiabilidad: 99.9% SLA, SOC2 Type II Ready, Estándar ISO 27001 y Mitigación OWASP Top 10."
+        desc="Indicadores de confiabilidad: 99.9% SLA, CyberVadis verificado, arquitectura Zero-Trust y mitigación OWASP Top 10."
         targetUse="Home principal y pie de página de propuestas enterprise."
       >
         <TrustBadgesSection />
