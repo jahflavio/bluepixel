@@ -184,3 +184,52 @@ document.addEventListener('DOMContentLoaded', () => {
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 });
+
+// ============================================================
+// Capacity Planner: Rebalanceo con IA
+// ============================================================
+function showRebalance() {
+    const result = document.getElementById('rebalance-result');
+    if (result) {
+        result.style.display = 'block';
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function applyRebalance() {
+    // Animate bars to new values after IA rebalance
+    const bars = {
+        media:   { bar: document.getElementById('bar-media'),   val: document.getElementById('val-media'),   newW: '70%',  newV: '70%',  color: '#f97316' },
+        promo:   { bar: document.getElementById('bar-promo'),   val: document.getElementById('val-promo'),   newW: '75%',  newV: '75%',  color: '#f97316' },
+        btl:     { bar: document.getElementById('bar-btl'),     val: document.getElementById('val-btl'),     newW: '68%',  newV: '68%',  color: '#f97316' },
+        digital: { bar: document.getElementById('bar-digital'), val: document.getElementById('val-digital'), newW: '60%',  newV: '60%',  color: '#10b981' }
+    };
+
+    Object.values(bars).forEach(item => {
+        if (item.bar) {
+            item.bar.style.transition = 'width 1s ease';
+            item.bar.style.width = item.newW;
+            item.bar.classList.remove('critical');
+            item.bar.classList.add('warning');
+        }
+        if (item.val) {
+            item.val.textContent = item.newV;
+            item.val.style.color = item.color;
+        }
+    });
+
+    // Show success toast
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed; bottom:30px; right:30px; background:#10b981; color:#fff; padding:14px 20px; border-radius:10px; font-weight:700; font-size:13px; z-index:9999; box-shadow:0 4px 20px rgba(16,185,129,0.4);';
+    toast.innerHTML = '&#10003; Rebalanceo aplicado. Equipo notificado automaticamente.';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 4000);
+
+    // Hide the rebalance panel
+    const result = document.getElementById('rebalance-result');
+    if (result) result.style.opacity = '0.5';
+
+    // Dismiss alert
+    const banner = document.getElementById('alert-banner');
+    if (banner) banner.style.display = 'none';
+}

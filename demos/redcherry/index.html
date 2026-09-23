@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -120,21 +120,21 @@
                 <section id="dashboard" class="view-section hidden">
                     <div class="section-header">
                         <div>
-                            <h1>Capacity Planner & Finanzas</h1>
-                            <p>Visión ejecutiva en tiempo real para Dirección.</p>
+                            <h1>Capacity Planner &amp; Finanzas</h1>
+                            <p>Vision ejecutiva en tiempo real para Marlene &amp; Oliver (Direccion).</p>
                         </div>
                         <div class="filters">
-                            <select class="glass-select"><option>Q3 2026</option></select>
+                            <select class="glass-select"><option>Q3 2026</option><option>Q4 2026</option></select>
                         </div>
                     </div>
 
-                    <div class="kpi-grid">
+                    <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr);">
                         <div class="kpi-card glass-panel">
                             <div class="kpi-icon"><i class="ri-money-dollar-circle-line"></i></div>
                             <div class="kpi-details">
                                 <span class="label">Ingresos del Mes</span>
                                 <span class="value">$2.4M</span>
-                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +12% vs last month</span>
+                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +12% vs mes anterior</span>
                             </div>
                         </div>
                         <div class="kpi-card glass-panel">
@@ -142,60 +142,111 @@
                             <div class="kpi-details">
                                 <span class="label">Margen Promedio</span>
                                 <span class="value">34.2%</span>
-                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +2.1% optimizado</span>
+                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +2.1% optimizado por IA</span>
                             </div>
                         </div>
                         <div class="kpi-card glass-panel">
                             <div class="kpi-icon"><i class="ri-team-line"></i></div>
                             <div class="kpi-details">
-                                <span class="label">Capacidad de Equipo</span>
+                                <span class="label">Capacidad Global</span>
                                 <span class="value">82%</span>
-                                <span class="trend warning"><i class="ri-alert-line"></i> Media al límite</span>
+                                <span class="trend warning"><i class="ri-alert-line"></i> 1 celula al limite</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon"><i class="ri-briefcase-line"></i></div>
+                            <div class="kpi-details">
+                                <span class="label">Proyectos Activos</span>
+                                <span class="value">18</span>
+                                <span class="trend warning"><i class="ri-alert-line"></i> 3 sin asignacion</span>
                             </div>
                         </div>
                     </div>
 
+                    <div class="alert-banner" id="alert-banner" style="display:flex; align-items:flex-start; gap:14px; background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:16px 20px; margin:16px 0;">
+                        <i class="ri-alarm-warning-fill" style="font-size:22px; color:#f97316; flex-shrink:0; margin-top:2px;"></i>
+                        <div style="flex:1;">
+                            <strong style="color:#fb923c;">Cuello de Botella Detectado por IA</strong><br>
+                            <span style="font-size:12px; color:#94a3b8;">Media Digital (Priscilla) esta al <b style="color:#f97316;">95% de capacidad</b>. Hay 3 proyectos nuevos en cola sin asignacion. Riesgo de retraso esta semana si no se rebalancea.</span>
+                        </div>
+                        <button onclick="document.getElementById('rebalance-btn').click(); document.getElementById('alert-banner').style.opacity='0.4';" style="background:#f97316; color:#fff; border:none; border-radius:8px; padding:8px 14px; font-weight:700; font-size:12px; cursor:pointer; white-space:nowrap;">Ver solucion IA</button>
+                    </div>
+
                     <div class="dashboard-grid">
                         <div class="chart-card glass-panel">
-                            <h3>Facturación por Unidad de Negocio</h3>
+                            <h3>Facturacion por Unidad de Negocio (MXN miles)</h3>
                             <canvas id="revenueChart"></canvas>
                         </div>
                         <div class="capacity-card glass-panel">
-                            <h3>Estado de Células (Capacity Planner)</h3>
-                            <div class="team-capacity">
+                            <h3>Estado de Celulas &bull; Capacity Planner</h3>
+                            <div style="display:flex; gap:12px; margin-bottom:12px; font-size:11px;">
+                                <span style="color:#10b981;">&#9679; Disponible</span>
+                                <span style="color:#f97316;">&#9679; Atencion</span>
+                                <span style="color:#ef4444;">&#9679; Saturado</span>
+                            </div>
+                            <div class="team-capacity" id="team-capacity">
                                 <div class="team-row">
-                                    <div class="team-info">
-                                        <span>Media Digital</span>
-                                        <small>Priscilla Ahuja</small>
-                                    </div>
-                                    <div class="capacity-bar">
-                                        <div class="fill critical" style="width: 95%"></div>
-                                    </div>
-                                    <span class="cap-val">95%</span>
+                                    <div class="team-info"><span>Media Digital</span><small>Priscilla Ahuja &bull; 8 proyectos</small></div>
+                                    <div class="capacity-bar"><div class="fill critical" style="width: 95%" id="bar-media"></div></div>
+                                    <span class="cap-val" style="color:#ef4444;" id="val-media">95%</span>
                                 </div>
                                 <div class="team-row">
-                                    <div class="team-info">
-                                        <span>Promotoría</span>
-                                        <small>Operaciones</small>
-                                    </div>
-                                    <div class="capacity-bar">
-                                        <div class="fill warning" style="width: 75%"></div>
-                                    </div>
-                                    <span class="cap-val">75%</span>
+                                    <div class="team-info"><span>Promotoria</span><small>Operaciones &bull; 5 proyectos</small></div>
+                                    <div class="capacity-bar"><div class="fill warning" style="width: 75%" id="bar-promo"></div></div>
+                                    <span class="cap-val" style="color:#f97316;" id="val-promo">75%</span>
                                 </div>
                                 <div class="team-row">
-                                    <div class="team-info">
-                                        <span>Activaciones / BTL</span>
-                                        <small>Natalia</small>
-                                    </div>
-                                    <div class="capacity-bar">
-                                        <div class="fill safe" style="width: 40%"></div>
-                                    </div>
-                                    <span class="cap-val">40%</span>
+                                    <div class="team-info"><span>Activaciones / BTL</span><small>Natalia &bull; 2 proyectos</small></div>
+                                    <div class="capacity-bar"><div class="fill safe" style="width: 40%" id="bar-btl"></div></div>
+                                    <span class="cap-val" style="color:#10b981;" id="val-btl">40%</span>
+                                </div>
+                                <div class="team-row">
+                                    <div class="team-info"><span>Digital / Redes</span><small>Equipo Digital &bull; 3 proyectos</small></div>
+                                    <div class="capacity-bar"><div class="fill safe" style="width: 35%" id="bar-digital"></div></div>
+                                    <span class="cap-val" style="color:#10b981;" id="val-digital">35%</span>
                                 </div>
                             </div>
-                            <button class="outline-btn w-100 mt-4"><i class="ri-magic-line"></i> Rebalancear con IA</button>
+                            <button class="outline-btn w-100 mt-4" id="rebalance-btn" onclick="showRebalance()">
+                                <i class="ri-magic-line"></i> Rebalancear con IA
+                            </button>
+                            <div id="rebalance-result" style="display:none; margin-top:14px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:14px;">
+                                <div style="font-size:12px; font-weight:700; color:#34d399; margin-bottom:10px;"><i class="ri-robot-2-fill"></i> Propuesta de IA &bull; Rebalanceo Automatico</div>
+                                <div style="font-size:12px; color:#94a3b8; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    &#128230; <b style="color:#e2e8f0;">"Campana Navidad"</b> mover de Priscilla a <b style="color:#e2e8f0;">Equipo Digital</b>
+                                    <span style="background:rgba(16,185,129,0.2); color:#34d399; padding:2px 8px; border-radius:4px; font-size:11px; margin-left:8px;">-20% carga Media</span>
+                                </div>
+                                <div style="font-size:12px; color:#94a3b8; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    &#128230; <b style="color:#e2e8f0;">"Activacion OXXO"</b> reasignar a <b style="color:#e2e8f0;">Natalia (BTL)</b>
+                                    <span style="background:rgba(16,185,129,0.2); color:#34d399; padding:2px 8px; border-radius:4px; font-size:11px; margin-left:8px;">+25% carga BTL</span>
+                                </div>
+                                <div style="font-size:12px; color:#94a3b8; padding:6px 0;">
+                                    &#128230; <b style="color:#e2e8f0;">"Reporteo Meta Q3"</b> mantener en <b style="color:#e2e8f0;">Priscilla</b> (su expertise)
+                                    <span style="background:rgba(100,116,139,0.2); color:#94a3b8; padding:2px 8px; border-radius:4px; font-size:11px; margin-left:8px;">Sin cambio</span>
+                                </div>
+                                <button onclick="applyRebalance()" style="margin-top:12px; width:100%; background:#10b981; color:#fff; border:none; border-radius:8px; padding:9px 12px; font-weight:700; font-size:12px; cursor:pointer;">
+                                    <i class="ri-check-line"></i> Aplicar Rebalanceo
+                                </button>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="glass-panel" style="margin-top:16px; padding:20px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                            <h3>Proyectos Activos &bull; Vista Direccion</h3>
+                            <span style="font-size:12px; color:#64748b;">Actualizado hace 2 min &bull; <span style="color:#10b981;">&#9679; En vivo</span></span>
+                        </div>
+                        <table class="quote-table">
+                            <thead>
+                                <tr><th>Proyecto</th><th>Cliente</th><th>Celula</th><th>Facturacion</th><th>Margen</th><th>Estatus</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Campana Navidad Bimbo</td><td>Bimbo</td><td>Media Digital</td><td>$320,000</td><td class="success">38%</td><td><span style="background:rgba(234,179,8,0.15); color:#eab308; padding:2px 10px; border-radius:20px; font-size:11px; font-weight:600;">En Produccion</span></td></tr>
+                                <tr><td>Activacion OXXO CDMX</td><td>OXXO</td><td>Promotoria</td><td>$180,000</td><td class="success">31%</td><td><span style="background:rgba(16,185,129,0.15); color:#10b981; padding:2px 10px; border-radius:20px; font-size:11px; font-weight:600;">En Tiempo</span></td></tr>
+                                <tr><td>Stand Convencion 2026</td><td>Samsung</td><td>Activaciones BTL</td><td>$95,000</td><td class="success">42%</td><td><span style="background:rgba(16,185,129,0.15); color:#10b981; padding:2px 10px; border-radius:20px; font-size:11px; font-weight:600;">En Tiempo</span></td></tr>
+                                <tr><td>Pauta Digital Q4</td><td>Liverpool</td><td>Media Digital</td><td>$260,000</td><td class="warning">28%</td><td><span style="background:rgba(239,68,68,0.15); color:#ef4444; padding:2px 10px; border-radius:20px; font-size:11px; font-weight:600;">En Riesgo</span></td></tr>
+                                <tr><td>Promotoria Navidena</td><td>Coca-Cola</td><td>Promotoria</td><td>$145,000</td><td class="success">35%</td><td><span style="background:rgba(234,179,8,0.15); color:#eab308; padding:2px 10px; border-radius:20px; font-size:11px; font-weight:600;">En Produccion</span></td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
