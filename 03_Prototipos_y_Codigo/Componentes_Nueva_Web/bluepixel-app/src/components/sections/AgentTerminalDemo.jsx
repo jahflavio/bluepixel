@@ -90,7 +90,7 @@ const AgentTerminalDemo = () => {
               <span className="text-[10px] font-mono tracking-widest uppercase text-red-500 font-bold mb-4 block">
                 UNDER THE HOOD
               </span>
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Lo que hace un agente en producción<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">

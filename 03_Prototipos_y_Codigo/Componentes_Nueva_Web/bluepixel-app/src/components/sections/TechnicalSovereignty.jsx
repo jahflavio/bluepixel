@@ -33,7 +33,7 @@ const TechnicalSovereignty = () => {
               </div>
               <h3 className="mb-4 font-bold font-display text-2xl md:text-3xl tracking-tight leading-[1.2]">Despliegue nativo en tu VPC<span className="text-blue-500">.</span></h3>
               <p className="text-slate-400 text-base leading-relaxed max-w-xl">
-                Toda la arquitectura agentica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad empresarial, asegurando cumplimiento total (SOC2, HIPAA).
+                Toda la arquitectura agéntica se despliega de forma nativa dentro de tu propia nube privada (AWS, Azure o Google Cloud). Tus datos nunca salen de tu perímetro de seguridad empresarial, asegurando cumplimiento total (SOC2, HIPAA).
               </p>
             </div>
 

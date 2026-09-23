@@ -44,7 +44,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
         {/* Left: Go Back Button (Styled as a dark pill) */}
         <button
           onClick={() => handleNav('servicios')}
-          className="pointer-events-auto flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#090E1C]/90 backdrop-blur-xl border border-white/[0.08] shadow-lg shadow-black/40 hover:bg-white/[0.05] transition-colors group"
+          className="pointer-events-auto flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#090E1C]/55 backdrop-blur-2xl backdrop-saturate-150 border border-white/[0.08] shadow-lg shadow-black/40 hover:bg-white/[0.08] transition-colors group"
         >
           <div className="text-slate-400 group-hover:text-white flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider">
             <span>←</span>
@@ -57,7 +57,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
         </button>
 
         {/* Right: 4 Pillars Quick Selector */}
-        <div className="pointer-events-auto flex items-center gap-1 bg-[#090E1C]/90 backdrop-blur-xl p-1 rounded-xl border border-white/[0.08] shadow-lg shadow-black/40 text-xs overflow-x-auto">
+        <div className="pointer-events-auto flex items-center gap-1 bg-[#090E1C]/55 backdrop-blur-2xl backdrop-saturate-150 p-1 rounded-xl border border-white/[0.08] shadow-lg shadow-black/40 text-xs overflow-x-auto">
           <button
             onClick={() => handleNav('consultoria-tecnologica')}
             className={`px-4 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap ${

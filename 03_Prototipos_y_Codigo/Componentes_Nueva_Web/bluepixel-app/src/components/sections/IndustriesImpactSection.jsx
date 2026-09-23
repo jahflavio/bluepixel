@@ -56,7 +56,7 @@ const industriesData = [
     challenge: 'Plataformas de alto tráfico donde decisiones de UX impactan millones de viajes y la adopción digital se mide en segundos.',
     solution: 'UX Research aplicado, usability testing continuo y definición de la estrategia de adopción digital para apps móviles de gran escala.',
     tags: ['UX RESEARCH', 'USABILITY TESTING', 'MOBILE APP'],
-    caseClient: 'DiDi',
+    caseClient: 'Movilidad Enterprise',
     metricValue: '87.5%',
     metricLabel: 'task completion rate'
   },

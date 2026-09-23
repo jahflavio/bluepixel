@@ -154,17 +154,29 @@ const CasosEstudioLandingPage = () => {
                     {item.headline}
                   </p>
 
-                  {/* 3 Metric Preview Chips */}
-                  <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-[#02050E] border border-white/[0.06] mb-6">
-                    {item.results.map((res, rIdx) => (
-                      <div key={rIdx} className="text-center">
-                        <div className="text-sm md:text-base font-black text-emerald-400 font-mono">{res.value}</div>
-                        <div className="text-[9px] font-mono text-slate-400 truncate mt-0.5" title={res.label}>
-                          {res.label.split(' ')[0]} {res.label.split(' ')[1] || ''}
+                  {/* Chips de metricas, o las mejoras cualitativas cuando el
+                      caso no publica cifras. */}
+                  {item.results?.length > 0 ? (
+                    <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-[#02050E] border border-white/[0.06] mb-6">
+                      {item.results.map((res, rIdx) => (
+                        <div key={rIdx} className="text-center">
+                          <div className="text-sm md:text-base font-black text-emerald-400 font-mono">{res.value}</div>
+                          <div className="text-[9px] font-mono text-slate-400 truncate mt-0.5" title={res.label}>
+                            {res.label.split(' ')[0]} {res.label.split(' ')[1] || ''}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  ) : item.outcomes?.length > 0 ? (
+                    <div className="p-3 rounded-xl bg-[#02050E] border border-white/[0.06] mb-6 space-y-1.5">
+                      {item.outcomes.slice(0, 3).map((o, oIdx) => (
+                        <div key={oIdx} className="flex items-start gap-2 text-[11px] text-slate-300 leading-snug">
+                          <span className="text-emerald-400 shrink-0">✦</span>
+                          <span className="line-clamp-1" title={o}>{o}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
 
                   {/* Tech Stack Pills */}
                   <div className="flex flex-wrap gap-1.5 mb-6">

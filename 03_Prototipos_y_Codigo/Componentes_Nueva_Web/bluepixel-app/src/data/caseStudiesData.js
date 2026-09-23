@@ -98,28 +98,32 @@ export const caseStudiesData = [
     quote: 'La combinación de diseño premium y fluidez técnica que entregó BluePixel elevó radicalmente la percepción de marca y la adopción de nuestros dispositivos.',
     author: 'Brand & Digital Experience Lead'
   },
+  // El caso 'didi' se retiro: no esta publicado en bluepixel.mx.
+  // Stadibox si lo esta, pero su ficha publica no declara cifras: los
+  // resultados son cualitativos a proposito. 'results' va vacio y en su lugar
+  // se listan las mejoras en 'outcomes'.
   {
-    id: 'didi',
-    client: 'DiDi',
-    industry: 'MOVILIDAD Y LOGÍSTICA · HIGH TRAFFIC',
-    pillarId: 'evolucion-digital',
-    pillarName: 'Pilar 04 · Evolución Digital',
-    pillarRoute: 'evolucion-digital',
-    headline: 'UX Research aplicado, usability testing continuo y estrategia de adopción digital para millones de usuarios.',
-    badge: '↑ 87.5% Adopción',
-    badgeClass: 'text-amber-400 bg-amber-500/15 border-amber-500/30',
-    tags: ['UX Research', 'Usability Testing', 'Mobile Apps', 'CRO'],
-    techStack: ['UX Research Lab', 'Eye Tracking & Heatmaps', 'Mixpanel', 'Figma Prototyping'],
+    id: 'stadibox',
+    client: 'Stadibox',
+    industry: 'ENTRETENIMIENTO Y EVENTOS · MARKETPLACE',
+    pillarId: 'plataformas-digitales',
+    pillarName: 'Pilar 03 · Plataformas Digitales',
+    pillarRoute: 'producto-digital',
+    headline: 'Plataforma premium de reserva de palcos y boletos, rediseñada de punta a punta.',
+    badge: '✦ Rediseño end-to-end',
+    badgeClass: 'text-cyan-400 bg-cyan-500/15 border-cyan-500/30',
+    tags: ['UX/UI Design', 'Web Development', 'Marketplace'],
+    techStack: ['React', 'Next.js', 'Diseño de Venue Interactivo', 'Checkout Optimizado'],
     image: `${import.meta.env.BASE_URL}case2.jpg`,
     fallbackImage: `${import.meta.env.BASE_URL}case3.jpg`,
-    challenge: 'Plataforma de alta concurrencia donde cualquier mínima fricción en el flujo de solicitud de viaje impacta directamente millones de transacciones diarias y la retención de usuarios activos.',
-    solution: 'Laboratorio continuo de investigación de usuarios y pruebas de usabilidad en entornos reales (usability testing en campo y lab), identificando puntos ciegos cognitivos y optimizando flujos de conductor y pasajero.',
-    results: [
-      { value: '87.5%', label: 'Tasa de adopción en nuevas funcionalidades lanzadas' },
-      { value: '-28%', label: 'Reducción de cancelaciones accidentales de viajes' },
-      { value: 'Millones', label: 'De usuarios activos beneficiados por los nuevos flujos' }
+    challenge: 'La plataforma debía servir a dos audiencias opuestas en el mismo producto: quienes buscan boletos, palcos y asientos premium, y los dueños que quieren rentar sus palcos de forma segura. El flujo de reserva era largo, la selección de asientos poco clara y la confianza se caía justo antes de pagar.',
+    solution: 'Rediseño completo del recorrido de reserva en cuatro frentes: descubrimiento de eventos con búsqueda integrada y filtros estructurados; selección de asientos y palcos con representación gráfica del recinto; flujo de compra con resumen persistente y sección de garantía visible; y una experiencia dedicada para los dueños que rentan sus espacios.',
+    outcomes: [
+      'Descubrimiento de eventos más rápido, con búsqueda en el hero y filtros estructurados',
+      'Selección de asientos y palcos intuitiva, con el recinto representado gráficamente',
+      'Mayor confianza en la compra: detalles del evento y garantía visibles en todo el flujo',
+      'Fricción reducida a lo largo de todo el recorrido de reserva'
     ],
-    quote: 'El rigor metodológico de BluePixel para investigar usuarios en campo nos permitió validar hipótesis de producto antes de desplegar a millones de usuarios.',
-    author: 'Product Operations & UX Lead'
+    results: []
   }
 ];

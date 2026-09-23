@@ -7,7 +7,7 @@ const SocialProofSection = () => {
       return (
         <section className="py-16 bg-navy-950/90 border-t border-b border-white/[0.08] overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-            <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+            <h2 className="font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
               Corporativos líderes en México y LATAM <span className="text-slate-400 font-normal">operan agentes de IA y sistemas críticos construídos por BluePixel</span><span className="text-blue-500">.</span>
             </h2>
           </div>

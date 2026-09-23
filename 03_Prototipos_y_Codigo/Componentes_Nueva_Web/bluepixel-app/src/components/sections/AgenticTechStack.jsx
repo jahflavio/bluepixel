@@ -5,7 +5,7 @@ const AgenticTechStack = () => {
         <section id="tech-stack" className="py-24 bg-navy-900 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="mb-16">
-              <h2 className="md: mb-6 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="mb-6 font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 Nuestro ecosistema tecnológico<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">

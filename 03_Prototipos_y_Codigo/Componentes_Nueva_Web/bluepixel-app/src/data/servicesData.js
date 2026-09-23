@@ -9,17 +9,26 @@ export const servicesData = {
     clusterName: 'Apps & Producto',
     // Caso real de caseStudiesData que prueba esta capacidad. Solo se asigna
     // donde existe un caso pertinente; el resto de servicios no muestra prueba.
-    caseStudyId: 'didi',
+    // RadioShack en vez de DiDi: el caso de DiDi no esta publicado en
+    // bluepixel.mx y RadioShack si, ademas de probar UX y conversion.
+    caseStudyId: 'radioshack',
     canonicalBadge: 'IMPATH™ Enabled',
     // 'eyebrow' se retiro de los 6 servicios: nunca se renderizaba (el hero usa
     // clusterName + canonicalBadge) y solo repetia 'Capability · ' + packageName.
-    packageName: 'UX/UI Design & Product Strategy',
+    // Nombre publico alineado con bluepixel.mx, que lidera con Research y no
+    // con Design: es el diferenciador frente a una agencia de pantallas.
+    packageName: 'UX Research & Product Strategy',
     title: 'Interfaces que reducen fricción cognitiva y multiplican conversión.',
     subtitle: 'Estrategia de producto (PS) y diseño UX/UI conductual de grado empresarial. Convertimos la experiencia de usuario en la armadura que asegura adopción inmediata y retorno medible.',
     callout1: 'Un diseño decorativo no sirve en B2B. En BluePixel entendemos que el diseño es la armadura y la experiencia humana con la que vestimos arquitecturas de ingeniería pesada. Cada decisión de interfaz está respaldada por datos de comportamiento real, psicología conductual y nuestra metodología propietaria IMPATH™, eliminando la fricción que le cuesta dinero a tu empresa.',
     stats: [
-      { value: '-65%', label: 'Reducción de fricción cognitiva en flujos críticos', sublabel: 'Metodología IMPATH™' },
-      { value: '3.8x', label: 'Multiplicador promedio en conversión y adopción', sublabel: 'Validado con usuarios reales' },
+      // El '-65% de friccion cognitiva' y el '3.8x promedio en conversion' se
+      // retiraron: no hay unidad medible detras del primero y el segundo
+      // afirma un promedio medido entre proyectos que no esta publicado.
+      // Los tres de ahora son verificables: ranking de tercero, metrica propia
+      // y un hecho de propiedad intelectual.
+      { value: '#1 UX/UI', label: 'Firma líder de diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
+      { value: 'IMPATH™', label: 'Diagnóstico de fricción traducido a impacto económico', sublabel: 'Metodología propietaria' },
       { value: '100%', label: 'Soberanía de Design System & Tokens reutilizables', sublabel: 'Zero deuda de diseño' }
     ],
     fourWaysToWork: [
@@ -185,16 +194,24 @@ export const servicesData = {
     id: 'ai-engineering',
     themeKey: 'cyan',
     clusterName: 'Apps & Producto',
-    caseStudyId: 'radioshack',
+    // LifeMiles en vez de RadioShack: su reto es deuda tecnica acumulada y sus
+    // resultados son de ingenieria (-60% deuda, 99.99% en picos de carga).
+    // RadioShack probaba conversion en e-commerce, no arquitectura.
+    caseStudyId: 'lifemiles',
     canonicalBadge: 'Cloud-Native Architecture',
-    packageName: 'Software Engineering & Cloud-Native',
+    // Nombre publico alineado con bluepixel.mx. El nombre corto de la
+    // capacidad en los grids sigue siendo 'Software Engineering' (canon).
+    packageName: 'AI-Driven Software Engineering',
     title: 'Ingeniería Full Stack y arquitecturas cloud de misión crítica.',
-    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, React Native, Swift y Kotlin) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
+    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, Go, TypeScript en backend y web; React Native, Swift y Kotlin en móvil) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
     callout1: 'Rechazamos el modelo de maquila que factura horas a ciegas y entrega software frágil. Construimos plataformas con estándares de ingeniería de grado empresarial: microservicios, despliegue automatizado CI/CD, infraestructura como código (IaC) y arquitectura orientada a eventos. Tu código y tus datos siempre residen en tu nube privada.',
     stats: [
-      { value: '99.9%', label: 'Garantía de SLA y disponibilidad en producción', sublabel: 'Arquitectura Cloud-Native' },
-      { value: '<120ms', label: 'Latencia p95 en APIs y endpoints transaccionales', sublabel: 'Rendimiento optimizado' },
-      { value: '0%', label: 'Vendor Lock-In: código y datos 100% en tu VPC', sublabel: 'Soberanía Técnica Total' }
+      // Sin cifras de desempeño sin respaldo: el '99.9%' decia "Garantia de
+      // SLA", que es lenguaje contractual, y el '<120ms p95' era una medicion
+      // sin fuente. Se sustituyen por hechos de arquitectura, verificables.
+      { value: '0%', label: 'Vendor Lock-In: código y datos 100% en tu VPC', sublabel: 'Soberanía Técnica Total' },
+      { value: '99.9%', label: 'Objetivo de disponibilidad en arquitecturas cloud desacopladas', sublabel: 'Alta disponibilidad por diseño' },
+      { value: '6', label: 'Artefactos técnicos que recibes, incluido el código fuente', sublabel: 'Tu IP, documentada y auditable' }
     ],
     fourWaysToWork: [
       {
@@ -237,7 +254,7 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Los retos de la infraestructura moderna',
       title: 'El software legado está frenando tu capacidad de innovar.',
-      costOfInaction: 'El 72% del presupuesto de ingeniería en empresas consolidadas se quema en apagar fuegos de software legado. Nosotros modernizamos de forma modular sin frenar tu operación.',
+      costOfInaction: 'Cada sprint que se va en sostener software legado es un sprint que no construye producto: el equipo se vuelve caro de mantener y lento para lanzar. Nosotros modernizamos de forma modular, sin frenar tu operación.',
       items: [
         {
           tag: 'BLOQUEO DE TIME-TO-MARKET',
@@ -270,7 +287,7 @@ export const servicesData = {
       rows: [
         { label: 'Estructura', cols: ['Monolito en On-Premise', 'Microservicios Cloud básicos', 'Arquitectura Desacoplada Event-Driven (MCP)', 'Velocidad de despliegue: 10x'] },
         { label: 'Manejo de Datos', cols: ['Bases Relacionales Rígidas', 'Data Lakes & APIs estándar', 'Bases Vectoriales para RAG/LLMs y Caché distribuida', 'Acceso a insights: Milisegundos'] },
-        { label: 'Escalabilidad', cols: ['Manual (comprar servidores)', 'Auto-scaling básico reactivo', 'Computación distribuida, Serverless y Zero Lock-in', 'Uptime garantizado: 99.9%'] }
+        { label: 'Escalabilidad', cols: ['Manual (comprar servidores)', 'Auto-scaling básico reactivo', 'Computación distribuida, Serverless y Zero Lock-in', 'Objetivo de uptime: 99.9%'] }
       ]
     },
     specs: {
@@ -366,7 +383,7 @@ export const servicesData = {
     callout1: 'La IA superficial que se queda en demos no genera valor. En BluePixel creamos agentes autónomos que razonan sobre datos corporativos reales sin alucinaciones, ejecutan acciones en ERPs mediante el protocolo abierto MCP y liberan capacidad operativa desde el primer ciclo. La IA multiplica la capacidad de las personas que ya tienes en tu equipo.',
     stats: [
       { value: '-75%', label: 'Reducción de horas manuales en tareas repetitivas', sublabel: 'Flujos operativos agentizados' },
-      { value: '<800ms', label: 'Tiempo de respuesta en razonamiento y consulta RAG', sublabel: 'Bases vectoriales optimizadas' },
+      { value: '<800ms', label: 'Objetivo de respuesta en razonamiento y consulta RAG', sublabel: 'Bases vectoriales optimizadas' },
       { value: '0%', label: 'Alucinaciones críticas sobre datos corporativos', sublabel: 'Blindaje con Guardrails y MCP' }
     ],
     fourWaysToWork: [
@@ -410,7 +427,7 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Dónde se estanca la automatización',
       title: 'La IA se aprueba en el consejo. Rara vez llega a producción.',
-      costOfInaction: 'Un equipo de 15 analistas pierde más del 40% de su jornada copiando y pegando datos entre pantallas. Los agentes autónomos devuelven cientos de horas de capacidad operativa.',
+      costOfInaction: 'Mientras un humano copia y pega datos entre el ERP, el CRM y una hoja de cálculo, no está vendiendo, decidiendo ni atendiendo a nadie. Los agentes autónomos devuelven esa capacidad operativa al equipo.',
       items: [
         {
           tag: 'BRECHA DE EJECUCIÓN',
@@ -540,8 +557,12 @@ export const servicesData = {
     callout1: 'Tener terabytes de datos en silos desconectados cuesta dinero y paraliza a los comités directivos. Diseñamos arquitecturas analíticas modernas (BigQuery, Snowflake, dbt) y telemetría profunda de producto para que el C-Level cuente con KPIs en tiempo real y anticipe el comportamiento de clientes antes de que impacte el balance.',
     stats: [
       { value: '-40 hrs', label: 'Al mes que tu equipo deja de cruzar y parchar tablas a mano', sublabel: 'Fuente de verdad única conciliada' },
-      { value: '<1s', label: 'Velocidad de carga en tableros ejecutivos y KPIs', sublabel: 'Arquitectura Modern Data Stack' },
-      { value: '+300%', label: 'Eficiencia directiva al pasar de reportes estáticos a modelos predictivos', sublabel: 'Telemetría Mixpanel instrumentada' }
+      { value: '<1s', label: 'Objetivo de carga en tableros ejecutivos y KPIs', sublabel: 'Arquitectura Modern Data Stack' },
+      // El '+300% de eficiencia directiva' salia de una celda de la matriz de
+      // madurez: no hay unidad detras de "eficiencia directiva". Se sustituye
+      // por la promesa literal de la pagina, que si es verificable el dia que
+      // se entrega: una sola fuente de verdad en vez de reportes que no cuadran.
+      { value: '1', label: 'Fuente de verdad conciliada, en lugar de cinco reportes que no cuadran', sublabel: 'Telemetría Mixpanel instrumentada' }
     ],
     fourWaysToWork: [
       {
@@ -584,7 +605,7 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — El caos de los datos corporativos',
       title: 'Mucha información dispersa, ninguna respuesta clara.',
-      costOfInaction: 'Tomar decisiones comerciales con datos desfasados de 3 semanas cuesta millones en inventario mal asignado o churn no detectado.',
+      costOfInaction: 'Cuando el reporte llega con tres semanas de retraso, la decisión ya se tomó sin él: el inventario se colocó donde no se vendía y el cliente que estaba por irse ya se fue. El costo no está en el dato tardío, está en la decisión que nadie pudo corregir a tiempo.',
       items: [
         {
           tag: 'DISCREPANCIA DIRECTIVA',
@@ -707,14 +728,16 @@ export const servicesData = {
     themeKey: 'amber',
     clusterName: 'Gobernanza IA',
     canonicalBadge: 'CyberVadis & OWASP',
-    packageName: 'Security, Vault & Reliability',
+    // 'Vault' era un nombre interno que no existe en bluepixel.mx ni se explica
+    // en ninguna parte del sitio, igual que BUILD/EVOLVE.
+    packageName: 'Security & Reliability',
     title: 'Blindaje cibernético y soberanía total para activos de misión crítica.',
     subtitle: 'Auditorías de penetración (Pentesting), preparación para ISO 27001 / SOC2, arquitectura Zero-Trust y guardrails de seguridad para implementaciones de IA.',
     callout1: 'La ciberseguridad y el cumplimiento normativo no son un trámite burocrático; son la habilitadora de contratos enterprise de siete cifras. Aplicamos estándares rigurosos de OWASP Top 10, DevSecOps y aislamiento en VPC privada para que tu empresa crezca e innove con IA sin arriesgar su patrimonio ni su reputación.',
     stats: [
       { value: 'CyberVadis', label: 'Prácticas de seguridad verificadas por auditoría independiente', sublabel: 'Certificación vigente' },
       { value: '100%', label: 'Aislamiento de datos en la nube privada del cliente', sublabel: 'Cero entrenamiento con tu IP' },
-      { value: 'SLA 99.9%', label: 'Disponibilidad comprometida en infraestructura endurecida', sublabel: 'Arquitectura Zero-Trust' }
+      { value: '99.9%', label: 'Objetivo de disponibilidad en infraestructura endurecida', sublabel: 'Arquitectura Zero-Trust' }
     ],
     fourWaysToWork: [
       {
@@ -757,7 +780,7 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — Riesgos invisibles',
       title: 'El precio oculto del crecimiento desordenado.',
-      costOfInaction: 'El costo promedio de una filtración de datos en LATAM supera los $2.8M USD, además del daño irreparable a la reputación corporativa y contratos bloqueados.',
+      costOfInaction: 'El comprador enterprise ya no pregunta si tienes seguridad: te envía su cuestionario de proveedor y te exige evidencia documentada. Sin esos controles, el contrato no se pierde en la mesa de negociación, se detiene meses antes en el área de compras.',
       items: [
         {
           tag: 'PUERTAS TRASERAS',
@@ -888,7 +911,9 @@ export const servicesData = {
     stats: [
       { value: '2 a 4', label: 'Semanas para tener diagnóstico y business case listo', sublabel: 'Celeridad analítica ejecutiva' },
       { value: '6', label: 'Artefactos ejecutivos que recibe el Consejo al cierre', sublabel: 'Roadmap, business case y gobernanza' },
-      { value: '100%', label: 'Alineación con el Consejo Directivo y objetivos de negocio', sublabel: 'FutureProof™ Framework' }
+      // El '100% de alineacion con el Consejo' no es medible ni falsable. Se
+      // sustituye por el horizonte del roadmap, que es un hecho del entregable.
+      { value: '1-3 años', label: 'Horizonte del roadmap estratégico que se entrega al Consejo', sublabel: 'FutureProof™ Framework' }
     ],
     fourWaysToWork: [
       {
@@ -931,7 +956,7 @@ export const servicesData = {
     painPoints: {
       eyebrow: '01 — La desorientación ejecutiva frente a la IA',
       title: 'Mucho ruido comercial, poca claridad sobre el impacto financiero real.',
-      costOfInaction: 'Gastar cientos de miles de dólares en iniciativas de IA teóricas que no mueven el P&L es la forma más rápida de quemar capital sin generar ventaja competitiva.',
+      costOfInaction: 'El piloto de IA que nadie puede defender ante el Consejo no se cancela: se queda en el limbo, consumiendo presupuesto y credibilidad trimestre a trimestre. Lo caro no es la licencia, es el año que se pierde antes de admitir que no iba a ningún lado.',
       items: [
         {
           tag: 'PRESIÓN DEL BOARD',
@@ -959,7 +984,7 @@ export const servicesData = {
     matrix: {
       eyebrow: '02 — Madurez Estratégica AI',
       title: 'Niveles de adopción de IA en el corporativo.',
-      subtitle: 'Descubre en qué etapa se encuentra tu empresa y cómo dar el siguiente paso con retorno de inversión garantizado.',
+      subtitle: 'Descubre en qué etapa se encuentra tu empresa y cómo dar el siguiente paso con el retorno de inversión cuantificado por adelantado.',
       headers: ['Etapa', 'Exploratoria (Hype)', 'Táctica (Eficiencia)', 'Estándar BluePixel Estratégico', 'Impacto Financiero'],
       rows: [
         { label: 'Uso de la IA', cols: ['Licencias individuales de ChatGPT', 'Agentes automatizando procesos internos', 'Productos nativos con IA como ventaja competitiva', 'Nuevos flujos de ingresos directos'] },

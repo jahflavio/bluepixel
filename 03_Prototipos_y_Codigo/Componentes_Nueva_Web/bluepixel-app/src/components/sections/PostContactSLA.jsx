@@ -26,7 +26,7 @@ const PostContactSLA = ({ onOpenContact }) => {
               <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
                 COMPROMISO DE SERVICIO & TRANSPARENCIA
               </span>
-              <h2 className="md: mt-2 mb-3 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="mt-2 mb-3 font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 ¿Qué sucede exactamente cuando nos contactas<span className="text-blue-500">?</span>
               </h2>
               <p className="text-slate-400 text-xs md:text-sm">

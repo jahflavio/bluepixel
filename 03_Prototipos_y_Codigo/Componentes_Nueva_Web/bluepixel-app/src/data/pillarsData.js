@@ -696,7 +696,7 @@ export const pillarsData = {
     },
     // Era el unico pilar sin modalidades, y el de mayor ticket. Los tres
     // niveles se componen con los 9 entregables y el cronograma que ya declara
-    // el pilar; no introducen alcances nuevos. Pendiente de validacion comercial.
+    // el pilar; no introducen alcances nuevos. Validados comercialmente.
     plans: {
       eyebrow: 'MODALIDADES DE CONSTRUCCIÓN',
       title: 'Tres alcances según qué tan lejos quieras llegar en el primer ciclo.',

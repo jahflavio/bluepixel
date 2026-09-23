@@ -435,7 +435,7 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
         </div>
       </section>
 
-      {/* IMPATH, MIXPANEL & VAULT - TECNOLOGÍA PROPIETARIA DE FRICCIÓN */}
+      {/* IMPATH - TECNOLOGÍA PROPIETARIA DE FRICCIÓN */}
       <ImpathFrictionSection onOpenContact={() => onSelectPackage(cluster.threeWays.step1.title)} />
 
       {/* LAS 3 FORMAS DE COLABORAR (ADAPTADAS PARA ESTE CLUSTER) */}

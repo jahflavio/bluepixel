@@ -60,7 +60,7 @@ const PRESETS = [
       { paso: '03. Aislamiento', desc: 'Los datos de clientes nunca entrenan modelos públicos de terceros.' },
       { paso: '04. Traspaso Fluido', desc: 'Detección de sentimiento: si el cliente está molesto, transfiere al ejecutivo con resumen previo.' }
     ],
-    casoAnalogo: 'Caso Avianca / DiDi: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
+    casoAnalogo: 'Caso Avianca: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
     roiEstimado: 'Reducción del 55% en costo operativo de atención a clientes.',
     tiempoImplementacion: '4 semanas'
   }

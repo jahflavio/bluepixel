@@ -31,7 +31,7 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
 
           {/* Subheadline */}
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
-            BluePixel es la consultora de ingeniería agentica y arquitectura cloud para corporativos en México y LATAM. Conectamos agentes autónomos a tus sistemas reales (SAP, Salesforce, ERPs), bajo protocolos abiertos MCP, con <strong className="text-white font-semibold">diseño UX de clase mundial</strong> para garantizar adopción inmediata sin fricción.
+            BluePixel es la consultora de ingeniería agéntica y arquitectura cloud para corporativos en México y LATAM. Conectamos agentes autónomos a tus sistemas reales (SAP, Salesforce, ERPs), bajo protocolos abiertos MCP, con <strong className="text-white font-semibold">diseño UX de clase mundial</strong> para garantizar adopción inmediata sin fricción.
           </p>
 
           {/* CTAs */}

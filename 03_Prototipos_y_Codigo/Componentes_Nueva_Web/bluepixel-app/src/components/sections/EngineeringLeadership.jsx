@@ -9,30 +9,34 @@ const EngineeringLeadership = () => (
           <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 font-bold">
             ENGINEERING LEADERSHIP
           </span>
-          <h2 className="md: md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+          {/* La clase traia prefijos sueltos ("md: md: lg:") sin utilidad
+              detras, restos de una edicion previa que Tailwind descartaba. */}
+          <h2 className="font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
             No vendemos "recursos"<span className="text-blue-500">.</span> Asignamos Arquitectos a tu operación<span className="text-blue-500">.</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            El 90% de las fábricas de software escalan con juniors facturados como seniors. En BluePixel, cada proyecto está liderado por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise. Tu inversión está directamente ligada a resultados medibles en producción, no a horas hombre.
+            La fábrica de software escala metiendo juniors a la cuenta y facturándolos como seniors; por eso el costo sube y la calidad no. En BluePixel cada proyecto está liderado por un <strong>Lead Architect</strong> con experiencia probada en sistemas enterprise, y tu inversión está ligada a resultados medibles en producción, no a horas hombre.
           </p>
 
+          {/* Roles institucionales, no nombres: la politica de la casa prohibe
+              nombres individuales en copy publico. */}
           <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/[0.06]">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center font-bold text-white text-xl">
-                L
+              <div className="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center font-bold text-white text-sm font-mono shrink-0">
+                AE
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">Leonardo</h4>
-                <span className="text-slate-400 text-xs font-mono">Lead Agentic Engineer</span>
+                <h4 className="text-white font-bold text-sm">Lead Agentic Engineer</h4>
+                <span className="text-slate-400 text-xs font-mono">Agentes autónomos y protocolos MCP</span>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center font-bold text-white text-xl">
-                P
+              <div className="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center font-bold text-white text-sm font-mono shrink-0">
+                PA
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">Pablo G.</h4>
-                <span className="text-slate-400 text-xs font-mono">Principal Architect</span>
+                <h4 className="text-white font-bold text-sm">Principal Architect</h4>
+                <span className="text-slate-400 text-xs font-mono">Arquitectura cloud y sistemas distribuidos</span>
               </div>
             </div>
           </div>

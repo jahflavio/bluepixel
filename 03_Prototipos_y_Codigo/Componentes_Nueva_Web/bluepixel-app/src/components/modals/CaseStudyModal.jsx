@@ -63,24 +63,42 @@ const CaseStudyModal = ({ caseStudy, onClose, onOpenContact }) => {
         {/* Modal Scrollable Body */}
         <div className="p-6 md:p-8 overflow-y-auto space-y-8 text-left">
           {/* Metrics Strip */}
-          <div>
-            <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Resultados de Negocio Cuantificados</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {caseStudy.results.map((res, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-[#02050E] border border-white/[0.08] flex flex-col justify-between">
-                  <div className="text-3xl md:text-4xl font-black text-emerald-400 font-mono tracking-tight">
-                    {res.value}
-                  </div>
-                  <div className="text-xs text-slate-300 mt-2 leading-snug">
-                    {res.label}
-                  </div>
+          {/* Los casos sin cifras publicadas listan sus mejoras cualitativas
+              en 'outcomes'; el encabezado cambia para no prometer numeros. */}
+          {(caseStudy.results?.length > 0 || caseStudy.outcomes?.length > 0) && (
+            <div>
+              <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-3 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>
+                  {caseStudy.results?.length > 0 ? 'Resultados de Negocio Cuantificados' : 'Mejoras Entregadas'}
+                </span>
+              </div>
+
+              {caseStudy.results?.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {caseStudy.results.map((res, idx) => (
+                    <div key={idx} className="p-4 rounded-2xl bg-[#02050E] border border-white/[0.08] flex flex-col justify-between">
+                      <div className="text-3xl md:text-4xl font-black text-emerald-400 font-mono tracking-tight">
+                        {res.value}
+                      </div>
+                      <div className="text-xs text-slate-300 mt-2 leading-snug">
+                        {res.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {caseStudy.outcomes.map((o, idx) => (
+                    <div key={idx} className="p-4 rounded-2xl bg-[#02050E] border border-white/[0.08] flex items-start gap-2.5">
+                      <span className="text-emerald-400 shrink-0 mt-0.5">✦</span>
+                      <span className="text-xs text-slate-300 leading-snug">{o}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
+          )}
 
           {/* Grid Challenge & Solution */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

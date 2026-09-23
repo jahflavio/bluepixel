@@ -16,7 +16,7 @@ const TechPartners = () => {
         <section className="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/[0.04]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
-              <h2 className="md: mb-4 md: lg: font-black font-display md: lg: tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="mb-4 font-black font-display tracking-tight leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
                 El stack detrás de la ingeniería<span className="text-blue-500">.</span>
               </h2>
               <p className="text-slate-400 text-base md:text-lg max-w-2xl">

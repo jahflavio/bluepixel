@@ -217,7 +217,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         filePath="src/components/sections/ImpathFrictionSection.jsx"
         status="📦 EN RESERVA"
         statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
-        desc="Módulo de fricción operativa con simulador de personas (Power User vs Casual), Mixpanel Health Score y Vault Security Impact en pesos."
+        desc="Módulo de fricción operativa con el panel Friction Intelligence: gemelos digitales de cuatro personas y detección de fricción con impacto económico."
         targetUse="Landing de Consultoría Tecnológica (/consultoria-tecnologica) y propuestas de Auditoría FutureProof."
       >
         <ImpathFrictionSection onOpenContact={onOpenContact} />
@@ -297,7 +297,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         filePath="src/components/sections/CaseStudiesSection.jsx"
         status="✦ ACTIVO EN HOME"
         statusColor="text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
-        desc="Casos de éxito corporativos reales con métricas de ROI demostradas (Bimbo, DiDi, Oxxo, Prosa)."
+        desc="Casos de éxito corporativos reales con métricas de ROI demostradas (Bimbo, Avianca, RadioShack, IQOS)."
         targetUse="Home principal y landing de Casos de Éxito (/casos-de-exito)."
       >
         <CaseStudiesSection onOpenCase={onOpenContact} />

@@ -60,7 +60,7 @@ export const PRESETS = [
       { paso: '03. Aislamiento', desc: 'Los datos de clientes nunca entrenan modelos públicos de terceros.' },
       { paso: '04. Traspaso Fluido', desc: 'Detección de sentimiento: si el cliente está molesto, transfiere al ejecutivo con resumen previo.' }
     ],
-    casoAnalogo: 'Caso Avianca / DiDi: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
+    casoAnalogo: 'Caso Avianca: 78% de consultas de primer nivel resueltas de forma autónoma con 4.8/5 en CSAT.',
     roiEstimado: 'Reducción del 55% en costo operativo de atención a clientes.',
     tiempoImplementacion: '4 semanas'
   }
@@ -72,7 +72,6 @@ export const CLIENT_LOGOS = [
   { name: 'BBVA', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fc650ce64abe0f821d_bbva.svg' },
   { name: 'PepsiCo', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fa919f7c67f75007f0_pepsico.svg' },
   { name: 'Cemex', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fc0a22091a01735cfd_cemex.svg' },
-  { name: 'DiDi', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fda13f3c511e50b61e_didi.svg' },
   { name: 'Avianca', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fb8ec25c469538736b_avianca.svg' },
   { name: 'Subaru', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fb33ee73cfddc84305_subaru.svg' },
   { name: 'RadioShack', url: 'https://cdn.prod.website-files.com/64c96252c4314a904a4fb796/6a5025fb48df2f18c557f360_radioshack.svg' },

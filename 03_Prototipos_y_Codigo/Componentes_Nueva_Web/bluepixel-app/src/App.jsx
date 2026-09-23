@@ -206,7 +206,7 @@ const App = () => {
         <Suspense fallback={<SectionLoader />}>
           <FutureproofLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital') ? (
+      ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital' || currentView === 'diagnostico') ? (
         <Suspense fallback={<SectionLoader />}>
           <ConsultoriaLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
@@ -265,14 +265,42 @@ const App = () => {
             onOpenContact={(pkg) => scrollToForm(pkg)} 
           />
         </Suspense>
-      ) : (
+      ) : CLUSTERS_DATA[currentView] ? (
         <Suspense fallback={<SectionLoader />}>
-          <ClusterLandingPage 
-            cluster={CLUSTERS_DATA[currentView]} 
+          <ClusterLandingPage
+            cluster={CLUSTERS_DATA[currentView]}
             initialSubserviceId={selectedSubserviceId}
-            onNavigateCluster={navigateTo} 
+            onNavigateCluster={navigateTo}
             onSelectPackage={(pkg) => scrollToForm(pkg)}
           />
+          <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />
+        </Suspense>
+      ) : (
+        // Antes, una ruta desconocida caia aqui con cluster undefined y
+        // ClusterLandingPage reventaba en cluster.subservices, dejando la
+        // pagina en blanco. Ahora cualquier URL invalida muestra una salida.
+        <Suspense fallback={<SectionLoader />}>
+          <section className="min-h-[70vh] flex items-center justify-center px-6 bg-[#02040A]">
+            <div className="max-w-lg text-center">
+              <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold block mb-4">
+                Error 404
+              </span>
+              <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4">
+                Esta página no existe<span className="text-blue-500">.</span>
+              </h1>
+              <p className="text-slate-400 mb-8">
+                El enlace que seguiste no corresponde a ninguna sección del sitio.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a href="#/" className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-colors">
+                  Ir al inicio
+                </a>
+                <a href="#/servicios" className="border border-white/10 hover:bg-white/5 text-slate-300 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors">
+                  Ver servicios
+                </a>
+              </div>
+            </div>
+          </section>
           <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />
         </Suspense>
       )}

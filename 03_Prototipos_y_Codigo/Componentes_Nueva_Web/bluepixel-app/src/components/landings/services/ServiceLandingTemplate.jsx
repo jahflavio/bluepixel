@@ -152,7 +152,7 @@ const ALL_SERVICES_SHORTCUTS = [
   { id: 'ai-engineering', name: 'AI Engineering', cluster: 'Apps & Producto', route: 'servicio/ai-engineering', dot: 'bg-cyan-400' },
   { id: 'ai-agents', name: 'Agentes IA', cluster: 'Automatización', route: 'servicio/ai-agents', dot: 'bg-purple-400' },
   { id: 'data-analytics', name: 'Data & Analytics', cluster: 'Automatización', route: 'servicio/data-analytics', dot: 'bg-indigo-400' },
-  { id: 'security', name: 'Security & Vault', cluster: 'Gobernanza IA', route: 'servicio/security', dot: 'bg-amber-400' },
+  { id: 'security', name: 'Security & Reliability', cluster: 'Gobernanza IA', route: 'servicio/security', dot: 'bg-amber-400' },
   { id: 'business-ai', name: 'Business AI Consulting', cluster: 'Gobernanza IA', route: 'servicio/business-ai', dot: 'bg-blue-400' }
 ];
 
@@ -241,7 +241,7 @@ const ServiceLandingTemplate = ({ data }) => {
     <div className="min-h-screen bg-[#02040A] text-white selection:bg-blue-500/30 font-sans">
       
       {/* 0. BREADCRUMB & CONTEXT BAR */}
-      <div className={`border-b border-white/[0.06] bg-[#030611]/80 backdrop-blur-md sticky z-40 transition-all duration-300 ${isScrolledDown ? 'top-0' : 'top-16 md:top-20'}`}>
+      <div className={`border-b border-white/[0.06] bg-[#030611]/50 backdrop-blur-2xl backdrop-saturate-150 sticky z-40 transition-all duration-300 ${isScrolledDown ? 'top-0' : 'top-16 md:top-20'}`}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-slate-400">
             <a href="#/" className="hover:text-white transition-colors">Inicio</a>
@@ -276,9 +276,10 @@ const ServiceLandingTemplate = ({ data }) => {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 gap-10 items-center text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             
-            {/* Cluster Kicker - Clean typography without capsule */}
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold mb-6">
-              <span className="text-slate-400">{data.clusterName}</span>
+            {/* El nombre de la capacidad pesa mas que el cluster al que
+                pertenece: es lo que el visitante vino a evaluar. */}
+            <div className="inline-flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold mb-6">
+              <span className="text-slate-300">{data.packageName}</span>
               <span className="text-slate-600">•</span>
               <span className={theme.accentText}>{data.canonicalBadge}</span>
             </div>
@@ -335,10 +336,7 @@ const ServiceLandingTemplate = ({ data }) => {
         </div>
       )}
 
-      {/* STACK TECNOLÓGICO Y ECOSISTEMA FUTUREPROOF */}
-      <OrbitingTechStack />
-
-      {/* 4. PAIN POINTS & ANTIDOTES */}
+      {/* PAIN POINTS & ANTIDOTES */}
       {data.painPoints && (
         <section className="py-24 border-b border-white/[0.08] bg-[#050A17] relative overflow-hidden">
           {/* Ambient subtle glow */}
@@ -458,49 +456,99 @@ const ServiceLandingTemplate = ({ data }) => {
                       <div className={`text-[10px] font-mono uppercase tracking-widest font-bold mb-1.5 ${theme.accentText}`}>
                         {data.matrix.headers[keyIdx + 1]}
                       </div>
-                      <div className={`text-sm ${theme.tableHighlight} bg-transparent`}>{row.cols[keyIdx]}</div>
-                    </div>
-                    {row.cols.map((col, cIdx) => cIdx === keyIdx ? null : (
-                      <div key={cIdx} className="px-5 py-3.5 border-b border-white/[0.04] last:border-b-0">
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1.5">
-                          {data.matrix.headers[cIdx + 1]}
-                        </div>
-                        <div className="text-sm text-slate-400">{col}</div>
+                      <div className="flex items-start gap-2.5">
+                        <span className={`font-black shrink-0 mt-0.5 ${theme.accentText}`}>✓</span>
+                        <span className={`text-sm ${theme.tableHighlight} bg-transparent`}>{row.cols[keyIdx]}</span>
                       </div>
-                    ))}
+                    </div>
+                    {row.cols.map((col, cIdx) => {
+                      if (cIdx === keyIdx) return null;
+                      // La ultima columna es el impacto, no una alternativa peor.
+                      const isOutcome = cIdx === row.cols.length - 1;
+                      return (
+                        <div key={cIdx} className="px-5 py-3.5 border-b border-white/[0.04] last:border-b-0">
+                          <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1.5">
+                            {data.matrix.headers[cIdx + 1]}
+                          </div>
+                          <div className="flex items-start gap-2.5">
+                            <span className={`shrink-0 mt-0.5 font-black ${isOutcome ? theme.accentText : 'text-slate-600'}`}>
+                              {isOutcome ? '→' : '✕'}
+                            </span>
+                            <span className={`text-sm ${isOutcome ? 'text-slate-200 font-medium' : 'text-slate-400'}`}>{col}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 );
               })}
             </div>
 
-            <div className="hidden md:block overflow-x-auto border border-white/[0.08] rounded-2xl bg-[#050A17] shadow-2xl">
-              <table className="w-full text-left border-collapse min-w-[800px]">
+            {/* La columna BluePixel se marca como una banda vertical continua
+                (fondo + bordes laterales) en vez de solo texto de color, para
+                que se lea como "la respuesta" y no como una celda mas. La
+                ultima columna es el impacto, no un competidor: no lleva ✕. */}
+            <div className="hidden md:block overflow-x-auto overflow-y-hidden border border-white/[0.08] rounded-2xl bg-[#050A17] shadow-2xl">
+              <table className="w-full text-left border-collapse min-w-[880px]">
                 <thead>
                   <tr>
-                    {data.matrix.headers.map((h, idx) => (
-                      <th 
-                        key={idx} 
-                        className={`p-5 text-xs font-mono tracking-widest uppercase border-b border-white/[0.08] ${idx === data.matrix.headers.length - 2 ? `${theme.accentText} font-bold bg-white/[0.02]` : 'text-slate-400'}`}
-                      >
-                        {h}
-                      </th>
-                    ))}
+                    {data.matrix.headers.map((h, idx) => {
+                      const isKey = idx === data.matrix.headers.length - 2;
+                      const isOutcome = idx === data.matrix.headers.length - 1;
+                      return (
+                        <th
+                          key={idx}
+                          className={`p-5 text-xs font-mono tracking-widest uppercase border-b border-white/[0.08] align-bottom ${
+                            isKey
+                              ? `${theme.accentText} font-bold ${theme.accentBg} border-l border-r border-t-2 ${theme.accentBorder}`
+                              : isOutcome
+                                ? 'text-slate-300 font-semibold'
+                                : 'text-slate-500'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            {isKey && <span className={`w-1.5 h-1.5 rounded-full ${theme.dot} animate-pulse`}></span>}
+                            {h}
+                          </div>
+                        </th>
+                      );
+                    })}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.08]">
-                  {data.matrix.rows.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-5 font-bold text-white text-sm bg-[#040813] whitespace-nowrap">{row.label}</td>
-                      {row.cols.map((col, cIdx) => (
-                        <td 
-                          key={cIdx} 
-                          className={`p-5 text-sm ${cIdx === row.cols.length - 2 ? theme.tableHighlight : 'text-slate-300'}`}
-                        >
-                          {col}
+                  {data.matrix.rows.map((row, idx) => {
+                    const isLastRow = idx === data.matrix.rows.length - 1;
+                    return (
+                      <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
+                        <td className="p-5 font-bold text-white text-sm bg-[#040813] whitespace-nowrap border-r border-white/[0.06]">
+                          {row.label}
                         </td>
-                      ))}
-                    </tr>
-                  ))}
+                        {row.cols.map((col, cIdx) => {
+                          const isKey = cIdx === row.cols.length - 2;
+                          const isOutcome = cIdx === row.cols.length - 1;
+                          return (
+                            <td
+                              key={cIdx}
+                              className={`p-5 text-sm align-top ${
+                                isKey
+                                  ? `${theme.tableHighlight} border-l border-r ${theme.accentBorder} ${isLastRow ? `border-b ${theme.accentBorder}` : ''}`
+                                  : isOutcome
+                                    ? 'text-slate-200 font-medium'
+                                    : 'text-slate-400 group-hover:text-slate-300'
+                              }`}
+                            >
+                              <div className="flex items-start gap-2.5">
+                                {isKey && <span className={`font-black shrink-0 mt-0.5 ${theme.accentText}`}>✓</span>}
+                                {!isKey && !isOutcome && <span className="text-slate-600 font-black shrink-0 mt-0.5">✕</span>}
+                                {isOutcome && <span className={`shrink-0 mt-0.5 ${theme.accentText}`}>→</span>}
+                                <span>{col}</span>
+                              </div>
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -624,6 +672,11 @@ const ServiceLandingTemplate = ({ data }) => {
           </div>
         </section>
       )}
+
+      {/* STACK TECNOLÓGICO. Estaba en la posicion 3, antes de plantear el
+          problema: mostraba herramientas a un lector que todavia no sabia por
+          que le importaban. Aqui respalda las capacidades recien descritas. */}
+      <OrbitingTechStack />
 
       {/* PRUEBA: un caso real de caseStudiesData. Las 6 paginas argumentaban
           problema y solucion sin probar nada; aqui se reusa el caso ya escrito
@@ -801,103 +854,86 @@ const ServiceLandingTemplate = ({ data }) => {
         </section>
       )}
 
-      {/* CÓMO CONTRATAR ESTA CAPACIDAD. Vivia en la posicion 3, justo despues
-          de los stats: le pedia al comprador elegir modalidad antes de haberle
-          planteado el problema o la solucion. Aqui cierra el argumento. */}
+      {/* LOS 4 PILARES. Sustituye a la seccion grande "4 Formas de Trabajar":
+          mismo formato compacto que la navegacion cruzada de las landings de
+          pilar, pero enriquecido con el rol y el entregable que esta capacidad
+          concreta aporta dentro de cada pilar, que es lo que ya traia el dato
+          'fourWaysToWork'. Asi se recuperan los enlaces sin volver a ocupar una
+          seccion entera. */}
       {data.fourWaysToWork && (
-        <section id="cuatro-formas" className="py-24 border-b border-white/[0.08] bg-[#02040A] relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className={`inline-block text-xs font-mono uppercase tracking-widest font-bold mb-3 ${theme.accentText}`}>
-                ✦ ARQUITECTURA MODULAR B2B
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-4">
-                4 Formas de Trabajar: ¿Cómo contratar esta capacidad<span className="text-blue-500">?</span>
-              </h2>
-              <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                Nuestros 4 pilares no son un ciclo obligatorio. Puedes contratar esta capability a través de cualquiera de las 4 modalidades según el momento y la necesidad de tu empresa.
-              </p>
+        <section className="py-16 border-b border-white/[0.08] bg-[#030611]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-1">
+                  Arquitectura Modular BluePixel
+                </span>
+                <h3 className="text-xl font-bold text-white">
+                  Contrata esta capacidad desde cualquiera de los 4 Pilares<span className="text-blue-500">.</span>
+                </h3>
+                {/* Sin esta linea, el tinte de las tarjetas núcleo se lee como
+                    "seleccionado" en vez de explicar por que destacan. */}
+                <p className="text-xs text-slate-400 mt-1.5">
+                  Los pilares resaltados son donde esta capacidad es el núcleo del trabajo.
+                </p>
+              </div>
+              <button
+                onClick={() => scrollToFormWithPackage(data.packageName)}
+                className={`text-xs font-mono font-bold whitespace-nowrap ${theme.accentText} hover:text-white transition-colors`}
+              >
+                Cotizar esta capacidad →
+              </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {data.fourWaysToWork.map((way, idx) => (
-                <div
-                  key={idx}
-                  className={`bg-[#050A17] border rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 relative group ${way.isCore ? `${theme.accentBorder} shadow-[0_0_30px_-10px_rgba(59,130,246,0.15)] bg-gradient-to-b from-[#081126] to-[#040813]` : 'border-white/[0.08] hover:border-white/20'}`}
-                >
-                  <div>
-                    {/* Header Pilar */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="text-xs font-mono font-black text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {data.fourWaysToWork.map((way) => {
+                const route =
+                  way.num === '01' ? 'consultoria-tecnologica' :
+                  way.num === '02' ? 'automatizacion-agentica' :
+                  way.num === '03' ? 'producto-digital' :
+                  'evolucion-digital';
+                return (
+                  <a
+                    key={way.num}
+                    href={`#/${route}`}
+                    className={`group p-5 rounded-2xl border text-left transition-all hover:-translate-y-1 flex flex-col ${
+                      way.isCore
+                        ? `${theme.accentBorder} ${theme.accentBg}`
+                        : 'border-white/[0.08] bg-[#060A14] hover:border-white/20'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className={`text-xs font-mono font-bold ${way.isCore ? theme.accentText : 'text-slate-500'}`}>
                         {way.num}
                       </span>
-                      <span className="text-[11px] font-mono text-slate-400 font-semibold">
-                        ⏳ {way.duration}
-                      </span>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase">{way.duration}</span>
                     </div>
 
-                    <a
-                      href={
-                        way.num === '01' ? '#/consultoria-tecnologica' :
-                        way.num === '02' ? '#/automatizacion-agentica' :
-                        way.num === '03' ? '#/producto-digital' :
-                        '#/evolucion-digital'
-                      }
-                      className="hover:text-blue-400 transition-colors group/title"
-                    >
-                      <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2 group-hover/title:text-blue-400 transition-colors">
-                        <span>{way.name}</span>
-                        {way.isCore && (
-                          <span className={`text-[10px] font-mono uppercase font-black ${theme.accentText}`}>
-                            [Núcleo]
-                          </span>
-                        )}
-                      </h3>
-                    </a>
+                    <div className="text-sm font-bold text-white mb-1.5">{way.name}</div>
 
-                    <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${theme.accentText}`}>
+                    {way.isCore && (
+                      <span className={`self-start mb-2 text-[9px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 rounded-full border ${theme.accentBorder} ${theme.accentText}`}>
+                        Capacidad núcleo
+                      </span>
+                    )}
+
+                    {/* Lo que aporta esta capacidad dentro de ese pilar. */}
+                    <div className={`text-[11px] font-semibold uppercase tracking-wider mb-3 ${theme.accentText}`}>
                       {way.role}
                     </div>
 
-                    <p className="text-slate-400 text-xs leading-relaxed mb-6">
-                      {way.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/[0.06] flex flex-col gap-3">
-                    <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">
-                        Entregable Concreto:
+                    <div className="mt-auto pt-3 border-t border-white/[0.06]">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-0.5">
+                        Entregable
                       </div>
-                      <div className="text-xs font-semibold text-slate-200">
-                        {way.deliverable}
-                      </div>
+                      <div className="text-[11px] text-slate-300 leading-snug mb-2">{way.deliverable}</div>
+                      <span className="text-[11px] text-slate-400 flex items-center gap-1 group-hover:text-white transition-colors">
+                        Ver pilar <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      </span>
                     </div>
-
-                    <a
-                      href={
-                        way.num === '01' ? '#/consultoria-tecnologica' :
-                        way.num === '02' ? '#/automatizacion-agentica' :
-                        way.num === '03' ? '#/producto-digital' :
-                        '#/evolucion-digital'
-                      }
-                      className="w-full flex items-center justify-between text-xs font-mono font-bold text-blue-300 hover:text-white px-3.5 py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-400 shadow-[0_0_12px_-3px_rgba(59,130,246,0.25)] transition-all duration-200 group/btn"
-                    >
-                      <span>Ver Landing del Pilar {way.num}</span>
-                      <span className="group-hover/btn:translate-x-1 transition-transform font-bold">→</span>
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <button
-                onClick={() => scrollToFormWithPackage(data.packageName)}
-                className={`font-bold text-sm px-8 py-3.5 rounded-xl transition-all ${theme.btnPrimary}`}
-              >
-                Cotizar este servicio bajo la modalidad ideal →
-              </button>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>

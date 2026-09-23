@@ -50,7 +50,7 @@ const FAQSection = () => {
     {
       category: 'ingenieria',
       q: "¿Cuál es la diferencia entre BluePixel y una fábrica de software tradicional ('maquila') o una consultora de IA pura?",
-      a: "Las consultoras de IA pura construyen algoritmos potentes pero interfaces toscas que el 70% de los usuarios abandona para volver a Excel. Las fábricas de software tradicionales facturan horas-hombre a ciegas entregando código genérico que no convierte. BluePixel rompió esa frontera: entregamos más de 10 años de ingeniería cloud-native y blindaje corporativo, vestidos con la psicología conductual y el diseño UX de más alta conversión del mercado, garantizando más del 95% de adopción desde el primer release."
+      a: "Las consultoras de IA pura construyen algoritmos potentes pero interfaces toscas que el usuario termina abandonando para volver a su hoja de Excel. Las fábricas de software tradicionales facturan horas-hombre a ciegas entregando código genérico que no convierte. BluePixel rompió esa frontera: entregamos más de 10 años de ingeniería cloud-native y blindaje corporativo, vestidos con la psicología conductual y el diseño UX de más alta conversión del mercado, garantizando más del 95% de adopción desde el primer release."
     },
     {
       category: 'ingenieria',

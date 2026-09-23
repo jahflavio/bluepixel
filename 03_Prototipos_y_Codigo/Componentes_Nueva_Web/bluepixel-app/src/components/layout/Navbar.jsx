@@ -63,8 +63,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
     setIsMobileMenuOpen(false);
   };
 
+  // Glass: el fondo baja de 90% a 55% de opacidad y el desenfoque sube a 2xl
+  // para que el contenido siga siendo legible pese a la transparencia. La
+  // saturacion realza los colores que pasan por detras, que es lo que hace que
+  // se lea como vidrio y no como una capa gris encima.
   return (
-    <nav className={`border-b border-white/[0.08] bg-[#02040A]/90 backdrop-blur-xl sticky top-0 z-50 px-6 py-4 transition-transform duration-300 ${isScrolledDown ? '-translate-y-full' : 'translate-y-0'}`}>
+    <nav className={`border-b border-white/[0.08] bg-[#02040A]/55 backdrop-blur-2xl backdrop-saturate-150 sticky top-0 z-50 px-6 py-4 transition-transform duration-300 ${isScrolledDown ? '-translate-y-full' : 'translate-y-0'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
@@ -102,7 +106,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
 
             {/* Dropdown Menu 4 Pilares */}
             <div className={`absolute top-full left-0 pt-3 transition-all duration-200 ${isPilaresOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-              <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl shadow-2xl p-4 w-[360px] relative overflow-hidden">
+              <div className="bg-[#060A14]/[0.97] backdrop-blur-2xl backdrop-saturate-150 border border-white/[0.08] rounded-2xl shadow-2xl p-4 w-[360px] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400"></div>
                 <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-3 px-2 pt-1 font-bold">
                   <span>4 Modelos de Servicio</span>
@@ -203,7 +207,7 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
 
             {/* Dropdown Menu (Mega Menu Style) */}
             <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${isDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-              <div className="bg-[#060A14] border border-white/[0.08] rounded-2xl shadow-2xl p-5 w-[720px] relative overflow-hidden">
+              <div className="bg-[#060A14]/[0.97] backdrop-blur-2xl backdrop-saturate-150 border border-white/[0.08] rounded-2xl shadow-2xl p-5 w-[720px] relative overflow-hidden">
                 {/* Glow decorativo */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
 

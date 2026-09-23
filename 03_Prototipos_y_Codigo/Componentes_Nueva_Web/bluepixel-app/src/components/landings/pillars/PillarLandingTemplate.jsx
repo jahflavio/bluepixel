@@ -879,29 +879,40 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.08]">
-                  {data.comparisonMatrix.rows.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
-                      <td className="p-6 font-bold text-white text-sm bg-[#040813] whitespace-nowrap">{row.label}</td>
-                      {row.cols.map((col, cIdx) => {
-                        const isLast = cIdx === row.cols.length - 1;
-                        return (
-                          <td 
-                            key={cIdx} 
-                            className={`p-6 text-sm ${isLast ? `${theme.tableHighlight} border-l border-r ${theme.accentBorder}` : 'text-slate-400 group-hover:text-slate-300'}`}
-                          >
-                            <div className="flex items-start gap-3">
-                              {isLast ? (
-                                <span className={`font-black shrink-0 mt-0.5 ${theme.accentText}`}>✓</span>
-                              ) : (
-                                <span className="text-slate-600 font-black shrink-0 mt-0.5">✕</span>
-                              )}
-                              <span>{col}</span>
-                            </div>
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  ))}
+                  {data.comparisonMatrix.rows.map((row, idx) => {
+                    const isLastRow = idx === data.comparisonMatrix.rows.length - 1;
+                    return (
+                      <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
+                        {/* La columna de criterio se separa con un borde: sin el,
+                            la etiqueta y el primer competidor se leen pegados. */}
+                        <td className="p-6 font-bold text-white text-sm bg-[#040813] whitespace-nowrap border-r border-white/[0.06]">
+                          {row.label}
+                        </td>
+                        {row.cols.map((col, cIdx) => {
+                          const isLast = cIdx === row.cols.length - 1;
+                          return (
+                            <td
+                              key={cIdx}
+                              className={`p-6 text-sm align-top ${
+                                isLast
+                                  ? `${theme.tableHighlight} border-l border-r ${theme.accentBorder} ${isLastRow ? `border-b ${theme.accentBorder}` : ''}`
+                                  : 'text-slate-400 group-hover:text-slate-300'
+                              }`}
+                            >
+                              <div className="flex items-start gap-3">
+                                {isLast ? (
+                                  <span className={`font-black shrink-0 mt-0.5 ${theme.accentText}`}>✓</span>
+                                ) : (
+                                  <span className="text-slate-600 font-black shrink-0 mt-0.5">✕</span>
+                                )}
+                                <span>{col}</span>
+                              </div>
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
