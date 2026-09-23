@@ -4,6 +4,7 @@ import Footer from '../../layout/Footer';
 import WaysToWorkSubNavbar from '../../layout/WaysToWorkSubNavbar';
 import OrbitingTechStack from '../../sections/OrbitingTechStack';
 import FutureproofCTABanner from '../../widgets/FutureproofCTABanner';
+import StatValue from '../../widgets/StatValue';
 import { CLIENT_LOGOS } from '../../../data/constants';
 
 const PILLAR_THEMES = {
@@ -600,7 +601,7 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
             {data.stats.map((st, sIdx) => (
               <div key={sIdx} className="flex flex-col items-center text-center pt-6 md:pt-0">
                 <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 0 ? theme.gradientText : 'from-white to-slate-200'}`}>
-                  {st.value}
+                  <StatValue value={st.value} />
                 </div>
                 <div className="text-sm font-medium text-slate-300 max-w-xs">{st.label}</div>
                 {st.sublabel && (

@@ -15,6 +15,7 @@ import Footer from '../../layout/Footer';
 import OrbitingTechStack from '../../sections/OrbitingTechStack';
 import FutureproofMethodology from '../../sections/FutureproofMethodology';
 import ImpathFrictionSection from '../../sections/ImpathFrictionSection';
+import StatValue from '../../widgets/StatValue';
 
 const renderPainIcon = (iconType) => {
   switch (iconType) {
@@ -273,7 +274,7 @@ const ServiceLandingTemplate = ({ data }) => {
             {data.stats.map((st, sIdx) => (
               <div key={sIdx} className="flex flex-col items-center text-center pt-6 md:pt-0">
                 <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 1 ? theme.gradientText : 'from-white to-slate-200'}`}>
-                  {st.value}
+                  <StatValue value={st.value} />
                 </div>
                 <div className="text-sm font-medium text-slate-300 max-w-xs">{st.label}</div>
                 {st.sublabel && (
