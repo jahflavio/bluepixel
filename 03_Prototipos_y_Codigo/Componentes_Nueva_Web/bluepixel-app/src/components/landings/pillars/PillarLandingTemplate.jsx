@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
 import WaysToWorkSubNavbar from '../../layout/WaysToWorkSubNavbar';
-import OrbitingTechStack from '../../sections/OrbitingTechStack';
 import FutureproofCTABanner from '../../widgets/FutureproofCTABanner';
 import StatValue from '../../widgets/StatValue';
 import { CLIENT_LOGOS } from '../../../data/constants';
@@ -669,9 +668,6 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
           </div>
         </section>
       )}
-
-      {/* 6.3. CAPA AGENTIC IA (Pilar 03) */}
-      <OrbitingTechStack />
 
       {/* 4. PAIN POINTS */}
       {data.comparisonMatrix && (
