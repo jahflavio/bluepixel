@@ -1,4 +1,4 @@
-﻿# 📋 Escaleta Junta 10:30 — CEO María · BluePixel
+# 📋 Escaleta Junta 10:30 — CEO María · BluePixel
 **23 de Septiembre 2026 · ~50 min · Dos temas: Campañas Rocketing + Presentación Red Cherry**
 
 ---
@@ -96,14 +96,21 @@
 
 ---
 
-## 📂 Links y Recursos
+## 📂 Links y Recursos (Meeting Kit)
 
-| Recurso | Link |
-|---------|------|
-| Propuesta Consolidada Rocketing | [PROPUESTA_CONSOLIDADA_CAMPANAS_ROCKETING.md](https://github.com/jahflavio/bluepixel/blob/main/02_Estrategia_B2B/PROPUESTA_CONSOLIDADA_CAMPANAS_ROCKETING.md) |
-| Demo Red Cherry (en vivo) | https://jahflavio.github.io/bluepixel/demos/redcherry/ |
-| Hub de todos los demos | https://jahflavio.github.io/bluepixel/demos/ |
-| SLA Handoff Rocketing | [SLA_HANDOFF_ROCKETING_LANDINGS.md](https://github.com/jahflavio/bluepixel/blob/main/02_Estrategia_B2B/Handoff_Rocketing/SLA_HANDOFF_ROCKETING_LANDINGS.md) |
+### 🍒 Bloque Red Cherry
+*   **Demo Interactivo en Vivo:** [Red Cherry FutureProof OS](https://jahflavio.github.io/bluepixel/demos/redcherry/) *(Muestra este en pantalla)*
+*   **Análisis Estratégico y Dolores:** [redcherry_analysis.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/red_cherry/redcherry_analysis.md)
+
+### 🚀 Bloque Campañas Rocketing (Handoff y Propuesta)
+*   **Propuesta Consolidada de Campañas (Presupuesto $43,5k):** [PROPUESTA_CONSOLIDADA_CAMPANAS_ROCKETING.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/PROPUESTA_CONSOLIDADA_CAMPANAS_ROCKETING.md)
+*   **SLA de Handoff (Las 6 Reglas de Oro):** [SLA_HANDOFF_ROCKETING_LANDINGS.md](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/Handoff_Rocketing/SLA_HANDOFF_ROCKETING_LANDINGS.md)
+*   **Copy Landing Cluster 1 (Apps):** [LANDING_COPY_CLUSTER1_APPS.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/Handoff_Rocketing/LANDING_COPY_CLUSTER1_APPS.html)
+*   **Copy Landing Cluster 2 (Automatización):** [LANDING_COPY_CLUSTER2_AUTO.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/Handoff_Rocketing/LANDING_COPY_CLUSTER2_AUTO.html)
+*   **Copy Landing Cluster 3 (IA):** [LANDING_COPY_CLUSTER3_IA.html](file:///c:/Users/usarioBP/.gemini/antigravity-ide/scratch/bluepixel/02_Estrategia_B2B/Handoff_Rocketing/LANDING_COPY_CLUSTER3_IA.html)
+
+### 📁 Extra
+*   **Hub de todos los Demos:** [jahflavio.github.io/bluepixel/demos/](https://jahflavio.github.io/bluepixel/demos/)
 
 ---
 *BluePixel · Documento Interno Confidencial · 23 de Septiembre 2026*
