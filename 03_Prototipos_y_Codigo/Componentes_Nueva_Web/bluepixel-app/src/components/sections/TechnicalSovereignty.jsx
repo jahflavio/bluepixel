@@ -71,7 +71,7 @@ const TechnicalSovereignty = () => {
             </div>
             <h3 className="mb-3 font-bold font-display text-xl md:text-2xl tracking-tight leading-[1.2] relative z-10">Propiedad del Código<span className="text-blue-500">.</span></h3>
             <p className="text-slate-400 text-sm leading-relaxed relative z-10 mt-auto">
-              Al finalizar la fase de desarrollo (Build), te entregamos el 100% de los derechos intelectuales y el código fuente. Eres completamente libre de mantenerlo in-house con tu equipo de ingeniería o contratar nuestra póliza de Mantenimiento.
+              Al finalizar la fase de desarrollo, te entregamos el 100% de los derechos intelectuales y el código fuente. Eres completamente libre de mantenerlo in-house con tu equipo de ingeniería o contratar nuestra póliza de Mantenimiento.
             </p>
           </div>
 

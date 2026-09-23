@@ -14,8 +14,8 @@ export const pillarsData = {
     packageName: 'Pilar 01 · Consultoría Digital',
     stats: [
       { value: '14-28', label: 'Días para entregar diagnóstico, arquitectura y ROI', sublabel: 'Celeridad analítica ejecutiva' },
-      { value: '100%', label: 'Certeza técnica y financiera antes de comprometer capital', sublabel: 'Cálculo del Costo de Inacción' },
-      { value: '0', label: 'Líneas de código a ciegas o presupuestos desbordados', sublabel: 'Garantía FutureProof' }
+      { value: '$1.8M MXN', label: 'Ahorrados en el último diagnóstico de 3 semanas', sublabel: 'Caso real FMCG & Retail' },
+      { value: '6', label: 'Artefactos ejecutivos que recibes al cierre del pilar', sublabel: 'Business case, blueprint y backlog' }
     ],
     painPoints: {
       eyebrow: '01 — Los riesgos del desarrollo a ciegas',
@@ -89,7 +89,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '02 — Metodología de Certeza Previa',
+      eyebrow: 'El estándar que protege tu inversión',
       title: 'Tres principios que protegen tu capital de inversión.',
       subtitle: 'Nuestra consultoría actúa como la póliza de seguro antes de comprometer presupuestos mayores.',
       items: [
@@ -158,7 +158,7 @@ export const pillarsData = {
       ]
     },
     timeline: {
-      eyebrow: '07 — Metodología de Ejecución',
+      eyebrow: 'Semana a semana, del diagnóstico al board',
       title: 'Cronograma estricto de diagnóstico a entregables finales.',
       subtitle: 'Sprints de inmersión técnica y estratégica sin quitarle tiempo excesivo a tus líderes.',
       steps: [
@@ -195,18 +195,11 @@ export const pillarsData = {
       exampleLabel: 'Caso típico evaluado',
       exampleText: 'Empresa B2B invirtió $2.4M MXN en un portal con 80% de abandono. Con IMPATH™ en 3 semanas se identificó que solo 2 integraciones resolvían el 85% de las operaciones, ahorrando $1.8M MXN en refactorizaciones innecesarias.'
     },
-    cycle: {
-      eyebrow: 'EL CICLO DE CERTEZA PREVIA',
-      title: 'Metodología estructurada de 5 pasos para blindar tu inversión.',
-      desc: 'Validar antes de codificar: convertimos la incertidumbre operativa en un business case matemáticamente defendible ante el Consejo Directivo.',
-      steps: [
-        { icon: '🔍', name: 'Discovery & P&L', desc: 'Alineación de objetivos de negocio con directores y cuantificación de pérdidas operativas.' },
-        { icon: '🧠', name: 'IMPATH™ Audit', desc: 'Mapeo forense de fricción cognitiva y operativa en los flujos críticos de usuario.' },
-        { icon: '🛡️', name: 'Deuda & Cloud', desc: 'Inspección de código, arquitectura de bases de datos, APIs y vulnerabilidades OWASP.' },
-        { icon: '📊', name: 'TCO & Payback', desc: 'Modelado financiero de costos de infraestructura, inferencia y retorno a 12/36 meses.' },
-        { icon: '🚀', name: 'Board Presentation', desc: 'Entrega del Blueprint técnico agnóstico y Backlog priorizado listo para ejecutar.' }
-      ]
-    },
+    // Sin 'cycle': sus 5 pasos eran el mismo proceso que las 4 semanas del
+    // timeline (Discovery, auditoria IMPATH y deuda, modelado financiero,
+    // board). Se conserva el timeline, que ademas lista los entregables de
+    // cada etapa. El ciclo sigue vivo en 'evolucion-digital', donde si es un
+    // bucle continuo y no un calendario.
     plans: {
       eyebrow: 'MODALIDADES DE DIAGNÓSTICO',
       title: 'Tres niveles de certidumbre según el momento de tu empresa.',
@@ -460,18 +453,9 @@ export const pillarsData = {
       exampleLabel: 'Caso real medido en producción',
       exampleText: 'FR Medical Quirúrgico: Triage NLP nocturno de urgencias y cotización oficial COFEPRIS en 1.8 segundos, sincronizado con su ERP en 0.5s con 0 llamadas perdidas a las 2:00 AM.'
     },
-    cycle: {
-      eyebrow: 'CICLO DETERMINÍSTICO AGÉNTICO',
-      title: '5 pasos de ingeniería para poner agentes autónomos en producción.',
-      desc: 'Cero alucinaciones, cero fuga de datos y total soberanía en tu propia nube privada.',
-      steps: [
-        { icon: '🗺️', name: 'Mapeo de Flujos', desc: 'Identificación de reglas de negocio, endpoints transaccionales y permisos de acceso.' },
-        { icon: '🧠', name: 'RAG Privado', desc: 'Ingesta de datos corporativos en base vectorial cifrada con citas y trazabilidad.' },
-        { icon: '🔌', name: 'Servidores MCP', desc: 'Conexión determinística mediante Model Context Protocol a tus sistemas actuales (SAP, Salesforce).' },
-        { icon: '🛡️', name: 'Guardrails & DLP', desc: 'Blindaje contra prompt injection, enmascaramiento de PII y filtros de seguridad OWASP.' },
-        { icon: '⚡', name: 'Go-Live en VPC', desc: 'Despliegue productivo en tu nube privada con telemetría en tiempo real y Human-in-the-Loop.' }
-      ]
-    },
+    // Sin 'cycle' por la misma razon que en 'consultoria-digital': sus 5 pasos
+    // repetian las 4 semanas del timeline (mapeo de flujo, construccion del
+    // agente, guardrails, pase a produccion).
     plans: {
       eyebrow: 'MODALIDADES DE AUTOMATIZACIÓN AGÉNTICA',
       title: 'Planes modulares para integrar IA sobre tu infraestructura actual.',
@@ -541,14 +525,14 @@ export const pillarsData = {
     subtitle: 'Inteligencia artificial integrada desde el primer sprint, UX validado con usuarios reales y arquitectura escalable y sólida. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas y MVPs enterprise en 2 a 4 meses con SLA 99.9%.',
     takeaway: 'De la concepción a producción en 2 a 4 meses con validación técnica y de mercado.',
     themeKey: 'cyan',
-    packageName: 'Pilar 03 · Plataformas Digitales (Build)',
+    packageName: 'Pilar 03 · Plataformas Digitales',
     stats: [
       { value: '2 a 4 Meses', label: 'De la concepción al lanzamiento oficial del MVP en producción', sublabel: 'Time-to-market prioritario' },
       { value: '#1 UX/UI', label: 'Líder en diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
       { value: '50+', label: 'Plataformas enterprise construidas y operando', sublabel: 'SLA 99.9% Cloud-Native' }
     ],
     painPoints: {
-      eyebrow: '01 — El problema que resolvemos',
+      eyebrow: 'La trampa del MVP que no sobrevive al segundo año',
       title: 'Plataformas que se frenan antes de escalar.',
       items: [
         { title: 'Tecnología y negocio desalineados', desc: 'El equipo técnico ejecuta tickets a ciegas. Nadie conecta las decisiones de ingeniería con los objetivos financieros del negocio.' },
@@ -628,6 +612,15 @@ export const pillarsData = {
         { title: 'Stack Moderno Cloud-Native', desc: 'Construimos sobre React, Node.js, Python, PostgreSQL y contenedores Docker, desplegados con infraestructura elástica en AWS, GCP o Azure.' },
         { title: 'Pruebas Automatizadas y Calidad de Código', desc: 'Cobertura de pruebas unitarias y de integración superior al 85%, con pipelines de CI/CD que garantizan despliegues continuos sin caídas.' }
       ]
+    },
+    // Era el unico pilar sin costo de inaccion. El dato del 70% ya se publica
+    // en servicesData (servicio UX/UI), asi que no introduce una cifra nueva.
+    financialCallout: {
+      eyebrow: 'EL COSTO DE CONSTRUIR SIN VALIDAR',
+      title: 'Una plataforma que nadie adopta cuesta lo mismo que una que sí.',
+      desc: 'El 70% de los proyectos de software corporativo fallan por falta de adopción de usuarios, no por fallas de código. Se construye durante meses sobre supuestos que nunca se contrastaron con un usuario real, y la factura de desarrollo llega completa aunque la plataforma termine sin uso. Validar el UX antes de construir es lo que separa una inversión de un gasto.',
+      exampleLabel: 'Lo que cambia con UX validado',
+      exampleText: 'Más del 92% de adopción en el primer mes, medido en plataformas ya lanzadas'
     },
     quiz: {
       title: '¿Es el momento de construir tu plataforma o MVP corporativo?',
@@ -713,6 +706,61 @@ export const pillarsData = {
         { num: '04', title: 'Mes 4: Go-Live Oficial a Producción', desc: 'Despliegue productivo en tu VPC con balanceadores, telemetría Mixpanel y SLA 99.9% activo.', deliverables: ['Plataforma en Producción'] }
       ]
     },
+    // Era el unico pilar sin modalidades, y el de mayor ticket. Los tres
+    // niveles se componen con los 9 entregables y el cronograma que ya declara
+    // el pilar; no introducen alcances nuevos. Pendiente de validacion comercial.
+    plans: {
+      eyebrow: 'MODALIDADES DE CONSTRUCCIÓN',
+      title: 'Tres alcances según qué tan lejos quieras llegar en el primer ciclo.',
+      subtitle: 'Todos salen a producción. Cambia la superficie que cubre la plataforma y la profundidad de las integraciones.',
+      items: [
+        {
+          horizon: '2 Meses',
+          name: 'MVP VALIDADO',
+          desc: 'Para validar una hipótesis de negocio en producción con usuarios reales, sin comprometer el presupuesto completo.',
+          features: [
+            'Product Strategy y roadmap priorizado por ROI',
+            'Research con usuarios reales y prototipo navegable',
+            'Desarrollo full-stack del flujo crítico end-to-end',
+            'Arquitectura Cloud-Native desacoplada y lista para escalar',
+            'Go-Live productivo en tu VPC con SLA 99.9%'
+          ],
+          cta: 'Solicitar MVP Validado',
+          featured: false
+        },
+        {
+          horizon: '4 Meses',
+          name: 'PLATAFORMA ENTERPRISE',
+          badge: 'MÁS SOLICITADO · WEB & MÓVIL',
+          desc: 'La plataforma corporativa completa: todos los flujos, la consola de administración y las integraciones con tu stack actual.',
+          features: [
+            'Todo lo del MVP Validado',
+            'Design System Enterprise completo y documentado',
+            'Desarrollo full-stack web y móvil',
+            'Consola administrativa con métricas operativas',
+            'Integraciones determinísticas con ERP, CRM y pasarelas de pago',
+            'QA con cobertura >85% y auditoría OWASP',
+            'Publicación oficial en App Store y Google Play'
+          ],
+          cta: 'Solicitar Plataforma Enterprise',
+          featured: true
+        },
+        {
+          horizon: '4 Meses',
+          name: 'PLATAFORMA AGENTIC',
+          desc: 'La plataforma enterprise con la capa de agentes autónomos construida dentro desde el primer sprint, no añadida después.',
+          features: [
+            'Todo lo de Plataforma Enterprise',
+            'Agentes autónomos operando sobre los flujos críticos',
+            'RAG privado sobre tus datos reales de producción',
+            'Conectores MCP hacia tus sistemas de misión crítica',
+            'Arquitectura AI-ready con costo de inferencia bajo control'
+          ],
+          cta: 'Solicitar Plataforma Agentic',
+          featured: false
+        }
+      ]
+    },
     faqs: [
       { q: '¿Es realmente viable lanzar un MVP o plataforma corporativa en 2 a 4 meses?', a: 'Sí, porque aplicamos nuestra metodología de desarrollo acelerado por IA (AI-Forward Deploy Engineering) y priorizamos con rigor de cirujano el MVP que genera tracción comercial, sin quemar tiempo en funcionalidades secundarias.' },
       { q: '¿Qué tecnologías utilizan para construir la plataforma?', a: 'Construimos con el stack más moderno y demandado del mercado empresarial: React, Next.js, React Native, Node.js, Python, TypeScript, PostgreSQL y Redis, sobre contenedores Docker orquestados en AWS, GCP o Azure.' },
@@ -735,8 +783,8 @@ export const pillarsData = {
     },
     bridge: {
       eyebrow: 'Transición Natural de Producto',
-      title: 'BUILD es el inicio. EVOLVE es donde crece.',
-      desc: 'Todo producto digital tiene más potencial del que muestra en su lanzamiento. EVOLVE convierte esa evolución en resultados medibles cada trimestre mediante un Squad continuo dedicado.',
+      title: 'Construir es el inicio. Evolucionar es donde crece.',
+      desc: 'Todo producto digital tiene más potencial del que muestra en su lanzamiento. Evolución Digital convierte ese potencial en resultados medibles cada trimestre mediante un Squad continuo dedicado.',
       ctaText: 'Conocer Pilar 04: Evolución Digital',
       ctaRoute: 'evolucion-digital'
     }
@@ -751,17 +799,17 @@ export const pillarsData = {
     targetAudience: 'Para evolucionar plataformas existentes con capacidades transversales, optimización continua y CRO',
     eyebrow: 'Pilar 04 · Crecimiento Sostenido sin Inflar Nómina',
     title: 'El día que lanzas, empieza lo que más importa.',
-    subtitle: 'EVOLVE mantiene tu plataforma evolucionando con roadmap vivo a 6 o 12 meses, UX Health Score continuo y un Squad senior dedicado (Tech Lead, AI Engineer, Full Stack, UX/CRO) con accountability trimestral alineado a resultados de negocio reales.',
+    subtitle: 'Evolución Digital mantiene tu plataforma creciendo con roadmap vivo a 6 o 12 meses, UX Health Score continuo y un Squad senior dedicado (Tech Lead, AI Engineer, Full Stack, UX/CRO) con accountability trimestral alineado a resultados de negocio reales.',
     takeaway: 'Tu equipo tecnológico extendido para proteger la inversión y sostener el crecimiento.',
     themeKey: 'indigo',
     packageName: 'Pilar 04 · Evolución Digital (Retainer)',
     stats: [
       { value: '+34%', label: 'Incremento promedio en conversión en el primer año', sublabel: 'Metodología CRO constante' },
       { value: '6 Sem', label: 'Semanas al primer impacto financiero medible', sublabel: 'Velocidad de ejecución' },
-      { value: '0', label: 'Deuda técnica acumulada con refactorización quincenal', sublabel: 'SLA Empresarial 99.9%' }
+      { value: '24', label: 'Ciclos de refactorización al año que impiden acumular deuda técnica', sublabel: 'Cadencia quincenal · SLA 99.9%' }
     ],
     painPoints: {
-      eyebrow: '01 — El problema que resolvemos',
+      eyebrow: 'El estancamiento que empieza después del lanzamiento',
       title: 'La plataforma lanzó. El trabajo apenas empieza.',
       items: [
         { title: 'Sin evolución estratégica basada en datos', desc: 'Tu plataforma lleva meses — o años — sin una sola mejora basada en el comportamiento real de los usuarios.' },
@@ -835,7 +883,7 @@ export const pillarsData = {
       }
     ],
     specs: {
-      eyebrow: '02 — Modelo de Evolución Continua',
+      eyebrow: 'Un squad senior sin contratarlo',
       title: 'Capacidades transversales de élite sin fricción de nómina.',
       subtitle: 'Flexibilidad total para escalar la velocidad de ingeniería según la temporada de tu negocio.',
       items: [
@@ -894,15 +942,14 @@ export const pillarsData = {
     financialCallout: {
       eyebrow: 'Inteligencia de Plataforma · Metodología IMPATH™',
       title: 'Datos que se convierten en decisiones financieras.',
-      subtitle: 'IMPATH™ y Mixpanel corren en paralelo, permanentemente, para que ninguna fuga de capital quede invisible.',
       exampleLabel: 'Ejemplo Real de Detección Forense',
       exampleText: 'Fricción en paso 3 del checkout → $847,000 MXN/mes perdidos estimados',
-      desc: 'IMPATH™ analiza los flujos críticos de tu plataforma e identifica cada punto exacto donde el usuario abandona, con una estimación matemática del ingreso perdido en tiempo real. Un diagnóstico financiero que convierte comportamiento en decisiones concretas de backlog.'
+      desc: 'IMPATH™ y Mixpanel corren en paralelo, permanentemente, para que ninguna fuga de capital quede invisible. IMPATH™ analiza los flujos críticos de tu plataforma e identifica cada punto exacto donde el usuario abandona, con una estimación matemática del ingreso perdido en tiempo real. Un diagnóstico financiero que convierte comportamiento en decisiones concretas de backlog.'
     },
     cycle: {
-      eyebrow: '03.5 — El Ciclo Permanente de Evolución',
+      eyebrow: 'Cómo trabaja el squad, paso a paso',
       title: 'Un ciclo continuo que produce resultados cada trimestre.',
-      desc: 'EVOLVE es un ciclo permanente. Cada sprint detecta nueva información, prioriza las mejoras con mayor impacto financiero, ejecuta con calidad enterprise y mide el resultado en lenguaje de negocio.',
+      desc: 'Este pilar opera como un ciclo permanente. Cada sprint detecta nueva información, prioriza las mejoras con mayor impacto financiero, ejecuta con calidad enterprise y mide el resultado en lenguaje de negocio.',
       steps: [
         { icon: '🔍', name: 'Detectar', desc: 'IMPATH™ y Mixpanel identifican fricciones y oportunidades con datos reales de comportamiento 24/7.' },
         { icon: '📊', name: 'Priorizar', desc: 'Ranking estricto por impacto financiero y esfuerzo. El UX Health Score guía las decisiones.' },
@@ -912,7 +959,7 @@ export const pillarsData = {
       ]
     },
     cadence: {
-      eyebrow: '03.8 — Accountability Permanente',
+      eyebrow: 'Rendición de cuentas y reportes al consejo',
       title: 'Cada semana importa. Cada trimestre rinde cuentas.',
       subtitle: 'Una cadencia estructurada donde cada acción tiene seguimiento y cada resultado tiene un responsable técnico.',
       items: [
@@ -923,7 +970,7 @@ export const pillarsData = {
       ]
     },
     plans: {
-      eyebrow: '03.9 — Horizontes de Evolución',
+      eyebrow: 'Modalidades de contratación del squad',
       title: 'Elige el horizonte de tu Squad dedicado.',
       subtitle: 'Todos los planes incluyen IMPATH™, Mixpanel, UX Health Score continuo y equipo senior multidisciplinario dedicado.',
       items: [
@@ -988,7 +1035,7 @@ export const pillarsData = {
       ]
     },
     timeline: {
-      eyebrow: '07 — Ritmo de Trabajo Continuo',
+      eyebrow: 'Cómo es un sprint de dos semanas',
       title: 'Metodología ágil en ciclos quincenales sostenidos.',
       subtitle: 'Entregas predecibles con visibilidad total para la dirección general.',
       steps: [
@@ -1021,7 +1068,7 @@ export const pillarsData = {
     bridge: {
       eyebrow: 'Punto de Entrada Previo',
       title: '¿Tu plataforma aún no existe?',
-      desc: 'EVOLVE es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 2 a 4 meses, el Pilar 03 (Plataformas Digitales) es tu camino.',
+      desc: 'Este pilar es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 2 a 4 meses, el Pilar 03 (Plataformas Digitales) es tu camino.',
       ctaText: 'Conocer Pilar 03: Plataformas Digitales',
       ctaRoute: 'producto-digital'
     }

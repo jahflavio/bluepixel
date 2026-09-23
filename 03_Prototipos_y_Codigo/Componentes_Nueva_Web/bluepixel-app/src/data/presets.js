@@ -14,7 +14,7 @@ const PRESETS = [
     ],
     casoAnalogo: 'Caso FR Medical / Bimbo: Reducción del tiempo de cotización de 48 hrs a 3 minutos con 0% de error de cálculo.',
     roiEstimado: 'Ahorro de $680,000 MXN anuales + incremento de 22% en win-rate comercial.',
-    tiempoImplementacion: '4 a 6 semanas (Fase BUILD)'
+    tiempoImplementacion: '4 a 6 semanas'
   },
   {
     id: 'conciliacion',

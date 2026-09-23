@@ -545,7 +545,7 @@ const ServiceLandingTemplate = ({ data }) => {
       {/* 3.3. IMPATH FRICTION SECTION (Dynamic) */}
       {data.showImpath && <ImpathFrictionSection />}
 
-      {/* 3.4. METODOLOGÍA FUTUREPROOF (Build & Evolve) */}
+      {/* 3.4. METODOLOGÍA FUTUREPROOF */}
       <FutureproofMethodology data={data.futureproofMethodology} />
       {/* 6. SPECS / SOLUTIONS */}
       {data.specs && (

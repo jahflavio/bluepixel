@@ -79,7 +79,7 @@ const FutureproofMethodology = ({ data }) => {
 
               <div className="flex-1 bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl">
                 <Activity className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
-                <div className="font-bold text-emerald-400 mb-1">Inicio Evolve</div>
+                <div className="font-bold text-emerald-400 mb-1">Inicio Evolución Digital</div>
                 <div className="text-xs text-emerald-500/70 font-mono">6, 12, 24 meses</div>
               </div>
             </div>

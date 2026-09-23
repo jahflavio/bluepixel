@@ -61,7 +61,7 @@ export const CLUSTERS_DATA = {
       {
         id: 'mvp',
         title: 'MVPs de Alta Fidelidad en 2 a 4 Meses',
-        badge: 'Rapid Build',
+        badge: 'MVP Acelerado',
         icon: '⚡',
         originalUrl: 'cotiza.bluepixel.mx/desarrollo-mvp',
         valueProp: 'Lanza nuevas unidades de negocio con software de grado corporativo en 2 a 4 meses, no con prototipos desechables.',
@@ -122,8 +122,8 @@ export const CLUSTERS_DATA = {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Producto Digital (Build & Evolve)',
-        desc: 'Construimos tu plataforma de misión crítica desde cero hasta producción en 2 a 4 meses (BUILD), con evolución continua y mantenimiento (EVOLVE).',
+        title: 'Plataformas Digitales & Evolución Digital',
+        desc: 'Construimos tu plataforma de misión crítica desde cero hasta producción en 2 a 4 meses (Pilar 03), y la sostenemos con evolución continua y mantenimiento (Pilar 04).',
         bullets: [
           'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Construcción y lanzamiento en producción en 2 a 4 meses',
@@ -244,8 +244,8 @@ export const CLUSTERS_DATA = {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Producto Digital (Build & Evolve)',
-        desc: 'Reingeniería integral de tu operación digital. Construimos (BUILD) y evolucionamos (EVOLVE) los flujos automatizados de tu empresa mes a mes.',
+        title: 'Plataformas Digitales & Evolución Digital',
+        desc: 'Reingeniería integral de tu operación digital. Construimos los flujos automatizados de tu empresa (Pilar 03) y los evolucionamos mes a mes (Pilar 04).',
         bullets: [
           'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Conexión end-to-end de todos los departamentos core',
@@ -381,8 +381,8 @@ export const CLUSTERS_DATA = {
         number: '01+02',
         type: 'FULL TRANSFORMATION',
         duration: '3+ MESES / CONTINUO',
-        title: 'Producto Digital (Build & Evolve)',
-        desc: 'Construimos una plataforma con capa agéntica corporativa de alta disponibilidad (BUILD) y la monitoreamos continuamente (EVOLVE).',
+        title: 'Plataformas Digitales & Evolución Digital',
+        desc: 'Construimos una plataforma con capa agéntica corporativa de alta disponibilidad (Pilar 03) y la monitoreamos continuamente (Pilar 04).',
         bullets: [
           'Todo lo incluido en Consultoría 01 y Automatización 02',
           'Construcción completa de plataforma agéntica en 2 a 4 meses',

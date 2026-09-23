@@ -199,7 +199,7 @@ const ImpathFrictionSection = ({ onOpenContact }) => {
                   onClick={onOpenContact}
                   className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                 >
-                  <span>Ver integración en Retainer Evolve</span>
+                  <span>Ver integración en Evolución Digital</span>
                   <span>→</span>
                 </button>
               </div>
