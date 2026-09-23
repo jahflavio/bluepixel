@@ -1,0 +1,1 @@
+import{j as s}from"./index-E5Lf2G_h.js";const t=/^(\s*[^\s-]*\d)\s*-\s*(\d[^\s-]*\s*)$/,a=({value:n})=>{const r=typeof n=="string"?n.match(t):null;return r?s.jsxs(s.Fragment,{children:[r[1],s.jsx("span",{className:"mx-[0.08em] tracking-normal",children:"–"}),r[2]]}):s.jsx(s.Fragment,{children:n})};export{a as S};

@@ -1,1 +1,0 @@
-import{j as t}from"./index-BTbRSASN.js";import{P as i,p as o}from"./pillarsData-DbQ2101A.js";import"./MultiStepContact-BejDHDhT.js";import"./Footer-BoqxtZr8.js";import"./FutureproofCTABanner-DKC-LvAf.js";import"./StatValue-QDt1_ZpK.js";const r=({onNavigateCluster:a})=>t.jsx(i,{data:o["agentes-automatizacion"],onNavigateCluster:a}),u=a=>t.jsx(r,{...a});export{u as default};
