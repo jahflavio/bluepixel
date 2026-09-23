@@ -586,8 +586,18 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold">
-                    Qué te llevas
+                  {/* El total va en el encabezado, no al final de la lista: el
+                      "+2 entregables mas" convertia la cifra en un faltante en
+                      vez de en un argumento. */}
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold">
+                      Lo que recibes al cierre
+                    </div>
+                    {data.deliverables?.items?.length > 0 && (
+                      <div className={`text-[10px] font-mono uppercase tracking-widest font-bold mt-0.5 ${theme.accentText}`}>
+                        {data.deliverables.items.length} entregables
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -602,9 +612,16 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
                     </div>
                   ))}
                   {data.deliverables?.items?.length > 4 && (
-                    <div className="text-xs font-mono text-slate-500 pt-1">
-                      + {data.deliverables.items.length - 4} entregables más
-                    </div>
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById('entregables');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className={`text-xs font-mono font-bold pt-1 flex items-center gap-1.5 group ${theme.accentText} hover:text-white transition-colors`}
+                    >
+                      <span>Ver el detalle de cada uno</span>
+                      <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                    </button>
                   )}
                 </div>
 

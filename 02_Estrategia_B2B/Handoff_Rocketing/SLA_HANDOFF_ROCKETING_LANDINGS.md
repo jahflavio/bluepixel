@@ -52,7 +52,7 @@ Para poder optimizar las campañas en base a dinero ingresado y no a leads bruto
 
 *   **Campos de Formulario Exigidos:** Nombre, Email Corporativo (rechazar dominios genéricos si es posible), y el selector de **Tamaño de Empresa (10-50, 50-200, 200+)**.
 *   **Parámetros Ocultos:** Todos los formularios deben capturar y enviar a través de campos ocultos (Hidden Fields) los parámetros UTM de la URL y el **GCLID** (Google Click ID).
-*   **Hand-off de Datos y Tokens:** Al completarse, el lead debe ser enviado vía Webhook al CRM / Servidor MCP de BluePixel con el GCLID intacto. **Crucial:** La agencia debe entregar el **Developer Token** y **Customer ID** de Google Ads a BluePixel para que el Servidor MCP devuelva la señal de ventas exitosas.
+*   **Hand-off de Datos:** Al completarse, el lead debe ser enviado vía Webhook al CRM / Servidor MCP de BluePixel con el GCLID intacto. **Aviso:** BluePixel gestionará internamente la conexión con la API de Google Ads, por lo que Rocketing solo debe asegurar la transmisión íntegra del GCLID.
 
 ## ⛔ REGLA 6: EJECUCIÓN ESTRICTA DE KEYWORDS NEGATIVAS
 
