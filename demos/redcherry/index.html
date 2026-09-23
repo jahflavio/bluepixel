@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Cherry | FutureProof OS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <div class="logo-icon"><i class="ri-instance-line"></i></div>
+                <div class="brand-text">
+                    <h2>RED CHERRY</h2>
+                    <span>FutureProof OS</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-target="quote-agent">
+                    <i class="ri-robot-2-line"></i> Agente RAG Cotizador
+                </a>
+                <a href="#" class="nav-item" data-target="dashboard">
+                    <i class="ri-dashboard-3-line"></i> Capacity & Finanzas
+                </a>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Priscilla+Ahuja&background=f20232&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">Priscilla Ahuja</span>
+                    <span class="user-role">Media Director</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Buscar proyectos, clientes o comandos (Ctrl+K)...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><i class="ri-notification-3-line"></i><span class="badge"></span></button>
+                    <button class="primary-btn"><i class="ri-add-line"></i> Nuevo Proyecto</button>
+                </div>
+            </header>
+
+            <!-- Views Container -->
+            <div class="views-container">
+                
+                <!-- Quote Agent View -->
+                <section id="quote-agent" class="view-section active fade-in">
+                    <div class="section-header">
+                        <div>
+                            <h1>Agente de Cotización <span class="badge-tag">RAG Powered</span></h1>
+                            <p>Cotiza proyectos en segundos usando el histórico de Red Cherry y proveedores.</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-container">
+                        <div class="chat-area glass-panel">
+                            <div class="chat-history" id="chat-history">
+                                <div class="message system">
+                                    <div class="avatar"><i class="ri-robot-2-fill"></i></div>
+                                    <div class="bubble">
+                                        <p>Hola Priscilla. Soy el Agente de Cotización. Ingresa el brief del cliente (tipo de activación, fechas, alcance, ciudad) y buscaré en nuestro histórico para darte el mejor precio sugerido y proveedor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-input-area">
+                                <textarea id="brief-input" placeholder="Ej: Necesitamos una activación con botarga y 5 promotores en CDMX para el próximo mes..."></textarea>
+                                <button id="send-brief-btn" class="send-btn"><i class="ri-send-plane-fill"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="context-panel glass-panel">
+                            <h3><i class="ri-database-2-line"></i> Fuentes de Datos (RAG)</h3>
+                            <ul class="data-sources">
+                                <li class="source-item active">
+                                    <i class="ri-file-excel-2-line"></i>
+                                    <div>
+                                        <span>Histórico_Cotizaciones_2025.xlsx</span>
+                                        <small>Sincronizado hoy</small>
+                                    </div>
+                                    <i class="ri-check-line success"></i>
+                                </li>
+                                <li class="source-item active">
+                                    <i class="ri-file-excel-2-line"></i>
+                                    <div>
+                                        <span>Tabulador_Proveedores_Q3.xlsx</span>
+                                        <small>Sincronizado hoy</small>
+                                    </div>
+                                    <i class="ri-check-line success"></i>
+                                </li>
+                            </ul>
+                            
+                            <div class="confidence-meter mt-4">
+                                <div class="flex-between">
+                                    <span>Nivel de Certeza (IA)</span>
+                                    <span id="confidence-val">--%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" id="confidence-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dashboard View -->
+                <section id="dashboard" class="view-section hidden">
+                    <div class="section-header">
+                        <div>
+                            <h1>Capacity Planner & Finanzas</h1>
+                            <p>Visión ejecutiva en tiempo real para Dirección.</p>
+                        </div>
+                        <div class="filters">
+                            <select class="glass-select"><option>Q3 2026</option></select>
+                        </div>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon"><i class="ri-money-dollar-circle-line"></i></div>
+                            <div class="kpi-details">
+                                <span class="label">Ingresos del Mes</span>
+                                <span class="value">$2.4M</span>
+                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +12% vs last month</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon"><i class="ri-pie-chart-line"></i></div>
+                            <div class="kpi-details">
+                                <span class="label">Margen Promedio</span>
+                                <span class="value">34.2%</span>
+                                <span class="trend positive"><i class="ri-arrow-right-up-line"></i> +2.1% optimizado</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon"><i class="ri-team-line"></i></div>
+                            <div class="kpi-details">
+                                <span class="label">Capacidad de Equipo</span>
+                                <span class="value">82%</span>
+                                <span class="trend warning"><i class="ri-alert-line"></i> Media al límite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="chart-card glass-panel">
+                            <h3>Facturación por Unidad de Negocio</h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        <div class="capacity-card glass-panel">
+                            <h3>Estado de Células (Capacity Planner)</h3>
+                            <div class="team-capacity">
+                                <div class="team-row">
+                                    <div class="team-info">
+                                        <span>Media Digital</span>
+                                        <small>Priscilla Ahuja</small>
+                                    </div>
+                                    <div class="capacity-bar">
+                                        <div class="fill critical" style="width: 95%"></div>
+                                    </div>
+                                    <span class="cap-val">95%</span>
+                                </div>
+                                <div class="team-row">
+                                    <div class="team-info">
+                                        <span>Promotoría</span>
+                                        <small>Operaciones</small>
+                                    </div>
+                                    <div class="capacity-bar">
+                                        <div class="fill warning" style="width: 75%"></div>
+                                    </div>
+                                    <span class="cap-val">75%</span>
+                                </div>
+                                <div class="team-row">
+                                    <div class="team-info">
+                                        <span>Activaciones / BTL</span>
+                                        <small>Natalia</small>
+                                    </div>
+                                    <div class="capacity-bar">
+                                        <div class="fill safe" style="width: 40%"></div>
+                                    </div>
+                                    <span class="cap-val">40%</span>
+                                </div>
+                            </div>
+                            <button class="outline-btn w-100 mt-4"><i class="ri-magic-line"></i> Rebalancear con IA</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
