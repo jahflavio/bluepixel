@@ -43,7 +43,6 @@ const FourWaysToWork = lazy(() => import('./components/sections/FourWaysToWork')
 const SixCapabilitiesGrid = lazy(() => import('./components/sections/SixCapabilitiesGrid'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
-const LeadMagnetSection = lazy(() => import('./components/sections/LeadMagnetSection'));
 const FutureproofCTABanner = lazy(() => import('./components/widgets/FutureproofCTABanner'));
 const FinalCTA = lazy(() => import('./components/sections/FinalCTA'));
 const Footer = lazy(() => import('./components/layout/Footer'));
@@ -199,7 +198,10 @@ const App = () => {
             <FAQSection />
             <EngineeringLeadership />
             <PostContactSLA />
-            <LeadMagnetSection />
+            {/* Se retiro <LeadMagnetSection />: ofrecia un playbook en PDF que
+                no existe y, peor, simulaba el envio con un setTimeout y le
+                afirmaba al visitante "Reporte enviado, revisa tu bandeja".
+                Sigue catalogada en el showroom interno (#/componentes). */}
             <FutureproofCTABanner />
             <FinalCTA onOpenContact={() => scrollToForm()} />
             <Footer onOpenContact={() => scrollToForm()} onNavigateCluster={navigateTo} />

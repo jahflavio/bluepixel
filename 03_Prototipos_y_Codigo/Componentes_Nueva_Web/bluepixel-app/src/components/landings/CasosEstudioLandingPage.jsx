@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { caseStudiesData } from '../../data/caseStudiesData';
 import CaseStudyModal from '../modals/CaseStudyModal';
 import MultiStepContact from '../forms/MultiStepContact';
-import LeadMagnetSection from '../sections/LeadMagnetSection';
 import IndustriesImpactSection from '../sections/IndustriesImpactSection';
 import { ArrowRight, ExternalLink, ShieldCheck } from 'lucide-react';
 
@@ -205,8 +204,8 @@ const CasosEstudioLandingPage = () => {
       {/* Industries Impact Breakdown */}
       <IndustriesImpactSection onSelectIndustryCase={(client) => handleOpenContact(`Interés en Industria: ${client}`)} />
 
-      {/* Lead Magnet */}
-      <LeadMagnetSection />
+      {/* Se retiro el lead magnet: prometia un PDF inexistente y simulaba el
+          envio del correo. Ver la nota en App.jsx. */}
 
       {/* Direct Contact Form Section */}
       <section id="contact-form-section" className="py-24 px-6 relative border-t border-white/[0.05] bg-[#040711]">
