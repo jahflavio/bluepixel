@@ -79,6 +79,22 @@ const PlatformValueCurve = ({ onOpenContact }) => {
         </p>
 
         <div className="bg-[#050A19] border border-white/[0.08] rounded-3xl p-5 md:p-8 shadow-2xl">
+          {/* Leyenda: la identidad de cada linea no puede depender del color. */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6 text-xs">
+            <span className="flex items-center gap-2 text-slate-200">
+              <svg width="26" height="8" aria-hidden="true">
+                <line x1="1" y1="4" x2="25" y2="4" stroke={SERIES} strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              Con evolución continua
+            </span>
+            <span className="flex items-center gap-2 text-slate-400">
+              <svg width="26" height="8" aria-hidden="true">
+                <line x1="1" y1="4" x2="25" y2="4" stroke={REFERENCE} strokeWidth="2" strokeDasharray="6 5" strokeLinecap="round" />
+              </svg>
+              Sin evolución continua
+            </span>
+          </div>
+
           <svg
             viewBox="0 0 800 360"
             className="w-full h-auto"
@@ -108,10 +124,8 @@ const PlatformValueCurve = ({ onOpenContact }) => {
               fill="none"
               strokeLinecap="round"
             />
-            <text x={LAST.x} y={FORK.y - 14} textAnchor="end" className="fill-slate-400" style={{ fontSize: 13, fontWeight: 600 }}>
-              Sin evolución continua
-            </text>
-            <text x={LAST.x} y={FORK.y + 20} textAnchor="end" className="fill-slate-500" style={{ fontSize: 11 }}>
+            {/* La leyenda ya nombra la serie; aqui solo va el remate. */}
+            <text x={LAST.x} y={FORK.y + 22} textAnchor="end" className="fill-slate-400" style={{ fontSize: 13, fontWeight: 600 }}>
               La plataforma se estanca
             </text>
 

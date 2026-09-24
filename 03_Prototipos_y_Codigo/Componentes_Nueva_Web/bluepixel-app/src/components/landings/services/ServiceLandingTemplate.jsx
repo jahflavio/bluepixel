@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import MultiStepContact from '../../forms/MultiStepContact';
 import Footer from '../../layout/Footer';
-import OrbitingTechStack from '../../sections/OrbitingTechStack';
 import ImpathFrictionSection from '../../sections/ImpathFrictionSection';
 import FutureproofCTABanner from '../../widgets/FutureproofCTABanner';
 import { caseStudiesData } from '../../../data/caseStudiesData';
@@ -673,10 +672,13 @@ const ServiceLandingTemplate = ({ data }) => {
         </section>
       )}
 
-      {/* STACK TECNOLÓGICO. Estaba en la posicion 3, antes de plantear el
-          problema: mostraba herramientas a un lector que todavia no sabia por
-          que le importaban. Aqui respalda las capacidades recien descritas. */}
-      <OrbitingTechStack />
+      {/* Aqui vivia <OrbitingTechStack>. Se retiro de las 6 capabilities: sus
+          seis areas son un espejo de las 6 capacidades, asi que en una pagina
+          individual cinco de ellas hablan de otra cosa. El componente no recibe
+          props, era identico en las 7 paginas donde aparecia, y el ecosistema
+          completo sigue en /filosofia-futureproof, a un clic desde el banner
+          del cierre. Cada capability ya nombra su propio stack en el subtitulo,
+          los specs y los entregables. */}
 
       {/* PRUEBA: un caso real de caseStudiesData. Las 6 paginas argumentaban
           problema y solucion sin probar nada; aqui se reusa el caso ya escrito
