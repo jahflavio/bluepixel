@@ -40,6 +40,7 @@ const ImpathFrictionSection = lazy(() => import('./components/sections/ImpathFri
 const CaseStudiesSection = lazy(() => import('./components/sections/CaseStudiesSection'));
 const FAQSection = lazy(() => import('./components/sections/FAQSection'));
 const FourWaysToWork = lazy(() => import('./components/sections/FourWaysToWork'));
+const SixCapabilitiesGrid = lazy(() => import('./components/sections/SixCapabilitiesGrid'));
 const EngineeringLeadership = lazy(() => import('./components/sections/EngineeringLeadership'));
 const PostContactSLA = lazy(() => import('./components/sections/PostContactSLA'));
 const LeadMagnetSection = lazy(() => import('./components/sections/LeadMagnetSection'));
@@ -180,6 +181,14 @@ const App = () => {
           
           <Suspense fallback={<SectionLoader />}>
             <FourWaysToWork />
+            {/* Las 6 capacidades van justo despues de las 4 formas de trabajar:
+                juntas son los dos ejes del negocio, como en AGENTS.md. Sin esta
+                seccion, desde el cuerpo del home no habia ni un enlace a las
+                capabilities: solo se llegaba por el navbar o el footer. */}
+            <SixCapabilitiesGrid
+              onNavigateCluster={(route) => navigateTo(route)}
+              onOpenContact={() => scrollToForm('Diagnóstico Técnico')}
+            />
             <TrustBadgesSection />
             <IndustriesImpactSection onSelectIndustryCase={(client) => scrollToForm(client)} />
             {/* SECCIONES EN RESERVA (Disponibles en el Showroom #/componentes):
