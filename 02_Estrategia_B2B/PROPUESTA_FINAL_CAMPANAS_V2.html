@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Propuesta Final de Campañas B2B · BluePixel × Rocketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bp:#1d4ed8;--red:#ef4444;--green:#10b981;--amber:#f59e0b;--gray:#64748b;--bg:#f1f5f9;--panel:#ffffff;--border:#e2e8f0;--text:#0f172a;--dark:#0f172a;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:var(--bg);color:var(--text);padding:40px 32px;}
+.doc-header{background:var(--dark);color:#fff;border-radius:16px;padding:32px 40px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:center;}
+.doc-header h1{font-size:26px;font-weight:800;line-height:1.3;}
+.doc-header .meta{text-align:right;font-size:12px;color:#94a3b8;line-height:1.8;}
+.doc-header .meta strong{color:#e2e8f0;display:block;font-size:14px;}
+.section-title{font-size:18px;font-weight:800;margin:36px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.alerts{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.alert{padding:14px 18px;border-radius:10px;display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.6;}
+.alert-red{background:#fef2f2;border:1px solid #fecaca;}
+.alert-green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.alert-amber{background:#fffbeb;border:1px solid #fde68a;}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 12px;text-align:center;}
+.kpi .val{font-size:22px;font-weight:800;margin-bottom:3px;}
+.kpi .lbl{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;line-height:1.4;}
+.kpi .sub{font-size:10px;margin-top:4px;font-weight:600;}
+.c-red{color:var(--red);}.c-green{color:var(--green);}.c-amber{color:var(--amber);}.c-gray{color:var(--gray);}
+.chart-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:28px;}
+.chart-card h4{font-size:13px;font-weight:800;margin-bottom:4px;}
+.bars{display:flex;gap:3px;align-items:flex-end;height:100px;margin-top:14px;}
+.bw{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bar-bg{width:100%;border-radius:3px 3px 0 0;background:#bfdbfe;position:relative;min-height:3px;}
+.bar-conv-overlay{position:absolute;bottom:0;left:0;right:0;border-radius:3px 3px 0 0;background:#34d399;}
+.blbl{font-size:8px;color:var(--gray);transform:rotate(-40deg);white-space:nowrap;margin-top:2px;}
+.legend{display:flex;gap:16px;margin-top:12px;font-size:11px;align-items:center;flex-wrap:wrap;}
+.ldot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.waste-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.waste-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.waste-card h4{font-size:12px;font-weight:800;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em;}
+.waste-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:11.5px;gap:8px;}
+.waste-item:last-child{border:none;}
+.wkw{color:#374151;flex:1;}
+.wcost{font-weight:800;color:var(--red);white-space:nowrap;}
+.wconv{color:var(--gray);font-size:10px;white-space:nowrap;}
+.wtotal{border-top:2px solid #fca5a5!important;padding-top:10px!important;}
+.flows-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;}
+.flow-panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.fph{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+.fph.rkt{background:#fef2f2;border-bottom:2px solid #fecaca;}
+.fph.bp{background:#f0fdf4;border-bottom:2px solid #bbf7d0;}
+.fph h3{font-size:13px;font-weight:800;}
+.fpb{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;}
+.fpb-red{background:#fecaca;color:#7f1d1d;}
+.fpb-green{background:#bbf7d0;color:#064e3b;}
+.flow-body{padding:16px 18px;display:flex;flex-direction:column;gap:14px;}
+.plat{display:flex;flex-direction:column;gap:6px;}
+.plat-head{display:flex;justify-content:space-between;align-items:center;}
+.plat-name{font-size:12px;font-weight:700;}
+.plat-budget{font-size:11px;font-weight:800;background:var(--dark);color:#fff;padding:3px 10px;border-radius:6px;}
+.plat-budget.approved{background:#064e3b;color:#d1fae5;}
+.plat-budget.cut{background:#7f1d1d;color:#fecaca;}
+.campaigns{display:flex;flex-direction:column;gap:5px;padding-left:12px;border-left:2px solid var(--border);margin-top:4px;}
+.camp{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:11px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.camp.waste{border-color:#fca5a5;background:#fef2f2;}
+.camp.ok{border-color:#86efac;background:#f0fdf4;}
+.camp.neutral{border-color:#fcd34d;background:#fffbeb;}
+.camp.eliminated{border-color:#d1d5db;background:#f9fafb;opacity:.55;}
+.camp-info{flex:1;}
+.camp-name{font-weight:600;color:var(--text);margin-bottom:2px;}
+.camp-dest{font-size:10px;color:var(--gray);}
+.camp-note{font-size:10px;color:#374151;margin-top:3px;line-height:1.4;}
+.ctag{flex-shrink:0;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap;}
+.tag-zero{background:#fee2e2;color:#b91c1c;}
+.tag-low{background:#fef3c7;color:#92400e;}
+.tag-ok{background:#d1fae5;color:#065f46;}
+.tag-new{background:#dbeafe;color:#1e40af;}
+.flow-note{border-radius:8px;padding:10px 12px;font-size:11px;line-height:1.6;}
+.comp-wrap{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:36px;}
+.comp-table{width:100%;border-collapse:collapse;font-size:12px;}
+.comp-table th{background:var(--dark);color:#e2e8f0;padding:11px 14px;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;}
+.comp-table th.center{text-align:center;}
+.comp-table td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table .pr td{background:#f1f5f9;font-weight:800;font-size:12.5px;}
+.pill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-bottom:2px;}
+.pill-red{background:#fee2e2;color:#b91c1c;}
+.pill-green{background:#d1fae5;color:#065f46;}
+.pill-amber{background:#fef3c7;color:#92400e;}
+.pill-blue{background:#dbeafe;color:#1e40af;}
+.footnote{background:var(--dark);border-radius:12px;padding:20px 24px;color:#cbd5e1;font-size:12.5px;line-height:1.8;margin-top:24px;}
+.footnote strong{color:#fff;}
+.doc-footer{text-align:center;color:var(--gray);font-size:11px;margin-top:20px;}
+@media print{body{padding:16px;background:#fff;}.flows-grid{grid-template-columns:1fr 1fr;}.waste-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div>
+    <h1>📊 Propuesta Final de Campañas B2B<br>BluePixel × Rocketing</h1>
+    <p style="color:#94a3b8;font-size:13px;margin-top:6px;">Flujos comparativos · Tabla de presupuesto · Análisis forense con data real</p>
+  </div>
+  <div class="meta">
+    <strong>Documento Ejecutivo — Confidencial</strong>
+    Septiembre 2026<br>
+    Google Ads: May 25 – Sep 23, 2026<br>
+    Cuenta: BluePixel / Rocketing
+  </div>
+</div>
+
+<div class="section-title">📈 KPIs Reales de la Cuenta (4 meses)</div>
+<div class="kpi-row">
+  <div class="kpi"><div class="val c-red">$106,471</div><div class="lbl">Gasto Total MXN</div><div class="sub c-gray">4 meses</div></div>
+  <div class="kpi"><div class="val c-amber">46</div><div class="lbl">Conversiones</div><div class="sub c-gray">Solo forms, sin MCP</div></div>
+  <div class="kpi"><div class="val c-red">$2,314</div><div class="lbl">Costo / Conv. Prom.</div><div class="sub c-gray">Sin señal real de venta</div></div>
+  <div class="kpi"><div class="val c-amber">29%</div><div class="lbl">Impression Share</div><div class="sub c-gray">Perdemos 71% subastas</div></div>
+  <div class="kpi"><div class="val c-green">$207</div><div class="lbl">Mejor Costo/Conv</div><div class="sub c-green">Brand Core</div></div>
+</div>
+
+<div class="alerts">
+  <div class="alert alert-red"><div style="font-size:18px;flex-shrink:0;">🚨</div><div><b>Hallazgo Crítico #1 — Campaña Competidores ACTIVA · 0 conversiones:</b> "Competidores | RCKT | Jun26" quemó MX$13,110 en 4 meses con cero retorno. La nueva estructura la elimina por completo.</div></div>
+  <div class="alert alert-amber"><div style="font-size:18px;flex-shrink:0;">⚠️</div><div><b>Hallazgo #2 — ~MX$21,939 en términos irrelevantes:</b> "hosting" ($1,667), "softtek" ($6,541), "creador de apps" ($3,579), "desarrollo de páginas web" ($3,337). Tráfico B2C/PyME, no CTOs enterprise. Muro de Negativas ya activo.</div></div>
+  <div class="alert alert-green"><div style="font-size:18px;flex-shrink:0;">✅</div><div><b>Hallazgo Positivo — Brand convierte a MX$207/conv (10× mejor que promedio):</b> La campaña BluePixel brand es el activo más valioso de la cuenta. La nueva estructura la protege y escala.</div></div>
+</div>
+
+<div class="chart-card">
+  <h4>📅 Gasto semanal vs. Conversiones — May–Sep 2026</h4>
+  <p style="font-size:11px;color:var(--gray);">Azul = gasto proporcional · Verde = conversiones · Últimas 3 semanas: 0 conversiones consecutivas.</p>
+  <div class="bars">
+    <div class="bw"><div class="bar-bg" style="height:100px"><div class="bar-conv-overlay" style="height:0"></div></div><div class="blbl">May25</div></div>
+    <div class="bw"><div class="bar-bg" style="height:80px"><div class="bar-conv-overlay" style="height:45px"></div></div><div class="blbl">Jun1</div></div>
+    <div class="bw"><div class="bar-bg" style="height:104px"><div class="bar-conv-overlay" style="height:60px"></div></div><div class="blbl">Jun8</div></div>
+    <div class="bw"><div class="bar-bg" style="height:84px"><div class="bar-conv-overlay" style="height:90px"></div></div><div class="blbl">Jun15</div></div>
+    <div class="bw"><div class="bar-bg" style="height:92px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Jun22</div></div>
+    <div class="bw"><div class="bar-bg" style="height:80px"><div class="bar-conv-overlay" style="height:0"></div></div><div class="blbl">Jun29</div></div>
+    <div class="bw"><div class="bar-bg" style="height:79px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Jul6</div></div>
+    <div class="bw"><div class="bar-bg" style="height:32px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Jul13</div></div>
+    <div class="bw"><div class="bar-bg" style="height:89px"><div class="bar-conv-overlay" style="height:100px"></div></div><div class="blbl">Jul20</div></div>
+    <div class="bw"><div class="bar-bg" style="height:70px"><div class="bar-conv-overlay" style="height:45px"></div></div><div class="blbl">Jul27</div></div>
+    <div class="bw"><div class="bar-bg" style="height:48px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Ago3</div></div>
+    <div class="bw"><div class="bar-bg" style="height:102px"><div class="bar-conv-overlay" style="height:90px"></div></div><div class="blbl">Ago10</div></div>
+    <div class="bw"><div class="bar-bg" style="height:51px"><div class="bar-conv-overlay" style="height:60px"></div></div><div class="blbl">Ago17</div></div>
+    <div class="bw"><div class="bar-bg" style="height:73px"><div class="bar-conv-overlay" style="height:0"></div></div><div class="blbl">Ago24</div></div>
+    <div class="bw"><div class="bar-bg" style="height:68px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Ago31</div></div>
+    <div class="bw"><div class="bar-bg" style="height:57px"><div class="bar-conv-overlay" style="height:30px"></div></div><div class="blbl">Sep7</div></div>
+    <div class="bw"><div class="bar-bg" style="height:44px"><div class="bar-conv-overlay" style="height:0"></div></div><div class="blbl">Sep14</div></div>
+    <div class="bw"><div class="bar-bg" style="height:18px"><div class="bar-conv-overlay" style="height:0"></div></div><div class="blbl">Sep21</div></div>
+  </div>
+  <div class="legend">
+    <div style="display:flex;align-items:center;gap:5px"><div class="ldot" style="background:#bfdbfe"></div>Gasto semanal</div>
+    <div style="display:flex;align-items:center;gap:5px"><div class="ldot" style="background:#34d399"></div>Conversiones</div>
+    <span style="color:var(--red);font-size:11px;font-weight:700;margin-left:auto;">⚠️ Sep 7-21: 3 semanas con 0 conversiones</span>
+  </div>
+</div>
+
+<div class="section-title">🗑️ Análisis de Desperdicio — Cuenta Actual</div>
+<div class="waste-grid">
+  <div class="waste-card">
+    <h4 style="color:var(--red);">🔴 Top keywords · Gasto alto · 0 conversiones</h4>
+    <div class="waste-item"><span class="wkw">softtek (competidor directo)</span><span class="wcost">$6,541</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">neoris (competidor directo)</span><span class="wcost">$2,289</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">hosting / web hosting</span><span class="wcost">$1,667</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">desarrollo de páginas web</span><span class="wcost">$3,337</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">creador de apps / app</span><span class="wcost">$3,579</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">desarrolladores de páginas web</span><span class="wcost">$2,276</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item"><span class="wkw">desarrollo de aplicaciones (genérico)</span><span class="wcost">$2,250</span><span class="wconv">0 conv</span></div>
+    <div class="waste-item wtotal"><span class="wkw"><b>TOTAL DESPERDICIO EST.</b></span><span class="wcost" style="font-size:13px">~$21,939</span><span class="wconv">0 conv</span></div>
+  </div>
+  <div class="waste-card" style="border-color:#bbf7d0;">
+    <h4 style="color:#065f46;">🟢 Keywords con mejor rendimiento · Escalar</h4>
+    <div class="waste-item"><span class="wkw">bluepixel / blue pixel (brand)</span><span style="color:var(--green);font-weight:800;">$207/conv</span><span class="pill pill-green">17 conv</span></div>
+    <div class="waste-item"><span class="wkw">agentes ia empresas</span><span style="color:var(--green);font-weight:800;">$328</span><span class="pill pill-green">CTR 23%</span></div>
+    <div class="waste-item"><span class="wkw">automatización procesos IA</span><span style="color:var(--green);font-weight:800;">$183</span><span class="pill pill-green">1 conv</span></div>
+    <div class="waste-item"><span class="wkw">agencia ux enterprise mexico</span><span style="color:var(--amber);font-weight:800;">$144</span><span class="pill pill-amber">CTR 11%</span></div>
+    <div class="waste-item"><span class="wkw">Competencia Indirecta · Agentización</span><span style="color:var(--green);font-weight:800;">$602/conv</span><span class="pill pill-green">6 conv</span></div>
+    <div class="waste-item"><span class="wkw">nearshore mexico desarrollo</span><span style="color:var(--amber);font-weight:800;">$343</span><span class="pill pill-amber">CTR 5%</span></div>
+  </div>
+</div>
+
+<div class="section-title">🔄 Flujos de Campaña: Rocketing Original vs. BluePixel Aprobado</div>
+<div class="flows-grid">
+
+  <div class="flow-panel">
+    <div class="fph rkt">
+      <h3>❌ Estructura Rocketing — Original</h3>
+      <span class="fpb fpb-red">OBSERVACIONES</span>
+    </div>
+    <div class="flow-body">
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">🔵 Google Ads</div><div class="plat-budget">$23,500/mes</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Marca Core + Marca Servicio</div><div class="camp-dest">→ Landing 1</div></div><span class="ctag tag-low">$2,000</span></div>
+          <div class="camp waste"><div class="camp-info"><div class="camp-name">IA Operacional (Agentes, Auto, IA Integrada)</div><div class="camp-dest">→ Landing 2</div><div class="camp-note">⚠️ Real: Competidores Jun26 = $13,110 · 0 conv activa</div></div><span class="ctag tag-zero">$6,500 · 0 conv</span></div>
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Producto Digital (Apps Móviles, Software)</div><div class="camp-dest">→ Landing 3</div></div><span class="ctag tag-ok">$15,000</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">💼 LinkedIn Ads</div><div class="plat-budget">$12,000/mes</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Lead Gen · IA Operacional</div><div class="camp-dest">→ Landing 2 · Formularios CTOs/COOs</div></div><span class="ctag tag-ok">$8,000</span></div>
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Retargeting B2B</div><div class="camp-dest">→ Landing 4</div></div><span class="ctag tag-low">$4,000</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">📱 Meta Ads</div><div class="plat-budget">$5,500/mes</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Remarketing Conversión</div><div class="camp-dest">→ Abandonos, visitantes landings IA/Producto, video 50%</div></div><span class="ctag tag-ok">$3,500</span></div>
+          <div class="camp waste"><div class="camp-info"><div class="camp-name">Audiencias Similares LAL 1%</div><div class="camp-dest">→ LAL conv. + LAL visitantes alta permanencia</div><div class="camp-note">⚠️ Sin MCP produce leads PyME sin presupuesto</div></div><span class="ctag tag-zero">$1,500 RIESGO</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">🤖 ChatGPT Ads</div><div class="plat-budget">$2,500/mes</div></div>
+        <div class="campaigns">
+          <div class="camp neutral"><div class="camp-info"><div class="camp-name">Test: AI Solve / Build an App / Digital Rescue</div><div class="camp-dest">→ Landings 2 y 3</div></div><span class="ctag tag-low">Test</span></div>
+        </div>
+      </div>
+      <div class="flow-note" style="background:#fef2f2;border:1px solid #fecaca;color:#7f1d1d;">⚠️ <b>Problemas clave:</b> LAL Meta trae PyMEs · Competidores activa sin retorno · Sin MCP = Google optimiza por forms · Landings aún en construcción</div>
+    </div>
+  </div>
+
+  <div class="flow-panel">
+    <div class="fph bp">
+      <h3>✅ Estructura BluePixel — Aprobada</h3>
+      <span class="fpb fpb-green">APROBADO</span>
+    </div>
+    <div class="flow-body">
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">🔵 Google Ads</div><div class="plat-budget approved">$23,500/mes</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Marca & Protección Brand Core</div><div class="camp-dest">→ bluepixel.mx/servicio/ai-agents</div><div class="camp-note">✅ $207/conv comprobado. Proteger y escalar.</div></div><span class="ctag tag-ok">$2,000</span></div>
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">IA & Automatización (Cluster 2 + 3)</div><div class="camp-dest">→ /consultoria-ia-empresarial · /agentes-ia</div><div class="camp-note">🛡️ Negativas activas · Sin keywords genéricas</div></div><span class="ctag tag-ok">$12,500 ↑</span></div>
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Producto Digital / Apps Enterprise (Cluster 1)</div><div class="camp-dest">→ /ingenieria-software-impulsada-por-ia</div></div><span class="ctag tag-ok">$9,000</span></div>
+          <div class="camp eliminated"><div class="camp-info"><div class="camp-name" style="text-decoration:line-through;">Campaña Competidores · ELIMINADA</div><div class="camp-dest">$13,110 · 0 conv en 4 meses</div></div><span class="ctag tag-zero">$0</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">💼 LinkedIn Ads</div><div class="plat-budget approved">$13,500/mes ↑</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Lead Gen Forms · Blueprint de Arquitectura</div><div class="camp-dest">→ CTOs / COOs · Formularios nativos LinkedIn</div></div><span class="ctag tag-ok">$8,000</span></div>
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Retargeting B2B · Alto valor</div><div class="camp-dest">→ Re-impacto por cargo verificado</div><div class="camp-note">↑ +$1,500 reasignado desde Meta LAL eliminado</div></div><span class="ctag tag-new">$5,500 ↑</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">📱 Meta Ads</div><div class="plat-budget cut">$4,000/mes ↓</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Remarketing Conversión ÚNICAMENTE</div><div class="camp-dest">→ Abandonos de formulario + video testimonials</div></div><span class="ctag tag-ok">$4,000</span></div>
+          <div class="camp eliminated"><div class="camp-info"><div class="camp-name" style="text-decoration:line-through;">LAL Audiencias Similares · ELIMINADO</div><div class="camp-dest">Reasignado a LinkedIn Retargeting</div></div><span class="ctag tag-zero">$0</span></div>
+        </div>
+      </div>
+      <div class="plat">
+        <div class="plat-head"><div class="plat-name">🤖 ChatGPT Ads</div><div class="plat-budget approved">$2,500/mes</div></div>
+        <div class="campaigns">
+          <div class="camp ok"><div class="camp-info"><div class="camp-name">Test: AI Solve / Build an App / Digital Rescue</div><div class="camp-dest">→ bluepixel.mx/agentes-ia-y-automatizacion</div></div><span class="ctag tag-new">Test 30d</span></div>
+        </div>
+      </div>
+      <div class="flow-note" style="background:#f0fdf4;border:1px solid #bbf7d0;color:#064e3b;">✅ <b>Mejoras:</b> LAL eliminado · LinkedIn +$1,500 · Competidores pausados · Tráfico a páginas reales · Negativas activas · MCP pendiente para bucle cerrado</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-title">📋 Tabla Comparativa: Tipos de Campaña y Presupuesto</div>
+<div class="comp-wrap">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th style="width:14%">Plataforma / Tipo</th>
+        <th style="width:16%">Tipo de Campaña</th>
+        <th class="center" style="width:10%">Rocketing<br>Original</th>
+        <th class="center" style="width:10%">BluePixel<br>Aprobado</th>
+        <th class="center" style="width:7%">Delta</th>
+        <th style="width:43%">Justificación con Data Real</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pr"><td colspan="6">🔵 GOOGLE ADS</td></tr>
+      <tr>
+        <td>Marca / Brand</td><td>Search · Exact · Brand</td>
+        <td class="center"><span class="pill pill-amber">$2,000</span></td>
+        <td class="center"><span class="pill pill-green">$2,000</span></td>
+        <td class="center c-gray">—</td>
+        <td>Brand Core convierte a <b>$207/conv</b>, el canal más eficiente de toda la cuenta. Se mantiene y protege.</td>
+      </tr>
+      <tr>
+        <td>IA & Automatización</td><td>Search · Exact/Phrase · Intención B2B</td>
+        <td class="center"><span class="pill pill-amber">$6,500</span></td>
+        <td class="center"><span class="pill pill-green">$12,500 ↑</span></td>
+        <td class="center c-green">+$6,000</td>
+        <td>"agentes ia empresas" CTR 23% · "automatización procesos IA" $183/conv. Se elimina la campaña Competidores ($13,110 · 0 conv) y ese presupuesto se concentra aquí.</td>
+      </tr>
+      <tr>
+        <td>Producto Digital / Apps</td><td>Search · Exact/Phrase · Apps Enterprise</td>
+        <td class="center"><span class="pill pill-amber">$15,000</span></td>
+        <td class="center"><span class="pill pill-green">$9,000</span></td>
+        <td class="center c-red">-$6,000</td>
+        <td>Redistribuido hacia IA que tiene más volumen calificado comprobado. Apps sigue activo, focalizado en keywords enterprise, no genéricas.</td>
+      </tr>
+      <tr>
+        <td>Competidores</td><td>Search · Competitor Branded</td>
+        <td class="center"><span class="pill pill-red">$13,110<br><small>real gastado</small></span></td>
+        <td class="center"><span class="pill pill-red">$0 ELIMINADO</span></td>
+        <td class="center c-red">-$13,110</td>
+        <td>Dato real: 4 meses activa, <b>$13,110 gastados, 0 conversiones</b>. Es el mayor hoyo negro de la cuenta. Eliminada.</td>
+      </tr>
+      <tr style="background:#f8fafc;"><td colspan="2"><b>Subtotal Google</b></td><td class="center"><span class="pill pill-amber">$23,500</span></td><td class="center"><span class="pill pill-green">$23,500</span></td><td class="center c-gray">$0</td><td>Mismo presupuesto. Mejor distribución: eliminamos el 56% del gasto histórico sin retorno.</td></tr>
+
+      <tr class="pr"><td colspan="6">💼 LINKEDIN ADS</td></tr>
+      <tr>
+        <td>Lead Generation</td><td>Lead Gen Forms · Segmentación por Cargo</td>
+        <td class="center"><span class="pill pill-amber">$8,000</span></td>
+        <td class="center"><span class="pill pill-green">$8,000</span></td>
+        <td class="center c-gray">—</td>
+        <td>Formato correcto para B2B enterprise. Captura directa de datos de CTOs/COOs en contexto profesional.</td>
+      </tr>
+      <tr>
+        <td>Retargeting B2B</td><td>Sponsored Content · Retargeting profesional</td>
+        <td class="center"><span class="pill pill-amber">$4,000</span></td>
+        <td class="center"><span class="pill pill-green">$5,500 ↑</span></td>
+        <td class="center c-green">+$1,500</td>
+        <td>Los $1,500 del LAL de Meta eliminado se redirigen aquí. LinkedIn mantiene contexto profesional verificado por cargo.</td>
+      </tr>
+      <tr style="background:#f8fafc;"><td colspan="2"><b>Subtotal LinkedIn</b></td><td class="center"><span class="pill pill-amber">$12,000</span></td><td class="center"><span class="pill pill-green">$13,500 ↑</span></td><td class="center c-green">+$1,500</td><td>Único canal con segmentación exacta por cargo. Cada peso extra aquí tiene más impacto que en Meta para el perfil B2B enterprise.</td></tr>
+
+      <tr class="pr"><td colspan="6">📱 META ADS</td></tr>
+      <tr>
+        <td>Remarketing</td><td>Dynamic Ads · Retargeting · Video</td>
+        <td class="center"><span class="pill pill-amber">$3,500</span></td>
+        <td class="center"><span class="pill pill-green">$4,000 ↑</span></td>
+        <td class="center c-green">+$500</td>
+        <td>El Remarketing en Meta sí funciona: re-impacta a quienes ya visitaron landings. Se mantiene y refuerza.</td>
+      </tr>
+      <tr>
+        <td>LAL / Lookalike</td><td>Audience Network · LAL 1%</td>
+        <td class="center"><span class="pill pill-red">$1,500</span></td>
+        <td class="center"><span class="pill pill-red">$0 ELIMINADO</span></td>
+        <td class="center c-red">-$1,500</td>
+        <td>Sin MCP activo, el LAL aprende del tráfico actual (PyMEs, curiosos). Se reactiva cuando MCP inyecte señales de ventas reales +$300k MXN.</td>
+      </tr>
+      <tr style="background:#f8fafc;"><td colspan="2"><b>Subtotal Meta</b></td><td class="center"><span class="pill pill-amber">$5,500</span></td><td class="center"><span class="pill pill-green">$4,000 ↓</span></td><td class="center c-red">-$1,500</td><td>Reducción estratégica. Meta solo para retargeting de calidad, no prospección fría B2B enterprise.</td></tr>
+
+      <tr class="pr"><td colspan="6">🤖 CHATGPT ADS</td></tr>
+      <tr>
+        <td>Test Innovador</td><td>AI Search Ads · Intent-Based</td>
+        <td class="center"><span class="pill pill-amber">$2,500</span></td>
+        <td class="center"><span class="pill pill-green">$2,500</span></td>
+        <td class="center c-gray">—</td>
+        <td>Como consultora de Agentización, aparecer en ChatGPT es coherente con la marca. Test de 30 días: AI Solve a Process / Build an App / Digital Product Rescue.</td>
+      </tr>
+
+      <tr style="background:#f1f5f9;">
+        <td colspan="2" style="font-weight:800;font-size:13px;padding:14px;">💰 TOTAL MENSUAL</td>
+        <td class="center"><span class="pill pill-amber" style="font-size:12px;">$43,500</span></td>
+        <td class="center"><span class="pill pill-green" style="font-size:12px;">$43,500</span></td>
+        <td class="center c-gray" style="font-weight:700;">$0</td>
+        <td style="font-weight:600;font-size:12px;">Mismo presupuesto total. El cambio es <b>cómo gastamos</b>, no cuánto. Eliminamos ~$21,939 de gasto histórico sin retorno y lo concentramos en canales con evidencia de conversión real.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footnote">
+  <strong>🎯 Siguiente Acción Crítica: Configurar MCP → Bucle Cerrado de Conversiones Reales</strong><br>
+  La mayor palanca de mejora no está en el presupuesto ni en el copy. Está en enseñarle a Google qué es una <strong>venta real de +$300k MXN</strong>. Hoy Google optimiza hacia <strong>formularios llenos (46 "conversiones" a $2,314 c/u)</strong>. Con el MCP conectado, buscará el perfil exacto de CTO/COO que firma cheques enterprise.<br><br>
+  <strong>Pendiente urgente de Leo:</strong> Developer Token + Customer ID de Google Ads → Para conectar el servidor MCP de BluePixel y pasar conversiones offline reales.
+</div>
+<div class="doc-footer">BluePixel · Documento Interno Confidencial · Septiembre 2026 · Data: Google Ads Export May 25 – Sep 23, 2026</div>
+</body>
+</html>
