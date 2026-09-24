@@ -1,1 +1,0 @@
-import{j as o}from"./index-Cwb7wJDx.js";import{P as t,p as i}from"./pillarsData-CVDqpp8t.js";import"./MultiStepContact-BIboioXH.js";import"./Footer-Dc0ZfVpB.js";import"./FutureproofCTABanner-DEj9srET.js";import"./StatValue-CMXj49NR.js";const r=({onNavigateCluster:a})=>o.jsx(t,{data:i["evolucion-digital"],onNavigateCluster:a}),u=a=>o.jsx(r,{...a});export{u as default};
