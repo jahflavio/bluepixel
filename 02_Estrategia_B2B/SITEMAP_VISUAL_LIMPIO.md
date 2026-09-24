@@ -1,9 +1,11 @@
-# 🗺️ Sitemap Visual Maestro
+# 🗺️ Sitemap Visual Maestro y Flujos
 
 Este diagrama es la fuente oficial para la estructura del sitio web de BluePixel.  
 Contiene la arquitectura exacta de las páginas y la jerarquía de los 4 Pilares de Servicio.
 
-*(Si deseas hacer zoom infinito o exportarlo como imagen, copia el bloque de código de abajo y pégalo en [Mermaid Live](https://mermaid.live/)).*
+*(Si deseas hacer zoom infinito o exportarlo como imagen, copia los bloques de código y pégalos en [Mermaid Live](https://mermaid.live/)).*
+
+## 1. Arquitectura del Sitio Web (Sitemap)
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
@@ -63,4 +65,29 @@ graph TD
     BP --> N4["⚖️ Nivel 4: Legal"]:::legal
     N4 --> L1["/privacidad"]:::legal
     N4 --> L2["/terminos"]:::legal
+```
+
+---
+
+## 2. Diagrama de Flujo Técnico (CTO / VP de Ingeniería)
+
+Este flujo mapea cómo debe navegar un perfil técnico buscando seguridad y arquitectura dentro del nuevo sitio web para llegar a la conversión (agendar junta).
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px'}}}%%
+graph TD
+    classDef step fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+    classDef conv fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
+
+    S1["1. Entrada: Tráfico Directo / Búsqueda [bluepixel]"]:::step
+    S2["2. Home Page: Terminal Agéntica en Vivo + Trust Badges (Bimbo, BBVA)"]:::step
+    S3["3. Grid 6 Capabilities: Clic en 'Software Engineering' o 'Security'"]:::step
+    S4["4. Página /servicios/software-engineering: Validación Stack Cloud-Native"]:::step
+    S5["5. Sección Soberanía Técnica: Despliegue en su propia VPC (Cero Lock-in)"]:::step
+    S6["6. Casos de Estudio Reales: Teardown RadioShack o FR Medical"]:::step
+    S7["7. Garantía Anti-Maquila: Interlocución Directa con Lead Architect"]:::step
+    S8["CONVERSIÓN: Clic en [ Agendar Sesión de Arquitectura ]"]:::conv
+    S9["OUTCOME: Reserva en HubSpot Meetings + Invitación Google Meet"]:::conv
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
 ```
