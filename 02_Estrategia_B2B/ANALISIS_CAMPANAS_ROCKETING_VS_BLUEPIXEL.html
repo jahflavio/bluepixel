@@ -92,6 +92,8 @@ body{background:var(--bg);color:var(--text);padding:40px 32px;}
 .doc-footer{text-align:center;color:var(--gray);font-size:11px;margin-top:20px;}
 @media print{body{padding:16px;background:#fff;}.flows-grid{grid-template-columns:1fr 1fr;}.waste-grid{grid-template-columns:1fr 1fr;}}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: 'base', themeVariables: {fontFamily: 'Inter'}});</script>
 </head>
 <body>
 
@@ -177,7 +179,114 @@ body{background:var(--bg);color:var(--text);padding:40px 32px;}
   </div>
 </div>
 
-<div class="section-title">🔄 Flujos de Campaña: Rocketing Original vs. BluePixel Aprobado</div>
+<div class="section-title">🗺️ Mapa Visual de la Nueva Estructura (Arquitectura de Tráfico)</div>
+<div style="background-color: #f8fafc; background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px); background-size: 30px 30px; border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-bottom: 36px; overflow-x: auto; box-shadow: inset 0 0 20px rgba(0,0,0,0.02);">
+  <div class="mermaid">
+    graph LR
+      %% Styles
+      classDef platGoogle fill:#4ade80,stroke:#22c55e,color:#064e3b,font-weight:bold,border-radius:8px
+      classDef campGoogle fill:#86efac,stroke:#4ade80,color:#064e3b,border-radius:8px
+      classDef nodeGoogle fill:#bbf7d0,stroke:#86efac,color:#064e3b,border-radius:4px
+      
+      classDef platLinkedin fill:#60a5fa,stroke:#3b82f6,color:#1e3a8a,font-weight:bold,border-radius:8px
+      classDef campLinkedin fill:#93c5fd,stroke:#60a5fa,color:#1e3a8a,border-radius:8px
+      classDef nodeLinkedin fill:#bfdbfe,stroke:#93c5fd,color:#1e3a8a,border-radius:4px
+
+      classDef platMeta fill:#22d3ee,stroke:#06b6d4,color:#164e63,font-weight:bold,border-radius:8px
+      classDef campMeta fill:#67e8f9,stroke:#22d3ee,color:#164e63,border-radius:8px
+      classDef nodeMeta fill:#a5f3fc,stroke:#67e8f9,color:#164e63,border-radius:4px
+
+      classDef platChat fill:#a78bfa,stroke:#8b5cf6,color:#4c1d95,font-weight:bold,border-radius:8px
+      classDef campChat fill:#c4b5fd,stroke:#a78bfa,color:#4c1d95,border-radius:8px
+      classDef nodeChat fill:#ddd6fe,stroke:#c4b5fd,color:#4c1d95,border-radius:4px
+
+      classDef landing fill:#f9a8d4,stroke:#f472b6,color:#831843,font-size:11px,border-radius:8px,font-weight:bold
+
+      %% Google Ads
+      G[Google Ads<br/>$23,500]:::platGoogle
+      G_C1[Marca<br/>$2,000]:::campGoogle
+      G_C2[IA Operacional<br/>$12,500]:::campGoogle
+      G_C3[Producto Digital<br/>$9,000]:::campGoogle
+
+      G --> G_C1
+      G --> G_C2
+      G --> G_C3
+
+      G_C1_N1[Marca Core]:::nodeGoogle
+      G_C1_N2[Marca Servicio]:::nodeGoogle
+      L1[Landing 1]:::landing
+      G_C1 --> L1
+      L1 --> G_C1_N1
+      L1 --> G_C1_N2
+
+      G_C2_N1[Agentes IA]:::nodeGoogle
+      G_C2_N2[Automatización<br/>de procesos]:::nodeGoogle
+      G_C2_N3[IA Integrada a<br/>plataformas]:::nodeGoogle
+      L2[Landing 2]:::landing
+      G_C2 --> L2
+      L2 --> G_C2_N1
+      L2 --> G_C2_N2
+      L2 --> G_C2_N3
+
+      G_C3_N1[Apps Móviles]:::nodeGoogle
+      G_C3_N2[Software y<br/>Plataformas]:::nodeGoogle
+      L3[Landing 3]:::landing
+      G_C3 --> L3
+      L3 --> G_C3_N1
+      L3 --> G_C3_N2
+
+      %% LinkedIn
+      L[LinkedIn Ads<br/>$13,500]:::platLinkedin
+      L_C1[Lead Gen<br/>$8,000]:::campLinkedin
+      L_C2[Retargeting<br/>$5,500]:::campLinkedin
+
+      L --> L_C1
+      L --> L_C2
+
+      L_C1_N1[CTOs / COOs]:::nodeLinkedin
+      L_C1 --> L2
+      L2 --> L_C1_N1
+
+      L_C2_N1[Visitantes Alto Valor]:::nodeLinkedin
+      L4[Landing 4]:::landing
+      L_C2 --> L4
+      L4 --> L_C2_N1
+
+      %% Meta Ads
+      M[Meta Ads<br/>$4,000]:::platMeta
+      M_C1[Remarketing<br/>Conversión]:::campMeta
+      
+      M --> M_C1
+
+      M_C1_N1[Abandonos Form]:::nodeMeta
+      M_C1_N2[Visitantes<br/>Landings IA]:::nodeMeta
+      M_C1_N3[Visitantes<br/>Landing Productos]:::nodeMeta
+      M_C1_N4[Engagement<br/>IG/FB + Video]:::nodeMeta
+
+      M_C1 --> L4
+      L4 --> M_C1_N1
+      L4 --> M_C1_N2
+      L4 --> M_C1_N3
+      L4 --> M_C1_N4
+
+      %% ChatGPT
+      C[ChatGPT Ads<br/>$2,500]:::platChat
+      C_C1[Test 30d<br/>Búsqueda Nativa]:::campChat
+
+      C --> C_C1
+      C_C1_N1[AI Solve Process]:::nodeChat
+      C_C1_N2[Build an App]:::nodeChat
+      C_C1_N3[Digital Product<br/>Rescue]:::nodeChat
+      
+      C_C1 --> L2
+      C_C1 --> L3
+      L2 --> C_C1_N1
+      L3 --> C_C1_N2
+      L3 --> C_C1_N3
+  </div>
+</div>
+
+<div class="section-title">🔄 Desglose y Observaciones: Rocketing vs. BluePixel</div>
 <div class="flows-grid">
 
   <div class="flow-panel">
