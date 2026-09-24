@@ -66,7 +66,7 @@
   Históricamente, un prospecto calificado que intentaba contactar a BluePixel se encontraba con un selector de presupuesto cuyo escalón más bajo era `$25,000 USD` (~$460,000 MXN). Esto provocaba el rechazo de tomadores de decisión corporativos que deseaban probar capacidades con un proyecto piloto acotado.
 * **4 Formas Modulares e Independientes de Colaboración:**  
   La arquitectura de información NO presenta los servicios como fases obligatorias de un ciclo lineal cerrado. Un cliente puede ingresar directamente por cualquiera de las 4 modalidades:
-  - **Pilar 01 · Consultoría Digital (2 a 4 semanas):** Diagnóstico de fricción operativa IMPATH™, cálculo de ROI proyectado y estimación del costo de inacción antes de comprometer capital en desarrollo ($5K–$8K USD).
+  - **Pilar 01 · Consultoría Digital (2 a 4 semanas):** Trazamos la ruta técnica y financiera de tu transformación digital. Diagnóstico de fricción operativa IMPATH™, cálculo de ROI proyectado y estimación del costo de inacción antes de comprometer capital en desarrollo ($5K–$8K USD).
   - **Pilar 02 · Agentes & Automatización (2 a 4 semanas):** Despliegue de agentes autónomos y RAG determinístico integrado al ERP/CRM actual (SAP, Salesforce) vía protocolo MCP sin reemplazar su infraestructura previa.
   - **Pilar 03 · Plataformas Digitales (2 a 4 meses):** Construcción y lanzamiento desde cero de MVPs corporativos y plataformas escalables con UX validado y SLA 99.9%.
   - **Pilar 04 · Evolución Digital (Roadmap vivo 6 a 12 meses):** Squad extendido dedicado (Tech Lead, AI Engineer, Senior Full Stack, UX/CRO Specialist) para optimización continua, reducción de deuda técnica y monitoreo del UX Health Score™.

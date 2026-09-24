@@ -301,7 +301,7 @@ graph TD
 ### Pilar 01: Consultoría Digital (Entry Package · 2 a 4 Semanas)
 *   **Kicker:** `PILAR 01 · CERTIDUMBRE TÉCNICA`
 *   **Titular:** **Consultoría Digital & Diagnóstico IMPATH™**
-*   **Subtítulo:** *"Claridad estratégica y retorno medible antes de escribir la primera línea de código."*
+*   **Subtítulo:** *"Trazamos la ruta técnica y financiera para tu transformación digital antes de escribir una sola línea de código."*
 *   **Qué incluye (Balas Oficiales):**
     *   ✦ Mapeo de procesos y diagnóstico de operaciones IMPATH™
     *   ✦ Detección de fricción de usuario y cuellos de botella en ERP/CRM
