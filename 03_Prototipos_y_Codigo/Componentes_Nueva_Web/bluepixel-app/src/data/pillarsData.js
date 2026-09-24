@@ -781,6 +781,9 @@ export const pillarsData = {
   'evolucion-digital': {
     id: 'evolucion-digital',
     num: '04',
+    // La curva de valor solo aplica aqui: es el pilar cuyo argumento es que la
+    // plataforma se estanca si no evoluciona.
+    showValueCurve: true,
     name: 'Evolución Digital',
     badgeText: 'EVOLUCIÓN · ROADMAP VIVO 6 A 12 MESES',
     duration: 'Roadmap Vivo 6 a 12 Meses (Retainer Mensual)',

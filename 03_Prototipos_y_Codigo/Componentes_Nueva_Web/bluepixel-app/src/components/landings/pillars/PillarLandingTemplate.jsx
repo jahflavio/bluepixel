@@ -4,6 +4,7 @@ import Footer from '../../layout/Footer';
 import WaysToWorkSubNavbar from '../../layout/WaysToWorkSubNavbar';
 import FutureproofCTABanner from '../../widgets/FutureproofCTABanner';
 import StatValue from '../../widgets/StatValue';
+import PlatformValueCurve from '../../sections/PlatformValueCurve';
 import { CLIENT_LOGOS } from '../../../data/constants';
 
 const PILLAR_THEMES = {
@@ -1083,6 +1084,9 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
       )}
 
       {/* 6.4. FINANCIAL CALLOUT (Pilar 04) */}
+      {/* Curva de valor: solo donde el argumento es la evolucion sostenida. */}
+      {data.showValueCurve && <PlatformValueCurve onOpenContact={scrollToContact} />}
+
       {data.cycle && (
         <section className="py-24 border-b border-white/[0.08] bg-[#02040A]">
           <div className="max-w-7xl mx-auto px-6">

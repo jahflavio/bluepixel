@@ -10,6 +10,7 @@ const MultiStepContact = ({ preselectedPackage }) => {
     phone: '',
     industry: '',
     urgency: '',
+    budget: '',
     workflow: '',
     consentData: false,
   });
@@ -177,6 +178,21 @@ const MultiStepContact = ({ preselectedPackage }) => {
                     </button>
                   ))}
                 </div>
+              </div>
+              {/* Rango de inversion: califica al prospecto y ancla la
+                  conversacion antes de la primera llamada. Opcional a
+                  proposito, para no frenar el envio de quien aun no lo sabe. */}
+              <div>
+                <label className={labelClass}>Rango de inversión considerado (opcional)</label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {['$300K – $800K', '$800K – $2M', '$2M – $5M', '$5M+'].map(b => (
+                    <button type="button" key={b} onClick={() => handleChange('budget', formData.budget === b ? '' : b)}
+                      className={`text-[11px] px-2 py-2 rounded-lg border font-medium transition-all text-center ${formData.budget === b ? 'bg-blue-600 text-white border-blue-500' : 'bg-white/[0.04] text-slate-400 border-white/[0.08] hover:text-white'}`}>
+                      {b}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-[10px] text-slate-500 mt-1.5 font-mono">Pesos mexicanos. Nos ayuda a proponerte el alcance correcto desde la primera sesión.</p>
               </div>
               <div>
                 <label className="flex items-start gap-3 cursor-pointer">
