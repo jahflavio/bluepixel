@@ -24,14 +24,15 @@ body{background:var(--bg);color:var(--text);padding:40px 32px;}
 .kpi .lbl{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;line-height:1.4;}
 .kpi .sub{font-size:10px;margin-top:4px;font-weight:600;}
 .c-red{color:var(--red);}.c-green{color:var(--green);}.c-amber{color:var(--amber);}.c-gray{color:var(--gray);}
-.chart-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:28px;}
-.chart-card h4{font-size:13px;font-weight:800;margin-bottom:4px;}
-.bars{display:flex;gap:3px;align-items:flex-end;height:100px;margin-top:14px;}
-.bw{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
-.bar-bg{width:100%;border-radius:3px 3px 0 0;background:#bfdbfe;position:relative;min-height:3px;}
-.bar-conv-overlay{position:absolute;bottom:0;left:0;right:0;border-radius:3px 3px 0 0;background:#34d399;}
-.blbl{font-size:8px;color:var(--gray);transform:rotate(-40deg);white-space:nowrap;margin-top:2px;}
-.legend{display:flex;gap:16px;margin-top:12px;font-size:11px;align-items:center;flex-wrap:wrap;}
+.chart-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:24px 20px;margin-bottom:28px;}
+.chart-card h4{font-size:13.5px;font-weight:800;margin-bottom:6px;}
+.chart-card p{font-size:11.5px;color:var(--gray);margin-bottom:24px;}
+.bars{display:flex;gap:4px;align-items:flex-end;height:125px;margin-top:12px;margin-bottom:34px;border-bottom:1px solid var(--border);padding-bottom:0;}
+.bw{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;height:100%;justify-content:flex-end;}
+.bar-bg{width:100%;max-width:24px;border-radius:3px 3px 0 0;background:#bfdbfe;position:relative;min-height:3px;}
+.bar-conv-overlay{position:absolute;bottom:0;left:0;right:0;border-radius:3px 3px 0 0;background:#10b981;}
+.blbl{font-size:8.5px;color:var(--gray);transform:rotate(-45deg);transform-origin:left top;white-space:nowrap;position:absolute;top:calc(100% + 6px);left:20%;}
+.legend{display:flex;gap:16px;margin-top:20px;font-size:11px;align-items:center;flex-wrap:wrap;padding-top:12px;border-top:1px dashed var(--border);}
 .ldot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
 .waste-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
 .waste-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;}
