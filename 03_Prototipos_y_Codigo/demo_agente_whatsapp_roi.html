@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BluePixel - Demo Bandeja Agéntica (WhatsApp)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bp: #1d4ed8; --bp-dark: #1e3a8a; --bp-light: #eff6ff;
+      --bg: #0f172a; --panel: #1e293b; --text: #f8fafc; --gray: #94a3b8;
+      --green: #10b981; --red: #ef4444; --whatsapp: #25D366;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: var(--bg); color: var(--text); display: flex; height: 100vh; padding: 20px; gap: 20px; }
+    
+    /* Panel de WhatsApp Simulado */
+    .wa-panel {
+      flex: 1; background: #0b141a; border-radius: 16px; border: 1px solid #202c33; display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .wa-header { background: #202c33; padding: 15px 20px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #2a3942; }
+    .wa-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bp); display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .wa-info h2 { font-size: 15px; color: #e9edef; }
+    .wa-info p { font-size: 12px; color: #8696a0; }
+    .wa-chat { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #0b141a url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); background-blend-mode: overlay; }
+    .msg { max-width: 75%; padding: 10px 14px; border-radius: 10px; font-size: 14px; line-height: 1.4; position: relative; }
+    .msg.client { background: #202c33; color: #e9edef; align-self: flex-start; border-top-left-radius: 0; }
+    .msg.bot { background: #005c4b; color: #e9edef; align-self: flex-end; border-top-right-radius: 0; }
+    .msg-time { display: block; font-size: 10px; color: rgba(255,255,255,0.5); text-align: right; margin-top: 5px; }
+    .wa-input { background: #202c33; padding: 15px 20px; display: flex; gap: 10px; }
+    .wa-input input { flex: 1; background: #2a3942; border: none; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; }
+    .wa-input button { background: var(--whatsapp); border: none; width: 45px; border-radius: 8px; color: #000; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    .wa-input button:hover { opacity: 0.8; }
+
+    /* Telemetría y Costos */
+    .telemetry-panel {
+      width: 400px; background: var(--panel); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; gap: 20px;
+      border: 1px solid #334155;
+    }
+    .t-header { border-bottom: 1px solid #334155; padding-bottom: 15px; }
+    .t-header h3 { font-size: 18px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .badge { font-size: 10px; padding: 3px 8px; border-radius: 12px; font-weight: bold; text-transform: uppercase; }
+    .b-blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+    
+    .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .metric { background: #0f172a; padding: 15px; border-radius: 12px; border: 1px solid #1e293b; }
+    .metric .lbl { font-size: 11px; color: var(--gray); text-transform: uppercase; margin-bottom: 5px; }
+    .metric .val { font-size: 20px; font-weight: bold; color: #fff; }
+    .metric .val span { font-size: 12px; font-weight: normal; color: var(--green); }
+
+    .routing-log { flex: 1; background: #0f172a; border-radius: 12px; padding: 15px; overflow-y: auto; border: 1px solid #1e293b; }
+    .r-title { font-size: 12px; color: var(--gray); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 0.05em; }
+    .log-item { padding: 10px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: flex-start; font-size: 12px; animation: fadeIn 0.3s ease-out; }
+    .log-item:last-child { border-bottom: none; }
+    .log-model { color: #38bdf8; font-weight: 600; margin-bottom: 3px; }
+    .log-reason { color: var(--gray); font-size: 11px; }
+    .log-cost { color: var(--green); font-family: monospace; font-size: 13px; font-weight: bold; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <!-- Demo WhatsApp -->
+  <div class="wa-panel">
+    <div class="wa-header">
+      <div class="wa-avatar">BP</div>
+      <div class="wa-info">
+        <h2>BluePixel Enterprise Agent</h2>
+        <p>🟢 En línea (Autónomo)</p>
+      </div>
+    </div>
+    <div class="wa-chat" id="chat">
+      <!-- Mensajes dinámicos -->
+    </div>
+    <div class="wa-input">
+      <input type="text" id="userInput" placeholder="Escribe un mensaje como si fueras un cliente corporativo..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">▶</button>
+    </div>
+  </div>
+
+  <!-- Telemetría y Costos -->
+  <div class="telemetry-panel">
+    <div class="t-header">
+      <h3>Monitor de Telemetría <span class="badge b-blue">IMPATH™ Live</span></h3>
+      <p style="font-size: 12px; color: var(--gray); margin-top: 5px;">Orquestación MCP & Enrutamiento de Modelos (Ahorro de Costos)</p>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="lbl">Costo Acumulado</div>
+        <div class="val" id="totalCost">$0.0000 <span>USD</span></div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Tokens Consumidos</div>
+        <div class="val" id="totalTokens">0</div>
+      </div>
+    </div>
+
+    <div class="routing-log">
+      <div class="r-title">⚡ Log de Enrutamiento Inteligente</div>
+      <div id="logs">
+        <div class="log-item" style="color:var(--gray); text-align:center; border:none; padding-top:40px;">
+          Esperando interacción para iniciar enrutamiento...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cost = 0;
+    let tokens = 0;
+    const chat = document.getElementById('chat');
+    const logs = document.getElementById('logs');
+    
+    // Reglas de negocio para simular "Ahorro de Costos"
+    const routingRules = [
+      { 
+        keywords: ['hola', 'buenos', 'tardes', 'informacion', 'agencia'], 
+        model: 'Claude 3.5 Haiku', 
+        cost: 0.0002, 
+        tokens: 45, 
+        reason: 'Filtro inicial (Saludo). Uso de motor económico.',
+        response: '¡Hola! Soy el agente técnico de BluePixel. ¿En qué te podemos ayudar? (¿Buscas desarrollo de apps, IA o consultoría?)'
+      },
+      { 
+        keywords: ['precio', 'cuesta', 'cotizar', 'presupuesto'], 
+        model: 'Claude 3.5 Sonnet', 
+        cost: 0.0035, 
+        tokens: 120, 
+        reason: 'Intención de compra. Motor intermedio para persuasión.',
+        response: 'Para proyectos enterprise, nuestros engagements inician desde los $5K USD con una Consultoría Digital. ¿Te interesa que agendemos una llamada técnica?'
+      },
+      { 
+        keywords: ['arquitectura', 'mcp', 'aws', 'seguridad', 'erp', 'sap'], 
+        model: 'Claude 3 Opus', 
+        cost: 0.0150, 
+        tokens: 350, 
+        reason: 'Consulta técnica compleja. Modelo pesado activado.',
+        response: 'Excelente pregunta. Nuestra arquitectura se basa en protocolos MCP para RAG determinístico, asegurando despliegue Zero-Trust sin alucinaciones conectado a tu ERP. Transferiré este chat a un Lead Architect humano para profundizar.'
+      }
+    ];
+
+    function addMessage(text, isBot) {
+      const div = document.createElement('div');
+      div.className = `msg ${isBot ? 'bot' : 'client'}`;
+      div.innerHTML = `${text} <span class="msg-time">${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span>`;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function addLog(model, reason, mCost, mTokens) {
+      if(logs.innerText.includes('Esperando')) logs.innerHTML = '';
+      cost += mCost;
+      tokens += mTokens;
+      
+      document.getElementById('totalCost').innerHTML = `$${cost.toFixed(4)} <span>USD</span>`;
+      document.getElementById('totalTokens').innerText = tokens;
+
+      const div = document.createElement('div');
+      div.className = 'log-item';
+      div.innerHTML = `
+        <div>
+          <div class="log-model">${model}</div>
+          <div class="log-reason">${reason}</div>
+        </div>
+        <div class="log-cost">+$${mCost.toFixed(4)}</div>
+      `;
+      logs.prepend(div);
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim().toLowerCase();
+      if(!text) return;
+      
+      addMessage(input.value, false);
+      input.value = '';
+
+      // Simular delay de escritura
+      setTimeout(() => {
+        // Enrutamiento inteligente basado en palabras clave
+        let rule = routingRules.find(r => r.keywords.some(kw => text.includes(kw))) || routingRules[0];
+        
+        addLog(rule.model, rule.reason, rule.cost, rule.tokens);
+        addMessage(rule.response, true);
+      }, 1000);
+    }
+
+    // Init
+    setTimeout(() => {
+      addMessage("👋 Hola. Bienvenido al canal B2B de BluePixel.", true);
+    }, 500);
+  </script>
+</body>
+</html>
