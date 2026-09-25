@@ -202,7 +202,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         status="📦 EN RESERVA"
         statusColor="text-amber-400 bg-amber-500/10 border-amber-500/20"
         desc="Sección 'Tu infraestructura. Tus datos. Tu código fuente.' con Bento Grid y terminal animada VPC_DEPLOYMENT_STATUS. Cero lock-in y soberanía de IP."
-        targetUse="Landing de Seguridad (/servicio/security), Automatización (/automatizacion) y propuestas Enterprise."
+        targetUse="Landing de Seguridad (/servicios/security-reliability), Automatización (/automatizacion) y propuestas Enterprise."
       >
         <TechnicalSovereignty />
       </ComponentWrapper>
@@ -298,7 +298,7 @@ const ComponentShowcasePage = ({ onNavigateCluster, onOpenContact }) => {
         status="✦ ACTIVO EN HOME"
         statusColor="text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
         desc="Casos de éxito corporativos reales con métricas de ROI demostradas (Bimbo, Avianca, RadioShack, IQOS)."
-        targetUse="Home principal y landing de Casos de Éxito (/casos-de-exito)."
+        targetUse="Home principal y landing de Casos de Éxito (/casos-de-estudio)."
       >
         <CaseStudiesSection onOpenCase={onOpenContact} />
       </ComponentWrapper>

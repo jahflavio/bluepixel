@@ -1,6 +1,17 @@
 import React, { useState, useEffect, Suspense, lazy, startTransition } from 'react';
 import './App.css';
 import { CLUSTERS_DATA } from './data/clustersData';
+import { getSeoForView, SITE_ORIGIN } from './data/seoData';
+
+// Mapa de las 3 landings herméticas de pauta (/lp/*) a los clusters
+// heredados que les sirven de contenido base. Cada una es el destino de una
+// de las 3 macro-campañas de Google Search del Sitemap Maestro (C1, C2, C3):
+// sin Navbar ni Footer del sitio, sin enlaces de fuga, marcadas noindex.
+const LP_ROUTE_TO_CLUSTER = {
+  'lp/desarrollo-apps-enterprise': 'apps',
+  'lp/automatizacion-procesos-erp': 'automatizacion',
+  'lp/agentes-ia-produccion': 'agentizacion',
+};
 
 // Layout & Hero (Above the fold - direct eager imports)
 import Navbar from './components/layout/Navbar';
@@ -65,6 +76,63 @@ const App = () => {
   const [currentView, setCurrentView] = useState('home'); // 'home' | 'apps' | 'automatizacion' | 'agentizacion' | 'consultoria' | 'como-trabajamos' | 'automatizacion-agentica' | 'producto-digital'
   const [selectedSubserviceId, setSelectedSubserviceId] = useState(null);
 
+  // true cuando currentView es una de las 3 landings herméticas de pauta:
+  // oculta el Navbar/Footer del sitio y marca la página noindex.
+  const lpClusterId = LP_ROUTE_TO_CLUSTER[currentView];
+  const isLpRoute = Boolean(lpClusterId);
+
+  // Nota de alcance: esto inyecta <meta name="robots"> por JS. Mientras el
+  // sitio siga siendo un SPA sin prerender/SSG (ver brecha documentada en
+  // 02_Estrategia_B2B/SITEMAP_ACTUAL_Y_BRECHAS_WEB_2026-09.md), los
+  // crawlers que no ejecutan JS no lo verán. Es correcto tenerlo ya listo
+  // para cuando se resuelva esa migración.
+  useEffect(() => {
+    let meta = document.querySelector('meta[name="robots"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'robots');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', isLpRoute ? 'noindex, nofollow' : 'index, follow');
+  }, [isLpRoute]);
+
+  // Titulo, descripcion, canonical y Open Graph por ruta. Aplica la misma
+  // advertencia de alcance del bloque de arriba: con enrutado por hash esto
+  // sirve para redes sociales y queda listo para la migracion a rutas reales,
+  // pero Google sigue viendo una sola URL.
+  useEffect(() => {
+    const seo = getSeoForView(currentView);
+    const url = `${SITE_ORIGIN}${seo.path}`;
+
+    document.title = seo.title;
+
+    const setMeta = (selector, attr, name, content) => {
+      let el = document.head.querySelector(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    setMeta('meta[name="description"]', 'name', 'description', seo.description);
+    setMeta('meta[property="og:title"]', 'property', 'og:title', seo.title);
+    setMeta('meta[property="og:description"]', 'property', 'og:description', seo.description);
+    setMeta('meta[property="og:url"]', 'property', 'og:url', url);
+    setMeta('meta[property="og:type"]', 'property', 'og:type', 'website');
+    setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', seo.title);
+    setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', seo.description);
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', url);
+  }, [currentView]);
+
   // Sincronizar con hash
   useEffect(() => {
     const handleHash = () => {
@@ -77,16 +145,29 @@ const App = () => {
         'evolucion-digital', 'pilar/evolucion-digital',
         'servicio/ux-ui', 'servicio/ai-engineering', 'servicio/ai-agents', 
         'servicio/data-analytics', 'servicio/security', 'servicio/business-ai',
-        'servicios', 'casos-de-exito', 'componentes', 'filosofia-futureproof'
+        'servicios', 'casos-de-exito', 'componentes', 'filosofia-futureproof',
+        'diagnostico', ...Object.keys(LP_ROUTE_TO_CLUSTER),
+        // Slugs canónicos del Sitemap Maestro (ver
+        // 02_Estrategia_B2B/SITEMAP_ACTUAL_Y_BRECHAS_WEB_2026-09.md, sección
+        // "Discrepancias de slugs"). Se agregan como alias adicionales; los
+        // slugs viejos de arriba se conservan para no romper enlaces ya
+        // compartidos.
+        'pilares/consultoria-digital', 'pilares/agentes-automatizacion',
+        'pilares/plataformas-digitales', 'pilares/evolucion-digital',
+        'servicios/ux-ui-product-strategy', 'servicios/software-engineering',
+        'servicios/agentic-ai-automation', 'servicios/data-analytics',
+        'servicios/security-reliability', 'servicios/digital-consulting',
+        'casos-de-estudio', 'metodologia-impath'
       ];
       
       if (
-        hash === 'como-trabajamos' || 
-        hash === 'formas-de-trabajo' || 
-        hash === 'four-ways-to-work' || 
-        hash === 'four-ways' || 
-        hash === 'how-we-work' || 
-        hash === 'pilares'
+        hash === 'como-trabajamos' ||
+        hash === 'formas-de-trabajo' ||
+        hash === 'four-ways-to-work' ||
+        hash === 'four-ways' ||
+        hash === 'how-we-work'
+        // 'pilares' ya no cae aqui: ahora es un hub real (PilaresLandingPage),
+        // no un atajo de scroll al Home.
       ) {
         setCurrentView('home');
         const scrollToTarget = () => {
@@ -117,12 +198,12 @@ const App = () => {
 
   const navigateTo = (view, subserviceId = null) => {
     if (
-      view === 'como-trabajamos' || 
-      view === 'formas-de-trabajo' || 
-      view === 'four-ways-to-work' || 
-      view === 'four-ways' || 
-      view === 'how-we-work' || 
-      view === 'pilares'
+      view === 'como-trabajamos' ||
+      view === 'formas-de-trabajo' ||
+      view === 'four-ways-to-work' ||
+      view === 'four-ways' ||
+      view === 'how-we-work'
+      // 'pilares' ya no cae aqui: ahora es un hub real (PilaresLandingPage).
     ) {
       setCurrentView('home');
       window.location.hash = '';
@@ -164,13 +245,29 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-[#02040A] text-white">
-      <Navbar 
-        onOpenContact={() => scrollToForm()} 
-        onNavigateCluster={navigateTo} 
-        currentView={currentView}
-      />
+      {/* Sin Navbar en las landings herméticas de pauta (/lp/*): la
+          anatomía de landing SEM del Sitemap Maestro exige cero menú de
+          fuga hacia el resto del sitio. */}
+      {!isLpRoute && (
+        <Navbar
+          onOpenContact={() => scrollToForm()}
+          onNavigateCluster={navigateTo}
+          currentView={currentView}
+        />
+      )}
 
-      {currentView === 'home' ? (
+      {isLpRoute ? (
+        <Suspense fallback={<SectionLoader />}>
+          <ClusterLandingPage
+            cluster={CLUSTERS_DATA[lpClusterId]}
+            initialSubserviceId={selectedSubserviceId}
+            onNavigateCluster={navigateTo}
+            onSelectPackage={(pkg) => scrollToForm(pkg)}
+            hermetic
+          />
+          {/* Sin Footer tampoco: mismo motivo, cero enlaces de salida. */}
+        </Suspense>
+      ) : currentView === 'home' ? (
         <>
           <HeroWithPrompt 
             onSelectSolution={(sol) => setSelectedSolution(sol)} 
@@ -213,23 +310,23 @@ const App = () => {
             />
           </Suspense>
         </>
-      ) : currentView === 'filosofia-futureproof' ? (
+      ) : (currentView === 'filosofia-futureproof' || currentView === 'metodologia-impath') ? (
         <Suspense fallback={<SectionLoader />}>
           <FutureproofLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital' || currentView === 'diagnostico') ? (
+      ) : (currentView === 'consultoria-tecnologica' || currentView === 'consultoria-digital' || currentView === 'pilar/consultoria-digital' || currentView === 'pilares/consultoria-digital' || currentView === 'diagnostico') ? (
         <Suspense fallback={<SectionLoader />}>
           <ConsultoriaLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : (currentView === 'automatizacion-agentica' || currentView === 'agentes-automatizacion' || currentView === 'pilar/agentes-automatizacion') ? (
+      ) : (currentView === 'automatizacion-agentica' || currentView === 'agentes-automatizacion' || currentView === 'pilar/agentes-automatizacion' || currentView === 'pilares/agentes-automatizacion') ? (
         <Suspense fallback={<SectionLoader />}>
           <AutomatizacionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : (currentView === 'producto-digital' || currentView === 'plataformas-digitales' || currentView === 'pilar/plataformas-digitales') ? (
+      ) : (currentView === 'producto-digital' || currentView === 'plataformas-digitales' || currentView === 'pilar/plataformas-digitales' || currentView === 'pilares/plataformas-digitales') ? (
         <Suspense fallback={<SectionLoader />}>
           <ProductoDigitalLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
-      ) : (currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital') ? (
+      ) : (currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital' || currentView === 'pilares/evolucion-digital') ? (
         <Suspense fallback={<SectionLoader />}>
           <EvolucionLandingPage onNavigateCluster={navigateTo} />
         </Suspense>
@@ -241,31 +338,31 @@ const App = () => {
         <Suspense fallback={<SectionLoader />}>
           <ServiciosLandingPage />
         </Suspense>
-      ) : currentView === 'casos-de-exito' ? (
+      ) : (currentView === 'casos-de-exito' || currentView === 'casos-de-estudio') ? (
         <Suspense fallback={<SectionLoader />}>
           <CasosEstudioLandingPage />
         </Suspense>
-      ) : currentView === 'servicio/ux-ui' ? (
+      ) : (currentView === 'servicio/ux-ui' || currentView === 'servicios/ux-ui-product-strategy') ? (
         <Suspense fallback={<SectionLoader />}>
           <UxUiServicePage />
         </Suspense>
-      ) : currentView === 'servicio/ai-engineering' ? (
+      ) : (currentView === 'servicio/ai-engineering' || currentView === 'servicios/software-engineering') ? (
         <Suspense fallback={<SectionLoader />}>
           <AiEngineeringServicePage />
         </Suspense>
-      ) : currentView === 'servicio/ai-agents' ? (
+      ) : (currentView === 'servicio/ai-agents' || currentView === 'servicios/agentic-ai-automation') ? (
         <Suspense fallback={<SectionLoader />}>
           <AiAgentsServicePage />
         </Suspense>
-      ) : currentView === 'servicio/data-analytics' ? (
+      ) : (currentView === 'servicio/data-analytics' || currentView === 'servicios/data-analytics') ? (
         <Suspense fallback={<SectionLoader />}>
           <DataAnalyticsServicePage />
         </Suspense>
-      ) : currentView === 'servicio/security' ? (
+      ) : (currentView === 'servicio/security' || currentView === 'servicios/security-reliability') ? (
         <Suspense fallback={<SectionLoader />}>
           <SecurityReliabilityServicePage />
         </Suspense>
-      ) : currentView === 'servicio/business-ai' ? (
+      ) : (currentView === 'servicio/business-ai' || currentView === 'servicios/digital-consulting') ? (
         <Suspense fallback={<SectionLoader />}>
           <BusinessAiConsultingPage />
         </Suspense>

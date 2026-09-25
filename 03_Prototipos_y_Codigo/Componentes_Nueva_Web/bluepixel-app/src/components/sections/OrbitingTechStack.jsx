@@ -58,9 +58,9 @@ const OrbitingTechStack = () => {
                 <Shield className="w-7 h-7 text-emerald-400" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-emerald-400 transition-colors">Seguridad y Compliance</h3>
+                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-emerald-400 transition-colors">Seguridad y Privacidad</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Arquitectura Zero-Trust, cifrado de datos AES-256, cumplimiento LFPDPPP y mitigación exhaustiva OWASP Top 10.
+                  Arquitectura Zero-Trust, cifrado de datos AES-256, controles técnicos LFPDPPP y mitigación OWASP Top 10.
                 </p>
               </div>
             </div>

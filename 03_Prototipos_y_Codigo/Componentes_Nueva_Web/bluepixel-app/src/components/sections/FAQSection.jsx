@@ -44,13 +44,13 @@ const FAQSection = () => {
     },
     {
       category: 'seguridad',
-      q: "¿Qué certificaciones y blindaje de seguridad aplican a los sistemas?",
-      a: "Diseñamos sistemas con blindaje de grado empresarial alineados estrictamente con las mejores prácticas de mitigación de vulnerabilidades de OWASP Top 10 y con nuestras prácticas de seguridad verificadas por CyberVadis. Implementamos arquitecturas Zero-Trust, cifrado de datos en reposo y en tránsito, trazabilidad de ejecuciones agénticas y cumplimiento riguroso de la regulación de protección de datos (LFPDPPP)."
+      q: "¿Qué credenciales y blindaje de seguridad aplican a los sistemas?",
+      a: "Nuestras prácticas de seguridad están verificadas por CyberVadis (certificación vigente) y construimos alineados a las mejores prácticas de mitigación de vulnerabilidades de OWASP Top 10. Implementamos arquitecturas Zero-Trust, cifrado de datos en reposo y en tránsito, trazabilidad de ejecuciones agénticas y los controles técnicos que exige la LFPDPPP para el tratamiento de datos personales. No emitimos certificaciones ISO 27001 ni SOC2 —eso lo hace una casa certificadora acreditada—: lo que entregamos es la capa técnica que esas auditorías revisan, documentada."
     },
     {
       category: 'ingenieria',
       q: "¿Cuál es la diferencia entre BluePixel y una fábrica de software tradicional ('maquila') o una consultora de IA pura?",
-      a: "Las consultoras de IA pura construyen algoritmos potentes pero interfaces toscas que el usuario termina abandonando para volver a su hoja de Excel. Las fábricas de software tradicionales facturan horas-hombre a ciegas entregando código genérico que no convierte. BluePixel rompió esa frontera: entregamos más de 10 años de ingeniería cloud-native y blindaje corporativo, vestidos con la psicología conductual y el diseño UX de más alta conversión del mercado, garantizando más del 95% de adopción desde el primer release."
+      a: "Las consultoras de IA pura construyen algoritmos potentes pero interfaces toscas que el usuario termina abandonando para volver a su hoja de Excel. Las fábricas de software tradicionales facturan horas-hombre a ciegas entregando código genérico que no convierte. BluePixel rompió esa frontera: entregamos más de 10 años de ingeniería cloud-native y blindaje corporativo, vestidos con la psicología conductual y el diseño UX de más alta conversión del mercado, con la adopción como métrica de éxito desde el primer release."
     },
     {
       category: 'ingenieria',

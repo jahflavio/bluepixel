@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
-  const isConsultoria = currentView === 'consultoria-tecnologica' || currentView === 'pilar/consultoria-digital' || currentView === 'consultoria-digital';
-  const isAutomatizacion = currentView === 'automatizacion-agentica' || currentView === 'pilar/agentes-automatizacion' || currentView === 'agentes-automatizacion';
-  const isPlataformas = currentView === 'producto-digital' || currentView === 'pilar/plataformas-digitales' || currentView === 'plataformas-digitales';
-  const isEvolucion = currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital';
+  const isConsultoria = currentView === 'consultoria-tecnologica' || currentView === 'pilar/consultoria-digital' || currentView === 'consultoria-digital' || currentView === 'pilares/consultoria-digital';
+  const isAutomatizacion = currentView === 'automatizacion-agentica' || currentView === 'pilar/agentes-automatizacion' || currentView === 'agentes-automatizacion' || currentView === 'pilares/agentes-automatizacion';
+  const isPlataformas = currentView === 'producto-digital' || currentView === 'pilar/plataformas-digitales' || currentView === 'plataformas-digitales' || currentView === 'pilares/plataformas-digitales';
+  const isEvolucion = currentView === 'evolucion-digital' || currentView === 'pilar/evolucion-digital' || currentView === 'pilares/evolucion-digital';
 
   const [isScrolledDown, setIsScrolledDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -59,7 +59,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
         {/* Right: 4 Pillars Quick Selector */}
         <div className="pointer-events-auto flex items-center gap-1 bg-[#090E1C]/55 backdrop-blur-2xl backdrop-saturate-150 p-1 rounded-xl border border-white/[0.08] shadow-lg shadow-black/40 text-xs overflow-x-auto">
           <button
-            onClick={() => handleNav('consultoria-tecnologica')}
+            onClick={() => handleNav('pilares/consultoria-digital')}
             className={`px-4 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap ${
               isConsultoria 
                 ? 'bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)] font-bold' 
@@ -70,7 +70,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
           </button>
           
           <button
-            onClick={() => handleNav('automatizacion-agentica')}
+            onClick={() => handleNav('pilares/agentes-automatizacion')}
             className={`px-4 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap ${
               isAutomatizacion 
                 ? 'bg-purple-600 text-white shadow-[0_0_15px_rgba(147,51,234,0.4)] font-bold' 
@@ -81,7 +81,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
           </button>
           
           <button
-            onClick={() => handleNav('producto-digital')}
+            onClick={() => handleNav('pilares/plataformas-digitales')}
             className={`px-4 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap ${
               isPlataformas 
                 ? 'bg-cyan-600 text-white shadow-[0_0_15px_rgba(8,145,178,0.4)] font-bold' 
@@ -92,7 +92,7 @@ const WaysToWorkSubNavbar = ({ currentView, onNavigate }) => {
           </button>
 
           <button
-            onClick={() => handleNav('evolucion-digital')}
+            onClick={() => handleNav('pilares/evolucion-digital')}
             className={`px-4 py-1.5 rounded-lg font-medium transition-all whitespace-nowrap ${
               isEvolucion 
                 ? 'bg-indigo-600 text-white shadow-[0_0_15px_rgba(79,70,229,0.4)] font-bold' 

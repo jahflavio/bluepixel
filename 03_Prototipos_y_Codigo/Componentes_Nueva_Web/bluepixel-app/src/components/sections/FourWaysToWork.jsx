@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const CONTENT = {
   es: {
@@ -95,107 +95,13 @@ const CONTENT = {
         footerDesc: 'Escuadrón continuo de CRO, UX, Analítica y Seguridad evolucionando tu plataforma sin inflar nómina.'
       }
     ]
-  },
-  en: {
-    badge: 'MODULAR B2B SERVICES • UX & AI MASTERY',
-    title: '4 ways to partner based on where your business stands today',
-    subtitle: 'Independent, high-impact services backed by world-class UX and mission-critical engineering. Engage the exact capability you need today—no rigid cycles, no mandatory sequences.',
-    phases: [
-      {
-        num: '01',
-        titleLine1: 'Digital',
-        titleLine2: 'Consulting',
-        badges: ['SMES', 'ENTERPRISE'],
-        target: 'For companies seeking technical certainty and quantified ROI',
-        desc: 'Eliminate existing gaps and identify highest-ROI opportunities with industry-leading software methodologies.',
-        bullets: [
-          'Diagnosis, prioritized backlog, and ROI projection in 2 to 4 weeks',
-          'Operational gap elimination with best-in-class software engineering practices',
-          'In-depth process mapping, user journey discovery (UX Research), and friction diagnosis',
-          'Strategic assessment to integrate AI with real business viability (AI Readiness)',
-          'Technical architecture blueprint, data governance, and execution roadmap'
-        ],
-        hoverBorder: 'hover:border-slate-500/50',
-        hasGlow: false,
-        dot: 'bg-slate-400 shadow-[0_0_8px_rgba(148,163,184,0.6)]',
-        gradient: 'from-slate-500/10',
-        hoverFooterBorder: 'group-hover:border-slate-500/30',
-        footerTitle: 'Technical Certainty & Quantified ROI.',
-        footerDesc: 'Executive roadmap and business case to invest with total confidence before writing code.'
-      },
-      {
-        num: '02',
-        titleLine1: 'Agents &',
-        titleLine2: 'Automation',
-        badges: ['SMES', 'ENTERPRISE'],
-        target: 'For operations facing productivity bottlenecks and repetitive tasks',
-        desc: 'Connect existing software, eliminate repetitive tasks, and design frictionless adoption for your team (SMEs).',
-        bullets: [
-          'First production-ready agents and workflows deployed in 2 to 4 weeks',
-          'Seamless integration with your existing stack (SAP, Salesforce, ERP, CRM)',
-          'Multi-agent systems with enterprise RAG architecture on real company data',
-          'Conversational UX and intuitive interfaces for frictionless, human-first adoption',
-          'Empower your team with specialized skills as Subject Matter Experts (SMEs)'
-        ],
-        hoverBorder: 'hover:border-emerald-500/50',
-        hasGlow: false,
-        dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]',
-        gradient: 'from-emerald-500/10',
-        hoverFooterBorder: 'group-hover:border-emerald-500/30',
-        footerTitle: 'Connected & Multi-Agent Ecosystem.',
-        footerDesc: 'Your existing stack supercharged with AI to eliminate operational friction and manual tasks.'
-      },
-      {
-        num: '03',
-        titleLine1: 'Digital',
-        titleLine2: 'Platforms',
-        badges: ['STARTUPS', 'SMES', 'ENTERPRISE'],
-        target: 'To build digital platforms & MVPs from scratch with validated UX',
-        desc: 'We blend our benchmark UX/UI mastery with Full Stack engineering to build intuitive platforms users genuinely love.',
-        bullets: [
-          'Production-ready platform or MVP in 3 months with validated UX and fast time-to-market',
-          'Custom software built from the ground up with end-to-end Full Stack capabilities',
-          'Benchmark UX/UI mastery: real user research, scalable design systems, and interactive prototyping',
-          'AI-Forward Deploy Engineering with enterprise-grade QA testing',
-          'Dedicated PMO governance, zero technical debt, and Security & Reliability'
-        ],
-        hoverBorder: 'hover:border-blue-500/50',
-        hasGlow: true,
-        dot: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]',
-        gradient: 'from-blue-500/10',
-        hoverFooterBorder: 'group-hover:border-blue-500/30',
-        footerTitle: 'Core Platform Ready to Scale.',
-        footerDesc: 'Custom software with benchmark UX design, robust Full Stack architecture, and zero technical debt.'
-      },
-      {
-        num: '04',
-        titleLine1: 'Digital',
-        titleLine2: 'Evolution',
-        badges: ['SMES', 'ENTERPRISE'],
-        target: 'To scale existing platforms with continuous UX and conversion optimization',
-        desc: 'Deep business alignment, mutual incentives, and continuous UX optimization to evolve alongside market demands.',
-        bullets: [
-          'Living 6- or 12-month roadmap with continuous sprint-by-sprint deliveries',
-          'Deep business understanding and alignment of mutual incentives with company goals',
-          'Consultative upscaling and agile platform evolution matching market dynamics',
-          'Cross-functional capability layer: Evolutionary UX/UI, Software, Data Analytics, and Security',
-          'Continuous Conversion Rate Optimization (CRO), retention gains, and UX Health Score'
-        ],
-        hoverBorder: 'hover:border-indigo-500/50',
-        hasGlow: false,
-        dot: 'bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]',
-        gradient: 'from-purple-500/10',
-        hoverFooterBorder: 'group-hover:border-purple-500/30',
-        footerTitle: 'On-Demand Technology Partner.',
-        footerDesc: 'Dedicated squad for CRO, UX, Analytics, and Security evolving your platform without payroll overhead.'
-      }
-    ]
   }
 };
 
-const FourWaysToWork = ({ defaultLang = 'es' }) => {
-  const [lang, setLang] = useState(defaultLang);
-  const t = CONTENT[lang] || CONTENT.es;
+// El selector ES/EN y el bloque de contenido en ingles se retiraron: el sitio
+// es 100% en espanol y el toggle era el unico control de idioma de la pagina.
+const FourWaysToWork = () => {
+  const t = CONTENT.es;
 
   return (
     <section id="como-trabajamos" className="py-24 bg-[#02050A] border-t border-b border-white/[0.06] relative overflow-hidden scroll-mt-20">
@@ -216,32 +122,6 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
               <span>{t.badge}</span>
-            </div>
-
-            {/* Language Switcher */}
-            <div className="inline-flex items-center p-0.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-sm">
-              <button
-                type="button"
-                onClick={() => setLang('es')}
-                className={`px-3 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
-                  lang === 'es'
-                    ? 'bg-blue-600 text-white shadow-[0_0_10px_rgba(37,99,235,0.6)]'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                ES
-              </button>
-              <button
-                type="button"
-                onClick={() => setLang('en')}
-                className={`px-3 py-1 rounded-full text-[10px] font-mono font-bold transition-all ${
-                  lang === 'en'
-                    ? 'bg-blue-600 text-white shadow-[0_0_10px_rgba(37,99,235,0.6)]'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                EN
-              </button>
             </div>
           </div>
 
@@ -272,13 +152,13 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
                   </span>
                   <a
                     href={
-                      phase.num === '01' 
-                        ? '#/consultoria-tecnologica' 
-                        : phase.num === '02' 
-                          ? '#/automatizacion-agentica' 
-                          : phase.num === '03' 
-                            ? '#/producto-digital' 
-                            : '#/evolucion-digital'
+                      phase.num === '01'
+                        ? '#/pilares/consultoria-digital'
+                        : phase.num === '02'
+                          ? '#/pilares/agentes-automatizacion'
+                          : phase.num === '03'
+                            ? '#/pilares/plataformas-digitales'
+                            : '#/pilares/evolucion-digital'
                     }
                     className="hover:text-blue-400 transition-colors group/title"
                   >
@@ -332,19 +212,19 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
 
                 <a
                   href={
-                    phase.num === '01' 
-                      ? '#/consultoria-tecnologica' 
-                      : phase.num === '02' 
-                        ? '#/automatizacion-agentica' 
-                        : phase.num === '03' 
-                          ? '#/producto-digital' 
-                          : '#/evolucion-digital'
+                    phase.num === '01'
+                      ? '#/pilares/consultoria-digital'
+                      : phase.num === '02'
+                        ? '#/pilares/agentes-automatizacion'
+                        : phase.num === '03'
+                          ? '#/pilares/plataformas-digitales'
+                          : '#/pilares/evolucion-digital'
                   }
                   className="w-full flex items-center justify-between text-xs font-mono font-bold text-blue-300 hover:text-white px-4 py-3 rounded-xl bg-blue-600/15 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-400 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)] transition-all duration-200 group/btn"
                 >
                   <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover/btn:bg-white animate-pulse"></span>
-                    <span>{lang === 'en' ? `View Pillar ${phase.num} Landing Page` : `Ver Landing del Pilar ${phase.num}`}</span>
+                    <span>{`Ver el Pilar ${phase.num} a detalle`}</span>
                   </span>
                   <span className="group-hover/btn:translate-x-1 transition-transform font-bold">→</span>
                 </a>
@@ -353,30 +233,30 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
           ))}
         </div>
 
-        {/* Banner Inferior con Enlaces Directos a las 4 Landings */}
+        {/* Banner Inferior con Enlaces Directos a los 4 Pilares */}
         <div className="mt-12 p-6 rounded-2xl bg-[#060A14] border border-white/[0.08] flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3 text-center lg:text-left">
             <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shrink-0"></span>
             <div>
               <div className="text-sm font-bold text-white">
-                {lang === 'en' ? 'Dedicated Landing Pages by Pillar' : 'Landings Dedicadas por Pilar de Servicio'}
+                Una página dedicada para cada Pilar de Servicio
               </div>
               <div className="text-xs text-slate-400">
-                {lang === 'en' ? 'Explore real client case studies, deliverables, ROI benchmarks, and timelines' : 'Explora entregables, casos de estudio reales, quizzes y SLAs de cada pilar'}
+                Explora entregables, casos de estudio reales, tiempos de entrega y SLA de cada pilar
               </div>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2">
-            <a href="#/consultoria-tecnologica" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-blue-400 hover:text-blue-400 text-slate-300 hover:bg-blue-500/10 transition-all font-semibold">
+            <a href="#/pilares/consultoria-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-blue-400 hover:text-blue-400 text-slate-300 hover:bg-blue-500/10 transition-all font-semibold">
               01. Consultoría Digital →
             </a>
-            <a href="#/automatizacion-agentica" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-400 hover:text-purple-400 text-slate-300 hover:bg-purple-500/10 transition-all font-semibold">
+            <a href="#/pilares/agentes-automatizacion" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-400 hover:text-purple-400 text-slate-300 hover:bg-purple-500/10 transition-all font-semibold">
               02. Agentes & Auto →
             </a>
-            <a href="#/producto-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 hover:bg-cyan-500/10 transition-all font-semibold">
+            <a href="#/pilares/plataformas-digitales" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 hover:bg-cyan-500/10 transition-all font-semibold">
               03. Plataformas Digitales →
             </a>
-            <a href="#/evolucion-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-indigo-400 hover:text-indigo-400 text-slate-300 hover:bg-indigo-500/10 transition-all font-semibold">
+            <a href="#/pilares/evolucion-digital" className="text-xs font-mono px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-indigo-400 hover:text-indigo-400 text-slate-300 hover:bg-indigo-500/10 transition-all font-semibold">
               04. Evolución Digital →
             </a>
           </div>
@@ -386,8 +266,7 @@ const FourWaysToWork = ({ defaultLang = 'es' }) => {
   );
 };
 
-export const FourWaysToWorkEN = (props) => <FourWaysToWork defaultLang="en" {...props} />;
+// Alias historico: la seccion se llamaba ThreeWaysToWork cuando eran 3 pilares.
 export const ThreeWaysToWork = FourWaysToWork;
-export const ThreeWaysToWorkEN = FourWaysToWorkEN;
 
 export default FourWaysToWork;

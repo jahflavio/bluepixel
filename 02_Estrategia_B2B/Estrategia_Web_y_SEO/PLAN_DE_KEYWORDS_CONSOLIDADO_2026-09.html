@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Plan de Keywords Consolidado</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 18mm 16mm 20mm 16mm;
+    @bottom-right { content: counter(page); }
+  }
+
+  :root {
+    --tinta: #0f172a;
+    --suave: #475569;
+    --linea: #e2e8f0;
+    --azul: #2563eb;
+    --azul-claro: #eff6ff;
+    --verde: #059669;
+    --ambar: #b45309;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--tinta);
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Portada */
+  .portada {
+    border-bottom: 3px solid var(--azul);
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+  }
+  .marca {
+    font-size: 8.5pt;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--azul);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .portada h1 {
+    font-size: 21pt;
+    line-height: 1.15;
+    margin: 0 0 6px;
+    border: 0;
+    padding: 0;
+  }
+  .portada .sub {
+    color: var(--suave);
+    font-size: 10pt;
+  }
+  .portada .fecha {
+    color: var(--suave);
+    font-size: 8.5pt;
+    margin-top: 8px;
+  }
+
+  /* El H1 del markdown ya lo cubre la portada */
+  main > h1:first-of-type { display: none; }
+
+  h1, h2, h3, h4 {
+    color: var(--tinta);
+    line-height: 1.25;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 14pt;
+    margin: 26px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid var(--linea);
+  }
+  h3 { font-size: 11.5pt; margin: 18px 0 7px; }
+  h4 { font-size: 10.5pt; margin: 14px 0 5px; color: var(--suave); }
+
+  p { margin: 0 0 9px; }
+
+  /* Citas: los bloques de contexto al inicio del documento */
+  blockquote {
+    margin: 0 0 20px;
+    padding: 12px 16px;
+    background: var(--azul-claro);
+    border-left: 3px solid var(--azul);
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5pt;
+    color: #1e3a5f;
+    break-inside: avoid;
+  }
+  blockquote p { margin: 0 0 6px; }
+  blockquote p:last-child { margin: 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 18px;
+    font-size: 9pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  th {
+    background: #f1f5f9;
+    text-align: left;
+    padding: 7px 9px;
+    border-bottom: 2px solid #cbd5e1;
+    font-weight: 700;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--suave);
+  }
+  td {
+    padding: 6px 9px;
+    border-bottom: 1px solid var(--linea);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #fafbfc; }
+  /* Las columnas numericas del reporte van alineadas a la derecha por el
+     markdown; aqui se respeta con la clase que genera marked. */
+  th[align="right"], td[align="right"] { text-align: right; font-variant-numeric: tabular-nums; }
+  th[align="center"], td[align="center"] { text-align: center; }
+
+  /* Bloques de codigo: el destacado de 'agentes de ia' */
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+    line-height: 1.6;
+    overflow: visible;
+    white-space: pre-wrap;
+    break-inside: avoid;
+  }
+  code {
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: .92em;
+  }
+  p code, li code, td code {
+    background: #f1f5f9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #be123c;
+  }
+
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+
+  strong { font-weight: 700; }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--linea);
+    margin: 24px 0;
+  }
+
+  a { color: var(--azul); text-decoration: none; }
+
+  /* Evita que una tabla o un encabezado queden huerfanos al pie */
+  h2, h3 { orphans: 3; widows: 3; }
+</style>
+</head>
+<body>
+  <div class="portada">
+    <div class="marca">BluePixel · Estrategia Digital</div>
+    <h1>Plan de Keywords Consolidado</h1>
+    <div class="sub">3,484 keywords con volumen exacto, puja e intención comercial — Septiembre 2026</div>
+    <div class="fecha">24 de septiembre de 2026</div>
+  </div>
+  <main>
+<h1>🗺️ PLAN DE KEYWORDS CONSOLIDADO — SEPTIEMBRE 2026</h1>
+<blockquote>
+<p><strong>Datos:</strong> 10 extracciones de Google Keyword Planner desde la cuenta
+<code>921-514-0446</code>, periodo sep-2025 a ago-2026, ubicación México (más una corrida
+en inglés para Estados Unidos). Consolidadas y deduplicadas en
+<code>datos_excel_y_css/keyword_planner_2026-09/CONSOLIDADO_keywords_2026-09.csv</code>.</p>
+<p><strong>3,484 keywords únicas</strong> con volumen exacto, puja de la parte superior de la
+página, competencia y tendencia trimestral.</p>
+<p><strong>Documentos relacionados:</strong> <code>REPORTE_SEO_Y_AJUSTES_DE_COPY_2026-09.md</code>
+(infraestructura y GSC) y <code>BRECHA_KEYWORDS_FUERA_DEL_PLAN_2026-09.md</code>.</p>
+</blockquote>
+<hr>
+<h2>1. El hallazgo que cambia la conversación</h2>
+<pre><code>  agentes de ia
+  880 búsquedas/mes  ·  puja de parte superior: MX$1,407  ·  +30% en 3 meses
+</code></pre>
+<p><strong>MX$1,407 por clic.</strong> La segunda puja más alta del dataset completo es de
+MX$266, y la mediana de los términos comerciales anda en MX$50. Alguien está
+pagando veinte a treinta veces más por esta búsqueda que por cualquier otra
+cosa del mercado.</p>
+<p>Eso solo pasa cuando el valor de cliente cerrado es enorme y hay pocos
+proveedores creíbles. Es la definición de un mercado naciente y rentable.</p>
+<p><strong>Y es exactamente el posicionamiento de BluePixel.</strong> Que, orgánicamente, está
+en <strong>posición 42 a 54</strong> para las consultas de inteligencia artificial.</p>
+<p>No hay ninguna otra oportunidad en estos 3,484 términos que se le acerque.</p>
+<hr>
+<h2>2. El semáforo completo</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Clasificación</th>
+<th align="right">Keywords</th>
+<th align="right">Búsquedas/mes</th>
+<th align="left">Qué significa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">🟢 Verde · página de servicio</td>
+<td align="right">35</td>
+<td align="right">83,910</td>
+<td align="left">Volumen alto + puja alta</td>
+</tr>
+<tr>
+<td align="left">🟡 Amarillo · blog</td>
+<td align="right">103</td>
+<td align="right">141,330</td>
+<td align="left">Volumen alto + puja baja</td>
+</tr>
+<tr>
+<td align="left">🔵 Azul · nicho de alto valor</td>
+<td align="right">218</td>
+<td align="right">8,010</td>
+<td align="left">Volumen bajo + puja alta</td>
+</tr>
+<tr>
+<td align="left">🔵 Azul · apuesta a futuro</td>
+<td align="right">278</td>
+<td align="right">18,280</td>
+<td align="left">Creciendo fuerte</td>
+</tr>
+<tr>
+<td align="left">⚪️ Gris · bajo interés</td>
+<td align="right">2,635</td>
+<td align="right">38,780</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">⬜️ Descartar</td>
+<td align="right">215</td>
+<td align="right">0</td>
+<td align="left">Sin volumen</td>
+</tr>
+</tbody></table>
+<p><strong>Advertencia sobre la clasificación automática.</strong> El semáforo cruza volumen
+contra puja, y eso falla con los términos definicionales. Por ejemplo <code>software de aplicación</code> (14,800/mes, puja MX$58) cae en verde, pero es una consulta de
+tarea escolar, no de compra. Las tablas de abajo ya están depuradas a mano.</p>
+<hr>
+<h2>3. Asignación página por página</h2>
+<h3>🟢 <code>/servicio/ai-agents</code> — la página más valiosa del sitio</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+<th align="right">Tendencia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>agentes de ia</strong></td>
+<td align="right"><strong>880</strong></td>
+<td align="right"><strong>MX$1,407</strong></td>
+<td align="right"><strong>+30%</strong></td>
+</tr>
+<tr>
+<td align="left">empresa de ia</td>
+<td align="right">170</td>
+<td align="right">MX$47</td>
+<td align="right">-19%</td>
+</tr>
+<tr>
+<td align="left">ia para empresas</td>
+<td align="right">90</td>
+<td align="right">MX$134</td>
+<td align="right">+22%</td>
+</tr>
+<tr>
+<td align="left">inteligencia artificial para empresas</td>
+<td align="right">50</td>
+<td align="right">MX$689</td>
+<td align="right">+40%</td>
+</tr>
+</tbody></table>
+<p>Dos términos con pujas de MX$1,407 y MX$689. Esta página debe reescribirse
+alrededor de &quot;agentes de IA&quot; como cabeza, no como sinónimo.</p>
+<h3>🟢 <code>/servicio/ai-engineering</code></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+<th align="right">Tendencia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">desarrolladores de software</td>
+<td align="right">5,400</td>
+<td align="right">MX$51</td>
+<td align="right">+23%</td>
+</tr>
+<tr>
+<td align="left">empresa de desarrollo de software</td>
+<td align="right">480</td>
+<td align="right">MX$63</td>
+<td align="right"><strong>+50%</strong></td>
+</tr>
+<tr>
+<td align="left">empresas de desarrollo de software en méxico</td>
+<td align="right">70</td>
+<td align="right">MX$103</td>
+<td align="right">-20%</td>
+</tr>
+<tr>
+<td align="left">consultoras de software</td>
+<td align="right">170</td>
+<td align="right">MX$38</td>
+<td align="right">0%</td>
+</tr>
+</tbody></table>
+<p><code>empresa de desarrollo de software</code> creciendo 50% trimestral con puja de MX$63
+es la mejor combinación volumen/intención/tendencia del bloque comercial.</p>
+<h3>🟢 <code>/producto-digital</code> (Pilar 03)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+<th align="right">Tendencia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>desarrollo de apps</strong></td>
+<td align="right">320</td>
+<td align="right"><strong>MX$180</strong></td>
+<td align="right">0%</td>
+</tr>
+<tr>
+<td align="left">desarrollo de paginas web</td>
+<td align="right">480</td>
+<td align="right"><strong>MX$116</strong></td>
+<td align="right">-34%</td>
+</tr>
+<tr>
+<td align="left">desarrollo de aplicaciones moviles</td>
+<td align="right">480</td>
+<td align="right">MX$85</td>
+<td align="right">0%</td>
+</tr>
+<tr>
+<td align="left">desarrollo de aplicaciones</td>
+<td align="right">320</td>
+<td align="right">MX$85</td>
+<td align="right">-19%</td>
+</tr>
+</tbody></table>
+<p>Ojo con <code>desarrollo de paginas web</code>: puja de MX$116 y competencia <strong>High</strong>. En la
+cuenta de Ads este término gastó MX$3,337 sin una conversión. Alto valor
+declarado, pero históricamente no convierte para BluePixel. Vale la posición
+orgánica, no la puja.</p>
+<h3>🟢 <code>/servicio/ux-ui</code></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+<th align="right">Tendencia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">agencia de diseño web</td>
+<td align="right">320</td>
+<td align="right">MX$63</td>
+<td align="right">0%</td>
+</tr>
+<tr>
+<td align="left">agencia de desarrollo web</td>
+<td align="right">260</td>
+<td align="right">MX$45</td>
+<td align="right"><strong>+75%</strong></td>
+</tr>
+<tr>
+<td align="left">agencia diseño web</td>
+<td align="right">90</td>
+<td align="right">MX$60</td>
+<td align="right">-50%</td>
+</tr>
+<tr>
+<td align="left">agencia de paginas web</td>
+<td align="right">70</td>
+<td align="right">MX$89</td>
+<td align="right">-20%</td>
+</tr>
+</tbody></table>
+<p><code>agencia de desarrollo web</code> con +75% trimestral, y en Search Console ya
+aparecemos en posición 22.6. Es de las más fáciles de mover.</p>
+<h3>🟢 <code>/servicio/business-ai</code></h3>
+<p><code>inteligencia artificial para empresas</code> (50/mes, <strong>MX$689</strong>) e <code>ia empresarial</code>
+(70/mes, MX$204). Volumen bajo pero pujas altísimas: es el perfil clásico de
+nicho de alto valor, donde se gana barato porque casi nadie produce contenido.</p>
+<h3>⚪️ <code>/servicio/data-analytics</code> y <code>/servicio/security</code></h3>
+<p><strong>No aparecieron keywords con volumen relevante en México</strong> para analítica de
+datos ni ciberseguridad en el corte que extrajimos. No es que no exista demanda;
+es que las semillas que usamos no la tocaron. Merecen su propia extracción antes
+de decidir si justifican inversión de contenido.</p>
+<hr>
+<h2>4. El plan de blog</h2>
+<h3>4.1 Educativo — extender lo que ya funciona</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+<th align="left">Nota</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">tipos de software</td>
+<td align="right"><strong>12,100</strong></td>
+<td align="right">MX$30</td>
+<td align="left">+50% trimestral</td>
+</tr>
+<tr>
+<td align="left">software en sistemas</td>
+<td align="right">9,900</td>
+<td align="right">MX$35</td>
+<td align="left">+125%</td>
+</tr>
+<tr>
+<td align="left">ejemplo de software</td>
+<td align="right">8,100</td>
+<td align="right">MX$0</td>
+<td align="left">+52%</td>
+</tr>
+<tr>
+<td align="left">definición de software</td>
+<td align="right">4,400</td>
+<td align="right">MX$0</td>
+<td align="left"><strong>+230%</strong></td>
+</tr>
+<tr>
+<td align="left">tipos de paginas web</td>
+<td align="right">1,300</td>
+<td align="right">MX$46</td>
+<td align="left">Ya rankeamos #7.3</td>
+</tr>
+<tr>
+<td align="left">que es un agente de ia</td>
+<td align="right"><strong>590</strong></td>
+<td align="right">MX$34</td>
+<td align="left">+14%</td>
+</tr>
+<tr>
+<td align="left">que es rpa</td>
+<td align="right">480</td>
+<td align="right">MX$16</td>
+<td align="left">+50%</td>
+</tr>
+<tr>
+<td align="left">que es un rpa</td>
+<td align="right">320</td>
+<td align="right">MX$45</td>
+<td align="left">+23%</td>
+</tr>
+<tr>
+<td align="left">que es rag</td>
+<td align="right">390</td>
+<td align="right">MX$19</td>
+<td align="left">+23%</td>
+</tr>
+</tbody></table>
+<p>Puja baja = cero intención de compra. <strong>No son páginas de servicio, son
+imanes de tráfico.</strong> Pero fíjate en el clúster de abajo: <code>que es un agente de ia</code>, <code>que es rpa</code>, <code>que es rag</code> son la puerta de entrada educativa a la
+categoría donde la puja comercial es de MX$1,407. Ese es el embudo completo en
+una sola línea de contenido.</p>
+<h3>4.2 Precio — corrección barata</h3>
+<p><code>cuanto cuesta hacer una pagina web</code> (260/mes), <code>cuanto cuesta una pagina web</code>
+(210), <code>cuanto cuesta crear una pagina web</code> (140), <code>cuanto cuesta hacer una app</code>
+(90), <code>cuanto cuesta desarrollar una app</code> (70, +25%).</p>
+<p>BluePixel <strong>ya tiene</strong> el artículo de costos de apps con 13,525 impresiones en
+posición 18.72. Optimizarlo contra estas consultas exactas es el trabajo de
+mejor relación esfuerzo/resultado de todo el plan.</p>
+<h3>4.3 Competidores — 25,000 búsquedas mensuales</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Marca</th>
+<th align="right">Vol/mes</th>
+<th align="right">Puja</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">softtek</td>
+<td align="right"><strong>12,100</strong></td>
+<td align="right">MX$20</td>
+</tr>
+<tr>
+<td align="left">bairesdev</td>
+<td align="right">4,400</td>
+<td align="right">MX$29</td>
+</tr>
+<tr>
+<td align="left">globant</td>
+<td align="right">3,600</td>
+<td align="right"><strong>MX$6,615</strong></td>
+</tr>
+<tr>
+<td align="left">wizeline</td>
+<td align="right">2,900</td>
+<td align="right">MX$50</td>
+</tr>
+<tr>
+<td align="left">accenture mexico</td>
+<td align="right">1,300</td>
+<td align="right">MX$79</td>
+</tr>
+<tr>
+<td align="left">infosys mexico</td>
+<td align="right">480</td>
+<td align="right">MX$77</td>
+</tr>
+</tbody></table>
+<p><strong>Veinticinco mil búsquedas mensuales de gente buscando consultoras por nombre.</strong>
+La puja de MX$6,615 en <code>globant</code> confirma que alguien pelea fuerte por esa
+intención en pauta.</p>
+<p>En Ads, BluePixel ya gastó MX$10,427 en estos términos <strong>sin una sola
+conversión</strong> — comprar la marca ajena no funciona. En orgánico, con contenido de
+comparación honesto, es otra historia. Y hay precedente propio: el post
+<code>mejores-agencias-diseno-ux-ui-mexico</code> está en posición 10.14.</p>
+<hr>
+<h2>5. Orden de ejecución</h2>
+<table>
+<thead>
+<tr>
+<th align="left">#</th>
+<th align="left">Acción</th>
+<th align="left">Por qué primero</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">Reescribir <code>/servicio/ai-agents</code> alrededor de &quot;agentes de IA&quot;</td>
+<td align="left">Puja de MX$1,407, categoría creciendo, es tu posicionamiento</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Optimizar el artículo de costos existente</td>
+<td align="left">Ya existe, solo hay que afinarlo</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Mover las páginas comerciales de posición 17–47</td>
+<td align="left">Google ya te considera relevante</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Clúster educativo de IA (qué es un agente, qué es RAG, qué es RPA)</td>
+<td align="left">Alimenta el embudo del punto 1</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Contenido de comparación vs. competidores</td>
+<td align="left">25,000 búsquedas/mes sin atender</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Extracción específica para Data y Security</td>
+<td align="left">Hoy no hay datos para decidir</td>
+</tr>
+</tbody></table>
+<p>Los puntos 1 a 3 no dependen de nada externo. El 6 requiere volver a Keyword
+Planner con semillas nuevas.</p>
+<hr>
+<h2>6. Qué sigue faltando</h2>
+<p><strong>Keyword Difficulty orgánica.</strong> Keyword Planner da &quot;Competencia&quot;, pero es
+competencia entre anunciantes de pago, no dificultad para rankear. Con puja de
+MX$1,407, <code>agentes de ia</code> tiene competencia <em>Medium</em> en Ads — eso no dice nada
+sobre qué tan difícil es llegar al top 10 orgánico. Ese dato sale de Semrush o
+Ahrefs, y es el acceso que conviene pedirle a Rocketing.</p>
+<p><strong>El bloqueador estructural sigue vigente.</strong> Nada de este plan produce tráfico
+mientras el sitio nuevo enrute por hash y no exista el mapa de redirecciones del
+sitio actual. Ver secciones 5 y 7 del reporte principal.</p>
+
+  </main>
+</body>
+</html>

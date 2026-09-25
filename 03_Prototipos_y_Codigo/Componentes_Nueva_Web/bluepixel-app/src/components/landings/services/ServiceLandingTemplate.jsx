@@ -147,12 +147,12 @@ const THEME_CONFIG = {
 };
 
 const ALL_SERVICES_SHORTCUTS = [
-  { id: 'ux-ui', name: 'UX/UI Design', cluster: 'Apps & Producto', route: 'servicio/ux-ui', dot: 'bg-emerald-400' },
-  { id: 'ai-engineering', name: 'AI Engineering', cluster: 'Apps & Producto', route: 'servicio/ai-engineering', dot: 'bg-cyan-400' },
-  { id: 'ai-agents', name: 'Agentes IA', cluster: 'Automatización', route: 'servicio/ai-agents', dot: 'bg-purple-400' },
-  { id: 'data-analytics', name: 'Data & Analytics', cluster: 'Automatización', route: 'servicio/data-analytics', dot: 'bg-indigo-400' },
-  { id: 'security', name: 'Security & Reliability', cluster: 'Gobernanza IA', route: 'servicio/security', dot: 'bg-amber-400' },
-  { id: 'business-ai', name: 'Business AI Consulting', cluster: 'Gobernanza IA', route: 'servicio/business-ai', dot: 'bg-blue-400' }
+  { id: 'ux-ui', name: 'UX/UI & Product Strategy', cluster: 'Capacidades BluePixel', route: 'servicios/ux-ui-product-strategy', dot: 'bg-emerald-400' },
+  { id: 'ai-engineering', name: 'Software Engineering', cluster: 'Capacidades BluePixel', route: 'servicios/software-engineering', dot: 'bg-cyan-400' },
+  { id: 'ai-agents', name: 'IA & Automatización', cluster: 'Capacidades BluePixel', route: 'servicios/agentic-ai-automation', dot: 'bg-purple-400' },
+  { id: 'data-analytics', name: 'Data & Analytics', cluster: 'Capacidades BluePixel', route: 'servicios/data-analytics', dot: 'bg-indigo-400' },
+  { id: 'security', name: 'Security & Reliability', cluster: 'Capacidades BluePixel', route: 'servicios/security-reliability', dot: 'bg-amber-400' },
+  { id: 'business-ai', name: 'Digital Consulting', cluster: 'Capacidades BluePixel', route: 'servicios/digital-consulting', dot: 'bg-blue-400' }
 ];
 
 const ServiceLandingTemplate = ({ data }) => {
@@ -268,51 +268,140 @@ const ServiceLandingTemplate = ({ data }) => {
       </div>
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-16 md:pt-24 pb-16 lg:pb-24 overflow-hidden border-b border-white/[0.08]">
+      {/* Mismo patron que el hero de los 4 Pilares: copy a la izquierda y la
+          caja de entregables reales a la derecha. El hero centrado anterior no
+          mostraba nada concreto above the fold. */}
+      <section className="relative pt-16 md:pt-24 pb-16 lg:pb-24 overflow-hidden border-b border-white/[0.08] min-h-[75vh] flex items-center">
         {/* Glow */}
-        <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] ${theme.glow} blur-[140px] pointer-events-none rounded-full`} />
-        
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 gap-10 items-center text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            
+        <div className={`absolute top-1/4 -left-32 w-[600px] h-[600px] ${theme.glow} blur-[140px] pointer-events-none rounded-full`} />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+          {/* Left Column: Copy & CTAs */}
+          <div className="text-left">
+
             {/* El nombre de la capacidad pesa mas que el cluster al que
                 pertenece: es lo que el visitante vino a evaluar. */}
-            <div className="inline-flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold mb-6">
-              <span className="text-slate-300">{data.packageName}</span>
-              <span className="text-slate-600">•</span>
-              <span className={theme.accentText}>{data.canonicalBadge}</span>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest ${theme.accentText} font-bold`}>
+                <span className={`w-2 h-2 rounded-full ${theme.dot} animate-pulse`}></span>
+                {data.packageName}
+              </span>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold">
+                ✦ {data.canonicalBadge}
+              </span>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-6 font-display">
+
+            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-black text-white tracking-tight leading-[1.08] mb-6 font-display">
               {data.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
             </h1>
-            
-            <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
+
+            <p className="text-slate-300 text-lg leading-relaxed max-w-xl mb-10">
               {data.subtitle}
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <button 
+
+            <div className="flex flex-wrap gap-4 mb-8">
+              <button
                 onClick={() => scrollToFormWithPackage(data.packageName)}
                 className={`font-bold text-sm px-8 py-4 rounded-xl transition-all flex items-center gap-2 ${theme.btnPrimary}`}
               >
                 <span>Agenda tu Diagnóstico</span>
                 <span>→</span>
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => {
-                  const el = document.getElementById('cuatro-formas') || document.getElementById('entregables');
+                  const el = document.getElementById('entregables');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className={`font-bold text-sm px-7 py-4 rounded-xl transition-all border border-white/10 bg-white/[0.03] text-slate-300 hover:text-white hover:border-white/20`}
+                className="font-bold text-sm px-7 py-4 rounded-xl transition-all border border-white/10 bg-white/[0.03] text-slate-300 hover:text-white hover:border-white/20"
               >
-                <span>Ver cómo contratarla ↓</span>
+                <span>Ver los entregables ↓</span>
               </button>
             </div>
+
+            {/* El equivalente al plazo del Pilar: una capacidad no se contrata
+                sola, se activa desde cualquiera de las 4 formas de trabajar. */}
+            <div className="flex items-center gap-2.5 text-xs font-mono text-slate-500">
+              <span className="text-emerald-400">✓</span>
+              <span>Se activa desde cualquiera de los 4 Pilares · Entregables en tu poder, sin permanencia</span>
+            </div>
           </div>
+
+          {/* Right Column: el stack con el que se ejecuta la capacidad. Antes
+              adelantaba los entregables, pero esos ya tienen su propia seccion
+              y el visitante tecnico viene a ver con que se construye. */}
+          {data.techStack?.items?.length > 0 && (
+            <div className="w-full lg:-mt-4 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md">
+                {/* Outer Glow */}
+                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square ${theme.glow} blur-[120px] opacity-40 pointer-events-none rounded-full`}></div>
+
+                <div className="relative bg-[#050A19]/80 backdrop-blur-xl border border-white/[0.1] rounded-3xl p-8 shadow-2xl overflow-hidden">
+                  {/* Inner Glow */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 ${theme.glow} blur-3xl opacity-60`}></div>
+
+                  <div className="flex items-center gap-3 mb-6 relative z-10">
+                    <div className={`w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center ${theme.accentText}`}>
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold">
+                        {data.techStack.label || 'Stack Tecnológico'}
+                      </div>
+                      <div className={`text-[10px] font-mono uppercase tracking-widest font-bold mt-0.5 ${theme.accentText}`}>
+                        Con lo que se construye
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-6 relative z-10">
+                    {data.techStack.items.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-slate-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="pt-5 border-t border-white/[0.06] flex items-center justify-between relative z-10">
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+                      Cero vendor lock-in
+                    </div>
+                    <div className={`text-[10px] font-mono font-bold ${theme.accentText}`}>
+                      FutureProof™
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
         </div>
       </section>
+
+      {/* 1.5. TRUST CLIENTS STRIP. Mismo bloque que abre los 4 Pilares: la
+          prueba social va pegada al hero, antes de las cifras. */}
+      <div className="border-b border-white/[0.08] bg-[#030612] py-8 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            <span className={`w-2 h-2 rounded-full ${theme.dot} animate-pulse`}></span>
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold">
+              Confianza Enterprise Comprobada:
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-70 hover:opacity-100 transition-opacity">
+            {CLIENT_LOGOS.slice(0, 8).map((c, i) => (
+              <img key={i} src={c.url} alt={c.name} className="h-8 md:h-11 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" />
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* 2. SPECIALIZED STATS STRIP */}
       {data.stats && (
@@ -320,7 +409,8 @@ const ServiceLandingTemplate = ({ data }) => {
           <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/[0.08]">
             {data.stats.map((st, sIdx) => (
               <div key={sIdx} className="flex flex-col items-center text-center pt-6 md:pt-0">
-                <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 1 ? theme.gradientText : 'from-white to-slate-200'}`}>
+                {/* El acento va en la primera cifra, igual que en los Pilares. */}
+                <div className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-r ${sIdx === 0 ? theme.gradientText : 'from-white to-slate-200'}`}>
                   <StatValue value={st.value} />
                 </div>
                 <div className="text-sm font-medium text-slate-300 max-w-xs">{st.label}</div>
@@ -552,16 +642,10 @@ const ServiceLandingTemplate = ({ data }) => {
               </table>
             </div>
             
-            {data.callout1 && (
-              <div className={`mt-12 p-8 md:p-10 ${theme.accentBg} border ${theme.accentBorder} rounded-2xl relative overflow-hidden`}>
-                <div className="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2 font-bold">
-                  ✦ Garantía FutureProof BluePixel
-                </div>
-                <p className="text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  {data.callout1}
-                </p>
-              </div>
-            )}
+            {/* Aqui vivia el bloque 'Garantia FutureProof BluePixel' con
+                data.callout1. Se retiro por peticion: repetia en prosa lo que
+                la matriz de arriba ya demuestra columna por columna. El texto
+                sigue en servicesData por si se reutiliza. */}
           </div>
         </section>
       )}
@@ -755,7 +839,7 @@ const ServiceLandingTemplate = ({ data }) => {
                   </div>
                   <div className="pt-5 mt-5 border-t border-white/[0.06]">
                     <a
-                      href="#/casos-de-exito"
+                      href="#/casos-de-estudio"
                       className={`text-xs font-mono font-bold ${theme.accentText} hover:underline`}
                     >
                       Ver todos los casos →
@@ -856,93 +940,12 @@ const ServiceLandingTemplate = ({ data }) => {
         </section>
       )}
 
-      {/* LOS 4 PILARES. Sustituye a la seccion grande "4 Formas de Trabajar":
-          mismo formato compacto que la navegacion cruzada de las landings de
-          pilar, pero enriquecido con el rol y el entregable que esta capacidad
-          concreta aporta dentro de cada pilar, que es lo que ya traia el dato
-          'fourWaysToWork'. Asi se recuperan los enlaces sin volver a ocupar una
-          seccion entera. */}
-      {/* Conserva el id 'cuatro-formas': el CTA del hero salta aqui. Al
-          reemplazar la seccion anterior se perdio el ancla y el boton caia en
-          su fallback silencioso, llevando al visitante a los entregables. */}
-      {data.fourWaysToWork && (
-        <section id="cuatro-formas" className="py-16 border-b border-white/[0.08] bg-[#030611]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-1">
-                  Arquitectura Modular BluePixel
-                </span>
-                <h3 className="text-xl font-bold text-white">
-                  Contrata esta capacidad desde cualquiera de los 4 Pilares<span className="text-blue-500">.</span>
-                </h3>
-                {/* Sin esta linea, el tinte de las tarjetas núcleo se lee como
-                    "seleccionado" en vez de explicar por que destacan. */}
-                <p className="text-xs text-slate-400 mt-1.5">
-                  Los pilares resaltados son donde esta capacidad es el núcleo del trabajo.
-                </p>
-              </div>
-              <button
-                onClick={() => scrollToFormWithPackage(data.packageName)}
-                className={`text-xs font-mono font-bold whitespace-nowrap ${theme.accentText} hover:text-white transition-colors`}
-              >
-                Cotizar esta capacidad →
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {data.fourWaysToWork.map((way) => {
-                const route =
-                  way.num === '01' ? 'consultoria-tecnologica' :
-                  way.num === '02' ? 'automatizacion-agentica' :
-                  way.num === '03' ? 'producto-digital' :
-                  'evolucion-digital';
-                return (
-                  <a
-                    key={way.num}
-                    href={`#/${route}`}
-                    className={`group p-5 rounded-2xl border text-left transition-all hover:-translate-y-1 flex flex-col ${
-                      way.isCore
-                        ? `${theme.accentBorder} ${theme.accentBg}`
-                        : 'border-white/[0.08] bg-[#060A14] hover:border-white/20'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className={`text-xs font-mono font-bold ${way.isCore ? theme.accentText : 'text-slate-500'}`}>
-                        {way.num}
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-400 uppercase">{way.duration}</span>
-                    </div>
-
-                    <div className="text-sm font-bold text-white mb-1.5">{way.name}</div>
-
-                    {way.isCore && (
-                      <span className={`self-start mb-2 text-[9px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 rounded-full border ${theme.accentBorder} ${theme.accentText}`}>
-                        Capacidad núcleo
-                      </span>
-                    )}
-
-                    {/* Lo que aporta esta capacidad dentro de ese pilar. */}
-                    <div className={`text-[11px] font-semibold uppercase tracking-wider mb-3 ${theme.accentText}`}>
-                      {way.role}
-                    </div>
-
-                    <div className="mt-auto pt-3 border-t border-white/[0.06]">
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-0.5">
-                        Entregable
-                      </div>
-                      <div className="text-[11px] text-slate-300 leading-snug mb-2">{way.deliverable}</div>
-                      <span className="text-[11px] text-slate-400 flex items-center gap-1 group-hover:text-white transition-colors">
-                        Ver pilar <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                      </span>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Aqui vivia 'Contrata esta capacidad desde cualquiera de los 4 Pilares'
+          (el id 'cuatro-formas'). Se retiro por peticion. El dato
+          'fourWaysToWork' sigue en servicesData por si se reutiliza. Ojo: era
+          el unico enlace desde el cuerpo de una capacidad hacia los 4 pilares,
+          y el CTA secundario del hero apuntaba a su ancla; ese boton ahora baja
+          a los entregables. */}
 
       {/* FUTUREPROOF CTA BANNER: misma presencia de marca que en los 4 pilares */}
       <FutureproofCTABanner />

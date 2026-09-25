@@ -114,8 +114,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 </div>
                 
                 <div className="space-y-1">
-                  <a 
-                    href="#/consultoria-tecnologica" 
+                  <a
+                    href="#/pilares/consultoria-digital"
                     onClick={closeMenus}
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
@@ -130,8 +130,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-blue-400">→</span>
                   </a>
 
-                  <a 
-                    href="#/automatizacion-agentica" 
+                  <a
+                    href="#/pilares/agentes-automatizacion"
                     onClick={closeMenus}
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
@@ -146,8 +146,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-purple-400">→</span>
                   </a>
 
-                  <a 
-                    href="#/producto-digital" 
+                  <a
+                    href="#/pilares/plataformas-digitales"
                     onClick={closeMenus}
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
@@ -162,8 +162,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                     <span className="text-[11px] font-mono text-slate-500 group-hover/item:text-cyan-400">→</span>
                   </a>
 
-                  <a 
-                    href="#/evolucion-digital" 
+                  <a
+                    href="#/pilares/evolucion-digital"
                     onClick={closeMenus}
                     className="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
                   >
@@ -180,13 +180,13 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 </div>
 
                 <div className="mt-2 pt-2 border-t border-white/[0.06] text-center">
-                  <button
-                    type="button"
-                    onClick={handleComoTrabajamos}
-                    className="text-[11px] font-mono text-blue-400 hover:text-white transition-colors cursor-pointer bg-transparent border-none"
+                  <a
+                    href="#/pilares"
+                    onClick={closeMenus}
+                    className="text-[11px] font-mono text-blue-400 hover:text-white transition-colors"
                   >
-                    Ver comparativa en el Home ↓
-                  </button>
+                    Comparar los 4 Pilares →
+                  </a>
                 </div>
               </div>
             </div>
@@ -223,9 +223,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 {/* Grid 3 columnas x 2 filas = 6 Capacidades numeradas */}
                 <div className="grid grid-cols-3 gap-3">
                   {/* Capacidad 01 */}
-                  <a 
-                    href="#/servicio/ux-ui" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/ux-ui-product-strategy"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-emerald-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -241,9 +241,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   </a>
 
                   {/* Capacidad 02 */}
-                  <a 
-                    href="#/servicio/ai-engineering" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/software-engineering"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-cyan-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -259,9 +259,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   </a>
 
                   {/* Capacidad 03 */}
-                  <a 
-                    href="#/servicio/ai-agents" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/agentic-ai-automation"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-purple-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -277,9 +277,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   </a>
 
                   {/* Capacidad 04 */}
-                  <a 
-                    href="#/servicio/data-analytics" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/data-analytics"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-indigo-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -295,9 +295,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   </a>
 
                   {/* Capacidad 05 */}
-                  <a 
-                    href="#/servicio/security" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/security-reliability"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-amber-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -313,9 +313,9 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                   </a>
 
                   {/* Capacidad 06 */}
-                  <a 
-                    href="#/servicio/business-ai" 
-                    onClick={closeMenus} 
+                  <a
+                    href="#/servicios/digital-consulting"
+                    onClick={closeMenus}
                     className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] hover:border-blue-500/30 transition-all group/item block"
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -343,14 +343,12 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
             </div>
           </div>
 
-          <a href="#/casos-de-exito" className="hover:text-blue-400 transition-colors">
+          <a href="#/casos-de-estudio" className="hover:text-blue-400 transition-colors">
             Casos de Estudio
           </a>
-
-          <a href="#/componentes" className="inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600/20 hover:text-white transition-all">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-            Showroom
-          </a>
+          {/* Showroom (#/componentes) retirado de la navegación pública: es
+              una herramienta interna de trabajo, no una sección para
+              visitantes. La ruta sigue viva para el equipo. */}
         </div>
 
         {/* Right CTA & Mobile Toggle */}
@@ -389,17 +387,17 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
           <div>
             <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-3 px-2">
               <span>4 Modelos de Servicio</span>
-              <button 
-                type="button" 
-                onClick={handleComoTrabajamos}
-                className="text-blue-400 hover:underline bg-transparent border-none p-0 cursor-pointer"
+              <a
+                href="#/pilares"
+                onClick={closeMenus}
+                className="text-blue-400 hover:underline"
               >
-                Ver en Home ↓
-              </button>
+                Comparar →
+              </a>
             </div>
             <div className="grid grid-cols-1 gap-1.5">
-              <a 
-                href="#/consultoria-tecnologica" 
+              <a
+                href="#/pilares/consultoria-digital"
                 onClick={closeMenus}
                 className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
@@ -414,8 +412,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 <span className="text-slate-500 text-xs">→</span>
               </a>
 
-              <a 
-                href="#/automatizacion-agentica" 
+              <a
+                href="#/pilares/agentes-automatizacion"
                 onClick={closeMenus}
                 className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
@@ -430,8 +428,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 <span className="text-slate-500 text-xs">→</span>
               </a>
 
-              <a 
-                href="#/producto-digital" 
+              <a
+                href="#/pilares/plataformas-digitales"
                 onClick={closeMenus}
                 className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
@@ -446,8 +444,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
                 <span className="text-slate-500 text-xs">→</span>
               </a>
 
-              <a 
-                href="#/evolucion-digital" 
+              <a
+                href="#/pilares/evolucion-digital"
                 onClick={closeMenus}
                 className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
@@ -473,48 +471,48 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
               </a>
             </div>
             <div className="grid grid-cols-2 gap-2">
-              <a 
-                href="#/servicio/ux-ui" 
+              <a
+                href="#/servicios/ux-ui-product-strategy"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">UX/UI Design</div>
                 <div className="text-[9px] font-mono text-emerald-400/80">IMPATH™ Enabled</div>
               </a>
-              <a 
-                href="#/servicio/ai-engineering" 
+              <a
+                href="#/servicios/software-engineering"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">Engineering</div>
                 <div className="text-[9px] font-mono text-cyan-400/80">Cloud-Native</div>
               </a>
-              <a 
-                href="#/servicio/ai-agents" 
+              <a
+                href="#/servicios/agentic-ai-automation"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">Agentes IA</div>
                 <div className="text-[9px] font-mono text-purple-400/80">Agentic RAG</div>
               </a>
-              <a 
-                href="#/servicio/data-analytics" 
+              <a
+                href="#/servicios/data-analytics"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">Data & Analytics</div>
                 <div className="text-[9px] font-mono text-indigo-400/80">Mixpanel Telemetry</div>
               </a>
-              <a 
-                href="#/servicio/security" 
+              <a
+                href="#/servicios/security-reliability"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
                 <div className="text-xs font-semibold text-white">Security</div>
                 <div className="text-[9px] font-mono text-amber-400/80">CyberVadis & OWASP</div>
               </a>
-              <a 
-                href="#/servicio/business-ai" 
+              <a
+                href="#/servicios/digital-consulting"
                 onClick={closeMenus}
                 className="p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06]"
               >
@@ -526,13 +524,8 @@ const Navbar = ({ onOpenContact, onNavigateCluster, currentView }) => {
 
           {/* Quick links */}
           <div className="flex items-center justify-around pt-2 border-t border-white/[0.06] text-xs">
-            <a href="#/casos-de-exito" onClick={closeMenus} className="text-slate-300 hover:text-blue-400 font-medium py-1">
+            <a href="#/casos-de-estudio" onClick={closeMenus} className="text-slate-300 hover:text-blue-400 font-medium py-1">
               Casos de Estudio
-            </a>
-            <span className="text-slate-700">•</span>
-            <a href="#/componentes" onClick={closeMenus} className="text-blue-400 hover:text-white font-mono flex items-center gap-1 py-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-              Showroom
             </a>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import ImpathFrictionSection from '../sections/ImpathFrictionSection';
 const AgenticTechStack = lazy(() => import('../sections/AgenticTechStack'));
 
-const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, onSelectPackage }) => {
+const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, onSelectPackage, hermetic = false }) => {
   const [activeSubserviceId, setActiveSubserviceId] = useState(() => {
     if (initialSubserviceId && cluster.subservices.some(s => s.id === initialSubserviceId)) {
       return initialSubserviceId;
@@ -65,20 +65,30 @@ const ClusterLandingPage = ({ cluster, initialSubserviceId, onNavigateCluster, o
       <header className="sticky top-0 z-40 bg-[#060A14]/90 backdrop-blur-xl border-b border-white/[0.08] px-6 py-3.5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <button 
-              onClick={() => onNavigateCluster('home')}
-              className="text-slate-400 hover:text-white flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider transition-colors"
-            >
-              <span>←</span>
-              <span>Home Principal</span>
-            </button>
-            <span className="text-white/20">|</span>
+            {/* En modo hermetic (landings /lp/* de pauta) no hay salida al
+                sitio principal: la anatomía de landing SEM del Sitemap
+                Maestro exige cero enlaces de fuga. Solo se muestra el
+                badge del cluster. */}
+            {!hermetic && (
+              <>
+                <button
+                  onClick={() => onNavigateCluster('home')}
+                  className="text-slate-400 hover:text-white flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider transition-colors"
+                >
+                  <span>←</span>
+                  <span>Home Principal</span>
+                </button>
+                <span className="text-white/20">|</span>
+              </>
+            )}
             <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">
               {cluster.badge}
             </span>
           </div>
 
-          {/* Selector Rápido de Clusters */}
+          {/* Selector Rápido de Clusters: se mantiene incluso en hermetic,
+              ya que las 3 opciones son las 3 landings /lp/* hermanas y no
+              una fuga hacia el resto del sitio. */}
           <div className="flex items-center gap-1 bg-[#090E1C] p-1 rounded-xl border border-white/[0.08] text-xs">
             <button
               onClick={() => onNavigateCluster('apps')}

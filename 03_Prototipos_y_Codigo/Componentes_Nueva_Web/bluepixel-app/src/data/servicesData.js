@@ -5,7 +5,7 @@ export const servicesData = {
     showImpath: true,
     // Se retiro 'futureproofMethodology': la seccion que lo consumia salio de
     // la plantilla de servicios por duplicar los pain points de la propia
-    // pagina. El componente sigue vivo en /filosofia-futureproof.
+    // pagina. El componente sigue vivo en /metodologia-impath.
     clusterName: 'Apps & Producto',
     // Caso real de caseStudiesData que prueba esta capacidad. Solo se asigna
     // donde existe un caso pertinente; el resto de servicios no muestra prueba.
@@ -18,6 +18,12 @@ export const servicesData = {
     // Nombre publico alineado con bluepixel.mx, que lidera con Research y no
     // con Design: es el diferenciador frente a una agencia de pantallas.
     packageName: 'UX Research & Product Strategy',
+    // Stack que muestra el hero. Cada item sale de lo que esta misma pagina ya
+    // afirma (subtitulo, specs, FAQs); no se agregan tecnologias nuevas.
+    techStack: {
+      label: 'Stack y Herramientas',
+      items: ['Figma', 'Design Systems', 'Design Tokens', 'React', 'Prototipado Interactivo', 'IMPATH™']
+    },
     title: 'Interfaces que reducen fricción cognitiva y multiplican conversión.',
     subtitle: 'Estrategia de producto (PS) y diseño UX/UI conductual de grado empresarial. Convertimos la experiencia de usuario en la armadura que asegura adopción inmediata y retorno medible.',
     callout1: 'Un diseño decorativo no sirve en B2B. En BluePixel entendemos que el diseño es la armadura y la experiencia humana con la que vestimos arquitecturas de ingeniería pesada. Cada decisión de interfaz está respaldada por datos de comportamiento real, psicología conductual y nuestra metodología propietaria IMPATH™, eliminando la fricción que le cuesta dinero a tu empresa.',
@@ -27,7 +33,7 @@ export const servicesData = {
       // afirma un promedio medido entre proyectos que no esta publicado.
       // Los tres de ahora son verificables: ranking de tercero, metrica propia
       // y un hecho de propiedad intelectual.
-      { value: '#1 UX/UI', label: 'Firma líder de diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
+      { value: '#1 UX/UI', label: 'Firma líder de diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush · Ciudad de México' },
       { value: 'IMPATH™', label: 'Diagnóstico de fricción traducido a impacto económico', sublabel: 'Metodología propietaria' },
       { value: '100%', label: 'Soberanía de Design System & Tokens reutilizables', sublabel: 'Zero deuda de diseño' }
     ],
@@ -177,10 +183,10 @@ export const servicesData = {
       title: 'Metodología rigurosa, de la investigación al pixel perfecto.',
       subtitle: 'Nuestro proceso está optimizado para descubrir el problema real antes de diseñar soluciones.',
       steps: [
-        { num: '01', title: 'Discovery & UX Audit', desc: 'Analizamos el estado actual, el modelo de negocio y las métricas de abandono.', deliverables: ['Reporte de fricción IMPATH™', 'UX Health Score actual'] },
-        { num: '02', title: 'Arquitectura y Wireframes', desc: 'Estructuramos la información y creamos esqueletos funcionales para validar la lógica.', deliverables: ['Sitemap de Producto', 'Wireframes interactivos'] },
-        { num: '03', title: 'Visual Design & UI', desc: 'Aplicamos el branding, creamos el sistema de diseño y diseñamos las pantallas finales.', deliverables: ['Design System Figma', 'Pantallas UI en alta fidelidad'] },
-        { num: '04', title: 'Prototipado y Handoff', desc: 'Conectamos las pantallas en un flujo interactivo y lo entregamos al equipo de ingeniería.', deliverables: ['Prototipo navegable', 'Handoff técnico para developers'] }
+        { num: '01', title: 'Semana 1: Discovery & UX Audit', desc: 'Analizamos el estado actual, el modelo de negocio y las métricas de abandono.', deliverables: ['Reporte de fricción IMPATH™', 'UX Health Score actual'] },
+        { num: '02', title: 'Semana 2: Arquitectura y Wireframes', desc: 'Estructuramos la información y creamos esqueletos funcionales para validar la lógica.', deliverables: ['Sitemap de Producto', 'Wireframes interactivos'] },
+        { num: '03', title: 'Semana 3: Visual Design & UI', desc: 'Aplicamos el branding, creamos el sistema de diseño y diseñamos las pantallas finales.', deliverables: ['Design System Figma', 'Pantallas UI en alta fidelidad'] },
+        { num: '04', title: 'Semana 4: Prototipado y Handoff', desc: 'Conectamos las pantallas en un flujo interactivo y lo entregamos al equipo de ingeniería.', deliverables: ['Prototipo navegable', 'Handoff técnico para developers'] }
       ]
     },
     faqs: [
@@ -202,8 +208,14 @@ export const servicesData = {
     // Nombre publico alineado con bluepixel.mx. El nombre corto de la
     // capacidad en los grids sigue siendo 'Software Engineering' (canon).
     packageName: 'AI-Driven Software Engineering',
+    techStack: {
+      label: 'Stack Tecnológico',
+      items: ['React', 'Node.js', 'Python', 'Go', 'TypeScript', 'React Native', 'Docker / Kubernetes', 'AWS · GCP · Azure']
+    },
     title: 'Ingeniería Full Stack y arquitecturas cloud de misión crítica.',
-    subtitle: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, Go, TypeScript en backend y web; React Native, Swift y Kotlin en móvil) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
+    // 'desarrollo de software a la medida' son 1,900 busquedas/mes, la keyword
+    // de mayor volumen del plan, y no aparecia literal en ninguna pagina.
+    subtitle: 'Desarrollo de software a la medida para empresas, web y móvil (React, Node.js, Python, Go, TypeScript en backend y web; React Native, Swift y Kotlin en móvil) con arquitecturas desacopladas, protocolos abiertos MCP y cero vendor lock-in.',
     callout1: 'Rechazamos el modelo de maquila que factura horas a ciegas y entrega software frágil. Construimos plataformas con estándares de ingeniería de grado empresarial: microservicios, despliegue automatizado CI/CD, infraestructura como código (IaC) y arquitectura orientada a eventos. Tu código y tus datos siempre residen en tu nube privada.',
     stats: [
       // Sin cifras de desempeño sin respaldo: el '99.9%' decia "Garantia de
@@ -359,10 +371,10 @@ export const servicesData = {
       title: 'Sprints ágiles, entregas continuas.',
       subtitle: 'Trabajamos como una extensión nativa de tu departamento de tecnología.',
       steps: [
-        { num: '01', title: 'Architecture Assessment', desc: 'Revisamos tu deuda técnica, stack actual y cuellos de botella.', deliverables: ['Reporte de vulnerabilidades', 'Roadmap arquitectónico'] },
-        { num: '02', title: 'System Design & Topología', desc: 'Diseñamos la topología cloud, esquemas de bases de datos y contratos de APIs.', deliverables: ['Documento de Diseño Técnico (TDD)'] },
-        { num: '03', title: 'Desarrollo en Sprints Ágiles', desc: 'Construcción iterativa. Entregamos módulos funcionales cada 2 semanas.', deliverables: ['Código en Staging', 'Tests automatizados'] },
-        { num: '04', title: 'Go-Live & DevOps', desc: 'Despliegue a producción con zero downtime y paso a mantenimiento evolutivo.', deliverables: ['Plataforma en Producción', 'SLA 99.9% activo'] }
+        { num: '01', title: 'Mes 1: Architecture Assessment', desc: 'Revisamos tu deuda técnica, stack actual y cuellos de botella.', deliverables: ['Reporte de vulnerabilidades', 'Roadmap arquitectónico'] },
+        { num: '02', title: 'Mes 2: System Design & Topología', desc: 'Diseñamos la topología cloud, esquemas de bases de datos y contratos de APIs.', deliverables: ['Documento de Diseño Técnico (TDD)'] },
+        { num: '03', title: 'Mes 3: Desarrollo en Sprints Ágiles', desc: 'Construcción iterativa. Entregamos módulos funcionales cada 2 semanas.', deliverables: ['Código en Staging', 'Tests automatizados'] },
+        { num: '04', title: 'Mes 4: Go-Live & DevOps', desc: 'Despliegue a producción con zero downtime y paso a mantenimiento evolutivo.', deliverables: ['Plataforma en Producción', 'SLA 99.9% activo'] }
       ]
     },
     faqs: [
@@ -378,13 +390,23 @@ export const servicesData = {
     clusterName: 'Automatización',
     canonicalBadge: 'Agentic Automation',
     packageName: 'IA & Automatización Agéntica',
+    techStack: {
+      label: 'Stack Tecnológico',
+      items: ['Protocolo MCP', 'RAG Privado', 'Bases Vectoriales', 'SAP · Salesforce', 'HubSpot · Zendesk', 'Despliegue en VPC']
+    },
     title: 'Agentes autónomos integrados sobre tu stack operativo actual.',
-    subtitle: 'Sistemas multi-agente y RAG privado sobre datos reales de tu negocio, con integración determinística vía MCP a ERPs y CRMs sin reemplazar tus sistemas.',
+    // 'rpa' (2,900/mes) y 'chatbot para empresas' (70) son demanda real que la
+    // pagina no capturaba. Encajan con el argumento propio: lo que entregamos
+    // es automatizacion determinista, no un bot que responde textos planos.
+    subtitle: 'Agentes de IA y chatbots para empresas que van más allá del RPA tradicional: sistemas multi-agente y RAG privado sobre datos reales de tu negocio, con integración determinística vía MCP a ERPs y CRMs sin reemplazar tus sistemas.',
     callout1: 'La IA superficial que se queda en demos no genera valor. En BluePixel creamos agentes autónomos que razonan sobre datos corporativos reales sin alucinaciones, ejecutan acciones en ERPs mediante el protocolo abierto MCP y liberan capacidad operativa desde el primer ciclo. La IA multiplica la capacidad de las personas que ya tienes en tu equipo.',
     stats: [
-      { value: '-75%', label: 'Reducción de horas manuales en tareas repetitivas', sublabel: 'Flujos operativos agentizados' },
+      // Mismo criterio que en el Pilar 02: el '-75% de horas manuales' es un
+      // promedio sin medicion publicada y el '0% de alucinaciones criticas' es
+      // una promesa absoluta insostenible por escrito.
+      { value: '2 a 4', label: 'Semanas para tener el primer agente autónomo en producción', sublabel: 'Pase a producción real' },
       { value: '<800ms', label: 'Objetivo de respuesta en razonamiento y consulta RAG', sublabel: 'Bases vectoriales optimizadas' },
-      { value: '0%', label: 'Alucinaciones críticas sobre datos corporativos', sublabel: 'Blindaje con Guardrails y MCP' }
+      { value: '100%', label: 'Inferencia sobre tus datos dentro de tu nube privada', sublabel: 'Cero entrenamiento con tu IP' }
     ],
     fourWaysToWork: [
       {
@@ -532,10 +554,10 @@ export const servicesData = {
       title: 'De diagnóstico a agente en producción, en ciclos cortos.',
       subtitle: 'Cada proyecto avanza con un entregable concreto y tiempo estimado.',
       steps: [
-        { num: '01', title: 'Diagnóstico de Automatización', desc: 'Mapeo de procesos, datos y sistemas candidatos a agentizar con cálculo de ROI.', deliverables: ['Reporte de oportunidades priorizadas'] },
-        { num: '02', title: 'Diseño del Agente & MCP', desc: 'Definición de reglas de negocio, herramientas determinísticas y capa RAG privada.', deliverables: ['Especificación técnica y de negocio'] },
-        { num: '03', title: 'Construcción e Integración', desc: 'Desarrollo del agente conectado a tus sistemas reales en ambiente controlado.', deliverables: ['Agente funcional testeado'] },
-        { num: '04', title: 'Producción y Monitoreo', desc: 'Lanzamiento a producción en tu VPC privada, monitoreo continuo y afinación.', deliverables: ['Dashboard de resultados operativos'] }
+        { num: '01', title: 'Semana 1: Diagnóstico de Automatización', desc: 'Mapeo de procesos, datos y sistemas candidatos a agentizar con cálculo de ROI.', deliverables: ['Reporte de oportunidades priorizadas'] },
+        { num: '02', title: 'Semana 2: Diseño del Agente & MCP', desc: 'Definición de reglas de negocio, herramientas determinísticas y capa RAG privada.', deliverables: ['Especificación técnica y de negocio'] },
+        { num: '03', title: 'Semana 3: Construcción e Integración', desc: 'Desarrollo del agente conectado a tus sistemas reales en ambiente controlado.', deliverables: ['Agente funcional testeado'] },
+        { num: '04', title: 'Semana 4: Producción y Monitoreo', desc: 'Lanzamiento a producción en tu VPC privada, monitoreo continuo y afinación.', deliverables: ['Dashboard de resultados operativos'] }
       ]
     },
     faqs: [
@@ -552,11 +574,17 @@ export const servicesData = {
     caseStudyId: 'bimbo-data',
     canonicalBadge: 'Mixpanel Telemetry',
     packageName: 'Data & Analytics Enterprise',
+    techStack: {
+      label: 'Stack Tecnológico',
+      items: ['BigQuery', 'Snowflake', 'dbt', 'Pipelines ETL / ELT', 'Mixpanel', 'Tableau · Power BI']
+    },
     title: 'De datos fragmentados a una sola fuente de verdad directiva.',
     subtitle: 'Pipelines automatizados (ETL/ELT), Data Warehousing moderno y telemetría de producto con Mixpanel para decisiones en tiempo real y modelos predictivos.',
     callout1: 'Tener terabytes de datos en silos desconectados cuesta dinero y paraliza a los comités directivos. Diseñamos arquitecturas analíticas modernas (BigQuery, Snowflake, dbt) y telemetría profunda de producto para que el C-Level cuente con KPIs en tiempo real y anticipe el comportamiento de clientes antes de que impacte el balance.',
     stats: [
-      { value: '-40 hrs', label: 'Al mes que tu equipo deja de cruzar y parchar tablas a mano', sublabel: 'Fuente de verdad única conciliada' },
+      // Las '-40 hrs al mes' eran un ahorro estimado sin medicion detras. Se
+      // sustituye por el alcance real del entregable de telemetria.
+      { value: 'Mixpanel', label: 'Telemetría de producto instrumentada sobre tus flujos críticos', sublabel: 'Comportamiento real, no suposiciones' },
       { value: '<1s', label: 'Objetivo de carga en tableros ejecutivos y KPIs', sublabel: 'Arquitectura Modern Data Stack' },
       // El '+300% de eficiencia directiva' salia de una celda de la matriz de
       // madurez: no hay unidad detras de "eficiencia directiva". Se sustituye
@@ -710,10 +738,10 @@ export const servicesData = {
       title: 'Del caos al control analítico en fases probadas.',
       subtitle: 'No reconstruimos todo de golpe. Creamos victorias tempranas y valor de negocio inmediato.',
       steps: [
-        { num: '01', title: 'Data Discovery & Auditoría', desc: 'Auditamos las fuentes, la calidad de datos y definimos las métricas críticas de negocio.', deliverables: ['Matriz de Fuentes', 'Mapa Conceptual Analítico'] },
-        { num: '02', title: 'Ingeniería de Pipelines', desc: 'Construimos las tuberías que extraen y limpian la información de los sistemas origen.', deliverables: ['Pipelines automatizados en producción'] },
-        { num: '03', title: 'Modelado & Data Warehouse', desc: 'Estructuramos las tablas en la nube para consultas eficientes y bajo costo.', deliverables: ['Data Warehouse Activo'] },
-        { num: '04', title: 'Visualización & Telemetría', desc: 'Configuramos tableros ejecutivos y telemetría de comportamiento para toma de decisiones.', deliverables: ['Dashboards BI & Telemetría Mixpanel'] }
+        { num: '01', title: 'Semana 1: Data Discovery & Auditoría', desc: 'Auditamos las fuentes, la calidad de datos y definimos las métricas críticas de negocio.', deliverables: ['Matriz de Fuentes', 'Mapa Conceptual Analítico'] },
+        { num: '02', title: 'Semana 2: Ingeniería de Pipelines', desc: 'Construimos las tuberías que extraen y limpian la información de los sistemas origen.', deliverables: ['Pipelines automatizados en producción'] },
+        { num: '03', title: 'Semana 3: Modelado & Data Warehouse', desc: 'Estructuramos las tablas en la nube para consultas eficientes y bajo costo.', deliverables: ['Data Warehouse Activo'] },
+        { num: '04', title: 'Semana 4: Visualización & Telemetría', desc: 'Configuramos tableros ejecutivos y telemetría de comportamiento para toma de decisiones.', deliverables: ['Dashboards BI & Telemetría Mixpanel'] }
       ]
     },
     faqs: [
@@ -731,9 +759,16 @@ export const servicesData = {
     // 'Vault' era un nombre interno que no existe en bluepixel.mx ni se explica
     // en ninguna parte del sitio, igual que BUILD/EVOLVE.
     packageName: 'Security & Reliability',
+    techStack: {
+      label: 'Controles y Herramientas',
+      items: ['Arquitectura Zero-Trust', 'OWASP Top 10', 'SAST en CI/CD', 'Escaneo de Dependencias', 'Cifrado KMS', 'WAF & VPC Aislada', 'DLP para IA']
+    },
     title: 'Blindaje cibernético y soberanía total para activos de misión crítica.',
-    subtitle: 'Auditorías de penetración (Pentesting), preparación para ISO 27001 / SOC2, arquitectura Zero-Trust y guardrails de seguridad para implementaciones de IA.',
-    callout1: 'La ciberseguridad y el cumplimiento normativo no son un trámite burocrático; son la habilitadora de contratos enterprise de siete cifras. Aplicamos estándares rigurosos de OWASP Top 10, DevSecOps y aislamiento en VPC privada para que tu empresa crezca e innove con IA sin arriesgar su patrimonio ni su reputación.',
+    // La capacidad es la seguridad construida dentro de lo que entregamos, no
+    // una practica de seguridad ofensiva ni consultoria de cumplimiento: eso
+    // exige pentesters certificados y especialistas GRC que no estan en casa.
+    subtitle: 'Arquitectura Zero-Trust, hardening OWASP Top 10 en cada release, cifrado y aislamiento en tu VPC, y guardrails de seguridad para implementaciones de IA.',
+    callout1: 'La seguridad no es un trámite burocrático al final del proyecto; es la habilitadora de contratos enterprise de siete cifras. La construimos dentro de lo que entregamos —OWASP Top 10, DevSecOps y aislamiento en VPC privada— para que tu empresa crezca e innove con IA sin arriesgar su patrimonio ni su reputación.',
     stats: [
       { value: 'CyberVadis', label: 'Prácticas de seguridad verificadas por auditoría independiente', sublabel: 'Certificación vigente' },
       { value: '100%', label: 'Aislamiento de datos en la nube privada del cliente', sublabel: 'Cero entrenamiento con tu IP' },
@@ -745,9 +780,9 @@ export const servicesData = {
         name: 'Consultoría Digital',
         duration: '2 a 4 Semanas',
         isCore: true,
-        role: 'Threat Modeling & Auditoría de Vulnerabilidades',
-        desc: 'Evaluación exhaustiva de brechas de seguridad, auditoría OWASP Top 10, revisión de código estático (SAST) y plan de remediación priorizado.',
-        deliverable: 'Reporte Ejecutivo de Vulnerabilidades (CVSS)'
+        role: 'Threat Modeling & Revisión de Vulnerabilidades',
+        desc: 'Modelado de amenazas sobre tu arquitectura, revisión contra OWASP Top 10, escaneo estático de código (SAST) y de dependencias, con plan de remediación priorizado.',
+        deliverable: 'Reporte Ejecutivo de Vulnerabilidades Detectadas'
       },
       {
         num: '02',
@@ -772,9 +807,9 @@ export const servicesData = {
         name: 'Evolución Digital',
         duration: 'Roadmap 6 a 12 Meses',
         isCore: true,
-        role: 'Monitoreo SLA 99.9% & Pentesting Continuo',
-        desc: 'Vigilancia activa, simulaciones de ataque periódicas (Red Teaming), parches de seguridad continuos y preparación continua para SOC2.',
-        deliverable: 'Auditorías Periódicas & Soporte Crítico 24/7'
+        role: 'Monitoreo SLA 99.9% & Parches Continuos',
+        desc: 'Vigilancia activa de la infraestructura, escaneo continuo de dependencias y parches de seguridad aplicados sprint a sprint.',
+        deliverable: 'Escaneos Periódicos & Soporte Crítico 24/7'
       }
     ],
     painPoints: {
@@ -787,14 +822,14 @@ export const servicesData = {
           iconType: 'security-breach',
           title: 'Vulnerabilidades de código no detectadas',
           desc: 'Aplicaciones desarrolladas con urgencia que dejan puertas abiertas a inyecciones SQL, autenticación rota o ataques XSS.',
-          antidote: 'Auditoría exhaustiva OWASP Top 10, escaneo estático/dinámico (SAST/DAST) y DevSecOps automatizado en CI/CD.'
+          antidote: 'Revisión contra OWASP Top 10, escaneo estático de código y de dependencias, y DevSecOps automatizado en CI/CD.'
         },
         {
           tag: 'CONTRATOS BLOQUEADOS',
           iconType: 'compliance-fail',
-          title: 'Falta de cumplimiento (ISO 27001 / SOC2)',
+          title: 'No puedes demostrar cómo proteges los datos',
           desc: 'Estás perdiendo contratos corporativos de alto valor porque no puedes demostrar que los datos de tus clientes están blindados.',
-          antidote: 'Arquitectura Zero-Trust, cifrado KMS de grado bancario y alineación documental completa para SOC2 e ISO 27001.'
+          antidote: 'Arquitectura Zero-Trust, cifrado KMS de grado bancario y los controles técnicos documentados que pide un cuestionario de proveedor.'
         },
         {
           tag: 'FUGA DE SECRETOS',
@@ -811,32 +846,32 @@ export const servicesData = {
       subtitle: 'La seguridad no es un software que se compra una vez, es una disciplina de ingeniería continua.',
       headers: ['Nivel', 'Reactiva (Peligro)', 'Proactiva Básica', 'Estándar BluePixel Resiliente', 'Reducción de Riesgo'],
       rows: [
-        { label: 'Aplicaciones (AppSec)', cols: ['Parches tras sufrir ataques', 'Escaneo de código estático (SAST)', 'Pentesting continuo y DevSecOps en CI/CD', 'Vulnerabilidades críticas: -99%'] },
+        { label: 'Aplicaciones (AppSec)', cols: ['Parches tras sufrir ataques', 'Escaneo de código estático (SAST)', 'SAST y escaneo de dependencias que detienen el pipeline', 'Vulnerabilidades conocidas: no llegan a producción'] },
         { label: 'Infraestructura Cloud', cols: ['Servidores públicos sin WAF', 'Firewalls y redes privadas básicas', 'Arquitectura Zero-Trust, KMS y VPC aislada', 'Superficie de ataque: Cero externa'] },
-        { label: 'Cumplimiento Normativo', cols: ['Políticas informales no auditadas', 'Manuales documentados en papel', 'Alineación completa ISO 27001 / SOC2 Ready', 'Contratos Enterprise: Viables'] }
+        { label: 'Evidencia para Compras', cols: ['Políticas informales no auditadas', 'Manuales documentados en papel', 'Controles técnicos documentados y trazables', 'Cuestionario de proveedor: se responde'] }
       ]
     },
     specs: {
       eyebrow: '03 — Pilares de Protección',
       title: 'Seguridad en profundidad para software e IA corporativa.',
-      subtitle: 'Auditamos, remediamos y garantizamos resiliencia.',
+      subtitle: 'No auditamos tu plataforma después: la construimos para que no tenga que auditarse a la carrera.',
       items: [
-        { title: 'Ethical Hacking & Pentesting Riguroso', desc: 'Simulamos ataques dirigidos por especialistas (Red Teaming) para descubrir brechas lógicas en tu software antes de que lo hagan actores maliciosos.' },
-        { title: 'Preparación ISO 27001 & SOC2 Readiness', desc: 'Alineamos tus políticas, controles técnicos y monitoreo de infraestructura para superar auditorías internacionales sin contratiempos.' },
-        { title: 'AI Security & Guardrails para LLMs', desc: 'Implementamos filtros DLP (Data Loss Prevention) y enmascaramiento de datos PII para que tus agentes operen sin riesgo de fuga de información.' }
+        { title: 'Arquitectura Zero-Trust desde el diseño', desc: 'Sin confianza implícita entre servicios: identidad verificada en cada llamada, permisos mínimos por rol y matriz de accesos documentada desde el primer sprint.' },
+        { title: 'Hardening OWASP Top 10 en cada release', desc: 'Análisis estático de código y escaneo de dependencias dentro del pipeline de CI/CD. Una vulnerabilidad conocida no llega a producción porque el pipeline la detiene.' },
+        { title: 'Guardrails y DLP para agentes de IA', desc: 'Filtros de prevención de fuga y enmascaramiento de datos personales para que tus agentes operen sobre información real sin exponerla.' }
       ]
     },
     quiz: {
       title: 'Mide la postura de ciberseguridad de tus plataformas.',
-      subtitle: '¿Sobreviviría tu infraestructura a un ataque dirigido o a una auditoría estricta hoy?',
+      subtitle: '¿Resistiría tu plataforma el cuestionario de seguridad de un cliente corporativo hoy?',
       questions: [
         {
-          q: '1. ¿Cuándo fue la última vez que le hicieron una prueba de penetración (Pentest) profunda a tu app?',
+          q: '1. ¿Tu pipeline de despliegue detiene un release cuando detecta una vulnerabilidad conocida?',
           options: [
-            { text: 'Hace menos de 6 meses por expertos certificados', score: 3 },
-            { text: 'Hace más de 1 año', score: 2 },
-            { text: 'Solo corremos escaneos automáticos de vulnerabilidades', score: 1 },
-            { text: 'Nunca le hemos hecho una prueba de penetración', score: 0 }
+            { text: 'Sí: análisis estático y de dependencias bloquean el merge', score: 3 },
+            { text: 'Escaneamos, pero el equipo puede saltarse el bloqueo', score: 2 },
+            { text: 'Revisamos vulnerabilidades solo antes de lanzamientos grandes', score: 1 },
+            { text: 'No tenemos ningún escaneo automatizado en el pipeline', score: 0 }
           ]
         },
         {
@@ -849,12 +884,12 @@ export const servicesData = {
           ]
         },
         {
-          q: '3. Si un cliente corporativo te exige hoy un reporte SOC2 o ISO 27001 para firmar contrato, ¿qué haces?',
+          q: '3. Si un cliente corporativo te pide hoy evidencia de cómo proteges sus datos, ¿qué entregas?',
           options: [
-            { text: 'Se lo enviamos de inmediato (Estamos preparados)', score: 3 },
-            { text: 'Tenemos controles, pero no la preparación formal', score: 2 },
-            { text: 'Empezamos a correr para tratar de documentar todo', score: 1 },
-            { text: 'Perdemos la oportunidad comercial por incumplimiento', score: 0 }
+            { text: 'Matriz de accesos, cifrado y bitácoras ya documentadas', score: 3 },
+            { text: 'Tenemos los controles, pero nadie los ha documentado', score: 2 },
+            { text: 'Empezamos a correr para reconstruir la evidencia', score: 1 },
+            { text: 'Perdemos la oportunidad comercial por no poder responder', score: 0 }
           ]
         },
         {
@@ -870,11 +905,11 @@ export const servicesData = {
     },
     deliverables: {
       eyebrow: '06 — Evidencia y Blindaje',
-      title: 'Reportes ejecutivos y parches a nivel código.',
+      title: 'Evidencia técnica de que la plataforma nace blindada.',
       items: [
-        { num: '01', title: 'Reporte de Pentesting (CVSS)', desc: 'Listado exhaustivo de vulnerabilidades categorizadas por criticidad y vector de ataque.' },
+        { num: '01', title: 'Reporte de Escaneo de Vulnerabilidades', desc: 'Salida de las herramientas de análisis estático y de dependencias del pipeline, con criticidad y estado de remediación.' },
         { num: '02', title: 'Plan de Remediación & Parches', desc: 'No solo señalamos fallas: nuestro equipo de ingeniería aplica los parches de código necesarios.' },
-        { num: '03', title: 'Políticas de Seguridad & ISO 27001', desc: 'Manuales y controles de seguridad técnica exigidos por auditores corporativos internacionales.' },
+        { num: '03', title: 'Controles Técnicos Documentados', desc: 'La evidencia de accesos, cifrado y trazabilidad que pide un cuestionario de proveedor, lista para entregarse.' },
         { num: '04', title: 'Matriz de Accesos (Zero-Trust RBAC)', desc: 'Rediseño de roles y privilegios bajo el principio de mínimo privilegio estricto.' },
         { num: '05', title: 'Guardrails & Filtros para IA', desc: 'Protección contra prompt injection, enmascaramiento PII y políticas de seguridad para LLMs.' },
         { num: '06', title: 'Infraestructura Cloud Endurecida', desc: 'WAF, cifrado KMS de llaves y configuración de redes privadas en AWS, GCP o Azure.' }
@@ -882,19 +917,19 @@ export const servicesData = {
     },
     timeline: {
       eyebrow: '07 — Metodología Security',
-      title: 'Auditar, Blindar, Monitorear.',
-      subtitle: 'La seguridad ágil no retrasa tus lanzamientos; los hace comercialmente viables y confiables.',
+      title: 'Modelar, Blindar, Monitorear.',
+      subtitle: 'La seguridad integrada al pipeline no retrasa tus lanzamientos; los hace comercialmente viables y confiables.',
       steps: [
-        { num: '01', title: 'Threat Modeling & Arquitectura', desc: 'Analizamos la topología e identificamos los vectores de ataque más probables.', deliverables: ['Modelo de Amenazas'] },
-        { num: '02', title: 'Pentesting Ético & Escaneos', desc: 'Ataques controlados de caja gris/blanca contra aplicaciones, APIs y red.', deliverables: ['Reporte de Vulnerabilidades'] },
-        { num: '03', title: 'Remediación y Blindaje Técnico', desc: 'Aplicamos parches de código, cerramos puertos y endurecemos la infraestructura.', deliverables: ['Código y Servidores Blindados'] },
-        { num: '04', title: 'Verificación & Certificación Ready', desc: 'Re-evaluación para certificar la mitigación total y entrega de constancia técnica.', deliverables: ['Constancia de Blindaje Técnico'] }
+        { num: '01', title: 'Semana 1: Threat Modeling & Arquitectura', desc: 'Analizamos la topología e identificamos los vectores de ataque más probables.', deliverables: ['Modelo de Amenazas'] },
+        { num: '02', title: 'Semana 2: Escaneo de Código y Dependencias', desc: 'Análisis estático de la aplicación y de sus librerías de terceros, integrado al pipeline.', deliverables: ['Reporte de Vulnerabilidades'] },
+        { num: '03', title: 'Semana 3: Remediación y Blindaje Técnico', desc: 'Aplicamos parches de código, cerramos puertos y endurecemos la infraestructura.', deliverables: ['Código y Servidores Blindados'] },
+        { num: '04', title: 'Semana 4: Verificación y Evidencia Documentada', desc: 'Re-escaneo para confirmar la mitigación y entrega de los controles técnicos documentados.', deliverables: ['Expediente de Controles Técnicos'] }
       ]
     },
     faqs: [
-      { q: '¿Ustedes emiten la certificación ISO 27001 o SOC2?', a: 'Nosotros preparamos tu tecnología, infraestructura y procesos (Readiness al 100%) y aplicamos las remediaciones de código. La certificación formal la otorga una casa auditora externa acreditada independiente, a la cual acompañamos a tu equipo.' },
-      { q: '¿Qué diferencia hay entre un escaneo automático y su Pentesting?', a: 'Un escaneo automático solo busca firmas conocidas y genera decenas de falsos positivos. Nuestro Pentesting es realizado por ingenieros de seguridad éticos que encadenan vulnerabilidades complejas para descubrir fallas lógicas que los scanners no ven.' },
-      { q: '¿Las pruebas de penetración causarán caídas en mi plataforma?', a: 'No. Los ejercicios profundos se realizan primordialmente en entornos de Staging que replican con exactitud la producción. Las pruebas directas en producción se calibran para garantizar cero denegación de servicio (DoS).' }
+      { q: '¿Ustedes emiten certificaciones ISO 27001 o SOC2?', a: 'No, y tampoco hacemos la consultoría de cumplimiento: esa auditoría la ejecuta una casa certificadora acreditada. Lo que aportamos es la capa técnica que cualquiera de esas auditorías va a revisar: matriz de accesos, cifrado en reposo y en tránsito, bitácoras de trazabilidad y remediación de vulnerabilidades en el código, documentado y entregable.' },
+      { q: '¿Hacen pruebas de penetración (pentesting) o Red Teaming?', a: 'No. El pentesting ofensivo y el Red Teaming los ejecutan firmas especializadas con hackers éticos certificados, y te podemos recomendar con quién hacerlo. Nuestro trabajo es el lado del constructor: análisis estático de código, escaneo de dependencias, endurecimiento de infraestructura y aplicación de los parches — incluidos los hallazgos que te entregue esa firma externa.' },
+      { q: 'Si otra firma nos entrega un reporte de hallazgos, ¿ustedes lo resuelven?', a: 'Sí, y es el escenario donde más valor aportamos. Tomamos el reporte, priorizamos por riesgo real sobre tu arquitectura, aplicamos los parches de código y configuración, y dejamos el pipeline con los controles automatizados para que esa misma falla no vuelva a llegar a producción.' }
     ]
   },
 
@@ -905,6 +940,12 @@ export const servicesData = {
     caseStudyId: 'iqos',
     canonicalBadge: 'FutureProof™ Framework',
     packageName: 'Business AI Consulting & Strategy',
+    // Esta capacidad no tiene stack de codigo: lo que la define son sus marcos
+    // de trabajo. Por eso la etiqueta de la caja cambia.
+    techStack: {
+      label: 'Marcos de Trabajo',
+      items: ['FutureProof™ Framework', 'IMPATH™', 'AI & Tech Readiness', 'Business Case & ROI', 'Gobernanza Corporativa', 'Roadmap 1-3 años']
+    },
     title: 'De la visión del Consejo al roadmap ejecutable con ROI cuantificado.',
     subtitle: 'Consultoría estratégica B2B de alto nivel para Directores Generales y C-Levels. Cuantificamos el costo de inacción, priorizamos por impacto en caja y blindamos la adopción de IA.',
     callout1: 'La Inteligencia Artificial no es un juguete del departamento de TI; es una palanca estratégica del modelo de negocio. Muchas empresas queman capital en licencias o pilotos aislados que no mueven la aguja financiera. Nuestra consultoría actúa como el puente entre tu P&L y la ingeniería de vanguardia: validamos viabilidad, calculamos retorno y priorizamos backlog antes de comprometer capital en desarrollo.',
@@ -1051,7 +1092,7 @@ export const servicesData = {
         { num: '01', title: 'Roadmap Estratégico AI (1-3 Años)', desc: 'Plan calendarizado priorizando proyectos de IA por impacto financiero y viabilidad técnica.' },
         { num: '02', title: 'Casos de Negocio Estructurados', desc: 'Análisis de ROI financiero, costos de nube y requerimientos de talento para las iniciativas prioritarias.' },
         { num: '03', title: 'Reporte de Data & AI Readiness', desc: 'Evaluación técnica de por qué tus datos y sistemas actuales sirven o no sirven para alimentar modelos.' },
-        { num: '04', title: 'Framework de Gobernanza AI', desc: 'Políticas redactadas para compliance, soberanía de datos y mitigación de riesgos operativos.' },
+        { num: '04', title: 'Framework de Gobernanza AI', desc: 'Políticas de uso de IA, soberanía de datos y mitigación de riesgos operativos, redactadas para tu organización.' },
         { num: '05', title: 'Arquitectura Objetivo HLD', desc: 'Diagramas conceptuales (High-Level Design) de cómo encajará la IA en tus sistemas actuales.' },
         { num: '06', title: 'Workshops Ejecutivos para el Board', desc: 'Sesiones de alineación para el Consejo Directivo, desmitificando la tecnología con números.' }
       ]
@@ -1061,10 +1102,10 @@ export const servicesData = {
       title: 'Celeridad analítica para no perder momentum.',
       subtitle: 'En menos de un mes, transformamos la incertidumbre en un plan de acción concreto y defendible ante el Consejo.',
       steps: [
-        { num: '01', title: 'Alineación de C-Levels', desc: 'Sesiones con directores de área para entender cuellos de botella del negocio (P&L y operaciones).', deliverables: ['Matriz de Oportunidades de Negocio'] },
-        { num: '02', title: 'Mapeo de Factibilidad Técnica', desc: 'Análisis rápido con el equipo de TI para auditar sistemas, datos y costos de inferencia.', deliverables: ['AI Readiness Score'] },
-        { num: '03', title: 'Diseño del Portafolio AI', desc: 'Ideación estructurada de soluciones ponderadas por retorno económico vs esfuerzo técnico.', deliverables: ['Backlog Priorizado por ROI'] },
-        { num: '04', title: 'Presentación del Roadmap Oficial', desc: 'Entrega final al Comité Ejecutivo con rutas claras: qué comprar, qué construir y qué descartar.', deliverables: ['Roadmap Estratégico Oficial'] }
+        { num: '01', title: 'Semana 1: Alineación de C-Levels', desc: 'Sesiones con directores de área para entender cuellos de botella del negocio (P&L y operaciones).', deliverables: ['Matriz de Oportunidades de Negocio'] },
+        { num: '02', title: 'Semana 2: Mapeo de Factibilidad Técnica', desc: 'Análisis rápido con el equipo de TI para auditar sistemas, datos y costos de inferencia.', deliverables: ['AI Readiness Score'] },
+        { num: '03', title: 'Semana 3: Diseño del Portafolio AI', desc: 'Ideación estructurada de soluciones ponderadas por retorno económico vs esfuerzo técnico.', deliverables: ['Backlog Priorizado por ROI'] },
+        { num: '04', title: 'Semana 4: Presentación del Roadmap Oficial', desc: 'Entrega final al Comité Ejecutivo con rutas claras: qué comprar, qué construir y qué descartar.', deliverables: ['Roadmap Estratégico Oficial'] }
       ]
     },
     faqs: [

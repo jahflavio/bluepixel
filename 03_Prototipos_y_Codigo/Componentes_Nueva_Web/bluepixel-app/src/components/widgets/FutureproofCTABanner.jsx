@@ -11,39 +11,9 @@ const FutureproofCTABanner = () => {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         
-        {/* 5 Principios FutureProof Bar */}
-        <div className="w-full bg-[#060B18] border border-white/[0.08] rounded-2xl p-6 mb-16 shadow-2xl">
-          <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-white font-bold">
-              Los 5 Principios Innegociables de la Garantía FutureProof™:
-            </span>
-            <span className="text-xs font-mono text-emerald-400 font-bold">
-              Soberanía Total de Datos
-            </span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs text-left">
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <strong className="text-white block font-mono text-[11px] mb-1">1. Anti-Maquila</strong>
-              <span className="text-slate-400 text-[11px]">Socios estratégicos de producto, no horas ciegas.</span>
-            </div>
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <strong className="text-white block font-mono text-[11px] mb-1">2. Certeza Previa</strong>
-              <span className="text-slate-400 text-[11px]">Validar técnica y financieramente antes de codificar.</span>
-            </div>
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <strong className="text-white block font-mono text-[11px] mb-1">3. UX como Armadura</strong>
-              <span className="text-slate-400 text-[11px]">Psicología conductual para adopción superior al 90% desde el día 1.</span>
-            </div>
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <strong className="text-white block font-mono text-[11px] mb-1">4. Cero Lock-in</strong>
-              <span className="text-slate-400 text-[11px]">Protocolos abiertos MCP; código y datos en tu VPC.</span>
-            </div>
-            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <strong className="text-white block font-mono text-[11px] mb-1">5. Blindaje Seguro</strong>
-              <span className="text-slate-400 text-[11px]">OWASP Top 10, CyberVadis y SLA 99.9% de resiliencia.</span>
-            </div>
-          </div>
-        </div>
+        {/* Los 5 principios se movieron a la pagina de FutureProof
+            (FutureproofPrinciples.jsx): aqui competian con el CTA y se
+            repetian al pie de las 6 paginas de capacidad. */}
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
           <span className="font-onest font-light tracking-[-0.035em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-lime-400 animate-glow-flow">
@@ -57,7 +27,7 @@ const FutureproofCTABanner = () => {
         </p>
 
         <a 
-          href="#/filosofia-futureproof"
+          href="#/metodologia-impath"
           className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
         >
           <span>Conoce la metodología Futureproof</span>

@@ -13,8 +13,12 @@ export const pillarsData = {
     themeKey: 'blue',
     packageName: 'Pilar 01 · Consultoría Digital',
     stats: [
+      // El '$1.8M MXN ahorrados en el ultimo diagnostico' se retiro: no hay un
+      // caso publicado con esa cifra, ni en el sitio ni en caseStudiesData, y
+      // ademas decia "de 3 semanas" contradiciendo el plazo de 2 a 4. Las tres
+      // de ahora son comprobables contra el contrato y los entregables.
       { value: '14-28', label: 'Días para entregar diagnóstico, arquitectura y ROI', sublabel: 'Celeridad analítica ejecutiva' },
-      { value: '$1.8M MXN', label: 'Ahorrados en el último diagnóstico de 3 semanas', sublabel: 'Caso real FMCG & Retail' },
+      { value: 'ROI', label: 'Business case con retorno proyectado y costo de inacción cuantificado', sublabel: 'Antes de comprometer capital' },
       { value: '6', label: 'Artefactos ejecutivos que recibes al cierre del pilar', sublabel: 'Business case, blueprint y backlog' }
     ],
     painPoints: {
@@ -45,7 +49,7 @@ export const pillarsData = {
         badge: 'IMPATH™ Enabled',
         role: 'Auditoría Heurística & Discovery',
         desc: 'Mapeo profundo de journeys de usuario y diagnóstico de fricción IMPATH™ para identificar dónde se caen las conversiones.',
-        route: 'servicio/ux-ui'
+        route: 'servicios/ux-ui-product-strategy'
       },
       {
         id: 'ai-engineering',
@@ -53,7 +57,7 @@ export const pillarsData = {
         badge: 'Cloud-Native Architecture',
         role: 'Architecture Assessment',
         desc: 'Auditoría de código, evaluación de deuda técnica y diseño de la topología cloud escalable bajo protocolos abiertos.',
-        route: 'servicio/ai-engineering'
+        route: 'servicios/software-engineering'
       },
       {
         id: 'ai-agents',
@@ -61,7 +65,7 @@ export const pillarsData = {
         badge: 'Agentic Automation',
         role: 'Evaluación de Viabilidad AI',
         desc: 'Identificación de procesos repetitivos candidatos a agentización y cálculo de costos de inferencia antes de desplegar.',
-        route: 'servicio/ai-agents'
+        route: 'servicios/agentic-ai-automation'
       },
       {
         id: 'data-analytics',
@@ -69,15 +73,15 @@ export const pillarsData = {
         badge: 'Mixpanel Telemetry',
         role: 'Data Audit & Gobernanza',
         desc: 'Mapeo de fuentes de datos, auditoría de silos (ERP/CRM) y estandarización del diccionario de métricas de negocio.',
-        route: 'servicio/data-analytics'
+        route: 'servicios/data-analytics'
       },
       {
         id: 'security',
         name: 'Security & Reliability',
         badge: 'CyberVadis & OWASP',
-        role: 'Threat Modeling & Brechas',
-        desc: 'Análisis de vulnerabilidades, escaneo de dependencias y alineación de controles para SOC2 e ISO 27001.',
-        route: 'servicio/security'
+        role: 'Threat Modeling & Superficie de Riesgo',
+        desc: 'Modelado de amenazas sobre tu arquitectura, escaneo de dependencias y revisión de los controles técnicos de acceso y cifrado.',
+        route: 'servicios/security-reliability'
       },
       {
         id: 'business-ai',
@@ -85,7 +89,7 @@ export const pillarsData = {
         badge: 'FutureProof™ Framework',
         role: '🔥 Núcleo del Pilar: Business Case',
         desc: 'Valuación del costo de inacción, roadmap ejecutivo trimestral y priorización estricta del backlog por retorno de inversión.',
-        route: 'servicio/business-ai'
+        route: 'servicios/digital-consulting'
       }
     ],
     specs: {
@@ -235,13 +239,13 @@ export const pillarsData = {
         },
         {
           horizon: '4 Semanas',
-          name: 'SECURITY & DUE DILIGENCE',
-          desc: 'Para corporativos o fondos de inversión que requieren auditoría exhaustiva de seguridad, código y compliance.',
+          name: 'DUE DILIGENCE TÉCNICA',
+          desc: 'Para corporativos o fondos de inversión que necesitan saber qué están comprando: estado real del código, la arquitectura y su superficie de riesgo.',
           features: [
-            'Auditoría profunda de seguridad alineada a ISO 27001 y OWASP Top 10',
-            'Escaneo estático y dinámico de vulnerabilidades y dependencias',
-            'Revisión de contratos de datos y cumplimiento LFPDPPP',
-            'Dictamen formal de Due Diligence técnica para comités de riesgo'
+            'Revisión de arquitectura y calidad de código con hallazgos priorizados',
+            'Escaneo estático y de dependencias contra OWASP Top 10',
+            'Modelado de amenazas y revisión de controles de acceso y cifrado',
+            'Dictamen de deuda técnica y riesgo para comités de inversión'
           ],
           cta: 'Solicitar Due Diligence Técnica',
           featured: false
@@ -253,7 +257,7 @@ export const pillarsData = {
       title: 'Claridad previa antes de comprometer capital.',
       desc: 'Una vez obtenido tu diagnóstico IMPATH™ y business case, puedes conectar agentes de IA sobre tu stack actual con el Pilar 02 o construir la plataforma completa en 2 a 4 meses con el Pilar 03.',
       ctaText: 'Explorar Pilar 02: Agentes & Automatización',
-      ctaRoute: 'automatizacion-agentica'
+      ctaRoute: 'pilares/agentes-automatizacion'
     }
   },
 
@@ -271,9 +275,13 @@ export const pillarsData = {
     themeKey: 'purple',
     packageName: 'Pilar 02 · Agentes & Automatización',
     stats: [
+      // El '-75% de horas manuales' era un promedio sin medicion publicada y el
+      // '0% de alucinaciones criticas' es una promesa absoluta que ningun
+      // sistema RAG puede sostener por escrito. Se sustituyen por hechos de
+      // arquitectura que se verifican el dia de la entrega.
       { value: '2-4', label: 'Semanas para tener el primer agente autónomo operando', sublabel: 'Pase a producción real' },
-      { value: '-75%', label: 'Reducción de horas manuales en flujos operativos repetitivos', sublabel: 'Capacidad de equipo multiplicada' },
-      { value: '0%', label: 'Alucinaciones críticas con RAG privado y protocolos MCP', sublabel: 'Blindaje Grado Empresarial' }
+      { value: '100%', label: 'Agentes ejecutándose dentro de tu nube privada, sobre tus datos', sublabel: 'Cero entrenamiento con tu IP' },
+      { value: '6', label: 'Entregables al cierre, de los conectores MCP a la trazabilidad', sublabel: 'Agentes, RAG privado y gobernanza' }
     ],
     painPoints: {
       eyebrow: '01 — La trampa de los chatbots superficiales',
@@ -303,7 +311,7 @@ export const pillarsData = {
         badge: 'IMPATH™ Enabled',
         role: 'UX Conversacional & Control',
         desc: 'Diseño de paneles intuitivos humano-agente para supervisión de decisiones y adopción fluida sin fricción cognitiva.',
-        route: 'servicio/ux-ui'
+        route: 'servicios/ux-ui-product-strategy'
       },
       {
         id: 'ai-engineering',
@@ -311,7 +319,7 @@ export const pillarsData = {
         badge: 'Cloud-Native Architecture',
         role: 'Servidores MCP & APIs',
         desc: 'Construcción de conectores determinísticos vía Model Context Protocol para interactuar de forma segura con tu ERP.',
-        route: 'servicio/ai-engineering'
+        route: 'servicios/software-engineering'
       },
       {
         id: 'ai-agents',
@@ -319,7 +327,7 @@ export const pillarsData = {
         badge: 'Agentic Automation',
         role: '🔥 Núcleo del Pilar: Agentic RAG',
         desc: 'Orquestación de agentes autónomos, embeddings vectoriales y workflows que ejecutan tareas complejas de punta a punta.',
-        route: 'servicio/ai-agents'
+        route: 'servicios/agentic-ai-automation'
       },
       {
         id: 'data-analytics',
@@ -327,7 +335,7 @@ export const pillarsData = {
         badge: 'Mixpanel Telemetry',
         role: 'Telemetría de Ejecuciones',
         desc: 'Trazabilidad en tiempo real de cada decisión, llamada a herramientas y métricas de horas operativas ahorradas.',
-        route: 'servicio/data-analytics'
+        route: 'servicios/data-analytics'
       },
       {
         id: 'security',
@@ -335,7 +343,7 @@ export const pillarsData = {
         badge: 'CyberVadis & OWASP',
         role: 'Guardrails & Filtros DLP',
         desc: 'Enmascaramiento de datos personales (PII), prevención de prompt injection y despliegue en VPC privada aislada.',
-        route: 'servicio/security'
+        route: 'servicios/security-reliability'
       },
       {
         id: 'business-ai',
@@ -343,7 +351,7 @@ export const pillarsData = {
         badge: 'FutureProof™ Framework',
         role: 'Priorización por ROI Operativo',
         desc: 'Selección estricta de los flujos de trabajo donde la automatización recupera el 100% de la inversión en semanas.',
-        route: 'servicio/business-ai'
+        route: 'servicios/digital-consulting'
       }
     ],
     specs: {
@@ -497,7 +505,7 @@ export const pillarsData = {
       title: 'Automatización inteligente sobre lo que ya funciona.',
       desc: 'Si además de conectar agentes sobre tu infraestructura actual necesitas construir una nueva plataforma web o móvil corporativa desde cero en 2 a 4 meses, explora el Pilar 03.',
       ctaText: 'Explorar Pilar 03: Plataformas Digitales',
-      ctaRoute: 'producto-digital'
+      ctaRoute: 'pilares/plataformas-digitales'
     }
   },
 
@@ -510,14 +518,21 @@ export const pillarsData = {
     targetAudience: 'Para construir plataformas y MVPs desde cero con UX validado que convierte',
     eyebrow: 'Pilar 03 · De la Concepción a Producción en 2 a 4 Meses',
     title: 'De la concepción a producción en 2 a 4 meses con UX validado.',
-    subtitle: 'Inteligencia artificial integrada desde el primer sprint, UX validado con usuarios reales y arquitectura escalable y sólida. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas y MVPs enterprise en 2 a 4 meses con SLA 99.9%.',
+    // Desarrollo de aplicaciones moviles (590 busquedas/mes) y desarrollo de
+    // sitio web (140) son las dos keywords que mas convierten en pauta y no
+    // aparecian en la pagina. Se nombran aqui sin tocar el H1 de marca.
+    subtitle: 'Desarrollo de aplicaciones móviles y sitios web a la medida, con inteligencia artificial integrada desde el primer sprint y UX validado con usuarios reales. Rompimos la frontera entre diseño e ingeniería pesada para construir plataformas y MVPs enterprise en 2 a 4 meses con SLA 99.9%.',
     takeaway: 'De la concepción a producción en 2 a 4 meses con validación técnica y de mercado.',
     themeKey: 'cyan',
     packageName: 'Pilar 03 · Plataformas Digitales',
     stats: [
+      // El '50+ plataformas enterprise' no esta publicado en ningun lado: en
+      // bluepixel.mx el contador de plataformas aparece vacio ('0+'). Se
+      // sustituye por el numero real de entregables de este pilar, que si se
+      // puede contar contra la seccion de entregables de esta misma pagina.
       { value: '2 a 4 Meses', label: 'De la concepción al lanzamiento oficial del MVP en producción', sublabel: 'Time-to-market prioritario' },
-      { value: '#1 UX/UI', label: 'Líder en diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush' },
-      { value: '50+', label: 'Plataformas enterprise construidas y operando', sublabel: 'SLA 99.9% Cloud-Native' }
+      { value: '#1 UX/UI', label: 'Líder en diseño y estrategia de producto en México', sublabel: 'Ranking DesignRush · Ciudad de México' },
+      { value: '9', label: 'Entregables al cierre, del Product Strategy al despliegue productivo', sublabel: 'Objetivo SLA 99.9% Cloud-Native' }
     ],
     painPoints: {
       eyebrow: 'La trampa del MVP que no sobrevive al segundo año',
@@ -548,7 +563,7 @@ export const pillarsData = {
         badge: 'IMPATH™ Enabled',
         role: 'Diseño UI/UX Completo & Validado',
         desc: 'Prototipado interactivo navegable, validación de flujos con usuarios reales y Design System escalable en Figma.',
-        route: 'servicio/ux-ui'
+        route: 'servicios/ux-ui-product-strategy'
       },
       {
         id: 'ai-engineering',
@@ -556,7 +571,7 @@ export const pillarsData = {
         badge: 'Cloud-Native Architecture',
         role: '🔥 Núcleo del Pilar: Full Stack 0 a Prod',
         desc: 'Desarrollo web y móvil de alto rendimiento (React, Node.js, Python, PostgreSQL), CI/CD y microservicios resilientes.',
-        route: 'servicio/ai-engineering'
+        route: 'servicios/software-engineering'
       },
       {
         id: 'ai-agents',
@@ -564,7 +579,7 @@ export const pillarsData = {
         badge: 'Agentic Automation',
         role: 'Módulos Inteligentes Nativos',
         desc: 'Workflows agénticos integrados de forma nativa en el core transaccional de la app desde el primer sprint.',
-        route: 'servicio/ai-agents'
+        route: 'servicios/agentic-ai-automation'
       },
       {
         id: 'data-analytics',
@@ -572,15 +587,15 @@ export const pillarsData = {
         badge: 'Mixpanel Telemetry',
         role: 'Telemetría de Producto Base',
         desc: 'Configuración nativa de tracking de eventos clave y embudos de conversión con Mixpanel y Data Warehouse.',
-        route: 'servicio/data-analytics'
+        route: 'servicios/data-analytics'
       },
       {
         id: 'security',
         name: 'Security & Reliability',
         badge: 'CyberVadis & OWASP',
-        role: 'Arquitectura Segura ISO/OWASP',
-        desc: 'Blindaje de endpoints, cifrado KMS de datos sensibles y preparación para auditorías de cumplimiento normativo.',
-        route: 'servicio/security'
+        role: 'Arquitectura Segura OWASP',
+        desc: 'Blindaje de endpoints, cifrado KMS de datos sensibles y controles técnicos documentados desde el primer sprint.',
+        route: 'servicios/security-reliability'
       },
       {
         id: 'business-ai',
@@ -588,7 +603,7 @@ export const pillarsData = {
         badge: 'FutureProof™ Framework',
         role: 'Gobernanza de Entrega en 2 a 4 Meses',
         desc: 'Aseguramiento estratégico de que cada feature construido resuelva con precisión la tesis comercial del negocio.',
-        route: 'servicio/business-ai'
+        route: 'servicios/digital-consulting'
       }
     ],
     specs: {
@@ -774,7 +789,7 @@ export const pillarsData = {
       title: 'Construir es el inicio. Evolucionar es donde crece.',
       desc: 'Todo producto digital tiene más potencial del que muestra en su lanzamiento. Evolución Digital convierte ese potencial en resultados medibles cada trimestre mediante un Squad continuo dedicado.',
       ctaText: 'Conocer Pilar 04: Evolución Digital',
-      ctaRoute: 'evolucion-digital'
+      ctaRoute: 'pilares/evolucion-digital'
     }
   },
 
@@ -795,8 +810,12 @@ export const pillarsData = {
     themeKey: 'indigo',
     packageName: 'Pilar 04 · Evolución Digital (Retainer)',
     stats: [
-      { value: '+34%', label: 'Incremento promedio en conversión en el primer año', sublabel: 'Metodología CRO constante' },
-      { value: '6 Sem', label: 'Semanas al primer impacto financiero medible', sublabel: 'Velocidad de ejecución' },
+      // El '+34% de conversion promedio' era un promedio entre proyectos que no
+      // esta medido ni publicado, y las '6 semanas al primer impacto medible'
+      // contradecian a bluepixel.mx, que habla del primer trimestre. Se ajustan
+      // al plazo que el propio sitio publica y al alcance del retainer.
+      { value: '6 o 12', label: 'Meses de roadmap vivo con entregas continuas cada sprint', sublabel: 'Retainer mensual · Squad dedicado' },
+      { value: 'Q1', label: 'Primeros indicadores medibles del acompañamiento', sublabel: 'Medidos contra la línea base de tu plataforma' },
       { value: '24', label: 'Ciclos de refactorización al año que impiden acumular deuda técnica', sublabel: 'Cadencia quincenal · SLA 99.9%' }
     ],
     painPoints: {
@@ -830,7 +849,7 @@ export const pillarsData = {
         badge: 'IMPATH™ Enabled',
         role: 'CRO & UX Health Score Continuo',
         desc: 'Auditorías mensuales de fricción, experimentos de optimización de conversión (A/B testing) y evolución del Design System.',
-        route: 'servicio/ux-ui'
+        route: 'servicios/ux-ui-product-strategy'
       },
       {
         id: 'ai-engineering',
@@ -838,7 +857,7 @@ export const pillarsData = {
         badge: 'Cloud-Native Architecture',
         role: 'Refactorización & Nuevos Módulos',
         desc: 'Despliegue continuo de nuevos microservicios, optimización de consultas de bases de datos y reducción de costos cloud.',
-        route: 'servicio/ai-engineering'
+        route: 'servicios/software-engineering'
       },
       {
         id: 'ai-agents',
@@ -846,7 +865,7 @@ export const pillarsData = {
         badge: 'Agentic Automation',
         role: 'Reentrenamiento & Nuevos Agentes',
         desc: 'Afinación continua de prompts, orquestación multi-agente y despliegue de automatizaciones sobre nuevos flujos operativos.',
-        route: 'servicio/ai-agents'
+        route: 'servicios/agentic-ai-automation'
       },
       {
         id: 'data-analytics',
@@ -854,15 +873,15 @@ export const pillarsData = {
         badge: 'Mixpanel Telemetry',
         role: 'Dashboards Directivos & Modelos ML',
         desc: 'Tableros ejecutivos en vivo, análisis de cohortes de retención y desarrollo de modelos predictivos de comportamiento.',
-        route: 'servicio/data-analytics'
+        route: 'servicios/data-analytics'
       },
       {
         id: 'security',
         name: 'Security & Reliability',
         badge: 'CyberVadis & OWASP',
-        role: 'Monitoreo SLA 99.9% & Pentest',
-        desc: 'Vigilancia 24/7 de infraestructura, simulaciones de ataque periódicas y actualización proactiva de parches de seguridad.',
-        route: 'servicio/security'
+        role: 'Monitoreo SLA 99.9% & Parches Continuos',
+        desc: 'Vigilancia 24/7 de infraestructura, escaneo continuo de dependencias y actualización proactiva de parches de seguridad.',
+        route: 'servicios/security-reliability'
       },
       {
         id: 'business-ai',
@@ -870,7 +889,7 @@ export const pillarsData = {
         badge: 'FutureProof™ Framework',
         role: 'Priorización Trimestral de Backlog',
         desc: 'Acompañamiento ejecutivo continuo para alinear el roadmap de producto con las metas financieras de cada trimestre.',
-        route: 'servicio/business-ai'
+        route: 'servicios/digital-consulting'
       }
     ],
     specs: {
@@ -1061,7 +1080,7 @@ export const pillarsData = {
       title: '¿Tu plataforma aún no existe?',
       desc: 'Este pilar es para plataformas que ya están en producción. Si necesitas diseñar y construir desde cero con validación de usuarios e IA integrada en 2 a 4 meses, el Pilar 03 (Plataformas Digitales) es tu camino.',
       ctaText: 'Conocer Pilar 03: Plataformas Digitales',
-      ctaRoute: 'producto-digital'
+      ctaRoute: 'pilares/plataformas-digitales'
     }
   }
 };

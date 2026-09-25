@@ -33,6 +33,12 @@ env/
 venv/
 ENV/
 
+# Credenciales OAuth descargadas de Google Cloud Console. El archivo que da
+# Google se llama client_secret_<id>.apps.googleusercontent.com.json y trae el
+# client_secret en claro. Los valores viven en mcp_google_ads/.env.
+client_secret_*.json
+*.apps.googleusercontent.com.json
+
 # OS Files
 .DS_Store
 .DS_Store?

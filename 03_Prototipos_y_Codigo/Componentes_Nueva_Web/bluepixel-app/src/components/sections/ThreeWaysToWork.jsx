@@ -1,6 +1,6 @@
-import FourWaysToWork, { FourWaysToWorkEN } from './FourWaysToWork';
+import FourWaysToWork from './FourWaysToWork';
 
+// Alias historico: la seccion se llamaba ThreeWaysToWork cuando eran 3 pilares.
 export const ThreeWaysToWork = FourWaysToWork;
-export const ThreeWaysToWorkEN = FourWaysToWorkEN;
 
 export default FourWaysToWork;

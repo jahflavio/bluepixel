@@ -75,7 +75,9 @@ La filosofía **FutureProof** es la bandera de ingeniería y la garantía centra
 4. **Arquitectura Desacoplada y Soberanía Total de Datos:**
    Sistemas modulares, agnósticos y cloud-native diseñados bajo protocolos abiertos (e.g. MCP). Cero *vendor lock-in*. Si mañana sale una nueva versión de un LLM o proveedor cloud, el sistema conmuta mediante configuración sin rehacer la plataforma. El código y los datos siempre residen en la nube privada del cliente.
 5. **Blindaje Grado Empresarial (Security & Reliability):**
-   Estándares de seguridad de clase mundial: prácticas verificadas por **CyberVadis** (certificación vigente) y mejores prácticas de **OWASP Top 10**. La certificación **ISO 27001** aún no se tiene, por lo que no debe presentarse como credencial propia; sí puede ofrecerse como servicio de preparación para el cliente. Trazabilidad de accesos, cifrado de datos en reposo y en tránsito, y pruebas automatizadas de resiliencia.
+   Estándares de seguridad de clase mundial: prácticas verificadas por **CyberVadis** (certificación vigente) y mejores prácticas de **OWASP Top 10**. La certificación **ISO 27001** aún no se tiene, por lo que no debe presentarse como credencial propia. Trazabilidad de accesos, cifrado de datos en reposo y en tránsito, y pruebas automatizadas de resiliencia.
+
+   > **Límite de alcance (decisión de dirección):** la seguridad se vende como **propiedad de lo que construimos**, no como práctica de seguridad ofensiva ni consultoría de cumplimiento. **No ofrecer** pentesting, Red Teaming, hacking ético, reportes CVSS, ni preparación/consultoría ISO 27001 o SOC2: requieren pentesters certificados y especialistas GRC que no están en casa. **Sí ofrecer:** arquitectura Zero-Trust, hardening OWASP Top 10 en cada release, SAST y escaneo de dependencias en CI/CD, cifrado y aislamiento en VPC, guardrails/DLP para IA, remediación de hallazgos de terceros y controles técnicos documentados para cuestionarios de proveedor.
 
 ---
 
@@ -117,7 +119,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
 4. **Data & Analytics:**
    - *Foco:* Instrumentación de telemetría de producto, pipelines de datos, tableros de control ejecutivos en tiempo real y análisis predictivo del comportamiento de clientes.
 5. **Security & Reliability (CyberVadis & OWASP):**
-   - *Foco:* Arquitectura de seguridad Zero-Trust, auditoría de vulnerabilidades OWASP Top 10, cumplimiento normativo (ISO 27001, LFPDPPP), cifrado y resiliencia con alta disponibilidad.
+   - *Foco:* Arquitectura de seguridad Zero-Trust, hardening y escaneo de vulnerabilidades OWASP Top 10 dentro del pipeline, controles técnicos documentados (incluidos los que exige la LFPDPPP), cifrado y resiliencia con alta disponibilidad. Ver el límite de alcance en la sección 3.
 6. **CONSULTING (Digital Consulting):**
    - *Foco:* Consultoría estratégica de transformación, valuación del costo de inacción, diseño de roadmaps ejecutivos trimestrales y alineación entre tecnología y objetivos financieros del negocio.
 
@@ -131,7 +133,7 @@ Mapeadas directamente según la estructura corporativa de BluePixel:
 | **Software Engineering** | Auditoría de arquitectura y código | Integración de endpoints y servicios | Construcción Full Stack de 0 a prod | Refactorización y reducción de deuda |
 | **IA & Automatización** | Evaluación de casos de uso viables | **Núcleo:** Agentic RAG y MCP | Módulos inteligentes en la app | Reentrenamiento y nuevos agentes |
 | **Data & Analytics** | Análisis de telemetría y métricas | Trazabilidad de ejecuciones de IA | Configuración de analítica base | Dashboards directivos y optimización |
-| **Security & Reliability** | Análisis de vulnerabilidades y brechas | Blindaje de prompts y datos RAG | Arquitectura segura ISO / OWASP | Monitoreo SLA 99.9% y DevSecOps |
+| **Security & Reliability** | Threat modeling y superficie de riesgo | Blindaje de prompts y datos RAG | Arquitectura segura OWASP | Monitoreo SLA 99.9% y DevSecOps |
 | **Digital Consulting** | **Núcleo:** Business case y roadmap | Priorización de flujos operativos | Gobernanza de entrega en 2 a 4 meses | Priorización trimestral del backlog |
 
 ---

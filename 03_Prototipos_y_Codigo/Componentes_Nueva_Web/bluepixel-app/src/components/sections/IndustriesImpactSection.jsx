@@ -66,8 +66,8 @@ const industriesData = [
     sub: 'BANKING · FINTECH',
     icon: Landmark,
     challenge: 'Procesos críticos de originación, onboarding y cumplimiento que mezclan riesgo regulatorio con experiencias digitales fragmentadas.',
-    solution: 'Arquitectura modular, observabilidad nativa y auditoría continua de vulnerabilidades traducida a riesgo financiero medible.',
-    tags: ['SECURITY & RELIABILITY', 'ENGINEERING', 'SOC2-READY'],
+    solution: 'Arquitectura modular, observabilidad nativa y escaneo continuo de vulnerabilidades traducido a riesgo financiero medible.',
+    tags: ['SECURITY & RELIABILITY', 'ENGINEERING', 'ZERO-TRUST'],
     caseClient: 'Fintech Enterprise',
     metricValue: '$4.7M',
     metricLabel: 'revenue protegido / año'

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Landings de pauta: trafico pagado unicamente, fuera del indice organico.
+Disallow: /lp/
+
+Sitemap: https://www.bluepixel.mx/sitemap.xml

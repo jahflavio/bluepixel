@@ -5,7 +5,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 1: APPS & PLATAFORMAS
     {
       cluster: 'CAPACIDAD 01 · EXPERIENCIA',
-      targetRoute: 'servicio/ux-ui',
+      targetRoute: 'servicios/ux-ui-product-strategy',
       badge: 'IMPATH™ Enabled',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '🎯',
@@ -20,7 +20,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CAPACIDAD 02 · INGENIERÍA',
-      targetRoute: 'servicio/ai-engineering',
+      targetRoute: 'servicios/software-engineering',
       badge: 'Cloud-Native Architecture',
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
       icon: '</>',
@@ -37,7 +37,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 2: AUTOMATIZACIÓN & DATOS
     {
       cluster: 'CAPACIDAD 03 · AGENTES',
-      targetRoute: 'servicio/ai-agents',
+      targetRoute: 'servicios/agentic-ai-automation',
       badge: 'Agentic Automation',
       badgeColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
       icon: '⚙️',
@@ -52,7 +52,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CAPACIDAD 04 · INTELIGENCIA',
-      targetRoute: 'servicio/data-analytics',
+      targetRoute: 'servicios/data-analytics',
       badge: 'Mixpanel Telemetry',
       badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
       icon: '📈',
@@ -69,7 +69,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     // CLUSTER 3: GOBERNANZA & ESTRATEGIA
     {
       cluster: 'CAPACIDAD 05 · BLINDAJE',
-      targetRoute: 'servicio/security',
+      targetRoute: 'servicios/security-reliability',
       badge: 'CyberVadis & OWASP',
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
       icon: '🛡️',
@@ -84,7 +84,7 @@ const SixCapabilitiesGrid = ({ onNavigateCluster, onOpenContact }) => {
     },
     {
       cluster: 'CAPACIDAD 06 · ESTRATEGIA',
-      targetRoute: 'servicio/business-ai',
+      targetRoute: 'servicios/digital-consulting',
       badge: 'FutureProof™ Framework',
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
       icon: '💡',

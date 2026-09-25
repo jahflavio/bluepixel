@@ -71,10 +71,10 @@ const PILLAR_THEMES = {
 };
 
 const ALL_PILLARS = [
-  { id: 'consultoria-digital', num: '01', name: 'Consultoría Digital', duration: '2 a 4 Semanas', route: 'consultoria-tecnologica', dot: 'bg-blue-400' },
-  { id: 'agentes-automatizacion', num: '02', name: 'Agentes & Automatización', duration: '2 a 4 Semanas', route: 'automatizacion-agentica', dot: 'bg-purple-400' },
-  { id: 'plataformas-digitales', num: '03', name: 'Plataformas Digitales', duration: '2 a 4 Meses a Producción', route: 'producto-digital', dot: 'bg-cyan-400' },
-  { id: 'evolucion-digital', num: '04', name: 'Evolución Digital', duration: 'Roadmap 6/12 Meses', route: 'evolucion-digital', dot: 'bg-indigo-400' }
+  { id: 'consultoria-digital', num: '01', name: 'Consultoría Digital', duration: '2 a 4 Semanas', route: 'pilares/consultoria-digital', dot: 'bg-blue-400' },
+  { id: 'agentes-automatizacion', num: '02', name: 'Agentes & Automatización', duration: '2 a 4 Semanas', route: 'pilares/agentes-automatizacion', dot: 'bg-purple-400' },
+  { id: 'plataformas-digitales', num: '03', name: 'Plataformas Digitales', duration: '2 a 4 Meses a Producción', route: 'pilares/plataformas-digitales', dot: 'bg-cyan-400' },
+  { id: 'evolucion-digital', num: '04', name: 'Evolución Digital', duration: 'Roadmap 6/12 Meses', route: 'pilares/evolucion-digital', dot: 'bg-indigo-400' }
 ];
 
 /* WIDGET INTERACTIVO PILAR 01: CALCULADOR DE COSTO DE INACCIÓN & ROI */
@@ -690,16 +690,49 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
               {data.painPoints.title.replace(/\.$/, '')}<span className="text-blue-500">.</span>
             </h2>
             
+            {/* Mismas tarjetas que las 6 paginas de capacidad: degradado, banda
+                de acento superior y elevacion al hover. 'tag' y 'antidote' se
+                renderizan solo si el pilar los trae; hoy pillarsData solo tiene
+                title y desc, asi que el numero ocupa el lugar del icono. */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {data.painPoints.items.map((item, idx) => (
-                <div key={idx} className="bg-[#02040A] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:border-red-500/30 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 font-mono font-bold text-sm">
-                      0{idx + 1}
+                <div
+                  key={idx}
+                  className="bg-gradient-to-b from-[#080E24] to-[#030612] border border-white/[0.08] hover:border-red-500/30 rounded-3xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-2xl relative overflow-hidden group"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/30 via-amber-500/20 to-transparent group-hover:from-red-500 group-hover:via-amber-500 transition-all duration-500"></div>
+
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <div className="w-11 h-11 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 font-mono font-bold text-sm shadow-inner">
+                        0{idx + 1}
+                      </div>
+                      {item.tag && (
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-red-400 font-bold">
+                          {item.tag}
+                        </span>
+                      )}
                     </div>
+
+                    <h3 className="text-xl font-bold text-white leading-tight mb-3 group-hover:text-red-300 transition-colors">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                      {item.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+
+                  {item.antidote && (
+                    <div className="pt-4 border-t border-white/[0.08] mt-2">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1.5">
+                        ✓ El Antídoto BluePixel:
+                      </div>
+                      <p className="text-xs text-slate-200 font-medium leading-relaxed bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-3">
+                        {item.antidote}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -1270,70 +1303,10 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
         </section>
       )}
 
-      {/* GARANTÍA DE LIDERAZGO & FILOSOFÍA FUTUREPROOF */}
-      <section className="py-20 border-b border-white/[0.08] bg-[#02040A] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className={`inline-block text-xs font-mono uppercase tracking-widest font-bold mb-3 ${theme.accentText}`}>
-              ✦ RESPALDO DIRECTIVO & GARANTÍA DE SOBERANÍA
-            </span>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-4">
-              Dirección Técnica y Filosofía FutureProof™<span className="text-blue-500">.</span>
-            </h2>
-            <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-              En BluePixel los fundadores y tech leads asumen la responsabilidad técnica de cada entrega. Cero intermediarios, cero desarrolladores junior aprendiendo con tu capital.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* Rol institucional: la politica de la casa prohibe nombres
-                personales en copy publico. */}
-            <div className="bg-[#050A17] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:border-blue-500/30 transition-colors">
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold font-mono">
-                    PS
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-white">Dirección de Producto & UX</h4>
-                    <span className="text-xs font-mono text-blue-400">Product Strategy & Diseño Conductual</span>
-                  </div>
-                </div>
-                <p className="text-slate-300 text-xs md:text-sm leading-relaxed italic mb-4">
-                  "El código más sofisticado fracasa si los usuarios lo rechazan. Nuestro diseño conductual y estrategia de producto no es cosmética: es la armadura que asegura adopción y convierte tecnología pesada en ventaja comercial desde el día 1."
-                </p>
-              </div>
-              <div className="pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500">
-                Liderazgo UX & Psicología Conductual · IMPATH™ Creator
-              </div>
-            </div>
-
-            <div className="bg-[#050A17] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:border-purple-500/30 transition-colors">
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold font-mono">
-                    TL
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-white">Dirección de Ingeniería</h4>
-                    <span className="text-xs font-mono text-purple-400">Lead Architects & Tech Leads</span>
-                  </div>
-                </div>
-                <p className="text-slate-300 text-xs md:text-sm leading-relaxed italic mb-4">
-                  "No vendemos horas de programador ni maquetas de Figma. Diseñamos sistemas desacoplados, agentes con protocolo abierto MCP y despliegues en la VPC del cliente con cero vendor lock-in y SLA 99.9%."
-                </p>
-              </div>
-              <div className="pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500">
-                Arquitectura Cloud-Native · Deep Tech & Protocolos MCP
-              </div>
-            </div>
-          </div>
-
-          {/* Los 5 principios vivian duplicados aqui y en el FutureproofCTABanner
-              del cierre, separados solo por las FAQs. Se conserva una sola vez,
-              en el banner, que es donde rematan con su CTA. */}
-        </div>
-      </section>
+      {/* Aqui vivia 'Direccion Tecnica y Filosofia FutureProof' (las dos
+          tarjetas PS / TL con las citas de direccion). Se retiro por peticion.
+          El componente equivalente para el home sigue vivo en
+          src/components/sections/EngineeringLeadership.jsx. */}
 
       {/* 10. FAQs */}
       {data.faqs && (
@@ -1370,55 +1343,12 @@ const PillarLandingTemplate = ({ data, onNavigateCluster }) => {
         </section>
       )}
 
-      {/* LAS 6 CAPACIDADES. Vivia a media pagina, justo despues del caso de
-          estudio, y cortaba el argumento para hablar de nosotros en el punto
-          mas alto del relato. Aqui abajo funciona como directorio hacia las 6
-          paginas de servicio, y por eso ya no lleva numero de seccion: no es
-          un capitulo del argumento, es navegacion. */}
-      {data.capabilitiesActivation && (
-        <section className="py-16 border-b border-white/[0.08] bg-[#030713]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-8">
-              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-1">
-                Capacidades BluePixel
-              </span>
-              <h3 className="text-xl font-bold text-white">
-                Las 6 capacidades que se activan en este pilar<span className="text-blue-500">.</span>
-              </h3>
-              <p className="text-sm text-slate-400 mt-2 max-w-2xl">
-                Un mismo squad multidisciplinario. Cada capacidad entra con un rol distinto según el pilar que contrates.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {data.capabilitiesActivation.map((cap, idx) => {
-                const isCore = cap.role && cap.role.includes('Núcleo');
-                return (
-                  <a
-                    key={idx}
-                    href={`#/${cap.route}`}
-                    className={`group bg-[#050A19] border rounded-2xl p-5 flex flex-col gap-2.5 transition-all hover:-translate-y-1 ${
-                      isCore
-                        ? `${theme.accentBorder} shadow-lg`
-                        : 'border-white/[0.08] hover:border-white/20'
-                    }`}
-                  >
-                    <span className={`self-start text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${theme.accentBorder} ${theme.accentText}`}>
-                      {cap.badge}
-                    </span>
-                    <h4 className="text-sm font-bold text-white leading-tight">{cap.name}</h4>
-                    <div className="text-[11px] font-mono text-slate-400">{cap.role}</div>
-                    <p className="text-slate-400 text-xs leading-relaxed flex-1">{cap.desc}</p>
-                    <span className={`text-[11px] font-mono font-bold mt-1 ${theme.accentText}`}>
-                      Ver capacidad <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Aqui vivia 'Las 6 capacidades que se activan en este pilar'. Se retiro
+          del cierre de los 4 pilares por peticion: alargaba la pagina justo
+          antes del CTA. El dato 'capabilitiesActivation' sigue en pillarsData
+          por si se reutiliza. Ojo: era el unico enlace desde el cuerpo de un
+          pilar hacia las 6 paginas de capacidad; hoy solo quedan el navbar y
+          el footer. */}
 
       {/* PUENTE AL SIGUIENTE PILAR. Se perdio en el commit acb7e2f junto con la
           navegacion cruzada de abajo, pero el dato 'bridge' siguio vivo en los

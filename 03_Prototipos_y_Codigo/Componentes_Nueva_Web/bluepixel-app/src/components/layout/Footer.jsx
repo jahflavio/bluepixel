@@ -1,34 +1,6 @@
 import React from 'react';
 
 const Footer = ({ onOpenContact, onNavigateCluster }) => {
-  const handleComoTrabajamos = (e) => {
-    if (e) e.preventDefault();
-    const scrollToTarget = () => {
-      const el = document.getElementById('como-trabajamos') || 
-                 document.getElementById('four-ways-to-work') || 
-                 document.getElementById('how-we-work') || 
-                 document.getElementById('pilares');
-      if (el) {
-        const navHeight = 80;
-        const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    };
-
-    if (window.location.hash && window.location.hash !== '' && window.location.hash !== '#/' && !window.location.hash.includes('como-trabajamos')) {
-      if (onNavigateCluster) {
-        onNavigateCluster('home');
-      } else {
-        window.location.hash = '';
-      }
-      setTimeout(scrollToTarget, 100);
-      setTimeout(scrollToTarget, 300);
-      setTimeout(scrollToTarget, 600);
-    } else {
-      scrollToTarget();
-    }
-  };
-
   const handleOpenContact = (pkgName = 'Diagnóstico Técnico') => {
     if (onOpenContact) {
       onOpenContact(pkgName);
@@ -98,13 +70,13 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
           {/* Columna 2: 4 Formas de Trabajar (Pilares) (lg:col-span-3) */}
           <div className="lg:col-span-3">
             <div className="flex items-center gap-2 mb-6">
-              <h3 className="text-white font-mono text-xs font-bold uppercase tracking-widest">Cómo Trabajamos</h3>
+              <h3 className="text-white font-mono text-xs font-bold uppercase tracking-widest">Servicios</h3>
               <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/25 font-bold">4 Pilares</span>
             </div>
             
             <ul className="space-y-3.5">
               <li>
-                <a href="#/consultoria-tecnologica" className="block text-slate-300 hover:text-blue-400 transition-colors group">
+                <a href="#/pilares/consultoria-digital" className="block text-slate-300 hover:text-blue-400 transition-colors group">
                   <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-blue-400">
                     <span className="font-mono text-blue-400 text-xs">01</span>
                     <span>Consultoría Digital</span>
@@ -115,7 +87,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
               </li>
 
               <li>
-                <a href="#/automatizacion-agentica" className="block text-slate-300 hover:text-purple-400 transition-colors group">
+                <a href="#/pilares/agentes-automatizacion" className="block text-slate-300 hover:text-purple-400 transition-colors group">
                   <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-purple-400">
                     <span className="font-mono text-purple-400 text-xs">02</span>
                     <span>Agentes & Automatización</span>
@@ -126,7 +98,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
               </li>
 
               <li>
-                <a href="#/producto-digital" className="block text-slate-300 hover:text-cyan-400 transition-colors group">
+                <a href="#/pilares/plataformas-digitales" className="block text-slate-300 hover:text-cyan-400 transition-colors group">
                   <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-cyan-400">
                     <span className="font-mono text-cyan-400 text-xs">03</span>
                     <span>Plataformas Digitales</span>
@@ -137,7 +109,7 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
               </li>
 
               <li>
-                <a href="#/evolucion-digital" className="block text-slate-300 hover:text-indigo-400 transition-colors group">
+                <a href="#/pilares/evolucion-digital" className="block text-slate-300 hover:text-indigo-400 transition-colors group">
                   <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-indigo-400">
                     <span className="font-mono text-indigo-400 text-xs">04</span>
                     <span>Evolución Digital</span>
@@ -149,14 +121,13 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
             </ul>
 
             <div className="mt-5 pt-3 border-t border-white/[0.06]">
-              <button
-                type="button"
-                onClick={handleComoTrabajamos}
-                className="text-xs font-mono text-blue-400 hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer bg-transparent border-none p-0"
+              <a
+                href="#/pilares"
+                className="text-xs font-mono text-blue-400 hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <span>Ver comparativa interactiva en Home</span>
-                <span>↓</span>
-              </button>
+                <span>Comparar los 4 Pilares</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
 
@@ -169,42 +140,42 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
 
             <ul className="space-y-3">
               <li>
-                <a href="#/servicio/ux-ui" className="block text-slate-300 hover:text-emerald-400 transition-colors group">
+                <a href="#/servicios/ux-ui-product-strategy" className="block text-slate-300 hover:text-emerald-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-emerald-400">UX/UI & Product Strategy</span>
                   <span className="block text-[10px] font-mono text-emerald-400/80">IMPATH™ Enabled • Psicología Conductual</span>
                 </a>
               </li>
 
               <li>
-                <a href="#/servicio/ai-engineering" className="block text-slate-300 hover:text-cyan-400 transition-colors group">
+                <a href="#/servicios/software-engineering" className="block text-slate-300 hover:text-cyan-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-cyan-400">Software Engineering</span>
-                  <span className="block text-[10px] font-mono text-cyan-400/80">Full Stack Cloud-Native • SOC2-Ready</span>
+                  <span className="block text-[10px] font-mono text-cyan-400/80">Full Stack Cloud-Native • Arquitectura Desacoplada</span>
                 </a>
               </li>
 
               <li>
-                <a href="#/servicio/ai-agents" className="block text-slate-300 hover:text-purple-400 transition-colors group">
+                <a href="#/servicios/agentic-ai-automation" className="block text-slate-300 hover:text-purple-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-purple-400">IA & Automatización</span>
                   <span className="block text-[10px] font-mono text-purple-400/80">Agentic RAG • Conectores MCP Corporativos</span>
                 </a>
               </li>
 
               <li>
-                <a href="#/servicio/data-analytics" className="block text-slate-300 hover:text-indigo-400 transition-colors group">
+                <a href="#/servicios/data-analytics" className="block text-slate-300 hover:text-indigo-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-indigo-400">Data & Analytics</span>
                   <span className="block text-[10px] font-mono text-indigo-400/80">Mixpanel Telemetry • KPIs en Tiempo Real</span>
                 </a>
               </li>
 
               <li>
-                <a href="#/servicio/security" className="block text-slate-300 hover:text-amber-400 transition-colors group">
+                <a href="#/servicios/security-reliability" className="block text-slate-300 hover:text-amber-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-amber-400">Security & Reliability</span>
                   <span className="block text-[10px] font-mono text-amber-400/80">CyberVadis • OWASP Top 10 • SLA 99.9%</span>
                 </a>
               </li>
 
               <li>
-                <a href="#/servicio/business-ai" className="block text-slate-300 hover:text-blue-400 transition-colors group">
+                <a href="#/servicios/digital-consulting" className="block text-slate-300 hover:text-blue-400 transition-colors group">
                   <span className="text-sm font-medium text-white group-hover:text-blue-400">Consulting Digital</span>
                   <span className="block text-[10px] font-mono text-blue-400/80">FutureProof™ Framework • Backlog por ROI</span>
                 </a>
@@ -228,16 +199,13 @@ const Footer = ({ onOpenContact, onNavigateCluster }) => {
 
             <ul className="space-y-3 text-xs">
               <li>
-                <a href="#/casos-de-exito" className="text-slate-400 hover:text-white transition-colors block py-0.5">
+                <a href="#/casos-de-estudio" className="text-slate-400 hover:text-white transition-colors block py-0.5">
                   Casos de Estudio & ROI
                 </a>
               </li>
-              <li>
-                <a href="#/componentes" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 py-0.5">
-                  <span>Showroom de Prototipos</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                </a>
-              </li>
+              {/* Showroom (#/componentes) retirado de la navegación pública:
+                  es una herramienta interna de trabajo, no una sección para
+                  visitantes. La ruta sigue viva para el equipo. */}
               <li>
                 <span className="text-slate-400 block py-0.5 text-slate-300">
                   Soberanía Total de Código

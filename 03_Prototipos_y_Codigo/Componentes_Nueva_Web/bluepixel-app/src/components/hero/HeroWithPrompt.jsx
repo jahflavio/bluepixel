@@ -17,8 +17,12 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
           {/* Category Kicker - Clean typographic text, no capsule */}
           <div className="inline-flex items-center gap-2.5 mb-4">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+            {/* El H1 de abajo es de marca y no lleva keywords a proposito. El
+                vocabulario de busqueda entra aqui y en el subtitulo: 'desarrollo
+                de software a la medida' son 1,900 busquedas/mes y no aparecia en
+                ninguna parte del sitio. */}
             <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-bold">
-              INGENIERÍA DE AGENTES IA & PLATAFORMAS FUTUREPROOF
+              DESARROLLO DE SOFTWARE A LA MEDIDA & AGENTES IA · MÉXICO
             </span>
           </div>
 
@@ -31,7 +35,7 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
 
           {/* Subheadline */}
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
-            BluePixel es la consultora de ingeniería agéntica y arquitectura cloud para corporativos en México y LATAM. Conectamos agentes autónomos a tus sistemas reales (SAP, Salesforce, ERPs), bajo protocolos abiertos MCP, con <strong className="text-white font-semibold">diseño UX de clase mundial</strong> para garantizar adopción inmediata sin fricción.
+            BluePixel es una empresa de <strong className="text-white font-semibold">desarrollo de software a la medida</strong> y agentes de IA para corporativos en México y LATAM. Construimos plataformas web y aplicaciones móviles, y conectamos agentes autónomos a tus sistemas reales (SAP, Salesforce, ERPs) bajo protocolos abiertos MCP, con diseño UX de clase mundial que asegura adopción sin fricción.
           </p>
 
           {/* CTAs */}
@@ -43,7 +47,7 @@ const HeroWithPrompt = ({ onSelectSolution, onOpenContact }) => {
               <span>→</span>
             </a>
             <a
-              href="#/casos-de-exito"
+              href="#/casos-de-estudio"
               className="bg-transparent hover:bg-white/5 text-slate-300 font-semibold text-sm px-7 py-3.5 rounded-xl border border-white/10 transition-colors">
               Ver el Portafolio Completo →
             </a>

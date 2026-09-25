@@ -321,18 +321,18 @@ export const CLUSTERS_DATA = {
       },
       {
         id: 'privacy',
-        title: 'Data Privacy, Blindaje de Modelos & Cumplimiento LFPDPPP',
-        badge: 'Security & Compliance',
+        title: 'Data Privacy, Blindaje de Modelos & Controles LFPDPPP',
+        badge: 'Security & Data Privacy',
         icon: '🔒',
         originalUrl: 'cotiza.bluepixel.mx/data-privacy',
         valueProp: 'Implementa IA Generativa garantizando que tus secretos comerciales y datos de clientes jamás entrenen modelos públicos.',
         cases: [
           'Anonimización automática en vuelo de datos personales (PII) antes de procesarlos.',
           'Despliegue de modelos en nubes privadas virtuales (AWS Bedrock / Azure OpenAI) sin salida a internet.',
-          'Cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de Particulares.'
+          'Controles técnicos alineados a lo que exige la LFPDPPP para el tratamiento de datos personales.'
         ],
         stack: ['Data Loss Prevention (DLP)', 'VPC Private Link', 'KMS Encryption', 'Audit Log Forensics'],
-        deliverable: 'Certificado de auditoría de seguridad y dictamen de privacidad técnica para comités de cumplimiento legal.'
+        deliverable: 'Expediente de controles técnicos de privacidad —cifrado, anonimización y bitácoras— listo para tu área legal y de cumplimiento.'
       },
       {
         id: 'consultoria',
@@ -360,7 +360,7 @@ export const CLUSTERS_DATA = {
         bullets: [
           'Evaluación de calidad y estructuración de datos corporativos',
           'Prueba de concepto RAG en sandbox con datos reales del cliente',
-          'Dictamen de cumplimiento normativo (LFPDPPP y SOC2)',
+          'Mapa de datos sensibles y controles técnicos requeridos para tratarlos',
           'Matriz de priorización y proyección de costos de inferencia'
         ],
         cta: 'Solicitar Consultoría'

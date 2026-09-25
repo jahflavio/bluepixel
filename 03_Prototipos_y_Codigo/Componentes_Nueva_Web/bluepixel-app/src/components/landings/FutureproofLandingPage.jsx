@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Footer from '../layout/Footer';
 import FinalCTA from '../sections/FinalCTA';
 import FutureproofMethodology from '../sections/FutureproofMethodology';
+import FutureproofPrinciples from '../sections/FutureproofPrinciples';
 import OrbitingTechStack from '../sections/OrbitingTechStack';
 import FourWaysToWork from '../sections/FourWaysToWork';
 
@@ -50,6 +51,8 @@ const FutureproofLandingPage = ({ onNavigateCluster }) => {
           </div>
         </div>
       </section>
+
+      <FutureproofPrinciples />
 
       <FutureproofMethodology />
 

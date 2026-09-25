@@ -70,8 +70,8 @@ const CasosEstudioLandingPage = () => {
               <div className="text-xs font-mono text-slate-400 uppercase tracking-widest">Sistemas Integrados</div>
             </div>
             <div className="text-center px-4">
-              <div className="text-4xl font-black text-white mb-2">SOC2</div>
-              <div className="text-xs font-mono text-slate-400 uppercase tracking-widest">Seguridad Auditada</div>
+              <div className="text-3xl md:text-4xl font-black text-white mb-2">CyberVadis</div>
+              <div className="text-xs font-mono text-slate-400 uppercase tracking-widest">Seguridad Verificada</div>
             </div>
           </div>
         </div>
